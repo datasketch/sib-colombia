@@ -23,16 +23,16 @@ export default function CustomSeparator () {
         >
             Departamentos
         </Link>,
-        <Typography className='text-white text-sm font-bold' key="3" color="text.primary">
+        <Typography key="3" color="text.primary" style={{ color: '#fff', fontSize: '14px', fontWeight: 'bold' }}>
             Nariño
         </Typography>
   ]
 
   return (
         <Stack margin="20.5px 0 0 0" spacing={2}>
-            <Breadcrumbs className='text-white text-sm'
+            <Breadcrumbs
                 separator={<NavigateNextIcon fontSize="small" />}
-                aria-label="breadcrumb"
+                aria-label="breadcrumb" style={{ color: '#fff', fontSize: '14px' }}
             >
                 {breadcrumbs}
             </Breadcrumbs>

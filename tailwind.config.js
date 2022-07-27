@@ -4,7 +4,6 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}'
   ],
-  safelist: ['text-white', 'font-bold'],
   theme: {
     extend: {
       fontFamily: {
