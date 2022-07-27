@@ -9,7 +9,26 @@ export default function Home () {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className='text-4xl font-bold'>Homepage</h1>
+      <div className='bg-banner-home bg-cover bg-center pt-[279px] pb-[203px]'>
+        <div className='mx-auto max-w-[950px]'>
+          <div className='flex flex-col items-center justify-center lg:flex-row lg:justify-between text-white gap-y-8'>
+            <div className='text-center lg:text-left'>
+              <p className='font-barlow-condensed text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-[120px] font-semibold -ml-2'>
+                10.317
+              </p>
+              <p className='-mt-2'>
+                Especies registradas
+              </p>
+              <h1 className='text-4xl 3xl:text-[52px] mt-5'>
+                Nariño
+              </h1>
+            </div>
+            <div className='w-full max-w-[283px]'>
+              <img src="/images/home-map.png" alt="home map" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
