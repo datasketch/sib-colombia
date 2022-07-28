@@ -14,6 +14,14 @@ module.exports = {
         'banner-home': "url('/images/home-banner.png')",
         'banner-footer': "url('/images/footer-banner.svg')"
       },
+      colors: {
+        'white-2': '#FBFBFB',
+        'white-3': '#F1F1F1',
+        'blue-green': '#005054',
+        'black-2': '#000000CC',
+        lemon: '#09A274',
+        'gray-2': '#F4F4F4'
+      },
       screens: {
         sm: '640px',
         // => @media (min-width: 640px) { ... }
