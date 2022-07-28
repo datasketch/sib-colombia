@@ -56,7 +56,7 @@ export default function Home () {
 
       <div className='bg-white-3 pb-20'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <SimpleSlider>
+          <SimpleSlider dots>
             <div className='px-5'>
               <div className='py-12 lg:py-16 xl:py-20 '>
                 <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
@@ -152,10 +152,12 @@ export default function Home () {
           <h2 className='text-white font-black text-3xl 3xl:text-4xl'>
             Publicadores
           </h2>
-          <div className='mt-[50px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10'>
-            {
-              publishersData.map((item, index) => <PublishersCard key={`publisher-item-${index + 1}`} {...item} />)
-            }
+          <div className='mt-[50px]'>
+            <SimpleSlider slidesToShow={4} slidesToScroll={4} buttonColor='light'>
+              {
+                publishersData.map((item, index) => <PublishersCard key={`publisher-item-${index + 1}`} {...item} />)
+              }
+            </SimpleSlider>
           </div>
           <div className='mt-10 text-center'>
             <a className='inline-block text-white border border-white rounded-[26px] py-3 px-[30px]' href="#">

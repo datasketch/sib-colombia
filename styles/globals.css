@@ -67,4 +67,12 @@
     .shadow-2 {
         box-shadow: inset 0px 3px 6px #00000029, 0px 8px 8px #00000029;
     }
+     /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
 }
