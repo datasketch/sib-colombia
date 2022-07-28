@@ -3,6 +3,7 @@ import EspeciesCard from '../components/EspeciesCard'
 import especiesData from '../data/especies.json'
 import PublishersCard from '../components/PublishersCard'
 import publishersData from '../data/publishers.json'
+import { SimpleSlider } from '../lib/Slider'
 
 export default function Home () {
   return (
@@ -53,27 +54,96 @@ export default function Home () {
         </div>
       </div>
 
-      <div className='py-12 lg:py-16 xl:py-20 bg-white-3'>
+      <div className='bg-white-3 pb-20'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
-            <div className='lg:w-6/12 max-w-[586px]'>
-              <h2 className='text-black-2 font-black text-3xl 3xl:text-4xl'>
-                Nariño vs. Colombia
-              </h2>
-              <p className='3xl:text-lg mt-10'>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetee dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ad suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolor.
-              </p>
-              <p className='3xl:text-lg mt-6'>
-                Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad ad sf minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.
-              </p>
+          <SimpleSlider>
+            <div className='px-5'>
+              <div className='py-12 lg:py-16 xl:py-20 '>
+                <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
+                  <div className='lg:w-6/12 max-w-[586px]'>
+                    <h2 className='text-black-2 font-black text-3xl 3xl:text-4xl'>
+                      Nariño vs. Colombia
+                    </h2>
+                    <p className='3xl:text-lg mt-10'>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetee dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ad suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolor.
+                    </p>
+                    <p className='3xl:text-lg mt-6'>
+                      Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad ad sf minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.
+                    </p>
+                  </div>
+                  <div className='lg:w-6/12 max-w-[438px]'>
+                    <p className='text-center 3xl:text-lg'>
+                      Especies registradas en Nariño vs. especies registradas en Colombia
+                    </p>
+                    <img className='mx-auto mt-4' src="/images/demo-graphic.svg" alt="demo graphic" />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className='lg:w-6/12 max-w-[438px]'>
-              <p className='text-center 3xl:text-lg'>
-                Especies registradas en Nariño vs. especies registradas en Colombia
-              </p>
-              <img className='mx-auto mt-4' src="/images/demo-graphic.svg" alt="demo graphic" />
+            <div className='px-5'>
+              <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-10'>
+                <div className='lg:col-start-1 lg:col-end-6 lg:row-start-1 lg:row-end-4'>
+                  <div className='bg-blue-green text-white min-h-full px-[71px] py-[145px]'>
+                    <p>
+                      <b>Charalá</b>, patrimonio histórico de Colombia y de su Biodiversidad, es el municipio de Santander donde se han observado el mayor número de especies endémicas de Colombia.</p>
+                  </div>
+                </div>
+                <div className='hidden lg:block lg:col-start-6 lg:col-end-8 lg:row-start-1 lg:row-end-4'>
+                  <img className='w-full h-full object-cover object-center' src="/images/gallery-1.png" alt="gallery-1" />
+                </div>
+                <div className='lg:col-start-8 lg:col-end-13 lg:row-start-1 lg:row-end-2'>
+                  <div className='bg-blue-green text-white pt-[37px] pb-[34px] px-[108px]'>
+                    <p>
+                      El 11% de las especies únicas del país que <b>viven en Santander</b> corren el riesgo de desaparecer. Usted puede cuidarlas!
+                    </p>
+                  </div>
+                </div>
+                <div className='hidden lg:block lg:col-start-8 lg:col-end-13 lg:row-start-2 lg:row-end-4'>
+                  <img className='w-full h-full object-cover object-center' src="/images/gallery-2.png" alt="gallery-2" />
+                </div>
+                <div className='hidden lg:block lg:lg:col-start-1 lg:col-end-8 lg:row-start-4 lg:row-end-5'>
+                  <img className='w-full h-full object-cover object-center' src="/images/gallery-3.png" alt="gallery-3" />
+                </div>
+                <div className='lg:col-start-8 lg:col-end-13 lg:row-start-4 lg:row-end-5'>
+                  <div className='bg-blue-green text-white pt-[37px] pb-[34px] px-[108px]'>
+                    <p>
+                      <b>El roble colombiano</b>, árbol endémico de los Andes, es la planta con más observaciones en el departamento.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+            <div className='px-5'>
+              <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-10'>
+                <div className='lg:col-start-1 lg:col-end-6'>
+                  <div className='bg-blue-green py-20 px-24 text-white'>
+                    <p className='3xl:text-lg'>
+                      El 11% de las <b>especies únicas</b> del país que viven en <b>Santander</b> corren el riesgo de desaparecer.
+                    </p>
+                    <p className='3xl:text-lg'>
+                      <b>Usted puede cuidarlas!</b>
+                    </p>
+                  </div>
+                </div>
+                <div className='lg:col-start-6 lg:col-end-13'>
+                  <img className='w-full h-full object-center object-cover' src="/images/gallery-4.png" alt="gallery 4" />
+                </div>
+                <div className='lg:col-start-1 lg:col-end-8'>
+                  <img className='w-full h-full object-center object-cover' src="/images/gallery-5.png" alt="gallery 5" />
+                </div>
+                <div className='lg:col-start-8 lg:col-end-13'>
+                  <div className='bg-blue-green py-20 px-24 text-white'>
+                    <p className='3xl:text-lg'>
+                      <b>El roble colombiano</b>, árbol endémico de los Andes, es la planta con más observaciones en el departamento.
+                    </p>
+                    <p className='3xl:text-lg'>
+                      <b>Usted puede cuidarlas!</b>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SimpleSlider>
         </div>
       </div>
 
@@ -128,15 +198,15 @@ export default function Home () {
 
       <div className='py-12 lg:py-16 xl:py-20 bg-white'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-xl'>
-          <div className='flex flex-wrap justify-between'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8'>
             <p className='font-bold text-lg 3xl:text-xl'>
               Con el apoyo de
             </p>
-            <img className='h-[100px]' src="/images/resguardo-integrado-logo.png" alt="resguardo integrado" />
-            <img className='h-[100px]' src="/images/reserva-natural-logo.png" alt="reserva natural" />
-            <img className='h-[100px]' src="/images/gobernacion-de-narino-logo.png" alt="gobernacion de narino" />
-            <img className='h-[100px]' src="/images/universidad-de-narino-logo.png" alt="universidad de narino" />
-            <img className='h-[100px]' src="/images/humboldt-logo.png" alt="humboldt" />
+            <img className='h-[100px] mx-auto' src="/images/resguardo-integrado-logo.png" alt="resguardo integrado" />
+            <img className='h-[100px] mx-auto' src="/images/reserva-natural-logo.png" alt="reserva natural" />
+            <img className='h-[100px] mx-auto' src="/images/gobernacion-de-narino-logo.png" alt="gobernacion de narino" />
+            <img className='h-[100px] mx-auto' src="/images/universidad-de-narino-logo.png" alt="universidad de narino" />
+            <img className='h-[100px] mx-auto' src="/images/humboldt-logo.png" alt="humboldt" />
           </div>
         </div>
       </div>

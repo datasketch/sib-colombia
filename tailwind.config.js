@@ -4,6 +4,14 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}'
   ],
+  safelist: [
+    'slick-arrow',
+    'slick-prev',
+    'slick-next',
+    'slick-disabled',
+    'slick-dots',
+    'slick-active'
+  ],
   theme: {
     extend: {
       fontFamily: {
