@@ -188,6 +188,7 @@ export default function Home () {
             )}
           </MenuExplorer.Body>
         </MenuExplorer>
+
         <MenuExplorer tree={biologicTree} search={searchBiologicTree}>
           <MenuExplorer.Title>
             <h3>
