@@ -39,11 +39,11 @@ export default function Home () {
         </div>
       </div>
 
-      <div className='py-12 lg:py-16 xl:py-20 bg-white-2'>
+      <div className='py-20 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
           <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
             <div className='lg:w-6/12'>
-              <div className='flex flex-col gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
+              <div className='flex flex-col gap-y-20 lg:flex-row lg:justify-between lg:gap-x-12'>
                 {
                   especiesData.map((item, index) => <EspeciesCard key={`especies-item-${index + 1}`} {...item} />)
                 }
