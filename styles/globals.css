@@ -11,7 +11,7 @@
 
 @layer components {
     .slick-list {
-        @apply py-1 !important;
+        @apply py-1 overflow-y-scroll no-scrollbar !important;
     }
     .slick-arrow {
         @apply hidden lg:block !important;

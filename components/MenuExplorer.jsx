@@ -30,7 +30,7 @@ export default function MenuExplorer ({ children, tree, search, ...restProps }) 
   }
 
   const firstPositionBC = (e) => {
-    const { textContent } = e.target
+    const { textContent } = e.target.closest('button')
     setBreadcrumb([textContent])
     setSelected(textContent)
   }
@@ -69,18 +69,18 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
       <SimpleSlider slidesToShow={5} sizeImage='small' responsive>
         {tree.children.map((leaf, i) => (
           <div className='px-5' key={i}>
-            <div className='bg-white shadow-3 h-[100px] overflow-y-scroll no-scrollbar p-4 flex' key={breadcrumb[0]}>
-              <button className="w-full" value={leaf.label} onClick={firstPositionBC}>
+            <div className='bg-transparent shadow-3 h-[100px] flex' key={breadcrumb[0]}>
+              <button className={`w-full p-4 ${breadcrumb[0] === leaf.label ? 'bg-lemon' : 'bg-white'}`} value={leaf.label} onClick={firstPositionBC}>
                 <div className="">
-                  <img className="mx-auto h-[12.69px]" src={leaf.pathImage ? leaf.pathImage.black : '/images/animales-cifras-icon-black.svg'} alt={`${leaf.label} icon`} />
-                  <p className="font-bold 3xl:text-lg text-black-3 mt-[10.31px]">
+                  <img className="mx-auto h-[12.69px]" src={breadcrumb[0] === leaf.label ? leaf.pathImage?.white || '/images/animales-cifras-icon-white.svg' : leaf.pathImage?.black || '/images/animales-cifras-icon-black.svg'} />
+                  <p className={`font-bold 3xl:text-lg mt-[10.31px] ${breadcrumb[0] === leaf.label ? 'text-white' : 'text-black-3'}`}>
                     {leaf.label}
                   </p>
                 </div>
               </button>
               <Menu
                 menuButton={
-                  <MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className='w-full h-full max-w-[40px] grid place-items-center border-l border-l-lemon flex-shrink-0 '>
+                  <MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className={`w-full h-full max-w-[40px] grid place-items-center border-l border-l-lemon flex-shrink-0 ${!breadcrumb.length || breadcrumb[0] !== leaf.label ? 'cursor-not-allowed opacity-40' : 'cursor-pointer bg-opacity-100'}`}>
                     <div className="px-[11.61px]">
                       <img src="/images/arrow-down-icon.svg" alt="arrow down" />
                     </div>
