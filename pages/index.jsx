@@ -7,21 +7,9 @@ import MenuExplorer from '../components/MenuExplorer'
 import biologicTree from './../data/arbol_grupos_biologicos.json'
 import interestTree from './../data/arbol_grupos_interes.json'
 import searchBiologicTree from './../data/narino_gr_bio.json'
-// import Swiper core and required modules
-import { Navigation, Pagination } from 'swiper'
-
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
-
 import { Carousel } from '../lib/Carousel'
 
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-
 export default function Home () {
-  const swiper = useSwiper()
-  const swiperPublishers = useSwiper()
   return (
     <>
       <Head>
