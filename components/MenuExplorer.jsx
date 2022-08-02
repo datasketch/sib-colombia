@@ -4,7 +4,7 @@ import { Menu, MenuButton } from '@szhsin/react-menu'
 import MenuBoxItem from './MenuBoxItem'
 import '@szhsin/react-menu/dist/index.css'
 
-import { Carousel } from '../lib/Carousel'
+import { SimpleSlider } from '../lib/Slider'
 
 const MenuExplorerContext = createContext(null)
 
@@ -66,12 +66,12 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
 
   return (
     <div className={className} {...restProps}>
-      <Carousel responsive slidesPerView={5}>
+      <SimpleSlider slidesToShow={5} sizeImage='small' responsive>
         {tree.children.map((leaf, i) => (
-          <Carousel.Item key={i}>
-            <div className='bg-white shadow-3 h-[100px] overflow-y-scroll no-scrollbar flex' key={breadcrumb[0]}>
+          <div className='px-5' key={i}>
+            <div className='bg-white shadow-3 h-[100px] overflow-y-scroll no-scrollbar p-4 flex' key={breadcrumb[0]}>
               <button className="w-full" value={leaf.label} onClick={firstPositionBC}>
-                <div className="pt-[30px] pb-[25px] pl-[47.5px] pr-[48.5px]">
+                <div className="">
                   <img className="mx-auto h-[12.69px]" src={leaf.pathImage ? leaf.pathImage.black : '/images/animales-cifras-icon-black.svg'} alt={`${leaf.label} icon`} />
                   <p className="font-bold 3xl:text-lg text-black-3 mt-[10.31px]">
                     {leaf.label}
@@ -80,7 +80,7 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
               </button>
               <Menu
                 menuButton={
-                  <MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className='w-full h-full max-w-[40px] grid place-items-center border-l my-4 border-l-lemon flex-shrink-0 '>
+                  <MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className='w-full h-full max-w-[40px] grid place-items-center border-l border-l-lemon flex-shrink-0 '>
                     <div className="px-[11.61px]">
                       <img src="/images/arrow-down-icon.svg" alt="arrow down" />
                     </div>
@@ -94,9 +94,9 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
                 })}
               </Menu>
             </div>
-          </Carousel.Item>
+          </div>
         ))}
-      </Carousel>
+      </SimpleSlider>
     </div>
   )
 }

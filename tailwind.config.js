@@ -5,10 +5,15 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}'
   ],
   safelist: [
-    'swiper',
-    'swiper-pagination',
-    'swiper-pagination-bullet',
-    'swiper-pagination-bullet-active'
+    'slick-list',
+    'slick-arrow',
+    'slick-prev',
+    'slick-next',
+    'slick-disabled',
+    'slick-dots',
+    'slick-active',
+    'w-[13.5px]',
+    'h-[23.62px]'
   ],
   theme: {
     extend: {

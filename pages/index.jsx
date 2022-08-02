@@ -8,6 +8,7 @@ import biologicTree from './../data/arbol_grupos_biologicos.json'
 import interestTree from './../data/arbol_grupos_interes.json'
 import searchBiologicTree from './../data/narino_gr_bio.json'
 import { Carousel } from '../lib/Carousel'
+import { SimpleSlider } from '../lib/Slider'
 
 export default function Home () {
   return (
@@ -60,8 +61,8 @@ export default function Home () {
 
       <div className='bg-white-3 pb-20'>
         <div className='mx-auto w-10/12 max-w-screen-xl relative'>
-          <Carousel>
-            <Carousel.Item>
+          <SimpleSlider dots>
+            <div className='px-5'>
               <div className='py-12 lg:py-16 xl:py-20 '>
                 <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
                   <div className='lg:w-6/12 max-w-[586px]'>
@@ -83,8 +84,8 @@ export default function Home () {
                   </div>
                 </div>
               </div>
-            </Carousel.Item>
-            <Carousel.Item>
+            </div>
+            <div className='px-5'>
               <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-10'>
                 <div className='lg:col-start-1 lg:col-end-6 lg:row-start-1 lg:row-end-4'>
                   <div className='bg-blue-green text-white min-h-full px-[71px] py-[145px]'>
@@ -116,8 +117,8 @@ export default function Home () {
                   </div>
                 </div>
               </div>
-            </Carousel.Item>
-            <Carousel.Item>
+            </div>
+            <div className='px-5'>
               <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-10'>
                 <div className='lg:col-start-1 lg:col-end-6'>
                   <div className='bg-blue-green py-20 px-24 text-white'>
@@ -146,8 +147,8 @@ export default function Home () {
                   </div>
                 </div>
               </div>
-            </Carousel.Item>
-          </Carousel>
+            </div>
+          </SimpleSlider>
         </div>
       </div>
 
@@ -564,17 +565,17 @@ export default function Home () {
             Publicadores
           </h2>
           <div className='mt-[50px] relative'>
-            <Carousel slidesPerView={4} responsive>
+            <SimpleSlider buttonColor='light' slidesToScroll={4} slidesToShow={4} responsive>
               {
                 publishersData.map((item, index) => {
                   return (
-                    <Carousel.Item key={index}>
+                    <div className='px-5' key={index}>
                       <PublishersCard {...item} />
-                    </Carousel.Item>
+                    </div>
                   )
                 })
               }
-            </Carousel>
+            </SimpleSlider>
           </div>
           <div className='mt-10 text-center'>
             <a className='inline-block text-white border border-white rounded-[26px] py-3 px-[30px]' href="#">
