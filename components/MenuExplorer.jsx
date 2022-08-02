@@ -1,6 +1,5 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext, useState, useEffect, useRef } from 'react'
 import { Menu, MenuButton } from '@szhsin/react-menu'
-
 import MenuBoxItem from './MenuBoxItem'
 import '@szhsin/react-menu/dist/index.css'
 
@@ -58,18 +57,16 @@ MenuExplorer.Title = function MenuExplorerTitle ({ children }) {
 }
 
 MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
-  const { tree, updateBreadcrumb, resetBreadcrumb, firstPositionBC, breadcrumb } = useContext(
-    MenuExplorerContext
-  )
-  useEffect(() => {
-  }, [breadcrumb])
+  const { tree, updateBreadcrumb, resetBreadcrumb, firstPositionBC, breadcrumb } = useContext(MenuExplorerContext)
+
+  const container = useRef(null)
 
   return (
     <div className={className} {...restProps}>
       <SimpleSlider slidesToShow={5} sizeImage='small' responsive>
         {tree.children.map((leaf, i) => (
           <div className='px-5' key={i}>
-            <div className='bg-transparent shadow-3 h-[100px] flex' key={breadcrumb[0]}>
+            <div className='bg-transparent shadow-3 h-[100px] flex relative' key={breadcrumb[0]} ref={container}>
               <button className={`w-full p-4 ${breadcrumb[0] === leaf.label ? 'bg-lemon' : 'bg-white'}`} value={leaf.label} onClick={firstPositionBC}>
                 <div className="">
                   <img className="mx-auto h-[12.69px]" src={breadcrumb[0] === leaf.label ? leaf.pathImage?.white || '/images/animales-cifras-icon-white.svg' : leaf.pathImage?.black || '/images/animales-cifras-icon-black.svg'} />
@@ -79,6 +76,7 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
                 </div>
               </button>
               <Menu
+                portal
                 menuButton={
                   <MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className={`w-full h-full max-w-[40px] grid place-items-center border-l border-l-lemon flex-shrink-0 ${!breadcrumb.length || breadcrumb[0] !== leaf.label ? 'cursor-not-allowed opacity-40' : 'cursor-pointer bg-opacity-100'}`}>
                     <div className="px-[11.61px]">

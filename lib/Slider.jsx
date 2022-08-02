@@ -42,7 +42,7 @@ export default function SimpleSlider ({ children, dots = 'false', slidesToShow =
     prevArrow: <SamplePrevArrow imagePath={buttonColorImagePath[buttonColor].prevButton} sizeImage={sizeImage} />
   }
   return (
-    <Slider adaptiveHeight dots={dots} slidesToShow={slidesToShow} slidesToScroll={slidesToScroll} responsive={responsive && [
+    <Slider dots={dots} slidesToShow={slidesToShow} slidesToScroll={slidesToScroll} responsive={responsive && [
       {
         breakpoint: 1024,
         settings: {

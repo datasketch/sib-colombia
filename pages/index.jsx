@@ -151,7 +151,7 @@ export default function Home () {
         </div>
       </div>
 
-      {/* Arboles de navegacio */}
+      {/* Arboles de navegación */}
       <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
           <MenuExplorer tree={biologicTree} search={searchBiologicTree}>
