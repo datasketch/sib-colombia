@@ -7,7 +7,6 @@ import MenuExplorer from '../components/MenuExplorer'
 import biologicTree from './../data/arbol_grupos_biologicos.json'
 import interestTree from './../data/arbol_grupos_interes.json'
 import searchBiologicTree from './../data/narino_gr_bio.json'
-import { Carousel } from '../lib/Carousel'
 import { SimpleSlider } from '../lib/Slider'
 
 export default function Home () {
