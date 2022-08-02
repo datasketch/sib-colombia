@@ -610,7 +610,7 @@ export default function Home () {
             </div>
           </div>
           <div className='mt-[55.13px]'>
-            <img className='mx-auto' src="/images/app-datasketch.png" alt="app datasketch" />
+            <iframe className='h-screen w-full mx-auto' src="https://datasketch.shinyapps.io/sib-data-app/?region=narino"></iframe>
           </div>
         </div>
       </div>
