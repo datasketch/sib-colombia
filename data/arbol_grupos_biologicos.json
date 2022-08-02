@@ -4,6 +4,10 @@
     {
       "slug": "animales",
       "label": "Animales",
+      "pathImage": {
+        "black": "/images/animales-cifras-icon-black.svg",
+        "white": "/images/animales-cifras-icon-white.svg"
+      },
       "children": [
         {
           "slug": "destacadas-animales",
@@ -146,6 +150,10 @@
     {
       "slug": "plantas",
       "label": "Plantas",
+      "pathImage": {
+        "black": "/images/plantas-cifras-icon-black.svg",
+        "white": "/images/plantas-cifras-icon-white.svg"
+      },
       "children": [
         {
           "slug": "destacadas-plantas",
@@ -297,6 +305,54 @@
     {
       "slug": "algas",
       "label": "Algas"
+    },
+    {
+      "slug": "hongos",
+      "label": "Hongos",
+      "pathImage": {
+        "black": "/images/hongos-cifras-icon-black.svg",
+        "white": "/images/hongos-cifras-icon-white.svg"
+      }
+    },
+    {
+      "slug": "bacterias",
+      "label": "Bacterias",
+      "pathImage": {
+        "black": "/images/bacterias-cifras-icon-black.svg",
+        "white": "/images/bacterias-cifras-icon-white.svg"
+      }
+    },
+    {
+      "slug": "archaea",
+      "label": "Archaea",
+      "pathImage": {
+        "black": "/images/archaea-cifras-icon-black.svg",
+        "white": "/images/archaea-cifras-icon-white.svg"
+      }
+    },
+    {
+      "slug": "cromista",
+      "label": "Cromista",
+      "pathImage": {
+        "black": "/images/cromista-cifras-icon-black.svg",
+        "white": "/images/cromista-cifras-icon-white.svg"
+      }
+    },
+    {
+      "slug": "protozoos",
+      "label": "Protozoos",
+      "pathImage": {
+        "black": "/images/protozoos-cifras-icon-black.svg",
+        "white": "/images/protozoos-cifras-icon-white.svg"
+      }
+    },
+    {
+      "slug": "virus",
+      "label": "Virus",
+      "pathImage": {
+        "black": "/images/virus-cifras-icon-black.svg",
+        "white": "/images/virus-cifras-icon-white.svg"
+      }
     },
     {
       "slug": "microorganismos",

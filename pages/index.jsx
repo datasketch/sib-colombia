@@ -3,12 +3,25 @@ import EspeciesCard from '../components/EspeciesCard'
 import especiesData from '../data/especies.json'
 import PublishersCard from '../components/PublishersCard'
 import publishersData from '../data/publishers.json'
-import { SimpleSlider } from '../lib/Slider'
 import MenuExplorer from '../components/MenuExplorer'
 import biologicTree from './../data/arbol_grupos_biologicos.json'
+import interestTree from './../data/arbol_grupos_interes.json'
 import searchBiologicTree from './../data/narino_gr_bio.json'
+// import Swiper core and required modules
+import { Navigation, Pagination } from 'swiper'
+
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
+
+import { Carousel } from '../lib/Carousel'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 export default function Home () {
+  const swiper = useSwiper()
+  const swiperPublishers = useSwiper()
   return (
     <>
       <Head>
@@ -58,9 +71,9 @@ export default function Home () {
       </div>
 
       <div className='bg-white-3 pb-20'>
-        <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <SimpleSlider dots>
-            <div className='px-5'>
+        <div className='mx-auto w-10/12 max-w-screen-xl relative'>
+          <Carousel>
+            <Carousel.Item>
               <div className='py-12 lg:py-16 xl:py-20 '>
                 <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
                   <div className='lg:w-6/12 max-w-[586px]'>
@@ -82,8 +95,8 @@ export default function Home () {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className='px-5'>
+            </Carousel.Item>
+            <Carousel.Item>
               <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-10'>
                 <div className='lg:col-start-1 lg:col-end-6 lg:row-start-1 lg:row-end-4'>
                   <div className='bg-blue-green text-white min-h-full px-[71px] py-[145px]'>
@@ -115,8 +128,8 @@ export default function Home () {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className='px-5'>
+            </Carousel.Item>
+            <Carousel.Item>
               <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-10'>
                 <div className='lg:col-start-1 lg:col-end-6'>
                   <div className='bg-blue-green py-20 px-24 text-white'>
@@ -145,86 +158,416 @@ export default function Home () {
                   </div>
                 </div>
               </div>
-            </div>
-          </SimpleSlider>
+            </Carousel.Item>
+          </Carousel>
         </div>
       </div>
 
       {/* Arboles de navegacio */}
-      <div className='py-12'>
-        <MenuExplorer tree={biologicTree} search={searchBiologicTree}>
-          <MenuExplorer.Title>
-            <h3>
-              Conoce las cifras por{' '}
-              <span className="font-bold text-6xl">Grupos Biológicos</span>
-            </h3>
-          </MenuExplorer.Title>
-          <MenuExplorer.Tree />
-          <MenuExplorer.Breadcrumb />
-          <MenuExplorer.Body className="bg-red-500">
-            {(selected, info) => (
-              <>
-                <h1>{selected}</h1>
-                <pre>{JSON.stringify(info)}</pre>
-              </>
-            )}
-          </MenuExplorer.Body>
-        </MenuExplorer>
-        <MenuExplorer tree={biologicTree} search={searchBiologicTree}>
-          <MenuExplorer.Title>
-            <h3>
-              Conoce las cifras por{' '}
-              <span className="font-bold text-6xl">Grupos Biológicos</span>
-            </h3>
-          </MenuExplorer.Title>
-          <MenuExplorer.Tree />
-          <MenuExplorer.Breadcrumb />
-          <MenuExplorer.Body className="bg-red-500">
-            {(selected, info) => (
-              <>
-                <h1>{selected}</h1>
-                <pre>{JSON.stringify(info)}</pre>
-              </>
-            )}
-          </MenuExplorer.Body>
-        </MenuExplorer>
+      <div className='py-12 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-xl'>
+          <MenuExplorer tree={biologicTree} search={searchBiologicTree}>
+            <MenuExplorer.Title>
+              <p className='3xl:text-lg'>
+                Conoce las cifras por
+              </p>
+              <h2 className='font-black text-3xl 3xl:text-4xl'>
+                Grupos Biológicos
+              </h2>
+            </MenuExplorer.Title>
+            <MenuExplorer.Tree className='relative mt-[45.52px]' />
+            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Body className="-mt-10">
+              {(selected, info) => (
+                <div className='bg-white py-12 lg:py-16 xl:py-20'>
+                  <div className='text-center'>
+                    <h3 className='font-black text-2xl 3xl:text-3xl'>
+                      {selected}
+                    </h3>
+                  </div>
+                  <div className='mx-auto w-10/12 mt-10'>
+                    <div className='flex flex-col lg:flex-row items-center justify-between gap-y-8'>
+                      <div className='lg:w-1/3 max-w-[216.31px]'>
+                        <div className='text-center'>
+                          <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
+                            {info?.especies_amenazadas_global | 0}
+                          </p>
+                          <p className='3xl:text-lg'>
+                            Especies amenazadas
+                          </p>
+                          <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
+                          <div className='mt-[25.4px] space-y-[7px]'>
+                            <p className='text-sm'>
+                              Lorem ipsum dolor sit
+                            </p>
+                            <p className='text-sm'>
+                              Lorem ipsum dolor sit
+                            </p>
+                            <p className='text-sm'>
+                              Lorem ipsum dolor sit
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='lg:w-1/3 max-w-[216.31px]'>
+                        <div className='text-center'>
+                          <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
+                            {info?.especies_cites | 0}
+                          </p>
+                          <p className='3xl:text-lg'>
+                            Especies CITES
+                          </p>
+                          <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
+                          <div className='mt-[25.4px] space-y-[7px]'>
+                            <p className='text-sm'>
+                              Lorem ipsum dolor sit
+                            </p>
+                            <p className='text-sm'>
+                              Lorem ipsum dolor sit
+                            </p>
+                            <p className='text-sm'>
+                              Lorem ipsum dolor sit
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='lg:w-1/3 max-w-[216.31px]'>
+                        <div className='text-center'>
+                          <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
+                            {info?.especies_endemicas | 0}
+                          </p>
+                          <p className='3xl:text-lg'>
+                            Especies endémicas
+                          </p>
+                          <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
+                          <div className='mt-[25.4px] space-y-[7px]'>
+                            <p className='text-sm'>
+                              Lorem ipsum dolor sit
+                            </p>
+                            <p className='text-sm'>
+                              Lorem ipsum dolor sit
+                            </p>
+                            <p className='text-sm'>
+                              Lorem ipsum dolor sit
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </MenuExplorer.Body>
+          </MenuExplorer>
+        </div>
+      </div>
 
-        <MenuExplorer tree={biologicTree} search={searchBiologicTree}>
-          <MenuExplorer.Title>
-            <h3>
-              Conoce las cifras por{' '}
-              <span className="font-bold text-6xl">Grupos Biológicos</span>
-            </h3>
-          </MenuExplorer.Title>
-          <MenuExplorer.Tree />
-          <MenuExplorer.Breadcrumb />
-          <MenuExplorer.Body className="bg-red-500">
-            {(selected, info) => (
-              <>
-                <h1>{selected}</h1>
-                <pre>{JSON.stringify(info)}</pre>
-              </>
-            )}
-          </MenuExplorer.Body>
-        </MenuExplorer>
-        <MenuExplorer tree={biologicTree} search={searchBiologicTree}>
-          <MenuExplorer.Title>
-            <h3>
-              Conoce las cifras por{' '}
-              <span className="font-bold text-6xl">Grupos Biológicos</span>
-            </h3>
-          </MenuExplorer.Title>
-          <MenuExplorer.Tree />
-          <MenuExplorer.Breadcrumb />
-          <MenuExplorer.Body className="bg-red-500">
-            {(selected, info) => (
-              <>
-                <h1>{selected}</h1>
-                <pre>{JSON.stringify(info)}</pre>
-              </>
-            )}
-          </MenuExplorer.Body>
-        </MenuExplorer>
+      {/* Arboles de navegacio */}
+      <div className='py-12 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-xl'>
+          <MenuExplorer tree={interestTree} search={searchBiologicTree}>
+            <MenuExplorer.Title>
+              <p className='3xl:text-lg'>
+                Conoce las cifras por
+              </p>
+              <h2 className='font-black text-3xl 3xl:text-4xl'>
+                Grupos de interés
+              </h2>
+            </MenuExplorer.Title>
+            <MenuExplorer.Tree className='relative mt-[45.52px]' />
+            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <div className='bg-white py-12 lg:py-16 xl:py-20'>
+              <div className='text-center'>
+                <h3 className='font-black text-2xl 3xl:text-3xl'>
+                  Grupos de interés
+                </h3>
+              </div>
+              <div className='mx-auto w-10/12 mt-10'>
+                <div className='flex flex-col lg:flex-row items-center justify-between gap-y-8'>
+                  <div className='lg:w-1/3 max-w-[216.31px]'>
+                    <div className='text-center'>
+                      <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
+                        86
+                      </p>
+                      <p className='3xl:text-lg'>
+                        Especies amenazadas
+                      </p>
+                      <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
+                      <div className='mt-[25.4px] space-y-[7px]'>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='lg:w-1/3 max-w-[216.31px]'>
+                    <div className='text-center'>
+                      <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
+                        216
+                      </p>
+                      <p className='3xl:text-lg'>
+                        Especies CITES
+                      </p>
+                      <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
+                      <div className='mt-[25.4px] space-y-[7px]'>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='lg:w-1/3 max-w-[216.31px]'>
+                    <div className='text-center'>
+                      <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
+                        41
+                      </p>
+                      <p className='3xl:text-lg'>
+                        Especies endémicas
+                      </p>
+                      <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
+                      <div className='mt-[25.4px] space-y-[7px]'>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </MenuExplorer>
+        </div>
+      </div>
+
+      {/* Arboles de navegacio */}
+      <div className='py-12 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-xl'>
+          <MenuExplorer tree={interestTree} search={searchBiologicTree}>
+            <MenuExplorer.Title>
+              <p className='3xl:text-lg'>
+                Conoce las cifras por
+              </p>
+              <h2 className='font-black text-3xl 3xl:text-4xl'>
+                Temáticas
+              </h2>
+            </MenuExplorer.Title>
+            <MenuExplorer.Tree className='relative mt-[45.52px]' />
+            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <div className='bg-white py-12 lg:py-16 xl:py-20'>
+              <div className='mx-auto w-10/12 mt-10'>
+                <div className='flex flex-col lg:flex-row items-center justify-between gap-y-8'>
+                  <div className='lg:w-6/12 max-w-[301px.29px]'>
+                    <div className='text-center'>
+                      <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
+                        15
+                      </p>
+                      <p className='3xl:text-lg'>
+                        Especies registradas
+                      </p>
+                      <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
+                      <div className='mt-[25.4px] space-y-[7px]'>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='lg:w-5/12 max-w-[322px]'>
+                    <div>
+                      <h3 className='font-bold 3xl:text-lg'>
+                        Especies exóticas destacadas
+                      </h3>
+                      <div>
+                        <div className='flex justify-between items-center mt-[35.52px] gap-x-4'>
+                          <div className='max-w-[106.39px] w-4/12'>
+                            <img className='w-full h-full' src="/images/prueba.jpg" alt="prueba" />
+                          </div>
+                          <div className='max-w-[173px] w-8/12'>
+                            <div>
+                              <h4 className='3xl:text-lg'>
+                                Mikania micrantha
+                              </h4>
+                              <p className='text-sm mt-[13.8px]'>
+                                <span className='font-barlow-condensed text-2xl 3xl:text-[32px] font-semibold'>13</span>
+                                registros
+                              </p>
+                              <div className='flex mt-[14.6px]'>
+                                <div className='w-1/3 h-[4px]' style={{ backgroundColor: '#93FF41' }}>&nbsp;</div>
+                                <div className='w-1/3 h-[4px]' style={{ backgroundColor: '#FF4141' }}>&nbsp;</div>
+                                <div className='w-1/3 h-[4px]' style={{ backgroundColor: '#FFB341' }}>&nbsp;</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='flex justify-between items-center mt-[35.52px] gap-x-4'>
+                          <div className='max-w-[106.39px] w-4/12'>
+                            <img className='w-full h-full' src="/images/prueba.jpg" alt="prueba" />
+                          </div>
+                          <div className='max-w-[173px] w-8/12'>
+                            <div>
+                              <h4 className='3xl:text-lg'>
+                                Mikania micrantha
+                              </h4>
+                              <p className='text-sm mt-[13.8px]'>
+                                <span className='font-barlow-condensed text-2xl 3xl:text-[32px] font-semibold'>13</span>
+                                registros
+                              </p>
+                              <div className='flex mt-[14.6px]'>
+                                <div className='w-1/3 h-[4px]' style={{ backgroundColor: '#93FF41' }}>&nbsp;</div>
+                                <div className='w-1/3 h-[4px]' style={{ backgroundColor: '#FF4141' }}>&nbsp;</div>
+                                <div className='w-1/3 h-[4px]' style={{ backgroundColor: '#FFB341' }}>&nbsp;</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='flex justify-between items-center mt-[35.52px] gap-x-4'>
+                          <div className='max-w-[106.39px] w-4/12'>
+                            <img className='w-full h-full' src="/images/prueba.jpg" alt="prueba" />
+                          </div>
+                          <div className='max-w-[173px] w-8/12'>
+                            <div>
+                              <h4 className='3xl:text-lg'>
+                                Mikania micrantha
+                              </h4>
+                              <p className='text-sm mt-[13.8px]'>
+                                <span className='font-barlow-condensed text-2xl 3xl:text-[32px] font-semibold'>13</span>
+                                registros
+                              </p>
+                              <div className='flex mt-[14.6px]'>
+                                <div className='w-1/3 h-[4px]' style={{ backgroundColor: '#93FF41' }}>&nbsp;</div>
+                                <div className='w-1/3 h-[4px]' style={{ backgroundColor: '#FF4141' }}>&nbsp;</div>
+                                <div className='w-1/3 h-[4px]' style={{ backgroundColor: '#FFB341' }}>&nbsp;</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </MenuExplorer>
+        </div>
+      </div>
+
+      {/* Arboles de navegacio */}
+      <div className='py-12 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-xl'>
+          <MenuExplorer tree={interestTree} search={searchBiologicTree}>
+            <MenuExplorer.Title>
+              <p className='3xl:text-lg'>
+                Conoce las cifras por
+              </p>
+              <h2 className='font-black text-3xl 3xl:text-4xl'>
+                Regiones
+              </h2>
+            </MenuExplorer.Title>
+            <MenuExplorer.Tree className='relative mt-[45.52px]' />
+            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <div className='bg-white py-12 lg:py-16 xl:py-20'>
+              <div className='text-center'>
+                <h3 className='font-black text-2xl 3xl:text-3xl'>
+                  Número de especies registradas por municipios de Nariño
+                </h3>
+              </div>
+              <div className='mx-auto w-10/12 mt-10'>
+                <div className='flex flex-col lg:flex-row items-center justify-between gap-y-8'>
+                  <div className='lg:w-1/3 max-w-[216.31px]'>
+                    <div className='text-center'>
+                      <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
+                        86
+                      </p>
+                      <p className='3xl:text-lg'>
+                        Especies amenazadas
+                      </p>
+                      <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
+                      <div className='mt-[25.4px] space-y-[7px]'>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='lg:w-1/3 max-w-[216.31px]'>
+                    <div className='text-center'>
+                      <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
+                        216
+                      </p>
+                      <p className='3xl:text-lg'>
+                        Especies CITES
+                      </p>
+                      <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
+                      <div className='mt-[25.4px] space-y-[7px]'>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='lg:w-1/3 max-w-[216.31px]'>
+                    <div className='text-center'>
+                      <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
+                        41
+                      </p>
+                      <p className='3xl:text-lg'>
+                        Especies endémicas
+                      </p>
+                      <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
+                      <div className='mt-[25.4px] space-y-[7px]'>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                        <p className='text-sm'>
+                          Lorem ipsum dolor sit
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </MenuExplorer>
+        </div>
       </div>
 
       <div className='py-12 lg:py-16 xl:py-20 bg-blue-green'>
@@ -232,12 +575,18 @@ export default function Home () {
           <h2 className='text-white font-black text-3xl 3xl:text-4xl'>
             Publicadores
           </h2>
-          <div className='mt-[50px]'>
-            <SimpleSlider slidesToShow={4} slidesToScroll={4} buttonColor='light'>
+          <div className='mt-[50px] relative'>
+            <Carousel slidesPerView={4} responsive>
               {
-                publishersData.map((item, index) => <PublishersCard key={`publisher-item-${index + 1}`} {...item} />)
+                publishersData.map((item, index) => {
+                  return (
+                    <Carousel.Item key={index}>
+                      <PublishersCard {...item} />
+                    </Carousel.Item>
+                  )
+                })
               }
-            </SimpleSlider>
+            </Carousel>
           </div>
           <div className='mt-10 text-center'>
             <a className='inline-block text-white border border-white rounded-[26px] py-3 px-[30px]' href="#">

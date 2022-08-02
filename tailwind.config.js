@@ -5,12 +5,10 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}'
   ],
   safelist: [
-    'slick-arrow',
-    'slick-prev',
-    'slick-next',
-    'slick-disabled',
-    'slick-dots',
-    'slick-active'
+    'swiper',
+    'swiper-pagination',
+    'swiper-pagination-bullet',
+    'swiper-pagination-bullet-active'
   ],
   theme: {
     extend: {
@@ -27,6 +25,7 @@ module.exports = {
         'white-3': '#F1F1F1',
         'blue-green': '#005054',
         'black-2': '#000000CC',
+        'black-3': '#00000066',
         lemon: '#09A274',
         'gray-2': '#F4F4F4'
       },

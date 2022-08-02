@@ -1,0 +1,53 @@
+{
+    "slug": "0",
+    "children": [
+        {
+            "slug": "orquideas",
+            "label": "Orquideas"
+        },
+        {
+            "slug": "magnolias",
+            "label": "Magnolias y afines"
+        },
+        {
+            "slug": "bromelias",
+            "label": "Bromelias labiadas y pasifloras"
+        },
+        {
+            "slug": "palmas",
+            "label": "Palmas"
+        },
+        {
+            "slug": "zamias",
+            "label": "Zamias"
+        },
+        {
+            "slug": "cactus",
+            "label": "Cactus"
+        },
+        {
+            "slug": "especiesmaderables",
+            "label": "Especies maderables"
+        },
+        {
+            "slug": "fanerogramas",
+            "label": "Fanerógamas"
+        },
+        {
+            "slug": "frailejones",
+            "label": "Frailejones"
+        },
+        {
+            "slug": "mangles",
+            "label": "Mangles"
+        },
+        {
+            "slug": "pastos",
+            "label": "Patos y afines"
+        },
+        {
+            "slug": "pinos",
+            "label": "Pinos y afines"
+        }
+    ]
+}
