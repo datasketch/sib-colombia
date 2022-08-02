@@ -1,6 +1,5 @@
 export default function MenuBox ({ label, pathImage = { black: '/images/animales-cifras-icon-black.svg' } }) {
   const { black } = pathImage
-  console.log(pathImage)
   return (
     <div className="bg-white shadow-3 h-[100px] overflow-y-scroll no-scrollbar">
       <div className="flex">

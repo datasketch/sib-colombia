@@ -78,11 +78,13 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
               <Menu
                 portal
                 menuButton={
-                  <MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className={`w-full h-full max-w-[40px] grid place-items-center border-l border-l-lemon flex-shrink-0 ${!breadcrumb.length || breadcrumb[0] !== leaf.label ? 'cursor-not-allowed opacity-40' : 'cursor-pointer bg-opacity-100'}`}>
+                  leaf.children
+                    ? (<MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className={`w-full h-full max-w-[40px] grid place-items-center border-l border-l-lemon flex-shrink-0 ${!breadcrumb.length || breadcrumb[0] !== leaf.label ? 'cursor-not-allowed opacity-40' : 'cursor-pointer bg-opacity-100'}`}>
                     <div className="px-[11.61px]">
                       <img src="/images/arrow-down-icon.svg" alt="arrow down" />
                     </div>
-                  </MenuButton>
+                  </MenuButton>)
+                    : <div></div>
                 }
                 onClick={updateBreadcrumb}
                 onMenuChange={resetBreadcrumb}
@@ -93,9 +95,10 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
               </Menu>
             </div>
           </div>
-        ))}
-      </SimpleSlider>
-    </div>
+        ))
+        }
+      </SimpleSlider >
+    </div >
   )
 }
 
@@ -133,7 +136,6 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
   const { selected, search } = useContext(MenuExplorerContext)
   const info = search.find((item) => item.label === selected)
-  console.log(selected)
   return (
     <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
       {children(selected, info)}
