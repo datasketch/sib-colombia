@@ -9,7 +9,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-export const Carousel = ({ children, navigation = false, pagination = false, slidesPerView = 1, responsive = false, spaceBetween = 50 }) => {
+export const Carousel = ({ children, navigation = false, pagination = false, slidesPerView = 1, responsive = false, spaceBetween = 50, classNames = '' }) => {
   const prevRef = useRef(null)
   const nextRef = useRef(null)
   return (
@@ -58,7 +58,7 @@ export const Carousel = ({ children, navigation = false, pagination = false, sli
       }}
     >
       {React.Children.map(children, child => (
-        <SwiperSlide>{child}</SwiperSlide>
+        <SwiperSlide className={classNames}>{child}</SwiperSlide>
       ))}
       {/* CUSTOM BUTTON */}
       {/* <div className='z-20'>
