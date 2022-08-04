@@ -10,6 +10,7 @@ const MenuExplorerContext = createContext(null)
 export default function MenuExplorer ({ children, tree, search, ...restProps }) {
   const [breadcrumb, setBreadcrumb] = useState([])
   const [selected, setSelected] = useState('')
+  const [selectedValue, setSelectedValue] = useState('')
 
   const updateBreadcrumb = (e) => {
     const { textContent, value } = e.target
@@ -20,6 +21,7 @@ export default function MenuExplorer ({ children, tree, search, ...restProps }) 
       return acc
     }, []))
     setSelected(textContent)
+    setSelectedValue(value || textContent.normalize('NFC').toLowerCase().replace(/[\u0300-\u036f]/g, ''))
   }
 
   const resetBreadcrumb = ({ open }) => {
@@ -29,15 +31,18 @@ export default function MenuExplorer ({ children, tree, search, ...restProps }) 
   }
 
   const firstPositionBC = (e) => {
-    const { textContent } = e.target.closest('button')
+    const { textContent, value } = e.target.closest('button')
     setBreadcrumb([textContent])
     setSelected(textContent)
+    setSelectedValue(value || textContent.normalize('NFC').toLowerCase().replace(/[\u0300-\u036f]/g, ''))
   }
   return (
     <MenuExplorerContext.Provider
       value={{
         selected,
         setSelected,
+        selectedValue,
+        setSelectedValue,
         breadcrumb,
         setBreadcrumb,
         updateBreadcrumb,
@@ -67,7 +72,7 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
         {tree.children.map((leaf, i) => (
           <div className='px-5' key={i}>
             <div className='bg-transparent shadow-3 h-36 w-48 flex relative' key={breadcrumb[0]} ref={container}>
-              <button className={`w-full h-full p-4 ${breadcrumb[0] === leaf.label ? 'bg-lemon' : 'bg-white'}`} value={leaf.label} onClick={firstPositionBC}>
+              <button className={`w-full h-full p-4 ${breadcrumb[0] === leaf.label ? 'bg-lemon' : 'bg-white'}`} value={leaf.slug} onClick={firstPositionBC}>
                 <div className="">
                   <img className="mx-auto h-[12.69px]" src={breadcrumb[0] === leaf.label ? leaf.icon_white || '/images/animales-cifras-icon-white.svg' : leaf.icon_black || '/images/animales-cifras-icon-black.svg'} />
                   <p className={`font-bold 3xl:text-lg mt-[10.31px] ${breadcrumb[0] === leaf.label ? 'text-white' : 'text-black-3'}`}>
@@ -134,13 +139,15 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 }
 
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
-  const { selected, search } = useContext(MenuExplorerContext)
-  const info = search.find((item) => item.slug_grupo_biologico === selected.toLowerCase())
-  // console.log(info)
-  // console.log(search)
+  const { selected, selectedValue, search } = useContext(MenuExplorerContext)
+  const info = search.find((item) => item.slug === selectedValue)
+  const cites = Object.entries(info || {}).filter((item) => item[0].includes('registros_cites_i'))
+  const nacional = Object.entries(info || {}).filter((item) => item[0].includes('registros_amenazadas_nacional_') && !item[0].includes('total'))
+  const global = Object.entries(info || {}).filter((item) => item[0].includes('registros_amenazadas_global_') && !item[0].includes('total'))
+  console.log(info)
   return (
     <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
-      {children(selected, info)}
+      {children(selected, info, cites, nacional, global)}
     </div>
   )
 }

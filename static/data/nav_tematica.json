@@ -252,7 +252,7 @@
     },
     {
       "slug": "distribucion",
-      "activa": true,
+      "activa": false,
       "icon": false,
       "icon_black": "static/icons/distribucion-black.svg",
       "icon_white": "static/icons/distribucion-white.svg",

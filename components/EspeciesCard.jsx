@@ -8,7 +8,7 @@ export default function EspeciesCard ({ typeName, especiesQuantity, observations
             </div>
             <div className='bg-black-2 w-[240px] lg:w-auto h-[190px] text-white text-center relative'>
                 <div className='absolute bottom-[25px] left-1/2 transform -translate-x-1/2'>
-                    <h3 className='font-barlow-condensed font-semibold text-5xl 3xl:text-6xl'>
+                    <h3 className='font-barlow-condensed font-semibold text-3xl 3xl:text-4xl'>
                         {especiesQuantity}
                     </h3>
                     <p className='text-sm'>

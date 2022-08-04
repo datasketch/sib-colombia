@@ -4,21 +4,24 @@ import especiesData from '../data/especies.json'
 import PublishersCard from '../components/PublishersCard'
 import publishersData from '../data/publishers.json'
 import MenuExplorer from '../components/MenuExplorer'
-import biologicTree from './../data/arbol_grupos_biologicos.json'
-import interestTree from './../data/arbol_grupos_interes.json'
-import searchBiologicTree from './../data/narino_gr_bio.json'
+
 import { SimpleSlider } from '../lib/Slider'
+import { formatNumbers } from '../lib/formatNumbers'
 import Slides from '../components/Slides'
 import narino from '../static/data/narino.json'
 import tematica from '../static/data/nav_tematica.json'
 import gruposBiologicos from '../static/data/nav_grupo_biologico.json'
 import regiones from '../static/data/nav_region.json'
+import gruposInteres from '../static/data/nav_grupo_interes_conservacion.json'
+import ReactMarkdown from 'react-markdown'
 
 export default function Home () {
   const slides = narino.slides
   const gruposBiologicosNarino = narino.grupos_biologicos
   const tematicaNarino = narino.tematica
-  console.log(gruposBiologicos)
+  const gruposInteresNarino = narino.grupos_interes
+  const generalInfo = narino.general_info
+  console.log(generalInfo)
   return (
     <>
       <Head>
@@ -27,12 +30,12 @@ export default function Home () {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='bg-banner-home bg-cover bg-center pt-36 pb-10'>
+      <div className='bg-banner-home bg-cover bg-center pt-44 pb-10'>
         <div className='mx-auto max-w-[950px]'>
           <div className='flex flex-col items-center justify-center lg:flex-row lg:justify-between text-white gap-y-8'>
             <div className='text-center lg:text-left'>
               <p className='font-barlow-condensed text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-[120px] font-semibold -ml-2'>
-                10.317
+                {formatNumbers(generalInfo.registros_region_total)}
               </p>
               <p className='-mt-2'>
                 Especies registradas
@@ -53,15 +56,17 @@ export default function Home () {
           <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
             <div className='lg:w-6/12'>
               <div className='flex flex-col gap-y-20 lg:flex-row lg:justify-between lg:gap-x-12'>
-                {
+                {/* {
                   especiesData.map((item, index) => <EspeciesCard key={`especies-item-${index + 1}`} {...item} />)
-                }
+                } */}
+                <EspeciesCard imagePath="/images/continental-especies-icon.svg" especiesQuantity={formatNumbers(generalInfo.especies_region_total)} observationsQuantity={formatNumbers(generalInfo.registros_continentales)} />
+                <EspeciesCard imagePath="/images/marine-especies-icon.svg" especiesQuantity={formatNumbers(generalInfo.especies_marinas)} observationsQuantity={formatNumbers(generalInfo.registros_marinos)} typeName='marinas'/>
               </div>
             </div>
             <div className='lg:w-6/12 max-w-[483px]'>
-              <p className='3xl:text-lg'>
-                Especies mariLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minimad as veniam, quis nostrud Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut ad laoreet dolore magna.
-              </p>
+              <ReactMarkdown className='text-lg lg:text-xl'>
+                {generalInfo.main_text}
+              </ReactMarkdown>
             </div>
           </div>
         </div>
@@ -93,18 +98,16 @@ export default function Home () {
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
-              {(selected, info) => (
+              {(selected, info, cites, nacional, global) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
                   <div className='w-10/12 mx-auto flex flex-col justify-center lg:grid lg:grid-cols-3 gap-10 font-lato'>
-                    <div className='space-y-2 shadow-md px-4 flex flex-col item-center justify-center'>
+                    <div className='space-y-2 shadow-md p-4 flex flex-col item-center justify-center'>
                       <div className='text-center font-bold text-[26px]'>
-                      <div className='text-7xl font-bold text-center'>{info?.registros_region_total}</div>
-                        <span>{selected}</span>
-                        {' '}
-                        registrados
+                        <div className='text-7xl font-bold text-center'>{formatNumbers(info?.especies_region_total)}</div>
+                        <span>Especies de {selected.toLowerCase()}</span>
                       </div>
                       <div className='text-center text-base space-x-2'>
-                        <b>{info?.especies_region_total}</b>
+                        <b>{formatNumbers(info?.registros_region_total)}</b>
                         <span>Observaciones en Nariño</span>
                       </div>
 
@@ -122,46 +125,59 @@ export default function Home () {
                     <div className='w-full space-y-2 shadow-md p-4'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies amenazadas</h2>
                       <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{info?.especies_exoticas}</b>
+                        <b className='text-center text-6xl'>{formatNumbers(info?.especies_exoticas)}</b>
                         <span className='text-center'>Registros</span>
                       </div>
                       <div className='flex gap-x-3'>
                         <div className='w-1/3 text-base'>Amenazada nacional</div>
-                        <div className=' w-full'>Valores</div>
+                        <div className=' w-full grid grid-cols-3'>
+                          {nacional?.map((item, i) => <div key={i} className='text-center uppercase'>{item[0].replace('registros_amenazadas_nacional_', '')}</div>)}
+                          {nacional?.map((item, i) => <div key={i} className='text-center'>{formatNumbers(item[1])}</div>)}
+                        </div>
                       </div>
                       <div className='flex gap-x-3'>
                         <div className='w-1/3 text-base'>Amenazada global</div>
-                        <div className=' w-full'>Valores</div>
+                        <div className=' w-full grid grid-cols-3'>
+                          {global?.map((item, i) => <div key={i} className='text-center uppercase flex flex-col gap-x-1'>
+                            <span>{item[0].replace('registros_amenazadas_global_', '')}</span>
+                            <span>
+                              {formatNumbers(item[1])}
+                            </span>
+                          </div>)}
+                        </div>
                       </div>
                     </div>
                     <div className='w-full space-y-2 shadow-md p-4'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies CITES</h2>
                       <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{info?.registros_cites}</b>
+                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_cites_total)}</b>
                         <span className='text-center'>Registros</span>
                       </div>
                       <div >
-                        <div className=''>Valores</div>
+                        <div className='grid grid-cols-3 gap-y-2'>
+                          {cites?.map((item, i) => <div key={i} className='text-center uppercase'>{item[0].replace('registros_cites_', '')}</div>)}
+                          {cites?.map((item, i) => <div key={i} className='text-center '>{formatNumbers(item[1])}</div>)}
+                        </div>
                       </div>
                     </div>
                     <div className='w-full space-y-2 my-4 shadow-md p-6'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies migratorias</h2>
                       <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{info?.registros_migratorias}</b>
+                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_migratorias)}</b>
                         <span className='text-center'>Registros</span>
                       </div>
                     </div>
                     <div className='w-full space-y-2 my-4 shadow-md p-6'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies endémicas</h2>
                       <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{info?.registros_endemicas}</b>
+                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_endemicas)}</b>
                         <span className='text-center'>Registros</span>
                       </div>
                     </div>
                     <div className='w-full space-y-2 my-4 shadow-md p-6'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies exóticas</h2>
                       <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{info?.registros_exoticas}</b>
+                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_exoticas)}</b>
                         <span className='text-center'>Registros</span>
                       </div>
                     </div>
@@ -176,7 +192,7 @@ export default function Home () {
       {/* Arboles de navegacion Grupos de interes */}
       <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <MenuExplorer tree={interestTree} search={searchBiologicTree}>
+          <MenuExplorer tree={gruposInteres} search={gruposInteresNarino}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras por
@@ -188,22 +204,20 @@ export default function Home () {
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
-              {(selected, info) => (
+              {(selected, info, cites, nacional, global) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
                   <div className='w-10/12 mx-auto flex flex-col justify-center lg:grid lg:grid-cols-3 gap-10 font-lato'>
-                    <div className='space-y-2 shadow-md px-4'>
-                      <div className='text-7xl font-bold text-center'>{info?.registros}</div>
+                    <div className='space-y-2 shadow-md p-4 flex flex-col item-center justify-center'>
                       <div className='text-center font-bold text-[26px]'>
-                        <span>{selected}</span>
-                        {' '}
-                        registrados
+                        <div className='text-7xl font-bold text-center'>{info?.especies_region_total}</div>
+                        <span>Especies de {selected.toLowerCase()}</span>
                       </div>
                       <div className='text-center text-base space-x-2'>
-                        <b>326</b>
-                        <span >Observaciones en Nariño</span>
+                        <b>{info?.registros_region_total}</b>
+                        <span>Observaciones en Nariño</span>
                       </div>
 
-                      <div>
+                      {info?.riqueza && (<div>
                         <div className='flex justify-between text-sm'>
                           <span>Riqueza actual</span>
                           <span>Riqueza estimada</span>
@@ -211,9 +225,8 @@ export default function Home () {
                         <div className='w-full py-4'>
                           grafica ?
                         </div>
-                      </div>
+                      </div>)}
                     </div>
-
                     <div className='w-full space-y-2 shadow-md p-4'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies amenazadas</h2>
                       <div className='flex flex-col justify-center'>
@@ -222,21 +235,46 @@ export default function Home () {
                       </div>
                       <div className='flex gap-x-3'>
                         <div className='w-1/3 text-base'>Amenazada nacional</div>
-                        <div className=' w-full'>Valores</div>
+                        <div className=' w-full grid grid-cols-3'>
+                          {nacional?.map((item, i) => <div key={i} className='text-center uppercase'>{item[0].replace('registros_amenazadas_nacional_', '')}</div>)}
+                          {nacional?.map((item, i) => <div key={i} className='text-center'>{item[1]}</div>)}
+                        </div>
                       </div>
                       <div className='flex gap-x-3'>
                         <div className='w-1/3 text-base'>Amenazada global</div>
-                        <div className=' w-full'>Valores</div>
+                        <div className=' w-full grid grid-cols-3'>
+                          {global?.map((item, i) => <div key={i} className='text-center uppercase flex flex-col gap-x-1'>
+                            <span>{item[0].replace('registros_amenazadas_global_', '')}</span>
+                            <span>
+                              {item[1]}
+                            </span>
+                          </div>)}
+                        </div>
                       </div>
                     </div>
-                    <div className='w-full space-y-2 shadow-md p-4'>
+                    {/* <div className='w-full space-y-2 shadow-md p-4'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies CITES</h2>
                       <div className='flex flex-col justify-center'>
                         <b className='text-center text-6xl'>{info?.registros_cites}</b>
-                        <span className='text-center'>Registros</span>
+                        <span className='text-center'>
+
+                        </span>
                       </div>
                       <div >
                         <div className=''>Valores</div>
+                      </div>
+                    </div> */}
+                    <div className='w-full space-y-2 shadow-md p-4'>
+                      <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies CITES</h2>
+                      <div className='flex flex-col justify-center'>
+                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_cites_total)}</b>
+                        <span className='text-center'>Registros</span>
+                      </div>
+                      <div >
+                        <div className='grid grid-cols-3 gap-y-2'>
+                          {cites?.map((item, i) => <div key={i} className='text-center uppercase'>{item[0].replace('registros_cites_', '')}</div>)}
+                          {cites?.map((item, i) => <div key={i} className='text-center '>{formatNumbers(item[1])}</div>)}
+                        </div>
                       </div>
                     </div>
                     <div className='w-full space-y-2 my-4 shadow-md p-6'>
@@ -287,7 +325,6 @@ export default function Home () {
               {(selected, info) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
                   <div className='flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto gap-10'>
-
                     <div className='text-center flex flex-col justify-center gap-2'>
                       <span className='text-7xl font-semibold font-barlow-condensed'>20</span>
                       <div className='font-bold text-2xl w-4/5 mx-auto'>
@@ -319,7 +356,7 @@ export default function Home () {
       {/* Arboles de navegacion Regiones */}
       <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <MenuExplorer tree={regiones} search={searchBiologicTree}>
+          <MenuExplorer tree={regiones} search={tematicaNarino}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras por
@@ -330,83 +367,13 @@ export default function Home () {
             </MenuExplorer.Title>
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
-            <div className='bg-white py-12 lg:py-16 xl:py-20'>
-              <div className='text-center'>
-                <h3 className='font-black text-2xl 3xl:text-3xl'>
-                  Número de especies registradas por municipios de Nariño
-                </h3>
-              </div>
-              <div className='mx-auto w-10/12 mt-10'>
-                <div className='flex flex-col lg:flex-row items-center justify-between gap-y-8'>
-                  <div className='lg:w-1/3 max-w-[216.31px]'>
-                    <div className='text-center'>
-                      <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
-                        86
-                      </p>
-                      <p className='3xl:text-lg'>
-                        Especies amenazadas
-                      </p>
-                      <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
-                      <div className='mt-[25.4px] space-y-[7px]'>
-                        <p className='text-sm'>
-                          Lorem ipsum dolor sit
-                        </p>
-                        <p className='text-sm'>
-                          Lorem ipsum dolor sit
-                        </p>
-                        <p className='text-sm'>
-                          Lorem ipsum dolor sit
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='lg:w-1/3 max-w-[216.31px]'>
-                    <div className='text-center'>
-                      <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
-                        216
-                      </p>
-                      <p className='3xl:text-lg'>
-                        Especies CITES
-                      </p>
-                      <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
-                      <div className='mt-[25.4px] space-y-[7px]'>
-                        <p className='text-sm'>
-                          Lorem ipsum dolor sit
-                        </p>
-                        <p className='text-sm'>
-                          Lorem ipsum dolor sit
-                        </p>
-                        <p className='text-sm'>
-                          Lorem ipsum dolor sit
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='lg:w-1/3 max-w-[216.31px]'>
-                    <div className='text-center'>
-                      <p className='font-barlow-condensed text-5xl 3xl:text-6xl font-semibold'>
-                        41
-                      </p>
-                      <p className='3xl:text-lg'>
-                        Especies endémicas
-                      </p>
-                      <img className='mx-auto mt-[31.69px]' src="/images/cifras-chart-demo.svg" alt="cifras" />
-                      <div className='mt-[25.4px] space-y-[7px]'>
-                        <p className='text-sm'>
-                          Lorem ipsum dolor sit
-                        </p>
-                        <p className='text-sm'>
-                          Lorem ipsum dolor sit
-                        </p>
-                        <p className='text-sm'>
-                          Lorem ipsum dolor sit
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+            <MenuExplorer.Body className="-mt-10">
+              {(selected, info) => (
+                <div className='bg-white py-12 lg:py-16 xl:py-20'>
+                  {selected}
                 </div>
-              </div>
-            </div>
+              )}
+            </MenuExplorer.Body>
           </MenuExplorer>
         </div>
       </div>

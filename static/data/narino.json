@@ -1,10 +1,21 @@
 {
+  "general_info": {
+    "registros_region_total": 637221,
+    "registros_continentales": 619039,
+    "registros_marinos": 13890,
+    "especies_region_total": 10080,
+    "especies_continentales": 9841,
+    "especies_marinas": 436,
+    "subtipo": "Departamento",
+    "label": "Nariño",
+    "main_text": "A través del SiB Colombia se han publicado 637221 observaciones\npara el Departamento de Nariño. Estos datos hacen referencia a un total de\n10080 especies, de las cuales 9841 habitan el territorio\nal interior del continente y 436 en el mar."
+  },
   "slides": [
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
       "title": "NARINO VS COLOMBIA",
-      "description": "El departamento de narino tiene alrededor del Faramea coffeoides (51653), Palicourea pyramidalis (28557), Prestoea acuminata (17351), Cyathea planadae (17211), Aiphanes erinacea (14486)% de las observaciones de especies del país.",
+      "description": "El departamento de narino tiene alrededor del 4% de las observaciones de especies del país.",
       "chart_type": "image",
       "chart_url": "static/charts/narino/reg_vs_parent.png"
     },
@@ -28,6 +39,7 @@
   ],
   "grupos_biologicos": [
     {
+      "slug": "abejas",
       "slug_region": "narino",
       "slug_grupo_biologico": "abejas",
       "especies_region_total": 13,
@@ -74,6 +86,7 @@
       "registros_amenazadas_global_dd": 29
     },
     {
+      "slug": "anfibios",
       "slug_region": "narino",
       "slug_grupo_biologico": "anfibios",
       "especies_region_total": 118,
@@ -120,6 +133,7 @@
       "registros_amenazadas_global_dd": 704
     },
     {
+      "slug": "animales",
       "slug_region": "narino",
       "slug_grupo_biologico": "animales",
       "especies_region_total": 2886,
@@ -166,6 +180,7 @@
       "registros_amenazadas_global_dd": 880
     },
     {
+      "slug": "aracnidos",
       "slug_region": "narino",
       "slug_grupo_biologico": "aracnidos",
       "especies_region_total": 105,
@@ -212,6 +227,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "aves",
       "slug_region": "narino",
       "slug_grupo_biologico": "aves",
       "especies_region_total": 1172,
@@ -258,6 +274,7 @@
       "registros_amenazadas_global_dd": 31
     },
     {
+      "slug": "dipteros",
       "slug_region": "narino",
       "slug_grupo_biologico": "dipteros",
       "especies_region_total": 56,
@@ -304,6 +321,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "escarabajos",
       "slug_region": "narino",
       "slug_grupo_biologico": "escarabajos",
       "especies_region_total": 126,
@@ -350,6 +368,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "hongos",
       "slug_region": "narino",
       "slug_grupo_biologico": "hongos",
       "especies_region_total": 453,
@@ -396,6 +415,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "hormigas",
       "slug_region": "narino",
       "slug_grupo_biologico": "hormigas",
       "especies_region_total": 62,
@@ -412,6 +432,7 @@
       "registros_amenazadas_global_total": 0
     },
     {
+      "slug": "insectos",
       "slug_region": "narino",
       "slug_grupo_biologico": "insectos",
       "especies_region_total": 562,
@@ -458,6 +479,7 @@
       "registros_amenazadas_global_dd": 29
     },
     {
+      "slug": "invertebrados",
       "slug_region": "narino",
       "slug_grupo_biologico": "invertebrados",
       "especies_region_total": 1055,
@@ -504,6 +526,7 @@
       "registros_amenazadas_global_dd": 33
     },
     {
+      "slug": "mamiferos",
       "slug_region": "narino",
       "slug_grupo_biologico": "mamiferos",
       "especies_region_total": 153,
@@ -550,6 +573,7 @@
       "registros_amenazadas_global_dd": 49
     },
     {
+      "slug": "mariposas",
       "slug_region": "narino",
       "slug_grupo_biologico": "mariposas",
       "especies_region_total": 180,
@@ -596,6 +620,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "moluscos",
       "slug_region": "narino",
       "slug_grupo_biologico": "moluscos",
       "especies_region_total": 198,
@@ -642,6 +667,7 @@
       "registros_amenazadas_global_dd": 1
     },
     {
+      "slug": "peces",
       "slug_region": "narino",
       "slug_grupo_biologico": "peces",
       "especies_region_total": 290,
@@ -688,6 +714,7 @@
       "registros_amenazadas_global_dd": 63
     },
     {
+      "slug": "plantas",
       "slug_region": "narino",
       "slug_grupo_biologico": "plantas",
       "especies_region_total": 6766,
@@ -734,6 +761,7 @@
       "registros_amenazadas_global_dd": 218
     },
     {
+      "slug": "reptiles",
       "slug_region": "narino",
       "slug_grupo_biologico": "reptiles",
       "especies_region_total": 98,
@@ -780,6 +808,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "vertebrados",
       "slug_region": "narino",
       "slug_grupo_biologico": "vertebrados",
       "especies_region_total": 1831,
@@ -828,6 +857,7 @@
   ],
   "grupos_interes": [
     {
+      "slug": "algas",
       "slug_region": "narino",
       "slug_grupo_interes_conservacion": "algas",
       "especies_region_total": 11,
@@ -844,6 +874,7 @@
       "registros_amenazadas_global_total": 0
     },
     {
+      "slug": "bromelias-labiadas-pasifloras",
       "slug_region": "narino",
       "slug_grupo_interes_conservacion": "bromelias-labiadas-pasifloras",
       "especies_region_total": 259,
@@ -890,6 +921,7 @@
       "registros_amenazadas_global_dd": 2
     },
     {
+      "slug": "especies-maderables",
       "slug_region": "narino",
       "slug_grupo_interes_conservacion": "especies-maderables",
       "especies_region_total": 6,
@@ -936,6 +968,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "fanerogamas",
       "slug_region": "narino",
       "slug_grupo_interes_conservacion": "fanerogamas",
       "especies_region_total": 26,
@@ -982,6 +1015,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "frailejones",
       "slug_region": "narino",
       "slug_grupo_interes_conservacion": "frailejones",
       "especies_region_total": 3,
@@ -1028,6 +1062,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "liquenes",
       "slug_region": "narino",
       "slug_grupo_interes_conservacion": "liquenes",
       "especies_region_total": 387,
@@ -1074,6 +1109,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "magnolias-afines",
       "slug_region": "narino",
       "slug_grupo_interes_conservacion": "magnolias-afines",
       "especies_region_total": 30,
@@ -1120,6 +1156,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "orquideas",
       "slug_region": "narino",
       "slug_grupo_interes_conservacion": "orquideas",
       "especies_region_total": 376,
@@ -1166,6 +1203,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "palmas",
       "slug_region": "narino",
       "slug_grupo_interes_conservacion": "palmas",
       "especies_region_total": 56,
@@ -1212,6 +1250,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "pinos-afines",
       "slug_region": "narino",
       "slug_grupo_interes_conservacion": "pinos-afines",
       "especies_region_total": 6,
@@ -1258,6 +1297,7 @@
       "registros_amenazadas_global_dd": 0
     },
     {
+      "slug": "zamias",
       "slug_region": "narino",
       "slug_grupo_interes_conservacion": "zamias",
       "especies_region_total": 1,
