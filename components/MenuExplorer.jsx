@@ -136,6 +136,7 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
   const { selected, search } = useContext(MenuExplorerContext)
   const info = search.find((item) => item.label === selected)
+  console.log(info)
   return (
     <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
       {children(selected, info)}
