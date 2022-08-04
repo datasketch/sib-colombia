@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import EspeciesCard from '../components/EspeciesCard'
-import especiesData from '../data/especies.json'
+// import especiesData from '../data/especies.json'
 import PublishersCard from '../components/PublishersCard'
 import publishersData from '../data/publishers.json'
 import MenuExplorer from '../components/MenuExplorer'
