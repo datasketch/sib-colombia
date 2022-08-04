@@ -10,9 +10,15 @@ import searchBiologicTree from './../data/narino_gr_bio.json'
 import { SimpleSlider } from '../lib/Slider'
 import Slides from '../components/Slides'
 import narino from '../static/data/narino.json'
+import tematica from '../static/data/nav_tematica.json'
+import gruposBiologicos from '../static/data/nav_grupo_biologico.json'
+import regiones from '../static/data/nav_region.json'
 
 export default function Home () {
   const slides = narino.slides
+  const gruposBiologicosNarino = narino.grupos_biologicos
+  const tematicaNarino = narino.tematica
+  console.log(gruposBiologicos)
   return (
     <>
       <Head>
@@ -21,7 +27,7 @@ export default function Home () {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='bg-banner-home bg-cover bg-center pt-36 pb-8'>
+      <div className='bg-banner-home bg-cover bg-center pt-36 pb-10'>
         <div className='mx-auto max-w-[950px]'>
           <div className='flex flex-col items-center justify-center lg:flex-row lg:justify-between text-white gap-y-8'>
             <div className='text-center lg:text-left'>
@@ -75,7 +81,7 @@ export default function Home () {
       {/* Arboles de navegación Grupos Biologicos */}
       <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <MenuExplorer tree={biologicTree} search={searchBiologicTree}>
+          <MenuExplorer tree={gruposBiologicos} search={gruposBiologicosNarino}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras por
@@ -90,19 +96,19 @@ export default function Home () {
               {(selected, info) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
                   <div className='w-10/12 mx-auto flex flex-col justify-center lg:grid lg:grid-cols-3 gap-10 font-lato'>
-                    <div className='space-y-2 shadow-md px-4'>
-                      <div className='text-7xl font-bold text-center'>{info?.registros}</div>
+                    <div className='space-y-2 shadow-md px-4 flex flex-col item-center justify-center'>
                       <div className='text-center font-bold text-[26px]'>
+                      <div className='text-7xl font-bold text-center'>{info?.registros_region_total}</div>
                         <span>{selected}</span>
                         {' '}
                         registrados
                       </div>
                       <div className='text-center text-base space-x-2'>
-                        <b>326</b>
-                        <span >Observaciones en Nariño</span>
+                        <b>{info?.especies_region_total}</b>
+                        <span>Observaciones en Nariño</span>
                       </div>
 
-                      <div>
+                      {info?.riqueza && (<div>
                         <div className='flex justify-between text-sm'>
                           <span>Riqueza actual</span>
                           <span>Riqueza estimada</span>
@@ -110,7 +116,7 @@ export default function Home () {
                         <div className='w-full py-4'>
                           grafica ?
                         </div>
-                      </div>
+                      </div>)}
                     </div>
 
                     <div className='w-full space-y-2 shadow-md p-4'>
@@ -146,7 +152,7 @@ export default function Home () {
                       </div>
                     </div>
                     <div className='w-full space-y-2 my-4 shadow-md p-6'>
-                      <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies Endemicas</h2>
+                      <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies endémicas</h2>
                       <div className='flex flex-col justify-center'>
                         <b className='text-center text-6xl'>{info?.registros_endemicas}</b>
                         <span className='text-center'>Registros</span>
@@ -266,7 +272,7 @@ export default function Home () {
       {/* Arboles de navegacion Tematica  */}
       <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <MenuExplorer tree={interestTree} search={searchBiologicTree}>
+          <MenuExplorer tree={tematica} search={tematicaNarino}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras por
@@ -280,13 +286,26 @@ export default function Home () {
             <MenuExplorer.Body className="-mt-10">
               {(selected, info) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
-                  <div className=''>
-                    <div className='text-center font-bold text-[26px]'>
-                      <span>{selected}</span>
-                      {' '}
-                      registrados
+                  <div className='flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto gap-10'>
+
+                    <div className='text-center flex flex-col justify-center gap-2'>
+                      <span className='text-7xl font-semibold font-barlow-condensed'>20</span>
+                      <div className='font-bold text-2xl w-4/5 mx-auto'>
+                        <span>Especies {' '} {selected}</span>
+                        {' '}
+                        registradas
+                      </div>
+                      <div className='space-x-2'>
+                        <b>10</b>
+
+                        <span>Observaciones en Nariño</span>
+                      </div>
+                      <div className='h-52 w-52 bg-lemon mx-auto'>
+
+                      </div>
                     </div>
-                    <div>
+
+                    <div className='bg-lemon w-full'>
                       Tabla
                     </div>
                   </div>
@@ -297,10 +316,10 @@ export default function Home () {
         </div>
       </div>
 
-      {/* Arboles de navegacio */}
+      {/* Arboles de navegacion Regiones */}
       <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <MenuExplorer tree={interestTree} search={searchBiologicTree}>
+          <MenuExplorer tree={regiones} search={searchBiologicTree}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras por

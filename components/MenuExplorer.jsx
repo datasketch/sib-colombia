@@ -66,10 +66,10 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
       <SimpleSlider slidesToShow={5} sizeImage='small' responsive>
         {tree.children.map((leaf, i) => (
           <div className='px-5' key={i}>
-            <div className='bg-transparent shadow-3 h-[100px] flex relative' key={breadcrumb[0]} ref={container}>
-              <button className={`w-full p-4 ${breadcrumb[0] === leaf.label ? 'bg-lemon' : 'bg-white'}`} value={leaf.label} onClick={firstPositionBC}>
+            <div className='bg-transparent shadow-3 h-36 w-48 flex relative' key={breadcrumb[0]} ref={container}>
+              <button className={`w-full h-full p-4 ${breadcrumb[0] === leaf.label ? 'bg-lemon' : 'bg-white'}`} value={leaf.label} onClick={firstPositionBC}>
                 <div className="">
-                  <img className="mx-auto h-[12.69px]" src={breadcrumb[0] === leaf.label ? leaf.pathImage?.white || '/images/animales-cifras-icon-white.svg' : leaf.pathImage?.black || '/images/animales-cifras-icon-black.svg'} />
+                  <img className="mx-auto h-[12.69px]" src={breadcrumb[0] === leaf.label ? leaf.icon_white || '/images/animales-cifras-icon-white.svg' : leaf.icon_black || '/images/animales-cifras-icon-black.svg'} />
                   <p className={`font-bold 3xl:text-lg mt-[10.31px] ${breadcrumb[0] === leaf.label ? 'text-white' : 'text-black-3'}`}>
                     {leaf.label}
                   </p>
@@ -135,8 +135,9 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
   const { selected, search } = useContext(MenuExplorerContext)
-  const info = search.find((item) => item.label === selected)
-  console.log(info)
+  const info = search.find((item) => item.slug_grupo_biologico === selected.toLowerCase())
+  // console.log(info)
+  // console.log(search)
   return (
     <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
       {children(selected, info)}

@@ -3,8 +3,8 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "NARIÑO VS COLOMBIA",
-      "description": "El departamento de nariño tiene alrededor del Faramea coffeoides (51653), Palicourea pyramidalis (28557), Prestoea acuminata (17351), Cyathea planadae (17211), Aiphanes erinacea (14486)% de las observaciones de especies del país.",
+      "title": "NARINO VS COLOMBIA",
+      "description": "El departamento de narino tiene alrededor del Faramea coffeoides (51653), Palicourea pyramidalis (28557), Prestoea acuminata (17351), Cyathea planadae (17211), Aiphanes erinacea (14486)% de las observaciones de especies del país.",
       "chart_type": "image",
       "chart_url": "static/charts/narino/reg_vs_parent.png"
     },

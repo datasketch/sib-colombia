@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 
 const Slides = ({ data }) => {
-  console.log(data)
   const { layout, chart_url, title, description, texts, chart1_url, chart2_url } = data
 
   if (layout === 'title/(text|chart)') {
