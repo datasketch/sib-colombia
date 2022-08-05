@@ -142,17 +142,18 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
   const { selected, selectedValue, search } = useContext(MenuExplorerContext)
   const info = search.find((item) => item.slug === selectedValue)
+  const infoTematica = search.find((item) => item.slug.includes(selectedValue))
   const cites = Object.entries(info || {}).filter((item) => item[0].includes('registros_cites_i'))
   const nacional = Object.entries(info || {}).filter((item) => item[0].includes('registros_amenazadas_nacional_') && !item[0].includes('total'))
   const global = Object.entries(info || {}).filter((item) => item[0].includes('registros_amenazadas_global_') && !item[0].includes('total'))
-  const { value } = Object.entries(search[0] || {}).filter((item) => item[0].includes(('registros_' + removeAccents(selectedValue) + '_total')))
-    .reduce((acc, act) => { return ({ ...acc, value: act[1] }) }, { })
-  // const [text, value] = tem || ['', '']
-  // const valueTem = tematica?.filter((item) => typeof (item) === 'number')[0] || 0
-  console.log(value)
+  // const { value } = Object.entries(search[0] || {}).filter((item) => item[0].includes(('registros_' + removeAccents(selectedValue) + '_total')))
+  //   .reduce((acc, act) => { return ({ ...acc, value: act[1] }) }, { })
+  console.log(selectedValue)
+  console.log(infoTematica)
+
   return (
   <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
-      {children(selected, info, cites, nacional, global, value)}
+      {children(selected, info, cites, nacional, global)}
   </div>
   )
 }
