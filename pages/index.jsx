@@ -22,7 +22,7 @@ export default function Home () {
   const gruposInteresNarino = narino.grupos_interes
   const generalInfo = narino.general_info
   const territoriosNarino = narino.territorio
-  // console.log(narino)
+
   return (
     <>
       <Head>

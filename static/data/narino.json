@@ -1405,7 +1405,7 @@
       "slug_tematica": "amenazadas-global-lr-lc",
       "label": "Especies LR/LC categoría global",
       "count": 9,
-      "slug": "lr-lc",
+      "slug": "lr/lc",
       "title": "Lista especies: amenazadas-global-lr-lc",
       "chart": "static/charts/narino/amenazadas-global-lr-lc.html"
     },
@@ -1413,7 +1413,7 @@
       "slug_tematica": "amenazadas-global-lr-nt",
       "label": "Especies LR/NT categoría global",
       "count": 5,
-      "slug": "lr-nt",
+      "slug": "lr/nt",
       "title": "Lista especies: amenazadas-global-lr-nt",
       "chart": "static/charts/narino/amenazadas-global-lr-nt.html"
     },

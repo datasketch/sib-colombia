@@ -141,7 +141,7 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
   const { selected, selectedValue, search } = useContext(MenuExplorerContext)
-  const info = search.find((item) => item.slug === selectedValue)
+  const info = search.find((item) => item.slug === selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
   const infoTematica = search.find((item) => item.slug === removeAccents(selectedValue, '-'))
   const cites = Object.entries(info || {}).filter((item) => item[0].includes('registros_cites_i'))
   const nacional = Object.entries(info || {}).filter((item) => item[0].includes('registros_amenazadas_nacional_') && !item[0].includes('total'))
@@ -149,8 +149,8 @@ MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restPro
   // const { value } = Object.entries(search[0] || {}).filter((item) => item[0].includes(('registros_' + removeAccents(selectedValue) + '_total')))
   //   .reduce((acc, act) => { return ({ ...acc, value: act[1] }) }, { })
   // console.log(removeAccents(selectedValue, '-'))
-  // console.log(search)
-  // console.log('info tematica', infoTematica)
+  console.log('filtro', selectedValue)
+  console.log('info tematica', infoTematica)
 
   return (
   <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
