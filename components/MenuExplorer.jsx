@@ -145,13 +145,14 @@ MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restPro
   const cites = Object.entries(info || {}).filter((item) => item[0].includes('registros_cites_i'))
   const nacional = Object.entries(info || {}).filter((item) => item[0].includes('registros_amenazadas_nacional_') && !item[0].includes('total'))
   const global = Object.entries(info || {}).filter((item) => item[0].includes('registros_amenazadas_global_') && !item[0].includes('total'))
-  const [tem] = Object.entries(search[0] || {}).filter((item) => item[0].includes(('registros_' + removeAccents(selectedValue) + '_total')))
+  const { value } = Object.entries(search[0] || {}).filter((item) => item[0].includes(('registros_' + removeAccents(selectedValue) + '_total')))
+    .reduce((acc, act) => { return ({ ...acc, value: act[1] }) }, { })
+  // const [text, value] = tem || ['', '']
   // const valueTem = tematica?.filter((item) => typeof (item) === 'number')[0] || 0
-  // .reduce((acc, act) => { return ({ ...acc, valor: act }) }, { })
-  // console.log(tem)
+  console.log(value)
   return (
   <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
-      {children(selected, info, cites, nacional, global, tem)}
+      {children(selected, info, cites, nacional, global, value)}
   </div>
   )
 }

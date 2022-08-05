@@ -311,13 +311,13 @@ export default function Home () {
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
-              {(selected, tem) => (
+              {(selected, info, cites, nacional, global, value) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
                   <div className='flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto gap-10'>
                     {/* <div className='text-center flex flex-col justify-center gap-2'> */}
                     <div className='text-center mx-auto justify-center gap-2'>
                       <span className='text-7xl font-semibold '>
-                        {tem.map((item, key) => item)}
+                        {formatNumbers(value)}
                       </span>
                       <div className='font-bold text-2xl w-4/5 mx-auto'>
                         <span>Especies {' '} {selected}</span>
