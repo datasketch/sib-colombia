@@ -1357,7 +1357,7 @@
       "slug_tematica": "amenazadas-global-cr",
       "label": "Especies CR categoría global",
       "count": 18,
-      "slug": "amenazadas-global-cr",
+      "slug": "cr",
       "title": "Lista especies: amenazadas-global-cr",
       "chart": "static/charts/narino/amenazadas-global-cr.html"
     },
@@ -1365,7 +1365,7 @@
       "slug_tematica": "amenazadas-global-dd",
       "label": "Especies DD categoría global",
       "count": 42,
-      "slug": "amenazadas-global-dd",
+      "slug": "dd",
       "title": "Lista especies: amenazadas-global-dd",
       "chart": "static/charts/narino/amenazadas-global-dd.html"
     },
@@ -1373,7 +1373,7 @@
       "slug_tematica": "amenazadas-global-en",
       "label": "Especies EN categoría global",
       "count": 53,
-      "slug": "amenazadas-global-en",
+      "slug": "en",
       "title": "Lista especies: amenazadas-global-en",
       "chart": "static/charts/narino/amenazadas-global-en.html"
     },
@@ -1381,7 +1381,7 @@
       "slug_tematica": "amenazadas-global-ew",
       "label": "Especies EW categoría global",
       "count": 5,
-      "slug": "amenazadas-global-ew",
+      "slug": "ew",
       "title": "Lista especies: amenazadas-global-ew",
       "chart": "static/charts/narino/amenazadas-global-ew.html"
     },
@@ -1389,7 +1389,7 @@
       "slug_tematica": "amenazadas-global-ex",
       "label": "Especies EX categoría global",
       "count": "NA",
-      "slug": "amenazadas-global-ex",
+      "slug": "ex",
       "title": "Lista especies: amenazadas-global-ex",
       "chart": "static/charts/narino/amenazadas-global-ex.html"
     },
@@ -1397,7 +1397,7 @@
       "slug_tematica": "amenazadas-global-lc",
       "label": "Especies LC categoría global",
       "count": 2294,
-      "slug": "amenazadas-global-lc",
+      "slug": "lc",
       "title": "Lista especies: amenazadas-global-lc",
       "chart": "static/charts/narino/amenazadas-global-lc.html"
     },
@@ -1405,7 +1405,7 @@
       "slug_tematica": "amenazadas-global-lr-lc",
       "label": "Especies LR/LC categoría global",
       "count": 9,
-      "slug": "amenazadas-global-lr-lc",
+      "slug": "lr-lc",
       "title": "Lista especies: amenazadas-global-lr-lc",
       "chart": "static/charts/narino/amenazadas-global-lr-lc.html"
     },
@@ -1413,7 +1413,7 @@
       "slug_tematica": "amenazadas-global-lr-nt",
       "label": "Especies LR/NT categoría global",
       "count": 5,
-      "slug": "amenazadas-global-lr-nt",
+      "slug": "lr-nt",
       "title": "Lista especies: amenazadas-global-lr-nt",
       "chart": "static/charts/narino/amenazadas-global-lr-nt.html"
     },
@@ -1421,7 +1421,7 @@
       "slug_tematica": "amenazadas-global-nt",
       "label": "Especies NT categoría global",
       "count": 88,
-      "slug": "amenazadas-global-nt",
+      "slug": "nt",
       "title": "Lista especies: amenazadas-global-nt",
       "chart": "static/charts/narino/amenazadas-global-nt.html"
     },
@@ -1429,7 +1429,7 @@
       "slug_tematica": "amenazadas-global-vu",
       "label": "Especies VU categoría global",
       "count": 92,
-      "slug": "amenazadas-global-vu",
+      "slug": "vu",
       "title": "Lista especies: amenazadas-global-vu",
       "chart": "static/charts/narino/amenazadas-global-vu.html"
     },
@@ -1445,7 +1445,7 @@
       "slug_tematica": "amenazadas-nacional-cr",
       "label": "Especies CR categoría nacional",
       "count": 14,
-      "slug": "amenazadas-nacional-cr",
+      "slug": "cr",
       "title": "Lista especies: amenazadas-nacional-cr",
       "chart": "static/charts/narino/amenazadas-nacional-cr.html"
     },
@@ -1453,7 +1453,7 @@
       "slug_tematica": "amenazadas-nacional-en",
       "label": "Especies EN categoría nacional",
       "count": 61,
-      "slug": "amenazadas-nacional-en",
+      "slug": "en",
       "title": "Lista especies: amenazadas-nacional-en",
       "chart": "static/charts/narino/amenazadas-nacional-en.html"
     },
@@ -1461,7 +1461,7 @@
       "slug_tematica": "amenazadas-nacional-vu",
       "label": "Especies VU categoría nacional",
       "count": 87,
-      "slug": "amenazadas-nacional-vu",
+      "slug": "vu",
       "title": "Lista especies: amenazadas-nacional-vu",
       "chart": "static/charts/narino/amenazadas-nacional-vu.html"
     },
@@ -1552,23 +1552,25 @@
       "charts": [
         {
           "title": "Especies por municipio",
-          "path": "static/charts/narino/region_municipios_1.html"
+          "path": "static/charts/narino/region_municipios_1.html",
+           "layout":"title/chart" 
         },
         {
           "title": "Observaciones por municipio",
-          "path": "static/charts/narino/region_municipios_2.html"
+          "path": "static/charts/narino/region_municipios_2.html",
+          "layout":"title/chart"
         }
       ]
     },
     {
       "slug": "reserva-forestal-la-planada",
       "title": "Próximamente tendrás acceso a la información de la reserva",
-      "path": {}
+      "charts": []
     },
     {
       "slug": "resguardo-indigena-pialapi-pueblo-viejo",      
       "title": "Próximamente tendrás acceso a la información del resguardo",
-      "path": {}
+      "charts": []
     }
   ]
 }

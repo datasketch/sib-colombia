@@ -21,7 +21,8 @@ export default function Home () {
   const tematicaNarino = narino.tematica
   const gruposInteresNarino = narino.grupos_interes
   const generalInfo = narino.general_info
-  // console.log(territorios)
+  const territoriosNarino = narino.territorio
+  // console.log(narino)
   return (
     <>
       <Head>
@@ -310,30 +311,21 @@ export default function Home () {
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
-              {(selected, info, cites, nacional, global, value) => (
+              {(selected, info, cites, nacional, global, infoTematica) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
                   <div className='flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto gap-10'>
-                    <div className='text-center flex flex-col justify-center gap-2'>
-                    {/* <div className='text-center mx-auto justify-center gap-2'> */}
+                    <div className='text-center flex flex-col justify-center items-center gap-2'>
                       <span className='text-7xl font-semibold '>
-                        {formatNumbers(value)}
+                        {formatNumbers(infoTematica?.count)}
                       </span>
                       <div className='font-bold text-2xl w-4/5 mx-auto'>
-                        <span>Especies {' '} {selected}</span>
-                        {' '}
-                        registradas
+                        <span>{infoTematica?.label}</span>
                       </div>
-                      {/* <div className='space-x-2'>
-                        <b>10</b>
-                        <span>Observaciones en Nariño</span>
-                      </div> */}
-                      {/* <div className='h-52 w-52 bg-lemon mx-auto'>
 
-                      </div> */}
                     </div>
 
-                    <div className='bg-lemon w-full'>
-                      Tabla
+                    <div className='w-full'>
+                      <iframe src={infoTematica?.chart} className='w-full h-[300px]'></iframe>
                     </div>
                   </div>
                 </div>
@@ -346,7 +338,7 @@ export default function Home () {
       {/* Arboles de navegacion Regiones */}
       <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <MenuExplorer tree={territorios} search={tematicaNarino}>
+          <MenuExplorer tree={territorios} search={territoriosNarino}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras por
@@ -359,12 +351,15 @@ export default function Home () {
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
               {(selected, info) => (
-                <div className='bg-white'>
-                  {/* <SimpleSlider dots>
-                    {slides.map((element, key) =>
+                <div className='bg-white py-12 lg:py-16 xl:py-20'>
+                  {info?.charts.length === 0
+                    ? <div className='text-center text-4xl py-20 w-4/5 mx-auto'>{info.title}...</div>
+                    : (<SimpleSlider dots>
+                      {info?.charts.map((element, key) =>
                       <Slides key={key} data={element} />
-                    )}
-                  </SimpleSlider> */}
+                      )}
+                  </SimpleSlider>)
+                  }
                 </div>
               )}
             </MenuExplorer.Body>

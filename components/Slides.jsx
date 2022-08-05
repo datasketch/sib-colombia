@@ -1,7 +1,23 @@
 /* eslint-disable camelcase */
 
 const Slides = ({ data }) => {
-  const { layout, chart_url, title, description, texts, chart1_url, chart2_url } = data
+  const { layout, chart_url, title, description, texts, chart1_url, chart2_url, path } = data
+  console.log(data)
+  if (layout === 'title/chart') {
+    return (
+      <div className="px-5">
+        <div className='py-12 lg:py-16 xl:py-20 '>
+          <div className='flex flex-col items-center lg:justify-between gap-y-3 lg:gap-y-6'>
+            <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>
+              {title}
+            </h2>
+            <iframe className='w-11/12 mx-auto h-[350px]' src={path} alt={title} />
+          </div>
+        </div>
+      </div>
+
+    )
+  }
 
   if (layout === 'title/(text|chart)') {
     return (
@@ -20,7 +36,7 @@ const Slides = ({ data }) => {
               <p className='text-center font-bold 3xl:text-lg'>
                 Especies registradas en Nariño vs. especies registradas en Colombia
               </p>
-              <img className='mx-auto mt-4' src={chart_url} alt="Grafica Nariño vs Colombia" />
+              <img className='mx-auto mt-4' src={chart_url} alt={title} />
             </div>
           </div>
         </div>
