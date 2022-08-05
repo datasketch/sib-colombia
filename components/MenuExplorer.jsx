@@ -2,7 +2,6 @@ import { createContext, useContext, useState, useEffect, useRef } from 'react'
 import { Menu, MenuButton } from '@szhsin/react-menu'
 import MenuBoxItem from './MenuBoxItem'
 import '@szhsin/react-menu/dist/index.css'
-
 import { SimpleSlider } from '../lib/Slider'
 import { removeAccents } from '../lib/formatNumbers'
 
