@@ -3,7 +3,6 @@ import { Menu, MenuButton } from '@szhsin/react-menu'
 import MenuBoxItem from './MenuBoxItem'
 import '@szhsin/react-menu/dist/index.css'
 import { SimpleSlider } from '../lib/Slider'
-import { removeAccents } from '../lib/formatNumbers'
 
 const MenuExplorerContext = createContext(null)
 
@@ -142,15 +141,16 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
   const { selected, selectedValue, search } = useContext(MenuExplorerContext)
   const info = search.find((item) => item.slug === selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-  const infoTematica = search.find((item) => item.slug === removeAccents(selectedValue, '-'))
+  const infoTematica = search.find((item) => item.slug === selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, '') || (item.slug).includes(selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace('apendice ', '').replace(' ', '-')))
   const cites = Object.entries(info || {}).filter((item) => item[0].includes('registros_cites_i'))
   const nacional = Object.entries(info || {}).filter((item) => item[0].includes('registros_amenazadas_nacional_') && !item[0].includes('total'))
   const global = Object.entries(info || {}).filter((item) => item[0].includes('registros_amenazadas_global_') && !item[0].includes('total'))
   // const { value } = Object.entries(search[0] || {}).filter((item) => item[0].includes(('registros_' + removeAccents(selectedValue) + '_total')))
   //   .reduce((acc, act) => { return ({ ...acc, value: act[1] }) }, { })
   // console.log(removeAccents(selectedValue, '-'))
-  console.log('filtro', selectedValue)
-  console.log('info tematica', infoTematica)
+  // console.log('filtro:', selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+  // console.log('info tematica', infoTematica)
+  // console.log('info', info)
 
   return (
   <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
