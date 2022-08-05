@@ -122,7 +122,7 @@ export default function Home () {
                       </div>
                       <div className='shadow-md p-4'>
                         <div className='space-y-2'>
-                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies amenazadas</h2>
+                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies amenazadas</h2>
                           <div className='text-center'>
                             <p className='text-6xl'><b>{formatNumbers(info?.especies_exoticas)}</b></p>
                             <p>Registros</p>
@@ -149,7 +149,7 @@ export default function Home () {
                       </div>
                       <div className='shadow-md p-4'>
                         <div className='space-y-2'>
-                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies CITES</h2>
+                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies en apéndices CITES</h2>
                           <div className='text-center'>
                             <p className='text-6xl'><b>{formatNumbers(info?.registros_cites_total)}</b></p>
                             <p>Registros</p>
@@ -163,21 +163,21 @@ export default function Home () {
                         </div>
                       </div>
                       <div className='space-y-2 my-4 shadow-md p-6'>
-                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies migratorias</h2>
+                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies migratorias</h2>
                         <div className='text-center'>
                           <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_migratorias)}</b></p>
                           <p className='text-center'>Registros</p>
                         </div>
                       </div>
                       <div className='space-y-2 my-4 shadow-md p-6'>
-                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies endémicas</h2>
+                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies endémicas</h2>
                         <div className='text-center'>
                           <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_endemicas)}</b></p>
                           <p className='text-center'>Registros</p>
                         </div>
                       </div>
                       <div className='space-y-2 my-4 shadow-md p-6'>
-                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies exóticas</h2>
+                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies exóticas</h2>
                         <div className='text-center'>
                           <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_exoticas)}</b></p>
                           <p className='text-center'>Registros</p>
@@ -234,7 +234,7 @@ export default function Home () {
                       </div>
                       <div className='shadow-md p-4'>
                         <div className='space-y-2'>
-                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies amenazadas</h2>
+                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies amenazadas</h2>
                           <div className='text-center'>
                             <p className='text-6xl'><b>{formatNumbers(info?.especies_exoticas)}</b></p>
                             <p>Registros</p>
@@ -261,7 +261,7 @@ export default function Home () {
                       </div>
                       <div className='shadow-md p-4'>
                         <div className='space-y-2'>
-                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies CITES</h2>
+                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies en apéndices CITES</h2>
                           <div className='text-center'>
                             <p className='text-6xl'><b>{formatNumbers(info?.registros_cites_total)}</b></p>
                             <p>Registros</p>
@@ -275,21 +275,21 @@ export default function Home () {
                         </div>
                       </div>
                       <div className='space-y-2 my-4 shadow-md p-6'>
-                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies migratorias</h2>
+                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies migratorias</h2>
                         <div className='text-center'>
                           <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_migratorias)}</b></p>
                           <p className='text-center'>Registros</p>
                         </div>
                       </div>
                       <div className='space-y-2 my-4 shadow-md p-6'>
-                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies endémicas</h2>
+                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies endémicas</h2>
                         <div className='text-center'>
                           <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_endemicas)}</b></p>
                           <p className='text-center'>Registros</p>
                         </div>
                       </div>
                       <div className='space-y-2 my-4 shadow-md p-6'>
-                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies exóticas</h2>
+                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies exóticas</h2>
                         <div className='text-center'>
                           <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_exoticas)}</b></p>
                           <p className='text-center'>Registros</p>
