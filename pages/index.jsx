@@ -209,85 +209,91 @@ export default function Home () {
             <MenuExplorer.Body className="-mt-10">
               {(selected, info, cites, nacional, global) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
-                  <div className='w-10/12 mx-auto flex flex-col justify-center lg:grid lg:grid-cols-3 gap-10 font-lato'>
-                    <div className='space-y-2 shadow-md p-4 flex flex-col item-center justify-center'>
-                      <div className='text-center font-bold text-[26px]'>
-                        <div className='text-7xl font-bold text-center'>{formatNumbers(info?.especies_region_total)}</div>
-                        <span>Especies de {selected.toLowerCase()}</span>
-                      </div>
-                      <div className='text-center text-base space-x-2'>
-                        <b>{info?.registros_region_total}</b>
-                        <span>Observaciones en Nariño</span>
-                      </div>
-
-                      {info?.riqueza && (<div>
-                        <div className='flex justify-between text-sm'>
-                          <span>Riqueza actual</span>
-                          <span>Riqueza estimada</span>
-                        </div>
-                        <div className='w-full py-4'>
-                          grafica ?
-                        </div>
-                      </div>)}
-                    </div>
-                    <div className='w-full space-y-2 shadow-md p-4'>
-                      <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies amenazadas</h2>
-                      <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{formatNumbers(info?.especies_exoticas)}</b>
-                        <span className='text-center'>Registros</span>
-                      </div>
-                      <div className='flex gap-x-3'>
-                        <div className='w-1/3 text-base'>Amenazada nacional</div>
-                        <div className=' w-full grid grid-cols-3'>
-                          {nacional?.map((item, i) => <div key={i} className='text-center uppercase'>{item[0].replace('registros_amenazadas_nacional_', '')}</div>)}
-                          {nacional?.map((item, i) => <div key={i} className='text-center'>{formatNumbers(item[1])}</div>)}
-                        </div>
-                      </div>
-                      <div className='flex gap-x-3'>
-                        <div className='w-1/3 text-base'>Amenazada global</div>
-                        <div className=' w-full grid grid-cols-3'>
-                          {global?.map((item, i) => <div key={i} className='text-center uppercase flex flex-col gap-x-1'>
-                            <span>{item[0].replace('registros_amenazadas_global_', '')}</span>
-                            <span>
-                              {formatNumbers(item[1])}
-                            </span>
+                  <div className='w-10/12 mx-auto'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10'>
+                      <div className='shadow-md p-4 grid place-items-center'>
+                        <div className='space-y-2'>
+                          <div className='text-center font-bold text-[26px]'>
+                            <div className='text-7xl font-bold text-center'>{formatNumbers(info?.especies_region_total)}</div>
+                            <p>Especies de {selected.toLowerCase()}</p>
+                          </div>
+                          <div className='text-center text-base space-x-2'>
+                            <p className='inline-block'><b>{formatNumbers(info?.registros_region_total)}</b></p>
+                            <p className='inline-block'>Observaciones en Nariño</p>
+                          </div>
+                          {info?.riqueza && (<div>
+                            <div className='flex justify-between text-sm'>
+                              <p>Riqueza actual</p>
+                              <p>Riqueza estimada</p>
+                            </div>
+                            <div className='w-full py-4'>
+                              grafica ?
+                            </div>
                           </div>)}
                         </div>
                       </div>
-                    </div>
-
-                    <div className='w-full space-y-2 shadow-md p-4'>
-                      <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies CITES</h2>
-                      <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_cites_total)}</b>
-                        <span className='text-center'>Registros</span>
-                      </div>
-                      <div >
-                        <div className='grid grid-cols-3 gap-y-2'>
-                          {cites?.map((item, i) => <div key={i} className='text-center uppercase'>{item[0].replace('registros_cites_', '')}</div>)}
-                          {cites?.map((item, i) => <div key={i} className='text-center '>{formatNumbers(item[1])}</div>)}
+                      <div className='shadow-md p-4'>
+                        <div className='space-y-2'>
+                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies amenazadas</h2>
+                          <div className='text-center'>
+                            <p className='text-6xl'><b>{formatNumbers(info?.especies_exoticas)}</b></p>
+                            <p>Registros</p>
+                          </div>
+                          <div className='flex flex-col justify-center items-center text-center xl:flex-row gap-y-1 gap-x-3'>
+                            <div className='w-1/3 text-base'><p>Amenazada nacional</p></div>
+                            <div className='w-full grid grid-cols-3'>
+                              {nacional?.map((item, i) => <div key={i} className='text-center uppercase'><p>{item[0].replace('registros_amenazadas_nacional_', '')}</p></div>)}
+                              {nacional?.map((item, i) => <div key={i} className='text-center'><p>{formatNumbers(item[1])}</p></div>)}
+                            </div>
+                          </div>
+                          <div className='flex flex-col justify-center items-center text-center xl:flex-row gap-y-1 gap-x-3'>
+                            <div className='w-1/3 text-base'><p>Amenazada global</p></div>
+                            <div className='w-full grid grid-cols-3'>
+                              {global?.map((item, i) => <div key={i} className='text-center uppercase flex flex-col gap-x-1'>
+                                <p>{item[0].replace('registros_amenazadas_global_', '')}</p>
+                                <p>
+                                  {formatNumbers(item[1])}
+                                </p>
+                              </div>)}
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className='w-full space-y-2 my-4 shadow-md p-6'>
-                      <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies migratorias</h2>
-                      <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_migratorias)}</b>
-                        <span className='text-center'>Registros</span>
+                      <div className='shadow-md p-4'>
+                        <div className='space-y-2'>
+                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies CITES</h2>
+                          <div className='text-center'>
+                            <p className='text-6xl'><b>{formatNumbers(info?.registros_cites_total)}</b></p>
+                            <p>Registros</p>
+                          </div>
+                          <div >
+                            <div className='grid grid-cols-3 gap-y-2'>
+                              {cites?.map((item, i) => <div key={i} className='text-center uppercase'><p>{item[0].replace('registros_cites_', '')}</p></div>)}
+                              {cites?.map((item, i) => <div key={i} className='text-center'><p>{formatNumbers(item[1])}</p></div>)}
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className='w-full space-y-2 my-4 shadow-md p-6'>
-                      <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies Endemicas</h2>
-                      <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_endemicas)}</b>
-                        <span className='text-center'>Registros</span>
+                      <div className='space-y-2 my-4 shadow-md p-6'>
+                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies migratorias</h2>
+                        <div className='text-center'>
+                          <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_migratorias)}</b></p>
+                          <p className='text-center'>Registros</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className='w-full space-y-2 my-4 shadow-md p-6'>
-                      <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies exóticas</h2>
-                      <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_exoticas)}</b>
-                        <span className='text-center'>Registros</span>
+                      <div className='space-y-2 my-4 shadow-md p-6'>
+                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies endémicas</h2>
+                        <div className='text-center'>
+                          <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_endemicas)}</b></p>
+                          <p className='text-center'>Registros</p>
+                        </div>
+                      </div>
+                      <div className='space-y-2 my-4 shadow-md p-6'>
+                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies exóticas</h2>
+                        <div className='text-center'>
+                          <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_exoticas)}</b></p>
+                          <p className='text-center'>Registros</p>
+                        </div>
                       </div>
                     </div>
                   </div>
