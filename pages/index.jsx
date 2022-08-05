@@ -11,7 +11,7 @@ import Slides from '../components/Slides'
 import narino from '../static/data/narino.json'
 import tematica from '../static/data/nav_tematica.json'
 import gruposBiologicos from '../static/data/nav_grupo_biologico.json'
-import regiones from '../static/data/nav_region.json'
+import territorios from '../static/data/nav_territorio.json'
 import gruposInteres from '../static/data/nav_grupo_interes_conservacion.json'
 import ReactMarkdown from 'react-markdown'
 
@@ -59,8 +59,8 @@ export default function Home () {
                 {/* {
                   especiesData.map((item, index) => <EspeciesCard key={`especies-item-${index + 1}`} {...item} />)
                 } */}
-                <EspeciesCard imagePath="/images/continental-especies-icon.svg" especiesQuantity={formatNumbers(generalInfo.especies_region_total)} observationsQuantity={formatNumbers(generalInfo.registros_continentales)} />
-                <EspeciesCard imagePath="/images/marine-especies-icon.svg" especiesQuantity={formatNumbers(generalInfo.especies_marinas)} observationsQuantity={formatNumbers(generalInfo.registros_marinos)} typeName='marinas'/>
+                <EspeciesCard imagePath="/images/continental-especies-icon.svg" especiesQuantity={formatNumbers(generalInfo.especies_continentales)} observationsQuantity={formatNumbers(generalInfo.registros_continentales)} typeName='continentales' />
+                <EspeciesCard imagePath="/images/marine-especies-icon.svg" especiesQuantity={formatNumbers(generalInfo.especies_marinas)} observationsQuantity={formatNumbers(generalInfo.registros_marinos)} typeName='marinas' />
               </div>
             </div>
             <div className='lg:w-6/12 max-w-[483px]'>
@@ -83,7 +83,7 @@ export default function Home () {
         </div>
       </div>
 
-      {/* Arboles de navegación Grupos Biologicos */}
+      {/* Arboles de navegación Grupos Biologicos  */}
       <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
           <MenuExplorer tree={gruposBiologicos} search={gruposBiologicosNarino}>
@@ -209,7 +209,7 @@ export default function Home () {
                   <div className='w-10/12 mx-auto flex flex-col justify-center lg:grid lg:grid-cols-3 gap-10 font-lato'>
                     <div className='space-y-2 shadow-md p-4 flex flex-col item-center justify-center'>
                       <div className='text-center font-bold text-[26px]'>
-                        <div className='text-7xl font-bold text-center'>{info?.especies_region_total}</div>
+                        <div className='text-7xl font-bold text-center'>{formatNumbers(info?.especies_region_total)}</div>
                         <span>Especies de {selected.toLowerCase()}</span>
                       </div>
                       <div className='text-center text-base space-x-2'>
@@ -230,14 +230,14 @@ export default function Home () {
                     <div className='w-full space-y-2 shadow-md p-4'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies amenazadas</h2>
                       <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{info?.especies_exoticas}</b>
+                        <b className='text-center text-6xl'>{formatNumbers(info?.especies_exoticas)}</b>
                         <span className='text-center'>Registros</span>
                       </div>
                       <div className='flex gap-x-3'>
                         <div className='w-1/3 text-base'>Amenazada nacional</div>
                         <div className=' w-full grid grid-cols-3'>
                           {nacional?.map((item, i) => <div key={i} className='text-center uppercase'>{item[0].replace('registros_amenazadas_nacional_', '')}</div>)}
-                          {nacional?.map((item, i) => <div key={i} className='text-center'>{item[1]}</div>)}
+                          {nacional?.map((item, i) => <div key={i} className='text-center'>{formatNumbers(item[1])}</div>)}
                         </div>
                       </div>
                       <div className='flex gap-x-3'>
@@ -246,24 +246,13 @@ export default function Home () {
                           {global?.map((item, i) => <div key={i} className='text-center uppercase flex flex-col gap-x-1'>
                             <span>{item[0].replace('registros_amenazadas_global_', '')}</span>
                             <span>
-                              {item[1]}
+                              {formatNumbers(item[1])}
                             </span>
                           </div>)}
                         </div>
                       </div>
                     </div>
-                    {/* <div className='w-full space-y-2 shadow-md p-4'>
-                      <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies CITES</h2>
-                      <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{info?.registros_cites}</b>
-                        <span className='text-center'>
 
-                        </span>
-                      </div>
-                      <div >
-                        <div className=''>Valores</div>
-                      </div>
-                    </div> */}
                     <div className='w-full space-y-2 shadow-md p-4'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies CITES</h2>
                       <div className='flex flex-col justify-center'>
@@ -280,21 +269,21 @@ export default function Home () {
                     <div className='w-full space-y-2 my-4 shadow-md p-6'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies migratorias</h2>
                       <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{info?.registros_migratorias}</b>
+                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_migratorias)}</b>
                         <span className='text-center'>Registros</span>
                       </div>
                     </div>
                     <div className='w-full space-y-2 my-4 shadow-md p-6'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies Endemicas</h2>
                       <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{info?.registros_endemicas}</b>
+                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_endemicas)}</b>
                         <span className='text-center'>Registros</span>
                       </div>
                     </div>
                     <div className='w-full space-y-2 my-4 shadow-md p-6'>
                       <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>Especies exóticas</h2>
                       <div className='flex flex-col justify-center'>
-                        <b className='text-center text-6xl'>{info?.registros_exoticas}</b>
+                        <b className='text-center text-6xl'>{formatNumbers(info?.registros_exoticas)}</b>
                         <span className='text-center'>Registros</span>
                       </div>
                     </div>
@@ -322,29 +311,31 @@ export default function Home () {
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
-              {(selected, info) => (
+              {(selected, tem) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
                   <div className='flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto gap-10'>
-                    <div className='text-center flex flex-col justify-center gap-2'>
-                      <span className='text-7xl font-semibold font-barlow-condensed'>20</span>
+                    {/* <div className='text-center flex flex-col justify-center gap-2'> */}
+                    <div className='text-center mx-auto justify-center gap-2'>
+                      <span className='text-7xl font-semibold '>
+                        {tem.map((item, key) => item)}
+                      </span>
                       <div className='font-bold text-2xl w-4/5 mx-auto'>
                         <span>Especies {' '} {selected}</span>
                         {' '}
                         registradas
                       </div>
-                      <div className='space-x-2'>
+                      {/* <div className='space-x-2'>
                         <b>10</b>
-
                         <span>Observaciones en Nariño</span>
-                      </div>
-                      <div className='h-52 w-52 bg-lemon mx-auto'>
+                      </div> */}
+                      {/* <div className='h-52 w-52 bg-lemon mx-auto'>
 
-                      </div>
+                      </div> */}
                     </div>
 
-                    <div className='bg-lemon w-full'>
+                    {/* <div className='bg-lemon w-full'>
                       Tabla
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               )}
@@ -356,7 +347,7 @@ export default function Home () {
       {/* Arboles de navegacion Regiones */}
       <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <MenuExplorer tree={regiones} search={tematicaNarino}>
+          <MenuExplorer tree={territorios} search={tematicaNarino}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras por
@@ -412,7 +403,7 @@ export default function Home () {
                 Explora Nariño
               </h2>
               <p className='3xl:text-lg'>
-                Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.
+                Utiliza nuestro explorador para visualizar las tablas completas de información y explorar con múltiples cruces y gráficos la información disponible para esta región.
               </p>
               <details>
                 <summary className='inline-flex items-center gap-x-2 border border-black rounded-[26px] py-[14px] px-[51px] cursor-pointer'>
@@ -423,15 +414,15 @@ export default function Home () {
                 </summary>
                 <div className='mt-4'>
                   <p>
-                    More info about the details.
+                    En la barra de la izquierda puedes seleccionar diferentes valores para los datos, si los quieres ver por registros o especies o filtrarlos para cada una de las temáticas de especies amenazadas, objeto de comercio, etc. En el panel de la derecha puedes ver los resultados como tablas o gráficos dependiendo de las opciones que selecciones.
                   </p>
                 </div>
               </details>
             </div>
           </div>
-          <div className='mt-[55.13px]'>
-            <iframe className='h-screen w-full mx-auto' src="https://datasketch.shinyapps.io/sib-data-app/?region=narino"></iframe>
-          </div>
+        </div>
+        <div className='mt-[55.13px]'>
+          <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app/?region=narino"></iframe>
         </div>
       </div>
 
