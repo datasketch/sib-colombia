@@ -19,10 +19,12 @@ module.exports = {
     extend: {
       fontFamily: {
         'barlow-condensed': ['Barlow Condensed', 'sans-serif'],
-        lato: ['Lato', 'sans-serif']
+        lato: ['Lato', 'sans-serif'],
+        inter: ['inter', 'sans-serif']
       },
       backgroundImage: {
         'banner-home': "url('/images/home-banner.png')",
+        'banner-home-2': "url('/images/home-banner-2.png')",
         'banner-footer': "url('/images/footer-banner.svg')"
       },
       colors: {
@@ -32,7 +34,8 @@ module.exports = {
         'black-2': '#000000CC',
         'black-3': '#00000066',
         lemon: '#09A274',
-        'gray-2': '#F4F4F4'
+        'gray-2': '#F4F4F4',
+        'yellow-green': '#C2F284'
       },
       screens: {
         sm: '640px',

@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 
-const Slides = ({ data }) => {
+const Slides = ({ data, region }) => {
   const { layout, chart_url, title, description, texts, chart1_url, chart2_url, path } = data
   // console.log(data)
   if (layout === 'title/chart') {
@@ -34,7 +34,7 @@ const Slides = ({ data }) => {
             </div>
             <div className='lg:w-6/12 max-w-[438px]'>
               <p className='text-center font-bold 3xl:text-lg'>
-                Especies registradas en Nariño vs. especies registradas en Colombia
+                Especies registradas en {region} vs. especies registradas en Colombia
               </p>
               <img className='mx-auto mt-4' src={chart_url} alt={title} />
             </div>
