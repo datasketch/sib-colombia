@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import Stack from '@mui/material/Stack'
 import NavigateNextIcon from '@mui/icons-material/NavigateNext'
+import { useEffect, useState } from 'react'
 
 function handleClick (event) {
   event.preventDefault()
@@ -10,6 +11,15 @@ function handleClick (event) {
 }
 
 export default function CustomSeparator () {
+  const [location, setLocation] = useState('')
+  useEffect(() => {
+    setLocation(window.location.pathname.replace('/', ''))
+
+    return () => {
+
+    }
+  }, [])
+
   const breadcrumbs = [
         <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
             Regiones
@@ -23,8 +33,8 @@ export default function CustomSeparator () {
         >
             Departamentos
         </Link>,
-        <Typography key="3" color="text.primary" style={{ color: '#fff', fontSize: '14px', fontWeight: 'bold' }}>
-            Nariño
+        <Typography key="3" color="text.primary" style={{ color: '#fff', fontSize: '14px', fontWeight: 'bold', textTransform: 'capitalize' }}>
+          {location}
         </Typography>
   ]
 
