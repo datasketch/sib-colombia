@@ -7,11 +7,15 @@ import tolimaJson from '../static/data/tolima.json'
 import PublishersCard from '../components/PublishersCard'
 import gruposBiologicos from '../static/data/nav_grupo_biologico.json'
 import MenuExplorer from '../components/MenuExplorer'
-import { formatNumbers } from '../lib/formatNumbers'
+import territorios from '../static/data/nav_territorio.json'
+import ContentElement from '../components/ContentElement'
+import gruposInteres from '../static/data/nav_grupo_interes_conservacion.json'
 
 export default function tolima () {
   const slides = tolimaJson.slides
   const gruposBiologicosTolima = tolimaJson.grupos_biologicos
+  const gruposInteresTolima = tolimaJson.grupos_interes
+  const territorioTolima = tolimaJson.territorio
   const publicadores = tolimaJson.publicadores
   const patrocinador = tolimaJson.patrocinador[0]
   return (
@@ -40,7 +44,7 @@ export default function tolima () {
               <p className='3xl:text-lg'>
                 Conoce las cifras por
               </p>
-              <h2 className='font-black text-3xl 3xl:text-4xl'>
+              <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
                 Grupos Biológicos
               </h2>
             </MenuExplorer.Title>
@@ -48,101 +52,66 @@ export default function tolima () {
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
               {(selected, info, cites, nacional, global) => (
-                <div className='bg-white py-12 lg:py-16 xl:py-20'>
-                  <div className='w-10/12 mx-auto'>
-                    <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10'>
-                      <div className='shadow-md p-4 grid place-items-center'>
-                        <div className='space-y-2'>
-                          <div className='text-center font-bold text-[26px]'>
-                            <div className='text-7xl font-bold text-center'>{formatNumbers(info?.especies_region_total)}</div>
-                            <p>Especies de {selected.toLowerCase()}</p>
-                          </div>
-                          <div className='text-center text-base space-x-2'>
-                            <p className='inline-block'><b>{formatNumbers(info?.registros_region_total)}</b></p>
-                            <p className='inline-block'>Observaciones en Nariño</p>
-                          </div>
-                          {info?.riqueza && (<div>
-                            <div className='flex justify-between text-sm'>
-                              <p>Riqueza actual</p>
-                              <p>Riqueza estimada</p>
-                            </div>
-                            <div className='w-full py-4'>
-                              grafica ?
-                            </div>
-                          </div>)}
-                        </div>
-                      </div>
-                      <div className='shadow-md p-4'>
-                        <div className='space-y-2'>
-                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies amenazadas</h2>
-                          <div className='text-center'>
-                            <p className='text-6xl'><b>{formatNumbers(info?.especies_exoticas)}</b></p>
-                            <p>Registros</p>
-                          </div>
-                          <div className='flex flex-col justify-center items-center text-center xl:flex-row gap-y-1 gap-x-3'>
-                            <div className='w-1/3 text-base'><p>Amenazada nacional</p></div>
-                            <div className='w-full grid grid-cols-3'>
-                              {nacional?.map((item, i) => <div key={i} className='text-center uppercase'><p>{item[0].replace('registros_amenazadas_nacional_', '')}</p></div>)}
-                              {nacional?.map((item, i) => <div key={i} className='text-center'><p>{formatNumbers(item[1])}</p></div>)}
-                            </div>
-                          </div>
-                          <div className='flex flex-col justify-center items-center text-center xl:flex-row gap-y-1 gap-x-3'>
-                            <div className='w-1/3 text-base'><p>Amenazada global</p></div>
-                            <div className='w-full grid grid-cols-3'>
-                              {global?.map((item, i) => <div key={i} className='text-center uppercase flex flex-col gap-x-1'>
-                                <p>{item[0].replace('registros_amenazadas_global_', '')}</p>
-                                <p>
-                                  {formatNumbers(item[1])}
-                                </p>
-                              </div>)}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='shadow-md p-4'>
-                        <div className='space-y-2'>
-                          <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies en apéndices CITES</h2>
-                          <div className='text-center'>
-                            <p className='text-6xl'><b>{formatNumbers(info?.registros_cites_total)}</b></p>
-                            <p>Registros</p>
-                          </div>
-                          <div >
-                            <div className='grid grid-cols-3 gap-y-2'>
-                              {cites?.map((item, i) => <div key={i} className='text-center uppercase'><p>{item[0].replace('registros_cites_', '')}</p></div>)}
-                              {cites?.map((item, i) => <div key={i} className='text-center'><p>{formatNumbers(item[1])}</p></div>)}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='space-y-2 my-4 shadow-md p-6'>
-                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies migratorias</h2>
-                        <div className='text-center'>
-                          <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_migratorias)}</b></p>
-                          <p className='text-center'>Registros</p>
-                        </div>
-                      </div>
-                      <div className='space-y-2 my-4 shadow-md p-6'>
-                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies endémicas</h2>
-                        <div className='text-center'>
-                          <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_endemicas)}</b></p>
-                          <p className='text-center'>Registros</p>
-                        </div>
-                      </div>
-                      <div className='space-y-2 my-4 shadow-md p-6'>
-                        <h2 className='text-lg border-b border-b-[#333333] text-center py-2'>No. de observaciones de especies exóticas</h2>
-                        <div className='text-center'>
-                          <p className='text-center text-6xl'><b>{formatNumbers(info?.registros_exoticas)}</b></p>
-                          <p className='text-center'>Registros</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ContentElement selected={selected} info={info} cites={cites} nacional={nacional} global={global} region='Tolima'/>
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
         </div>
       </div>
+      {/* Grupos Interes */}
+      <div className='py-12 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-xl'>
+          <MenuExplorer tree={gruposInteres} search={gruposInteresTolima}>
+            <MenuExplorer.Title>
+              <p className='3xl:text-lg'>
+                Conoce las cifras por
+              </p>
+              <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
+                Grupos de interés
+              </h2>
+            </MenuExplorer.Title>
+            <MenuExplorer.Tree className='relative mt-[45.52px]' />
+            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Body className="-mt-10">
+              {(selected, info, cites, nacional, global) => (
+                <ContentElement selected={selected} info={info} cites={cites} nacional={nacional} global={global} region='Tolima'/>
+              )}
+            </MenuExplorer.Body>
+          </MenuExplorer>
+        </div>
+      </div>
+
+      {/* Arboles de navegacion Regiones */}
+      {/* <div className='py-12 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-xl'>
+          <MenuExplorer tree={territorios} search={territorioTolima}>
+            <MenuExplorer.Title>
+              <p className='3xl:text-lg'>
+                Conoce las cifras por
+              </p>
+              <h2 className='font-black text-3xl 3xl:text-4xl'>
+                Regiones
+              </h2>
+            </MenuExplorer.Title>
+            <MenuExplorer.Tree className='relative mt-[45.52px]' />
+            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Body className="-mt-10">
+              {(selected, info) => (
+                <div className='bg-white py-12 lg:py-16 xl:py-20'>
+                  {info?.charts.length === 0
+                    ? <div className='text-center text-4xl py-20 w-4/5 mx-auto'>{info.title}...</div>
+                    : (<SimpleSlider dots>
+                      {info?.charts.map((element, key) =>
+                        <Slides key={key} data={element} />
+                      )}
+                    </SimpleSlider>)
+                  }
+                </div>
+              )}
+            </MenuExplorer.Body>
+          </MenuExplorer>
+        </div>
+      </div> */}
 
       <div className='py-12 lg:py-16 xl:py-20 border-t-4 border-blue-green'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>

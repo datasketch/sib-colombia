@@ -74,7 +74,7 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
         {tree.children.map((leaf, i) => (
           <div className='px-5' key={i}>
             <div className='bg-transparent shadow-3 h-36 w-48 flex relative' key={breadcrumb[0]} ref={container}>
-              <button className={`w-full h-full p-4 ${breadcrumb[0] === leaf.label ? 'bg-lemon' : 'bg-white'}`} value={leaf.slug} onClick={firstPositionBC}>
+              <button className={`w-full h-full p-4 ${breadcrumb[0] === leaf.label ? 'bg-gradient-to-r from-lemon to-dartmouth-green' : 'bg-white'}`} value={leaf.slug} onClick={firstPositionBC}>
                 <div className="">
                   <img className="mx-auto h-[12.69px]" src={breadcrumb[0] === leaf.label ? (leaf.icon_white || '/images/animales-cifras-icon-white.svg') : (leaf.icon_black || '/images/animales-cifras-icon-black.svg')} />
                   <p className={`font-bold 3xl:text-lg mt-[10.31px] ${breadcrumb[0] === leaf.label ? 'text-white' : 'text-black-3'}`}>
@@ -86,7 +86,7 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
                 portal
                 menuButton={
                   leaf.children
-                    ? (<MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className={`w-full h-full max-w-[40px] grid place-items-center border-l border-l-lemon flex-shrink-0 ${!breadcrumb.length || breadcrumb[0] !== leaf.label ? 'cursor-not-allowed opacity-40' : 'cursor-pointer bg-opacity-100'}`}>
+                    ? (<MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className={`w-full h-full max-w-[40px] grid place-items-center border-l  border-l-lemon flex-shrink-0 ${!breadcrumb.length || breadcrumb[0] !== leaf.label ? 'cursor-not-allowed opacity-40' : 'cursor-pointer bg-opacity-100 hover:bg-dartmouth-green'}`}>
                       <div className="px-[11.61px]">
                         <img src="/images/green-arrow-down.svg" alt="arrow down" />
                       </div>
@@ -152,7 +152,7 @@ MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restPro
   // console.log(removeAccents(selectedValue, '-'))
   // console.log('filtro:', selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
   // console.log('info tematica', infoTematica)
-  // console.log('info', info)
+  console.log('info', info)
 
   return (
   <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
