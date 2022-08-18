@@ -35,7 +35,8 @@ module.exports = {
         'black-3': '#00000066',
         lemon: '#09A274',
         'gray-2': '#F4F4F4',
-        'yellow-green': '#C2F284'
+        'yellow-green': '#C2F284',
+        'dartmouth-green': '#00634B'
       },
       screens: {
         sm: '640px',

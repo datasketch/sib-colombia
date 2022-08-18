@@ -88,7 +88,7 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
                   leaf.children
                     ? (<MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className={`w-full h-full max-w-[40px] grid place-items-center border-l border-l-lemon flex-shrink-0 ${!breadcrumb.length || breadcrumb[0] !== leaf.label ? 'cursor-not-allowed opacity-40' : 'cursor-pointer bg-opacity-100'}`}>
                       <div className="px-[11.61px]">
-                        <img src="/images/arrow-down-icon.svg" alt="arrow down" />
+                        <img src="/images/green-arrow-down.svg" alt="arrow down" />
                       </div>
                     </MenuButton>)
                     : <div></div>
