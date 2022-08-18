@@ -3,19 +3,21 @@ import Header from '../components/Header'
 import Slides from '../components/Slides'
 import SimpleSlider from '../lib/Slider'
 import tolimaJson from '../static/data/tolima.json'
-// import publicadoresTolima from '../static/data/publicador.json'
+import tematica from '../static/data/nav_tematica.json'
 import PublishersCard from '../components/PublishersCard'
 import gruposBiologicos from '../static/data/nav_grupo_biologico.json'
 import MenuExplorer from '../components/MenuExplorer'
 import territorios from '../static/data/nav_territorio_tolima.json'
 import ContentElement from '../components/ContentElement'
 import gruposInteres from '../static/data/nav_grupo_interes_conservacion.json'
+import { formatNumbers } from '../lib/formatNumbers'
 
 export default function tolima () {
   const slides = tolimaJson.slides
   const generalInfo = tolimaJson.general_info
   const gruposBiologicosTolima = tolimaJson.grupos_biologicos
   const gruposInteresTolima = tolimaJson.grupos_interes
+  const tematicaTolima = tolimaJson.tematica
   const territorioTolima = tolimaJson.territorio
   const publicadores = tolimaJson.publicadores
   const patrocinador = tolimaJson.patrocinador[0]
@@ -66,6 +68,7 @@ export default function tolima () {
           </MenuExplorer>
         </div>
       </div>
+
       {/* Grupos Interes */}
       <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
@@ -88,8 +91,32 @@ export default function tolima () {
           </MenuExplorer>
         </div>
       </div>
+      {/* Grupos Tematicas */}
+      <div className='py-12 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-xl'>
+          <MenuExplorer tree={tematica} search={tematicaTolima}>
+            <MenuExplorer.Title>
+              <p className='3xl:text-lg'>
+                Conoce las cifras por
+              </p>
+              <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
+                Temáticas
+              </h2>
+            </MenuExplorer.Title>
+            <MenuExplorer.Tree className='relative mt-[45.52px]' />
+            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Body className="-mt-10">
+              {(selected, info, cites, nacional, global, infoTematica) => (
+                <div className='bg-white py-12 lg:py-16 xl:py-20'>
 
-      {/* Arboles de navegacion Regiones */}
+                </div>
+              )}
+            </MenuExplorer.Body>
+          </MenuExplorer>
+        </div>
+      </div>
+
+      {/* Arbol de navegacion Regiones */}
       <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
           <MenuExplorer tree={territorios} search={territorioTolima}>
@@ -97,7 +124,7 @@ export default function tolima () {
               <p className='3xl:text-lg'>
                 Conoce las cifras por
               </p>
-              <h2 className='font-black text-3xl 3xl:text-4xl'>
+              <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
                 Regiones
               </h2>
             </MenuExplorer.Title>
