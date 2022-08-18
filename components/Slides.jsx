@@ -1,5 +1,7 @@
 /* eslint-disable camelcase */
 
+import ReactMarkdown from 'react-markdown'
+
 const Slides = ({ data, region }) => {
   const { layout, chart_url, title, description, texts, chart1_url, chart2_url, path } = data
   // console.log(data)
@@ -86,9 +88,9 @@ const Slides = ({ data, region }) => {
           <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-10'>
             <div className='lg:col-start-1 lg:col-end-6'>
               <div className='bg-blue-green py-20 px-24 text-white'>
-                <p className='3xl:text-lg'>
+                <ReactMarkdown className='3xl:text-lg'>
                   {texts[0]}
-                </p>
+                </ReactMarkdown>
                 {/* <p className='3xl:text-lg'>
                   <b>Usted puede cuidarlas!</b>
                 </p> */}
@@ -102,9 +104,9 @@ const Slides = ({ data, region }) => {
             </div>
             <div className='lg:col-start-8 lg:col-end-13'>
               <div className='bg-blue-green py-20 px-24 text-white'>
-                <p className='3xl:text-lg'>
+                <ReactMarkdown className='3xl:text-lg'>
                   {texts[1]}
-                </p>
+                </ReactMarkdown>
                 {/* <p className='3xl:text-lg'>
                   <b>Usted puede cuidarlas!</b>
                 </p> */}

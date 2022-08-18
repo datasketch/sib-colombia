@@ -29,8 +29,8 @@ export default function tolima () {
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
       <Header region={'Tolima'}
-        registrosRegionTotal={generalInfo.especies_region_total}
-        registrosContinentalTotal={generalInfo.registros_continentales}
+        /* registrosRegionTotal={generalInfo.especies_region_total} */
+        registrosContinentalTotal={generalInfo.especies_region_total}
         especiesCont={generalInfo.especies_continentales}
         especiesMar={generalInfo.especies_marinas}
         observacionesCont={generalInfo.registros_continentales}
@@ -62,7 +62,7 @@ export default function tolima () {
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
               {(selected, info) => (
-                <ContentElement selected={selected} info={info} region='Tolima' />
+                <ContentElement selected={selected} info={info} region='Tolima' typeTree/>
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -178,7 +178,7 @@ export default function tolima () {
                 publicadores.map((item, index) => {
                   return (
                     <div className='px-5' key={index}>
-                      <PublishersCard title={item.label} imagePath={item.url_logo || ''} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
+                      <PublishersCard title={item.label} imagePath={item.url_logo || '/images/un-icon.png'} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
                     </div>
                   )
                 })

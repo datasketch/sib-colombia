@@ -1,11 +1,14 @@
-import Tippy from '@tippyjs/react'
+
+import { Tooltip } from '@mui/material'
+
 import 'tippy.js/dist/tippy.css'
 import { formatNumbers } from '../lib/formatNumbers'
 import tooltips from '../static/data/tooltips.json'
+import Table from './Table'
 const contentTooltip = (value) => {
   return tooltips.filter((item) => item.slug === value)[0]?.tooltip
 }
-function ContentElement ({ selected, info, region }) {
+function ContentElement ({ selected, info, region, typeTree = false }) {
   return (
     <>
       <div className='bg-white py-12 lg:py-16 xl:py-20'>
@@ -59,8 +62,10 @@ function ContentElement ({ selected, info, region }) {
                 <div className='w-1/2 border border-[#262525]' />
               </span>
               <p className='text-lg font-inter font-bold relative'>
-                Especies amenazadas nacional <img className='absolute top-[55%] left-[38%]' src='/images/icons/icon-table.svg' />
+                Especies amenazadas nacional
+                <Tooltip title={<Table tableData={info?.species_list_top}/>}><img className='absolute top-[55%] left-[38%]' src='/images/icons/icon-table.svg' /></Tooltip>
               </p>
+
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_amenazadas_nacional_total)}</b></p>
@@ -72,9 +77,9 @@ function ContentElement ({ selected, info, region }) {
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>CR</b>
-                      <Tippy content={<b>{contentTooltip('amenazadas-nacional-cr')}</b>}>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-nacional-cr')}</b>}>
                         <img src='/images/icon-more.svg' />
-                      </Tippy>
+                      </Tooltip>
 
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_nacional_cr)}</span>
@@ -82,18 +87,18 @@ function ContentElement ({ selected, info, region }) {
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>EN</b>
-                      <Tippy content={<b>{contentTooltip('amenazadas-nacional-en')}</b>}>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-nacional-en')}</b>}>
                         <img src='/images/icon-more.svg' />
-                      </Tippy>
+                      </Tooltip>
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_nacional_en)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>VU</b>
-                      <Tippy content={<b>{contentTooltip('amenazadas-nacional-vu')}</b>}>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-nacional-vu')}</b>}>
                         <img src='/images/icon-more.svg' />
-                      </Tippy>
+                      </Tooltip>
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_nacional_vu)}</span>
                   </div>
@@ -127,27 +132,27 @@ function ContentElement ({ selected, info, region }) {
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>CR</b>
-                      <Tippy content={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
                         <img src='/images/icon-more.svg' />
-                      </Tippy>
+                      </Tooltip>
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_global_cr)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>EN</b>
-                      <Tippy content={<b>{contentTooltip('amenazadas-global-en')}</b>}>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
                         <img src='/images/icon-more.svg' />
-                      </Tippy>
+                      </Tooltip>
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_global_en)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>VU</b>
-                      <Tippy content={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
                         <img src='/images/icon-more.svg' />
-                      </Tippy>
+                      </Tooltip>
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_global_vu)}</span>
                   </div>
@@ -256,6 +261,39 @@ function ContentElement ({ selected, info, region }) {
 
               </div>
             </div>
+            {/*  Exóticas con potencial de invasión */}
+          { typeTree && <div className='space-y-2 my-4 shadow-md flex flex-col justify-center py-8 px-4'>
+              <div className='font-inter font-black text-4xl'>
+                {formatNumbers(info?.especies_exoticas_riesgo_invasion
+                )}
+                <div className='w-2/4 border border-[#262525]' />
+              </div>
+
+              <h2 className='text-lg font-inter font-bold flex gap-2 relative'>Especies exóticas con potencial de invasión <img className='absolute top-[60%] left-[90%]' src='/images/icons/icon-table.svg' /></h2>
+              <div className='flex text-sm gap-x-2 text-blue-green'>
+                <img src='/images/green-arrow-right.svg' alt='arrow right' />
+                <p className='inline-block '><b>{formatNumbers(info?.registros_exoticas_riesgo_invasion
+                )}</b></p>
+                <p className='inline-block'>Observaciones</p>
+
+              </div>
+            </div>}
+            {/* invasoras */}
+          { typeTree && <div className='space-y-2 my-4 shadow-md flex flex-col justify-center py-8 px-4'>
+
+              <div className='font-inter font-black text-4xl'>
+                {formatNumbers(info?.especies_invasoras)}
+                <div className='w-2/4 border border-[#262525]' />
+              </div>
+
+              <h2 className='text-lg font-inter font-bold flex gap-2'>Especies invasoras <img className='' src='/images/icons/icon-table.svg' /></h2>
+              <div className='flex text-sm gap-x-2 text-blue-green'>
+                <img src='/images/green-arrow-right.svg' alt='arrow right' />
+                <p className='inline-block '><b>{formatNumbers(info?.registros_invasoras)}</b></p>
+                <p className='inline-block'>Observaciones</p>
+
+              </div>
+            </div>}
 
           </div>
         </div>
