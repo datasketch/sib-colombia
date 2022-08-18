@@ -10,7 +10,6 @@ import MenuExplorer from '../components/MenuExplorer'
 import territorios from '../static/data/nav_territorio_tolima.json'
 import ContentElement from '../components/ContentElement'
 import gruposInteres from '../static/data/nav_grupo_interes_conservacion.json'
-import { formatNumbers } from '../lib/formatNumbers'
 
 export default function tolima () {
   const slides = tolimaJson.slides
