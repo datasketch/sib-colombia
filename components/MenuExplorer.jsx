@@ -13,8 +13,8 @@ export default function MenuExplorer ({ children, tree, search, ...restProps }) 
 
   const updateBreadcrumb = (e) => {
     const { textContent, value } = e.target
-    console.log(e.target)
-    console.log(e.target.getAttribute('aria-label'))
+    // console.log(e.target)
+    // console.log(e.target.getAttribute('aria-label'))
     setBreadcrumb((prevState) => [...prevState, textContent || value].reduce((acc, element) => {
       if (!acc.includes(element)) {
         acc.push(element)

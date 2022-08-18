@@ -5,7 +5,7 @@
     "registros_marinos": 0,
     "especies_region_total": 7944,
     "especies_continentales": 7944,
-    "especies_marinas": "NA",
+    "especies_marinas": 0,
     "subtipo": "Departamento",
     "label": "Tolima",
     "main_text": "A través del SiB Colombia se han publicado 609259 observaciones\npara el Departamento de Tolima. Estos datos hacen referencia a un total de\n7944 especies, de las cuales 7944 habitan el territorio\nal interior del continente y NA en el mar.\nTenga en cuenta que algunas especies pueden tener hábitats continentales y marinos por la cual\nla especie se incluye dentro del conteo de ambas coberturas."
@@ -30732,32 +30732,33 @@
       "chart": "static/charts/tolima/migratorias.html"
     }
   ],
-  "territorio": {
-    "municipios": {
+  "territorio": [
+    {
+      "slug": "municipios",
       "charts": [
         {
           "title": "Especies por municipio",
-          "path": "static/charts/tolima/region_municipios_1.html"
+          "path": "static/charts/tolima/region_municipios_1.html",
+          "layout": "title/chart"
         },
         {
           "title": "Observaciones por municipio",
-          "path": "static/charts/tolima/region_municipios_2.html"
+          "path": "static/charts/tolima/region_municipios_2.html",
+          "layout": "title/chart"
         }
       ]
     },
-    "areas-protegidas": [
-      {
-        "title": "Próximamente tendrás acceso a la información de las áreas protegidas",
-        "path": {}
-      }
-    ],
-    "reservas-naturales": [
-      {
-        "title": "Próximamente tendrás acceso a la información de las reservas naturales",
-        "path": {}
-      }
-    ]
-  },
+    {
+      "slug": "areas-protegidas",
+      "title": "Próximamente tendrás acceso a la información de las áreas protegidas",
+      "charts": []
+    },
+    {
+      "slug": "reservas-naturales",
+      "title": "Próximamente tendrás acceso a la información de las reservas naturales",
+      "charts": []
+    }
+  ],
   "patrocinador": [
     {
       "slug_region": "tolima",

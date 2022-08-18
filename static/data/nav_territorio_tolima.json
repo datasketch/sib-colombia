@@ -1,0 +1,23 @@
+{
+    "slug": "0",
+    "children": [
+        {
+            "slug": "municipios",
+            "label": "Municipios",
+            "subtipo": "Municipio",
+            "tipo": "Político-administrativo"
+        },
+        {
+            "slug": "areas-protegidas",
+            "label": "Areas Protegidas",
+            "subtipo": "Reservas forestales protectoras",
+            "tipo": "SINAP"
+        },
+        {
+            "slug": "reservas-naturales",
+            "label": "Areas Naturales",
+            "subtipo": "Territorios indígenas",
+            "tipo": "ANT"
+        }
+    ]
+}

@@ -7,24 +7,32 @@ import tolimaJson from '../static/data/tolima.json'
 import PublishersCard from '../components/PublishersCard'
 import gruposBiologicos from '../static/data/nav_grupo_biologico.json'
 import MenuExplorer from '../components/MenuExplorer'
-import territorios from '../static/data/nav_territorio.json'
+import territorios from '../static/data/nav_territorio_tolima.json'
 import ContentElement from '../components/ContentElement'
 import gruposInteres from '../static/data/nav_grupo_interes_conservacion.json'
 
 export default function tolima () {
   const slides = tolimaJson.slides
+  const generalInfo = tolimaJson.general_info
   const gruposBiologicosTolima = tolimaJson.grupos_biologicos
   const gruposInteresTolima = tolimaJson.grupos_interes
   const territorioTolima = tolimaJson.territorio
   const publicadores = tolimaJson.publicadores
   const patrocinador = tolimaJson.patrocinador[0]
+
   return (
     <>
 
       <Head>
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
-      <Header region={'Tolima'} registrosTotal={2000000} />
+      <Header region={'Tolima'}
+      registrosRegionTotal={generalInfo.especies_region_total}
+      registrosContinentalTotal={generalInfo.registros_continentales}
+      especiesCont={generalInfo.especies_continentales}
+      especiesMar={generalInfo.especies_marinas}
+      observacionesCont={generalInfo.registros_continentales}
+      observacionesMar={generalInfo.registros_marinos}/>
 
       <div className='bg-white-3 mx-auto w-10/12 pb-20 max-w-screen-xl'>
         <div className=' '>
@@ -52,7 +60,7 @@ export default function tolima () {
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
               {(selected, info, cites, nacional, global) => (
-                <ContentElement selected={selected} info={info} cites={cites} nacional={nacional} global={global} region='Tolima'/>
+                <ContentElement selected={selected} info={info} cites={cites} nacional={nacional} global={global} region='Tolima' />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -74,7 +82,7 @@ export default function tolima () {
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
               {(selected, info, cites, nacional, global) => (
-                <ContentElement selected={selected} info={info} cites={cites} nacional={nacional} global={global} region='Tolima'/>
+                <ContentElement selected={selected} info={info} cites={cites} nacional={nacional} global={global} region='Tolima' />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -82,7 +90,7 @@ export default function tolima () {
       </div>
 
       {/* Arboles de navegacion Regiones */}
-      {/* <div className='py-12 bg-white-2'>
+      <div className='py-12 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
           <MenuExplorer tree={territorios} search={territorioTolima}>
             <MenuExplorer.Title>
@@ -111,7 +119,7 @@ export default function tolima () {
             </MenuExplorer.Body>
           </MenuExplorer>
         </div>
-      </div> */}
+      </div>
 
       <div className='py-12 lg:py-16 xl:py-20 border-t-4 border-blue-green'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
