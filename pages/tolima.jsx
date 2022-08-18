@@ -61,8 +61,8 @@ export default function tolima () {
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
-              {(selected, info, cites, nacional, global) => (
-                <ContentElement selected={selected} info={info} cites={cites} nacional={nacional} global={global} region='Tolima' />
+              {(selected, info) => (
+                <ContentElement selected={selected} info={info} region='Tolima' />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -84,8 +84,8 @@ export default function tolima () {
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
-              {(selected, info, cites, nacional, global) => (
-                <ContentElement selected={selected} info={info} cites={cites} nacional={nacional} global={global} region='Tolima' />
+              {(selected, info) => (
+                <ContentElement selected={selected} info={info} region='Tolima' />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -106,22 +106,27 @@ export default function tolima () {
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
-              {(selected, info, cites, nacional, global, infoTematica) => (
+              {(selected, info) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
-                  <div className='flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto gap-10'>
-                    <div className='text-center flex flex-col justify-center items-center gap-2'>
-                      <span className='text-7xl font-semibold '>
-                        {formatNumbers(info?.count)}
-                      </span>
-                      <div className='font-bold text-2xl w-4/5 mx-auto'>
+                  <div className=' flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto'>
+
+                    <div className='shadow-md flex flex-col justify-center items-center gap-2 py-14 px-8'>
+                      <div className='flex flex-col'>
+                        <span className='text-6xl font-black font-inter'>
+                          {formatNumbers(info?.count)}
+                          <div className='border border-dartmouth-green' />
+                        </span>
+                      </div>
+                      <div className='font-bold text-lg flex gap-2'>
                         <span>{info?.label}</span>
+                        {/* {info?.label && <img src='/images/icons/icon-table.svg'/>} */}
                       </div>
 
                     </div>
+                      <div className='w-full'>
+                        <iframe src={info?.chart} className='w-full h-[300px]'></iframe>
+                      </div>
 
-                    <div className='w-full'>
-                      <iframe src={info?.chart} className='w-full h-[300px]'></iframe>
-                    </div>
                   </div>
                 </div>
               )}

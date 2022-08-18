@@ -1,6 +1,11 @@
+import Tippy from '@tippyjs/react'
+import 'tippy.js/dist/tippy.css'
 import { formatNumbers } from '../lib/formatNumbers'
-
-function ContentElement ({ selected, info, cites, nacional, global, region }) {
+import tooltips from '../static/data/tooltips.json'
+const contentTooltip = (value) => {
+  return tooltips.filter((item) => item.slug === value)[0]?.tooltip
+}
+function ContentElement ({ selected, info, region }) {
   return (
     <>
       <div className='bg-white py-12 lg:py-16 xl:py-20'>
@@ -67,29 +72,36 @@ function ContentElement ({ selected, info, cites, nacional, global, region }) {
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>CR</b>
-                      <img src='/images/icon-more.svg' />
+                      <Tippy content={<b>{contentTooltip('amenazadas-nacional-cr')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tippy>
+
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_nacional_cr)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>EN</b>
-                      <img src='/images/icon-more.svg' />
+                      <Tippy content={<b>{contentTooltip('amenazadas-nacional-en')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tippy>
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_nacional_en)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>VU</b>
-                      <img src='/images/icon-more.svg' />
+                      <Tippy content={<b>{contentTooltip('amenazadas-nacional-vu')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tippy>
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_nacional_vu)}</span>
                   </div>
                 </div>
                 <div className='flex'>
-                  <div className='bg-cerulean h-4 w-1/3'></div>
-                  <div className='bg-sandstorm h-4 w-1/3'></div>
-                  <div className='bg-greenish-cyan h-4 w-1/3'></div>
+                  <div className='bg-red-cr h-4 w-1/3'></div>
+                  <div className='bg-orange-en h-4 w-1/3'></div>
+                  <div className='bg-yellow-vu h-4 w-1/3'></div>
                 </div>
               </div>
             </div>
@@ -108,36 +120,42 @@ function ContentElement ({ selected, info, cites, nacional, global, region }) {
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_amenazadas_global_total)}</b></p>
                 <p className='inline-block'>Observaciones</p>
-                <img src='/images/icons/icon-table.svg' />
+
               </div>
               <div className='py-8'>
                 <div className='font-lato flex justify-evenly gap-x-4'>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>CR</b>
-                      <img src='/images/icon-more.svg' />
+                      <Tippy content={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tippy>
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_global_cr)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>EN</b>
-                      <img src='/images/icon-more.svg' />
+                      <Tippy content={<b>{contentTooltip('amenazadas-global-en')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tippy>
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_global_en)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>VU</b>
-                      <img src='/images/icon-more.svg' />
+                      <Tippy content={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tippy>
                     </div>
                     <span>{formatNumbers(info?.registros_amenazadas_global_vu)}</span>
                   </div>
                 </div>
                 <div className='flex'>
-                  <div className='bg-cerulean h-4 w-1/3'></div>
-                  <div className='bg-sandstorm h-4 w-1/3'></div>
-                  <div className='bg-greenish-cyan h-4 w-1/3'></div>
+                  <div className='bg-red-cr h-4 w-1/3'></div>
+                  <div className='bg-orange-en h-4 w-1/3'></div>
+                  <div className='bg-yellow-vu h-4 w-1/3'></div>
                 </div>
               </div>
             </div>
@@ -149,33 +167,33 @@ function ContentElement ({ selected, info, cites, nacional, global, region }) {
                 <div className='w-1/2 border border-[#262525]' />
               </span>
 
-              <h2 className='text-lg font-inter font-bold'>Especies CITES</h2>
+              <h2 className='text-lg font-inter font-bold flex gap-2'>Especies CITES <img className='' src='/images/icons/icon-table.svg' /></h2>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_cites_total)}</b></p>
                 <p className='inline-block'>Observaciones</p>
-                <img src='/images/icons/icon-table.svg' />
+
               </div>
               <div className='pt-[60px]'>
                 <div className='font-lato flex justify-evenly gap-x-4'>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>I</b>
-                      <img src='/images/icon-more.svg' />
+                      {/* <img src='/images/icon-more.svg' /> */}
                     </div>
                     <span>{formatNumbers(info?.registros_cites_i)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>II</b>
-                      <img src='/images/icon-more.svg' />
+                      {/* <img src='/images/icon-more.svg' /> */}
                     </div>
                     <span>{formatNumbers(info?.registros_cites_ii)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <b>III</b>
-                      <img src='/images/icon-more.svg' />
+                      {/* <img src='/images/icon-more.svg' /> */}
                     </div>
                     <span>{formatNumbers(info?.registros_cites_iii)}</span>
                   </div>
@@ -196,12 +214,12 @@ function ContentElement ({ selected, info, cites, nacional, global, region }) {
                 <div className='w-2/4 border border-[#262525]' />
               </span>
 
-              <h2 className='text-lg font-inter font-bold'>Especies migratorias</h2>
+              <h2 className='text-lg font-inter font-bold flex gap-2'>Especies migratorias <img className='' src='/images/icons/icon-table.svg' /></h2>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_migratorias)}</b></p>
                 <p className='inline-block'>Observaciones</p>
-                <img src='/images/icons/icon-table.svg' />
+
               </div>
             </div>
 
@@ -213,12 +231,12 @@ function ContentElement ({ selected, info, cites, nacional, global, region }) {
                 <div className='w-2/4 border border-[#262525]' />
               </span>
 
-              <h2 className='text-lg font-inter font-bold'>Especies endemicas</h2>
+              <h2 className='text-lg font-inter font-bold flex gap-2'>Especies endémicas <img className='' src='/images/icons/icon-table.svg' /></h2>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_endemicas)}</b></p>
                 <p className='inline-block'>Observaciones</p>
-                <img src='/images/icons/icon-table.svg' />
+
               </div>
             </div>
 
@@ -230,12 +248,12 @@ function ContentElement ({ selected, info, cites, nacional, global, region }) {
                 <div className='w-2/4 border border-[#262525]' />
               </div>
 
-              <h2 className='text-lg font-inter font-bold'>Especies exoticas</h2>
+              <h2 className='text-lg font-inter font-bold flex gap-2'>Especies exóticas <img className='' src='/images/icons/icon-table.svg' /></h2>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_exoticas)}</b></p>
                 <p className='inline-block'>Observaciones</p>
-                <img src='/images/icons/icon-table.svg' />
+
               </div>
             </div>
 

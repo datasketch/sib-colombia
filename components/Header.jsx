@@ -20,7 +20,7 @@ function Header ({ registrosRegionTotal, registrosContinentalTotal, region, espe
           <div className="w-full lg:w-1/2 relative flex items-center">
             <img className="h-[70%] w-3/5 lg:h-[90%] lg:w-auto" src="/images/grafo.svg"/>
             <div className="text-white absolute -top-2 lg:top-0 left-[62%] lg:left-[43%] flex flex-col">
-              <span className="font-inter font-black text-lg lg:text-2xl">{formatNumbers(registrosRegionTotal) || 0}</span>
+              <span className="font-inter font-black text-lg lg:text-2xl">{formatNumbers(15000) }</span>
               <span className="font-lato text-sm lg:text-lg">Especies estimadas</span>
             </div>
             <div className="text-yellow-green flex flex-col top-[40%] lg:top-24 left-[62%] lg:left-[43%] absolute">
@@ -43,7 +43,7 @@ function Header ({ registrosRegionTotal, registrosContinentalTotal, region, espe
                 <span className="font-lato font-normal lg:text-lg">Observaciones</span>
               </div>
             </div>
-            <div className="flex gap-x-10  items-center">
+            {/* <div className="flex gap-x-10  items-center">
               <div className="rounded-full border border-yellow-green h-20 w-20 flex items-center justify-center">
                 <img src='/images/icons/icon-green-marinas.svg' />
               </div>
@@ -55,7 +55,7 @@ function Header ({ registrosRegionTotal, registrosContinentalTotal, region, espe
                 <span className="font-inter font-black text-xl lg:text-2xl">{formatNumbers(observacionesMar) || 619.039}</span>
                 <span className="font-lato font-normal lg:text-lg">Observaciones</span>
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>

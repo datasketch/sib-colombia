@@ -39,7 +39,10 @@ module.exports = {
         'dartmouth-green': '#00634B',
         cerulean: '#00AFFF',
         sandstorm: '#FFD150',
-        'greenish-cyan': '#4AD3AC'
+        'greenish-cyan': '#4AD3AC',
+        'red-cr': '#ff0000',
+        'orange-en': '#ffa500',
+        'yellow-vu': '#ffff00'
 
       },
       screens: {
