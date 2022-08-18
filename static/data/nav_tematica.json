@@ -309,7 +309,7 @@
           "tooltip": "Invasoras, resolución Ministerio de Ambiente y Desarrollo Sostenible"
         },
         {
-          "slug": "exoticas-riesgo-invasion",
+          "slug": "exotica-riesgo-invasion",
           "activa": true,
           "descripcion": "Una especie exótica con alto riesgo de invasión, es una especie con alta probabilidad de establecerse en ecosistemas o hábitats naturales o seminaturales, es un agente de cambio y amenaza la diversidad biológica nativa.",
           "icon": false,

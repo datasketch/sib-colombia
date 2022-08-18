@@ -13,8 +13,9 @@ export default function MenuExplorer ({ children, tree, search, ...restProps }) 
 
   const updateBreadcrumb = (e) => {
     const { textContent, value } = e.target
-    // console.log(e.target)
-    // console.log(e.target.getAttribute('aria-label'))
+    const slug = e.target.getAttribute('aria-label')
+    console.log(e.target)
+    console.log(slug)
     setBreadcrumb((prevState) => [...prevState, textContent || value].reduce((acc, element) => {
       if (!acc.includes(element)) {
         acc.push(element)
@@ -22,7 +23,7 @@ export default function MenuExplorer ({ children, tree, search, ...restProps }) 
       return acc
     }, []))
     setSelected(textContent)
-    setSelectedValue(value || textContent.normalize('NFC').toLowerCase().replace(/[\u0300-\u036f]/g, ''))
+    setSelectedValue(slug || value || textContent.normalize('NFC').toLowerCase().replace(/[\u0300-\u036f]/g, ''))
   }
 
   const resetBreadcrumb = ({ open }) => {
@@ -33,9 +34,10 @@ export default function MenuExplorer ({ children, tree, search, ...restProps }) 
 
   const firstPositionBC = (e) => {
     const { textContent, value } = e.target.closest('button')
+    const slug = e.target.getAttribute('aria-label')
     setBreadcrumb([textContent])
     setSelected(textContent)
-    setSelectedValue(value || textContent.normalize('NFC').toLowerCase().replace(/[\u0300-\u036f]/g, ''))
+    setSelectedValue(slug || value || textContent.normalize('NFC').toLowerCase().replace(/[\u0300-\u036f]/g, ''))
   }
   return (
     <MenuExplorerContext.Provider
@@ -86,7 +88,7 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
                 portal
                 menuButton={
                   leaf.children
-                    ? (<MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className={`w-full h-full max-w-[40px] grid place-items-center border-l  border-l-lemon flex-shrink-0 ${!breadcrumb.length || breadcrumb[0] !== leaf.label ? 'cursor-not-allowed opacity-40' : 'cursor-pointer bg-opacity-100 hover:bg-dartmouth-green'}`}>
+                    ? (<MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label} className={`w-full h-full max-w-[40px] grid place-items-center border-l border-l-lemon flex-shrink-0 ${!breadcrumb.length || breadcrumb[0] !== leaf.label ? 'cursor-not-allowed opacity-40' : 'cursor-pointer bg-opacity-100 hover:bg-dartmouth-green'}`}>
                       <div className="px-[11.61px]">
                         <img src="/images/green-arrow-down.svg" alt="arrow down" />
                       </div>
@@ -143,20 +145,10 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
   const { selected, selectedValue, search } = useContext(MenuExplorerContext)
   const info = search.find((item) => item.slug === selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-  const infoTematica = search.find((item) => item.slug === selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, '') || (item.slug).includes(selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace('apendice ', '').replace(' ', '-')))
-  const cites = Object.entries(info || {}).filter((item) => item[0].includes('registros_cites_i'))
-  const nacional = Object.entries(info || {}).filter((item) => item[0].includes('registros_amenazadas_nacional_') && !item[0].includes('total'))
-  const global = Object.entries(info || {}).filter((item) => item[0].includes('registros_amenazadas_global_') && !item[0].includes('total'))
-  // const { value } = Object.entries(search[0] || {}).filter((item) => item[0].includes(('registros_' + removeAccents(selectedValue) + '_total')))
-  //   .reduce((acc, act) => { return ({ ...acc, value: act[1] }) }, { })
-  // console.log(removeAccents(selectedValue, '-'))
-  // console.log('filtro:', selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-  // console.log('info tematica', infoTematica)
-  console.log('info', info)
-
+  console.log(info)
   return (
   <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
-      {children(selected, info, cites, nacional, global, infoTematica)}
+      {children(selected, info)}
   </div>
   )
 }

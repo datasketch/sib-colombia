@@ -10,6 +10,7 @@ import MenuExplorer from '../components/MenuExplorer'
 import territorios from '../static/data/nav_territorio_tolima.json'
 import ContentElement from '../components/ContentElement'
 import gruposInteres from '../static/data/nav_grupo_interes_conservacion.json'
+import { formatNumbers } from '../lib/formatNumbers'
 
 export default function tolima () {
   const slides = tolimaJson.slides
@@ -28,12 +29,12 @@ export default function tolima () {
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
       <Header region={'Tolima'}
-      registrosRegionTotal={generalInfo.especies_region_total}
-      registrosContinentalTotal={generalInfo.registros_continentales}
-      especiesCont={generalInfo.especies_continentales}
-      especiesMar={generalInfo.especies_marinas}
-      observacionesCont={generalInfo.registros_continentales}
-      observacionesMar={generalInfo.registros_marinos}/>
+        registrosRegionTotal={generalInfo.especies_region_total}
+        registrosContinentalTotal={generalInfo.registros_continentales}
+        especiesCont={generalInfo.especies_continentales}
+        especiesMar={generalInfo.especies_marinas}
+        observacionesCont={generalInfo.registros_continentales}
+        observacionesMar={generalInfo.registros_marinos} />
 
       <div className='bg-white-3 mx-auto w-10/12 pb-20 max-w-screen-xl'>
         <div className=' '>
@@ -107,7 +108,21 @@ export default function tolima () {
             <MenuExplorer.Body className="-mt-10">
               {(selected, info, cites, nacional, global, infoTematica) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
+                  <div className='flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto gap-10'>
+                    <div className='text-center flex flex-col justify-center items-center gap-2'>
+                      <span className='text-7xl font-semibold '>
+                        {formatNumbers(info?.count)}
+                      </span>
+                      <div className='font-bold text-2xl w-4/5 mx-auto'>
+                        <span>{info?.label}</span>
+                      </div>
 
+                    </div>
+
+                    <div className='w-full'>
+                      <iframe src={info?.chart} className='w-full h-[300px]'></iframe>
+                    </div>
+                  </div>
                 </div>
               )}
             </MenuExplorer.Body>

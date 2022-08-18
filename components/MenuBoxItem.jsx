@@ -6,10 +6,10 @@ export default function MenuBoxItem ({ child }) {
   return (
     !children || !children.length
       ? (
-        <MenuItem value={child.label} aria-label={child.slug}>{child.label}</MenuItem>
+        <MenuItem value={child.label} aria-label={child.slug}> {child.label} </MenuItem>
         )
       : (
-        <SubMenu label={child.label} itemProps={{ a: 1, b: 2, 'aria-label': child.slug }} openTrigger="clickOnly">
+        <SubMenu label={child.label} itemProps={{ 'aria-label': child.slug }} openTrigger="clickOnly">
           {child.children.map((grandChild, index) => (
             <MenuBoxItem key={index} child={grandChild} />
           ))}
