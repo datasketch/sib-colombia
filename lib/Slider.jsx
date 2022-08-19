@@ -41,7 +41,7 @@ export default function SimpleSlider ({ children, dots = 'false', slidesToShow =
   }
 
   const settings = {
-    infinite: true,
+    infinite: false,
     speed: 500,
     nextArrow: <SampleNextArrow imagePath={buttonImage.nextButton} /* sizeImage={sizeImage}  *//>,
     prevArrow: <SamplePrevArrow imagePath={buttonImage.prevButton} /* sizeImage={sizeImage}  *//>
