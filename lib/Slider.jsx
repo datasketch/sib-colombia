@@ -24,7 +24,7 @@ function SampleNextArrow (props) {
   )
 }
 
-export default function SimpleSlider ({ children, dots = 'false', slidesToShow = 1, slidesToScroll = 1, buttonColor = 'dark', sizeImage = 'normal', responsive = false }) {
+export default function SimpleSlider ({ children, dots = 'false', infinite = false, slidesToShow = 1, slidesToScroll = 1, buttonColor = 'dark', sizeImage = 'normal', responsive = false }) {
   // const buttonColorImagePath = {
   //   dark: {
   //     prevButton: '/images/arrow-left-carousel.svg',
@@ -41,7 +41,7 @@ export default function SimpleSlider ({ children, dots = 'false', slidesToShow =
   }
 
   const settings = {
-    infinite: false,
+    infinite,
     speed: 500,
     nextArrow: <SampleNextArrow imagePath={buttonImage.nextButton} /* sizeImage={sizeImage}  *//>,
     prevArrow: <SamplePrevArrow imagePath={buttonImage.prevButton} /* sizeImage={sizeImage}  *//>

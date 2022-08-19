@@ -53,7 +53,7 @@ export default function tolima () {
 
       <div className='bg-white-3 mx-auto w-10/12 pb-20 max-w-screen-xl'>
         <div className=' '>
-          <SimpleSlider dots>
+          <SimpleSlider dots infinite>
             {slides.map((element, key) =>
               <Slides key={key} data={element} region='Tolima' />
             )}
