@@ -3,6 +3,7 @@ import { Tooltip } from '@mui/material'
 
 import { formatNumbers } from '../lib/formatNumbers'
 import tooltips from '../static/data/tooltips.json'
+import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
 const contentTooltip = (value) => {
@@ -22,12 +23,12 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='border-b-2 border-dartmouth-green w-2/3 ' />
               </div>
               <div className='flex gap-x-2 ' >
-                <span className='font-inter font-black text-lg'>
+                <p className='font-inter font-black text-lg'>
                   Especies de {selected.toLowerCase()}
-                </span>
-                <Tooltip title={<Table tableData={info?.species_list_top} general />} >
-                  <img src='/images/icons/icon-table.svg' />
-                </Tooltip>
+                  <CustomTooltip title={<Table tableData={info?.species_list_top} general />}>
+                    <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
+                  </CustomTooltip>
+                </p>
               </div>
             </div>
 
@@ -66,9 +67,10 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
               </span>
               <p className='text-lg font-inter font-bold relative'>
                 Especies amenazadas nacional
-                {!!info?.species_list_tematica?.amenazadas_nacional.length && <Tooltip title={<Table tableData={info?.species_list_tematica.amenazadas_nacional} />}>
-                  <img className='absolute top-[55%] left-[38%]' src='/images/icons/icon-table.svg' />
-                </Tooltip>}
+                {!!info?.species_list_tematica?.amenazadas_nacional.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.amenazadas_nacional} />}>
+                  <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
+                  {/* <img className='absolute top-[55%] left-[38%]' src='/images/icons/icon-table.svg' /> */}
+                </CustomTooltip>}
               </p>
 
               <div className='flex text-sm gap-x-2 text-blue-green'>
@@ -123,11 +125,11 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='w-1/2 border border-[#262525]' />
               </span>
 
-              <p className='text-lg font-inter font-bold relative'>
+              <p className='text-lg font-inter font-bold '>
                 Especies amenazadas global
-                {!!info?.species_list_tematica?.amenazadas_global.length && <Tooltip title={<Table tableData={info?.species_list_tematica.amenazadas_global} />}>
-                  <img className='absolute top-[55%] left-[30%]' src='/images/icons/icon-table.svg' />
-                </Tooltip>}
+                {!!info?.species_list_tematica?.amenazadas_global.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.amenazadas_global} />}>
+                  <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
+                </CustomTooltip>}
               </p>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
@@ -180,12 +182,12 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='w-1/2 border border-[#262525]' />
               </span>
 
-              <h2 className='text-lg font-inter font-bold flex gap-2'>
+              <p className='text-lg font-inter font-bold'>
                 Especies CITES
-                {!!info?.species_list_tematica?.cites.length && <Tooltip title={<Table tableData={info?.species_list_tematica.cites} />}>
-                  <img className='' src='/images/icons/icon-table.svg' />
-                </Tooltip>}
-              </h2>
+                {!!info?.species_list_tematica?.cites.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.cites} />}>
+                  <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
+                </CustomTooltip>}
+              </p>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_cites_total)}</b></p>
@@ -232,13 +234,13 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='w-2/4 border border-[#262525]' />
               </span>
 
-              <h2 className='text-lg font-inter font-bold flex gap-2'>
+              <p className='text-lg font-inter font-bold'>
                 Especies migratorias
-                {!!info?.species_list_tematica?.migratorias.length && <Tooltip title={<Table tableData={info?.species_list_tematica.migratorias} />}>
-                  <img className='' src='/images/icons/icon-table.svg' />
-                </Tooltip>}
+                {!!info?.species_list_tematica?.migratorias.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.migratorias} />}>
+                  <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
+                </CustomTooltip>}
 
-              </h2>
+              </p>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_migratorias)}</b></p>
@@ -255,11 +257,11 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='w-2/4 border border-[#262525]' />
               </span>
 
-              <h2 className='text-lg font-inter font-bold flex gap-2'>Especies endémicas
-                {!!info?.species_list_tematica?.endemicas.length && <Tooltip title={<Table tableData={info?.species_list_tematica.endemicas} />}>
-                  <img className='' src='/images/icons/icon-table.svg' />
-                </Tooltip>}
-              </h2>
+              <p className='text-lg font-inter font-bold '>Especies endémicas
+                {!!info?.species_list_tematica?.endemicas.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.endemicas} />}>
+                  <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
+                </CustomTooltip>}
+              </p>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_endemicas)}</b></p>
@@ -276,10 +278,10 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='w-2/4 border border-[#262525]' />
               </div>
 
-              <h2 className='text-lg font-inter font-bold flex gap-2'>Especies exóticas
+              <p className='text-lg font-inter font-bold'>Especies exóticas
                 {!!info?.species_list_tematica?.exoticas.length && <Tooltip title={<Table tableData={info?.species_list_tematica.exoticas} />}>
-                  <img className='' src='/images/icons/icon-table.svg' />
-                </Tooltip>}</h2>
+                  <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
+                </Tooltip>}</p>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_exoticas)}</b></p>
@@ -295,11 +297,11 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='w-2/4 border border-[#262525]' />
               </div>
 
-              <h2 className='text-lg font-inter font-bold flex gap-2 relative'>Especies exóticas con potencial de invasión
-                {!!info?.species_list_tematica?.exoticas_riesgo_invasion.length && <Tooltip title={<Table tableData={info?.species_list_tematica.exoticas_riesgo_invasion} />}>
-                  <img className='absolute top-[60%] left-[90%]' src='/images/icons/icon-table.svg' />
-                </Tooltip>}
-              </h2>
+              <p className='text-lg font-inter font-bold'>Especies exóticas con potencial de invasión
+                {!!info?.species_list_tematica?.exoticas_riesgo_invasion.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.exoticas_riesgo_invasion} />}>
+                  <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
+                </CustomTooltip>}
+              </p>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_exoticas_riesgo_invasion
@@ -316,11 +318,10 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='w-2/4 border border-[#262525]' />
               </div>
 
-              <h2 className='text-lg font-inter font-bold flex gap-2'>Especies invasoras
-                {!!info?.species_list_tematica?.invasoras.length && <Tooltip title={<Table tableData={info?.species_list_tematica.invasoras} />}>
-
-                  <img className='' src='/images/icons/icon-table.svg' />
-                </Tooltip>}
+              <h2 className='text-lg font-inter font-bold'>Especies invasoras
+                {!!info?.species_list_tematica?.invasoras.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.invasoras} />}>
+                  <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
+                </CustomTooltip>}
               </h2>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />

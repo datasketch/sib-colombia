@@ -142,9 +142,9 @@ export default function tolima () {
                         <iframe src={info?.chart} className='w-full h-[300px]'></iframe>
                       </div> */}
 
-                      {info?.species_list && (<div className='overflow-y-scroll h-96'>
-                        <Table tableData={info?.species_list}/>
-                      </div>)}
+                      {info?.species_list && (
+                        <Table tableData={info?.species_list} />
+                      )}
                     </div>)
                     : (
                       <div className='grid grid-cols-2 gap-8 w-10/12 mx-auto'>
