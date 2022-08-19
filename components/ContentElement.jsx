@@ -279,9 +279,9 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
               </div>
 
               <p className='text-lg font-inter font-bold'>Especies exóticas
-                {!!info?.species_list_tematica?.exoticas.length && <Tooltip title={<Table tableData={info?.species_list_tematica.exoticas} />}>
+                {!!info?.species_list_tematica?.exoticas.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.exoticas} />}>
                   <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
-                </Tooltip>}</p>
+                </CustomTooltip>}</p>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_exoticas)}</b></p>
@@ -318,11 +318,11 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='w-2/4 border border-[#262525]' />
               </div>
 
-              <h2 className='text-lg font-inter font-bold'>Especies invasoras
+              <p className='text-lg font-inter font-bold'>Especies invasoras
                 {!!info?.species_list_tematica?.invasoras.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.invasoras} />}>
                   <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
                 </CustomTooltip>}
-              </h2>
+              </p>
               <div className='flex text-sm gap-x-2 text-blue-green'>
                 <img src='/images/green-arrow-right.svg' alt='arrow right' />
                 <p className='inline-block '><b>{formatNumbers(info?.registros_invasoras)}</b></p>

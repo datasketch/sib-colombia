@@ -19,28 +19,7 @@
           "label": "Amenazadas global",
           "tooltip": "IUCN (Unión Internacional para la Conservación de la Naturaleza)",
           "children": [
-            {
-              "slug": "amenazadas-global-ex",
-              "activa": true,
-              "descripcion": "Hace referencia a un taxón en el cual el último individuo vivo ha muerto y no se han logrado encontrar nuevos registros en hábitats con condiciones apropiadas al ciclo de vida y formas del taxón.",
-              "icon": false,
-              "icon_black": "static/icons/amenazadas-global-ex-black.svg",
-              "icon_white": "static/icons/amenazadas-global-ex-white.svg",
-              "label": "EX",
-              "orden": 12,
-              "tooltip": "Extinto"
-            },
-            {
-              "slug": "amenazadas-global-ew",
-              "activa": true,
-              "descripcion": "El taxón solamente sobrevive en cultivo, cautividad o como poblaciones naturalizadas fuera de su distribución original.",
-              "icon": false,
-              "icon_black": "static/icons/amenazadas-global-ew-black.svg",
-              "icon_white": "static/icons/amenazadas-global-ew-white.svg",
-              "label": "EW",
-              "orden": 11,
-              "tooltip": "Extinto en estado silvestre"
-            },
+            
             {
               "slug": "amenazadas-global-cr",
               "activa": true,
@@ -73,81 +52,6 @@
               "label": "VU",
               "orden": 8,
               "tooltip": "Vulnerable"
-            },
-            {
-              "slug": "amenazadas-global-lr-cd",
-              "activa": true,
-              "icon": false,
-              "icon_black": "static/icons/amenazadas-global-lr-cd-black.svg",
-              "icon_white": "static/icons/amenazadas-global-lr-cd-white.svg",
-              "label": "LR/cd",
-              "orden": 7,
-              "tooltip": "Menor Riesgo: Dependiente de la Conservación"
-            },
-            {
-              "slug": "amenazadas-global-nt",
-              "activa": true,
-              "descripcion": "Al realizar la evaluación no se encontraron los criterios para definirse como En peligro crítico, En peligro o Vulnerable. Sin embargo es posible que los cumpla en un futuro cercano.",
-              "icon": false,
-              "icon_black": "static/icons/amenazadas-global-nt-black.svg",
-              "icon_white": "static/icons/amenazadas-global-nt-white.svg",
-              "label": "NT",
-              "orden": 6,
-              "tooltip": "Casi amenazado"
-            },
-            {
-              "slug": "amenazadas-global-lr-nt",
-              "activa": true,
-              "icon": false,
-              "icon_black": "static/icons/amenazadas-global-lr-nt-black.svg",
-              "icon_white": "static/icons/amenazadas-global-lr-nt-white.svg",
-              "label": "LR/nt",
-              "orden": 5,
-              "tooltip": "Casi amenazado"
-            },
-            {
-              "slug": "amenazadas-global-lc",
-              "activa": true,
-              "descripcion": "Se realizo la evaluación de riesgo de extensión pero no se cumplieron los criterio para definirlo en alguna categoría de amenaza (En peligro crítico, En peligro, Vulnerable o Casi amenazado)",
-              "icon": false,
-              "icon_black": "static/icons/amenazadas-global-lc-black.svg",
-              "icon_white": "static/icons/amenazadas-global-lc-white.svg",
-              "label": "LC",
-              "orden": 4,
-              "tooltip": "Preocupación menor"
-            },
-            {
-              "slug": "amenazadas-global-lr-lc",
-              "activa": true,
-              "descripcion": "Se realizo la evaluación de riesgo de extensión pero no se cumplieron los criterio para definirlo en alguna categoría de amenaza (En peligro crítico, En peligro, Vulnerable o Casi amenazado)",
-              "icon": false,
-              "icon_black": "static/icons/amenazadas-global-lr-lc-black.svg",
-              "icon_white": "static/icons/amenazadas-global-lr-lc-white.svg",
-              "label": "LR/lc",
-              "orden": 3,
-              "tooltip": "Preocupación menor"
-            },
-            {
-              "slug": "amenazadas-global-dd",
-              "activa": true,
-              "descripcion": "No se tiene la información adecuada para realizar una evaluación del riesgo de extensión basado en su distribución y/o condición de la población.",
-              "icon": false,
-              "icon_black": "static/icons/amenazadas-global-dd-black.svg",
-              "icon_white": "static/icons/amenazadas-global-dd-white.svg",
-              "label": "DD",
-              "orden": 2,
-              "tooltip": "Datos insuficientes"
-            },
-            {
-              "slug": "amenazadas-global-ne",
-              "activa": true,
-              "descripcion": "No se ha llevado a cabo el proceso de clasificación de acuerdo a los criterios establecidos.",
-              "icon": false,
-              "icon_black": "static/icons/amenazadas-global-ne-black.svg",
-              "icon_white": "static/icons/amenazadas-global-ne-white.svg",
-              "label": "NE",
-              "orden": 1,
-              "tooltip": "No evaluado"
             }
           ]
         },
