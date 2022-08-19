@@ -3,7 +3,6 @@ import { numberWithCommas } from '../lib/formatNumbers'
 
 const Table = ({ tableData, general = false }) => {
   const [dataShow, setdataShow] = useState([])
-  console.log(dataShow)
   useEffect(() => {
     general
       ? setdataShow(showData)
