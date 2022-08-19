@@ -25,7 +25,8 @@ module.exports = {
       backgroundImage: {
         'banner-home': "url('/images/home-banner.png')",
         'banner-home-2': "url('/images/home-banner-2.png')",
-        'banner-footer': "url('/images/footer-banner.svg')"
+        'banner-footer': "url('/images/footer-banner.svg')",
+        'footer-2022': "url('/images/footer-2022.svg')"
       },
       colors: {
         'white-2': '#FBFBFB',
