@@ -53227,7 +53227,7 @@
     },
     {
       "slug_tematica": "exotica-riesgo-invasion",
-      "label": "Número especies exoticas con potencial de invasión",
+      "label": "Número especies exóticas con potencial de invasión",
       "count": 29,
       "slug": "exotica-riesgo-invasion",
       "title": "Lista especies: exotica-riesgo-invasion",
@@ -53235,10 +53235,10 @@
     },
     {
       "slug_tematica": "exoticas",
-      "label": "Número especies exoticas",
+      "label": "Número especies exóticas",
       "count": 152,
       "slug": "exoticas",
-      "title": "Lista especies: exoticas",
+      "title": "Lista especies: exóticas",
       "species_list": [
         {
           "species": "Bubulcus ibis",

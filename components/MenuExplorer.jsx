@@ -3,6 +3,7 @@ import { Menu, MenuButton } from '@szhsin/react-menu'
 import MenuBoxItem from './MenuBoxItem'
 import '@szhsin/react-menu/dist/index.css'
 import { SimpleSlider } from '../lib/Slider'
+import { clearText } from '../lib/formatNumbers'
 
 const MenuExplorerContext = createContext(null)
 
@@ -12,8 +13,11 @@ export default function MenuExplorer ({ children, tree, search, ...restProps }) 
   const [selectedValue, setSelectedValue] = useState('')
 
   const updateBreadcrumb = (e) => {
-    const { textContent, value } = e.target
+    let { textContent, value } = e.target
     const slug = e.target.getAttribute('aria-label')
+    if (textContent === 'Ver mas') {
+      textContent = clearText(value)
+    }
     setBreadcrumb((prevState) => [...prevState, textContent || value].reduce((acc, element) => {
       if (!acc.includes(element)) {
         acc.push(element)
@@ -141,12 +145,12 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 }
 
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
-  const { selected, selectedValue, search } = useContext(MenuExplorerContext)
+  const { selected, selectedValue, search, updateBreadcrumb } = useContext(MenuExplorerContext)
   const info = search.find((item) => item.slug === selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
   // console.log(info)
   return (
-  <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
-      {children(selected, info)}
-  </div>
+    <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
+      {children(selected, info, updateBreadcrumb)}
+    </div>
   )
 }

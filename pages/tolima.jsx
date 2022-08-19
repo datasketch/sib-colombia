@@ -121,7 +121,7 @@ export default function tolima () {
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
-              {(selected, info) => (
+              {(selected, info, updateBreadcrumb) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
                   {!info?.children
                     ? (<div className=' flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto'>
@@ -132,11 +132,7 @@ export default function tolima () {
                             <div className='border border-dartmouth-green' />
                           </span>
                         </div>
-                        <div className='font-bold text-lg flex gap-2'>
-                          <span>{info?.label}</span>
-                          {/* {info?.label && <img src='/images/icons/icon-table.svg'/>} */}
-                        </div>
-
+                        <span className='font-black font-inter text-lg '>{info?.label}</span>
                       </div>
                       {/* <div className='w-full'>
                         <iframe src={info?.chart} className='w-full h-[300px]'></iframe>
@@ -148,7 +144,7 @@ export default function tolima () {
                     </div>)
                     : (
                       <div className='grid grid-cols-2 gap-8 w-10/12 mx-auto'>
-                        {info?.children.map(({ count, label }, key) =>
+                        {info?.children.map(({ count, label, slug_tematica: slug }, key) =>
                           <>
                             <div className='shadow-md flex flex-col justify-center items-center gap-2 py-14 px-8'>
                               <div className='flex flex-col'>
@@ -157,9 +153,9 @@ export default function tolima () {
                                   <div className='border border-dartmouth-green' />
                                 </span>
                               </div>
-                              <div className='font-bold text-lg flex gap-2'>
-                                <span>{label}</span>
-
+                              <div className='flex flex-col gap-y-10'>
+                                <span className='font-black font-inter text-lg'>{label}</span>
+                                <button type='button' className='px-2 py-1 border border-dartmouth-green rounded-full w-3/5 self-end' value={slug} onClick={updateBreadcrumb}>Ver mas</button>
                               </div>
 
                             </div>
