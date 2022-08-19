@@ -13,6 +13,7 @@ import gruposInteres from '../static/data/nav_grupo_interes_conservacion.json'
 import { formatNumbers } from '../lib/formatNumbers'
 import { useState } from 'react'
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import Table from '../components/Table'
 
 export default function tolima () {
   const slides = tolimaJson.slides
@@ -25,6 +26,11 @@ export default function tolima () {
   const patrocinador = tolimaJson.patrocinador[0]
   const municipios = tolimaJson.municipios_lista
   const [optionShow, setOptionShow] = useState('table')
+  const [municipio, setMunicipio] = useState('')
+
+  const handleChange = (event) => {
+    setMunicipio(event.target.value)
+  }
 
   const handleRendder = (e) => {
     const { value } = e.target
@@ -132,10 +138,13 @@ export default function tolima () {
                         </div>
 
                       </div>
-                      <div className='w-full'>
+                      {/* <div className='w-full'>
                         <iframe src={info?.chart} className='w-full h-[300px]'></iframe>
-                      </div>
+                      </div> */}
 
+                      {info?.species_list && (<div className='overflow-y-scroll h-96'>
+                        <Table tableData={info?.species_list}/>
+                      </div>)}
                     </div>)
                     : (
                       <div className='grid grid-cols-2 gap-8 w-10/12 mx-auto'>
@@ -189,18 +198,16 @@ export default function tolima () {
                     : (<>
                       <div className='py-3 w-2/5 mx-auto'>
                         <FormControl fullWidth>
-                          <InputLabel id="demo-simple-select-label">Municipios</InputLabel>
+                          <InputLabel id="select-municipios">Municipios</InputLabel>
                           <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-
-                            label="Age"
-
+                            labelId="select-municipios"
+                            id="demo-select-municipios"
+                            label="Municipios"
+                            value={municipio}
+                            onChange={handleChange}
                           >
                             {municipios.map(({ slug, label }, key) =>
-                              <>
-                                <MenuItem key={key} value={slug}>{label}</MenuItem>
-                              </>
+                              <MenuItem key={key} value={slug} >{label}</MenuItem>
                             )}
 
                           </Select>

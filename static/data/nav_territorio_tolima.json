@@ -14,8 +14,8 @@
             "tipo": "SINAP"
         },
         {
-            "slug": "reservas-naturales",
-            "label": "Areas Naturales",
+            "slug": "ecosistemas-estrategicos",
+            "label": "Ecosistemas estratégicos",
             "subtipo": "Territorios indígenas",
             "tipo": "ANT"
         }

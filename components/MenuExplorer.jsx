@@ -14,8 +14,6 @@ export default function MenuExplorer ({ children, tree, search, ...restProps }) 
   const updateBreadcrumb = (e) => {
     const { textContent, value } = e.target
     const slug = e.target.getAttribute('aria-label')
-    console.log(e.target)
-    console.log(slug)
     setBreadcrumb((prevState) => [...prevState, textContent || value].reduce((acc, element) => {
       if (!acc.includes(element)) {
         acc.push(element)
@@ -145,7 +143,7 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
   const { selected, selectedValue, search } = useContext(MenuExplorerContext)
   const info = search.find((item) => item.slug === selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-  console.log(info)
+  // console.log(info)
   return (
   <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
       {children(selected, info)}

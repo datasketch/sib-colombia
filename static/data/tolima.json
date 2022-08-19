@@ -645,13 +645,13 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Exaerete dentata",
             "registros": 1
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Bombus funebris",
             "registros": 1
@@ -1493,7 +1493,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Osornophryne percrassa",
             "registros": 117
@@ -1515,7 +1515,7 @@
             "registros": 1
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Pristimantis uranobates",
             "registros": 359
@@ -2575,7 +2575,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Atlapetes flaviceps",
             "registros": 1266
@@ -2777,7 +2777,7 @@
             "registros": 3
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -4607,7 +4607,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Tityus columbianus",
             "registros": 2
@@ -4617,7 +4617,7 @@
             "registros": 1
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Trichonephila clavipes",
             "registros": 10
@@ -5459,7 +5459,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Atlapetes flaviceps",
             "registros": 1266
@@ -5625,7 +5625,7 @@
             "registros": 1
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -7226,8 +7226,8 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [],
-        "amenazadas-global": [],
+        "amenazadas_nacional": [],
+        "amenazadas_global": [],
         "cites": [],
         "migratorias": [],
         "endemicas": [],
@@ -8072,13 +8072,13 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Dynastes neptunus",
             "registros": 2
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Canthon lituratus",
             "registros": 25
@@ -8940,8 +8940,8 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [],
-        "amenazadas-global": [],
+        "amenazadas_nacional": [],
+        "amenazadas_global": [],
         "cites": [],
         "migratorias": [],
         "endemicas": [
@@ -9782,8 +9782,8 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [],
-        "amenazadas-global": [],
+        "amenazadas_nacional": [],
+        "amenazadas_global": [],
         "cites": [],
         "migratorias": [],
         "endemicas": [],
@@ -10624,7 +10624,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Dynastes neptunus",
             "registros": 2
@@ -10634,7 +10634,7 @@
             "registros": 1
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Vanessa virginiensis",
             "registros": 100
@@ -11604,7 +11604,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Dynastes neptunus",
             "registros": 2
@@ -11626,7 +11626,7 @@
             "registros": 1
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Vanessa virginiensis",
             "registros": 100
@@ -12653,7 +12653,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Tapirus pinchaque",
             "registros": 71
@@ -12687,7 +12687,7 @@
             "registros": 1
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Dasyprocta punctata",
             "registros": 801
@@ -13911,8 +13911,8 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [],
-        "amenazadas-global": [
+        "amenazadas_nacional": [],
+        "amenazadas_global": [
           {
             "species": "Vanessa virginiensis",
             "registros": 100
@@ -14632,8 +14632,8 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [],
-        "amenazadas-global": [
+        "amenazadas_nacional": [],
+        "amenazadas_global": [
           {
             "species": "Acostaea rivolii",
             "registros": 2
@@ -15470,7 +15470,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Pimelodus grosskopfii",
             "registros": 62
@@ -15536,7 +15536,7 @@
             "registros": 1
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Astroblepus micrescens",
             "registros": 1963
@@ -16833,7 +16833,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -17023,7 +17023,7 @@
             "registros": 1
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -18672,7 +18672,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Chelonoidis carbonarius",
             "registros": 4
@@ -18690,7 +18690,7 @@
             "registros": 1
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Gonatodes albogularis",
             "registros": 137
@@ -19772,7 +19772,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Atlapetes flaviceps",
             "registros": 1266
@@ -19974,7 +19974,7 @@
             "registros": 3
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -22368,7 +22368,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -22570,7 +22570,7 @@
             "registros": 16
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -25038,7 +25038,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -25240,7 +25240,7 @@
             "registros": 16
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -27708,7 +27708,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -27910,7 +27910,7 @@
             "registros": 16
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -30378,7 +30378,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -30580,7 +30580,7 @@
             "registros": 16
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -33048,7 +33048,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -33250,7 +33250,7 @@
             "registros": 16
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -35718,7 +35718,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -35920,7 +35920,7 @@
             "registros": 16
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -38388,7 +38388,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -38590,7 +38590,7 @@
             "registros": 16
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -41058,7 +41058,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -41260,7 +41260,7 @@
             "registros": 16
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -43728,7 +43728,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -43930,7 +43930,7 @@
             "registros": 16
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -46398,7 +46398,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -46600,7 +46600,7 @@
             "registros": 16
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -49068,7 +49068,7 @@
         }
       ],
       "species_list_tematica": {
-        "amenazadas-nacional": [
+        "amenazadas_nacional": [
           {
             "species": "Ceroxylon quindiuense",
             "registros": 4227
@@ -49270,7 +49270,7 @@
             "registros": 16
           }
         ],
-        "amenazadas-global": [
+        "amenazadas_global": [
           {
             "species": "Coragyps atratus",
             "registros": 7153
@@ -50333,7 +50333,7 @@
     },
     {
       "slug": "distribucion",
-      "label": "Las especies amenazadas se dividen en  éndemicas y migratorias",
+      "label": "Las especies amenazadas se dividen en Nacional y Global",
       "children": [
         {
           "slug_tematica": "endemicas",
@@ -50349,7 +50349,7 @@
     },
     {
       "slug": "exoticas-invasoras",
-      "label": "Las especies exoticas e invasoras se dividen en exóticas, invasoras y exoticas con potencial de invasión",
+      "label": "Las especies amenazadas se dividen en Nacional y Global",
       "children": [
         {
           "slug_tematica": "exoticas",
@@ -50357,13 +50357,13 @@
           "count": 152
         },
         {
-          "slug_tematica": "invasoras",
-          "label": "Número especies éndemicas",
+          "slug_tematica": "endemicas",
+          "label": "Número especies invasoras",
           "count": 6
         },
         {
-          "slug_tematica": "exotica-riesgo-invasion",
-          "label": "Número especies exoticas con potencial de invasión",
+          "slug_tematica": "migratorias",
+          "label": "Número especies con alto riesgo de invasión",
           "count": 29
         }
       ]
@@ -50374,7 +50374,208 @@
       "count": 145,
       "slug": "amenazadas-global",
       "title": "Lista especies: amenazadas-global",
-      "chart": "static/charts/tolima/amenazadas-global.html"
+      "species_list": [
+        {
+          "species": "Coragyps atratus",
+          "registros": 7153
+        },
+        {
+          "species": "Coragyps atratus",
+          "registros": 7153
+        },
+        {
+          "species": "Tyrannus melancholicus",
+          "registros": 6513
+        },
+        {
+          "species": "Tyrannus melancholicus",
+          "registros": 6513
+        },
+        {
+          "species": "Thraupis episcopus",
+          "registros": 6476
+        },
+        {
+          "species": "Thraupis episcopus",
+          "registros": 6476
+        },
+        {
+          "species": "Zonotrichia capensis",
+          "registros": 5684
+        },
+        {
+          "species": "Zonotrichia capensis",
+          "registros": 5684
+        },
+        {
+          "species": "Sicalis flaveola",
+          "registros": 5040
+        },
+        {
+          "species": "Sicalis flaveola",
+          "registros": 5040
+        },
+        {
+          "species": "Turdus fuscater",
+          "registros": 4945
+        },
+        {
+          "species": "Turdus fuscater",
+          "registros": 4945
+        },
+        {
+          "species": "Troglodytes aedon",
+          "registros": 4853
+        },
+        {
+          "species": "Troglodytes aedon",
+          "registros": 4853
+        },
+        {
+          "species": "Turdus ignobilis",
+          "registros": 4510
+        },
+        {
+          "species": "Turdus ignobilis",
+          "registros": 4510
+        },
+        {
+          "species": "Bubulcus ibis",
+          "registros": 4494
+        },
+        {
+          "species": "Bubulcus ibis",
+          "registros": 4494
+        },
+        {
+          "species": "Columbina talpacoti",
+          "registros": 4354
+        },
+        {
+          "species": "Columbina talpacoti",
+          "registros": 4354
+        },
+        {
+          "species": "Notiochelidon cyanoleuca",
+          "registros": 4318
+        },
+        {
+          "species": "Notiochelidon cyanoleuca",
+          "registros": 4318
+        },
+        {
+          "species": "Rupornis magnirostris",
+          "registros": 4298
+        },
+        {
+          "species": "Rupornis magnirostris",
+          "registros": 4298
+        },
+        {
+          "species": "Ceroxylon quindiuense",
+          "registros": 4227
+        },
+        {
+          "species": "Ceroxylon quindiuense",
+          "registros": 4227
+        },
+        {
+          "species": "Ramphocelus dimidiatus",
+          "registros": 4169
+        },
+        {
+          "species": "Ramphocelus dimidiatus",
+          "registros": 4169
+        },
+        {
+          "species": "Pitangus sulphuratus",
+          "registros": 3695
+        },
+        {
+          "species": "Pitangus sulphuratus",
+          "registros": 3695
+        },
+        {
+          "species": "Tangara vitriolina",
+          "registros": 3508
+        },
+        {
+          "species": "Tangara vitriolina",
+          "registros": 3508
+        },
+        {
+          "species": "Zenaida auriculata",
+          "registros": 3396
+        },
+        {
+          "species": "Zenaida auriculata",
+          "registros": 3396
+        },
+        {
+          "species": "Coereba flaveola",
+          "registros": 3364
+        },
+        {
+          "species": "Coereba flaveola",
+          "registros": 3364
+        },
+        {
+          "species": "Melanerpes rubricapillus",
+          "registros": 3342
+        },
+        {
+          "species": "Melanerpes rubricapillus",
+          "registros": 3342
+        },
+        {
+          "species": "Todirostrum cinereum",
+          "registros": 3323
+        },
+        {
+          "species": "Todirostrum cinereum",
+          "registros": 3323
+        },
+        {
+          "species": "Phimosus infuscatus",
+          "registros": 3246
+        },
+        {
+          "species": "Phimosus infuscatus",
+          "registros": 3246
+        },
+        {
+          "species": "Euphonia laniirostris",
+          "registros": 3189
+        },
+        {
+          "species": "Euphonia laniirostris",
+          "registros": 3189
+        },
+        {
+          "species": "Brotogeris jugularis",
+          "registros": 3170
+        },
+        {
+          "species": "Brotogeris jugularis",
+          "registros": 3170
+        },
+        {
+          "species": "Elaenia flavogaster",
+          "registros": 3038
+        },
+        {
+          "species": "Elaenia flavogaster",
+          "registros": 3038
+        },
+        {
+          "species": "Forpus conspicillatus",
+          "registros": 2993
+        },
+        {
+          "species": "Forpus conspicillatus",
+          "registros": 2993
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-global-cr",
@@ -50382,7 +50583,84 @@
       "count": 12,
       "slug": "amenazadas-global-cr",
       "title": "Lista especies: amenazadas-global-cr",
-      "chart": "static/charts/tolima/amenazadas-global-cr.html"
+      "species_list": [
+        {
+          "species": "Hapalopsittaca fuertesi",
+          "registros": 223
+        },
+        {
+          "species": "Hapalopsittaca fuertesi",
+          "registros": 223
+        },
+        {
+          "species": "Pimelodus grosskopfii",
+          "registros": 62
+        },
+        {
+          "species": "Pimelodus grosskopfii",
+          "registros": 62
+        },
+        {
+          "species": "Atelopus simulatus",
+          "registros": 49
+        },
+        {
+          "species": "Atelopus simulatus",
+          "registros": 49
+        },
+        {
+          "species": "Clavija plumbea",
+          "registros": 4
+        },
+        {
+          "species": "Podocnemis lewyana",
+          "registros": 4
+        },
+        {
+          "species": "Podocnemis lewyana",
+          "registros": 4
+        },
+        {
+          "species": "Styrax lasiocalyx",
+          "registros": 4
+        },
+        {
+          "species": "Styrax lasiocalyx",
+          "registros": 4
+        },
+        {
+          "species": "Acostaea rivolii",
+          "registros": 2
+        },
+        {
+          "species": "Acostaea rivolii",
+          "registros": 2
+        },
+        {
+          "species": "Atelopus angelito",
+          "registros": 2
+        },
+        {
+          "species": "Greigia nubigena",
+          "registros": 2
+        },
+        {
+          "species": "Piper subtomentosum",
+          "registros": 2
+        },
+        {
+          "species": "Piper subtomentosum",
+          "registros": 2
+        },
+        {
+          "species": "Quararibea cacao",
+          "registros": 2
+        },
+        {
+          "species": "Atelopus ebenoides",
+          "registros": 1
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-global-dd",
@@ -50390,7 +50668,184 @@
       "count": 39,
       "slug": "amenazadas-global-dd",
       "title": "Lista especies: amenazadas-global-dd",
-      "chart": "static/charts/tolima/amenazadas-global-dd.html"
+      "species_list": [
+        {
+          "species": "Atractus lehmanni",
+          "registros": 22
+        },
+        {
+          "species": "Poecilia sphenops",
+          "registros": 20
+        },
+        {
+          "species": "Ipomoea batatas",
+          "registros": 18
+        },
+        {
+          "species": "Ipomoea batatas",
+          "registros": 18
+        },
+        {
+          "species": "Cabassous centralis",
+          "registros": 16
+        },
+        {
+          "species": "Cabassous centralis",
+          "registros": 16
+        },
+        {
+          "species": "Hemibrycon raqueliae",
+          "registros": 13
+        },
+        {
+          "species": "Helminthophis praeocularis",
+          "registros": 10
+        },
+        {
+          "species": "Helminthophis praeocularis",
+          "registros": 10
+        },
+        {
+          "species": "Thomasomys contradictus",
+          "registros": 7
+        },
+        {
+          "species": "Atractus obtusirostris",
+          "registros": 6
+        },
+        {
+          "species": "Mazama americana",
+          "registros": 6
+        },
+        {
+          "species": "Sciurus pucheranii",
+          "registros": 5
+        },
+        {
+          "species": "Acestrocephalus anomalus",
+          "registros": 4
+        },
+        {
+          "species": "Hedychium coronarium",
+          "registros": 4
+        },
+        {
+          "species": "Imparfinis timana",
+          "registros": 4
+        },
+        {
+          "species": "Solanum lobbianum",
+          "registros": 4
+        },
+        {
+          "species": "Argopleura conventus",
+          "registros": 3
+        },
+        {
+          "species": "Astroblepus nicefori",
+          "registros": 3
+        },
+        {
+          "species": "Cypseloides cherriei",
+          "registros": 3
+        },
+        {
+          "species": "Hydrochoerus isthmius",
+          "registros": 3
+        },
+        {
+          "species": "Lepidoblepharis colombianus",
+          "registros": 3
+        },
+        {
+          "species": "Platyrrhinus umbratus",
+          "registros": 3
+        },
+        {
+          "species": "Proechimys chrysaeolus",
+          "registros": 3
+        },
+        {
+          "species": "Apteronotus milesi",
+          "registros": 2
+        },
+        {
+          "species": "Astroblepus frenatus",
+          "registros": 2
+        },
+        {
+          "species": "Isoetes karstenii",
+          "registros": 2
+        },
+        {
+          "species": "Strengeriana casallasi",
+          "registros": 2
+        },
+        {
+          "species": "Sturisomatichthys aureum",
+          "registros": 2
+        },
+        {
+          "species": "Sylvilagus andinus",
+          "registros": 2
+        },
+        {
+          "species": "Sylvilagus andinus",
+          "registros": 2
+        },
+        {
+          "species": "Astroblepus marmoratus",
+          "registros": 1
+        },
+        {
+          "species": "Astyanax gisleni",
+          "registros": 1
+        },
+        {
+          "species": "Atractus melanogaster",
+          "registros": 1
+        },
+        {
+          "species": "Cynodonichthys elegans",
+          "registros": 1
+        },
+        {
+          "species": "Dicranopygium goudotii",
+          "registros": 1
+        },
+        {
+          "species": "Guatteria rufotomentosa",
+          "registros": 1
+        },
+        {
+          "species": "Liotyphlops argaleus",
+          "registros": 1
+        },
+        {
+          "species": "Opuntia pittieri",
+          "registros": 1
+        },
+        {
+          "species": "Opuntia pittieri",
+          "registros": 1
+        },
+        {
+          "species": "Pudu mephistophiles",
+          "registros": 1
+        },
+        {
+          "species": "Strengeriana cajaensis",
+          "registros": 1
+        },
+        {
+          "species": "Strengeriana tolimensis",
+          "registros": 1
+        },
+        {
+          "species": "Trichomycterus straminius",
+          "registros": 1
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-global-en",
@@ -50398,7 +50853,208 @@
       "count": 44,
       "slug": "amenazadas-global-en",
       "title": "Lista especies: amenazadas-global-en",
-      "chart": "static/charts/tolima/amenazadas-global-en.html"
+      "species_list": [
+        {
+          "species": "Aspidosperma polyneuron",
+          "registros": 239
+        },
+        {
+          "species": "Tapirus pinchaque",
+          "registros": 71
+        },
+        {
+          "species": "Plutarchia monantha",
+          "registros": 53
+        },
+        {
+          "species": "Pristimantis simoteriscus",
+          "registros": 41
+        },
+        {
+          "species": "Esenbeckia alata",
+          "registros": 22
+        },
+        {
+          "species": "Cecropia goudotiana",
+          "registros": 20
+        },
+        {
+          "species": "Cecropia goudotiana",
+          "registros": 20
+        },
+        {
+          "species": "Gynoxys laurata",
+          "registros": 14
+        },
+        {
+          "species": "Dunalia solanacea",
+          "registros": 12
+        },
+        {
+          "species": "Dunalia solanacea",
+          "registros": 12
+        },
+        {
+          "species": "Coffea arabica",
+          "registros": 9
+        },
+        {
+          "species": "Coffea arabica",
+          "registros": 9
+        },
+        {
+          "species": "Swartzia robiniifolia",
+          "registros": 8
+        },
+        {
+          "species": "Swartzia robiniifolia",
+          "registros": 8
+        },
+        {
+          "species": "Acanthagrion williamsoni",
+          "registros": 7
+        },
+        {
+          "species": "Erythroxylum cassinoides",
+          "registros": 7
+        },
+        {
+          "species": "Erythroxylum cassinoides",
+          "registros": 7
+        },
+        {
+          "species": "Scytalopus rodriguezi",
+          "registros": 7
+        },
+        {
+          "species": "Plutarchia pubiflora",
+          "registros": 6
+        },
+        {
+          "species": "Plutarchia pubiflora",
+          "registros": 6
+        },
+        {
+          "species": "Ocotea umbrina",
+          "registros": 5
+        },
+        {
+          "species": "Ocotea umbrina",
+          "registros": 5
+        },
+        {
+          "species": "Penelope perspicax",
+          "registros": 5
+        },
+        {
+          "species": "Ancistrus tolima",
+          "registros": 4
+        },
+        {
+          "species": "Centrolene medemi",
+          "registros": 4
+        },
+        {
+          "species": "Garcia nutans",
+          "registros": 4
+        },
+        {
+          "species": "Oreopanax ruizanus",
+          "registros": 4
+        },
+        {
+          "species": "Prunus integrifolia",
+          "registros": 4
+        },
+        {
+          "species": "Niceforonia adenobrachia",
+          "registros": 3
+        },
+        {
+          "species": "Zanthoxylum brisasanum",
+          "registros": 3
+        },
+        {
+          "species": "Cebus versicolor",
+          "registros": 2
+        },
+        {
+          "species": "Cebus versicolor",
+          "registros": 2
+        },
+        {
+          "species": "Critoniopsis ursicola",
+          "registros": 2
+        },
+        {
+          "species": "Daphnopsis anomala",
+          "registros": 2
+        },
+        {
+          "species": "Daphnopsis anomala",
+          "registros": 2
+        },
+        {
+          "species": "Guaiacum officinale",
+          "registros": 2
+        },
+        {
+          "species": "Guaiacum officinale",
+          "registros": 2
+        },
+        {
+          "species": "Piptadenia uliginosa",
+          "registros": 2
+        },
+        {
+          "species": "Plutarchia minor",
+          "registros": 2
+        },
+        {
+          "species": "Pristimantis alalocophus",
+          "registros": 2
+        },
+        {
+          "species": "Pseudoplatystoma magdaleniatum",
+          "registros": 2
+        },
+        {
+          "species": "Puya ochroleuca",
+          "registros": 2
+        },
+        {
+          "species": "Rinorea marginata",
+          "registros": 2
+        },
+        {
+          "species": "Rinorea marginata",
+          "registros": 2
+        },
+        {
+          "species": "Ampelocera albertiae",
+          "registros": 1
+        },
+        {
+          "species": "Anotomys leander",
+          "registros": 1
+        },
+        {
+          "species": "Cephalotomandra fragrans",
+          "registros": 1
+        },
+        {
+          "species": "Cordia protracta",
+          "registros": 1
+        },
+        {
+          "species": "Cordia protracta",
+          "registros": 1
+        },
+        {
+          "species": "Drepanoneura donnellyi",
+          "registros": 1
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-global-ew",
@@ -50406,7 +51062,20 @@
       "count": 2,
       "slug": "amenazadas-global-ew",
       "title": "Lista especies: amenazadas-global-ew",
-      "chart": "static/charts/tolima/amenazadas-global-ew.html"
+      "species_list": [
+        {
+          "species": "Brugmansia arborea",
+          "registros": 6
+        },
+        {
+          "species": "Brugmansia aurea",
+          "registros": 4
+        },
+        {
+          "species": "Brugmansia aurea",
+          "registros": 4
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-global-ex",
@@ -50414,7 +51083,16 @@
       "count": 1,
       "slug": "amenazadas-global-ex",
       "title": "Lista especies: amenazadas-global-ex",
-      "chart": "static/charts/tolima/amenazadas-global-ex.html"
+      "species_list": [
+        {
+          "species": "Casearia quinduensis",
+          "registros": 5
+        },
+        {
+          "species": "Casearia quinduensis",
+          "registros": 5
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-global-lc",
@@ -50422,7 +51100,208 @@
       "count": 1995,
       "slug": "amenazadas-global-lc",
       "title": "Lista especies: amenazadas-global-lc",
-      "chart": "static/charts/tolima/amenazadas-global-lc.html"
+      "species_list": [
+        {
+          "species": "Coragyps atratus",
+          "registros": 7153
+        },
+        {
+          "species": "Coragyps atratus",
+          "registros": 7153
+        },
+        {
+          "species": "Tyrannus melancholicus",
+          "registros": 6513
+        },
+        {
+          "species": "Tyrannus melancholicus",
+          "registros": 6513
+        },
+        {
+          "species": "Thraupis episcopus",
+          "registros": 6476
+        },
+        {
+          "species": "Thraupis episcopus",
+          "registros": 6476
+        },
+        {
+          "species": "Zonotrichia capensis",
+          "registros": 5684
+        },
+        {
+          "species": "Zonotrichia capensis",
+          "registros": 5684
+        },
+        {
+          "species": "Sicalis flaveola",
+          "registros": 5040
+        },
+        {
+          "species": "Sicalis flaveola",
+          "registros": 5040
+        },
+        {
+          "species": "Turdus fuscater",
+          "registros": 4945
+        },
+        {
+          "species": "Turdus fuscater",
+          "registros": 4945
+        },
+        {
+          "species": "Troglodytes aedon",
+          "registros": 4853
+        },
+        {
+          "species": "Troglodytes aedon",
+          "registros": 4853
+        },
+        {
+          "species": "Turdus ignobilis",
+          "registros": 4510
+        },
+        {
+          "species": "Turdus ignobilis",
+          "registros": 4510
+        },
+        {
+          "species": "Bubulcus ibis",
+          "registros": 4494
+        },
+        {
+          "species": "Bubulcus ibis",
+          "registros": 4494
+        },
+        {
+          "species": "Columbina talpacoti",
+          "registros": 4354
+        },
+        {
+          "species": "Columbina talpacoti",
+          "registros": 4354
+        },
+        {
+          "species": "Notiochelidon cyanoleuca",
+          "registros": 4318
+        },
+        {
+          "species": "Notiochelidon cyanoleuca",
+          "registros": 4318
+        },
+        {
+          "species": "Rupornis magnirostris",
+          "registros": 4298
+        },
+        {
+          "species": "Rupornis magnirostris",
+          "registros": 4298
+        },
+        {
+          "species": "Ramphocelus dimidiatus",
+          "registros": 4169
+        },
+        {
+          "species": "Ramphocelus dimidiatus",
+          "registros": 4169
+        },
+        {
+          "species": "Pitangus sulphuratus",
+          "registros": 3695
+        },
+        {
+          "species": "Pitangus sulphuratus",
+          "registros": 3695
+        },
+        {
+          "species": "Tangara vitriolina",
+          "registros": 3508
+        },
+        {
+          "species": "Tangara vitriolina",
+          "registros": 3508
+        },
+        {
+          "species": "Zenaida auriculata",
+          "registros": 3396
+        },
+        {
+          "species": "Zenaida auriculata",
+          "registros": 3396
+        },
+        {
+          "species": "Coereba flaveola",
+          "registros": 3364
+        },
+        {
+          "species": "Coereba flaveola",
+          "registros": 3364
+        },
+        {
+          "species": "Melanerpes rubricapillus",
+          "registros": 3342
+        },
+        {
+          "species": "Melanerpes rubricapillus",
+          "registros": 3342
+        },
+        {
+          "species": "Todirostrum cinereum",
+          "registros": 3323
+        },
+        {
+          "species": "Todirostrum cinereum",
+          "registros": 3323
+        },
+        {
+          "species": "Phimosus infuscatus",
+          "registros": 3246
+        },
+        {
+          "species": "Phimosus infuscatus",
+          "registros": 3246
+        },
+        {
+          "species": "Euphonia laniirostris",
+          "registros": 3189
+        },
+        {
+          "species": "Euphonia laniirostris",
+          "registros": 3189
+        },
+        {
+          "species": "Brotogeris jugularis",
+          "registros": 3170
+        },
+        {
+          "species": "Brotogeris jugularis",
+          "registros": 3170
+        },
+        {
+          "species": "Elaenia flavogaster",
+          "registros": 3038
+        },
+        {
+          "species": "Elaenia flavogaster",
+          "registros": 3038
+        },
+        {
+          "species": "Forpus conspicillatus",
+          "registros": 2993
+        },
+        {
+          "species": "Forpus conspicillatus",
+          "registros": 2993
+        },
+        {
+          "species": "Vanellus chilensis",
+          "registros": 2931
+        },
+        {
+          "species": "Vanellus chilensis",
+          "registros": 2931
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-global-lr-lc",
@@ -50430,7 +51309,24 @@
       "count": 3,
       "slug": "amenazadas-global-lr-lc",
       "title": "Lista especies: amenazadas-global-lr-lc",
-      "chart": "static/charts/tolima/amenazadas-global-lr-lc.html"
+      "species_list": [
+        {
+          "species": "Ficus pallida",
+          "registros": 20
+        },
+        {
+          "species": "Ficus pallida",
+          "registros": 20
+        },
+        {
+          "species": "Bauhinia picta",
+          "registros": 6
+        },
+        {
+          "species": "Bauhinia picta",
+          "registros": 6
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-global-lr-nt",
@@ -50438,7 +51334,20 @@
       "count": 3,
       "slug": "amenazadas-global-lr-nt",
       "title": "Lista especies: amenazadas-global-lr-nt",
-      "chart": "static/charts/tolima/amenazadas-global-lr-nt.html"
+      "species_list": [
+        {
+          "species": "Aspidosperma megalocarpon",
+          "registros": 14
+        },
+        {
+          "species": "Cariniana pyriformis",
+          "registros": 5
+        },
+        {
+          "species": "Minquartia guianensis",
+          "registros": 1
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-global-nt",
@@ -50446,7 +51355,208 @@
       "count": 58,
       "slug": "amenazadas-global-nt",
       "title": "Lista especies: amenazadas-global-nt",
-      "chart": "static/charts/tolima/amenazadas-global-nt.html"
+      "species_list": [
+        {
+          "species": "Atlapetes flaviceps",
+          "registros": 1266
+        },
+        {
+          "species": "Atlapetes flaviceps",
+          "registros": 1266
+        },
+        {
+          "species": "Leptotila conoveri",
+          "registros": 1007
+        },
+        {
+          "species": "Leptotila conoveri",
+          "registros": 1007
+        },
+        {
+          "species": "Aratinga wagleri",
+          "registros": 573
+        },
+        {
+          "species": "Aratinga wagleri",
+          "registros": 573
+        },
+        {
+          "species": "Andigena hypoglauca",
+          "registros": 454
+        },
+        {
+          "species": "Andigena hypoglauca",
+          "registros": 454
+        },
+        {
+          "species": "Eriocnemis derbyi",
+          "registros": 327
+        },
+        {
+          "species": "Eriocnemis derbyi",
+          "registros": 327
+        },
+        {
+          "species": "Sturnella magna",
+          "registros": 251
+        },
+        {
+          "species": "Sturnella magna",
+          "registros": 251
+        },
+        {
+          "species": "Setophaga cerulea",
+          "registros": 189
+        },
+        {
+          "species": "Cuniculus taczanowskii",
+          "registros": 168
+        },
+        {
+          "species": "Pristimantis simoterus",
+          "registros": 156
+        },
+        {
+          "species": "Pristimantis simoterus",
+          "registros": 156
+        },
+        {
+          "species": "Nasuella olivacea",
+          "registros": 155
+        },
+        {
+          "species": "Contopus cooperi",
+          "registros": 154
+        },
+        {
+          "species": "Gallinago nobilis",
+          "registros": 113
+        },
+        {
+          "species": "Gallinago nobilis",
+          "registros": 113
+        },
+        {
+          "species": "Myrmeciza palliata",
+          "registros": 55
+        },
+        {
+          "species": "Habia gutturalis",
+          "registros": 41
+        },
+        {
+          "species": "Setophaga striata",
+          "registros": 36
+        },
+        {
+          "species": "Vermivora chrysoptera",
+          "registros": 35
+        },
+        {
+          "species": "Pristimantis orpacobates",
+          "registros": 20
+        },
+        {
+          "species": "Aburria aburri",
+          "registros": 19
+        },
+        {
+          "species": "Atlapetes fuscoolivaceus",
+          "registros": 17
+        },
+        {
+          "species": "Tinamus major",
+          "registros": 17
+        },
+        {
+          "species": "Bolitoglossa phalarosoma",
+          "registros": 11
+        },
+        {
+          "species": "Drymophila caudata",
+          "registros": 9
+        },
+        {
+          "species": "Drymophila caudata",
+          "registros": 9
+        },
+        {
+          "species": "Palicourea albiflora",
+          "registros": 9
+        },
+        {
+          "species": "Palicourea albiflora",
+          "registros": 9
+        },
+        {
+          "species": "Pristimantis vicarius",
+          "registros": 9
+        },
+        {
+          "species": "Chauna chavaria",
+          "registros": 8
+        },
+        {
+          "species": "Chauna chavaria",
+          "registros": 8
+        },
+        {
+          "species": "Rulyrana susatamai",
+          "registros": 8
+        },
+        {
+          "species": "Arachnothryx discolor",
+          "registros": 7
+        },
+        {
+          "species": "Arachnothryx discolor",
+          "registros": 7
+        },
+        {
+          "species": "Bolitoglossa ramosi",
+          "registros": 7
+        },
+        {
+          "species": "Calliandra tolimensis",
+          "registros": 7
+        },
+        {
+          "species": "Calliandra tolimensis",
+          "registros": 7
+        },
+        {
+          "species": "Platyrrhinus ismaeli",
+          "registros": 7
+        },
+        {
+          "species": "Leopardus wiedii",
+          "registros": 6
+        },
+        {
+          "species": "Scytalopus latebricola",
+          "registros": 6
+        },
+        {
+          "species": "Semnornis ramphastinus",
+          "registros": 6
+        },
+        {
+          "species": "Grallaricula flavirostris",
+          "registros": 5
+        },
+        {
+          "species": "Hyloxalus lehmanni",
+          "registros": 5
+        },
+        {
+          "species": "Amazona farinosa",
+          "registros": 4
+        },
+        {
+          "species": "Ramphastos ambiguus",
+          "registros": 4
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-global-vu",
@@ -50454,7 +51564,208 @@
       "count": 89,
       "slug": "amenazadas-global-vu",
       "title": "Lista especies: amenazadas-global-vu",
-      "chart": "static/charts/tolima/amenazadas-global-vu.html"
+      "species_list": [
+        {
+          "species": "Ceroxylon quindiuense",
+          "registros": 4227
+        },
+        {
+          "species": "Ceroxylon quindiuense",
+          "registros": 4227
+        },
+        {
+          "species": "Oxypogon stuebelii",
+          "registros": 974
+        },
+        {
+          "species": "Oxypogon stuebelii",
+          "registros": 974
+        },
+        {
+          "species": "Trichilia acuminata",
+          "registros": 861
+        },
+        {
+          "species": "Trichilia acuminata",
+          "registros": 861
+        },
+        {
+          "species": "Anthocephala berlepschi",
+          "registros": 498
+        },
+        {
+          "species": "Anthocephala berlepschi",
+          "registros": 498
+        },
+        {
+          "species": "Ognorhynchus icterotis",
+          "registros": 494
+        },
+        {
+          "species": "Ognorhynchus icterotis",
+          "registros": 494
+        },
+        {
+          "species": "Sericossypha albocristata",
+          "registros": 276
+        },
+        {
+          "species": "Sericossypha albocristata",
+          "registros": 276
+        },
+        {
+          "species": "Mazama rufina",
+          "registros": 251
+        },
+        {
+          "species": "Pleroma paleaceum",
+          "registros": 210
+        },
+        {
+          "species": "Pleroma paleaceum",
+          "registros": 210
+        },
+        {
+          "species": "Bolborhynchus ferrugineifrons",
+          "registros": 209
+        },
+        {
+          "species": "Bolborhynchus ferrugineifrons",
+          "registros": 209
+        },
+        {
+          "species": "Grallaria rufocinerea",
+          "registros": 182
+        },
+        {
+          "species": "Grallaria rufocinerea",
+          "registros": 182
+        },
+        {
+          "species": "Grallaria milleri",
+          "registros": 158
+        },
+        {
+          "species": "Grallaria milleri",
+          "registros": 158
+        },
+        {
+          "species": "Vultur gryphus",
+          "registros": 153
+        },
+        {
+          "species": "Vultur gryphus",
+          "registros": 153
+        },
+        {
+          "species": "Bryconamericus tolimae",
+          "registros": 144
+        },
+        {
+          "species": "Capito hypoleucus",
+          "registros": 122
+        },
+        {
+          "species": "Osornophryne percrassa",
+          "registros": 117
+        },
+        {
+          "species": "Osornophryne percrassa",
+          "registros": 117
+        },
+        {
+          "species": "Patagioenas subvinacea",
+          "registros": 102
+        },
+        {
+          "species": "Pristimantis supernatis",
+          "registros": 73
+        },
+        {
+          "species": "Pristimantis supernatis",
+          "registros": 73
+        },
+        {
+          "species": "Trichomycterus transandianus",
+          "registros": 60
+        },
+        {
+          "species": "Tremarctos ornatus",
+          "registros": 56
+        },
+        {
+          "species": "Ara militaris",
+          "registros": 49
+        },
+        {
+          "species": "Hapalopsittaca amazonina",
+          "registros": 43
+        },
+        {
+          "species": "Talisia stricta",
+          "registros": 41
+        },
+        {
+          "species": "Talisia stricta",
+          "registros": 41
+        },
+        {
+          "species": "Weinmannia tolimensis",
+          "registros": 38
+        },
+        {
+          "species": "Weinmannia tolimensis",
+          "registros": 38
+        },
+        {
+          "species": "Xenopipo flavicapilla",
+          "registros": 38
+        },
+        {
+          "species": "Themistoclesia mucronata",
+          "registros": 33
+        },
+        {
+          "species": "Cedrela odorata",
+          "registros": 28
+        },
+        {
+          "species": "Pristimantis racemus",
+          "registros": 26
+        },
+        {
+          "species": "Pristimantis dorsopictus",
+          "registros": 25
+        },
+        {
+          "species": "Nymphargus garciae",
+          "registros": 24
+        },
+        {
+          "species": "Cranioleuca curtata",
+          "registros": 23
+        },
+        {
+          "species": "Leopardus tigrinus",
+          "registros": 21
+        },
+        {
+          "species": "Leopardus tigrinus",
+          "registros": 21
+        },
+        {
+          "species": "Leporinus muyscorum",
+          "registros": 20
+        },
+        {
+          "species": "Aotus griseimembra",
+          "registros": 12
+        },
+        {
+          "species": "Aotus griseimembra",
+          "registros": 12
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-nacional",
@@ -50462,7 +51773,208 @@
       "count": 128,
       "slug": "amenazadas-nacional",
       "title": "Lista especies: amenazadas-nacional",
-      "chart": "static/charts/tolima/amenazadas-nacional.html"
+      "species_list": [
+        {
+          "species": "Ceroxylon quindiuense",
+          "registros": 4227
+        },
+        {
+          "species": "Ceroxylon quindiuense",
+          "registros": 4227
+        },
+        {
+          "species": "Atlapetes flaviceps",
+          "registros": 1266
+        },
+        {
+          "species": "Atlapetes flaviceps",
+          "registros": 1266
+        },
+        {
+          "species": "Leptotila conoveri",
+          "registros": 1007
+        },
+        {
+          "species": "Leptotila conoveri",
+          "registros": 1007
+        },
+        {
+          "species": "Leptosittaca branickii",
+          "registros": 545
+        },
+        {
+          "species": "Leptosittaca branickii",
+          "registros": 545
+        },
+        {
+          "species": "Anthocephala berlepschi",
+          "registros": 498
+        },
+        {
+          "species": "Anthocephala berlepschi",
+          "registros": 498
+        },
+        {
+          "species": "Ognorhynchus icterotis",
+          "registros": 494
+        },
+        {
+          "species": "Ognorhynchus icterotis",
+          "registros": 494
+        },
+        {
+          "species": "Andigena hypoglauca",
+          "registros": 454
+        },
+        {
+          "species": "Andigena hypoglauca",
+          "registros": 454
+        },
+        {
+          "species": "Aspidosperma polyneuron",
+          "registros": 239
+        },
+        {
+          "species": "Hapalopsittaca fuertesi",
+          "registros": 223
+        },
+        {
+          "species": "Hapalopsittaca fuertesi",
+          "registros": 223
+        },
+        {
+          "species": "Bolborhynchus ferrugineifrons",
+          "registros": 209
+        },
+        {
+          "species": "Bolborhynchus ferrugineifrons",
+          "registros": 209
+        },
+        {
+          "species": "Setophaga cerulea",
+          "registros": 189
+        },
+        {
+          "species": "Grallaria rufocinerea",
+          "registros": 182
+        },
+        {
+          "species": "Grallaria rufocinerea",
+          "registros": 182
+        },
+        {
+          "species": "Grallaria milleri",
+          "registros": 158
+        },
+        {
+          "species": "Grallaria milleri",
+          "registros": 158
+        },
+        {
+          "species": "Vultur gryphus",
+          "registros": 153
+        },
+        {
+          "species": "Vultur gryphus",
+          "registros": 153
+        },
+        {
+          "species": "Capito hypoleucus",
+          "registros": 122
+        },
+        {
+          "species": "Osornophryne percrassa",
+          "registros": 117
+        },
+        {
+          "species": "Osornophryne percrassa",
+          "registros": 117
+        },
+        {
+          "species": "Saltator cinctus",
+          "registros": 97
+        },
+        {
+          "species": "Creurgops verticalis",
+          "registros": 72
+        },
+        {
+          "species": "Tapirus pinchaque",
+          "registros": 71
+        },
+        {
+          "species": "Pimelodus grosskopfii",
+          "registros": 62
+        },
+        {
+          "species": "Pimelodus grosskopfii",
+          "registros": 62
+        },
+        {
+          "species": "Tremarctos ornatus",
+          "registros": 56
+        },
+        {
+          "species": "Ara militaris",
+          "registros": 49
+        },
+        {
+          "species": "Hapalopsittaca amazonina",
+          "registros": 43
+        },
+        {
+          "species": "Xenopipo flavicapilla",
+          "registros": 38
+        },
+        {
+          "species": "Passiflora magdalenae",
+          "registros": 37
+        },
+        {
+          "species": "Passiflora magdalenae",
+          "registros": 37
+        },
+        {
+          "species": "Prochilodus magdalenae",
+          "registros": 32
+        },
+        {
+          "species": "Cedrela odorata",
+          "registros": 28
+        },
+        {
+          "species": "Quercus humboldtii",
+          "registros": 23
+        },
+        {
+          "species": "Quercus humboldtii",
+          "registros": 23
+        },
+        {
+          "species": "Leporinus muyscorum",
+          "registros": 20
+        },
+        {
+          "species": "Characidium phoxocephalum",
+          "registros": 18
+        },
+        {
+          "species": "Apteronotus magdalenensis",
+          "registros": 17
+        },
+        {
+          "species": "Atlapetes fuscoolivaceus",
+          "registros": 17
+        },
+        {
+          "species": "Oxyura jamaicensis",
+          "registros": 16
+        },
+        {
+          "species": "Oxyura jamaicensis",
+          "registros": 16
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-nacional-cr",
@@ -50470,7 +51982,124 @@
       "count": 19,
       "slug": "amenazadas-nacional-cr",
       "title": "Lista especies: amenazadas-nacional-cr",
-      "chart": "static/charts/tolima/amenazadas-nacional-cr.html"
+      "species_list": [
+        {
+          "species": "Hapalopsittaca fuertesi",
+          "registros": 223
+        },
+        {
+          "species": "Hapalopsittaca fuertesi",
+          "registros": 223
+        },
+        {
+          "species": "Vultur gryphus",
+          "registros": 153
+        },
+        {
+          "species": "Vultur gryphus",
+          "registros": 153
+        },
+        {
+          "species": "Zamia tolimensis",
+          "registros": 12
+        },
+        {
+          "species": "Tillandsia racinae",
+          "registros": 8
+        },
+        {
+          "species": "Tillandsia racinae",
+          "registros": 8
+        },
+        {
+          "species": "Cariniana pyriformis",
+          "registros": 5
+        },
+        {
+          "species": "Pseudocolopteryx acutipennis",
+          "registros": 5
+        },
+        {
+          "species": "Pitcairnia stenophylla",
+          "registros": 4
+        },
+        {
+          "species": "Pitcairnia stenophylla",
+          "registros": 4
+        },
+        {
+          "species": "Pitcairnia tolimensis",
+          "registros": 4
+        },
+        {
+          "species": "Pitcairnia tolimensis",
+          "registros": 4
+        },
+        {
+          "species": "Podocnemis lewyana",
+          "registros": 4
+        },
+        {
+          "species": "Podocnemis lewyana",
+          "registros": 4
+        },
+        {
+          "species": "Harpyhaliaetus solitarius",
+          "registros": 3
+        },
+        {
+          "species": "Greigia nubigena",
+          "registros": 2
+        },
+        {
+          "species": "Guaiacum officinale",
+          "registros": 2
+        },
+        {
+          "species": "Guaiacum officinale",
+          "registros": 2
+        },
+        {
+          "species": "Pseudoplatystoma magdaleniatum",
+          "registros": 2
+        },
+        {
+          "species": "Scutellaria parrae",
+          "registros": 2
+        },
+        {
+          "species": "Scutellaria parrae",
+          "registros": 2
+        },
+        {
+          "species": "Atelopus ebenoides",
+          "registros": 1
+        },
+        {
+          "species": "Bromelia trianae",
+          "registros": 1
+        },
+        {
+          "species": "Bromelia trianae",
+          "registros": 1
+        },
+        {
+          "species": "Caretta caretta",
+          "registros": 1
+        },
+        {
+          "species": "Exaerete dentata",
+          "registros": 1
+        },
+        {
+          "species": "Gustavia latifolia",
+          "registros": 1
+        },
+        {
+          "species": "Gustavia latifolia",
+          "registros": 1
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-nacional-en",
@@ -50478,7 +52107,172 @@
       "count": 31,
       "slug": "amenazadas-nacional-en",
       "title": "Lista especies: amenazadas-nacional-en",
-      "chart": "static/charts/tolima/amenazadas-nacional-en.html"
+      "species_list": [
+        {
+          "species": "Ceroxylon quindiuense",
+          "registros": 4227
+        },
+        {
+          "species": "Ceroxylon quindiuense",
+          "registros": 4227
+        },
+        {
+          "species": "Ognorhynchus icterotis",
+          "registros": 494
+        },
+        {
+          "species": "Ognorhynchus icterotis",
+          "registros": 494
+        },
+        {
+          "species": "Aspidosperma polyneuron",
+          "registros": 239
+        },
+        {
+          "species": "Grallaria milleri",
+          "registros": 158
+        },
+        {
+          "species": "Grallaria milleri",
+          "registros": 158
+        },
+        {
+          "species": "Capito hypoleucus",
+          "registros": 122
+        },
+        {
+          "species": "Tapirus pinchaque",
+          "registros": 71
+        },
+        {
+          "species": "Cedrela odorata",
+          "registros": 28
+        },
+        {
+          "species": "Oxyura jamaicensis",
+          "registros": 16
+        },
+        {
+          "species": "Oxyura jamaicensis",
+          "registros": 16
+        },
+        {
+          "species": "Scytalopus stilesi",
+          "registros": 12
+        },
+        {
+          "species": "Scytalopus stilesi",
+          "registros": 12
+        },
+        {
+          "species": "Grallaria alleni",
+          "registros": 11
+        },
+        {
+          "species": "Astrocaryum malybo",
+          "registros": 7
+        },
+        {
+          "species": "Cattleya trianae",
+          "registros": 5
+        },
+        {
+          "species": "Cattleya trianae",
+          "registros": 5
+        },
+        {
+          "species": "Ichthyoelephas longirostris",
+          "registros": 5
+        },
+        {
+          "species": "Penelope perspicax",
+          "registros": 5
+        },
+        {
+          "species": "Gonopterodendron arboreum",
+          "registros": 4
+        },
+        {
+          "species": "Gonopterodendron arboreum",
+          "registros": 4
+        },
+        {
+          "species": "Aiphanes lindeniana",
+          "registros": 3
+        },
+        {
+          "species": "Niceforonia adenobrachia",
+          "registros": 3
+        },
+        {
+          "species": "Anas cyanoptera",
+          "registros": 2
+        },
+        {
+          "species": "Crocodylus acutus",
+          "registros": 2
+        },
+        {
+          "species": "Mora oleifera",
+          "registros": 2
+        },
+        {
+          "species": "Puya ochroleuca",
+          "registros": 2
+        },
+        {
+          "species": "Strengeriana casallasi",
+          "registros": 2
+        },
+        {
+          "species": "Cattleya mendelii",
+          "registros": 1
+        },
+        {
+          "species": "Cattleya mendelii",
+          "registros": 1
+        },
+        {
+          "species": "Cordillera platycalyx",
+          "registros": 1
+        },
+        {
+          "species": "Eremophila alpestris",
+          "registros": 1
+        },
+        {
+          "species": "Juglans neotropica",
+          "registros": 1
+        },
+        {
+          "species": "Magnolia caricifragrans",
+          "registros": 1
+        },
+        {
+          "species": "Magnolia caricifragrans",
+          "registros": 1
+        },
+        {
+          "species": "Oncidium alexandrae",
+          "registros": 1
+        },
+        {
+          "species": "Oncidium alexandrae",
+          "registros": 1
+        },
+        {
+          "species": "Oxypogon stubelii",
+          "registros": 1
+        },
+        {
+          "species": "Phylloscartes lanyoni",
+          "registros": 1
+        },
+        {
+          "species": "Xenesthis immanis",
+          "registros": 1
+        }
+      ]
     },
     {
       "slug_tematica": "amenazadas-nacional-vu",
@@ -50486,7 +52280,208 @@
       "count": 78,
       "slug": "amenazadas-nacional-vu",
       "title": "Lista especies: amenazadas-nacional-vu",
-      "chart": "static/charts/tolima/amenazadas-nacional-vu.html"
+      "species_list": [
+        {
+          "species": "Atlapetes flaviceps",
+          "registros": 1266
+        },
+        {
+          "species": "Atlapetes flaviceps",
+          "registros": 1266
+        },
+        {
+          "species": "Leptotila conoveri",
+          "registros": 1007
+        },
+        {
+          "species": "Leptotila conoveri",
+          "registros": 1007
+        },
+        {
+          "species": "Leptosittaca branickii",
+          "registros": 545
+        },
+        {
+          "species": "Leptosittaca branickii",
+          "registros": 545
+        },
+        {
+          "species": "Anthocephala berlepschi",
+          "registros": 498
+        },
+        {
+          "species": "Anthocephala berlepschi",
+          "registros": 498
+        },
+        {
+          "species": "Andigena hypoglauca",
+          "registros": 454
+        },
+        {
+          "species": "Andigena hypoglauca",
+          "registros": 454
+        },
+        {
+          "species": "Bolborhynchus ferrugineifrons",
+          "registros": 209
+        },
+        {
+          "species": "Bolborhynchus ferrugineifrons",
+          "registros": 209
+        },
+        {
+          "species": "Setophaga cerulea",
+          "registros": 189
+        },
+        {
+          "species": "Grallaria rufocinerea",
+          "registros": 182
+        },
+        {
+          "species": "Grallaria rufocinerea",
+          "registros": 182
+        },
+        {
+          "species": "Osornophryne percrassa",
+          "registros": 117
+        },
+        {
+          "species": "Osornophryne percrassa",
+          "registros": 117
+        },
+        {
+          "species": "Saltator cinctus",
+          "registros": 97
+        },
+        {
+          "species": "Creurgops verticalis",
+          "registros": 72
+        },
+        {
+          "species": "Pimelodus grosskopfii",
+          "registros": 62
+        },
+        {
+          "species": "Pimelodus grosskopfii",
+          "registros": 62
+        },
+        {
+          "species": "Tremarctos ornatus",
+          "registros": 56
+        },
+        {
+          "species": "Ara militaris",
+          "registros": 49
+        },
+        {
+          "species": "Hapalopsittaca amazonina",
+          "registros": 43
+        },
+        {
+          "species": "Xenopipo flavicapilla",
+          "registros": 38
+        },
+        {
+          "species": "Passiflora magdalenae",
+          "registros": 37
+        },
+        {
+          "species": "Passiflora magdalenae",
+          "registros": 37
+        },
+        {
+          "species": "Prochilodus magdalenae",
+          "registros": 32
+        },
+        {
+          "species": "Quercus humboldtii",
+          "registros": 23
+        },
+        {
+          "species": "Quercus humboldtii",
+          "registros": 23
+        },
+        {
+          "species": "Leporinus muyscorum",
+          "registros": 20
+        },
+        {
+          "species": "Characidium phoxocephalum",
+          "registros": 18
+        },
+        {
+          "species": "Apteronotus magdalenensis",
+          "registros": 17
+        },
+        {
+          "species": "Atlapetes fuscoolivaceus",
+          "registros": 17
+        },
+        {
+          "species": "Pyroderus scutatus",
+          "registros": 13
+        },
+        {
+          "species": "Aotus griseimembra",
+          "registros": 12
+        },
+        {
+          "species": "Aotus griseimembra",
+          "registros": 12
+        },
+        {
+          "species": "Buthraupis wetmorei",
+          "registros": 11
+        },
+        {
+          "species": "Buthraupis wetmorei",
+          "registros": 11
+        },
+        {
+          "species": "Podocarpus oleifolius",
+          "registros": 10
+        },
+        {
+          "species": "Podocarpus oleifolius",
+          "registros": 10
+        },
+        {
+          "species": "Saguinus leucopus",
+          "registros": 10
+        },
+        {
+          "species": "Saguinus leucopus",
+          "registros": 10
+        },
+        {
+          "species": "Salvia tolimensis",
+          "registros": 9
+        },
+        {
+          "species": "Salvia tolimensis",
+          "registros": 9
+        },
+        {
+          "species": "Chauna chavaria",
+          "registros": 8
+        },
+        {
+          "species": "Chauna chavaria",
+          "registros": 8
+        },
+        {
+          "species": "Parodon caliensis",
+          "registros": 8
+        },
+        {
+          "species": "Dichapetalum bernalii",
+          "registros": 7
+        },
+        {
+          "species": "Dichapetalum bernalii",
+          "registros": 7
+        }
+      ]
     },
     {
       "slug_tematica": "cites",
@@ -50494,7 +52489,208 @@
       "count": 322,
       "slug": "cites",
       "title": "Lista especies: cites",
-      "chart": "static/charts/tolima/cites.html"
+      "species_list": [
+        {
+          "species": "Rupornis magnirostris",
+          "registros": 4298
+        },
+        {
+          "species": "Rupornis magnirostris",
+          "registros": 4298
+        },
+        {
+          "species": "Brotogeris jugularis",
+          "registros": 3170
+        },
+        {
+          "species": "Brotogeris jugularis",
+          "registros": 3170
+        },
+        {
+          "species": "Forpus conspicillatus",
+          "registros": 2993
+        },
+        {
+          "species": "Forpus conspicillatus",
+          "registros": 2993
+        },
+        {
+          "species": "Milvago chimachima",
+          "registros": 2817
+        },
+        {
+          "species": "Milvago chimachima",
+          "registros": 2817
+        },
+        {
+          "species": "Amazilia tzacatl",
+          "registros": 2223
+        },
+        {
+          "species": "Amazilia tzacatl",
+          "registros": 2223
+        },
+        {
+          "species": "Colibri coruscans",
+          "registros": 2026
+        },
+        {
+          "species": "Colibri coruscans",
+          "registros": 2026
+        },
+        {
+          "species": "Chalybura buffonii",
+          "registros": 1637
+        },
+        {
+          "species": "Chalybura buffonii",
+          "registros": 1637
+        },
+        {
+          "species": "Caracara cheriway",
+          "registros": 1403
+        },
+        {
+          "species": "Caracara cheriway",
+          "registros": 1403
+        },
+        {
+          "species": "Heliangelus exortis",
+          "registros": 1396
+        },
+        {
+          "species": "Heliangelus exortis",
+          "registros": 1396
+        },
+        {
+          "species": "Aglaiocercus kingii",
+          "registros": 1341
+        },
+        {
+          "species": "Aglaiocercus kingii",
+          "registros": 1341
+        },
+        {
+          "species": "Coeligena torquata",
+          "registros": 1317
+        },
+        {
+          "species": "Coeligena torquata",
+          "registros": 1317
+        },
+        {
+          "species": "Falco sparverius",
+          "registros": 1160
+        },
+        {
+          "species": "Falco sparverius",
+          "registros": 1160
+        },
+        {
+          "species": "Metallura tyrianthina",
+          "registros": 1095
+        },
+        {
+          "species": "Metallura tyrianthina",
+          "registros": 1095
+        },
+        {
+          "species": "Pionus menstruus",
+          "registros": 1047
+        },
+        {
+          "species": "Pionus menstruus",
+          "registros": 1047
+        },
+        {
+          "species": "Dendrocygna autumnalis",
+          "registros": 1021
+        },
+        {
+          "species": "Dendrocygna autumnalis",
+          "registros": 1021
+        },
+        {
+          "species": "Amazona ochrocephala",
+          "registros": 966
+        },
+        {
+          "species": "Amazona ochrocephala",
+          "registros": 966
+        },
+        {
+          "species": "Phaethornis guy",
+          "registros": 887
+        },
+        {
+          "species": "Florisuga mellivora",
+          "registros": 849
+        },
+        {
+          "species": "Thalurania colombica",
+          "registros": 816
+        },
+        {
+          "species": "Dasyprocta punctata",
+          "registros": 801
+        },
+        {
+          "species": "Dasyprocta punctata",
+          "registros": 801
+        },
+        {
+          "species": "Metallura williami",
+          "registros": 790
+        },
+        {
+          "species": "Metallura williami",
+          "registros": 790
+        },
+        {
+          "species": "Anthracothorax nigricollis",
+          "registros": 784
+        },
+        {
+          "species": "Anthracothorax nigricollis",
+          "registros": 784
+        },
+        {
+          "species": "Ocreatus underwoodii",
+          "registros": 761
+        },
+        {
+          "species": "Ocreatus underwoodii",
+          "registros": 761
+        },
+        {
+          "species": "Buteo platypterus",
+          "registros": 747
+        },
+        {
+          "species": "Buteo platypterus",
+          "registros": 747
+        },
+        {
+          "species": "Boissonneaua flavescens",
+          "registros": 726
+        },
+        {
+          "species": "Boissonneaua flavescens",
+          "registros": 726
+        },
+        {
+          "species": "Adelomyia melanogenys",
+          "registros": 710
+        },
+        {
+          "species": "Adelomyia melanogenys",
+          "registros": 710
+        },
+        {
+          "species": "Phaethornis anthophilus",
+          "registros": 658
+        }
+      ]
     },
     {
       "slug_tematica": "cites-i",
@@ -50502,7 +52698,208 @@
       "count": 15,
       "slug": "cites-i",
       "title": "Lista especies: cites-i",
-      "chart": "static/charts/tolima/cites-i.html"
+      "species_list": [
+        {
+          "species": "Rupornis magnirostris",
+          "registros": 4298
+        },
+        {
+          "species": "Rupornis magnirostris",
+          "registros": 4298
+        },
+        {
+          "species": "Brotogeris jugularis",
+          "registros": 3170
+        },
+        {
+          "species": "Brotogeris jugularis",
+          "registros": 3170
+        },
+        {
+          "species": "Forpus conspicillatus",
+          "registros": 2993
+        },
+        {
+          "species": "Forpus conspicillatus",
+          "registros": 2993
+        },
+        {
+          "species": "Milvago chimachima",
+          "registros": 2817
+        },
+        {
+          "species": "Milvago chimachima",
+          "registros": 2817
+        },
+        {
+          "species": "Amazilia tzacatl",
+          "registros": 2223
+        },
+        {
+          "species": "Amazilia tzacatl",
+          "registros": 2223
+        },
+        {
+          "species": "Colibri coruscans",
+          "registros": 2026
+        },
+        {
+          "species": "Colibri coruscans",
+          "registros": 2026
+        },
+        {
+          "species": "Chalybura buffonii",
+          "registros": 1637
+        },
+        {
+          "species": "Chalybura buffonii",
+          "registros": 1637
+        },
+        {
+          "species": "Caracara cheriway",
+          "registros": 1403
+        },
+        {
+          "species": "Caracara cheriway",
+          "registros": 1403
+        },
+        {
+          "species": "Heliangelus exortis",
+          "registros": 1396
+        },
+        {
+          "species": "Heliangelus exortis",
+          "registros": 1396
+        },
+        {
+          "species": "Aglaiocercus kingii",
+          "registros": 1341
+        },
+        {
+          "species": "Aglaiocercus kingii",
+          "registros": 1341
+        },
+        {
+          "species": "Coeligena torquata",
+          "registros": 1317
+        },
+        {
+          "species": "Coeligena torquata",
+          "registros": 1317
+        },
+        {
+          "species": "Falco sparverius",
+          "registros": 1160
+        },
+        {
+          "species": "Falco sparverius",
+          "registros": 1160
+        },
+        {
+          "species": "Metallura tyrianthina",
+          "registros": 1095
+        },
+        {
+          "species": "Metallura tyrianthina",
+          "registros": 1095
+        },
+        {
+          "species": "Pionus menstruus",
+          "registros": 1047
+        },
+        {
+          "species": "Pionus menstruus",
+          "registros": 1047
+        },
+        {
+          "species": "Dendrocygna autumnalis",
+          "registros": 1021
+        },
+        {
+          "species": "Dendrocygna autumnalis",
+          "registros": 1021
+        },
+        {
+          "species": "Amazona ochrocephala",
+          "registros": 966
+        },
+        {
+          "species": "Amazona ochrocephala",
+          "registros": 966
+        },
+        {
+          "species": "Phaethornis guy",
+          "registros": 887
+        },
+        {
+          "species": "Florisuga mellivora",
+          "registros": 849
+        },
+        {
+          "species": "Thalurania colombica",
+          "registros": 816
+        },
+        {
+          "species": "Dasyprocta punctata",
+          "registros": 801
+        },
+        {
+          "species": "Dasyprocta punctata",
+          "registros": 801
+        },
+        {
+          "species": "Metallura williami",
+          "registros": 790
+        },
+        {
+          "species": "Metallura williami",
+          "registros": 790
+        },
+        {
+          "species": "Anthracothorax nigricollis",
+          "registros": 784
+        },
+        {
+          "species": "Anthracothorax nigricollis",
+          "registros": 784
+        },
+        {
+          "species": "Ocreatus underwoodii",
+          "registros": 761
+        },
+        {
+          "species": "Ocreatus underwoodii",
+          "registros": 761
+        },
+        {
+          "species": "Buteo platypterus",
+          "registros": 747
+        },
+        {
+          "species": "Buteo platypterus",
+          "registros": 747
+        },
+        {
+          "species": "Boissonneaua flavescens",
+          "registros": 726
+        },
+        {
+          "species": "Boissonneaua flavescens",
+          "registros": 726
+        },
+        {
+          "species": "Adelomyia melanogenys",
+          "registros": 710
+        },
+        {
+          "species": "Adelomyia melanogenys",
+          "registros": 710
+        },
+        {
+          "species": "Phaethornis anthophilus",
+          "registros": 658
+        }
+      ]
     },
     {
       "slug_tematica": "cites-i-ii",
@@ -50510,7 +52907,12 @@
       "count": 1,
       "slug": "cites-i-ii",
       "title": "Lista especies: cites-i-ii",
-      "chart": "static/charts/tolima/cites-i-ii.html"
+      "species_list": [
+        {
+          "species": "Crocodylus acutus",
+          "registros": 2
+        }
+      ]
     },
     {
       "slug_tematica": "cites-ii",
@@ -50518,7 +52920,208 @@
       "count": 293,
       "slug": "cites-ii",
       "title": "Lista especies: cites-ii",
-      "chart": "static/charts/tolima/cites-ii.html"
+      "species_list": [
+        {
+          "species": "Rupornis magnirostris",
+          "registros": 4298
+        },
+        {
+          "species": "Rupornis magnirostris",
+          "registros": 4298
+        },
+        {
+          "species": "Brotogeris jugularis",
+          "registros": 3170
+        },
+        {
+          "species": "Brotogeris jugularis",
+          "registros": 3170
+        },
+        {
+          "species": "Forpus conspicillatus",
+          "registros": 2993
+        },
+        {
+          "species": "Forpus conspicillatus",
+          "registros": 2993
+        },
+        {
+          "species": "Milvago chimachima",
+          "registros": 2817
+        },
+        {
+          "species": "Milvago chimachima",
+          "registros": 2817
+        },
+        {
+          "species": "Amazilia tzacatl",
+          "registros": 2223
+        },
+        {
+          "species": "Amazilia tzacatl",
+          "registros": 2223
+        },
+        {
+          "species": "Colibri coruscans",
+          "registros": 2026
+        },
+        {
+          "species": "Colibri coruscans",
+          "registros": 2026
+        },
+        {
+          "species": "Chalybura buffonii",
+          "registros": 1637
+        },
+        {
+          "species": "Chalybura buffonii",
+          "registros": 1637
+        },
+        {
+          "species": "Caracara cheriway",
+          "registros": 1403
+        },
+        {
+          "species": "Caracara cheriway",
+          "registros": 1403
+        },
+        {
+          "species": "Heliangelus exortis",
+          "registros": 1396
+        },
+        {
+          "species": "Heliangelus exortis",
+          "registros": 1396
+        },
+        {
+          "species": "Aglaiocercus kingii",
+          "registros": 1341
+        },
+        {
+          "species": "Aglaiocercus kingii",
+          "registros": 1341
+        },
+        {
+          "species": "Coeligena torquata",
+          "registros": 1317
+        },
+        {
+          "species": "Coeligena torquata",
+          "registros": 1317
+        },
+        {
+          "species": "Falco sparverius",
+          "registros": 1160
+        },
+        {
+          "species": "Falco sparverius",
+          "registros": 1160
+        },
+        {
+          "species": "Metallura tyrianthina",
+          "registros": 1095
+        },
+        {
+          "species": "Metallura tyrianthina",
+          "registros": 1095
+        },
+        {
+          "species": "Pionus menstruus",
+          "registros": 1047
+        },
+        {
+          "species": "Pionus menstruus",
+          "registros": 1047
+        },
+        {
+          "species": "Dendrocygna autumnalis",
+          "registros": 1021
+        },
+        {
+          "species": "Dendrocygna autumnalis",
+          "registros": 1021
+        },
+        {
+          "species": "Amazona ochrocephala",
+          "registros": 966
+        },
+        {
+          "species": "Amazona ochrocephala",
+          "registros": 966
+        },
+        {
+          "species": "Phaethornis guy",
+          "registros": 887
+        },
+        {
+          "species": "Florisuga mellivora",
+          "registros": 849
+        },
+        {
+          "species": "Thalurania colombica",
+          "registros": 816
+        },
+        {
+          "species": "Dasyprocta punctata",
+          "registros": 801
+        },
+        {
+          "species": "Dasyprocta punctata",
+          "registros": 801
+        },
+        {
+          "species": "Metallura williami",
+          "registros": 790
+        },
+        {
+          "species": "Metallura williami",
+          "registros": 790
+        },
+        {
+          "species": "Anthracothorax nigricollis",
+          "registros": 784
+        },
+        {
+          "species": "Anthracothorax nigricollis",
+          "registros": 784
+        },
+        {
+          "species": "Ocreatus underwoodii",
+          "registros": 761
+        },
+        {
+          "species": "Ocreatus underwoodii",
+          "registros": 761
+        },
+        {
+          "species": "Buteo platypterus",
+          "registros": 747
+        },
+        {
+          "species": "Buteo platypterus",
+          "registros": 747
+        },
+        {
+          "species": "Boissonneaua flavescens",
+          "registros": 726
+        },
+        {
+          "species": "Boissonneaua flavescens",
+          "registros": 726
+        },
+        {
+          "species": "Adelomyia melanogenys",
+          "registros": 710
+        },
+        {
+          "species": "Adelomyia melanogenys",
+          "registros": 710
+        },
+        {
+          "species": "Phaethornis anthophilus",
+          "registros": 658
+        }
+      ]
     },
     {
       "slug_tematica": "cites-iii",
@@ -50526,7 +53129,80 @@
       "count": 13,
       "slug": "cites-iii",
       "title": "Lista especies: cites-iii",
-      "chart": "static/charts/tolima/cites-iii.html"
+      "species_list": [
+        {
+          "species": "Dendrocygna autumnalis",
+          "registros": 1021
+        },
+        {
+          "species": "Dendrocygna autumnalis",
+          "registros": 1021
+        },
+        {
+          "species": "Dasyprocta punctata",
+          "registros": 801
+        },
+        {
+          "species": "Dasyprocta punctata",
+          "registros": 801
+        },
+        {
+          "species": "Eira barbara",
+          "registros": 117
+        },
+        {
+          "species": "Eira barbara",
+          "registros": 117
+        },
+        {
+          "species": "Sarcoramphus papa",
+          "registros": 53
+        },
+        {
+          "species": "Crotalus durissus",
+          "registros": 51
+        },
+        {
+          "species": "Cuniculus paca",
+          "registros": 37
+        },
+        {
+          "species": "Tamandua mexicana",
+          "registros": 37
+        },
+        {
+          "species": "Burhinus bistriatus",
+          "registros": 34
+        },
+        {
+          "species": "Potamotrygon magdalenae",
+          "registros": 11
+        },
+        {
+          "species": "Potamotrygon magdalenae",
+          "registros": 11
+        },
+        {
+          "species": "Potos flavus",
+          "registros": 7
+        },
+        {
+          "species": "Semnornis ramphastinus",
+          "registros": 6
+        },
+        {
+          "species": "Dendrocygna bicolor",
+          "registros": 1
+        },
+        {
+          "species": "Dendrocygna bicolor",
+          "registros": 1
+        },
+        {
+          "species": "Potamotrygon motoro",
+          "registros": 1
+        }
+      ]
     },
     {
       "slug_tematica": "endemicas",
@@ -50534,7 +53210,208 @@
       "count": 612,
       "slug": "endemicas",
       "title": "Lista especies: endemicas",
-      "chart": "static/charts/tolima/endemicas.html"
+      "species_list": [
+        {
+          "species": "Astroblepus micrescens",
+          "registros": 1963
+        },
+        {
+          "species": "Atlapetes flaviceps",
+          "registros": 1266
+        },
+        {
+          "species": "Atlapetes flaviceps",
+          "registros": 1266
+        },
+        {
+          "species": "Euphonia concinna",
+          "registros": 1009
+        },
+        {
+          "species": "Euphonia concinna",
+          "registros": 1009
+        },
+        {
+          "species": "Leptotila conoveri",
+          "registros": 1007
+        },
+        {
+          "species": "Leptotila conoveri",
+          "registros": 1007
+        },
+        {
+          "species": "Espeletia hartwegiana",
+          "registros": 841
+        },
+        {
+          "species": "Espeletia hartwegiana",
+          "registros": 841
+        },
+        {
+          "species": "Creagrutus magdalenae",
+          "registros": 771
+        },
+        {
+          "species": "Gephyrocharax melanocheir",
+          "registros": 606
+        },
+        {
+          "species": "Myiarchus apicalis",
+          "registros": 528
+        },
+        {
+          "species": "Myiarchus apicalis",
+          "registros": 528
+        },
+        {
+          "species": "Anthocephala berlepschi",
+          "registros": 498
+        },
+        {
+          "species": "Anthocephala berlepschi",
+          "registros": 498
+        },
+        {
+          "species": "Trichomycterus banneaui",
+          "registros": 391
+        },
+        {
+          "species": "Habia cristata",
+          "registros": 278
+        },
+        {
+          "species": "Argopleura magdalenensis",
+          "registros": 263
+        },
+        {
+          "species": "Hapalopsittaca fuertesi",
+          "registros": 223
+        },
+        {
+          "species": "Hapalopsittaca fuertesi",
+          "registros": 223
+        },
+        {
+          "species": "Miconia gleasoniana",
+          "registros": 221
+        },
+        {
+          "species": "Miconia gleasoniana",
+          "registros": 221
+        },
+        {
+          "species": "Sturisomatichthys leightoni",
+          "registros": 216
+        },
+        {
+          "species": "Sturisomatichthys leightoni",
+          "registros": 216
+        },
+        {
+          "species": "Pleroma paleaceum",
+          "registros": 210
+        },
+        {
+          "species": "Pleroma paleaceum",
+          "registros": 210
+        },
+        {
+          "species": "Bolborhynchus ferrugineifrons",
+          "registros": 209
+        },
+        {
+          "species": "Bolborhynchus ferrugineifrons",
+          "registros": 209
+        },
+        {
+          "species": "Microgenys minuta",
+          "registros": 188
+        },
+        {
+          "species": "Astroblepus homodon",
+          "registros": 180
+        },
+        {
+          "species": "Astroblepus grixalvii",
+          "registros": 176
+        },
+        {
+          "species": "Grallaria milleri",
+          "registros": 158
+        },
+        {
+          "species": "Grallaria milleri",
+          "registros": 158
+        },
+        {
+          "species": "Bryconamericus tolimae",
+          "registros": 144
+        },
+        {
+          "species": "Chaetostoma milesi",
+          "registros": 138
+        },
+        {
+          "species": "Capito hypoleucus",
+          "registros": 122
+        },
+        {
+          "species": "Astroblepus trifasciatus",
+          "registros": 118
+        },
+        {
+          "species": "Aequatorium tatamanum",
+          "registros": 111
+        },
+        {
+          "species": "Miconia plethorica",
+          "registros": 107
+        },
+        {
+          "species": "Creagrutus brevipinnis",
+          "registros": 104
+        },
+        {
+          "species": "Diplostephium tolimense",
+          "registros": 104
+        },
+        {
+          "species": "Chaetostoma thomsoni",
+          "registros": 86
+        },
+        {
+          "species": "Cynodonichthys magdalenae",
+          "registros": 86
+        },
+        {
+          "species": "Cynodonichthys magdalenae",
+          "registros": 86
+        },
+        {
+          "species": "Berberis quindiuensis",
+          "registros": 73
+        },
+        {
+          "species": "Berberis quindiuensis",
+          "registros": 73
+        },
+        {
+          "species": "Saccoderma hastata",
+          "registros": 72
+        },
+        {
+          "species": "Andinoacara latifrons",
+          "registros": 71
+        },
+        {
+          "species": "Chaetostoma leucomelas",
+          "registros": 70
+        },
+        {
+          "species": "Parodon magdalenensis",
+          "registros": 68
+        }
+      ]
     },
     {
       "slug_tematica": "exotica-riesgo-invasion",
@@ -50542,7 +53419,7 @@
       "count": 29,
       "slug": "exotica-riesgo-invasion",
       "title": "Lista especies: exotica-riesgo-invasion",
-      "chart": "static/charts/tolima/exotica-riesgo-invasion.html"
+      "species_list": []
     },
     {
       "slug_tematica": "exoticas",
@@ -50550,7 +53427,208 @@
       "count": 152,
       "slug": "exoticas",
       "title": "Lista especies: exoticas",
-      "chart": "static/charts/tolima/exoticas.html"
+      "species_list": [
+        {
+          "species": "Bubulcus ibis",
+          "registros": 4494
+        },
+        {
+          "species": "Bubulcus ibis",
+          "registros": 4494
+        },
+        {
+          "species": "Bubulcus ibis",
+          "registros": 4494
+        },
+        {
+          "species": "Bubulcus ibis",
+          "registros": 4494
+        },
+        {
+          "species": "Serinus canaria",
+          "registros": 1226
+        },
+        {
+          "species": "Columba livia",
+          "registros": 940
+        },
+        {
+          "species": "Columba livia",
+          "registros": 940
+        },
+        {
+          "species": "Columba livia",
+          "registros": 940
+        },
+        {
+          "species": "Columba livia",
+          "registros": 940
+        },
+        {
+          "species": "Lonchura malacca",
+          "registros": 635
+        },
+        {
+          "species": "Lonchura malacca",
+          "registros": 635
+        },
+        {
+          "species": "Lonchura malacca",
+          "registros": 635
+        },
+        {
+          "species": "Lonchura malacca",
+          "registros": 635
+        },
+        {
+          "species": "Poecilia reticulata",
+          "registros": 606
+        },
+        {
+          "species": "Poecilia reticulata",
+          "registros": 606
+        },
+        {
+          "species": "Oncorhynchus mykiss",
+          "registros": 547
+        },
+        {
+          "species": "Oncorhynchus mykiss",
+          "registros": 547
+        },
+        {
+          "species": "Streptopelia decaocto",
+          "registros": 282
+        },
+        {
+          "species": "Cordia alliodora",
+          "registros": 99
+        },
+        {
+          "species": "Cordia alliodora",
+          "registros": 99
+        },
+        {
+          "species": "Chusquea scandens",
+          "registros": 70
+        },
+        {
+          "species": "Chusquea scandens",
+          "registros": 70
+        },
+        {
+          "species": "Chusquea scandens",
+          "registros": 70
+        },
+        {
+          "species": "Chusquea scandens",
+          "registros": 70
+        },
+        {
+          "species": "Digitonthophagus gazella",
+          "registros": 35
+        },
+        {
+          "species": "Digitonthophagus gazella",
+          "registros": 35
+        },
+        {
+          "species": "Holcus lanatus",
+          "registros": 34
+        },
+        {
+          "species": "Holcus lanatus",
+          "registros": 34
+        },
+        {
+          "species": "Holcus lanatus",
+          "registros": 34
+        },
+        {
+          "species": "Holcus lanatus",
+          "registros": 34
+        },
+        {
+          "species": "Caquetaia kraussii",
+          "registros": 32
+        },
+        {
+          "species": "Lantana camara",
+          "registros": 25
+        },
+        {
+          "species": "Lantana camara",
+          "registros": 25
+        },
+        {
+          "species": "Lantana camara",
+          "registros": 25
+        },
+        {
+          "species": "Lantana camara",
+          "registros": 25
+        },
+        {
+          "species": "Mus musculus",
+          "registros": 24
+        },
+        {
+          "species": "Mus musculus",
+          "registros": 24
+        },
+        {
+          "species": "Cenchrus clandestinus",
+          "registros": 22
+        },
+        {
+          "species": "Ipomoea triloba",
+          "registros": 21
+        },
+        {
+          "species": "Caladium bicolor",
+          "registros": 19
+        },
+        {
+          "species": "Oxalis corniculata",
+          "registros": 19
+        },
+        {
+          "species": "Oxalis corniculata",
+          "registros": 19
+        },
+        {
+          "species": "Trifolium repens",
+          "registros": 19
+        },
+        {
+          "species": "Trifolium repens",
+          "registros": 19
+        },
+        {
+          "species": "Euphorbia heterophylla",
+          "registros": 18
+        },
+        {
+          "species": "Euphorbia heterophylla",
+          "registros": 18
+        },
+        {
+          "species": "Heliotropium indicum",
+          "registros": 18
+        },
+        {
+          "species": "Heliotropium indicum",
+          "registros": 18
+        },
+        {
+          "species": "Amaranthus spinosus",
+          "registros": 16
+        },
+        {
+          "species": "Amaranthus spinosus",
+          "registros": 16
+        }
+      ]
     },
     {
       "slug_tematica": "invasoras",
@@ -50558,7 +53636,36 @@
       "count": 6,
       "slug": "invasoras",
       "title": "Lista especies: invasoras",
-      "chart": "static/charts/tolima/invasoras.html"
+      "species_list": [
+        {
+          "species": "Oncorhynchus mykiss",
+          "registros": 547
+        },
+        {
+          "species": "Oreochromis niloticus",
+          "registros": 10
+        },
+        {
+          "species": "Melinis minutiflora",
+          "registros": 4
+        },
+        {
+          "species": "Melinis minutiflora",
+          "registros": 4
+        },
+        {
+          "species": "Ulex europaeus",
+          "registros": 4
+        },
+        {
+          "species": "Genista monspessulana",
+          "registros": 2
+        },
+        {
+          "species": "Lithobates catesbeianus",
+          "registros": 1
+        }
+      ]
     },
     {
       "slug_tematica": "migratorias",
@@ -50566,7 +53673,208 @@
       "count": 89,
       "slug": "migratorias",
       "title": "Lista especies: migratorias",
-      "chart": "static/charts/tolima/migratorias.html"
+      "species_list": [
+        {
+          "species": "Tyrannus melancholicus",
+          "registros": 6513
+        },
+        {
+          "species": "Tyrannus melancholicus",
+          "registros": 6513
+        },
+        {
+          "species": "Notiochelidon cyanoleuca",
+          "registros": 4318
+        },
+        {
+          "species": "Notiochelidon cyanoleuca",
+          "registros": 4318
+        },
+        {
+          "species": "Setophaga fusca",
+          "registros": 2287
+        },
+        {
+          "species": "Setophaga fusca",
+          "registros": 2287
+        },
+        {
+          "species": "Cathartes aura",
+          "registros": 2021
+        },
+        {
+          "species": "Cathartes aura",
+          "registros": 2021
+        },
+        {
+          "species": "Piranga rubra",
+          "registros": 1535
+        },
+        {
+          "species": "Piranga rubra",
+          "registros": 1535
+        },
+        {
+          "species": "Tyrannus savana",
+          "registros": 1139
+        },
+        {
+          "species": "Tyrannus savana",
+          "registros": 1139
+        },
+        {
+          "species": "Myiodynastes maculatus",
+          "registros": 1093
+        },
+        {
+          "species": "Myiodynastes maculatus",
+          "registros": 1093
+        },
+        {
+          "species": "Catharus ustulatus",
+          "registros": 1081
+        },
+        {
+          "species": "Cardellina canadensis",
+          "registros": 940
+        },
+        {
+          "species": "Cardellina canadensis",
+          "registros": 940
+        },
+        {
+          "species": "Setophaga petechia",
+          "registros": 939
+        },
+        {
+          "species": "Setophaga petechia",
+          "registros": 939
+        },
+        {
+          "species": "Buteo platypterus",
+          "registros": 747
+        },
+        {
+          "species": "Buteo platypterus",
+          "registros": 747
+        },
+        {
+          "species": "Pandion haliaetus",
+          "registros": 555
+        },
+        {
+          "species": "Pandion haliaetus",
+          "registros": 555
+        },
+        {
+          "species": "Hirundo rustica",
+          "registros": 431
+        },
+        {
+          "species": "Hirundo rustica",
+          "registros": 431
+        },
+        {
+          "species": "Geothlypis philadelphia",
+          "registros": 401
+        },
+        {
+          "species": "Geothlypis philadelphia",
+          "registros": 401
+        },
+        {
+          "species": "Tringa solitaria",
+          "registros": 361
+        },
+        {
+          "species": "Tringa solitaria",
+          "registros": 361
+        },
+        {
+          "species": "Contopus virens",
+          "registros": 349
+        },
+        {
+          "species": "Contopus virens",
+          "registros": 349
+        },
+        {
+          "species": "Actitis macularius",
+          "registros": 335
+        },
+        {
+          "species": "Actitis macularius",
+          "registros": 335
+        },
+        {
+          "species": "Mniotilta varia",
+          "registros": 301
+        },
+        {
+          "species": "Mniotilta varia",
+          "registros": 301
+        },
+        {
+          "species": "Setophaga ruticilla",
+          "registros": 280
+        },
+        {
+          "species": "Pheucticus ludovicianus",
+          "registros": 272
+        },
+        {
+          "species": "Buteo swainsoni",
+          "registros": 271
+        },
+        {
+          "species": "Empidonax virescens",
+          "registros": 264
+        },
+        {
+          "species": "Vireo olivaceus",
+          "registros": 258
+        },
+        {
+          "species": "Vireo olivaceus",
+          "registros": 258
+        },
+        {
+          "species": "Egretta caerulea",
+          "registros": 247
+        },
+        {
+          "species": "Egretta caerulea",
+          "registros": 247
+        },
+        {
+          "species": "Setophaga castanea",
+          "registros": 225
+        },
+        {
+          "species": "Tyrannus tyrannus",
+          "registros": 214
+        },
+        {
+          "species": "Tyrannus tyrannus",
+          "registros": 214
+        },
+        {
+          "species": "Progne tapera",
+          "registros": 193
+        },
+        {
+          "species": "Setophaga cerulea",
+          "registros": 189
+        },
+        {
+          "species": "Parkesia noveboracensis",
+          "registros": 166
+        },
+        {
+          "species": "Piranga olivacea",
+          "registros": 166
+        }
+      ]
     }
   ],
   "territorio": [
