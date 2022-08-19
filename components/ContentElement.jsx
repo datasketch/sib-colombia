@@ -1,7 +1,5 @@
 
 import { Tooltip } from '@mui/material'
-
-import 'tippy.js/dist/tippy.css'
 import { formatNumbers } from '../lib/formatNumbers'
 import tooltips from '../static/data/tooltips.json'
 import Table from './Table'

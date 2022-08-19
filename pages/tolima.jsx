@@ -11,6 +11,8 @@ import territorios from '../static/data/nav_territorio_tolima.json'
 import ContentElement from '../components/ContentElement'
 import gruposInteres from '../static/data/nav_grupo_interes_conservacion.json'
 import { formatNumbers } from '../lib/formatNumbers'
+import { useState } from 'react'
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 
 export default function tolima () {
   const slides = tolimaJson.slides
@@ -21,6 +23,13 @@ export default function tolima () {
   const territorioTolima = tolimaJson.territorio
   const publicadores = tolimaJson.publicadores
   const patrocinador = tolimaJson.patrocinador[0]
+  const municipios = tolimaJson.municipios_lista
+  const [optionShow, setOptionShow] = useState('table')
+
+  const handleRendder = (e) => {
+    const { value } = e.target
+    setOptionShow(value)
+  }
 
   return (
     <>
@@ -62,7 +71,7 @@ export default function tolima () {
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body className="-mt-10">
               {(selected, info) => (
-                <ContentElement selected={selected} info={info} region='Tolima' typeTree/>
+                <ContentElement selected={selected} info={info} region='Tolima' typeTree />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -108,26 +117,48 @@ export default function tolima () {
             <MenuExplorer.Body className="-mt-10">
               {(selected, info) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
-                  <div className=' flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto'>
+                  {!info?.children
+                    ? (<div className=' flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto'>
+                      <div className='shadow-md flex flex-col justify-center items-center gap-2 py-14 px-8'>
+                        <div className='flex flex-col'>
+                          <span className='text-6xl font-black font-inter'>
+                            {formatNumbers(info?.count)}
+                            <div className='border border-dartmouth-green' />
+                          </span>
+                        </div>
+                        <div className='font-bold text-lg flex gap-2'>
+                          <span>{info?.label}</span>
+                          {/* {info?.label && <img src='/images/icons/icon-table.svg'/>} */}
+                        </div>
 
-                    <div className='shadow-md flex flex-col justify-center items-center gap-2 py-14 px-8'>
-                      <div className='flex flex-col'>
-                        <span className='text-6xl font-black font-inter'>
-                          {formatNumbers(info?.count)}
-                          <div className='border border-dartmouth-green' />
-                        </span>
                       </div>
-                      <div className='font-bold text-lg flex gap-2'>
-                        <span>{info?.label}</span>
-                        {/* {info?.label && <img src='/images/icons/icon-table.svg'/>} */}
-                      </div>
-
-                    </div>
                       <div className='w-full'>
                         <iframe src={info?.chart} className='w-full h-[300px]'></iframe>
                       </div>
 
-                  </div>
+                    </div>)
+                    : (
+                      <div className='grid grid-cols-2 gap-8 w-10/12 mx-auto'>
+                        {info?.children.map(({ count, label }, key) =>
+                          <>
+                            <div className='shadow-md flex flex-col justify-center items-center gap-2 py-14 px-8'>
+                              <div className='flex flex-col'>
+                                <span className='text-6xl font-black font-inter'>
+                                  {formatNumbers(count)}
+                                  <div className='border border-dartmouth-green' />
+                                </span>
+                              </div>
+                              <div className='font-bold text-lg flex gap-2'>
+                                <span>{label}</span>
+
+                              </div>
+
+                            </div>
+                          </>
+                        )}
+                      </div>
+                      )
+                  }
                 </div>
               )}
             </MenuExplorer.Body>
@@ -152,14 +183,36 @@ export default function tolima () {
             <MenuExplorer.Body className="-mt-10">
               {(selected, info) => (
                 <div className='bg-white py-12 lg:py-16 xl:py-20'>
+
                   {info?.charts.length === 0
                     ? <div className='text-center text-4xl py-20 w-4/5 mx-auto'>{info.title}...</div>
-                    : (<SimpleSlider dots>
-                      {info?.charts.map((element, key) =>
-                        <Slides key={key} data={element} />
+                    : (<>
+                      <div className='py-3 w-2/5 mx-auto'>
+                        <FormControl fullWidth>
+                          <InputLabel id="demo-simple-select-label">Municipios</InputLabel>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+
+                            label="Age"
+
+                          >
+                            {municipios.map(({ slug, label }, key) =>
+                              <>
+                                <MenuItem key={key} value={slug}>{label}</MenuItem>
+                              </>
+                            )}
+
+                          </Select>
+                        </FormControl>
+                      </div>
+                      <SimpleSlider dots>
+                        {info?.charts.map((element, key) =>
+                          <Slides key={key} data={element} />
+                        )}
+                      </SimpleSlider>
+                    </>
                       )}
-                    </SimpleSlider>)
-                  }
                 </div>
               )}
             </MenuExplorer.Body>
@@ -219,9 +272,23 @@ export default function tolima () {
             </div>
           </div>
         </div>
-        <div className='mt-[55.13px]'>
-          <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app/?region=tolima"></iframe>
+        <div className='py-6 flex gap-8 justify-center'>
+          <button type='button' onClick={handleRendder} value='graph' className='border border-black py-2 px-4 rounded-full'>Gráficos</button>
+          <button type='button' onClick={handleRendder} value='table' className='border border-black py-2 px-4 rounded-full'>Tablas</button>
         </div>
+        {optionShow === 'graph' && <div className='mt-[55.13px]'>
+          <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app/?region=tolima"></iframe>
+        </div>}
+        {
+          optionShow === 'table' && (<div className='mt-[55.13px]'>
+            <iframe className='h-screen w-full' src=" https://datasketch.shinyapps.io/sib-data-app-tabla/?region=tolima"></iframe>
+          </div>)
+
+        }
+
+        {/* <div className='mt-[55.13px]'>
+          <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app/?region=tolima"></iframe>
+        </div> */}
       </div>
 
       <div className='py-12 lg:py-16 xl:py-20 bg-white'>
