@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
 const Table = ({ tableData, general = false }) => {
-  console.log(tableData)
   const [dataShow, setdataShow] = useState([])
 
   useEffect(() => {
@@ -25,15 +24,15 @@ const Table = ({ tableData, general = false }) => {
       </thead>
       <tbody className="text-black text-sm px-6 text-center">
 
-      {dataShow.map(({ species, registros }, key) =>
-        <tr key={key}>
-          <td>{species}</td>
-          <td>{registros}</td>
-        </tr>
-      )}
+        {dataShow.map(({ species, registros }, key) =>
+          <tr key={key}>
+            <td>{species}</td>
+            <td>{registros}</td>
+          </tr>
+        )}
 
-    </tbody>
-  </table>
+      </tbody>
+    </table>
 
   )
 }
