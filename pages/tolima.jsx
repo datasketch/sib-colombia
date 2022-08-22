@@ -275,8 +275,8 @@ export default function tolima () {
           </div>
         </div>
         <div className='py-6 flex gap-8 justify-center'>
-          <button type='button' onClick={handleRendder} value='graph' className={optionShow === 'graph' ? 'border border-black py-2 px-4 rounded-full bg-dartmouth-gren tex-white' : 'hover:bg-dartmouth-green hover:text-white border border-black py-2 px-4 rounded-full'}>Gráficos</button>
-          <button type='button' onClick={handleRendder} value='table' className={optionShow === 'table' ? 'border border-black py-2 px-4 rounded-full bg-dartmouth-gren tex-white' : 'hover:bg-dartmouth-green hover:text-white border border-black py-2 px-4 rounded-full'}>Tablas</button>
+          <button type='button' onClick={handleRendder} value='graph' className={optionShow === 'graph' ? 'border border-black py-2 px-4 rounded-full bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'hover:bg-dartmouth-green hover:text-white border border-black py-2 px-4 rounded-full'}>Gráficos</button>
+          <button type='button' onClick={handleRendder} value='table' className={optionShow === 'table' ? 'border border-black py-2 px-4 rounded-full bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'hover:bg-dartmouth-green hover:text-white border border-black py-2 px-4 rounded-full'}>Tablas</button>
         </div>
         {optionShow === 'graph' && <div className='mt-[55.13px] op'>
           <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app/?region=tolima"></iframe>
