@@ -67,7 +67,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
               </span>
               <p className='text-lg font-inter font-bold relative'>
                 Especies amenazadas nacional
-                {!!info?.species_list_tematica["amenazadas-nacional"].length && <CustomTooltip title={<Table tableData={info?.species_list_tematica["amenazadas-nacional"]} />}>
+                {!!info?.species_list_tematica['amenazadas-nacional'].length && <CustomTooltip title={<Table tableData={info?.species_list_tematica['amenazadas-nacional']} />}>
                   <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
                   {/* <img className='absolute top-[55%] left-[38%]' src='/images/icons/icon-table.svg' /> */}
                 </CustomTooltip>}
@@ -127,7 +127,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
 
               <p className='text-lg font-inter font-bold '>
                 Especies amenazadas global
-                {!!info?.species_list_tematica["amenazadas-global"].length && <CustomTooltip title={<Table tableData={info?.species_list_tematica["amenazadas-global"]} />}>
+                {!!info?.species_list_tematica['amenazadas-global'].length && <CustomTooltip title={<Table tableData={info?.species_list_tematica['amenazadas-global']} />}>
                   <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
                 </CustomTooltip>}
               </p>

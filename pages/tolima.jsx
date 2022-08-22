@@ -14,7 +14,7 @@ import { formatNumbers } from '../lib/formatNumbers'
 import { useState } from 'react'
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import Table from '../components/Table'
-import dynamic from 'next/dynamic'
+
 
 export default function tolima () {
   const slides = tolimaJson.slides
