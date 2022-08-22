@@ -15,7 +15,6 @@ import { useState } from 'react'
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import Table from '../components/Table'
 
-
 export default function tolima () {
   const slides = tolimaJson.slides
   const generalInfo = tolimaJson.general_info
@@ -37,10 +36,6 @@ export default function tolima () {
     const { value } = e.target
     setOptionShow(value)
   }
-
-  // const Header = dynamic(
-  //   () => import('../components/Header'),
-  //   { ssr: false })
 
   return (
     <>
