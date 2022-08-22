@@ -10,7 +10,8 @@ const contentTooltip = (value) => {
 }
 
 function ContentElement ({ selected, info, region, typeTree = false }) {
-    return (
+  
+  return (
     <>
       <div className='bg-white py-12 lg:py-16 xl:py-20'>
         <div className='w-[95%] flex flex-col md:flex-row mx-auto'>
