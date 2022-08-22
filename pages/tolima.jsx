@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Header from '../components/Header'
 import Slides from '../components/Slides'
+import Header from '../components/Header'
 import SimpleSlider from '../lib/Slider'
 import tolimaJson from '../static/data/tolima.json'
 import tematica from '../static/data/nav_tematica.json'
@@ -14,6 +14,7 @@ import { formatNumbers } from '../lib/formatNumbers'
 import { useState } from 'react'
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import Table from '../components/Table'
+import dynamic from 'next/dynamic'
 
 export default function tolima () {
   const slides = tolimaJson.slides
@@ -25,7 +26,7 @@ export default function tolima () {
   const publicadores = tolimaJson.publicadores
   const patrocinador = tolimaJson.patrocinador[0]
   const municipios = tolimaJson.municipios_lista
-  const [optionShow, setOptionShow] = useState('table')
+  const [optionShow, setOptionShow] = useState('graph')
   const [municipio, setMunicipio] = useState('')
 
   const handleChange = (event) => {
@@ -37,9 +38,12 @@ export default function tolima () {
     setOptionShow(value)
   }
 
+  // const Header = dynamic(
+  //   () => import('../components/Header'),
+  //   { ssr: false })
+
   return (
     <>
-
       <Head>
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
@@ -276,14 +280,14 @@ export default function tolima () {
           </div>
         </div>
         <div className='py-6 flex gap-8 justify-center'>
-          <button type='button' onClick={handleRendder} value='graph' className='border border-black py-2 px-4 rounded-full'>Gráficos</button>
-          <button type='button' onClick={handleRendder} value='table' className='border border-black py-2 px-4 rounded-full'>Tablas</button>
+          <button type='button' onClick={handleRendder} value='graph' className={optionShow === 'graph' ? 'border border-black py-2 px-4 rounded-full bg-dartmouth-gren tex-white' : 'hover:bg-dartmouth-green hover:text-white border border-black py-2 px-4 rounded-full'}>Gráficos</button>
+          <button type='button' onClick={handleRendder} value='table' className={optionShow === 'table' ? 'border border-black py-2 px-4 rounded-full bg-dartmouth-gren tex-white' : 'hover:bg-dartmouth-green hover:text-white border border-black py-2 px-4 rounded-full'}>Tablas</button>
         </div>
-        {optionShow === 'graph' && <div className='mt-[55.13px]'>
+        {optionShow === 'graph' && <div className='mt-[55.13px] op'>
           <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app/?region=tolima"></iframe>
         </div>}
         {
-          optionShow === 'table' && (<div className='mt-[55.13px]'>
+          optionShow === 'table' && (<div className='mt-[55.13px] op'>
             <iframe className='h-screen w-full' src=" https://datasketch.shinyapps.io/sib-data-app-tabla/?region=tolima"></iframe>
           </div>)
 

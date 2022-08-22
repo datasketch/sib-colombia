@@ -25,7 +25,7 @@ function Header ({ registrosRegionTotal, registrosContinentalTotal, region, espe
             </div>
             <div className="text-yellow-green flex flex-col top-[40%] lg:top-24 left-[62%] lg:left-[50%] absolute">
               <span className="lg:text-4xl text-3xl font-black font-inter">{formatNumbers(registrosContinentalTotal) || 0}</span>
-              <span className="font-lato text-sm lg:text-lg">Especies totales</span>
+              <span className="font-lato text-sm lg:text-lg">Especies observadas</span>
             </div>
           </div>
 

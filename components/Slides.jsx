@@ -8,7 +8,7 @@ const Slides = ({ data, region }) => {
   if (layout === 'title/chart') {
     return (
       <div className="px-5">
-        <div className='pt-12 lg:pt-16 xl:pt-20 '>
+        <div className='pt-6 lg:pt-12 xl:pt-16 '>
           <div className='flex flex-col items-center lg:justify-between gap-y-3 lg:gap-y-6'>
             <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>
               {title}
@@ -24,7 +24,7 @@ const Slides = ({ data, region }) => {
   if (layout === 'title/(text|chart)') {
     return (
       <div className="px-5">
-        <div className='pt-12 lg:pt-16 xl:pt-20 '>
+        <div className='pt-6 lg:pt-12 xl:pt-16'>
           <div className='flex flex-col items-center lg:flex-row lg:justify-between lg:gap-x-12'>
             <div className='lg:w-6/12 max-w-[586px]'>
               <h2 className='text-black-2 font-black text-3xl 3xl:text-4xl'>
@@ -121,7 +121,7 @@ const Slides = ({ data, region }) => {
   if (layout === 'title/(chart|chart)') {
     return (
       <div className="px-5">
-        <div className='pt-12 lg:pt-16 xl:pt-20 '>
+        <div className='pt-6 lg:pt-12 xl:pt-16'>
           <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>
             {title}
           </h2>
