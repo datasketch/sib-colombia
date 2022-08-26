@@ -10,7 +10,6 @@ const contentTooltip = (value) => {
 }
 
 function ContentElement ({ selected, info, region, typeTree = false }) {
-  
   return (
     <>
       <div className='bg-white py-12 lg:py-16 xl:py-20'>
@@ -63,7 +62,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
             <div className='space-y-2 my-4 shadow-md flex flex-col py-8 px-4'>
               <span className='font-inter font-black text-4xl w-1/2'>
                 {formatNumbers(info?.especies_amenazadas_nacional_total)}
-                <div className='w-1/2 border border-[#262525]' />
+                <div className='w-1/2 border-t border-t-[#262525]' />
               </span>
               <p className='text-lg font-inter font-bold relative'>
                 Especies amenazadas nacional
@@ -122,7 +121,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
             <div className='space-y-2 my-4 shadow-md flex flex-col py-8 px-4'>
               <span className='font-inter font-black text-4xl w-1/2'>
                 {formatNumbers(info?.especies_amenazadas_global_total)}
-                <div className='w-1/2 border border-[#262525]' />
+                <div className='w-1/2 border-t border-t-[#262525]' />
               </span>
 
               <p className='text-lg font-inter font-bold '>
@@ -179,7 +178,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
             <div className='space-y-2 my-4 shadow-md flex flex-col py-8 px-4'>
               <span className='font-inter font-black text-4xl w-1/2'>
                 {formatNumbers(info?.especies_cites_total)}
-                <div className='w-1/2 border border-[#262525]' />
+                <div className='w-1/2 border-t border-t-[#262525]' />
               </span>
 
               <p className='text-lg font-inter font-bold'>
@@ -231,7 +230,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
 
               <span className='font-inter font-black text-4xl w-1/2'>
                 {formatNumbers(info?.especies_migratorias)}
-                <div className='w-2/4 border border-[#262525]' />
+                <div className='w-1/2 border-t border-t-[#262525]' />
               </span>
 
               <p className='text-lg font-inter font-bold'>
@@ -254,7 +253,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
 
               <span className='font-inter font-black text-4xl'>
                 {formatNumbers(info?.especies_endemicas)}
-                <div className='w-2/4 border border-[#262525]' />
+                <div className='w-1/2 border-t border-t-[#262525]' />
               </span>
 
               <p className='text-lg font-inter font-bold '>Especies endémicas
@@ -275,7 +274,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
 
               <div className='font-inter font-black text-4xl'>
                 {formatNumbers(info?.especies_exoticas)}
-                <div className='w-2/4 border border-[#262525]' />
+                <div className='w-1/2 border-t border-t-[#262525]' />
               </div>
 
               <p className='text-lg font-inter font-bold'>Especies exóticas
@@ -294,7 +293,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
               <div className='font-inter font-black text-4xl'>
                 {formatNumbers(info?.especies_exoticas_riesgo_invasion
                 )}
-                <div className='w-2/4 border border-[#262525]' />
+                <div className='w-1/2 border-t border-t-[#262525]' />
               </div>
 
               <p className='text-lg font-inter font-bold'>Especies exóticas con potencial de invasión
@@ -315,7 +314,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
 
               <div className='font-inter font-black text-4xl'>
                 {formatNumbers(info?.especies_invasoras)}
-                <div className='w-2/4 border border-[#262525]' />
+                <div className='w-1/2 border-t border-t-[#262525]' />
               </div>
 
               <p className='text-lg font-inter font-bold'>Especies invasoras

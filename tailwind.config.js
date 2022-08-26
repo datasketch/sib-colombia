@@ -23,10 +23,12 @@ module.exports = {
         inter: ['inter', 'sans-serif']
       },
       backgroundImage: {
-        'banner-home': "url('/images/home-banner.png')",
+        'banner-home': "url('/images/headers/banner-home.png')",
         'banner-home-2': "url('/images/home-banner-2.png')",
         'banner-footer': "url('/images/footer-banner.svg')",
-        'footer-2022': "url('/images/footer-2022.svg')"
+        'footer-2022': "url('/images/footer-2022.svg')",
+        'banner-orange': "url('/images/headers/bg-orange.png')",
+        destacada: "url('/images/bg-destacada.png')"
       },
       colors: {
         'white-2': '#FBFBFB',
@@ -43,8 +45,21 @@ module.exports = {
         'greenish-cyan': '#4AD3AC',
         'red-cr': '#ff0000',
         'orange-en': '#ffa500',
-        'yellow-vu': '#ffff00'
+        'yellow-vu': '#ffff00',
+        flame: '#E1501B',
+        'yellow-orange': '#FFB349',
+        burnham: '#002B2C',
+        'light-peagreen': '#C7F789',
+        'science-blue': '#0857C9',
+        'catalina-blue': '#001975',
+        'dark-periwinkle': '#6363DC',
+        blueberry: '#4B3CB4',
+        'pastel-orange': '#FF9739'
 
+      },
+
+      boxShadow: {
+        default: '0px 3px 6px #00000029'
       },
       screens: {
         sm: '640px',

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Slides from '../components/Slides'
-import Header from '../components/Header'
+import HeadRegion from '../components/headers/HeadRegion'
 import SimpleSlider from '../lib/Slider'
 import tolimaJson from '../static/data/tolima.json'
 import tematica from '../static/data/nav_tematica.json'
@@ -42,7 +42,7 @@ export default function tolima () {
       <Head>
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
-      <Header region={'Tolima'}
+      <HeadRegion region={'Tolima'}
         /* registrosRegionTotal={generalInfo.especies_region_total} */
         registrosContinentalTotal={generalInfo.especies_region_total}
         especiesCont={generalInfo.especies_continentales}
@@ -50,9 +50,9 @@ export default function tolima () {
         observacionesCont={generalInfo.registros_continentales}
         observacionesMar={generalInfo.registros_marinos} />
 
-      <div className='bg-white-3 mx-auto w-10/12 pb-20 max-w-screen-xl'>
-        <div className=' '>
-          <SimpleSlider dots infinite>
+      <div className='bg-white-3 pt-3'>
+        <div className='mx-auto w-10/12  max-w-screen-xl'>
+          <SimpleSlider dots infinite slidesToShow={1}>
             {slides.map((element, key) =>
               <Slides key={key} data={element} region='Tolima' />
             )}
@@ -222,9 +222,9 @@ export default function tolima () {
         </div>
       </div>
 
-      <div className='py-12 lg:py-16 xl:py-20 border-t-4 border-blue-green'>
+      <div className='py-8 border-t-4 border-blue-green'>
         <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <h2 className='text-white font-black text-3xl 3xl:text-4xl'>
+          <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
             Publicadores
           </h2>
           <div className='mt-[50px] relative'>
@@ -241,7 +241,7 @@ export default function tolima () {
             </SimpleSlider>
           </div>
           <div className='mt-10 text-center'>
-            <a className='inline-block text-white border border-white rounded-[26px] py-3 px-[30px]' href="#">
+            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href="/mas/publicadores">
               Conocer más
             </a>
           </div>
@@ -292,7 +292,7 @@ export default function tolima () {
           <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app/?region=tolima"></iframe>
         </div> */}
       </div>
-
+{/* //Revisar Logo */}
       <div className='py-12 lg:py-16 xl:py-20 bg-white'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-xl'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8'>

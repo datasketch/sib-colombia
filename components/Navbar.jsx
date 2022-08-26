@@ -3,14 +3,14 @@ import CustomSeparatos from './CustomSeparator'
 
 export default function Navbar () {
   return (
-    <header className="absolute top-0 left-0 w-full pb-4 z-40 pt-[33.78px]">
+    <header className="absolute top-0 left-0 w-full z-40 py-2">
       <div className='mx-auto w-10/12 max-w-[1300px] '>
-        <div className='border-b border-white pb-[20.5px]'>
+        <div className='border-b border-white pb-2'>
           <div className='flex justify-between'>
             <div>
               <Link href="/">
-                <a>
-                  <img src="/images/logo-humboldt.svg" alt="logo humboldt" />
+                <a className='flex items-center'>
+                  <img className='h-[50%] w-2/3' src="/images/logo-humboldt.svg" alt="logo humboldt" />
                 </a>
               </Link>
             </div>
@@ -18,7 +18,7 @@ export default function Navbar () {
               {/* DESKTOP */}
               <ul className='hidden lg:flex text-white gap-x-14'>
                 <li>
-                  <Link href="#">
+                  <Link href="/colombia">
                     <a>
                       Colombia
                     </a>
@@ -46,7 +46,7 @@ export default function Navbar () {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link href="/explorador">
                     <a>
                       Explorador
                     </a>

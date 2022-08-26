@@ -40,7 +40,7 @@ export default function CustomSeparator () {
   ]
 
   return (
-    <Stack margin="20.5px 0 0 0" spacing={2}>
+    <Stack margin="10px 0 0 0" spacing={2}>
       <Breadcrumbs
         separator={<ArrowLeft />}
         aria-label="breadcrumb" style={{ color: '#fff', fontSize: '14px' }}

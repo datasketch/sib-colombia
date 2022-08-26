@@ -1,47 +1,71 @@
-export default function Footer () {
-  return (
-    <footer className="bg-footer-2022 bg-cover bg-center h-[100px] sm:h-[300px] lg:h-[400px]"></footer>
-    // <footer className='bg-gradient-to-r from-lemon to-dartmouth-green h-30 py-12'>
-    //   <div className="max-w-screen-lg mx-auto text-white">
-    //     <div>
-    //       <div>
-    //         <img />
-    //       </div>
-    //       <div className="flex justify-between">
-    //         <div className="flex flex-col gap-y-2">
-    //           <b> Acerca de</b>
-    //           <span>Esta versión</span>
-    //           <span>Metodología</span>
-    //           <span>Datos</span>
-    //           <span>Cómo citar</span>
-    //           <span>Reportar inconsistencias</span>
-    //         </div>
-    //         <div className="flex flex-col gap-y-2">
+import { useEffect, useState } from 'react'
 
-  //           <b>Enlacers</b>
-  //           <span>SiB Colombia</span>
-  //           <span>Términos y condiciones</span>
-  //           <span>Suscribirse al boletín</span>
-  //         </div>
-  //         <div className="flex flex-col gap-y-2">
-  //           <b>Contacto</b>
-  //           <span>sib@humboldt.org.co</span>
-  //           <span>PBX:(+601) 3202767</span>
-  //           <span>Calle 28A # 15-09</span>
-  //           <span>Bogotá D.C, Colombia</span>
-  //           <div className="flex">
-  //             <span>(TW)</span>
-  //             <span>(FB)</span>
-  //             <span>(YT)</span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //     <div className="text-center">
-  //       Powered by: Datasketch
-  //       <div className="border-b border-b-white pb-2 w-1/5 mx-auto" />
-  //     </div>
-  //   </div>
-  // </footer>
+export default function Footer () {
+  const [bgColor, setBgColor] = useState('bg-gradient-to-r from-lemon to-dartmouth-green')
+  // const [location, setLocation] = useState('')
+  // const arraychangeColors = ['publicadores', 'acerca-de', 'explorador']
+
+  // useEffect(() => {
+  //   setLocation(window.location.pathname.split('/'))
+  //   if (!arraychangeColors.includes(location[location.length - 1])) {
+  //     setBgColor('bg-gradient-to-r from-lemon to-dartmouth-green')
+  //   } else {
+  //     setBgColor('bg-gradient-to-r from-yellow-orange to-flame')
+  //   }
+  //   // return () => {
+
+  //   // }
+  // }, [location])
+
+  return (
+    // <footer className="bg-footer-2022 bg-cover bg-center h-[100px] sm:h-[300px] lg:h-[400px]"></footer>
+    <footer className={bgColor + ' h-auto pt-6  pb-2 space-y-4'}>
+      <div className="max-w-screen-xl px-20 mx-auto text-white ">
+        <div className='flex justify-between'>
+          <div >
+            <img className='h-[50%] w-2/3' src='/images/sib-icon.svg' alt='icon sib ' />
+          </div>
+          <div className="flex gap-x-5">
+            <div className="flex flex-col gap-y-2 text-sm">
+              <b> Acerca de</b>
+              <span>Esta versión</span>
+              <span>Metodología</span>
+              <span>Datos</span>
+              <span>Cómo citar</span>
+              <span>Reportar inconsistencias</span>
+            </div>
+            <div className="flex flex-col gap-y-2 text-sm">
+              <b>Enlacers</b>
+              <span>SiB Colombia</span>
+              <span>Términos y condiciones</span>
+              <span>Suscribirse al boletín</span>
+            </div>
+
+            <div className="flex flex-col gap-y-2 text-sm">
+              <b>Contacto</b>
+              <span>sib@humboldt.org.co</span>
+              <span>PBX:(+601) 3202767</span>
+              <span>Calle 28A # 15-09</span>
+              <span>Bogotá D.C, Colombia</span>
+              <div className="flex">
+                <span>(TW)</span>
+                <span>(FB)</span>
+                <span>(YT)</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div className="text-center w-2/12 mx-auto">
+        <div className='underline text-white py-1'>
+          version 2022-2
+        </div>
+        <div className="border-b border-b-white pb-2 " />
+        <div className='py-2'>
+          <img className='h-4 mx-auto' src='/images/powered-by.svg' alt='icon powered by datasketch'/>
+        </div>
+      </div>
+    </footer >
   )
 }
