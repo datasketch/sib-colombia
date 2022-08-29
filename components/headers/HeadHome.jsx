@@ -7,13 +7,13 @@ const HeadHome = ({ title, image, number }) => {
 
   return (
     <div className='bg-banner-home bg-center bg-cover h-[550px] relative'>
-      <div className='max-w-screen-lg bg-black-2 bg-opacity-75 text-white absolute top-1/4 left-[8%] px-6 py-3 w-3/12 flex flex-col  justify-center'>
+      <div className='max-w-screen-lg bg-black-2 bg-opacity-75 text-white absolute top-1/4 left-[8%] px-6 py-3 w-4/12 flex flex-col justify-center'>
         <div className='flex flex-col'>
           <span className='font-inter font-black text-7xl'>74.903</span>
-          <span className='font-inter font-black pb-3'>Especies observadas en Colombia</span>
+          <span className='font-inter font-black pb-2'>Especies observadas en Colombia</span>
           <div className='w-1/3 border-t-2 border-dotted border-t-light-peagreen' />
         </div>
-        <ReactMarkdown className='space-y-3 font-lato text-sm pt-3 break-words text-justify'>
+        <ReactMarkdown className='space-y-2 font-lato text-sm pt-2 break-words text-justify'>
           {textHome}
         </ReactMarkdown>
       </div>

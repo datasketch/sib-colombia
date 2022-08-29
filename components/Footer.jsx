@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 
 export default function Footer () {
@@ -35,7 +36,7 @@ export default function Footer () {
               <span>Reportar inconsistencias</span>
             </div>
             <div className="flex flex-col gap-y-2 text-sm">
-              <b>Enlacers</b>
+              <b>Enlaces</b>
               <span>SiB Colombia</span>
               <span>Términos y condiciones</span>
               <span>Suscribirse al boletín</span>
