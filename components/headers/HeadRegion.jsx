@@ -52,30 +52,3 @@ Header.propTypes = {
 }
 
 export default Header
-
-{ /* <div className="flex gap-x-10 items-center">
-              <div className="rounded-full border border-yellow-green h-16 w-16 p-2 flex items-center justify-center">
-
-              </div>
-              <div className="flex flex-col text-white">
-                <span className="font-inter font-black text-xl">{formatNumbers(especiesCont) || 9.841}</span>
-                <span className="font-lato font-normal">Especies continentales</span>
-              </div>
-              <div className="flex flex-col text-white">
-                <span className="font-inter font-black text-xl">{formatNumbers(observacionesCont) || 619.039}</span>
-                <span className="font-lato font-normal">Observaciones</span>
-              </div>
-            </div>
-            <div className="flex gap-x-10  items-center">
-              <div className="rounded-full border border-yellow-green h-16 w-16 flex items-center justify-center">
-
-              </div>
-              <div className="flex flex-col text-white">
-                <span className="font-inter font-black text-xl">{formatNumbers(especiesMar) || 9.841}</span>
-                <span className="font-lato font-normal ">Especies marinas</span>
-              </div>
-              <div className="flex flex-col text-white">
-                <span className="font-inter font-black text-xl">{formatNumbers(observacionesMar) || 619.039}</span>
-                <span className="font-lato font-normal ">Observaciones</span>
-              </div>
-            </div> */ }

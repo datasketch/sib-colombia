@@ -9,8 +9,7 @@ function acercaDe () {
     <>
       <HeadMore title={'Acerca de'} />
       <div className='flex max-w-screen-2xl mx-auto'>
-
-        <div className='w-8/12 mx-auto py-10 space-y-12'>
+        <div className='w-9/12 mx-auto py-10 space-y-12'>
           <div className='space-y-2 w-3/4 mx-auto'>
             <div className='py-1.5 w-1/2 border-t-2 border-t-flame border-dotted' />
             <h2 id='acerca-de' className='text-flame font-inter text-2xl font-black'> </h2>
@@ -83,7 +82,6 @@ function acercaDe () {
 
             <div className='flex gap-x-4 py-2'>
               <img className='h-full' src='/images/arrow-down-orange.svg' alt='' />
-
               <div className='flex flex-col gap-y-4 justify-between text-'>
                 <p className='font-black'>&quot; SiB Colombia (2022, agosto 23) Biodiversidad en Cifras, Sistema de Información sobre Biodiversidad de Colombia. Recuperado de: https://biodiversidad.co/cifras &quot;</p>
                 <p>
