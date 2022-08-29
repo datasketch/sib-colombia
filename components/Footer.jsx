@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 export default function Footer () {
   const [bgColor, setBgColor] = useState('bg-gradient-to-r from-lemon to-dartmouth-green')
