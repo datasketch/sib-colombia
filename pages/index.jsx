@@ -11,7 +11,7 @@ export default function Home () {
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
       <HeadHome />
-      <div className='w-10/12 flex flex-col items-center mx-auto py-10'>
+      <div className='w-10/12 flex flex-col items-center mx-auto py-10 max-w-screen-2xl mx-auto'>
         <div className='flex gap-x-10 '>
           <div className='w-1/2 flex'>
             <div className='w-1/2'>
@@ -56,12 +56,12 @@ export default function Home () {
         <a href='#' className='px-4 py-2 border border-black rounded-full'>Conocer cifras de Colombia</a>
       </div>
 
-      <div className='bg-white-3 py-8'>
+      <div className='bg-white-3 py-8  max-w-screen-2xl mx-auto'>
         <div className='text-center font-inter space-y-2'>
           <h2 className='font-black text-2xl'>Destacados</h2>
           <span className=''>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
         </div>
-        <div className='w-10/12 mx-auto py-4'>
+        <div className='w-10/12 py-4 max-w-screen-2xl mx-auto'>
           <SimpleSlider infinite slidesToShow={5} slidesToScroll={5}>
             <CardDestacada />
             <CardDestacada />
@@ -75,7 +75,6 @@ export default function Home () {
             <CardDestacada />
           </SimpleSlider>
         </div>
-
       </div>
     </>
   )

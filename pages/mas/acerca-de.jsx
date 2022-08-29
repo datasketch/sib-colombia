@@ -8,7 +8,7 @@ function acercaDe () {
   return (
     <>
       <HeadMore title={'Acerca de'} />
-      <div className='flex'>
+      <div className='flex max-w-screen-2xl mx-auto'>
 
         <div className='w-8/12 mx-auto py-10 space-y-12'>
           <div className='space-y-2 w-3/4 mx-auto'>

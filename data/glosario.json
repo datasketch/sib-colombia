@@ -1,0 +1,63 @@
+[
+    {
+        "title": "Amenaza global",
+        "definition": "La Lista Roja de UICN es un indicador crítico de la salud de la biodiversidad del mundo que permite agilizar acciones que fomente la conservación de la biodiversidad."
+    },
+    {
+        "title": "Amenaza nacional",
+        "definition": "Mediante la resolución 1912 de 2017 se estableció un listado de especies silvestres continentales y marino costeras que se encuentran amenazadas para Colombia"
+    },
+    {
+        "title": "CITES",
+        "definition": "Es un acuerdo internacional concertado entre los gobiernos que tiene como finalidad velar por que el comercio internacional de especímenes de animales y plantas silvestres no constituye una amenaza para la supervivencia de las especies."
+    },
+    {
+        "title": "Endémicas",
+        "definition": "La distribución natural de la especie está limitada dentro del territorio Colombiano. En este grupo se incluyen las especie en las listas de referencia taxonómica (aves, peces dulceacuícolas, plantas y líquenes, mamíferos y coleópteros)."
+    },
+    {
+        "title": "Especies observadas",
+        "definition": "El término hace referencia a la cantidad de especies únicas con un nombre taxonómico válido, que tienen por lo menos un dato, observación o espécimen preservado, publicado a través del SiB Colombia."
+    },
+    {
+        "title": "Exóticas",
+        "definition": "Las especies exóticas son aquellas que no son nativas de un país o una región a la que llegaron de manera intencional o accidental, generalmente como resultado de actividades humanas. Estas especies se obtienen del listado creado por GRIIS (Registro mundial de especies introducidas e invasoras)."
+    },
+    {
+        "title": "Exóticas con potencial de invasión",
+        "definition": "Una especie exótica con alto riesgo de invasión, es una especie con alta probabilidad de establecerse en ecosistemas o hábitats naturales o seminaturales, es un agente de cambio y amenaza la diversidad biológica nativa. Estas especies se obtienen del listado creado por GRIIS (Registro mundial de especies introducidas e invasoras)."
+    },
+    {
+        "title": "Grupos biológicos",
+        "definition": "Corresponden a agrupaciones taxonómicas"
+    },
+    {
+        "title": "Grupos biológicos de interés",
+        "definition": "Son grupos que han sido seleccionados según las consultas y requerimientos realizados al SiB-Colombia. En varios de los casos tienen importancia debido al grado de amenaza e interes de conservación. Estos grupos no corresponden a agrupaciones taxonómicas."
+    },
+    {
+        "title": "Invasoras",
+        "definition": "Organismos que se adaptan a regiones fuera de su distribución natural, causando daños al ecosistema, las especies nativas, salud o economía de la región. Estas especies fueron establecidas por la resolución 848 de 2008 Ministerio de Ambiente y Desarrollo Sostenible."
+    },
+    {
+        "title": "Migratorias",
+        "definition": "Especies que se desplazan estacional y cíclicamente de una región a otra por cambios en la disponibilidad de alimento, condiciones ambientales o zonas de reproducción y cría."
+    },
+    {
+        "title": "Observaciones",
+        "definition": "Corresponden a cada uno de los registros realizados de un taxón en una región"
+    },
+    {
+        "title": "Publicadores",
+        "definition": "Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información."
+    },
+    {
+        "title": "Regiones",
+        "definition": "Corresponden a divisiones territoriales realizadas teniendo en cuanto una caracteristica, esta puede ser de caracter geografico, cultural, ecologico, conservación, entre otros."
+    },
+    {
+        "title": "Temáticas",
+        "definition": "Las temáticas corresponden a información adicional diferente a la taxonomica que permiten entender el estado actual de conservación de la biodiversidad en el país."
+    }
+
+]
