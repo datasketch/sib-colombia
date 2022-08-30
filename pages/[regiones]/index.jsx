@@ -1,7 +1,8 @@
 
 function index () {
   return (
-    <div>index departamento
+    <div>
+      index departamento
 
     </div>
   )
