@@ -1,6 +1,6 @@
 
 import PropTypes from 'prop-types'
-const Head = ({ title, description, content = false }) => {
+const HeadMore = ({ title, description, content = false }) => {
   return (
     <div className="bg-banner-orange bg-cover bg-center h-96 pt-32 lg:pt-20 flex items-center text-white">
       <div className="w-3/5 lg:w-2/5 mx-auto text-center space-y-2">
@@ -16,11 +16,11 @@ const Head = ({ title, description, content = false }) => {
   )
 }
 
-Head.propTypes = {
+HeadMore.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   content: PropTypes.bool,
   background: PropTypes.string
 }
 
-export default Head
+export default HeadMore

@@ -2,7 +2,7 @@
 import { formatNumbers } from '../../lib/formatNumbers'
 import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
-function Header ({ title, imageMap, registrosRegionTotal, registrosContinentalTotal, especiesCont, observacionesCont, especiesMar, observacionesMar }) {
+function HeadRegion ({ title, imageMap, registrosRegionTotal, registrosContinentalTotal, especiesCont, observacionesCont, especiesMar, observacionesMar }) {
   return (
     <div className='bg-banner-home-2 bg-cover bg-center pt-14 pb-10'>
       <div className="w-10/12 lg:w-full max-w-screen-xl mx-auto">
@@ -46,9 +46,9 @@ function Header ({ title, imageMap, registrosRegionTotal, registrosContinentalTo
 
   )
 }
-Header.propTypes = {
+HeadRegion.propTypes = {
   title: PropTypes.string.isRequired,
   imageMap: PropTypes.string.isRequired
 }
 
-export default Header
+export default HeadRegion

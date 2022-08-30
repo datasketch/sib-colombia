@@ -41,6 +41,7 @@ module.exports = {
         'yellow-green': '#C2F284',
         'dartmouth-green': '#00634B',
         cerulean: '#00AFFF',
+        azure: '#0090FF',
         sandstorm: '#FFD150',
         'greenish-cyan': '#4AD3AC',
         'red-cr': '#ff0000',
@@ -59,7 +60,8 @@ module.exports = {
       },
 
       boxShadow: {
-        default: '0px 3px 6px #00000029'
+        default: '0px 3px 6px #00000029',
+        select: '0px 11px 11px #0000001F;'
       },
       screens: {
         sm: '640px',

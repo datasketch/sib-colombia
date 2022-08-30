@@ -1,10 +1,39 @@
 import ReactMarkdown from 'react-markdown'
 import HeadMore from '../../components/headers/HeadMore'
 import Scrollspy from 'react-scrollspy'
-// const text1 = 'Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. \n\n Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.'
 
 function acercaDe () {
   const contentNav = ['acerca-de', 'antes-de', 'porque-es', 'quienes-contribuyeron', 'como-aportar', 'como-citar', 'como-navegar']
+  const scrollspyContent = [
+    {
+      href: '#acerca-de',
+      label: 'Acerca de'
+    },
+    {
+      href: '#antes-de',
+      label: 'Antes de continuar'
+    },
+    {
+      href: '#porque-es',
+      label: '¿Por qué es importante conocer esta información sobre la biodiversidad de Colombia?'
+    },
+    {
+      href: '#quienes-contribuyeron',
+      label: '¿Quiénes contribuyen a la construcción de esas cifras?'
+    },
+    {
+      href: '#como-aportar',
+      label: '¿Cómo aportar datos?'
+    },
+    {
+      href: '#como-citar',
+      label: '¿Cómo citar?'
+    },
+    {
+      href: '#como-navegar',
+      label: '¿Cómo navegar?'
+    }
+  ]
   return (
     <>
       <HeadMore title={'Acerca de'} />
@@ -118,7 +147,6 @@ function acercaDe () {
             </p>
 
             <div className='flex justify-between'>
-
               <a href='#' target='_blank' className='py-2 px-2.5  border border-black rounded-full' >Grupos biológicos</a>
               <a href='#' target='_blank' className='py-2 px-2.5 border border-black rounded-full' >Grupos biológicos de interés</a>
               <a href='#' target='_blank' className='py-2 px-2.5  border border-black rounded-full' >Temáticas</a>
@@ -128,43 +156,17 @@ function acercaDe () {
 
         </div>
         <div className='py-10 w-3/12 mx-auto'>
+          <span className='font-black font-inter py-2'>Contenidos</span>
           <Scrollspy items={contentNav} className='space-y-2 sticky top-[5%] font-lato '
             currentClassName='pl-3 border-l-2 border-flame'>
-            <li className='pl-10 hover:bg-[#8080801A] hover:border-l-2 hover:border-l-[#707070]'>
-              <a className='p-2' href='#acerca-de'>
-                Acerca de
-              </a>
-            </li>
-            <li className='pl-10 hover:bg-[#8080801A] hover:border-l-2 hover:border-l-[#707070]'>
-              <a className='p-2' href='#antes-de'>
-                Antes de continuar
-              </a>
-            </li>
-            <li className='pl-10 hover:bg-[#8080801A] hover:border-l-2 hover:border-l-[#707070]'>
-              <a className='p-2' href='#porque-es'>
-                ¿Por qué es importante conocer esta información sobre la biodiversidad de Colombia?
-              </a>
-            </li>
-            <li className='pl-10 hover:bg-[#8080801A] hover:border-l-2 hover:border-l-[#707070]'>
-              <a className='p-2' href='#quienes-contribuyeron'>
-                ¿Quiénes contribuyen a la construcción de esas cifras?
-              </a>
-            </li>
-            <li className='pl-10 hover:bg-[#8080801A] hover:border-l-2 hover:border-l-[#707070]'>
-              <a className='p-2' href='#como-aportar'>
-                ¿Cómo aportar datos?
-              </a>
-            </li>
-            <li className='pl-10 hover:bg-[#8080801A] hover:border-l-2 hover:border-l-[#707070]'>
-              <a className='p-2' href='#como-citar'>
-                ¿Cómo citar?
-              </a>
-            </li>
-            <li className='pl-10 hover:bg-[#8080801A] hover:border-l-2 hover:border-l-[#707070]'>
-              <a className='p-2' href='#como-navegar'>
-                ¿Cómo navegar?
-              </a>
-            </li>
+            {scrollspyContent.map(({ href, label }, key) =>
+              <li key={key} className='pl-4 hover:bg-[#8080801A] hover:border-l-2 hover:border-l-[#707070]'>
+                <a className='p-2' href={href}>
+                  {label}
+                </a>
+              </li>
+            )}
+
           </Scrollspy>
         </div>
 
