@@ -1,5 +1,5 @@
 
-import { formatNumbers } from '../../lib/formatNumbers'
+import { formatNumbers } from '../../lib/functions'
 import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
 function HeadRegion ({ title, imageMap, registrosRegionTotal, registrosContinentalTotal, especiesCont, observacionesCont, especiesMar, observacionesMar }) {

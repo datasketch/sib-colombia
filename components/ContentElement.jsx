@@ -1,6 +1,6 @@
 
 import { Tooltip } from '@mui/material'
-import { formatNumbers } from '../lib/formatNumbers'
+import { formatNumbers } from '../lib/functions'
 import tooltips from '../static/data/tooltips.json'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'

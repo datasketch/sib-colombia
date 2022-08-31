@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { numberWithCommas } from '../lib/formatNumbers'
+import { numberWithCommas } from '../lib/functions'
 
 const Table = ({ tableData, general = false }) => {
   const [dataShow, setdataShow] = useState([])

@@ -4,6 +4,7 @@ import CardDestacada from '../components/CardDestacada'
 import HeadHome from '../components/headers/HeadHome'
 import SimpleSlider from '../lib/Slider'
 import mapJson from '../data/maps.json'
+
 export default function Home () {
   return (
     <>

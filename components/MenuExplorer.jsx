@@ -3,7 +3,7 @@ import { Menu, MenuButton } from '@szhsin/react-menu'
 import MenuBoxItem from './MenuBoxItem'
 import '@szhsin/react-menu/dist/index.css'
 import { SimpleSlider } from '../lib/Slider'
-import { clearText } from '../lib/formatNumbers'
+import { clearText } from '../lib/functions'
 
 const MenuExplorerContext = createContext(null)
 
