@@ -1,5 +1,7 @@
+import { useContext, useEffect } from 'react'
 import CardPregunta from '../../components/CardPregunta'
 import HeadMore from '../../components/headers/HeadMore'
+import { AppContext } from '../_app'
 
 export default function preguntasFrecuentes () {
   const questions = [
@@ -35,6 +37,11 @@ export default function preguntasFrecuentes () {
     }
 
   ]
+
+  const { setFooterBgColor } = useContext(AppContext)
+  useEffect(() => {
+    setFooterBgColor('bg-footer-orange')
+  }, [])
   return (
     <>
       <HeadMore title='Preguntas frecuentes' />

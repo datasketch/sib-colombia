@@ -63,7 +63,7 @@ export default function Home () {
           <span className=''>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
         </div>
         <div className='w-10/12 py-4 max-w-screen-2xl mx-auto'>
-          <SimpleSlider infinite slidesToShow={5} slidesToScroll={5}>
+          <SimpleSlider infinite slidesToShow={4} slidesToScroll={4}>
             <CardDestacada />
             <CardDestacada />
             <CardDestacada />

@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import { useContext, useEffect, useState } from 'react'
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+
 import Slides from '../components/Slides'
 import HeadRegion from '../components/headers/HeadRegion'
 import SimpleSlider from '../lib/Slider'
@@ -10,10 +13,10 @@ import MenuExplorer from '../components/MenuExplorer'
 import territorios from '../static/data/nav_territorio_tolima.json'
 import ContentElement from '../components/ContentElement'
 import gruposInteres from '../static/data/nav_grupo_interes_conservacion.json'
-import { formatNumbers } from '../lib/functions'
-import { useState } from 'react'
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
-import Table from '../components/Table'
+import Collage from '../components/Collage'
+import CardTematicas from '../components/CardTematicas'
+import classNames from 'classnames'
+import { AppContext } from './_app'
 
 export default function tolima () {
   const slides = tolimaJson.slides
@@ -37,21 +40,32 @@ export default function tolima () {
     setOptionShow(value)
   }
 
+  const { setFooterBgColor } = useContext(AppContext)
+  useEffect(() => {
+    setFooterBgColor('bg-footer-green')
+  }, [])
+
   return (
     <>
       <Head>
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
-      <HeadRegion region={'Tolima'}
+
+      <HeadRegion title={'Tolima'}
+      description={generalInfo.main_text}
+      imageMap='/images/tolima.svg'
         /* registrosRegionTotal={generalInfo.especies_region_total} */
         registrosContinentalTotal={generalInfo.especies_region_total}
         especiesCont={generalInfo.especies_continentales}
         especiesMar={generalInfo.especies_marinas}
         observacionesCont={generalInfo.registros_continentales}
-        observacionesMar={generalInfo.registros_marinos} />
+        observacionesMar={generalInfo.registros_marinos}
+      />
+
+      <Collage />
 
       <div className='bg-white-3 pt-3'>
-        <div className='mx-auto w-10/12  max-w-screen-xl'>
+        <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <SimpleSlider dots infinite slidesToShow={1}>
             {slides.map((element, key) =>
               <Slides key={key} data={element} region='Tolima' />
@@ -60,9 +74,32 @@ export default function tolima () {
         </div>
       </div>
 
-      {/* Arboles de navegación Grupos Biologicos  */}
-      <div className='py-12 bg-white-2'>
-        <div className='mx-auto w-10/12 max-w-screen-xl'>
+      {/* Grupos Tematicas */}
+      <div className='py-10 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-2xl'>
+          <MenuExplorer tree={tematica} search={tematicaTolima}>
+            <MenuExplorer.Title>
+              <p className='3xl:text-lg'>
+                Conoce las cifras por
+              </p>
+              <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
+                Temáticas
+              </h2>
+            </MenuExplorer.Title>
+            <MenuExplorer.Tree className='relative mt-[45.52px]' slidesToShow={4} />
+            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Body >
+              {(selected, info, updateBreadcrumb) => (
+                <CardTematicas info={info} updateBreadcrumb={updateBreadcrumb} />
+              )}
+            </MenuExplorer.Body>
+          </MenuExplorer>
+        </div>
+      </div>
+
+      {/* Grupos Biologicos  */}
+      <div className='py-10 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={gruposBiologicos} search={gruposBiologicosTolima}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
@@ -73,8 +110,8 @@ export default function tolima () {
               </h2>
             </MenuExplorer.Title>
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
-            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
-            <MenuExplorer.Body className="-mt-10">
+            <MenuExplorer.Breadcrumb className="flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Body >
               {(selected, info) => (
                 <ContentElement selected={selected} info={info} region='Tolima' typeTree />
               )}
@@ -84,8 +121,8 @@ export default function tolima () {
       </div>
 
       {/* Grupos Interes */}
-      <div className='py-12 bg-white-2'>
-        <div className='mx-auto w-10/12 max-w-screen-xl'>
+      <div className='py-10 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={gruposInteres} search={gruposInteresTolima}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
@@ -96,8 +133,8 @@ export default function tolima () {
               </h2>
             </MenuExplorer.Title>
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
-            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
-            <MenuExplorer.Body className="-mt-10">
+            <MenuExplorer.Breadcrumb className="flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Body>
               {(selected, info) => (
                 <ContentElement selected={selected} info={info} region='Tolima' />
               )}
@@ -105,74 +142,9 @@ export default function tolima () {
           </MenuExplorer>
         </div>
       </div>
-      {/* Grupos Tematicas */}
-      <div className='py-12 bg-white-2'>
-        <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <MenuExplorer tree={tematica} search={tematicaTolima}>
-            <MenuExplorer.Title>
-              <p className='3xl:text-lg'>
-                Conoce las cifras por
-              </p>
-              <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
-                Temáticas
-              </h2>
-            </MenuExplorer.Title>
-            <MenuExplorer.Tree className='relative mt-[45.52px]' />
-            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
-            <MenuExplorer.Body className="-mt-10">
-              {(selected, info, updateBreadcrumb) => (
-                <div className='bg-white py-12 lg:py-16 xl:py-20'>
-                  {!info?.children
-                    ? (<div className=' flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto'>
-                      <div className='shadow-md flex flex-col justify-center items-center gap-2 py-14 px-8'>
-                        <div className='flex flex-col'>
-                          <span className='text-6xl font-black font-inter'>
-                            {formatNumbers(info?.count)}
-                            <div className='border border-dartmouth-green' />
-                          </span>
-                        </div>
-                        <span className='font-black font-inter text-lg '>{info?.label}</span>
-                      </div>
-                      {/* <div className='w-full'>
-                        <iframe src={info?.chart} className='w-full h-[300px]'></iframe>
-                      </div> */}
-
-                      {info?.species_list && (
-                        <Table tableData={info?.species_list} />
-                      )}
-                    </div>)
-                    : (
-                      <div className='grid grid-cols-2 gap-8 w-10/12 mx-auto'>
-                        {info?.children.map(({ count, label, slug_tematica: slug }, key) =>
-                          <>
-                            <div className='shadow-md flex flex-col justify-center items-center gap-2 py-14 px-8'>
-                              <div className='flex flex-col'>
-                                <span className='text-6xl font-black font-inter'>
-                                  {formatNumbers(count)}
-                                  <div className='border border-dartmouth-green' />
-                                </span>
-                              </div>
-                              <div className='flex flex-col gap-y-10'>
-                                <span className='font-black font-inter text-lg'>{label}</span>
-                                <button type='button' className='px-2 py-1 border border-dartmouth-green rounded-full w-3/5 self-end' value={slug} onClick={updateBreadcrumb}>Ver mas</button>
-                              </div>
-
-                            </div>
-                          </>
-                        )}
-                      </div>
-                      )
-                  }
-                </div>
-              )}
-            </MenuExplorer.Body>
-          </MenuExplorer>
-        </div>
-      </div>
-
-      {/* Arbol de navegacion Regiones */}
-      <div className='py-12 bg-white-2'>
-        <div className='mx-auto w-10/12 max-w-screen-xl'>
+      {/* Conoce las cifras por regiones */}
+      <div className='py-10 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={territorios} search={territorioTolima}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
@@ -183,11 +155,10 @@ export default function tolima () {
               </h2>
             </MenuExplorer.Title>
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
-            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
-            <MenuExplorer.Body className="-mt-10">
+            <MenuExplorer.Breadcrumb className="flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Body>
               {(selected, info) => (
-                <div className='bg-white py-12 lg:py-16 xl:py-20'>
-
+                <div className='bg-white py-10'>
                   {info?.charts.length === 0
                     ? <div className='text-center text-4xl py-20 w-4/5 mx-auto'>{info.title}...</div>
                     : (<>
@@ -222,25 +193,24 @@ export default function tolima () {
         </div>
       </div>
 
-      <div className='py-8 border-t-4 border-blue-green'>
-        <div className='mx-auto w-10/12 max-w-screen-xl'>
+      <div className='py-10 border-t-4 border-blue-green'>
+        <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
             Publicadores
           </h2>
-          <div className='mt-[50px] relative'>
-            <SimpleSlider buttonColor='dark' slidesToScroll={4} slidesToShow={4} responsive>
+          <div className='py-4'>
+            <SimpleSlider slidesToScroll={4} slidesToShow={4} >
               {
-                publicadores.map((item, index) => {
-                  return (
-                    <div className='px-5' key={index}>
-                      <PublishersCard title={item.label} imagePath={item.url_logo || '/images/un-icon.png'} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
-                    </div>
-                  )
-                })
+                publicadores.map((item, index) =>
+                  <div key={index} className='px-2'>
+                    <PublishersCard title={item.label} imagePath={item.url_logo || '/images/un-icon.png'} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
+                  </div>
+
+                )
               }
             </SimpleSlider>
           </div>
-          <div className='mt-10 text-center'>
+          <div className='text-center'>
             <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href="/mas/publicadores">
               Conocer más
             </a>
@@ -248,52 +218,46 @@ export default function tolima () {
         </div>
       </div>
 
-      <div className='py-12 lg:py-16 xl:py-20 bg-white-2'>
-        <div className='mx-auto w-10/12 max-w-screen-xl'>
-          <div className='mx-auto max-w-[507px] text-center'>
-            <div className='space-y-6'>
-              <h2 className='font-black text-3xl 3xl:text-4xl'>
-                Explora Tolima
-              </h2>
-              <p className='3xl:text-lg'>
-                Utiliza nuestro explorador para visualizar las tablas completas de información y explorar con múltiples cruces y gráficos la información disponible para esta región.
-              </p>
-              <details>
-                <summary className='inline-flex items-center gap-x-2 border border-black rounded-[26px] py-[14px] px-[51px] cursor-pointer'>
-                  <p>
-                    Cómo funciona esta herramienta
-                  </p>
-                  <img src="/images/arrow-app.svg" alt="arrow app" />
-                </summary>
-                <div className='mt-4'>
-                  <p>
-                    En la barra de la izquierda puedes seleccionar diferentes valores para los datos, si los quieres ver por registros o especies o filtrarlos para cada una de las temáticas de especies amenazadas, objeto de comercio, etc. En el panel de la derecha puedes ver los resultados como tablas o gráficos dependiendo de las opciones que selecciones.
-                  </p>
-                </div>
-              </details>
-            </div>
+      <div className='mx-auto w-10/12 max-w-screen-xl'>
+        <div className='mx-auto max-w-md text-center'>
+          <div className='space-y-6'>
+            <h2 className='font-black font-lato text-3xl 3xl:text-4xl'>
+              Explora Tolima
+            </h2>
+            <p className='3xl:text-lg'>
+              Utiliza nuestro explorador para visualizar las tablas completas de información y explorar con múltiples cruces y gráficos la información disponible para esta región.
+            </p>
+            <details>
+              <summary className='mx-auto w-4/6 flex justify-center items-center gap-x-2 border border-black rounded-full py-2  cursor-pointer'>
+                <p>
+                  Cómo funciona esta herramienta
+                </p>
+                <img className='rotate-90' src="/images/arrow-black.svg" alt="arrow app" />
+              </summary>
+              <div className='mt-4'>
+                <p>
+                  En la barra de la izquierda puedes seleccionar diferentes valores para los datos, si los quieres ver por registros o especies o filtrarlos para cada una de las temáticas de especies amenazadas, objeto de comercio, etc. En el panel de la derecha puedes ver los resultados como tablas o gráficos dependiendo de las opciones que selecciones.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
-        <div className='py-6 flex gap-8 justify-center'>
-          <button type='button' onClick={handleRendder} value='graph' className={optionShow === 'graph' ? 'border border-black py-2 px-4 rounded-full bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'hover:bg-dartmouth-green hover:text-white border border-black py-2 px-4 rounded-full'}>Gráficos</button>
-          <button type='button' onClick={handleRendder} value='table' className={optionShow === 'table' ? 'border border-black py-2 px-4 rounded-full bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'hover:bg-dartmouth-green hover:text-white border border-black py-2 px-4 rounded-full'}>Tablas</button>
-        </div>
-        {optionShow === 'graph' && <div className='mt-[55.13px] op'>
-          <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app/?region=tolima"></iframe>
-        </div>}
-        {
-          optionShow === 'table' && (<div className='mt-[55.13px] op'>
-            <iframe className='h-screen w-full' src=" https://datasketch.shinyapps.io/sib-data-app-tabla/?region=tolima"></iframe>
-          </div>)
-
-        }
-
-        {/* <div className='mt-[55.13px]'>
-          <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app/?region=tolima"></iframe>
-        </div> */}
       </div>
-{/* //Revisar Logo */}
-      <div className='py-12 lg:py-16 xl:py-20 bg-white'>
+      <div className='py-4 flex gap-8 justify-center'>
+        <button type='button' onClick={handleRendder} value='graph' className={classNames('py-2 px-4 border border-black rounded-full bg-dartmouth-green text-white ', optionShow === 'graph' ? 'hover:bg-white hover:text-black' : 'hover:bg-dartmouth-green hover:text-white') }>Gráficos</button>
+        <button type='button' onClick={handleRendder} value='table' className={classNames('py-2 px-4 border border-black rounded-full bg-dartmouth-green text-white ', optionShow === 'graph' ? 'hover:bg-white hover:text-black' : 'hover:bg-dartmouth-green hover:text-white')}>Tablas</button>
+      </div>
+      {optionShow === 'graph' && <div className='mt-[55.13px] op'>
+        <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app/?region=tolima"></iframe>
+      </div>}
+      {
+        optionShow === 'table' && (<div className='mt-[55.13px] op'>
+          <iframe className='h-screen w-full' src=" https://datasketch.shinyapps.io/sib-data-app-tabla/?region=tolima"></iframe>
+        </div>)
+      }
+
+      {/* TODO: Revisar logo */}
+      <div className='py-10 bg-white'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-xl'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8'>
             <p className='font-bold text-lg 3xl:text-xl'>

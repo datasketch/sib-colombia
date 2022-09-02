@@ -1,8 +1,14 @@
 import ReactMarkdown from 'react-markdown'
 import HeadMore from '../../components/headers/HeadMore'
 import Scrollspy from 'react-scrollspy'
+import { useContext, useEffect } from 'react'
+import { AppContext } from '../_app'
 
 function acercaDe () {
+  const { setFooterBgColor } = useContext(AppContext)
+  useEffect(() => {
+    setFooterBgColor('bg-footer-orange')
+  }, [])
   const contentNav = ['acerca-de', 'antes-de', 'porque-es', 'quienes-contribuyeron', 'como-aportar', 'como-citar', 'como-navegar']
   const scrollspyContent = [
     {

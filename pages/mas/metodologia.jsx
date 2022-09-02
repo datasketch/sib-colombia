@@ -1,6 +1,8 @@
 
+import { useContext, useEffect } from 'react'
 import Scrollspy from 'react-scrollspy'
 import HeadMore from '../../components/headers/HeadMore'
+import { AppContext } from '../_app'
 export default function metodologia () {
   const content = [
     'biodiversidad',
@@ -109,6 +111,11 @@ export default function metodologia () {
       parent: true
     }
   ]
+
+  const { setFooterBgColor } = useContext(AppContext)
+  useEffect(() => {
+    setFooterBgColor('bg-footer-orange')
+  }, [])
   return (
     <>
       <HeadMore title='Metodología' />

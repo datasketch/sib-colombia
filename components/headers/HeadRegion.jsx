@@ -2,17 +2,14 @@
 import { formatNumbers } from '../../lib/functions'
 import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
-function HeadRegion ({ title, imageMap, registrosRegionTotal, registrosContinentalTotal, especiesCont, observacionesCont, especiesMar, observacionesMar }) {
+function HeadRegion ({ title, description, imageMap, registrosRegionTotal, registrosContinentalTotal, especiesCont, observacionesCont, especiesMar, observacionesMar }) {
   return (
-    <div className='bg-banner-home-2 bg-cover bg-center pt-14 pb-10'>
+    <div className='bg-banner-regiones bg-cover bg-center pt-14 pb-10'>
       <div className="w-10/12 lg:w-full max-w-screen-xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-y-4 items-center w-10/12 mx-auto">
           <div className="font-black font-inter text-white text-5xl lg:text-7xl">{title}</div>
-          <div className="flex gap-x-8">
-            <img className="h-[70%] w-2/3 " src={imageMap || '/images/mapa-tolima.png'} />
-            {/* <div className="flex items-start">
-              <img className="h-[50%]" src="/images/mini-mapa-colombia.svg" />
-            </div> */}
+          <div className="flex justify-end pt-4">
+            <img className="w-3/5 " src={imageMap || '/images/mapa-tolima.png'} />
           </div>
         </div>
         <div className="flex flex-col lg:flex-row justify-between gap-y-4 w-10/12 mx-auto">
@@ -36,7 +33,7 @@ function HeadRegion ({ title, imageMap, registrosRegionTotal, registrosContinent
 
           <div className="lg:w-1/2 lg:border-l lg:border-yellow-green lg:border-dotted  flex flex-col justify-center items-start gap-y-8">
             <ReactMarkdown className='text-white text-sm text-center w-8/12 mx-auto'>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetee dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ad suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolor.
+              {description}
             </ReactMarkdown>
           </div>
         </div>
@@ -48,7 +45,7 @@ function HeadRegion ({ title, imageMap, registrosRegionTotal, registrosContinent
 }
 HeadRegion.propTypes = {
   title: PropTypes.string.isRequired,
-  imageMap: PropTypes.string.isRequired
+  imageMap: PropTypes.string
 }
 
 export default HeadRegion

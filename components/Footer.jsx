@@ -1,26 +1,18 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react'
+import classNames from 'classnames'
+import { useContext, useEffect, useState } from 'react'
+import { AppContext } from '../pages/_app'
 
 export default function Footer () {
   const [bgColor, setBgColor] = useState('bg-gradient-to-r from-lemon to-dartmouth-green')
-  // const [location, setLocation] = useState('')
-  // const arraychangeColors = ['publicadores', 'acerca-de', 'explorador']
-
-  // useEffect(() => {
-  //   setLocation(window.location.pathname.split('/'))
-  //   if (!arraychangeColors.includes(location[location.length - 1])) {
-  //     setBgColor('bg-gradient-to-r from-lemon to-dartmouth-green')
-  //   } else {
-  //     setBgColor('bg-gradient-to-r from-yellow-orange to-flame')
-  //   }
-  //   // return () => {
-
-  //   // }
-  // }, [location])
+  const { footerBgColor } = useContext(AppContext)
+  useEffect(() => {
+    console.log(footerBgColor)
+  }, [footerBgColor])
 
   return (
     // <footer className="bg-footer-2022 bg-cover bg-center h-[100px] sm:h-[300px] lg:h-[400px]"></footer>
-    <footer className={bgColor + ' h-auto pt-6  pb-2 space-y-4'}>
+    <footer className={classNames(footerBgColor, 'bg-cover bg-center h-auto pt-6  pb-2 space-y-4')}>
       <div className="max-w-screen-xl px-20 mx-auto text-white ">
         <div className='flex justify-between'>
           <div >
@@ -64,7 +56,7 @@ export default function Footer () {
         </div>
         <div className="border-b border-b-white pb-2 " />
         <div className='py-2'>
-          <img className='h-4 mx-auto' src='/images/powered-by.svg' alt='icon powered by datasketch'/>
+          <img className='h-4 mx-auto' src='/images/powered-by.svg' alt='icon powered by datasketch' />
         </div>
       </div>
     </footer >

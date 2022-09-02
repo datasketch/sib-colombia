@@ -13,7 +13,9 @@ module.exports = {
     'slick-dots',
     'slick-active',
     'w-[13.5px]',
-    'h-[23.62px]'
+    'h-[23.62px]',
+    'bg-footer-orange',
+    'bg-footer-green'
   ],
   theme: {
     extend: {
@@ -27,8 +29,12 @@ module.exports = {
         'banner-home-2': "url('/images/home-banner-2.png')",
         'banner-footer': "url('/images/footer-banner.svg')",
         'footer-2022': "url('/images/footer-2022.svg')",
-        'banner-orange': "url('/images/headers/bg-orange.png')",
-        destacada: "url('/images/bg-destacada.png')"
+        'banner-mas': "url('/images/headers/banner-mas.png')",
+        'banner-regiones': "url('/images/headers/banner-regiones.png')",
+        destacada: "url('/images/bg-destacada.png')",
+        prensa: "url('/images/banner-prensa.svg')",
+        'footer-orange': "url('/images/footers/orange-footer.svg')",
+        'footer-green': "url('/images/footers/green-footer.svg')"
       },
       colors: {
         'white-2': '#FBFBFB',
@@ -54,6 +60,7 @@ module.exports = {
         'science-blue': '#0857C9',
         'catalina-blue': '#001975',
         'dark-periwinkle': '#6363DC',
+        'pastel-periwinkle': '#8FABFF',
         blueberry: '#4B3CB4',
         'pastel-orange': '#FF9739'
 

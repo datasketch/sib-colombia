@@ -2,6 +2,66 @@ import Link from 'next/link'
 import CustomSeparatos from './CustomSeparator'
 
 export default function Navbar () {
+  // const nav = [
+  //   {
+  //     label: 'Colombia',
+  //     href: '/colombia'
+
+  //   },
+  //   {
+  //     label: 'Regiones',
+  //     href: '',
+  //     childs: [
+
+  //     ]
+  //   },
+  //   {
+  //     label: 'Grupos',
+  //     href: '',
+  //     childs: []
+  //   },
+  //   {
+  //     label: 'Temáticas',
+  //     href: '',
+  //     childs: []
+  //   },
+  //   {
+  //     label: 'Explorador',
+  //     href: '',
+  //     childs: []
+  //   },
+  //   {
+  //     label: 'Mas',
+  //     href: '',
+  //     childs: [
+  //       {
+  //         label: 'Acerca de',
+  //         href: '/mas/acerca-de'
+  //       },
+  //       {
+  //         label: 'Glosario',
+  //         href: '/mas/glosario'
+  //       },
+  //       {
+  //         label: 'Metodología',
+  //         href: '/mas/metodologia'
+  //       },
+  //       {
+  //         label: 'Prensa',
+  //         href: '/mas/prensa'
+  //       },
+  //       {
+  //         label: 'Preguntas frecuentes',
+  //         href: '/mas/preguntas-frecuentes'
+  //       },
+  //       {
+  //         label: 'Publicadores',
+  //         href: '/mas/publicadores'
+  //       }
+  //     ]
+  //   }
+  // ]
+
   return (
     <header className="absolute top-0 left-0 w-full z-40 py-2">
       <div className='mx-auto w-10/12 max-w-[1300px] '>

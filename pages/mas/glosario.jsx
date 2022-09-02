@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import CardGlosario from '../../components/CardGlosario'
 import HeadMore from '../../components/headers/HeadMore'
 import glosary from '../../data/glosario.json'
+import { AppContext } from '../_app'
 
 export default function glosario () {
   const [word, setWord] = useState(glosary)
+  const { setFooterBgColor } = useContext(AppContext)
 
   const handleChange = ({ target }) => {
     const filter = word.filter(({ title }) => title.toLowerCase().includes(target.value.toLowerCase()))
@@ -13,9 +15,7 @@ export default function glosario () {
   }
 
   useEffect(() => {
-    return () => {
-
-    }
+    setFooterBgColor('bg-footer-orange')
   }, [word])
 
   return (

@@ -1,9 +1,10 @@
 
-import { useMemo, useState } from 'react'
+import { useContext, useEffect, useMemo, useState } from 'react'
 import HeadMore from '../../components/headers/HeadMore'
 import Pagination from '../../components/Pagination'
 import PublishersCard from '../../components/PublishersCard'
 import publishers from '../../data/publicadores'
+import { AppContext } from '../_app'
 
 export default function publicadores () {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
@@ -17,6 +18,10 @@ export default function publicadores () {
     return publishers.slice(firstPageIndex, lastPageIndex)
   }, [currentPage])
 
+  const { setFooterBgColor } = useContext(AppContext)
+  useEffect(() => {
+    setFooterBgColor('bg-footer-orange')
+  }, [])
   return (
     <>
       <HeadMore title={'Publicadores'} description={textDescription} content />
@@ -47,12 +52,10 @@ export default function publicadores () {
       </div>
       <div id="publishers" className="max-w-screen-2xl pt-8 w-8/12 mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {
-          currentPublisher.map((item, key) => {
-            if (key >= 12) return (<></>)
-            return (
-              <PublishersCard key={key} title={item.label} country={item.pais_publicacion} totalEspecies={item.especies} observationsQuantity={item.registros} imagePath={item.url_logo} />
-            )
-          }
+          currentPublisher.map((item, key) =>
+
+            <PublishersCard key={key} title={item.label} country={item.pais_publicacion} totalEspecies={item.especies} observationsQuantity={item.registros} imagePath={item.url_logo} />
+
           )}
       </div>
       <div className='py-8 flex justify-center'>
