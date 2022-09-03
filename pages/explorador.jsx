@@ -8,7 +8,7 @@ function explorador () {
       <div className='max-w-screen-2xl mx-auto'>
 
         <details className='pt-8'>
-          <summary className='flex items-center w-4/5 lg:w-3/12 justify-center mx-auto gap-x-4 border border-black px-8 py-2 rounded-full cursor-pointer'>
+          <summary className='flex items-center w-3/12  justify-center mx-auto gap-x-4 border border-black px-3 py-2 rounded-full cursor-pointer'>
             <p>
               Cómo funciona esta herramienta
             </p>
@@ -22,7 +22,7 @@ function explorador () {
         </details>
 
         <div className='w-10/12 mx-auto py-12'>
-          <img src='/images/dashboard-lite.png' />
+          <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app"></iframe>
         </div>
       </div>
     </>

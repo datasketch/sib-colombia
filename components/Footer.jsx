@@ -7,7 +7,7 @@ export default function Footer () {
   const [bgColor, setBgColor] = useState('bg-gradient-to-r from-lemon to-dartmouth-green')
   const { footerBgColor } = useContext(AppContext)
   useEffect(() => {
-    console.log(footerBgColor)
+
   }, [footerBgColor])
 
   return (

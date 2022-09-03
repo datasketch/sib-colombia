@@ -203,7 +203,7 @@ export default function tolima () {
               {
                 publicadores.map((item, index) =>
                   <div key={index} className='px-2'>
-                    <PublishersCard title={item.label} imagePath={item.url_logo || '/images/un-icon.png'} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
+                    <PublishersCard truncate title={item.label} imagePath={item.url_logo || '/images/un-icon.png'} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
                   </div>
 
                 )
@@ -244,14 +244,14 @@ export default function tolima () {
         </div>
       </div>
       <div className='py-4 flex gap-8 justify-center'>
-        <button type='button' onClick={handleRendder} value='graph' className={classNames('py-2 px-4 border border-black rounded-full bg-dartmouth-green text-white ', optionShow === 'graph' ? 'hover:bg-white hover:text-black' : 'hover:bg-dartmouth-green hover:text-white') }>Gráficos</button>
-        <button type='button' onClick={handleRendder} value='table' className={classNames('py-2 px-4 border border-black rounded-full bg-dartmouth-green text-white ', optionShow === 'graph' ? 'hover:bg-white hover:text-black' : 'hover:bg-dartmouth-green hover:text-white')}>Tablas</button>
+        <button type='button' onClick={handleRendder} value='graph' className={classNames('py-2 px-4 border border-black rounded-full  ', optionShow === 'graph' ? 'bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'bg-white text-black hover:bg-dartmouth-green hover:text-white') }>Gráficos</button>
+        <button type='button' onClick={handleRendder} value='table' className={classNames('py-2 px-4 border border-black rounded-full ', optionShow === 'table' ? ' bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'bg-white text-black hover:bg-dartmouth-green hover:text-white')}>Tablas</button>
       </div>
-      {optionShow === 'graph' && <div className='mt-[55.13px] op'>
+      {optionShow === 'graph' && <div className='mt-[55.13px] '>
         <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app/?region=tolima"></iframe>
       </div>}
       {
-        optionShow === 'table' && (<div className='mt-[55.13px] op'>
+        optionShow === 'table' && (<div className='mt-[55.13px] '>
           <iframe className='h-screen w-full' src=" https://datasketch.shinyapps.io/sib-data-app-tabla/?region=tolima"></iframe>
         </div>)
       }
