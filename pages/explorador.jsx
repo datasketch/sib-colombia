@@ -1,6 +1,12 @@
+import { useContext, useEffect } from 'react'
 import HeadMore from '../components/headers/HeadMore'
+import { AppContext } from './_app'
 
 function explorador () {
+  const { setFooterBgColor } = useContext(AppContext)
+  useEffect(() => {
+    setFooterBgColor('bg-footer-orange')
+  }, [])
   const textDescription = 'Realiza múltiples cruces de información y genera gráficos para visualizar y analizar el comportamiento de los datos sobre biodiversidad según tu interés'
   return (
     <>

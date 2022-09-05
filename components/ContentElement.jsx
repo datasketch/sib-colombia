@@ -66,9 +66,8 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
               </span>
               <p className='text-lg font-inter font-bold relative'>
                 Especies amenazadas nacional
-                {!!info?.species_list_tematica['amenazadas-nacional'].length && <CustomTooltip title={<Table tableData={info?.species_list_tematica['amenazadas-nacional']} />}>
+                {!!info?.species_list_tematica['amenazadas-nacional'].length && <CustomTooltip placement='left-start' title={<Table tableData={info?.species_list_tematica['amenazadas-nacional']} />}>
                   <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
-                  {/* <img className='absolute top-[55%] left-[38%]' src='/images/icons/icon-table.svg' /> */}
                 </CustomTooltip>}
               </p>
 
@@ -101,7 +100,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
-                      <b>VU</b>
+                      <b>UV</b>
                       <Tooltip title={<b>{contentTooltip('amenazadas-nacional-vu')}</b>}>
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
@@ -184,7 +183,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
 
               <p className='text-lg font-inter font-bold'>
                 Especies CITES
-                {!!info?.species_list_tematica?.cites.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.cites} />}>
+                {!!info?.species_list_tematica?.cites.length && <CustomTooltip placement='left-start' title={<Table tableData={info?.species_list_tematica.cites} />}>
                   <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
                 </CustomTooltip>}
               </p>
@@ -278,7 +277,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
               </div>
 
               <p className='text-lg font-inter font-bold'>Especies exóticas
-                {!!info?.species_list_tematica?.exoticas.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.exoticas} />}>
+                {!!info?.species_list_tematica?.exoticas.length && <CustomTooltip placement='left-start' title={<Table tableData={info?.species_list_tematica.exoticas} />}>
                   <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
                 </CustomTooltip>}</p>
               <div className='flex text-sm gap-x-2 text-blue-green'>

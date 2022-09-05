@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import mapJson from '../data/maps.json'
+import { ordinalSuffixOf } from '../lib/functions'
 const MapComponent = () => {
   const [key, setkey] = useState(null)
 
@@ -8,30 +9,30 @@ const MapComponent = () => {
     {
 
       slug: '1',
-      label: '1er Pais Orquídeas y mariposas',
+      label: 'Orquídeas y mariposas',
       description: 'Orquídeas y mariposas. \n\n Nisi exercitation fugiat sint consectetur Lorem minim excepteur consequat. Veniam qui eu excepteur culpa Lorem do nisi est irure aute Lorem id. Pariatur eiusmod quis tempor anim labore aliqua sit duis aute voluptate non consectetur dolore sit. ',
-      countrys: ['Colombia', 'Argentina']
+      countries: ['Colombia', 'Argentina']
     },
     {
 
       slug: '2',
-      label: '2do Pais Aves, plantas, anfibios, peces dulceacuicolas',
+      label: 'Aves, plantas, anfibios, peces dulceacuicolas',
       description: 'Aves, plantas, anfibios, peces dulceacuicolas \n\n Officia ex non consectetur tempor dolor laboris commodo enim ut non.',
-      countrys: ['Ecuador', 'Colombia']
+      countries: ['Ecuador', 'Colombia']
     },
     {
 
       slug: '3',
-      label: '3er Pais Palmas y reptiles',
+      label: 'Palmas y reptiles',
       description: 'Palmas y reptiles \n\n Officia ex non consectetur tempor dolor laboris commodo enim ut non.',
-      countrys: ['Argentina']
+      countries: ['Argentina']
     }
   ]
   const handleCountry = ({ target }) => {
-    const { value } = target
+    const { value } = target.closest('button')
     setkey(value)
-    // console.log(details)
   }
+
   const colorSelecter = (name, filter) => {
     if (filter?.includes(name)) return '#F26330'
     return '#00AFFF'
@@ -45,9 +46,18 @@ const MapComponent = () => {
         <div className='w-1/2 flex'>
           <div className='w-1/2 flex flex-col gap-y-4'>
             {data.map((item, index) =>
-                <button key={index} name={item.slug} className='flex' onClick={handleCountry} value={item.slug}>
-                  {item.label}
-                </button>
+              <button key={index} name={item.slug} className='w-10/12' onClick={handleCountry} value={item.slug}>
+                <div className='flex flex-col items-start justify-start'>
+                  <div className='flex gap-x-0.5'>
+                    <span className='text-6xl font-black font-inter'>{index + 1}</span>
+                    <div className='flex flex-col items-start justify-between'>
+                      <span className='font-lato'>{ordinalSuffixOf(index + 1)}</span>
+                      <span className='font-lato font-black'>País</span>
+                    </div>
+                  </div>
+                  <span className='font-lato'>{item.label}</span>
+                </div>
+              </button>
             )}
           </div>
           <div className='w-1/2 px-4'>
@@ -64,22 +74,22 @@ const MapComponent = () => {
               {({ geographies }) =>
                 geographies
                   .map((geo) => (
-                  <Geography key={geo.rsmKey} geography={geo}
-                    style={{
-                      default: {
-                        fill: colorSelecter(geo.properties.name, details?.countrys),
-                        outline: 'none'
-                      },
-                      hover: {
-                        fill: '#FFD150',
-                        outline: 'none',
-                        cursor: 'pointer'
-                      },
-                      pressed: {
-                        outline: 'solid',
-                        fill: '#fdc5f5'
-                      }
-                    }} />
+                    <Geography key={geo.rsmKey} geography={geo}
+                      style={{
+                        default: {
+                          fill: colorSelecter(geo.properties.name, details?.countries),
+                          outline: 'none'
+                        },
+                        hover: {
+                          fill: '#FFD150',
+                          outline: 'none',
+                          cursor: 'pointer'
+                        },
+                        pressed: {
+                          outline: 'solid',
+                          fill: '#fdc5f5'
+                        }
+                      }} />
                   ))
               }
             </Geographies>

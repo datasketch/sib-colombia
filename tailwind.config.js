@@ -68,7 +68,8 @@ module.exports = {
 
       boxShadow: {
         default: '0px 3px 6px #00000029',
-        select: '0px 11px 11px #0000001F;'
+        select: '0px 11px 11px #0000001F;',
+        hard: '0px 8px 8px #00000017;'
       },
       screens: {
         sm: '640px',

@@ -1,7 +1,7 @@
 import { ClickAwayListener, styled, Tooltip, tooltipClasses } from '@mui/material'
 import { useState } from 'react'
 
-const CustomTooltip = ({ title, children }) => {
+const CustomTooltip = ({ title, children, placement }) => {
   const [open, setOpen] = useState(false)
 
   const handleTooltipClose = () => {
@@ -36,7 +36,7 @@ const CustomTooltip = ({ title, children }) => {
           disableHoverListener
           disableTouchListener
           title={title}
-          placement='right-start'
+          placement={placement || 'right-start'}
           classes={{
             maxHeight: '500px',
             overflowY: 'scroll',

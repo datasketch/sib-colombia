@@ -1,9 +1,15 @@
 // import ReactMarkdown from 'react-markdown'
+import { useContext, useEffect } from 'react'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import HeadRegion from '../components/headers/HeadRegion'
 import mapJson from '../data/maps.json'
+import { AppContext } from './_app'
 
 export default function colombia () {
+  const { setFooterBgColor } = useContext(AppContext)
+  useEffect(() => {
+    setFooterBgColor('bg-footer-green')
+  }, [])
   // const text = 'Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.\n\n Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. \n\nLorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.'
   return (
     <>

@@ -90,7 +90,7 @@ export default function tolima () {
             <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
             <MenuExplorer.Body >
               {(selected, info, updateBreadcrumb) => (
-                <CardTematicas info={info} updateBreadcrumb={updateBreadcrumb} />
+                <CardTematicas info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>

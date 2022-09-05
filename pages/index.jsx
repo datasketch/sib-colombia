@@ -13,7 +13,7 @@ export default function Home () {
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
       <HeadHome />
-      <div className='w-10/12 flex flex-col items-center mx-auto py-10 max-w-screen-2xl mx-auto'>
+      <div className='w-10/12 flex flex-col items-center py-10 max-w-screen-2xl mx-auto'>
         <MapComponent/>
         <a href='#' className='px-4 py-2 border border-black rounded-full'>Conocer cifras de Colombia</a>
       </div>
