@@ -4,7 +4,6 @@ import ReactMarkdown from 'react-markdown'
 
 const Slides = ({ data, region }) => {
   const { layout, chart_url, title, description, texts, chart1_url, chart2_url, path } = data
-  // console.log(data)
   if (layout === 'title/chart') {
     return (
       <div className="px-5">

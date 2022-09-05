@@ -8,9 +8,6 @@ import Table from './Table'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb } = props
-  console.log(selected)
-  console.log(info)
-  console.log(selected.toLowerCase() === 'cites')
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }

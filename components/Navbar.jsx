@@ -1,6 +1,7 @@
 
 import Link from 'next/link'
 import CustomSeparatos from './CustomSeparator'
+import DropDown from './Dropdown'
 // import Dropdown from './Dropdown'
 
 export default function Navbar () {
@@ -90,31 +91,19 @@ export default function Navbar () {
             <nav className='lg:self-end'>
               {/* DESKTOP */}
               <ul className='relative grid grid-cols-6 text-white gap-x-6'>
-                {nav.map(({ label, href, childs }, key) =>
-
-                  <li key={key} >
-                    <Link href={href}>
-                      <a className='flex gap-x-2 items-center'>
-                        <span>
-                          {label}
-                        </span>
-                        {childs !== undefined && <img className='h-3 w-3' src='/images/arrow-white.svg' />}
-                      </a>
-                    </Link>
-                    {/* <ul className={classNames(!childs?.length ? 'hidden' : 'block', 'absolute top-[135%]  flex-col justify-evenly items-center bg-white p-4 gap-y-4 text-black ')}>
-                      {childs?.map(({ label, href }, key) =>
-                        <li key={key} >
-                          <Link href={href}>
-                            <a className='flex gap-x-2 items-center'>
-                              <span className='hover:text-flame'>
-                                {label}
-                              </span>
-                            </a>
-                          </Link>
-                        </li>
-                      )}
-                    </ul> */}
-                  </li>
+                {nav.map((item, i) =>
+                  <DropDown key={i}>
+                    <DropDown.Button {...item} arrow={!!item.childs?.length}>
+                      {item.label}
+                    </DropDown.Button>
+                    {!!item.childs && <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-2  py-2.5 px-4'>
+                      {item.childs?.map(item =>
+                      <DropDown.Item className='text-black hover:text-flame py-1.5 hover:font-bold font-lato opacity-80' key={item.label} href={item.href}>
+                        {item.label}
+                      </DropDown.Item>)
+                      }
+                    </DropDown.Items>}
+                  </DropDown>
 
                 )}
               </ul>

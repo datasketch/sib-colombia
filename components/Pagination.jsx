@@ -45,7 +45,7 @@ const Pagination = props => {
       {
         paginationRange.map(pageNumber => {
           if (pageNumber === DOTS) {
-            return <li className="cursor-default hover:bg-transparent">&#8230;</li>
+            return <li key={pageNumber} className="cursor-default hover:bg-transparent">&#8230;</li>
           }
 
           return (
