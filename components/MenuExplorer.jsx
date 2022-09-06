@@ -131,10 +131,10 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
         (breadcrumb || []).map((m, i) => {
           return (
             <button className='flex space-x-2 items-center' key={i} type='button' onClick={changebreadcrumb}>
-              <p>
+              <p className='py-2 font-lato font-bold'>
                 {m}
               </p>
-              <img src="/images/arrow-breadcrumbs.svg" alt="arrow-breadcrumbs" />
+              <img src="/images/arrow-black.svg" alt="arrow-breadcrumbs" />
             </button>
           )
         })

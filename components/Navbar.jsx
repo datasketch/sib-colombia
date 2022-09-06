@@ -45,7 +45,7 @@ export default function Navbar () {
 
     },
     {
-      label: 'Mas',
+      label: 'Más',
       href: '',
       childs: [
         {
@@ -93,10 +93,10 @@ export default function Navbar () {
               <ul className='relative grid grid-cols-6 text-white gap-x-6'>
                 {nav.map((item, i) =>
                   <DropDown key={i}>
-                    <DropDown.Button {...item} arrow={!!item.childs?.length}>
+                    <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length}>
                       {item.label}
                     </DropDown.Button>
-                    {!!item.childs && <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-2  py-2.5 px-4'>
+                    {!!item.childs && <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-1.5  py-2.5 px-4'>
                       {item.childs?.map(item =>
                       <DropDown.Item className='text-black hover:text-flame py-1.5 hover:font-bold font-lato opacity-80' key={item.label} href={item.href}>
                         {item.label}

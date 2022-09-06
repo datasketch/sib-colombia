@@ -52,8 +52,8 @@ export default function tolima () {
       </Head>
 
       <HeadRegion title={'Tolima'}
-      description={generalInfo.main_text}
-      imageMap='/images/tolima.svg'
+        description={generalInfo.main_text}
+        imageMap='/images/tolima.svg'
         /* registrosRegionTotal={generalInfo.especies_region_total} */
         registrosContinentalTotal={generalInfo.especies_region_total}
         especiesCont={generalInfo.especies_continentales}
@@ -87,7 +87,7 @@ export default function tolima () {
               </h2>
             </MenuExplorer.Title>
             <MenuExplorer.Tree className='relative mt-[45.52px]' slidesToShow={4} />
-            <MenuExplorer.Breadcrumb className=" flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body >
               {(selected, info, updateBreadcrumb) => (
                 <CardTematicas info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} />
@@ -110,7 +110,7 @@ export default function tolima () {
               </h2>
             </MenuExplorer.Title>
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
-            <MenuExplorer.Breadcrumb className="flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body >
               {(selected, info) => (
                 <ContentElement selected={selected} info={info} region='Tolima' typeTree />
@@ -133,7 +133,7 @@ export default function tolima () {
               </h2>
             </MenuExplorer.Title>
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
-            <MenuExplorer.Breadcrumb className="flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
                 <ContentElement selected={selected} info={info} region='Tolima' />
@@ -155,7 +155,7 @@ export default function tolima () {
               </h2>
             </MenuExplorer.Title>
             <MenuExplorer.Tree className='relative mt-[45.52px]' />
-            <MenuExplorer.Breadcrumb className="flex items-center gap-x-2 mt-[30.8px] ml-5" />
+            <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
                 <div className='bg-white py-10'>
@@ -193,11 +193,14 @@ export default function tolima () {
         </div>
       </div>
 
-      <div className='py-10 border-t-4 border-blue-green'>
+      <div className='py-10 bg-white-smoke'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
-          <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
-            Publicadores
-          </h2>
+          <div className='space-y-2.5'>
+            <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
+              Publicadores
+            </h2>
+            <div className='h-0.5 bg-gradient-to-r from-dartmouth-green to-yellow-green' />
+          </div>
           <div className='py-4'>
             <SimpleSlider slidesToScroll={4} slidesToShow={4} >
               {
@@ -212,13 +215,13 @@ export default function tolima () {
           </div>
           <div className='text-center'>
             <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href="/mas/publicadores">
-              Conocer más
+              Todos los publicadores
             </a>
           </div>
         </div>
       </div>
 
-      <div className='mx-auto w-10/12 max-w-screen-xl'>
+      <div className='py-10 mx-auto w-10/12 max-w-screen-xl'>
         <div className='mx-auto max-w-md text-center'>
           <div className='space-y-6'>
             <h2 className='font-black font-lato text-3xl 3xl:text-4xl'>
@@ -235,7 +238,7 @@ export default function tolima () {
                 <img className='rotate-90' src="/images/arrow-black.svg" alt="arrow app" />
               </summary>
               <div className='mt-4'>
-                <p>
+                <p className='text-left'>
                   En la barra de la izquierda puedes seleccionar diferentes valores para los datos, si los quieres ver por registros o especies o filtrarlos para cada una de las temáticas de especies amenazadas, objeto de comercio, etc. En el panel de la derecha puedes ver los resultados como tablas o gráficos dependiendo de las opciones que selecciones.
                 </p>
               </div>
@@ -244,7 +247,7 @@ export default function tolima () {
         </div>
       </div>
       <div className='py-4 flex gap-8 justify-center'>
-        <button type='button' onClick={handleRendder} value='graph' className={classNames('py-2 px-4 border border-black rounded-full  ', optionShow === 'graph' ? 'bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'bg-white text-black hover:bg-dartmouth-green hover:text-white') }>Gráficos</button>
+        <button type='button' onClick={handleRendder} value='graph' className={classNames('py-2 px-4 border border-black rounded-full  ', optionShow === 'graph' ? 'bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'bg-white text-black hover:bg-dartmouth-green hover:text-white')}>Gráficos</button>
         <button type='button' onClick={handleRendder} value='table' className={classNames('py-2 px-4 border border-black rounded-full ', optionShow === 'table' ? ' bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'bg-white text-black hover:bg-dartmouth-green hover:text-white')}>Tablas</button>
       </div>
       {optionShow === 'graph' && <div className='mt-[55.13px] '>

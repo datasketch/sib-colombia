@@ -10,10 +10,11 @@ export default function colombia () {
   useEffect(() => {
     setFooterBgColor('bg-footer-green')
   }, [])
-  // const text = 'Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.\n\n Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. \n\nLorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.'
+  const text = 'A través del SiB Colombia se han publicado [####] observaciones a nivel nacional. Estos datos hacen referencia a un total de [####] especies, de las cuales [####] habitan el territorio al interior del continente y [####], en el mar.'
   return (
     <>
-      <HeadRegion title={'Colombia'} imageMap='/images/home/colombia-short.png'/>
+      <HeadRegion title={'Colombia'} description={text}/>
+
       <div className='w-10/12 flex flex-col items-center mx-auto py-10'>
         <div className='flex gap-x-10 '>
           <div className='w-1/2 flex'>

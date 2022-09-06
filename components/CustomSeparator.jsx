@@ -2,42 +2,45 @@ import Breadcrumbs from '@mui/material/Breadcrumbs'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import Stack from '@mui/material/Stack'
-// import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import ArrowLeft from './ArrowLeft'
-
-function handleClick (event) {
-  event.preventDefault()
-  console.info('You clicked a breadcrumb.')
-}
+import { clearText } from '../lib/functions'
 
 export default function CustomSeparator () {
-  const [location, setLocation] = useState('')
-  useEffect(() => {
-    setLocation(window.location.pathname.replace('/', ''))
+  const [breadcrumb, setbreadcrumb] = useState()
 
-    return () => {
+  const route = useRouter()
 
+  const handleClick = (event) => {
+    event.preventDefault()
+    console.info('You clicked a breadcrumb.')
+  }
+
+  const breadcrumbs = breadcrumb?.map((item, i) => {
+    if (i === breadcrumb.length - 1) {
+      return (
+        <Typography key="3" color="text.primary"
+          style={{ color: '#fff', fontSize: '14px', fontWeight: 'bold', textTransform: 'capitalize' }}>
+          {item.label}
+        </Typography >
+      )
     }
-  }, [])
+    return (
+      <Link
+        underline="hover"
+        key="2"
+        color="inherit"
+        href={item.path}
+        onClick={handleClick}
+      >
+        {item.label}
+      </Link>)
+  })
 
-  const breadcrumbs = [
-    <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
-      Regiones
-    </Link>,
-    <Link
-      underline="hover"
-      key="2"
-      color="inherit"
-      href="/"
-      onClick={handleClick}
-    >
-      Departamentos
-    </Link>,
-    <Typography key="3" color="text.primary" style={{ color: '#fff', fontSize: '14px', fontWeight: 'bold', textTransform: 'capitalize' }}>
-      {location}
-    </Typography>
-  ]
+  useEffect(() => {
+    setbreadcrumb(route.asPath.split('/').reduce((acc, cur, i, arr) => [...acc, { label: clearText(cur), path: route.asPath }], []).filter(e => String(e.label).trim()))
+  }, [route])
 
   return (
     <Stack margin="10px 0 0 0" spacing={2}>

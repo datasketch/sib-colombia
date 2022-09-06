@@ -12,10 +12,9 @@ const contentTooltip = (value) => {
 function ContentElement ({ selected, info, region, typeTree = false }) {
   return (
     <>
-      <div className='bg-white py-10 '>
-        <div className='w-[95%] flex flex-col md:flex-row mx-auto'>
-
-          <div className='flex flex-col space-y-3 lg:w-4/12 mx-auto py-8 px-6'>
+      <div className='bg-white py-10'>
+        <div className='w-10/12 flex flex-col md:flex-row mx-auto'>
+          <div className='flex flex-col space-y-3 lg:w-4/12 mx-auto py-8 px-3'>
             <div className='font-bold'>
               <div className='text-6xl font-inter font-black '>
                 <span></span>{formatNumbers(info?.especies_region_total)}

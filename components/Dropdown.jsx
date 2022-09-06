@@ -15,23 +15,23 @@ export default function DropDown (props) {
   )
 }
 
-DropDown.Button = function DropDownButton ({ label, href, arrow }) {
+DropDown.Button = function DropDownButton ({ label, href, arrow, className }) {
   const { setOpen } = useContext(DropDownContext)
 
   const showMenu = ({ target }) => {
     const { value } = target.closest('button')
-    if (value !== 'open') return setOpen(false)
+    if (value !== 'open') return
     setOpen(true)
   }
 
   if (!arrow) {
-    return <Link href={href}><a >{label}</a></Link>
+    return <Link href={href}><a className={classNames(className)}>{label}</a></Link>
   }
 
   return (
-    <button onClick={showMenu} type="button" value='open' className="flex items-center gap-x-2">
-      <span>{label}</span>
-      {arrow && <img src="/images/arrow-white.svg" alt="arrow" />}
+    <button onClick={showMenu} type="button" value='open'>
+      <div className={classNames(className, 'flex gap-x-2 items-center')}>{label}  <img className=' h-2.5' src="/images/arrow-white.svg" alt="arrow" /></div>
+
     </button>
   )
 }
@@ -42,7 +42,8 @@ DropDown.Items = function DropDownItems (props) {
   const closeMenu = () => {
     setOpen(false)
   }
-  return <ul onBlur={closeMenu } className={classNames(open ? 'block' : 'hidden', props.className)}>{children}</ul>
+
+  return <ul onBlur={closeMenu} className={classNames(open ? 'block' : 'hidden', props.className)}>{children}</ul>
 }
 
 DropDown.Item = function DropDownItem (props) {

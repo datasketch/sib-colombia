@@ -1,9 +1,9 @@
 
 import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
-
+import rehypeRaw from 'rehype-raw'
 const HeadHome = ({ title, image, number }) => {
-  const textHome = 'Colombia es uno de los pocos países megadiversos del mundo, una de cada diez especies conocidas habita nuestro territorio. \n\n Este sitio es una aproximación al conocimiento de la extensa riqueza biológica del país, ofrece una síntesis de cifras -constantemente actualizada- sobre las especies con al menos una observación publicada a través del Sistema de Información sobre Biodiversidad de Colombia.'
+  const textHome = 'Colombia es uno de los pocos países megadiversos del mundo, una de cada diez especies conocidas habita nuestro territorio. \n\n Este sitio es una aproximación al conocimiento de la extensa riqueza biológica del país, ofrece una síntesis de cifras -constantemente actualizada- sobre las especies con al menos una observación publicada a través del <u>Sistema de Información sobre Biodiversidad de Colombia</u>.'
 
   return (
     <div className='bg-banner-home bg-center bg-cover h-[550px] relative'>
@@ -13,7 +13,7 @@ const HeadHome = ({ title, image, number }) => {
           <span className='font-inter font-black pb-2'>Especies observadas en Colombia</span>
           <div className='w-1/3 border-t-2 border-dotted border-t-light-peagreen' />
         </div>
-        <ReactMarkdown className='space-y-2 font-lato text-sm pt-2 break-words text-justify'>
+        <ReactMarkdown rehypePlugins={[rehypeRaw]} className='space-y-2 font-lato text-sm pt-2 break-words'>
           {textHome}
         </ReactMarkdown>
       </div>

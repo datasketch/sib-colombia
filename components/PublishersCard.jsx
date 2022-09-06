@@ -32,7 +32,7 @@ export default function PublishersCard ({ truncate = false, country, title, obse
         </table>
       </div>
       <div className="flex justify-end items-end">
-        <a href={link || '#'} className="flex  gap-x-1.5 w-4/6 border border-black px-1.5 py-1 rounded-full justify-center h-full">
+        <a href={link || '#'} className="flex  gap-x-1.5 w-4/6 border border-black px-1.5 mt-5 py-1 rounded-full justify-center h-full">
           <span className="text-sm">Conocer más</span>
           <img src="/images/icon-arrow-left.svg" />
         </a>

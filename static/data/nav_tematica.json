@@ -19,7 +19,6 @@
           "label": "Amenazadas global",
           "tooltip": "IUCN (Unión Internacional para la Conservación de la Naturaleza)",
           "children": [
-            
             {
               "slug": "amenazadas-global-cr",
               "activa": true,
@@ -155,33 +154,23 @@
       ]
     },
     {
-      "slug": "distribucion",
+      "slug": "endemicas",
       "activa": true,
+      "descripcion": "La distribución natural de la especie es limitada a una zona geográfica de 50.000 Km2, en este caso son especies que solo se encuentra dentro del territorio Colombiano. En este grupo se incluyen las especies que se catalogan como endémicas en las listas realizadas por especialistas para grupos como: aves, plantas, peces, dulceacuícolas, mamíferos y coleópteros.",
       "icon": true,
-      "icon_black": "static/icons/distribucion-black.svg",
-      "icon_white": "static/icons/distribucion-white.svg",
-      "label": "Distribución",
-      "children": [
-        {
-          "slug": "endemicas",
-          "activa": true,
-          "descripcion": "La distribución natural de la especie es limitada a una zona geográfica de 50.000 Km2, en este caso son especies que solo se encuentra dentro del territorio Colombiano. En este grupo se incluyen las especies que se catalogan como endémicas en las listas realizadas por especialistas para grupos como: aves, plantas, peces, dulceacuícolas, mamíferos y coleópteros.",
-          "icon": true,
-          "icon_black": "static/icons/endemicas-black.svg",
-          "icon_white": "static/icons/endemicas-white.svg",
-          "label": "Endémicas"
-        },
-        {
-          "slug": "migratorias",
-          "activa": true,
-          "descripcion": "Especies que se desplazan estacional y cíclicamente de una región a otra por cambios en la disponibilidad de alimento, condiciones ambientales o zonas de reproducción y cría.",
-          "icon": false,
-          "icon_black": "static/icons/migratorias-black.svg",
-          "icon_white": "static/icons/migratorias-white.svg",
-          "label": "Migratorias",
-          "tooltip": "Temática aplicada solo a aves."
-        }
-      ]
+      "icon_black": "static/icons/endemicas-black.svg",
+      "icon_white": "static/icons/endemicas-white.svg",
+      "label": "Endémicas"
+    },
+    {
+      "slug": "migratorias",
+      "activa": true,
+      "descripcion": "Especies que se desplazan estacional y cíclicamente de una región a otra por cambios en la disponibilidad de alimento, condiciones ambientales o zonas de reproducción y cría.",
+      "icon": false,
+      "icon_black": "static/icons/migratorias-black.svg",
+      "icon_white": "static/icons/migratorias-white.svg",
+      "label": "Migratorias",
+      "tooltip": "Temática aplicada solo a aves."
     },
     {
       "slug": "exoticas-invasoras",

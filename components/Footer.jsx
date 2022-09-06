@@ -12,14 +12,14 @@ export default function Footer () {
 
   return (
     // <footer className="bg-footer-2022 bg-cover bg-center h-[100px] sm:h-[300px] lg:h-[400px]"></footer>
-    <footer className={classNames(footerBgColor, 'bg-cover bg-center h-auto pt-6  pb-2 space-y-4')}>
+    <footer className={classNames(footerBgColor, 'bg-cover bg-center h-auto pt-6 pb-2 space-y-6')}>
       <div className="max-w-screen-xl px-20 mx-auto text-white ">
         <div className='flex justify-between'>
           <div >
             <img className='h-[50%] w-2/3' src='/images/sib-icon.svg' alt='icon sib ' />
           </div>
-          <div className="flex gap-x-5">
-            <div className="flex flex-col gap-y-2 text-sm">
+          <div className="flex gap-x-16">
+            <div className="flex flex-col gap-y-2.5 text-sm font-lato">
               <b> Acerca de</b>
               <span>Esta versión</span>
               <span>Metodología</span>
@@ -27,14 +27,14 @@ export default function Footer () {
               <span>Cómo citar</span>
               <span>Reportar inconsistencias</span>
             </div>
-            <div className="flex flex-col gap-y-2 text-sm">
+            <div className="flex flex-col gap-y-2.5 text-sm font-lato">
               <b>Enlaces</b>
               <span>SiB Colombia</span>
               <span>Términos y condiciones</span>
               <span>Suscribirse al boletín</span>
             </div>
 
-            <div className="flex flex-col gap-y-2 text-sm">
+            <div className="flex flex-col gap-y-2.5 text-sm font-lato">
               <b>Contacto</b>
               <span>sib@humboldt.org.co</span>
               <span>PBX:(+601) 3202767</span>
@@ -51,8 +51,8 @@ export default function Footer () {
         </div>
       </div>
       <div className="text-center w-2/12 mx-auto">
-        <div className='underline text-white py-1'>
-          version 2022-2
+        <div className='underline text-sm font-lato text-white py-1'>
+          Versión 2022-2
         </div>
         <div className="border-b border-b-white pb-2 " />
         <div className='py-2'>
