@@ -1,13 +1,13 @@
 import { useState } from 'react'
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import mapJson from '../data/maps.json'
 import { ordinalSuffixOf } from '../lib/functions'
 const MapComponent = () => {
-  const [key, setkey] = useState(null)
+  const [key, setkey] = useState('1')
 
   const data = [
     {
-
       slug: '1',
       label: 'Orquídeas y mariposas',
       description: 'Orquídeas y mariposas. \n\n Nisi exercitation fugiat sint consectetur Lorem minim excepteur consequat. Veniam qui eu excepteur culpa Lorem do nisi est irure aute Lorem id. Pariatur eiusmod quis tempor anim labore aliqua sit duis aute voluptate non consectetur dolore sit. ',
@@ -48,22 +48,21 @@ const MapComponent = () => {
             {data.map((item, index) =>
               <button key={index} name={item.slug} className='w-10/12' onClick={handleCountry} value={item.slug}>
                 <div className='flex flex-col items-start justify-start'>
-                  <div className='flex gap-x-0.5'>
-                    <span className='text-6xl font-black font-inter'>{index + 1}</span>
-                    <div className='flex flex-col items-start justify-between'>
-                      <span className='font-lato'>{ordinalSuffixOf(index + 1)}</span>
-                      <span className='font-lato font-black'>País</span>
+                  <div className='flex gap-x-1.5'>
+                    <div className='flex items-start font-black'>
+                      <span className='text-2xl font-inter'>{index + 1}</span>
+                      <span className='text-sm'>{ordinalSuffixOf(index + 1)}</span>
                     </div>
+                    <span className='font-lato font-black text-2xl'>País</span>
                   </div>
-                  <span className='font-lato'>{item.label}</span>
+                  <span className='text-left font-lato'>{item.label}</span>
                 </div>
               </button>
             )}
           </div>
-          <div className='w-1/2 px-4'>
-            {details?.description}
-
-          </div>
+          <ReactMarkdown className='w-1/2 px-4'>
+            {details?.description }
+          </ReactMarkdown>
         </div>
         <div className='w-1/2'>
           <ComposableMap
