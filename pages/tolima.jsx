@@ -208,7 +208,6 @@ export default function tolima () {
                   <div key={index} className='px-2'>
                     <PublishersCard truncate title={item.label} imagePath={item.url_logo || '/images/un-icon.png'} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
                   </div>
-
                 )
               }
             </SimpleSlider>

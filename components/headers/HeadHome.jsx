@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 const HeadHome = ({ title, image, number }) => {
-  const textHome = 'Colombia es uno de los pocos países megadiversos del mundo, una de cada diez especies conocidas habita nuestro territorio. \n\n Este sitio es una aproximación al conocimiento de la extensa riqueza biológica del país, ofrece una síntesis de cifras -constantemente actualizada- sobre las especies con al menos una observación publicada a través del <u>Sistema de Información sobre Biodiversidad de Colombia</u>.'
+  const textHome = 'Colombia es uno de los pocos países megadiversos del mundo, una de cada diez especies conocidas habita nuestro territorio. \n\n Este sitio es una aproximación al conocimiento de la extensa riqueza biológica del país, ofrece una síntesis de cifras -constantemente actualizada- sobre las especies con al menos una observación publicada a través del <u style={{font}}>Sistema de Información sobre Biodiversidad de Colombia</u>.'
 
   return (
     <div className='bg-banner-home bg-center bg-cover h-[480px] relative'>

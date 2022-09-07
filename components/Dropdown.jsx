@@ -30,8 +30,9 @@ DropDown.Button = function DropDownButton ({ label, href, arrow, className }) {
 
   return (
     <button onClick={showMenu} type="button" value='open'>
-      <div className={classNames(className, 'flex gap-x-2 items-center')}>{label}  <img className=' h-2.5' src="/images/arrow-white.svg" alt="arrow" /></div>
-
+      <div className={classNames(className, 'flex gap-x-2 items-center')}>
+        {label}  <img className=' h-2.5' src="/images/arrow-white.svg" alt="arrow" />
+      </div>
     </button>
   )
 }
