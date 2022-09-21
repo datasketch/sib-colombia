@@ -14,37 +14,54 @@ export default function publicadores () {
 
   const { setFooterBgColor } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
+  // eslint-disable-next-line no-unused-vars
   const [publicadors, setPublicadors] = useState(publishers)
-
+  const [query, setQuery] = useState('')
+  const [selectedCountry, setSelectedCountry] = useState('')
+  const [selectedOrganizacion, setSelectedOrganizacion] = useState('')
   const citys = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.pais_publicacion], []))]
   const typeOrganization = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.tipo_organizacion], []))]
 
+  const filteredPublishers = publicadors
+    .filter(filterBySearch)
+    .filter(filterByCountry)
+    .filter(filterByOrgType)
+
+  function filterBySearch (publisher) {
+    const { label, pais_publicacion: paisPublicacion } = publisher
+    return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase())
+  }
+
+  function filterByCountry (publisher) {
+    const { pais_publicacion: paisPublicacion } = publisher
+    return paisPublicacion?.includes(selectedCountry)
+  }
+
+  function filterByOrgType (publisher) {
+    const { tipo_organizacion: organizacion = '' } = publisher
+    return organizacion?.includes(selectedOrganizacion)
+  }
+
   const handleChange = ({ target }) => {
     const { value } = target
-    if (value === '') {
-      return setPublicadors(prevState => prevState)
-    }
-    const filterPublisher = publicadors.filter(({ label, pais_publicacion: paisPublicacion }) => label.toLowerCase().includes(value?.toLowerCase()) || paisPublicacion?.toLowerCase().includes(value?.toLowerCase()))
-    setPublicadors(filterPublisher)
+    setQuery(value || '')
   }
 
-  const optionSelectedCountry = ({ target }) => {
+  const handleCountryChange = ({ target }) => {
     const { value } = target
-    const filterPublisher = publishers.filter(({ pais_publicacion: paisPublicacion }) => paisPublicacion?.includes(value))
-    setPublicadors(filterPublisher)
+    setSelectedCountry(value)
   }
 
-  const optionSelectedOrganizacion = ({ target }) => {
+  const handleOrganizacionChange = ({ target }) => {
     const { value } = target
-    const filterPublisher = publishers.filter(({ tipo_organizacion: organizacion }) => organizacion?.includes(value))
-    setPublicadors(filterPublisher)
+    setSelectedOrganizacion(value || '')
   }
 
   const currentPublisher = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize
     const lastPageIndex = firstPageIndex + PageSize
-    return publicadors.slice(firstPageIndex, lastPageIndex)
-  }, [currentPage, publicadors])
+    return filteredPublishers.slice(firstPageIndex, lastPageIndex)
+  }, [currentPage, filteredPublishers])
 
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
@@ -64,11 +81,11 @@ export default function publicadores () {
         </div>
         <div className='flex flex-col'>
           <span className='font-bold font-lato'>Pais del Publicador</span>
-          <Selectable placeHolder='País' data={citys} optionSelected={optionSelectedCountry} dataFiltered={publicadors} titles={countrysCode} />
+          <Selectable placeHolder={selectedCountry || 'País'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
         </div>
         <div>
           <span className='font-bold font-lato'>Tipo de Organización</span>
-          <Selectable placeHolder='Organización' optionSelected={optionSelectedOrganizacion} data={typeOrganization} dataFiltered={publicadors} />
+          <Selectable placeHolder={selectedOrganizacion || 'Organización'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
         </div>
         {/* <div className='flex flex-col'>
           <span className='font-bold font-lato'>Limpiar Filtros</span>
@@ -86,7 +103,7 @@ export default function publicadores () {
       <div className='py-8 flex justify-center'>
         <Pagination
           currentPage={currentPage}
-          totalCount={publicadors.length}
+          totalCount={filteredPublishers.length}
           pageSize={PageSize}
           onPageChange={page => setCurrentPage(page)}
         />

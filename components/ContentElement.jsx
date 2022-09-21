@@ -154,9 +154,9 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                     </div>
                   </div>
                   <div className='flex w-full'>
-                    <div className='bg-red-cr h-4' style={{ width: calculateWidth(info?.registros_amenazadas_nacional_cr, (info?.registros_amenazadas_nacional_cr + info?.registros_amenazadas_nacional_en + info?.registros_amenazadas_nacional_vu)) }}></div>
-                    <div className='bg-orange-en h-4' style={{ width: calculateWidth(info?.registros_amenazadas_nacional_en, (info?.registros_amenazadas_nacional_cr + info?.registros_amenazadas_nacional_en + info?.registros_amenazadas_nacional_vu)) }}></div>
-                    <div className='bg-yellow-vu h-4' style={{ width: calculateWidth(info?.registros_amenazadas_nacional_vu, (info?.registros_amenazadas_nacional_cr + info?.registros_amenazadas_nacional_en + info?.registros_amenazadas_nacional_vu)) }}></div>
+                    <div className='bg-red-cr h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_nacional_cr, (+info?.registros_amenazadas_nacional_cr + +info?.registros_amenazadas_nacional_en + +info?.registros_amenazadas_nacional_vu)) }}></div>
+                    <div className='bg-orange-en h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_nacional_en, (+info?.registros_amenazadas_nacional_cr + +info?.registros_amenazadas_nacional_en + +info?.registros_amenazadas_nacional_vu)) }}></div>
+                    <div className='bg-yellow-vu h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_nacional_vu, (+info?.registros_amenazadas_nacional_cr + +info?.registros_amenazadas_nacional_en + +info?.registros_amenazadas_nacional_vu)) }}></div>
                   </div>
                 </div>
               </div>
@@ -212,9 +212,9 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                     </div>
                   </div>
                   <div className='flex w-full'>
-                    <div className='bg-red-cr h-4'style={{ width: calculateWidth(info?.registros_amenazadas_global_cr, (info?.registros_amenazadas_global_cr + info?.registros_amenazadas_global_en + info?.registros_amenazadas_global_vu)) }}></div>
-                    <div className='bg-orange-en h-4' style={{ width: calculateWidth(info?.registros_amenazadas_global_en, (info?.registros_amenazadas_global_cr + info?.registros_amenazadas_global_en + info?.registros_amenazadas_global_vu)) }}></div>
-                    <div className='bg-yellow-vu h-4'style={{ width: calculateWidth(info?.registros_amenazadas_global_vu, (info?.registros_amenazadas_global_cr + info?.registros_amenazadas_global_en + info?.registros_amenazadas_global_vu)) }}></div>
+                    <div className='bg-red-cr h-4'style={{ width: calculateWidth(+info?.registros_amenazadas_global_cr, (+info?.registros_amenazadas_global_cr + +info?.registros_amenazadas_global_en + +info?.registros_amenazadas_global_vu)) }}></div>
+                    <div className='bg-orange-en h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_global_en, (+info?.registros_amenazadas_global_cr + +info?.registros_amenazadas_global_en + +info?.registros_amenazadas_global_vu)) }}></div>
+                    <div className='bg-yellow-vu h-4'style={{ width: calculateWidth(+info?.registros_amenazadas_global_vu, (+info?.registros_amenazadas_global_cr + +info?.registros_amenazadas_global_en + +info?.registros_amenazadas_global_vu)) }}></div>
                   </div>
                 </div>
               </div>
@@ -263,9 +263,9 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                     </div>
                   </div>
                   <div className='flex'>
-                    <div className='bg-cerulean h-4' style={{ width: calculateWidth(info?.registros_cites_i, (info?.registros_cites_i + info?.registros_cites_ii + info?.registros_cites_iii)) }}></div>
-                    <div className='bg-sandstorm h-4' style={{ width: calculateWidth(info?.registros_cites_ii, (info?.registros_cites_i + info?.registros_cites_ii + info?.registros_cites_iii)) }}></div>
-                    <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(info?.registros_cites_iii, (info?.registros_cites_i + info?.registros_cites_ii + info?.registros_cites_iii)) }}></div>
+                    <div className='bg-cerulean h-4' style={{ width: calculateWidth(+info?.registros_cites_i, (+info?.registros_cites_i + +info?.registros_cites_ii + +info?.registros_cites_iii)) }}></div>
+                    <div className='bg-sandstorm h-4' style={{ width: calculateWidth(+info?.registros_cites_ii, (+info?.registros_cites_i + +info?.registros_cites_ii + +info?.registros_cites_iii)) }}></div>
+                    <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(+info?.registros_cites_iii, (+info?.registros_cites_i + +info?.registros_cites_ii + +info?.registros_cites_iii)) }}></div>
                   </div>
                 </div>
               </div>

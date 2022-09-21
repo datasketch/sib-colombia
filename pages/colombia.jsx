@@ -27,7 +27,8 @@ export default function colombia () {
     publicadores,
     slides,
     territorio,
-    municipios_lista: municipios
+    municipios_lista: municipios,
+    gallery
 
   } = col
 
@@ -67,7 +68,7 @@ export default function colombia () {
         observacionesMar={generalInfo.registros_marinos}
       />
 
-      <Collage />
+      <Collage gallery={gallery} />
 
       <div className='bg-white-3 pt-3'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
