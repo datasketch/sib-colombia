@@ -15,7 +15,16 @@ module.exports = {
     'w-[13.5px]',
     'h-[23.62px]',
     'bg-footer-orange',
-    'bg-footer-green'
+    'bg-footer-green',
+    'hover:text-flame',
+    'hover:text-dartmouth-green',
+    'bg-banner-tolima',
+    'bg-banner-narino',
+    'bg-banner-santander',
+    'bg-banner-boyaca',
+    'bg-banner-boyaca',
+    'bg-banner-boyaca'
+
   ],
   theme: {
     extend: {
@@ -34,7 +43,13 @@ module.exports = {
         destacada: "url('/images/bg-destacada.png')",
         prensa: "url('/images/banner-prensa.svg')",
         'footer-orange': "url('/images/footers/orange-footer.svg')",
-        'footer-green': "url('/images/footers/green-footer.svg')"
+        'footer-green': "url('/images/footers/green-footer.svg')",
+        'banner-boyaca': "url('/images/banner-regiones/boyaca.jpg')",
+        'banner-narino': "url('/images/banner-regiones/narino.jpg')",
+        'banner-santander': "url('/images/banner-regiones/santander.jpg')",
+        'banner-tolima': "url('/images/banner-regiones/tolima.jpg')",
+        'banner-departamento': "url('/images/banner-regiones/departamentos.jpg')",
+        'banner-municipio': "url('/images/banner-regiones/municipios.jpg')"
       },
       colors: {
         'white-2': '#FBFBFB',
@@ -63,7 +78,8 @@ module.exports = {
         'dark-periwinkle': '#6363DC',
         'pastel-periwinkle': '#8FABFF',
         blueberry: '#4B3CB4',
-        'pastel-orange': '#FF9739'
+        'pastel-orange': '#FF9739',
+        'light-orange': '#FFBC4E'
 
       },
 

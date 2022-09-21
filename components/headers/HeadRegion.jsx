@@ -3,9 +3,10 @@ import { formatNumbers } from '../../lib/functions'
 import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
 import Concentric from '../Concentric'
-function HeadRegion ({ title, description, imageMap, registrosRegionTotal, registrosContinentalTotal, especiesCont, observacionesCont, especiesMar, observacionesMar }) {
+import classNames from 'classnames'
+function HeadRegion ({ slug, title, description, imageMap, registrosRegionTotal, registrosContinentalTotal, especiesCont, observacionesCont, especiesMar, observacionesMar }) {
   return (
-    <div className='bg-banner-regiones bg-cover bg-center pt-14 pb-3.5'>
+    <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', ' bg-cover bg-center pt-14 pb-3.5')}>
       <div className="w-10/12 lg:w-full max-w-screen-2xl mx-auto">
         <div className="pt-7 min-h-[210px] flex flex-row justify-between gap-y-4 items-center w-10/12 mx-auto">
           <div className="font-black w-1/2 font-inter text-white text-8xl">{title}</div>
@@ -15,9 +16,9 @@ function HeadRegion ({ title, description, imageMap, registrosRegionTotal, regis
         </div>
         <div className="flex max-h-48 justify-between gap-y-4 w-10/12 mx-auto">
           <div className="w-1/2 relative flex items-center">
-            <Concentric inner={registrosContinentalTotal} outer={15000} />
+            <Concentric inner={registrosContinentalTotal} outer={observacionesCont} />
             <div className="absolute text-white flex -space-y-1 flex-col -top-[6%] left-60">
-              <span className="font-inter font-black text-xl">{formatNumbers(15000)}</span>
+              <span className="font-inter font-black text-xl">{formatNumbers(observacionesCont)}</span>
               <span className="font-lato ">Especies estimadas</span>
             </div>
 

@@ -12,27 +12,40 @@ export default function Navbar () {
 
     },
     {
+      color: 'dartmouth-green',
       label: 'Regiones',
       href: '',
-      childs: []
+      childs: [
+        {
+          label: 'Boyacá',
+          href: '/boyaca'
+        },
+        {
+          label: 'Santander',
+          href: '/santander'
+        },
+        {
+          label: 'Nariño',
+          href: '/narino'
+        },
+        {
+          label: 'Tolima',
+          href: '/tolima'
+        },
+        {
+          label: '',
+          href: '/'
+        },
+        {
+          label: '',
+          href: '/'
+        }
+      ]
     },
     {
       label: 'Grupos',
-      href: '',
-      childs: [
-        /*  {
-          label: '',
-          href: ''
-        },
-        {
-          label: '',
-          href: ''
-        },
-        {
-          label: '',
-          href: ''
-        } */
-      ]
+      href: ''
+
     },
     {
       label: 'Temáticas',
@@ -42,9 +55,9 @@ export default function Navbar () {
     {
       label: 'Explorador',
       href: '/explorador'
-
     },
     {
+      color: 'flame',
       label: 'Más',
       href: '',
       childs: [
@@ -90,21 +103,24 @@ export default function Navbar () {
             </div>
             <nav className='lg:self-end'>
               {/* DESKTOP */}
-              <ul className='relative grid grid-cols-6 text-white gap-x-6'>
+              <ul className={'relative grid grid-cols-6 text-white gap-x-6'}>
                 {nav.map((item, i) =>
-                  <DropDown key={i}>
+                  <DropDown key={i} >
                     <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length}>
                       {item.label}
                     </DropDown.Button>
-                    {!!item.childs && <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-0.5 py-1.5 px-2.5'>
-                      {item.childs?.map(item =>
-                      <DropDown.Item className='text-black hover:text-flame py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full' key={item.label} href={item.href}>
-                        {item.label}
-                      </DropDown.Item>)
-                      }
-                    </DropDown.Items>}
-                  </DropDown>
+                    <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-0.5 py-1.5 px-2.5'>
+                      {item.childs?.map((children, key) =>
+                        <div key={children.label + key}>
+                          <DropDown.Item className='text-black py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full' color={item.color} href={children.href}>
+                            {children.label}
+                          </DropDown.Item>
+                        </div>
 
+                      )
+                      }
+                    </DropDown.Items>
+                  </DropDown>
                 )}
               </ul>
 

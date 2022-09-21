@@ -14,7 +14,7 @@ export default function CustomSeparator () {
 
   const handleClick = (event) => {
     event.preventDefault()
-    console.info('You clicked a breadcrumb.')
+    // console.info('You clicked a breadcrumb.')
   }
 
   const breadcrumbs = breadcrumb?.map((item, i) => {

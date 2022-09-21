@@ -12,6 +12,11 @@
 
 @layer components {
 
+    .rc-markdown >p >a {
+         @apply underline italic text-azure
+        
+    }
+
    details > summary {
         list-style: none;
     }

@@ -14,7 +14,7 @@ const CardDestacada = () => {
               <span className="font-lato">Especies</span>
             </div>
             <div className="flex gap-x-1 text-white text-xs flex-wrap">
-              <img src='/images/arrow-white-right.svg' />
+              {/* <img src='/images/arrow-white-right.svg' /> */}
               <span className="font-inter">609,259</span>
               <span className="font-lato">Observaciones</span>
             </div>

@@ -8,7 +8,7 @@ const CardContenido = ({ date, title, description, href }) => {
       </div>
       <div className='font-lato'>{description}</div>
       <div>
-        <a className="flex items-center py-0.5 justify-center gap-2 border border-black rounded-full w-1/3" href={href}>
+        <a target='_blank' className="flex items-center py-0.5 justify-center gap-2 border border-black rounded-full w-1/3" href={href} rel="noreferrer">
           <span className="text-sm">Conocer más</span>
           <img src="/images/arrow-black.svg" />
         </a>

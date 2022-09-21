@@ -18,8 +18,8 @@ const CustomTooltip = ({ title, children, placement }) => {
     [`& .${tooltipClasses.tooltip}`]: {
       backgroundColor: theme.palette.common.white,
       color: 'rgba(0, 0, 0, 0.87)',
-      boxShadow: theme.shadows[1],
-      maxWidth: 500
+      boxShadow: theme.shadows[1]
+
     }
   }))
 
@@ -38,7 +38,8 @@ const CustomTooltip = ({ title, children, placement }) => {
           title={title}
           placement={placement || 'right-start'}
           classes={{
-            maxHeight: '500px',
+            maxHeight: '650px',
+            maxWidth: '650px',
             overflowY: 'scroll',
             backgroundColor: ' #fff'
           }}

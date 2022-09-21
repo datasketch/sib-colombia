@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect, useRef } from 'react'
 import { Menu, MenuButton } from '@szhsin/react-menu'
 import MenuBoxItem from './MenuBoxItem'
 import '@szhsin/react-menu/dist/index.css'
-import { SimpleSlider } from '../lib/Slider'
+import { SimpleSlider } from './Slider'
 import { clearText } from '../lib/functions'
 import classNames from 'classnames'
 
@@ -72,7 +72,7 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
   const container = useRef(null)
   return (
     <div className={classNames(className)} {...restProps}>
-      <SimpleSlider slidesToShow={restProps.slidesToShow || 5} responsive>
+      <SimpleSlider slidestoshow={restProps.slidestoshow || 5} responsive>
         {tree.children.map((leaf, i) => (
           <div className='px-2' key={i}>
             <div className='bg-transparent shadow-3 h-24 w-auto flex' key={breadcrumb[0]} ref={container}>
@@ -145,7 +145,7 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
   const { selected, selectedValue, search, updateBreadcrumb } = useContext(MenuExplorerContext)
-  const info = search.find((item) => item.slug === selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+  const info = search?.find((item) => item.slug === selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
   return (
     <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
       {children(selected, info, updateBreadcrumb)}

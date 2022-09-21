@@ -3,7 +3,7 @@ import Head from 'next/head'
 import CardDestacada from '../components/CardDestacada'
 import HeadHome from '../components/headers/HeadHome'
 import MapComponent from '../components/MapComponent'
-import SimpleSlider from '../lib/Slider'
+import SimpleSlider from '../components/Slider'
 
 export default function Home () {
   const destacadas = [0, 1, 2, 3, 4, 5, 6, 7, 8]
@@ -24,7 +24,7 @@ export default function Home () {
           <span className=''>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
         </div>
         <div className='w-[85%] py-4 max-w-screen-2xl mx-auto'>
-          <SimpleSlider infinite slidesToShow={5} slidesToScroll={5}>
+          <SimpleSlider infinite slidestoshow={5} slidesToScroll={5}>
             {destacadas.map(key =>
               <div key={key} className='px-2.5' >
                 <CardDestacada />

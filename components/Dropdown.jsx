@@ -1,31 +1,42 @@
 import classNames from 'classnames'
 import Link from 'next/link'
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useEffect, useRef, useState } from 'react'
 
 const DropDownContext = createContext(null)
 
-export default function DropDown (props) {
+export default function DropDown ({ children, ...restProps }) {
+  const refDropdown = useRef(null)
   const [open, setOpen] = useState(false)
-  const { children } = props
+
+  const showMenu = ({ target }) => {
+    setOpen(true)
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true)
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true)
+    }
+  }, [refDropdown])
+
+  const handleClickOutside = ({ target }) => {
+    if (refDropdown.current && !refDropdown.current.contains(target)) {
+      setOpen(false)
+    }
+  }
 
   return (
-    <DropDownContext.Provider value={{ open, setOpen }}>
-      <div>{children}</div>
+    <DropDownContext.Provider value={{ open, setOpen, showMenu }}>
+      <div {...restProps} ref={refDropdown} >{children}</div>
     </DropDownContext.Provider>
   )
 }
 
 DropDown.Button = function DropDownButton ({ label, href, arrow, className }) {
-  const { setOpen } = useContext(DropDownContext)
-
-  const showMenu = ({ target }) => {
-    const { value } = target.closest('button')
-    if (value !== 'open') return
-    setOpen(true)
-  }
+  const { showMenu } = useContext(DropDownContext)
 
   if (!arrow) {
-    return <Link href={href}><a className={classNames(className)}>{label}</a></Link>
+    return <Link href={href}><a className={classNames(className || '')}>{label}</a></Link>
   }
 
   return (
@@ -39,20 +50,25 @@ DropDown.Button = function DropDownButton ({ label, href, arrow, className }) {
 
 DropDown.Items = function DropDownItems (props) {
   const { children } = props
-  const { open, setOpen } = useContext(DropDownContext)
-  const closeMenu = () => {
-    setOpen(false)
-  }
+  const { open } = useContext(DropDownContext)
 
-  return <ul onBlur={closeMenu} className={classNames(open ? 'block' : 'hidden', props.className)}>{children}</ul>
+  return <ul className={classNames(open ? 'block' : 'hidden', props.className)}>{children}</ul>
+}
+
+DropDown.SubMenu = function DropdownSubMenu (props) {
+  const { children } = props
+  // console.log(children)
+  return (
+    <div className={classNames(props.className || '')}>{children}</div>
+  )
 }
 
 DropDown.Item = function DropDownItem (props) {
-  const { children, href, className } = props
+  const { children, href, className, color } = props
   return (
     <li>
       <Link href={href} >
-        <a className={className}> {children} </a>
+        <a className={classNames(className, color ? `hover:text-${color}` : '')}> {children} </a>
       </Link>
     </li>
   )

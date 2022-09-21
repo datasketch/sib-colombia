@@ -5,16 +5,19 @@ import { formatNumbers } from '../lib/functions'
 import tooltips from '../static/data/tooltips.json'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
+import ReactMarkdown from 'react-markdown'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb } = props
+  console.log(info)
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
+
   if (selected.toLowerCase() === 'amenazadas') {
     return (
       <div className='py-10 bg-white'>
-        <div className='grid grid-cols-2 gap-8 w-10/12 mx-auto'>
+        <div className='grid grid-cols-2 gap-36 w-10/12 mx-auto'>
           {info?.children.map(({ count, label, slug_tematica: slug, observaciones, species_list: speciesList, registros_amenazadas_global_cr: cr, registros_amenazadas_global_en: en, registros_amenazadas_global_vu: uv }, key) =>
             <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
               <div className='flex flex-col items-start justify-start'>
@@ -27,11 +30,6 @@ const CardTematicas = props => {
                   {speciesList?.length && <CustomTooltip placement='left' title={<Table tableData={speciesList} />}>
                     <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
                   </CustomTooltip>}
-                </div>
-                <div className='flex text-sm gap-x-2 text-blue-green'>
-                  <img src='/images/green-arrow-right.svg' alt='arrow right' />
-                  <p className='inline-block '><b>{formatNumbers(observaciones)}</b></p>
-                  <p className='inline-block'>Observaciones</p>
                 </div>
               </div>
               <div className='flex flex-col justify-center h-full w-full'>
@@ -69,6 +67,10 @@ const CardTematicas = props => {
                   <div className='bg-orange-en h-4 w-1/3'></div>
                   <div className='bg-yellow-vu h-4 w-1/3'></div>
                 </div>
+                <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
+                  <p className='inline-block '><b>{formatNumbers(observaciones)}</b></p>
+                  <p className='inline-block'>Observaciones</p>
+                </div>
               </div>
               <div className='flex flex-col pt-5 gap-y-10'>
                 <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
@@ -82,15 +84,14 @@ const CardTematicas = props => {
       </div>
     )
   }
-
   if (selected.toLowerCase() === 'cites') {
     return (
       <div className='bg-white py-10'>
         <div className='shadow-md w-2/5 mx-auto flex flex-col justify-center gap-6 py-12 px-8'>
           <div className='flex flex-col items-start justify-start'>
             <span className='text-6xl font-black font-inter'>
-              {formatNumbers(info.count)}
-              <div className='border-t border-t-dartmouth-green' />
+              {formatNumbers(info?.count)}
+              <div className='border-t border-t-dartmouth-green w-1/2' />
             </span>
             <div className='font-black font-inter text-lg'>{info.label}
               {info.species_list?.length && <CustomTooltip placement='left' title={<Table tableData={info.species_list} />}>
@@ -98,7 +99,7 @@ const CardTematicas = props => {
               </CustomTooltip>}
             </div>
             <div className='flex text-sm gap-x-2 text-blue-green'>
-              <img src='/images/green-arrow-right.svg' alt='arrow right' />
+              {/* <img src='/images/green-arrow-right.svg' alt='arrow right' /> */}
               <p className='inline-block '><b>{formatNumbers()}</b></p>
               <p className='inline-block'>Observaciones</p>
             </div>
@@ -138,49 +139,186 @@ const CardTematicas = props => {
           </div>
         </div>
       </div>)
-  } else {
+  }
+  if (selected.toLowerCase() === 'migratorias') {
     return (
       <div className='bg-white py-10'>
-        {!info?.children
-          ? (<div className=' flex flex-col md:flex-row lg:justify-between w-10/12 mx-auto'>
-            <div className='shadow-md flex flex-col justify-center items-center gap-2 py-14 px-8'>
-              <div className='flex flex-col'>
-                <span className='text-6xl font-black font-inter'>
-                  {formatNumbers(info?.count)}
-                  <div className='border border-dartmouth-green' />
-                </span>
-              </div>
-              <span className='font-black font-inter text-lg '>{info?.label}</span>
+        <div className='w-10/12 mx-auto flex justify-between'>
+          <div className='w-2/5 shadow-hard flex flex-col py-12 px-8'>
+            <div className='text-6xl font-black font-inter'>
+              {formatNumbers(info.count)}
+              <div className='border-t border-t-dartmouth-green w-1/2' />
             </div>
-            {info?.species_list && (
-              <Table tableData={info?.species_list} />
-            )}
-          </div>)
-          : (
-            <div className='grid grid-cols-2 gap-8 w-10/12 mx-auto'>
-              {info?.children.map(({ count, label, slug_tematica: slug }, key) =>
-                <div key={key} className='shadow-md flex flex-col justify-center items-center gap-2 py-14 px-8'>
-                  <div className='flex flex-col'>
-                    <span className='text-6xl font-black font-inter'>
-                      {formatNumbers(count)}
-                      <div className='border-t border-t-dartmouth-green' />
-                    </span>
-                  </div>
-                  <div className='flex flex-col gap-y-10'>
-                    <span className='font-black font-inter text-lg'>{label}</span>
-                    <button type='button' className='px-2 py-1 border border-dartmouth-green rounded-full w-3/5 self-end' value={slug} onClick={updateBreadcrumb}>Ver mas</button>
-                  </div>
-                </div>
-              )}
+            <div className='font-black font-inter text-lg'>{info?.label}</div>
+            <div className='flex text-sm gap-x-2 text-blue-green'>
+              <p className='inline-block font-inter'><b>{formatNumbers(info?.observaciones)}</b></p>
+              <p className='inline-block font-lato '>Observaciones</p>
             </div>
-            )
-        }
+            <div className='mt-12 w-full flex flex-col'>
+              <span className='font-bold text-sm'>Tolima / Colombia</span>
+              <img src='/images/graph-bar.svg' />
+            </div>
+          </div>
+          <div className='w-2/5 flex items-center'>
+            <ReactMarkdown>
+              {info?.description}
+            </ReactMarkdown>
+          </div>
+        </div>
       </div>
     )
   }
+  if (selected.toLowerCase() === 'endémicas') {
+    return (
+      <div className='bg-white py-10'>
+        <div className='w-10/12 mx-auto flex justify-between'>
+          <div className='w-2/5 shadow-hard flex flex-col py-12 px-8'>
+            <div className='text-6xl font-black font-inter'>
+              {formatNumbers(info?.count)}
+              <div className='border-t border-t-dartmouth-green w-1/2' />
+            </div>
+            <div className='font-black font-inter text-lg'>{info?.label}</div>
+            <div className='flex text-sm gap-x-2 text-blue-green'>
+              <p className='inline-block font-inter'><b>{formatNumbers(info?.observaciones)}</b></p>
+              <p className='inline-block font-lato '>Observaciones</p>
+            </div>
+            <div className='mt-12 w-full flex flex-col'>
+              <span className='font-bold text-sm'>Tolima / Colombia</span>
+              <img src='/images/graph-bar.svg' />
+            </div>
+          </div>
+          <div className='w-2/5 flex flex-col justify-between'>
+            <div className=''>
+              <span className='font-bold text-sm'>Peces Tolima / Colombia</span>
+              <img className='' src='/images/graph-bar.svg' />
+            </div>
+            <div className=''>
+              <span className='font-bold text-sm'>Aves Tolima / Colombia</span>
+              <img className='' src='/images/graph-bar.svg' />
+            </div>
+            <div className=''>
+              <span className='font-bold text-sm'>Coleopteros Tolima / Colombia</span>
+              <img className='' src='/images/graph-bar.svg' />
+            </div>
+            <div className=''>
+              <span className='font-bold text-sm'>Mamíferos Tolima / Colombia</span>
+              <img className='' src='/images/graph-bar.svg' />
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+  if (selected.toLowerCase() === 'exóticas e invasoras') {
+    return (
+      <div className='bg-white py-10'>
+        <div className='w-10/12 mx-auto flex justify-between'>
+          <div className='w-2/5 shadow-hard flex flex-col py-12 px-8'>
+            <div className='text-6xl font-black font-inter'>
+              {formatNumbers(info?.count)}
+              <div className='border-t border-t-dartmouth-green w-1/2' />
+            </div>
+            <div className='font-black font-inter text-lg'>
+              Especies exóticas observadas
+              <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
+            </div>
+            {/* <div className='font-black font-inter text-lg'>{info?.label}
+              {info?.speciesList?.length && <CustomTooltip placement='left' title={<Table tableData={info?.speciesList} />}>
+              </CustomTooltip>}
+            </div> */}
+            <div className='flex text-sm gap-x-2 text-blue-green'>
+              <p className='inline-block font-inter'><b>{formatNumbers(info?.observaciones)}</b></p>
+              <p className='inline-block font-lato '>Observaciones</p>
+            </div>
+            <div className='flex flex-col mt-12'>
+              <span className='font-bold text-sm'>Tolima / Colombia</span>
+              <img className='' src='/images/graph-bar.svg' />
+            </div>
+          </div>
+          <div className='w-[45%] flex flex-col gap-y-3 '>
+            <div>
+              <div className='font-black font-inter text-lg'>
+                {formatNumbers(2000)} Exóticas
+                <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
+              </div>
+              <div className='text-dartmouth-green font-inter'>
+                {formatNumbers(1737)} <span className='font-lato'> Observaciones</span>
+              </div>
+              <div className=''>
+                <span className='font-bold text-sm'>Tolima / Colombia</span>
+                <img className='' src='/images/graph-bar.svg' />
+              </div>
+            </div>
+
+            <div>
+              <div className='font-black font-inter text-lg'>
+                {formatNumbers(3000)} Exóticas con potencial de invasión
+                <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
+              </div>
+              <div className='text-dartmouth-green font-inter'>
+                {formatNumbers(1737)} <span className='font-lato'> Observaciones</span>
+              </div>
+              <div className=''>
+                <span className='font-bold text-sm'>Tolima / Colombia</span>
+                <img className='' src='/images/graph-bar.svg' />
+              </div>
+            </div>
+
+            <div>
+              <div className='font-black font-inter text-lg'>
+                {formatNumbers(3000)} Invasoras
+                <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
+              </div>
+              <div className='text-dartmouth-green font-inter'>
+                {formatNumbers(1737)} <span className='font-lato'> Observaciones</span>
+              </div>
+              <div className=''>
+                <span className='font-bold text-sm'>Tolima / Colombia</span>
+                <img className='' src='/images/graph-bar.svg' />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className='py-10 bg-white'>
+      <div className='w-10/12 mx-auto flex justify-between'>
+        <div className='w-2/5 shadow-hard flex flex-col py-12 px-8'>
+          <p className='text-xl font-bold font-inter'>Categoría UICN Nacional</p>
+
+          <div className='mt-4 flex flex-col gap-y-4'>
+            <div className='flex flex-col'>
+              <span className='font-bold text-sm'>Tolima / Colombia</span>
+              <img src='/images/graph-bar.svg' />
+            </div>
+            <div className='flex flex-col'>
+              <span className='font-bold text-sm'>Tolima / Colombia</span>
+              <img src='/images/graph-bar.svg' />
+            </div>
+            <div className='flex flex-col'>
+              <span className='font-bold text-sm'>Tolima / Colombia</span>
+              <img src='/images/graph-bar.svg' />
+            </div>
+            <div className='flex flex-col'>
+              <span className='font-bold text-sm'>Tolima / Colombia</span>
+              <img src='/images/graph-bar.svg' />
+            </div>
+          </div>
+        </div>
+        <div className='w-2/5 flex items-center'>
+          <Table tableData={info?.species_list} general ranking overflow/>
+        </div>
+      </div>
+    </div>
+  )
 }
 CardTematicas.propTypes = {
   info: PropTypes.object,
+  selected: PropTypes.string,
   updateBreadcrumb: PropTypes.func
 }
 

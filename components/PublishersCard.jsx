@@ -11,7 +11,7 @@ export default function PublishersCard ({ truncate = false, country, title, obse
         <img className='w-14 h-14 break-words' src={imagePath} alt={`${title} image`} />
       </div>
       <div title={title} className={classNames('font-lato  font-bold text-[15px] 3xl:text-lg w-auto mt-1', truncate && 'truncate')}>
-        {title}
+        <a href={link || '#'} target='_blank' rel="noreferrer">{title}</a>
       </div>
       <div className='flex flex-col w-auto justify-between gap-y-2'>
         <table className='w-full '>
@@ -23,7 +23,7 @@ export default function PublishersCard ({ truncate = false, country, title, obse
               </th>
             </tr>
             <tr className="text-sm">
-              <th className="text-left">Total Especies</th>
+              <th className="text-left">Especies</th>
               <th className="pl-3 border-l border-l-black">
                 <b>{formatNumbers(totalEspecies)}</b>
               </th>
@@ -31,12 +31,12 @@ export default function PublishersCard ({ truncate = false, country, title, obse
           </tbody>
         </table>
       </div>
-      <div className="flex justify-end items-end mt-3">
+      {/* <div className="flex justify-end items-end mt-3">
         <a href={link || '#'} className="flex  gap-x-1.5 w-4/6 border border-black px-1.5 py-1 rounded-full justify-center h-full">
           <span className="text-sm">Conocer más</span>
           <img src="/images/icon-arrow-left.svg" />
         </a>
-      </div>
+      </div> */}
     </div>
   )
 }
