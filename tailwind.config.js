@@ -22,8 +22,13 @@ module.exports = {
     'bg-banner-narino',
     'bg-banner-santander',
     'bg-banner-boyaca',
-    'bg-banner-boyaca',
-    'bg-banner-boyaca'
+    'bg-banner-colombia',
+    'bg-banner-acerca-de',
+    'bg-banner-glosario',
+    'bg-banner-metodologia',
+    'bg-banner-preguntas-frecuentes',
+    'bg-banner-prensa',
+    'bg-banner-publicadores'
 
   ],
   theme: {
@@ -39,17 +44,27 @@ module.exports = {
         'banner-footer': "url('/images/footer-banner.svg')",
         'footer-2022': "url('/images/footer-2022.svg')",
         'banner-mas': "url('/images/headers/banner-mas.png')",
-        'banner-regiones': "url('/images/headers/banner-regiones.png')",
+        // 'banner-regiones': "url('/images/headers/banner-regiones.png')",
         destacada: "url('/images/bg-destacada.png')",
         prensa: "url('/images/banner-prensa.svg')",
         'footer-orange': "url('/images/footers/orange-footer.svg')",
         'footer-green': "url('/images/footers/green-footer.svg')",
-        'banner-boyaca': "url('/images/banner-regiones/boyaca.jpg')",
-        'banner-narino': "url('/images/banner-regiones/narino.jpg')",
-        'banner-santander': "url('/images/banner-regiones/santander.jpg')",
-        'banner-tolima': "url('/images/banner-regiones/tolima.jpg')",
-        'banner-departamento': "url('/images/banner-regiones/departamentos.jpg')",
-        'banner-municipio': "url('/images/banner-regiones/municipios.jpg')"
+        'banner-boyaca': "url('/images/banner-principales/boyaca.jpg')",
+        'banner-narino': "url('/images/banner-principales/narino.jpg')",
+        'banner-santander': "url('/images/banner-principales/santander.jpg')",
+        'banner-tolima': "url('/images/banner-principales/tolima.jpg')",
+        'banner-colombia': "url('/images/banner-principales/colombia.jpg')",
+        'banner-regiones': "url('/images/banner-principales/regiones.jpg')",
+        'banner-acerca-de': "url('/images/banner-principales/mas-acerca-de.jpg')",
+        'banner-glosario': "url('/images/banner-principales/mas-glosario.jpg')",
+        'banner-metodologia': "url('/images/banner-principales/mas-metodologia.jpg')",
+        'banner-preguntas-frecuentes': "url('/images/banner-principales/mas-preguntas-frecuentes.jpg')",
+        'banner-prensa': "url('/images/banner-principales/mas-prensa.jpg')",
+        'banner-publicadores': "url('/images/banner-principales/mas-publicadores.jpg')"
+
+      },
+      backgroundPosition: {
+        'center-bottom': 'center bottom'
       },
       colors: {
         'white-2': '#FBFBFB',

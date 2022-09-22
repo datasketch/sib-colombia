@@ -48,6 +48,7 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
       </div>
     )
   }
+  return null
 }
 
 export default Table

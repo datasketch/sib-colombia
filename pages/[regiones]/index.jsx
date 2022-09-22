@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import Head from 'next/head'
 import { useContext, useEffect, useState } from 'react'
 import CardTematicas from '../../components/CardTematicas'
-import Collage from '../../components/Collage'
+import Gallery from '../../components/Gallery'
 import ContentElement from '../../components/ContentElement'
 import HeadRegion from '../../components/headers/HeadRegion'
 import MenuExplorer from '../../components/MenuExplorer'
@@ -59,7 +59,7 @@ export default function index ({ data, slug }) {
         slug={slug}
         title={generalInfo.label}
         description={generalInfo.main_text}
-        imageMap='/images/tolima.svg'
+        imageMap={`images/mapas-svg-dep/mapa-${slug}.svg`}
         /* registrosRegionTotal={generalInfo.especies_region_total} */
         registrosContinentalTotal={generalInfo.especies_region_total}
         especiesCont={generalInfo.especies_continentales}
@@ -68,7 +68,7 @@ export default function index ({ data, slug }) {
         observacionesMar={generalInfo.registros_marinos}
       />
 
-      <Collage gallery={gallery}/>
+      <Gallery gallery={gallery}/>
 
       <div className='bg-white-3 pt-3'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>

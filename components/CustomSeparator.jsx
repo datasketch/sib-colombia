@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import ArrowLeft from './ArrowLeft'
-import { clearText } from '../lib/functions'
+import { clearLink, clearText } from '../lib/functions'
 
 export default function CustomSeparator () {
   const [breadcrumb, setbreadcrumb] = useState()
@@ -22,7 +22,7 @@ export default function CustomSeparator () {
       return (
         <Typography key="3" color="text.primary"
           style={{ color: '#fff', fontSize: '14px', fontWeight: 'bold', textTransform: 'capitalize' }}>
-          {item.label}
+          {clearLink(item.label)}
         </Typography >
       )
     }

@@ -121,7 +121,7 @@ export default function metodologia () {
   }, [])
   return (
     <>
-      <HeadMore title='Metodología' />
+      <HeadMore title='Metodología' slug='metodologia' />
       <div className='max-w-screen-2xl w-10/12 mx-auto flex'>
         <div className='space-y-12 mx-auto w-8/12 py-10'>
 

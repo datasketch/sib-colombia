@@ -57,7 +57,7 @@ DropDown.Items = function DropDownItems (props) {
 
 DropDown.SubMenu = function DropdownSubMenu (props) {
   const { children } = props
-  // console.log(children)
+
   return (
     <div className={classNames(props.className || '')}>{children}</div>
   )

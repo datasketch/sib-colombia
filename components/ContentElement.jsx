@@ -1,18 +1,38 @@
 
 import { Tooltip } from '@mui/material'
+// import dynamic from 'next/dynamic'
 import classNames from 'classnames'
 import { useState } from 'react'
+
 import { calculateWidth, formatNumbers } from '../lib/functions'
 import tooltips from '../static/data/tooltips.json'
 import Concentric from './Concentric'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
+import { Treemap, ResponsiveContainer } from 'recharts'
 
 function ContentElement ({ selected, info, region, typeTree = false }) {
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
   const [showTreeMap, setShowTreeMap] = useState(false)
+
+  const data = [
+    {
+      name: 'axis',
+      size: 636
+    },
+    {
+      name: 'controls',
+      size: 8435
+    },
+    { name: 'AxisLayout', size: 6725 },
+    { name: 'Operator', size: 2490 },
+    { name: 'OperatorList', size: 5248 },
+    { name: 'OperatorSequence', size: 4190 },
+    { name: 'OperatorSwitch', size: 2581 },
+    { name: 'SortOperator', size: 2023 }
+  ]
 
   const handleShow = () => {
     setShowTreeMap(prevState => !prevState)
@@ -63,7 +83,11 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
           </div>
           <div className='flex relative'>
             <div className={classNames('pt-12 md:pt-0', showTreeMap ? 'block' : 'hidden')}>
-              <div className='h-96 bg-white-smoke'>treemap</div>
+              <div className='h-96 bg-white-smoke'>
+                <ResponsiveContainer width="100%" height="100%">
+                  <Treemap width={400} height={200} data={data} dataKey="size" ratio={4 / 3} stroke="#fff" fill="#8884d8" />
+                </ResponsiveContainer>
+              </div>
               <div className={classNames('border-t border-t-dartmouth-green grid lg:grid-cols-3 pt-4 gap-2 ')}>
                 <div className='flex px-1.5 py-0.5 gap-2 items-center shadow-default'>
                   <div className='font-black font-inter'> {formatNumbers(info?.especies_amenazadas_nacional_total)}</div>
@@ -212,9 +236,9 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                     </div>
                   </div>
                   <div className='flex w-full'>
-                    <div className='bg-red-cr h-4'style={{ width: calculateWidth(+info?.registros_amenazadas_global_cr, (+info?.registros_amenazadas_global_cr + +info?.registros_amenazadas_global_en + +info?.registros_amenazadas_global_vu)) }}></div>
+                    <div className='bg-red-cr h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_global_cr, (+info?.registros_amenazadas_global_cr + +info?.registros_amenazadas_global_en + +info?.registros_amenazadas_global_vu)) }}></div>
                     <div className='bg-orange-en h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_global_en, (+info?.registros_amenazadas_global_cr + +info?.registros_amenazadas_global_en + +info?.registros_amenazadas_global_vu)) }}></div>
-                    <div className='bg-yellow-vu h-4'style={{ width: calculateWidth(+info?.registros_amenazadas_global_vu, (+info?.registros_amenazadas_global_cr + +info?.registros_amenazadas_global_en + +info?.registros_amenazadas_global_vu)) }}></div>
+                    <div className='bg-yellow-vu h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_global_vu, (+info?.registros_amenazadas_global_cr + +info?.registros_amenazadas_global_en + +info?.registros_amenazadas_global_vu)) }}></div>
                   </div>
                 </div>
               </div>

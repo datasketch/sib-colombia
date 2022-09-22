@@ -11,7 +11,7 @@ export default function Concentric ({ outer, inner, style = 'style-1' }) {
         width: `${radius}px`,
         height: `${radius}px`,
         borderRadius: '50%',
-        // border: '1px solid white',
+        border: '1px solid black',
         position: 'relative',
         backgroundColor: '#FFE0BB'
       }
@@ -31,7 +31,7 @@ export default function Concentric ({ outer, inner, style = 'style-1' }) {
         width: `${radiusScale(inner)}px`,
         height: `${radiusScale(inner)}px`,
         borderRadius: '50%',
-        // border: '1px solid white',
+        // border: '1px solid black',
         position: 'absolute',
         top: '50%',
         left: '50%',

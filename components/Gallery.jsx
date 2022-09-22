@@ -3,7 +3,7 @@ import rehypeRaw from 'rehype-raw'
 
 import classNames from 'classnames'
 
-const Collage = ({ gallery }) => {
+const Gallery = ({ gallery }) => {
   if (!gallery) return
   return (
     <div className='py-8 grid grid-cols-2 md:grid-cols-6 max-w-screen-xl mx-auto w-10/12'>
@@ -11,7 +11,7 @@ const Collage = ({ gallery }) => {
         if (key >= 15) return null
         if (text) {
           return (
-            <div key={key} className={classNames('flex bg-white-2 justify-center items-center', [2, 7, 12, 17, 22, 27].includes(key) ? 'col-span-2' : '')}>
+            <div key={key} className={classNames('flex bg-white-2 justify-center items-center min-h-36', [2, 7, 12, 17, 22, 27].includes(key) ? 'col-span-2' : '')}>
               <ReactMarkdown rehypePlugins={[rehypeRaw]} className='w-5/6 text-xs font-lato'>
                 {text}
               </ReactMarkdown>
@@ -21,7 +21,7 @@ const Collage = ({ gallery }) => {
         if (image) {
           return (
             <div key={key} className={[2, 7, 12, 17, 22, 27].includes(key) ? 'col-span-2' : ''}>
-              <img className="max-h-36 w-full h-full object-center" src={image} />
+              <img className="min-h-36 max-h-36  w-full h-full object-cover" src={image} />
             </div>
           )
         }
@@ -33,4 +33,4 @@ const Collage = ({ gallery }) => {
   )
 }
 
-export default Collage
+export default Gallery

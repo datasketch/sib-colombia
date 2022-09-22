@@ -3,7 +3,7 @@ import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import classNames from 'classnames'
 import Head from 'next/head'
 import CardTematicas from '../components/CardTematicas'
-import Collage from '../components/Collage'
+import Gallery from '../components/Gallery'
 import ContentElement from '../components/ContentElement'
 import HeadRegion from '../components/headers/HeadRegion'
 import MenuExplorer from '../components/MenuExplorer'
@@ -57,9 +57,10 @@ export default function colombia () {
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
       <HeadRegion
+        slug='colombia'
         title={generalInfo.label}
         description={generalInfo.main_text}
-        imageMap='/images/tolima.svg'
+        // imageMap={'images/mapas-svg-dep/mapa-colombia.svg'}
         /* registrosRegionTotal={generalInfo.especies_region_total} */
         registrosContinentalTotal={generalInfo.especies_region_total}
         especiesCont={generalInfo.especies_continentales}
@@ -68,7 +69,7 @@ export default function colombia () {
         observacionesMar={generalInfo.registros_marinos}
       />
 
-      <Collage gallery={gallery} />
+      <Gallery gallery={gallery} />
 
       <div className='bg-white-3 pt-3'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>

@@ -24,7 +24,7 @@ function prensa () {
   }, [])
   return (
     <>
-      <HeadMore title='Prensa' />
+      <HeadMore title='Prensa' slug='prensa' />
       <div className='w-9/12 mx-auto max-w-screen-2xl py-12'>
         <div className='bg-prensa border border-black  w-full h-96 rounded-[38px] relative '>
           <div className='flex absolute top-[18%] justify-center'>

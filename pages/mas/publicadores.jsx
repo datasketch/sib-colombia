@@ -69,7 +69,7 @@ export default function publicadores () {
 
   return (
     <>
-      <HeadMore title={'Publicadores'} description={textDescription} content />
+      <HeadMore title={'Publicadores'} description={textDescription} content slug='publicadores'/>
       <div className='max-w-screen-2xl pt-8 w-8/12 mx-auto grid grid-cols-3 gap-8'>
         <div>
           <span className='font-bold font-lato'>Buscador</span>

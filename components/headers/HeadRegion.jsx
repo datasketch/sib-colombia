@@ -6,16 +6,16 @@ import Concentric from '../Concentric'
 import classNames from 'classnames'
 function HeadRegion ({ slug, title, description, imageMap, registrosRegionTotal, registrosContinentalTotal, especiesCont, observacionesCont, especiesMar, observacionesMar }) {
   return (
-    <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', ' bg-cover bg-center pt-14 pb-3.5')}>
+    <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', 'bg-cover bg-center-bottom pt-14 pb-3.5')}>
       <div className="w-10/12 lg:w-full max-w-screen-2xl mx-auto">
-        <div className="pt-7 min-h-[210px] flex flex-row justify-between gap-y-4 items-center w-10/12 mx-auto">
-          <div className="font-black w-1/2 font-inter text-white text-8xl">{title}</div>
-          {!!imageMap && <div className="flex justify-end ">
-            <img className="w-1/2 " src={imageMap} />
+        <div className="min-h-[210px] flex flex-row justify-between gap-y-4 items-center w-10/12 mx-auto">
+          <div className="font-black w-1/2 font-inter text-white text-8xl -mt-7">{title}</div>
+         {imageMap && <div className="flex justify-end ">
+            <img className="w-4/5" src={imageMap} />
           </div>}
         </div>
         <div className="flex max-h-48 justify-between gap-y-4 w-10/12 mx-auto">
-          <div className="w-1/2 relative flex items-center">
+          <div className="w-1/2 relative flex items-center -mt-7">
             <Concentric inner={registrosContinentalTotal} outer={observacionesCont} />
             <div className="absolute text-white flex -space-y-1 flex-col -top-[6%] left-60">
               <span className="font-inter font-black text-xl">{formatNumbers(observacionesCont)}</span>
