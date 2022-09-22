@@ -9,8 +9,8 @@ import ReactMarkdown from 'react-markdown'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb } = props
-  console.log(info)
-  console.log(selected)
+  // console.log(info)
+  // console.log(selected)
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
