@@ -10,8 +10,8 @@ import ReactMarkdown from 'react-markdown'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb } = props
-  /* console.log(info)
-  console.log(selected) */
+  console.log(info)
+  console.log(selected)
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
@@ -19,7 +19,7 @@ const CardTematicas = props => {
   if (selected.toLowerCase() === 'amenazadas') {
     return (
       <div className='py-10 bg-white'>
-        <div className='grid grid-cols-2 gap-36 w-10/12 mx-auto'>
+        <div className='grid lg:grid-cols-2 gap-y-6 gap-x-36 w-10/12 mx-auto'>
           {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr_registros: crRegister, en_registros: enRegister, vu_registros: vuRegister }, key) =>
             <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
               <div className='flex flex-col items-start justify-start'>
@@ -75,7 +75,7 @@ const CardTematicas = props => {
                 </div>
               </div>
               <div className='flex flex-col pt-5 gap-y-10'>
-                <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
+                <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-1/2 lg:w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
                   Ver mas
                   <img src='/images/arrow-black.svg' alt='arrow button' />
                 </button>
@@ -89,8 +89,8 @@ const CardTematicas = props => {
   if (selected.toLowerCase() === 'cites') {
     return (
       <div className='bg-white py-10'>
-        <div className='w-10/12 mx-auto flex justify-between'>
-          <div className='shadow-md w-2/5 mx-auto flex flex-col justify-center gap-6 py-12 px-8'>
+        <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
+          <div className='shadow-md lg:w-2/5 mx-auto flex flex-col justify-center gap-6 py-12 px-8'>
             <div className='flex flex-col items-start justify-start'>
               <span className='text-6xl font-black font-inter'>
                 {formatNumbers(info?.especies_cites_total)}
@@ -193,8 +193,8 @@ const CardTematicas = props => {
   if (selected.toLowerCase() === 'migratorias') {
     return (
       <div className='bg-white py-10'>
-        <div className='w-10/12 mx-auto flex justify-between'>
-          <div className='w-[45%] shadow-hard flex flex-col py-12 px-8'>
+        <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
+          <div className='lg:w-[45%] shadow-hard flex flex-col py-12 px-8'>
             <div className='text-6xl font-black font-inter'>
               {formatNumbers(info?.especies_migratorias)}
               <div className='border-t border-t-dartmouth-green w-1/2' />
@@ -209,7 +209,7 @@ const CardTematicas = props => {
               <img src='/images/graph-bar.svg' />
             </div>
           </div>
-          <div className='w-2/5 flex items-center'>
+          <div className='lg:w-2/5 flex items-center'>
             <ReactMarkdown>
               {info?.texto}
             </ReactMarkdown>
@@ -221,8 +221,8 @@ const CardTematicas = props => {
   if (selected.toLowerCase() === 'endémicas') {
     return (
       <div className='bg-white py-10'>
-        <div className='w-10/12 mx-auto flex justify-between'>
-          <div className='w-[45%] shadow-hard flex flex-col py-12 px-8'>
+        <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
+          <div className='lg:w-[45%] shadow-hard flex flex-col py-12 px-8'>
             <div className='text-6xl font-black font-inter'>
               {formatNumbers(info?.especies_endemicas)}
               <div className='border-t border-t-dartmouth-green w-1/2' />
@@ -262,8 +262,8 @@ const CardTematicas = props => {
   if (selected.toLowerCase() === 'exóticas e invasoras') {
     return (
       <div className='bg-white py-10'>
-        <div className='w-10/12 mx-auto flex justify-between'>
-          <div className='w-2/5 shadow-hard flex flex-col py-12 px-8'>
+        <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
+          <div className='lg:w-2/5 shadow-hard flex flex-col py-12 px-8'>
             <div className='text-6xl font-black font-inter'>
               {formatNumbers(info?.especies_exoticas_total)}
               <div className='border-t border-t-dartmouth-green w-1/2' />
@@ -287,7 +287,7 @@ const CardTematicas = props => {
             </div>
           </div>
 
-          <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
+          <div className='lg:w-[45%] flex flex-col justify-evenly gap-y-3 '>
             <div>
               <div className='font-black font-inter text-lg'>
                 {formatNumbers(info?.especies_exoticas)} Exóticas

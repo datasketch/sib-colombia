@@ -113,24 +113,24 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
 }
 
 MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restProps }) {
-  const { breadcrumb, setBreadcrumb, setSelected } = useContext(MenuExplorerContext)
+  const { breadcrumb, updateBreadcrumb } = useContext(MenuExplorerContext)
 
   useEffect(() => {
   }, [breadcrumb])
 
-  const changebreadcrumb = ({ target }) => {
-    const { textContent } = target.closest('p')
-    const index = breadcrumb.findIndex((element) => element === textContent)
-    setBreadcrumb(breadcrumb.slice(0, index + 1))
-    setSelected(textContent)
-  }
+  // const changebreadcrumb = ({ target }) => {
+  //   const { textContent } = target.closest('p')
+  //   const index = breadcrumb.findIndex((element) => element === textContent)
+  //   setBreadcrumb(breadcrumb.slice(0, index + 1))
+  //   setSelected(textContent)
+  // }
 
   return (
     <div {...restProps} className={className}>
       {
         (breadcrumb || []).map((m, i) => {
           return (
-            <button className='flex space-x-2 items-center' key={i} type='button' onClick={changebreadcrumb}>
+            <button className='flex space-x-2 items-center' key={i} type='button' onClick={updateBreadcrumb}>
               <p className='py-2 font-lato font-bold'>
                 {m}
               </p>
