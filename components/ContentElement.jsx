@@ -40,9 +40,8 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
 
   return (
     <>
-      <div className='bg-white py-10'>
-        <div className='w-11/12 gap-y-16 lg:w-11/12 flex flex-col md:flex-row mx-auto justify-between'>
-
+      <div className='bg-white py-10 min-h-[600px]'>
+        <div className='w-11/12 gap-y-28 lg:w-11/12 flex flex-col lg:flex-row mx-auto justify-between'>
           <div className='flex flex-col gap-4 space-y-3 lg:w-4/12 mx-auto py-8 px-3'>
             <div className='font-bold'>
               <div className='text-6xl font-inter font-black '>
@@ -81,14 +80,14 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
               </div>
             </div>
           </div>
-          <div className='flex relative'>
+          <div className='flex justify-center relative'>
             <div className={classNames('pt-12 md:pt-0', showTreeMap ? 'block' : 'hidden')}>
-              <div className='h-96 bg-white-smoke'>
-                <ResponsiveContainer width="100%" height="100%">
+              <div className='h-36 lg:h-80 max-w-xl mx-auto pb-12'>
+                <ResponsiveContainer >
                   <Treemap width={400} height={200} data={data} dataKey="size" ratio={4 / 3} stroke="#fff" fill="#8884d8" />
                 </ResponsiveContainer>
               </div>
-              <div className={classNames('border-t border-t-dartmouth-green grid lg:grid-cols-3 pt-4 gap-2 ')}>
+              <div className={classNames('p-6 border-t border-t-dartmouth-green grid lg:grid-cols-3 pt-4 gap-2 ')}>
                 <div className='flex px-1.5 py-0.5 gap-2 items-center shadow-default'>
                   <div className='font-black font-inter'> {formatNumbers(info?.especies_amenazadas_nacional_total)}</div>
                   <div className='text-xs font-lato'>Especies amenazadas nacional</div>
@@ -397,8 +396,8 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 </div>
               </div>}
             </div>
-            <button onClick={handleShow} className={classNames('border-t border-t-dartmouth-green flex p-2 ', showTreeMap ? 'absolute -right-10 translate-y-96 transition' : 'absolute -right-10 transition')}>
-              <img className={classNames(showTreeMap ? 'rotate-90 ' : 'rotate-[270deg] ', 'h-7 w-7')} src='/images/arrow-left-carousel.svg' />
+            <button onClick={handleShow} className={classNames('border-t border-t-dartmouth-green flex p-2 ', showTreeMap ? 'absolute right-6 md:right-6 lg:-right-6 translate-y-[340px]  transition' : 'absolute right-20 lg:-right-10 transition')}>
+              <img className={classNames(showTreeMap ? 'rotate-90 ' : 'rotate-[270deg] ', 'h-6 w-6')} src='/images/arrow-left-carousel.svg' />
             </button>
           </div>
         </div>

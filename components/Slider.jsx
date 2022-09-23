@@ -24,7 +24,8 @@ function SampleNextArrow (props) {
   )
 }
 
-export default function SimpleSlider ({ children, dots = false, infinite = false, slidestoshow: slidesToShow = 1, slidesToScroll = 1, responsive = false }) {
+export default function SimpleSlider (props) {
+  const { children, dots = false, infinite = false, slidestoshow: slidesToShow = 1, slidesToScroll = 1, responsiveSlidesToShow } = props
   const buttonImage = {
     prevButton: '/images/arrow-left-carousel.svg',
     nextButton: '/images/arrow-right-carousel.svg'
@@ -43,8 +44,8 @@ export default function SimpleSlider ({ children, dots = false, infinite = false
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: responsiveSlidesToShow || 3,
+          slidesToScroll: 1,
           infinite
         }
       },
@@ -52,7 +53,7 @@ export default function SimpleSlider ({ children, dots = false, infinite = false
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 0,
           infinite
         }
@@ -75,7 +76,7 @@ export default function SimpleSlider ({ children, dots = false, infinite = false
   )
 }
 
-export { SimpleSlider }
+// export { SimpleSlider }
 
 // const buttonColorImagePath = {
 //   dark: {

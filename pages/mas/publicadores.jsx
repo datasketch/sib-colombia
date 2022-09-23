@@ -70,7 +70,7 @@ export default function publicadores () {
   return (
     <>
       <HeadMore title={'Publicadores'} description={textDescription} content slug='publicadores'/>
-      <div className='max-w-screen-2xl pt-8 w-8/12 mx-auto grid grid-cols-3 gap-8'>
+      <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid lg:grid-cols-3 gap-x-8 gap-y-3'>
         <div>
           <span className='font-bold font-lato'>Buscador</span>
           <div className='relative'>
@@ -94,7 +94,7 @@ export default function publicadores () {
           </button>
         </div> */}
       </div>
-      <div id="publishers" className="max-w-screen-2xl pt-8 w-8/12 mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div id="publishers" className="max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {
           currentPublisher.map((item, key) =>
             <PublishersCard key={key + item.label} title={item.label} country={item.pais_publicacion} totalEspecies={item.especies} observationsQuantity={item.registros} imagePath={item.url_logo} link={item.url_socio} />

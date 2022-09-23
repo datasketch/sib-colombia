@@ -25,19 +25,19 @@ function prensa () {
   return (
     <>
       <HeadMore title='Prensa' slug='prensa' />
-      <div className='w-9/12 mx-auto max-w-screen-2xl py-12'>
-        <div className='bg-prensa border border-black  w-full h-96 rounded-[38px] relative '>
-          <div className='flex absolute top-[18%] justify-center'>
-            <div className='flex flex-col gap-y-3 justify-evenly mx-auto w-5/12'>
-              <h2 className='text-6xl text-science-blue font-inter font-black'>Kit de prensa</h2>
+      <div className='w-11/12 lg:w-9/12 mx-auto max-w-screen-2xl py-12'>
+        <div className='bg-prensa pt-2 border border-black w-full h-96 rounded-[38px] relative '>
+          <div className='flex flex-col lg:flex-row lg:absolute top-[18%] justify-center'>
+            <div className='flex flex-col gap-y-3 lg:justify-evenly mx-auto w-10/12 lg:w-5/12'>
+              <h2 className='text-2xl md:text-6xl text-science-blue font-inter font-black'>Kit de prensa</h2>
               <span>Descarga las cifras destacadas sobre la biodiversidad de Colombia para el 2021.</span>
               <a className='flex bg-white-2 justify-center items-center gap-2 py-1.5 w-5/6 px-2  border border-black rounded-full' href='/files/Kit_prensa-Cifras_Sobre_Biodiversidad_de_Colombia.pdf' download>
                 <span className='text-base font-lato'>Descargar kit de prensa</span>
                 <img className='w-3 h-4' src='/images/icon-download.svg' />
               </a>
             </div>
-            <div className='space-y-6 pl-9 border-l-2 border-l-pastel-periwinkle border-dotted w-5/12'>
-              <span className='font-inter font-black text-4xl'>Contacto</span>
+            <div className='mt-4 mx-auto lg:space-y-6 lg:pl-9 lg:border-l-2 border-pastel-periwinkle border-dotted w-10/12  lg:w-5/12'>
+              <span className='font-inter font-black text-2xl lg:text-4xl'>Contacto</span>
               <div className='flex flex-col'>
                 <b className='font-lato pb-2'>Andrés Duarte</b>
                 <span className='font-lato '>Productos y Servicios</span>
@@ -48,20 +48,22 @@ function prensa () {
               </div>
             </div>
           </div>
-
         </div>
       </div>
-      <div className='max-w-screen-2xl mx-auto w-9/12 pb-12'>
+      <div className='max-w-screen-2xl mx-auto w-11/12 lg:w-9/12 pb-12'>
         <span className='text-flame font-black font-inter text-2xl'>Contenidos relevantes</span>
-        <div className='py-6 flex gap-6  justify-between'>
+        <div className='py-6 flex flex-col md:flex-row gap-6 justify-between'>
           {prensa.map((el, key) =>
-            <CardContenido
-              key={key}
-              date={el.date}
-              title={el.title}
-              description={el.description}
-              href={el.link}
-            />
+            <div className='mx-auto lg:mx-0' key={key}>
+
+              <CardContenido
+
+                date={el.date}
+                title={el.title}
+                description={el.description}
+                href={el.link}
+              />
+            </div>
           )}
 
         </div>

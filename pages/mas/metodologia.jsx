@@ -123,16 +123,15 @@ export default function metodologia () {
     <>
       <HeadMore title='Metodología' slug='metodologia' />
       <div className='max-w-screen-2xl w-10/12 mx-auto flex'>
-        <div className='space-y-12 mx-auto w-8/12 py-10'>
-
-          <div className='space-y-4'>
+        <div className='space-y-4 lg:space-y-12 mx-auto lg:w-8/12 py-10'>
+          <div className='space-y-2 lg:space-y-4'>
             <h2 id='biodiversidad' className='text-flame font-inter text-2xl font-black'>Biodiversidad en Cifras</h2>
             <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
               {metodology.biodiversidad}
             </ReactMarkdown>
           </div>
 
-          <div className='space-y-4'>
+          <div className='space-y-2 lg:space-y-4'>
             <div className='w-1/3 border-t-2 border-t-flame border-dotted' />
             <h2 id='consulta-datos' className='text-flame font-inter text-2xl font-black'>I. Consulta de los datos</h2>
             <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
@@ -196,7 +195,7 @@ export default function metodologia () {
             </div>
           </div>
 
-          <div className='space-y-4'>
+          <div className='space-y-2 lg:space-y-4'>
             <div className='w-1/3 border-t-2 border-t-flame border-dotted' />
 
             <h2 id='validacion-limpieza' className='text-flame font-inter text-2xl font-black'>Il. Validación y limpieza</h2>
@@ -232,7 +231,7 @@ export default function metodologia () {
               {metodology['validacion-limpieza-datos'].li.map(({ head, li }, key) =>
                 <div key={key} className='space-y-3'>
                   <b className='font-inter'>{head}</b>
-                  <ul className='px-6 space-y-3 '>
+                  <ul className='px-2 md:px-6 space-y-3 '>
                     {li.map((el, key) =>
                       <li key={key} className='flex font-lato'> <img className='pr-3 self-start pt-2' src='/images/arrow-black.svg' />
                         <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
@@ -257,7 +256,7 @@ export default function metodologia () {
               </ReactMarkdown>
             </div>
           </div>
-          <div className='space-y-4'>
+          <div className='space-y-2 lg:space-y-4'>
             <div className='pt-1.5 w-1/2 border-t-2 border-t-flame border-dotted' />
             <h2 id='sintesis-cifras' className='text-flame font-inter text-2xl font-black'>lll. Síntesis de cifras</h2>
             <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato space-y-2'>
@@ -291,7 +290,7 @@ export default function metodologia () {
                         {desc}
                       </ReactMarkdown>
 
-                      <ul className='px-4 space-y-2'>
+                      <ul className='px-2 lg:px-4 space-y-2'>
                         {list.map((el, key) =>
                           <li key={key} className='flex font-lato'><img className='pr-3 self-start pt-2' src='/images/arrow-black.svg' />
                             <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
@@ -316,7 +315,7 @@ export default function metodologia () {
             </ol>
           </div>
 
-          <div className='space-y-4'>
+          <div className='space-y-2 lg:space-y-4'>
             <div className='pt-1.5 w-1/2 border-t-2 border-t-flame border-dotted' />
             <h2 id='recomendaciones' className='text-flame font-inter text-2xl font-black'>Recomendaciones para la interpretación de las cifras</h2>
             <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato space-y-2'>
@@ -339,7 +338,7 @@ export default function metodologia () {
             </ul>
           </div>
 
-          <div className='space-y-4'>
+          <div className='space-y-2 lg:space-y-4'>
             <div className='w-1/3 border-t-2 border-t-flame border-dotted' />
             <h2 id='anexos' className='text-flame font-inter text-2xl font-black'>Anexos</h2>
             <div className='space-y-3'>
@@ -350,22 +349,22 @@ export default function metodologia () {
             </div>
           </div>
 
-          <div className='space-y-4 pt-8'>
+          <div className='space-y-2 lg:space-y-4 pt-8'>
             <div className='w-1/3 border-t-2 border-t-flame border-dotted' />
             <h2 id='descarga-bibliografia' className='text-flame font-inter text-2xl font-black pt-4'></h2>
-            <div className='flex gap-5'>
-              <a className='flex justify-center items-center gap-2 py-1 w-4/12 px-2  border border-black rounded-full' href='/files/Biodiversidad_En_Cifras-Ficha_metodológica _V2.1.pdf' download>
+            <div className='flex flex-col md:flex-row gap-5'>
+              <a className='flex justify-center items-center gap-2 py-1 lg:w-4/12 px-2  border border-black rounded-full' href='/files/Biodiversidad_En_Cifras-Ficha_metodológica _V2.1.pdf' download>
                 <span className='text-base font-lato'>Descargar la metodología </span>
                 <img className='w-3 h-4' src='/images/icon-download.svg' />
               </a>
-              <a className='flex justify-center items-center gap-2 py-1 w-4/12 px-1.5 border border-black rounded-full' href='#' >
+              <a className='flex justify-center items-center gap-2 py-1 lg:w-4/12 px-1.5 border border-black rounded-full' href='#' >
                 <span className='text-base font-lato'>Conocer la bibliografía</span>
               </a>
             </div>
           </div>
         </div>
 
-        <div className='py-10 w-3/12 mx-auto'>
+        <div className='py-10 w-3/12 mx-auto hidden md:block'>
           <span className='font-black font-inter py-2'>Contenidos</span>
           <Scrollspy items={content} className='space-y-1.5 sticky top-[5%] font-lato '
             currentClassName='border-l-2 border-flame' offset={100}>

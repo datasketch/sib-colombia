@@ -10,82 +10,82 @@ import ReactMarkdown from 'react-markdown'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb } = props
-  // console.log(info)
-  // console.log(selected)
+  console.log(info)
+  console.log(selected)
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
 
-  // if (selected.toLowerCase() === 'amenazadas') {
-  //   return (
-  //     <div className='py-10 bg-white'>
-  //       <div className='grid grid-cols-2 gap-36 w-10/12 mx-auto'>
-  //         {info?.children.map(({ count, label, slug_tematica: slug, observaciones, species_list: speciesList, registros_amenazadas_global_cr: cr, registros_amenazadas_global_en: en, registros_amenazadas_global_vu: uv }, key) =>
-  //           <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
-  //             <div className='flex flex-col items-start justify-start'>
-  //               <span>Categoría UICN</span>
-  //               <span className='text-6xl font-black font-inter'>
-  //                 {formatNumbers(count)}
-  //                 <div className='border-t border-t-dartmouth-green' />
-  //               </span>
-  //               <div className='font-black font-inter text-lg'>{label}
-  //                 {speciesList?.length && <CustomTooltip placement='left' title={<Table tableData={speciesList} />}>
-  //                   <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
-  //                 </CustomTooltip>}
-  //               </div>
-  //             </div>
-  //             <div className='flex flex-col justify-center h-full w-full'>
-  //               <div className='font-lato flex justify-evenly gap-x-4'>
-  //                 <div className='flex flex-col items-center'>
-  //                   <div className='flex items-start'>
-  //                     <b>CR</b>
-  //                     <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
-  //                       <img src='/images/icon-more.svg' />
-  //                     </Tooltip>
-  //                   </div>
-  //                   <span>{formatNumbers(cr)}</span>
-  //                 </div>
-  //                 <div className='flex flex-col items-center'>
-  //                   <div className='flex items-start'>
-  //                     <b>EN</b>
-  //                     <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
-  //                       <img src='/images/icon-more.svg' />
-  //                     </Tooltip>
-  //                   </div>
-  //                   <span>{formatNumbers(en)}</span>
-  //                 </div>
-  //                 <div className='flex flex-col items-center'>
-  //                   <div className='flex items-start'>
-  //                     <b>UV</b>
-  //                     <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
-  //                       <img src='/images/icon-more.svg' />
-  //                     </Tooltip>
-  //                   </div>
-  //                   <span>{formatNumbers(uv)}</span>
-  //                 </div>
-  //               </div>
-  //               <div className='flex'>
-  //                 <div className='bg-red-cr h-4 w-1/3'></div>
-  //                 <div className='bg-orange-en h-4 w-1/3'></div>
-  //                 <div className='bg-yellow-vu h-4 w-1/3'></div>
-  //               </div>
-  //               <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
-  //                 <p className='inline-block '><b>{formatNumbers(observaciones)}</b></p>
-  //                 <p className='inline-block'>Observaciones</p>
-  //               </div>
-  //             </div>
-  //             <div className='flex flex-col pt-5 gap-y-10'>
-  //               <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
-  //                 Ver mas
-  //                 <img src='/images/arrow-black.svg' alt='arrow button' />
-  //               </button>
-  //             </div>
-  //           </div>
-  //         )}
-  //       </div>
-  //     </div>
-  //   )
-  // }
+  if (selected.toLowerCase() === 'amenazadas') {
+    return (
+      <div className='py-10 bg-white'>
+        <div className='grid grid-cols-2 gap-36 w-10/12 mx-auto'>
+          {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr_registros, en_registros, vu_registros }, key) =>
+            <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
+              <div className='flex flex-col items-start justify-start'>
+                <span>Categoría UICN</span>
+                <span className='text-6xl font-black font-inter'>
+                  {formatNumbers(especies)}
+                  <div className='border-t border-t-dartmouth-green' />
+                </span>
+                <div className='font-black font-inter text-lg'>Especies  de {label}
+                  {speciesList?.length && <CustomTooltip placement='left' title={<Table tableData={speciesList} />}>
+                    <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
+                  </CustomTooltip>}
+                </div>
+              </div>
+              <div className='flex flex-col justify-center h-full w-full'>
+                <div className='font-lato flex justify-evenly gap-x-4'>
+                  <div className='flex flex-col items-center'>
+                    <div className='flex items-start'>
+                      <b>CR</b>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tooltip>
+                    </div>
+                    <span>{formatNumbers(cr_registros)}</span>
+                  </div>
+                  <div className='flex flex-col items-center'>
+                    <div className='flex items-start'>
+                      <b>EN</b>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tooltip>
+                    </div>
+                    <span>{formatNumbers(en_registros)}</span>
+                  </div>
+                  <div className='flex flex-col items-center'>
+                    <div className='flex items-start'>
+                      <b>UV</b>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tooltip>
+                    </div>
+                    <span>{formatNumbers(vu_registros)}</span>
+                  </div>
+                </div>
+                <div className='flex'>
+                  <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(cr_registros, +cr_registros + +en_registros + +vu_registros) }}></div>
+                  <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(en_registros, +cr_registros + +en_registros + +vu_registros) }}></div>
+                  <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vu_registros, +cr_registros + +en_registros + +vu_registros) }}></div>
+                </div>
+                <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
+                  <p className='inline-block '><b>{formatNumbers(registros)}</b></p>
+                  <p className='inline-block'>Observaciones</p>
+                </div>
+              </div>
+              <div className='flex flex-col pt-5 gap-y-10'>
+                <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
+                  Ver mas
+                  <img src='/images/arrow-black.svg' alt='arrow button' />
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    )
+  }
   if (selected.toLowerCase() === 'cites') {
     return (
       <div className='bg-white py-10'>
@@ -211,7 +211,7 @@ const CardTematicas = props => {
       </div>
     )
   }
-  if (selected.toLowerCase() === 'exóticas') {
+  if (selected.toLowerCase() === 'exóticas e invasoras') {
     return (
       <div className='bg-white py-10'>
         <div className='w-10/12 mx-auto flex justify-between'>

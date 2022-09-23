@@ -60,19 +60,15 @@ export default function index ({ data, slug }) {
         title={generalInfo.label}
         description={generalInfo.main_text}
         imageMap={`images/mapas-svg-dep/mapa-${slug}.svg`}
-        /* registrosRegionTotal={generalInfo.especies_region_total} */
-        registrosContinentalTotal={generalInfo.especies_region_total}
-        especiesCont={generalInfo.especies_continentales}
-        especiesMar={generalInfo.especies_marinas}
-        observacionesCont={generalInfo.registros_continentales}
-        observacionesMar={generalInfo.registros_marinos}
+        especiesEstimadas={generalInfo.especies_region_estimadas}
+       especiesObservadas={generalInfo.especies_region_total}
       />
 
       <Gallery gallery={gallery}/>
 
       <div className='bg-white-3 pt-3'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
-          <SimpleSlider dots infinite slidestoshow={1}>
+          <SimpleSlider dots infinite slidestoshow={1} responsiveSlidesToShow={1}>
             {slides.map((element, key) =>
               <Slides key={key} data={element} region='Tolima' />
             )}

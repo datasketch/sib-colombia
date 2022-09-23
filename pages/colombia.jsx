@@ -43,6 +43,9 @@ export default function colombia () {
     const { value } = e.target
     setOptionShow(value)
   }
+  console.log('***************')
+  console.log(generalInfo)
+  console.log('***************')
 
   const { setFooterBgColor } = useContext(AppContext)
 
@@ -60,13 +63,9 @@ export default function colombia () {
         slug='colombia'
         title={generalInfo.label}
         description={generalInfo.main_text}
-        // imageMap={'images/mapas-svg-dep/mapa-colombia.svg'}
-        /* registrosRegionTotal={generalInfo.especies_region_total} */
-        registrosContinentalTotal={generalInfo.especies_region_total}
-        especiesCont={generalInfo.especies_continentales}
-        especiesMar={generalInfo.especies_marinas}
-        observacionesCont={generalInfo.registros_continentales}
-        observacionesMar={generalInfo.registros_marinos}
+        especiesEstimadas={generalInfo.especies_region_estimadas}
+        especiesObservadas={generalInfo.registros_region_total}
+
       />
 
       <Gallery gallery={gallery} />

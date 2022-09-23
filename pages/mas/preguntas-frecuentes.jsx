@@ -12,7 +12,7 @@ export default function preguntasFrecuentes () {
   return (
     <>
       <HeadMore title='Preguntas frecuentes' slug='preguntas-frecuentes'/>
-      <div className='mx-auto max-w-screen-2xl w-9/12 py-12 space-y-6'>
+      <div className='mx-auto max-w-screen-2xl w-11/12 lg:w-9/12 py-12 space-y-6'>
         {questions.map((item, key) => <CardPregunta key={key} title={item.pregunta} description={item.respuesta} date={item.date} index={key + 1} />)}
       </div>
     </>
