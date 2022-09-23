@@ -61,7 +61,7 @@ export default function index ({ data, slug }) {
         description={generalInfo.main_text}
         imageMap={`images/mapas-svg-dep/mapa-${slug}.svg`}
         especiesEstimadas={generalInfo.especies_region_estimadas}
-       especiesObservadas={generalInfo.especies_region_total}
+        especiesObservadas={generalInfo.especies_region_total}
       />
 
       <Gallery gallery={gallery}/>

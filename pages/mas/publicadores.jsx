@@ -69,23 +69,20 @@ export default function publicadores () {
 
   return (
     <>
-      <HeadMore title={'Publicadores'} description={textDescription} content slug='publicadores'/>
+      <HeadMore title={'Publicadores'} description={textDescription} content slug='publicadores' />
       <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid lg:grid-cols-3 gap-x-8 gap-y-3'>
         <div>
-          <span className='font-bold font-lato'>Buscador</span>
           <div className='relative'>
             <img className="absolute top-2 left-3 h-6 w-6" src="/images/icon-search.svg" alt="icon search" />
             <input onChange={handleChange} id="search" className="placeholder:italic placeholder:font-lato block w-full focus:outline-none py-2 pl-12 pr-8 border border-black rounded-full"
               type="text" placeholder="Buscar publicador" />
           </div>
         </div>
-        <div className='flex flex-col'>
-          <span className='font-bold font-lato'>Pais del Publicador</span>
-          <Selectable placeHolder={selectedCountry || 'País'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
+        <div>
+          <Selectable placeHolder={selectedCountry || 'Pais del Publicador'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
         </div>
         <div>
-          <span className='font-bold font-lato'>Tipo de Organización</span>
-          <Selectable placeHolder={selectedOrganizacion || 'Organización'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
+          <Selectable placeHolder={selectedOrganizacion || 'Tipo de Organización'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
         </div>
         {/* <div className='flex flex-col'>
           <span className='font-bold font-lato'>Limpiar Filtros</span>

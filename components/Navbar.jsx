@@ -42,16 +42,16 @@ export default function Navbar () {
         }
       ]
     },
-    {
-      label: 'Grupos',
-      href: ''
+    // {
+    //   label: 'Grupos',
+    //   href: ''
 
-    },
-    {
-      label: 'Temáticas',
-      href: '',
-      childs: []
-    },
+    // },
+    // {
+    //   label: 'Temáticas',
+    //   href: '',
+    //   childs: []
+    // },
     {
       label: 'Explorador',
       href: '/explorador'
@@ -103,7 +103,7 @@ export default function Navbar () {
             </div>
             <nav className='lg:self-end'>
               {/* DESKTOP */}
-              <ul className={'relative grid grid-cols-6 text-white gap-x-6'}>
+              <ul className={'relative grid grid-cols-4 text-white gap-x-6'}>
                 {nav.map((item, i) =>
                   <DropDown key={i} >
                     <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length}>
