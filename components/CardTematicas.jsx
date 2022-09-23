@@ -10,8 +10,8 @@ import ReactMarkdown from 'react-markdown'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb } = props
-  console.log(info)
-  console.log(selected)
+  // console.log(info)
+  // console.log(selected)
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
@@ -20,7 +20,7 @@ const CardTematicas = props => {
     return (
       <div className='py-10 bg-white'>
         <div className='grid grid-cols-2 gap-36 w-10/12 mx-auto'>
-          {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr_registros, en_registros, vu_registros }, key) =>
+          {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr_registros: crRegister, en_registros: enRegister, vu_registros: vuRegister }, key) =>
             <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
               <div className='flex flex-col items-start justify-start'>
                 <span>Categoría UICN</span>
@@ -43,7 +43,7 @@ const CardTematicas = props => {
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
                     </div>
-                    <span>{formatNumbers(cr_registros)}</span>
+                    <span>{formatNumbers(crRegister)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
@@ -52,7 +52,7 @@ const CardTematicas = props => {
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
                     </div>
-                    <span>{formatNumbers(en_registros)}</span>
+                    <span>{formatNumbers(enRegister)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
@@ -61,13 +61,13 @@ const CardTematicas = props => {
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
                     </div>
-                    <span>{formatNumbers(vu_registros)}</span>
+                    <span>{formatNumbers(vuRegister)}</span>
                   </div>
                 </div>
                 <div className='flex'>
-                  <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(cr_registros, +cr_registros + +en_registros + +vu_registros) }}></div>
-                  <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(en_registros, +cr_registros + +en_registros + +vu_registros) }}></div>
-                  <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vu_registros, +cr_registros + +en_registros + +vu_registros) }}></div>
+                  <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(crRegister, +crRegister + +enRegister + +vuRegister) }}></div>
+                  <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(enRegister, +crRegister + +enRegister + +vuRegister) }}></div>
+                  <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vuRegister, +crRegister + +enRegister + +vuRegister) }}></div>
                 </div>
                 <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
                   <p className='inline-block '><b>{formatNumbers(registros)}</b></p>
