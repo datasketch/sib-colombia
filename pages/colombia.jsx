@@ -43,9 +43,6 @@ export default function colombia () {
     const { value } = e.target
     setOptionShow(value)
   }
-  console.log('***************')
-  console.log(generalInfo)
-  console.log('***************')
 
   const { setFooterBgColor } = useContext(AppContext)
 
