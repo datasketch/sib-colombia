@@ -15,7 +15,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
-  const [showTreeMap, setShowTreeMap] = useState(false)
+  const [showTreeMap, setShowTreeMap] = useState(true)
 
   const data = [
     {
@@ -82,9 +82,9 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
           </div>
           <div className='flex justify-center relative'>
             <div className={classNames('pt-12 md:pt-0', showTreeMap ? 'block' : 'hidden')}>
-              <div className='h-36 lg:h-80 max-w-xl mx-auto pb-12'>
+              <div className='h-72 w-72 lg:h-96 lg:w-10/12 max-w-4xl mx-auto pb-3 lg:pb-12'>
                 <ResponsiveContainer >
-                  <Treemap width={400} height={200} data={data} dataKey="size" ratio={4 / 3} stroke="#fff" fill="#8884d8" />
+                  <Treemap width={400} height={200} data={data} dataKey="size" ratio={4 / 3} stroke="#fff" fill="#8884d8" isAnimationActive={false}/>
                 </ResponsiveContainer>
               </div>
               <div className={classNames('p-6 border-t border-t-dartmouth-green grid lg:grid-cols-3 pt-4 gap-2 ')}>
@@ -93,7 +93,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                   <div className='text-xs font-lato'>Especies amenazadas nacional</div>
                 </div>
                 <div className='flex px-1.5 py-0.5 gap-2 items-center shadow-default'>
-                  <div className='font-black font-inter'>{formatNumbers(info?.registros_amenazadas_global_total)}</div>
+                  <div className='font-black font-inter'>{formatNumbers(info?.especies_amenazadas_global_total)}</div>
                   <div className='text-xs font-lato'>Especies amenazadas global</div>
                 </div>
 
@@ -113,15 +113,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                   <div className='font-black font-inter'>  {formatNumbers(info?.especies_exoticas)}</div>
                   <div className='text-xs font-lato'>Especies endemicas</div>
                 </div>
-                <div className='flex px-1.5 py-0.5 gap-2 items-center shadow-default'>
-                  <div className='font-black font-inter'> {formatNumbers(info?.especies_exoticas_riesgo_invasion
-                  )}</div>
-                  <div className='text-xs font-lato'>Especies exóticas con riesgo de invasion</div>
-                </div>
-                <div className='flex px-1.5 py-0.5 gap-2 items-center shadow-default'>
-                  <div className='font-black font-inter'>   {formatNumbers(info?.especies_invasoras)}</div>
-                  <div className='text-xs font-lato'>Especies invasoras</div>
-                </div>
+
               </div>
             </div>
 
@@ -155,7 +147,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                         </Tooltip>
 
                       </div>
-                      <span>{formatNumbers(info?.registros_amenazadas_nacional_cr)}</span>
+                      <span>{formatNumbers(info?.especies_amenazadas_nacional_cr)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
@@ -164,7 +156,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
                       </div>
-                      <span>{formatNumbers(info?.registros_amenazadas_nacional_en)}</span>
+                      <span>{formatNumbers(info?.especies_amenazadas_nacional_en)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
@@ -173,13 +165,13 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
                       </div>
-                      <span>{formatNumbers(info?.registros_amenazadas_nacional_vu)}</span>
+                      <span>{formatNumbers(info?.especies_amenazadas_nacional_vu)}</span>
                     </div>
                   </div>
                   <div className='flex w-full'>
-                    <div className='bg-red-cr h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_nacional_cr, (+info?.registros_amenazadas_nacional_cr + +info?.registros_amenazadas_nacional_en + +info?.registros_amenazadas_nacional_vu)) }}></div>
-                    <div className='bg-orange-en h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_nacional_en, (+info?.registros_amenazadas_nacional_cr + +info?.registros_amenazadas_nacional_en + +info?.registros_amenazadas_nacional_vu)) }}></div>
-                    <div className='bg-yellow-vu h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_nacional_vu, (+info?.registros_amenazadas_nacional_cr + +info?.registros_amenazadas_nacional_en + +info?.registros_amenazadas_nacional_vu)) }}></div>
+                    <div className='bg-red-cr h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_nacional_cr, (+info?.especies_amenazadas_nacional_cr + +info?.especies_amenazadas_nacional_en + +info?.especies_amenazadas_nacional_vu)) }}></div>
+                    <div className='bg-orange-en h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_nacional_en, (+info?.especies_amenazadas_nacional_cr + +info?.especies_amenazadas_nacional_en + +info?.especies_amenazadas_nacional_vu)) }}></div>
+                    <div className='bg-yellow-vu h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_nacional_vu, (+info?.especies_amenazadas_nacional_cr + +info?.especies_amenazadas_nacional_en + +info?.especies_amenazadas_nacional_vu)) }}></div>
                   </div>
                 </div>
               </div>
@@ -213,7 +205,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
                       </div>
-                      <span>{formatNumbers(info?.registros_amenazadas_global_cr)}</span>
+                      <span>{formatNumbers(info?.especies_amenazadas_global_cr)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
@@ -222,7 +214,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
                       </div>
-                      <span>{formatNumbers(info?.registros_amenazadas_global_en)}</span>
+                      <span>{formatNumbers(info?.especies_amenazadas_global_en)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
@@ -231,13 +223,13 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
                       </div>
-                      <span>{formatNumbers(info?.registros_amenazadas_global_vu)}</span>
+                      <span>{formatNumbers(info?.especies_amenazadas_global_vu)}</span>
                     </div>
                   </div>
                   <div className='flex w-full'>
-                    <div className='bg-red-cr h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_global_cr, (+info?.registros_amenazadas_global_cr + +info?.registros_amenazadas_global_en + +info?.registros_amenazadas_global_vu)) }}></div>
-                    <div className='bg-orange-en h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_global_en, (+info?.registros_amenazadas_global_cr + +info?.registros_amenazadas_global_en + +info?.registros_amenazadas_global_vu)) }}></div>
-                    <div className='bg-yellow-vu h-4' style={{ width: calculateWidth(+info?.registros_amenazadas_global_vu, (+info?.registros_amenazadas_global_cr + +info?.registros_amenazadas_global_en + +info?.registros_amenazadas_global_vu)) }}></div>
+                    <div className='bg-red-cr h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_global_cr, (+info?.especies_amenazadas_global_cr + +info?.especies_amenazadas_global_en + +info?.especies_amenazadas_global_vu)) }}></div>
+                    <div className='bg-orange-en h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_global_en, (+info?.especies_amenazadas_global_cr + +info?.especies_amenazadas_global_en + +info?.especies_amenazadas_global_vu)) }}></div>
+                    <div className='bg-yellow-vu h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_global_vu, (+info?.especies_amenazadas_global_cr + +info?.especies_amenazadas_global_en + +info?.especies_amenazadas_global_vu)) }}></div>
                   </div>
                 </div>
               </div>
@@ -268,27 +260,27 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                         <b>I</b>
                         {/* <img src='/images/icon-more.svg' /> */}
                       </div>
-                      <span>{formatNumbers(info?.registros_cites_i)}</span>
+                      <span>{formatNumbers(info?.especies_cites_i)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
                         <b>II</b>
                         {/* <img src='/images/icon-more.svg' /> */}
                       </div>
-                      <span>{formatNumbers(info?.registros_cites_ii)}</span>
+                      <span>{formatNumbers(info?.especies_cites_ii)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
                         <b>III</b>
                         {/* <img src='/images/icon-more.svg' /> */}
                       </div>
-                      <span>{formatNumbers(info?.registros_cites_iii)}</span>
+                      <span>{formatNumbers(info?.especies_cites_iii)}</span>
                     </div>
                   </div>
                   <div className='flex'>
-                    <div className='bg-cerulean h-4' style={{ width: calculateWidth(+info?.registros_cites_i, (+info?.registros_cites_i + +info?.registros_cites_ii + +info?.registros_cites_iii)) }}></div>
-                    <div className='bg-sandstorm h-4' style={{ width: calculateWidth(+info?.registros_cites_ii, (+info?.registros_cites_i + +info?.registros_cites_ii + +info?.registros_cites_iii)) }}></div>
-                    <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(+info?.registros_cites_iii, (+info?.registros_cites_i + +info?.registros_cites_ii + +info?.registros_cites_iii)) }}></div>
+                    <div className='bg-cerulean h-4' style={{ width: calculateWidth(+info?.especies_cites_i, (+info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii)) }}></div>
+                    <div className='bg-sandstorm h-4' style={{ width: calculateWidth(+info?.especies_cites_ii, (+info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii)) }}></div>
+                    <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(+info?.especies_cites_iii, (+info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii)) }}></div>
                   </div>
                 </div>
               </div>
@@ -355,48 +347,9 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
 
                 </div>
               </div>
-              {/*  Exóticas con potencial de invasión */}
-              {typeTree && <div className='space-y-2 shadow-md flex flex-col justify-center py-6 px-4'>
-                <div className='font-inter font-black text-4xl'>
-                  {formatNumbers(info?.especies_exoticas_riesgo_invasion
-                  )}
-                  <div className='w-1/2 border-t border-t-[#262525]' />
-                </div>
 
-                <div className='text-lg font-inter font-bold'>Especies exóticas con potencial de invasión
-                  {!!info?.species_list_tematica?.exoticas_riesgo_invasion.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.exoticas_riesgo_invasion} />}>
-                    <img className='inline-block px-2' src='/images/icons/icon-table.svg' />
-                  </CustomTooltip>}
-                </div>
-                <div className='flex text-sm gap-x-2 text-blue-green'>
-                  {/* <img src='/images/green-arrow-right.svg' alt='arrow right' /> */}
-                  <p className='inline-block '><b>{formatNumbers(info?.registros_exoticas_riesgo_invasion
-                  )}</b></p>
-                  <p className='inline-block'>Observaciones</p>
-
-                </div>
-              </div>}
-              {/* invasoras */}
-              {typeTree && <div className='space-y-2 shadow-md flex flex-col justify-start py-6 px-4'>
-                <div className='font-inter font-black text-4xl'>
-                  {formatNumbers(info?.especies_invasoras)}
-                  <div className='w-1/2 border-t border-t-[#262525]' />
-                </div>
-
-                <div className='text-lg font-inter font-bold'>Especies invasoras
-                  {!!info?.species_list_tematica?.invasoras.length && <CustomTooltip title={<Table tableData={info?.species_list_tematica.invasoras} />}>
-                    <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
-                  </CustomTooltip>}
-                </div>
-                <div className='flex text-sm gap-x-2 text-blue-green'>
-                  {/* <img src='/images/green-arrow-right.svg' alt='arrow right' /> */}
-                  <p className='inline-block '><b>{formatNumbers(info?.registros_invasoras)}</b></p>
-                  <p className='inline-block'>Observaciones</p>
-
-                </div>
-              </div>}
             </div>
-            <button onClick={handleShow} className={classNames('border-t border-t-dartmouth-green flex p-2 ', showTreeMap ? 'absolute right-6 md:right-6 lg:-right-6 translate-y-[340px]  transition' : 'absolute right-20 lg:-right-10 transition')}>
+            <button onClick={handleShow} className={classNames('border-t border-t-dartmouth-green flex p-2 ', showTreeMap ? 'absolute right-0 md:right-28 lg:-right-6 translate-y-[335.5px] md:translate-y-[288.4px] lg:translate-y-[383.5px]  transition' : 'absolute right-20 lg:-right-10 transition')}>
               <img className={classNames(showTreeMap ? 'rotate-90 ' : 'rotate-[270deg] ', 'h-6 w-6')} src='/images/arrow-left-carousel.svg' />
             </button>
           </div>

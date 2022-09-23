@@ -8,8 +8,28 @@ import ArrowLeft from './ArrowLeft'
 import { clearLink, clearText } from '../lib/functions'
 
 export default function CustomSeparator () {
-  const [breadcrumb, setbreadcrumb] = useState()
+  const [breadcrumb, setbreadcrumb] = useState([])
+  // const diccionary = [
+  //   {
+  //     slug: 'Mas',
+  //     label: 'Más'
+  //   },
+  //   {
+  //     slug: 'Metodologia',
+  //     label: 'Metodología'
+  //   },
+  //   {
+  //     slug: 'Boyaca',
+  //     label: 'Boyacá'
+  //   },
+  //   {
+  //     slug: 'Narino',
+  //     label: 'Nariño'
+  //   }
 
+  // ]
+
+  console.log(breadcrumb)
   const route = useRouter()
 
   const handleClick = (event) => {
@@ -39,7 +59,12 @@ export default function CustomSeparator () {
   })
 
   useEffect(() => {
-    setbreadcrumb(route.asPath.split('/').reduce((acc, cur, i, arr) => [...acc, { label: clearText(cur), path: route.asPath }], []).filter(e => String(e.label).trim()))
+    const crum = route.asPath.split('/')
+      .reduce((acc, cur) => [...acc, { label: clearText(cur), path: route.asPath }], [])
+      .filter(e => String(e.label).trim())
+    // const correctBC = crum?.map(({ label }) => { return label = searchTitle(label, diccionary) })
+    // console.log(correctBC)
+    setbreadcrumb(crum)
   }, [route])
 
   return (

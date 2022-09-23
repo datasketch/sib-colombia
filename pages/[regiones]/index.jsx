@@ -45,7 +45,7 @@ export default function index ({ data, slug }) {
   }
 
   const { setFooterBgColor } = useContext(AppContext)
-
+  console.log(generalInfo)
   useEffect(() => {
     setFooterBgColor('bg-footer-green')
   }, [])
@@ -62,6 +62,7 @@ export default function index ({ data, slug }) {
         imageMap={`images/mapas-svg-dep/mapa-${slug}.svg`}
         especiesEstimadas={generalInfo.especies_region_estimadas}
         especiesObservadas={generalInfo.especies_region_total}
+        marine={generalInfo.marino}
       />
 
       <Gallery gallery={gallery}/>

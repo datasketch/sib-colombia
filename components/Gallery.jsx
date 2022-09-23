@@ -11,7 +11,7 @@ const Gallery = ({ gallery }) => {
         if (key >= 15) return null
         if (text) {
           return (
-            <div key={key} className={classNames('flex bg-white-2 justify-center items-center h-36', [2, 7, 12, 17, 22, 27].includes(key) ? 'col-span-2' : '')}>
+            <div key={key} className={classNames('flex bg-white-2 justify-center items-center h-36'/* , [2, 7, 12, 17, 22, 27].includes(key) ? 'col-span-2' : '' */)}>
               <ReactMarkdown rehypePlugins={[rehypeRaw]} className='w-5/6 text-xs font-lato '>
                 {text}
               </ReactMarkdown>
@@ -20,7 +20,7 @@ const Gallery = ({ gallery }) => {
         }
         if (image) {
           return (
-            <div key={key} className={[2, 7, 12, 17, 22, 27].includes(key) ? 'col-span-2' : ''}>
+            <div key={key} /* className={[2, 7, 12, 17, 22, 27].includes(key) ? 'col-span-2' : ''} */>
               <img className="min-h-36 max-h-36  w-full h-full object-cover" src={image} />
             </div>
           )

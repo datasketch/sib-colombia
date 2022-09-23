@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
 import Concentric from '../Concentric'
 import classNames from 'classnames'
-function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas }) {
+function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false }) {
   return (
     <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', 'bg-cover bg-center-bottom pt-8 lg:pt-14 pb-3.5 h-[500px]')}>
       <div className="w-full max-w-screen-2xl mx-auto">
@@ -27,7 +27,7 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
               <span className="font-lato text-sm lg:text-lg">Especies observadas</span>
               <div className='flex gap-x-2 pt-1.5'>
                 <img className='h-4 w-10' src='/images/icons/icon-green-continentales.svg' />
-                {title === 'Colombia' && <img className='h-4 w-10' src='/images/icons/icon-green-marinas.svg' />}
+                {marine && <img className='h-4 w-10' src='/images/icons/icon-green-marinas.svg' />}
               </div>
             </div>
           </div>

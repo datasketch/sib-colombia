@@ -28,8 +28,8 @@ export default function publicadores () {
     .filter(filterByOrgType)
 
   function filterBySearch (publisher) {
-    const { label, pais_publicacion: paisPublicacion } = publisher
-    return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase())
+    const { label, pais_publicacion: paisPublicacion, region } = publisher
+    return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase()) || region?.toLowerCase().includes(query.toLowerCase())
   }
 
   function filterByCountry (publisher) {
@@ -62,6 +62,8 @@ export default function publicadores () {
     const lastPageIndex = firstPageIndex + PageSize
     return filteredPublishers.slice(firstPageIndex, lastPageIndex)
   }, [currentPage, filteredPublishers])
+
+  console.log(filteredPublishers)
 
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')

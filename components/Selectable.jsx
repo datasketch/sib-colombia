@@ -31,7 +31,7 @@ const Selectable = ({ data, optionSelected, placeHolder, titles }) => {
         {data?.sort().map(el => {
           if (el === undefined) { return null }
           return (<label title={searchTitle(el, titles)} key={el} htmlFor={el} className='flex  justify-between cursor-pointer'>
-            <span>{el}</span>
+            <span>{searchTitle(el, titles) || el}</span>
             <input
               type="radio"
               name="country"
