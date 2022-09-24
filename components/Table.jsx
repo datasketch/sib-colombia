@@ -13,10 +13,12 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
 
     }
   }, [tableData])
-
+  console.log(dataShow)
+  console.log('*************')
+  console.log(tableData)
   const showData = ranking
-    ? tableData?.reduce((acc, { species, registros }) => [...acc, { species, registros }], []).sort((a, b) => a.registros > b.registros ? -1 : 1).splice(0, 10)
-    : tableData?.reduce((acc, { species, registros }) => [...acc, { species, registros }], [])
+    ? tableData?.reduce((acc, { species, registros, CBC, GBIF }) => [...acc, { species, registros, CBC, GBIF }], []).sort((a, b) => a.registros > b.registros ? -1 : 1).splice(0, 10)
+    : tableData?.reduce((acc, { species, registros, CBC, GBIF }) => [...acc, { species, registros, CBC, GBIF }], [])
 
   if (dataShow) {
     return (
@@ -30,12 +32,13 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
               </tr>
             </thead>
             <tbody className="text-black text-center">
-              {dataShow.map(({ species, registros }, key) =>
+              {dataShow.map(({ species, registros, CBC, GBIF }, key) =>
                 <tr key={key}>
                   <td className='pl text-sm font-lato italic'>{species}</td>
                   <td className='pl flex gap-2 justify-center'>
                     <span className='text-sm font-lato'></span>{numberWithCommas(registros)}
-                    <div className='font-inter'>link</div>
+                   {CBC.length !== 0 && <a href={CBC} target='_blank' className='font-inter underline text-azure' rel="noreferrer">CBC</a>}
+                   {GBIF.length !== 0 && <a href={GBIF} target='_blank' className='font-inter underline text-azure' rel="noreferrer">GBIF</a>}
                   </td>
 
                 </tr>

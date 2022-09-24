@@ -63,8 +63,6 @@ export default function publicadores () {
     return filteredPublishers.slice(firstPageIndex, lastPageIndex)
   }, [currentPage, filteredPublishers])
 
-  console.log(filteredPublishers)
-
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
   }, [])

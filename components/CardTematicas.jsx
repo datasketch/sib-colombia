@@ -9,9 +9,8 @@ import Table from './Table'
 import ReactMarkdown from 'react-markdown'
 
 const CardTematicas = props => {
-  const { info, selected, updateBreadcrumb } = props
-  console.log(info)
-  console.log(selected)
+  const { info, selected, updateBreadcrumb, region } = props
+
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
@@ -134,12 +133,7 @@ const CardTematicas = props => {
                 <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(+info?.especies_cites_iii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii) }}></div>
               </div>
             </div>
-            {/* <div className='flex flex-col pt-5 gap-y-10'>
-            <button type='button' className='flex gap-3 justify-center  items-center px-2 py-1 border border-black rounded-full w-2/5 self-end' value={info.slug} onClick={updateBreadcrumb}>
-              Ver mas
-              <img src='/images/arrow-black.svg' alt='arrow button' />
-            </button>
-          </div> */}
+
           </div>
           <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
             <div>
@@ -152,8 +146,11 @@ const CardTematicas = props => {
                 {formatNumbers(info?.registros_cites_i)} <span className='font-lato'> Observaciones</span>
               </div>
               <div className=''>
-                <span className='font-bold text-sm'>Tolima / Colombia</span>
-                <img className='' src='/images/graph-bar.svg' />
+                <span className='font-bold text-sm'>{region} / Colombia</span>
+                <div className='flex'>
+                  <div className='bg-sandstorm  h-4' style={{ width: calculateWidth(+info?.especies_cites_i, +info?.especies_cites_i + +info?.parent_especies_cites_i) }}></div>
+                  <div className='bg-orange-500 h-4' style={{ width: calculateWidth(+info?.parent_especies_cites_i, +info?.especies_cites_i + +info?.parent_especies_cites_i) }}></div>
+                </div>
               </div>
             </div>
 
@@ -167,8 +164,11 @@ const CardTematicas = props => {
                 {formatNumbers(info?.registros_cites_ii)} <span className='font-lato'> Observaciones</span>
               </div>
               <div className=''>
-                <span className='font-bold text-sm'>Tolima / Colombia</span>
-                <img className='' src='/images/graph-bar.svg' />
+                <span className='font-bold text-sm'>{region} / Colombia</span>
+                <div className='flex'>
+                  <div className='bg-sandstorm  h-4' style={{ width: calculateWidth(+info?.especies_cites_ii, +info?.especies_cites_ii + +info?.parent_especies_cites_ii) }}></div>
+                  <div className='bg-orange-500 h-4' style={{ width: calculateWidth(+info?.parent_especies_cites_ii, +info?.especies_cites_ii + +info?.parent_especies_cites_ii) }}></div>
+                </div>
               </div>
             </div>
 
@@ -182,8 +182,11 @@ const CardTematicas = props => {
                 {formatNumbers(info?.registros_cites_iii)} <span className='font-lato'> Observaciones</span>
               </div>
               <div className=''>
-                <span className='font-bold text-sm'>Tolima / Colombia</span>
-                <img className='' src='/images/graph-bar.svg' />
+                <span className='font-bold text-sm'>{region} / Colombia</span>
+                <div className='flex'>
+                  <div className='bg-sandstorm  h-4' style={{ width: calculateWidth(+info?.especies_cites_iii, +info?.especies_cites_iii + +info?.parent_especies_cites_iii) }}></div>
+                  <div className='bg-orange-500 h-4' style={{ width: calculateWidth(+info?.parent_especies_cites_iii, +info?.especies_cites_iii + +info?.parent_especies_cites_iii) }}></div>
+                </div>
               </div>
             </div>
           </div>
@@ -204,9 +207,12 @@ const CardTematicas = props => {
               <p className='inline-block font-inter'><b>{formatNumbers(info?.registros_migratorias)}</b></p>
               <p className='inline-block font-lato '>Observaciones</p>
             </div>
-            <div className='mt-12 w-full flex flex-col'>
-              <span className='font-bold text-sm'>Tolima / Colombia</span>
-              <img src='/images/graph-bar.svg' />
+            <div className='mt-12'>
+              <span className='font-bold text-sm'>{region} / Colombia</span>
+              <div className='flex'>
+                <div className='bg-sandstorm  h-4' style={{ width: calculateWidth(+info?.especies_migratorias, +info?.especies_migratorias + +info?.parent_especies_migratorias) }}></div>
+                <div className='bg-orange-500 h-4' style={{ width: calculateWidth(+info?.parent_especies_migratorias, +info?.especies_migratorias + +info?.parent_especies_migratorias) }}></div>
+              </div>
             </div>
           </div>
           <div className='lg:w-2/5 flex items-center'>
@@ -221,7 +227,7 @@ const CardTematicas = props => {
   if (selected.toLowerCase() === 'endémicas') {
     return (
       <div className='bg-white py-10'>
-        <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
+        <div className='w-10/12 mx-auto flex flex-col justify-between'>
           <div className='lg:w-[45%] shadow-hard flex flex-col py-12 px-8'>
             <div className='text-6xl font-black font-inter'>
               {formatNumbers(info?.especies_endemicas)}
@@ -232,29 +238,15 @@ const CardTematicas = props => {
               <p className='inline-block font-inter'><b>{formatNumbers(info?.registros_endemicas)}</b></p>
               <p className='inline-block font-lato '>Observaciones</p>
             </div>
-            <div className='mt-12 w-full flex flex-col'>
-              <span className='font-bold text-sm'>Tolima / Colombia</span>
-              <img src='/images/graph-bar.svg' />
+            <div className='mt-12'>
+              <span className='font-bold text-sm'>{region} / Colombia</span>
+              <div className='flex'>
+                <div className='bg-sandstorm  h-4' style={{ width: calculateWidth(+info?.especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}></div>
+                <div className='bg-orange-500 h-4' style={{ width: calculateWidth(+info?.parent_especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}></div>
+              </div>
             </div>
           </div>
-          {/* <div className='w-2/5 flex flex-col justify-between'>
-            <div className=''>
-              <span className='font-bold text-sm'>Peces Tolima / Colombia</span>
-              <img className='' src='/images/graph-bar.svg' />
-            </div>
-            <div className=''>
-              <span className='font-bold text-sm'>Aves Tolima / Colombia</span>
-              <img className='' src='/images/graph-bar.svg' />
-            </div>
-            <div className=''>
-              <span className='font-bold text-sm'>Coleopteros Tolima / Colombia</span>
-              <img className='' src='/images/graph-bar.svg' />
-            </div>
-            <div className=''>
-              <span className='font-bold text-sm'>Mamíferos Tolima / Colombia</span>
-              <img className='' src='/images/graph-bar.svg' />
-            </div>
-          </div> */}
+
         </div>
       </div>
     )
@@ -273,17 +265,17 @@ const CardTematicas = props => {
               {info?.list_especies_exoticas_total?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_exoticas_total} />}>
               </CustomTooltip>}
             </div>
-            {/* <div className='font-black font-inter text-lg'>{info?.label}
-              {info?.speciesList?.length && <CustomTooltip placement='left' title={<Table tableData={info?.speciesList} />}>
-              </CustomTooltip>}
-            </div> */}
+
             <div className='flex text-sm gap-x-2 text-blue-green'>
               <p className='inline-block font-inter'><b>{formatNumbers(info?.registros_exoticas_total)}</b></p>
               <p className='inline-block font-lato '>Observaciones</p>
             </div>
-            <div className='flex flex-col mt-12'>
-              <span className='font-bold text-sm'>Tolima / Colombia</span>
-              <img className='' src='/images/graph-bar.svg' />
+            <div className=''>
+              <span className='font-bold text-sm'>{region} / Colombia</span>
+              <div className='flex'>
+                <div className='bg-sandstorm  h-4' style={{ width: calculateWidth(+info?.especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}></div>
+                <div className='bg-orange-500 h-4' style={{ width: calculateWidth(+info?.parent_especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}></div>
+              </div>
             </div>
           </div>
 
@@ -298,8 +290,11 @@ const CardTematicas = props => {
                 {formatNumbers(info?.registros_exoticas)} <span className='font-lato'> Observaciones</span>
               </div>
               <div className=''>
-                <span className='font-bold text-sm'>Tolima / Colombia</span>
-                <img className='' src='/images/graph-bar.svg' />
+                <span className='font-bold text-sm'>{region} / Colombia</span>
+                <div className='flex'>
+                  <div className='bg-sandstorm  h-4' style={{ width: calculateWidth(+info?.especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}></div>
+                  <div className='bg-orange-500 h-4' style={{ width: calculateWidth(+info?.parent_especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}></div>
+                </div>
               </div>
             </div>
 
@@ -313,8 +308,11 @@ const CardTematicas = props => {
                 {formatNumbers(info?.registros_exoticas_riesgo_invasion)} <span className='font-lato'> Observaciones</span>
               </div>
               <div className=''>
-                <span className='font-bold text-sm'>Tolima / Colombia</span>
-                <img className='' src='/images/graph-bar.svg' />
+                <span className='font-bold text-sm'>{region} / Colombia</span>
+                <div className='flex'>
+                  <div className='bg-sandstorm  h-4' style={{ width: calculateWidth(+info?.especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}></div>
+                  <div className='bg-orange-500 h-4' style={{ width: calculateWidth(+info?.parent_especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}></div>
+                </div>
               </div>
             </div>
 
@@ -328,8 +326,11 @@ const CardTematicas = props => {
                 {formatNumbers(info?.registros_invasoras)} <span className='font-lato'> Observaciones</span>
               </div>
               <div className=''>
-                <span className='font-bold text-sm'>Tolima / Colombia</span>
-                <img className='' src='/images/graph-bar.svg' />
+                <span className='font-bold text-sm'>{region} / Colombia</span>
+                <div className='flex'>
+                  <div className='bg-sandstorm  h-4' style={{ width: calculateWidth(+info?.especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}></div>
+                  <div className='bg-orange-500 h-4' style={{ width: calculateWidth(+info?.parent_especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}></div>
+                </div>
               </div>
             </div>
 
@@ -395,9 +396,9 @@ const CardTematicas = props => {
               <p className='inline-block'>Observaciones</p>
             </div>
           </div>
-
         </div>
-    </div>
+        <div></div>
+      </div>
     </div>
 
   )

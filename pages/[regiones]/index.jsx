@@ -45,7 +45,7 @@ export default function index ({ data, slug }) {
   }
 
   const { setFooterBgColor } = useContext(AppContext)
-  console.log(generalInfo)
+
   useEffect(() => {
     setFooterBgColor('bg-footer-green')
   }, [])
@@ -93,7 +93,7 @@ export default function index ({ data, slug }) {
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body >
               {(selected, info, updateBreadcrumb) => (
-                <CardTematicas info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} />
+                <CardTematicas info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label}/>
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
