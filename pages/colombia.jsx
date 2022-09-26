@@ -61,8 +61,8 @@ export default function colombia () {
         title={generalInfo.label}
         description={generalInfo.main_text}
         especiesEstimadas={generalInfo.especies_region_estimadas}
-        especiesObservadas={generalInfo.registros_region_total}
-
+        especiesObservadas={generalInfo.especies_region_total}
+        marine={generalInfo.marino}
       />
 
       <Gallery gallery={gallery} />

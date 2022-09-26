@@ -7,18 +7,22 @@ import publishers from '../../static/data/publicador.json'
 import countrysCode from '../../data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
+// import { useRouter } from 'next/router'
 
 export default function publicadores () {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
   const PageSize = 15
-
+  // const { query: { region } } = useRouter()
+  // console.log(region)
   const { setFooterBgColor } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
+
   // eslint-disable-next-line no-unused-vars
   const [publicadors, setPublicadors] = useState(publishers)
   const [query, setQuery] = useState('')
   const [selectedCountry, setSelectedCountry] = useState('')
   const [selectedOrganizacion, setSelectedOrganizacion] = useState('')
+
   const citys = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.pais_publicacion], []))]
   const typeOrganization = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.tipo_organizacion], []))]
 
@@ -75,7 +79,7 @@ export default function publicadores () {
           <div className='relative'>
             <img className="absolute top-2 left-3 h-6 w-6" src="/images/icon-search.svg" alt="icon search" />
             <input onChange={handleChange} id="search" className="placeholder:italic placeholder:font-lato block w-full focus:outline-none py-2 pl-12 pr-8 border border-black rounded-full"
-              type="text" placeholder="Buscar publicador" />
+              type="text" placeholder='Buscar publicador' />
           </div>
         </div>
         <div>

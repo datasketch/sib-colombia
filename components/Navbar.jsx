@@ -97,7 +97,7 @@ export default function Navbar () {
             <div>
               <Link href="/">
                 <a className='flex items-center'>
-                  <img className='h-[50%] w-2/3' src="/images/logo-humboldt.svg" alt="logo humboldt" />
+                  <img className='w-1/2' src="/images/logo-sib.svg" alt="logo humboldt" />
                 </a>
               </Link>
             </div>

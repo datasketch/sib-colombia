@@ -17,13 +17,12 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
   }
 
   const data = info?.subgrupo_especies?.reduce((acc, { label_grupo: name, especies_region_total: especies }) => [...acc, { name, especies }], [])
-  const [showTreeMap, setShowTreeMap] = useState(data?.length !== 0 && true)
-  console.log()
+  const [showTreeMap, setShowTreeMap] = useState(true)
+
   const handleShow = () => {
     setShowTreeMap(prevState => !prevState)
   }
 
-  // Todo: Treemap no data hidden component
   return (
     <>
       <div className='bg-white py-10 min-h-[600px]'>
@@ -70,7 +69,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
             {data?.length !== 0 && <div className={classNames('pt-12 md:pt-0', showTreeMap ? 'block' : 'hidden')}>
               <div className='h-72 w-72 lg:h-96 lg:w-10/12 max-w-4xl mx-auto pb-3 lg:pb-12'>
                 <ResponsiveContainer >
-                  <Treemap width={400} height={200} data={data} dataKey="especies" ratio={1 / 2} stroke="#fff" fill="#8884d8" isAnimationActive={false} />
+                  <Treemap width={400} height={200} data={data} dataKey="especies" ratio={1 / 2} stroke="#fff" fill="#00634B" isAnimationActive={false} />
                 </ResponsiveContainer>
               </div>
               <div className={classNames('p-6 border-t border-t-dartmouth-green grid lg:grid-cols-3 pt-4 gap-2 ')}>

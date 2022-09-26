@@ -32,8 +32,6 @@ export default function index ({ data, slug }) {
 
   } = data
 
-  // console.log(data)
-
   const [optionShow, setOptionShow] = useState('graph')
   const [municipio, setMunicipio] = useState('')
 
@@ -67,7 +65,7 @@ export default function index ({ data, slug }) {
         marine={generalInfo.marino}
       />
 
-      <Gallery gallery={gallery}/>
+      {gallery && <Gallery gallery={gallery}/>}
 
       <div className='bg-white-3 pt-3'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
@@ -149,7 +147,7 @@ export default function index ({ data, slug }) {
       </div>
 
       {/* Conoce las cifras por regiones */}
-      <div className='py-10 bg-white-2'>
+      {territorio && <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={navTerritorio} search={territorio}>
             <MenuExplorer.Title>
@@ -178,7 +176,7 @@ export default function index ({ data, slug }) {
                             value={municipio}
                             onChange={handleChange}
                           >
-                            {municipios.map(({ slug, label }, key) =>
+                            {municipios?.map(({ slug, label }, key) =>
                               <MenuItem key={key} value={slug} >{label}</MenuItem>
                             )}
 
@@ -197,7 +195,7 @@ export default function index ({ data, slug }) {
             </MenuExplorer.Body>
           </MenuExplorer>
         </div>
-      </div>
+      </div>}
 
       {/* Publicadores */}
       <div className='py-10 bg-white-smoke'>
@@ -220,7 +218,7 @@ export default function index ({ data, slug }) {
             </SimpleSlider>
           </div>
           <div className='text-center'>
-            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href="/mas/publicadores">
+            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href={`/mas/publicadores?region=${slug}`}>
               Todos los publicadores
             </a>
           </div>

@@ -17,7 +17,7 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
         <div className="flex flex-col md:flex-row max-h-48 justify-between gap-y-4 w-10/12 mx-auto -mt-9 md:-mt-0">
           <div className="w-1/2 relative flex items-center ">
             <Concentric inner={especiesObservadas} outer={especiesEstimadas} />
-            <div className="absolute w-full md:w-1/3 lg:w-full  text-white flex -space-y-1 flex-col -top-[9%] md:top-0 lg:-top-[6%] left-[226px] md:left-60">
+            <div className="absolute w-full md:w-1/3 lg:w-full  text-white flex -space-y-1 flex-col -top-[9%] md:top-0 lg:-top-[8%] left-[226px] md:left-60">
               <span className="font-inter font-black lg:text-xl">{formatNumbers(especiesEstimadas)}</span>
               <span className="font-lato text-sm lg:text-base">Especies estimadas</span>
             </div>
