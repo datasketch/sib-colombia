@@ -27346,12 +27346,12 @@
       "label": "Municipios",
       "charts": [
         {
-          "title": "Especies por municipio",
+          "title": "Especies por departamento",
           "path": "static/charts/colombia/region_municipios_1.html",
           "layout": "title/chart"
         },
         {
-          "title": "Observaciones por municipio",
+          "title": "Registros por departamento",
           "path": "static/charts/colombia/region_municipios_2.html",
           "layout": "title/chart"
         }

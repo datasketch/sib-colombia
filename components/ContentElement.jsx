@@ -2,7 +2,7 @@
 import { Tooltip } from '@mui/material'
 // import dynamic from 'next/dynamic'
 import classNames from 'classnames'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { calculateWidth, formatNumbers } from '../lib/functions'
 import tooltips from '../static/data/tooltips.json'
@@ -16,16 +16,25 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
 
-  const data = info?.subgrupo_especies?.reduce((acc, { label_grupo: name, especies_region_total: especies }) => [...acc, { name, especies }], [])
+  const data = info?.subgrupo_especies?.reduce((acc, { label_grupo: name, especies_region_total: especies }) => [...acc, { name, especies }], []) || []
   const [showTreeMap, setShowTreeMap] = useState(true)
 
+  // setShowTreeMap(dataInfo)
   const handleShow = () => {
     setShowTreeMap(prevState => !prevState)
   }
+  // console.log(info?.especies_cites_iii)
+  useEffect(() => {
+    const dataInfo = data?.length !== 0
+    setShowTreeMap(dataInfo)
+    return () => {
+
+    }
+  }, [info])
 
   return (
     <>
-      <div className='bg-white py-10 min-h-[600px]'>
+      <div key={selected} className='bg-white py-10 min-h-[600px]'>
         <div className='w-11/12 gap-y-28 lg:w-11/12 flex flex-col lg:flex-row mx-auto justify-between'>
           <div className='flex flex-col gap-4 space-y-3 lg:w-4/12 mx-auto py-8 px-3'>
             <div className='font-bold'>
@@ -265,7 +274,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                   <div className='flex'>
                     <div className='bg-cerulean h-4' style={{ width: calculateWidth(+info?.especies_cites_i, (+info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii)) }}></div>
                     <div className='bg-sandstorm h-4' style={{ width: calculateWidth(+info?.especies_cites_ii, (+info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii)) }}></div>
-                    <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(+info?.especies_cites_iii, (+info?.especies_cites_i + +info?.especies_cites_ii + +info?.species_cites_iii)) }}></div>
+                    <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(+info?.especies_cites_iii, (+info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii)) }}></div>
                   </div>
                 </div>
               </div>
@@ -335,9 +344,9 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
 
             </div>
             {data?.length !== 0 &&
-            (<button onClick={handleShow} className={classNames('border-t border-t-dartmouth-green flex p-2 ', showTreeMap ? 'absolute right-0 md:right-28 lg:-right-6 translate-y-[335.5px] md:translate-y-[288.4px] lg:translate-y-[383.5px]  transition' : 'absolute right-20 lg:-right-10 transition')}>
-              <img className={classNames(showTreeMap ? 'rotate-90 ' : 'rotate-[270deg] ', 'h-6 w-6')} src='/images/arrow-left-carousel.svg' />
-            </button>)
+              (<button onClick={handleShow} className={classNames('border-t border-t-dartmouth-green flex p-2 ', showTreeMap ? 'absolute right-0 md:right-28 lg:-right-6 translate-y-[335.5px] md:translate-y-[288.4px] lg:translate-y-[383.5px]  transition' : 'absolute right-20 lg:-right-10 transition')}>
+                <img className={classNames(showTreeMap ? 'rotate-90 ' : 'rotate-[270deg] ', 'h-6 w-6')} src='/images/arrow-left-carousel.svg' />
+              </button>)
             }
           </div>
         </div>
