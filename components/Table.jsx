@@ -14,11 +14,11 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
     }
   }, [tableData])
 
-  console.log(tableData)
-  console.log('*******')
-  console.log('dataShow')
-  console.log(dataShow)
-  console.log('*******')
+  // console.log(tableData)
+  // console.log('*******')
+  // console.log('dataShow')
+  // console.log(dataShow)
+  // console.log('*******')
   const showData = ranking
     ? tableData?.reduce((acc, { slug_especie: name, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { name, registros, cbc, gbif }], []).sort((a, b) => a.registros > b.registros ? -1 : 1).splice(0, 10)
     : tableData?.reduce((acc, { slug_especie: name, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { name, registros, cbc, gbif }], [])

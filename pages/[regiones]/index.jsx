@@ -10,7 +10,7 @@ import MenuExplorer from '../../components/MenuExplorer'
 import PublishersCard from '../../components/PublishersCard'
 import SimpleSlider from '../../components/Slider'
 import Slides from '../../components/Slides'
-import { getRegionsPath, getRegionData } from '../../lib/regions'
+import { getDepartmentsPath, getDepartmentData } from '../../lib/regions'
 import { AppContext } from '../_app'
 
 export default function index ({ data, slug }) {
@@ -65,7 +65,7 @@ export default function index ({ data, slug }) {
         marine={generalInfo.marino}
       />
 
-      {gallery && <Gallery gallery={gallery}/>}
+      {gallery && <Gallery gallery={gallery} />}
 
       <div className='bg-white-3 pt-3'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
@@ -93,7 +93,7 @@ export default function index ({ data, slug }) {
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body >
               {(selected, info, updateBreadcrumb) => (
-                <CardTematicas info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label}/>
+                <CardTematicas info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -286,7 +286,7 @@ export default function index ({ data, slug }) {
 }
 
 export async function getStaticPaths () {
-  const paths = await getRegionsPath()
+  const paths = await getDepartmentsPath()
   return {
     fallback: false,
     paths
@@ -294,7 +294,7 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps (context) {
-  const content = await getRegionData(context.params.regiones)
+  const content = await getDepartmentData(context.params.regiones)
 
   return {
     props: {

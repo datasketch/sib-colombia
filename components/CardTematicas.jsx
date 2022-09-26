@@ -19,67 +19,68 @@ const CardTematicas = props => {
     return (
       <div className='py-10 bg-white'>
         <div className='grid lg:grid-cols-2 gap-y-6 gap-x-36 w-10/12 mx-auto'>
-          {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr: crRegister, en: enRegister, vu: vuRegister }, key) =>
-            <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
-              <div className='flex flex-col items-start justify-start'>
-                <span>Categoría UICN</span>
-                <span className='text-6xl font-black font-inter'>
-                  {formatNumbers(especies)}
-                  <div className='border-t border-t-dartmouth-green' />
-                </span>
-                <div className='font-black font-inter text-lg'>Especies  de {label}
-                  {speciesList?.length && <CustomTooltip placement='left' title={<Table tableData={speciesList} />}>
-                    <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
-                  </CustomTooltip>}
-                </div>
-              </div>
-              <div className='flex flex-col justify-center h-full w-full'>
-                <div className='font-lato flex justify-evenly gap-x-4'>
-                  <div className='flex flex-col items-center'>
-                    <div className='flex items-start'>
-                      <b>CR</b>
-                      <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
-                        <img src='/images/icon-more.svg' />
-                      </Tooltip>
-                    </div>
-                    <span>{formatNumbers(crRegister)}</span>
-                  </div>
-                  <div className='flex flex-col items-center'>
-                    <div className='flex items-start'>
-                      <b>EN</b>
-                      <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
-                        <img src='/images/icon-more.svg' />
-                      </Tooltip>
-                    </div>
-                    <span>{formatNumbers(enRegister)}</span>
-                  </div>
-                  <div className='flex flex-col items-center'>
-                    <div className='flex items-start'>
-                      <b>UV</b>
-                      <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
-                        <img src='/images/icon-more.svg' />
-                      </Tooltip>
-                    </div>
-                    <span>{formatNumbers(vuRegister)}</span>
+          {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr: crRegister, en: enRegister, vu: vuRegister }, key) => {
+            return <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
+                <div className='flex flex-col items-start justify-start'>
+                  <span>Categoría UICN</span>
+                  <span className='text-6xl font-black font-inter'>
+                    {formatNumbers(especies)}
+                    <div className='border-t border-t-dartmouth-green' />
+                  </span>
+                  <div className='font-black font-inter text-lg'>Especies  de {label}
+                    {speciesList?.length && <CustomTooltip placement='left' title={<Table tableData={speciesList} />}>
+                      <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
+                    </CustomTooltip>}
                   </div>
                 </div>
-                <div className='flex'>
-                  <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(crRegister, +crRegister + +enRegister + +vuRegister) }}></div>
-                  <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(enRegister, +crRegister + +enRegister + +vuRegister) }}></div>
-                  <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vuRegister, +crRegister + +enRegister + +vuRegister) }}></div>
+                <div className='flex flex-col justify-center h-full w-full'>
+                  <div className='font-lato flex justify-evenly gap-x-4'>
+                    <div className='flex flex-col items-center'>
+                      <div className='flex items-start'>
+                        <b>CR</b>
+                        <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
+                          <img src='/images/icon-more.svg' />
+                        </Tooltip>
+                      </div>
+                      <span>{formatNumbers(crRegister)}</span>
+                    </div>
+                    <div className='flex flex-col items-center'>
+                      <div className='flex items-start'>
+                        <b>EN</b>
+                        <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
+                          <img src='/images/icon-more.svg' />
+                        </Tooltip>
+                      </div>
+                      <span>{formatNumbers(enRegister)}</span>
+                    </div>
+                    <div className='flex flex-col items-center'>
+                      <div className='flex items-start'>
+                        <b>UV</b>
+                        <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
+                          <img src='/images/icon-more.svg' />
+                        </Tooltip>
+                      </div>
+                      <span>{formatNumbers(vuRegister)}</span>
+                    </div>
+                  </div>
+                  <div className='flex'>
+                    <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(crRegister, +crRegister + +enRegister + +vuRegister) }}></div>
+                    <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(enRegister, +crRegister + +enRegister + +vuRegister) }}></div>
+                    <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vuRegister, +crRegister + +enRegister + +vuRegister) }}></div>
+                  </div>
+                  <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
+                    <p className='inline-block '><b>{formatNumbers(registros)}</b></p>
+                    <p className='inline-block'>Observaciones</p>
+                  </div>
                 </div>
-                <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
-                  <p className='inline-block '><b>{formatNumbers(registros)}</b></p>
-                  <p className='inline-block'>Observaciones</p>
+                <div className='flex flex-col pt-5 gap-y-10'>
+                  <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-1/2 lg:w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
+                    Ver más
+                    <img src='/images/arrow-black.svg' alt='arrow button' />
+                  </button>
                 </div>
               </div>
-              <div className='flex flex-col pt-5 gap-y-10'>
-                <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-1/2 lg:w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
-                  Ver mas
-                  <img src='/images/arrow-black.svg' alt='arrow button' />
-                </button>
-              </div>
-            </div>
+          }
           )}
         </div>
       </div>
