@@ -75,7 +75,7 @@ const CardTematicas = props => {
               </div>
               <div className='flex flex-col pt-5 gap-y-10'>
                 <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-1/2 lg:w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
-                  Ver mas
+                  Ver más
                   <img src='/images/arrow-black.svg' alt='arrow button' />
                 </button>
               </div>
