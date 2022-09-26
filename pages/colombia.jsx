@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
-import classNames from 'classnames'
+// import classNames from 'classnames'
 import Head from 'next/head'
 import CardTematicas from '../components/CardTematicas'
 import Gallery from '../components/Gallery'
@@ -32,17 +32,17 @@ export default function colombia () {
 
   } = col
 
-  const [optionShow, setOptionShow] = useState('graph')
+  // const [optionShow, setOptionShow] = useState('graph')
   const [municipio, setMunicipio] = useState('')
 
   const handleChange = (event) => {
     setMunicipio(event.target.value)
   }
 
-  const handleRendder = (e) => {
-    const { value } = e.target
-    setOptionShow(value)
-  }
+  // const handleRendder = (e) => {
+  //   const { value } = e.target
+  //   setOptionShow(value)
+  // }
 
   const { setFooterBgColor } = useContext(AppContext)
 
@@ -224,7 +224,7 @@ export default function colombia () {
           </div>
         </div>
       </div>
-
+{/*
       <div className='py-10 mx-auto w-10/12 max-w-screen-xl'>
         <div className='mx-auto max-w-md text-center'>
           <div className='space-y-6'>
@@ -261,7 +261,7 @@ export default function colombia () {
         optionShow === 'table' && (<div className='mt-[55.13px] '>
           <iframe className='h-screen w-full' src=" https://datasketch.shinyapps.io/sib-data-app-tabla/?region=colombia"></iframe>
         </div>)
-      }
+      } */}
 
       {patrocinador.length !== 0 && <div className='py-10 bg-white'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-xl'>

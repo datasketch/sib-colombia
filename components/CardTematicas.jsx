@@ -80,8 +80,7 @@ const CardTematicas = props => {
                   </button>
                 </div>
               </div>
-          }
-          )}
+          })}
         </div>
       </div>
     )
