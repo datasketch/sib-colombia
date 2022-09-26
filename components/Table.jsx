@@ -8,20 +8,24 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
   useEffect(() => {
     general
       ? setdataShow(showData)
-      : setdataShow(tableData)
+      : setdataShow(tableData.reduce((acc, { slug_especie: name, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { name, registros, cbc, gbif }], []))
     return () => {
 
     }
   }, [tableData])
 
-  console.log(tableData[0])
+  console.log(tableData)
+  console.log('*******')
+  console.log('dataShow')
+  console.log(dataShow)
+  console.log('*******')
   const showData = ranking
     ? tableData?.reduce((acc, { slug_especie: name, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { name, registros, cbc, gbif }], []).sort((a, b) => a.registros > b.registros ? -1 : 1).splice(0, 10)
     : tableData?.reduce((acc, { slug_especie: name, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { name, registros, cbc, gbif }], [])
 
   if (dataShow) {
     return (
-      <div className='flex flex-col gap-y-1.5 max-w-xl'>
+      <div key={tableData[0]} className='flex flex-col gap-y-1.5 max-w-xl'>
         <div className={classNames(overflow ? '' : 'h-auto w-full')}>
           <table className="bg-white border">
             <thead>
