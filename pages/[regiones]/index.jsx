@@ -32,6 +32,8 @@ export default function index ({ data, slug }) {
 
   } = data
 
+  // console.log(data)
+
   const [optionShow, setOptionShow] = useState('graph')
   const [municipio, setMunicipio] = useState('')
 
@@ -259,7 +261,7 @@ export default function index ({ data, slug }) {
       </div>}
       {
         optionShow === 'table' && (<div className='mt-[55.13px] '>
-          <iframe className='h-screen w-full' src={`https://datasketch.shinyapps.io/sib-data-app-tabla/?region=${slug}`}></iframe>
+          <iframe className='h-screen w-full' src={`https://datasketch.shinyapps.io/sib-data-app-tabla?region=${slug}`}></iframe>
         </div>)
       }
 

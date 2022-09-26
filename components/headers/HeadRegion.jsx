@@ -33,7 +33,7 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
           </div>
 
           <div className="md:w-1/2 my-auto h-40 border-t-2 md:border-l-2 md:border-t-0 border-yellow-green border-dotted flex items-center py-2.5">
-            <ReactMarkdown className='text-white text-sm  w-10/12 mx-auto'>
+            <ReactMarkdown className='text-white text-sm lg:text-base  w-10/12 mx-auto'>
               {description}
             </ReactMarkdown>
           </div>

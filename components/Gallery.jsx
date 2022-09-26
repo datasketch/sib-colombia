@@ -6,13 +6,13 @@ import classNames from 'classnames'
 const Gallery = ({ gallery }) => {
   if (!gallery) return
   return (
-    <div className='py-8 grid grid-cols-2 md:grid-cols-6 max-w-screen-xl mx-auto w-10/12'>
+    <div className='py-8 grid grid-cols-2 md:grid-cols-5 max-w-screen-xl mx-auto w-10/12'>
       {gallery.map(({ text, image }, key) => {
         if (key >= 15) return null
         if (text) {
           return (
             <div key={key} className={classNames('flex bg-white-2 justify-center items-center h-36'/* , [2, 7, 12, 17, 22, 27].includes(key) ? 'col-span-2' : '' */)}>
-              <ReactMarkdown rehypePlugins={[rehypeRaw]} className='w-5/6 text-xs font-lato '>
+              <ReactMarkdown rehypePlugins={[rehypeRaw]} className='w-5/6 text-sm lg:text-base font-lato '>
                 {text}
               </ReactMarkdown>
             </div>

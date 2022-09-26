@@ -2,14 +2,14 @@ import classNames from 'classnames'
 import { scaleLinear } from 'd3-scale'
 
 export default function Concentric ({ outer, inner, style = 'style-1' }) {
-  const radius = style === 'style-2' ? 180 : 150
+  const radius = style === 'style-2' ? 28000 : 25000
   const radiusScale = scaleLinear().domain([0, outer]).range([0, radius])
 
   const outerStyle = (style) => {
     if (style === 'style-2') {
       return {
-        width: `${radius}px`,
-        height: `${radius}px`,
+        width: `${Math.sqrt(radius)}px`,
+        height: `${Math.sqrt(radius)}px`,
         borderRadius: '50%',
         border: '1px solid black',
         position: 'relative',
@@ -17,8 +17,8 @@ export default function Concentric ({ outer, inner, style = 'style-1' }) {
       }
     }
     return {
-      width: `${radius}px`,
-      height: `${radius}px`,
+      width: `${Math.sqrt(radius)}px`,
+      height: `${Math.sqrt(radius)}px`,
       borderRadius: '50%',
       border: '1px solid white',
       position: 'relative'
@@ -28,8 +28,8 @@ export default function Concentric ({ outer, inner, style = 'style-1' }) {
   const innerStyle = (style) => {
     if (style === 'style-2') {
       return {
-        width: `${radiusScale(inner)}px`,
-        height: `${radiusScale(inner)}px`,
+        width: `${Math.sqrt(radiusScale(inner))}px`,
+        height: `${Math.sqrt(radiusScale(inner))}px`,
         borderRadius: '50%',
         // border: '1px solid black',
         position: 'absolute',
@@ -40,8 +40,8 @@ export default function Concentric ({ outer, inner, style = 'style-1' }) {
       }
     }
     return {
-      width: `${radiusScale(inner)}px`,
-      height: `${radiusScale(inner)}px`,
+      width: `${Math.sqrt(radiusScale(inner))}px`,
+      height: `${Math.sqrt(radiusScale(inner))}px`,
       borderRadius: '50%',
       border: '1px solid white',
       position: 'absolute',

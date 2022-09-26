@@ -39,10 +39,16 @@ export default function Footer () {
               <span>PBX:(+601) 3202767</span>
               <span>Calle 28A # 15-09</span>
               <span>Bogotá D.C, Colombia</span>
-              <div className="flex justify-center gap-x-1">
-                <a target='_blank' href='https://twitter.com/sibcolombia' rel="noreferrer">(TW)</a>
-                <a target='_blank' href='https://www.facebook.com/SibColombia' rel="noreferrer">(FB)</a>
-                <a target='_blank' href='https://www.youtube.com/user/sibcolombia' rel="noreferrer">(YT)</a>
+              <div className="flex justify-evenly">
+                <a target='_blank' href='https://twitter.com/sibcolombia' rel="noreferrer">
+                  <img src='/images/icons/icon-tw.svg' className='h-5 w-5'/>
+                </a>
+                <a target='_blank' href='https://www.facebook.com/SibColombia' rel="noreferrer">
+                  <img src='/images/icons/icon-fb.svg' className='h-5 w-6'/>
+                </a>
+                <a target='_blank' href='https://www.youtube.com/user/sibcolombia' rel="noreferrer">
+                  <img src='/images/icons/icon-yt.svg' className='h-5 w-5'/>
+                </a>
               </div>
             </div>
 

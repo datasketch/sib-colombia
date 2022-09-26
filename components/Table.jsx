@@ -13,17 +13,18 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
 
     }
   }, [tableData])
-  console.log(dataShow)
-  console.log('*************')
-  console.log(tableData)
+  // console.log(dataShow)
+
+  // console.log('*************')
+  console.log(tableData[0])
   const showData = ranking
-    ? tableData?.reduce((acc, { species, registros, CBC, GBIF }) => [...acc, { species, registros, CBC, GBIF }], []).sort((a, b) => a.registros > b.registros ? -1 : 1).splice(0, 10)
-    : tableData?.reduce((acc, { species, registros, CBC, GBIF }) => [...acc, { species, registros, CBC, GBIF }], [])
+    ? tableData?.reduce((acc, { slug_especie: name, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { name, registros, cbc, gbif }], []).sort((a, b) => a.registros > b.registros ? -1 : 1).splice(0, 10)
+    : tableData?.reduce((acc, { slug_especie: name, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { name, registros, cbc, gbif }], [])
 
   if (dataShow) {
     return (
       <div className='flex flex-col gap-y-1.5 max-w-xl'>
-        <div className={classNames(overflow ? '' : 'overflow-y-scroll h-[400px]')}>
+        <div className={classNames(overflow ? '' : 'h-auto w-full')}>
           <table className="bg-white border">
             <thead>
               <tr className="bg-dartmouth-green text-white">
@@ -32,13 +33,13 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
               </tr>
             </thead>
             <tbody className="text-black text-center">
-              {dataShow.map(({ species, registros, CBC, GBIF }, key) =>
+              {dataShow.map(({ name, registros, cbc, gbif }, key) =>
                 <tr key={key}>
-                  <td className='pl text-sm font-lato italic'>{species}</td>
-                  <td className='pl flex gap-2 justify-center'>
-                    <span className='text-sm font-lato'></span>{numberWithCommas(registros)}
-                   {CBC.length !== 0 && <a href={CBC} target='_blank' className='font-inter underline text-azure' rel="noreferrer">CBC</a>}
-                   {GBIF.length !== 0 && <a href={GBIF} target='_blank' className='font-inter underline text-azure' rel="noreferrer">GBIF</a>}
+                  <td className='pl text-xs font-lato italic text-center'>{name}</td>
+                  <td className='pl flex gap-2 justify-center items-center'>
+                    <span className='text-xs font-lato'>{numberWithCommas(registros)}</span>
+                   {cbc?.length !== 0 && <a href={cbc} target='_blank' className='font-inter underline text-azure' rel="noreferrer">CBC</a>}
+                   {gbif?.length !== 0 && <a href={gbif} target='_blank' className='font-inter underline text-azure' rel="noreferrer">GBIF</a>}
                   </td>
 
                 </tr>
@@ -47,7 +48,7 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
             </tbody>
           </table>
         </div>
-        <a target='_blank' href='#' className='font-bold flex justify-center'>Explora lista completa </a>
+        <a target='_blank' href='/mas/explorador?' className='font-bold flex justify-center'>Explora lista completa </a>
       </div>
     )
   }

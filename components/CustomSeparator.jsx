@@ -29,7 +29,7 @@ export default function CustomSeparator () {
 
   // ]
 
-  console.log(breadcrumb)
+  // console.log(breadcrumb)
   const route = useRouter()
 
   const handleClick = (event) => {
