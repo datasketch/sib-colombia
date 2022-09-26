@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
-import classNames from 'classnames'
+// import classNames from 'classnames'
 import Head from 'next/head'
 import CardTematicas from '../components/CardTematicas'
 import Gallery from '../components/Gallery'

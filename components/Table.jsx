@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { useEffect, useState } from 'react'
-import { numberWithCommas } from '../lib/functions'
+import { formatNumbers } from '../lib/functions'
 
 const Table = ({ tableData, general = false, ranking = false, overflow = false }) => {
   const [dataShow, setdataShow] = useState([])
@@ -39,7 +39,7 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
                 <tr key={key}>
                   <td className='pl text-xs font-lato italic text-center'>{name}</td>
                   <td className='pl flex gap-2 justify-center items-center'>
-                    <span className='text-xs font-lato'>{numberWithCommas(registros)}</span>
+                    <span className='text-xs font-lato'>{formatNumbers(registros)}</span>
                    {cbc?.length !== 0 && <a href={cbc} target='_blank' className='font-inter underline text-azure' rel="noreferrer">CBC</a>}
                    {gbif?.length !== 0 && <a href={gbif} target='_blank' className='font-inter underline text-azure' rel="noreferrer">GBIF</a>}
                   </td>
