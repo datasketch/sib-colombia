@@ -16,7 +16,7 @@ export default function MenuExplorer ({ children, tree, search, ...restProps }) 
   const updateBreadcrumb = (e) => {
     let { textContent, value } = e.target
     const slug = e.target.getAttribute('aria-label')
-    if (textContent === 'Ver mas') {
+    if (textContent === 'Ver más') {
       textContent = clearText(value)
     }
     setBreadcrumb((prevState) => [...prevState, textContent || value].reduce((acc, element) => {

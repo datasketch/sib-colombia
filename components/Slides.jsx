@@ -37,7 +37,7 @@ const Slides = ({ data, region }) => {
               <p className='text-center font-bold 3xl:text-lg'>
                 Especies registradas en {region} vs. especies registradas en Colombia
               </p>
-              <img className='mx-auto mt-4 w-2/3 ' src={chart_url} alt={title} />
+              <img className='mx-auto mt-4 w-11/12' src={chart_url} alt={title} />
             </div>
           </div>
         </div>
@@ -120,8 +120,8 @@ const Slides = ({ data, region }) => {
           </h2>
           <div className='lg:py-2.5'>
             <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
-              <iframe type="html" className="h-[350px] w-full" src={chart1_url} ></iframe>
-              <iframe type="html" className="h-[350px] w-full" src={chart2_url} ></iframe>
+              <iframe type="html" className="h-[410px] w-full" src={chart1_url} ></iframe>
+              <iframe type="html" className="h-[410px] w-full" src={chart2_url} ></iframe>
             </div>
           </div>
         </div>
