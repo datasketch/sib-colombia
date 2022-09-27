@@ -2,7 +2,6 @@ import { useContext, useEffect } from 'react'
 import Head from 'next/head'
 
 import HeadRegion from '../components/headers/HeadRegion'
-
 import { AppContext } from './_app'
 import col from '../static/data/colombia.json'
 import PageComponent from '../components/PageComponent'
@@ -11,7 +10,6 @@ export default function colombia () {
   const { general_info: generalInfo } = col
 
   const { setFooterBgColor } = useContext(AppContext)
-
   useEffect(() => {
     setFooterBgColor('bg-footer-green')
   }, [])

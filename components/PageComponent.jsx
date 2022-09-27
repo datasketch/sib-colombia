@@ -28,7 +28,6 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
     municipios_lista: municipios,
     gallery
   } = data
-  console.log(data)
 
   const [optionShow, setOptionShow] = useState('graph')
   const [municipio, setMunicipio] = useState('')

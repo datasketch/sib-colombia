@@ -134,7 +134,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='flex flex-col justify-center h-full'>
                   <div className='font-lato flex justify-evenly gap-x-4'>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start'>
+                      <div className='flex items-start border-b-2 border-b-red-cr'>
                         <b>CR</b>
                         <Tooltip title={<b>{contentTooltip('amenazadas-nacional-cr')}</b>}>
                           <img src='/images/icon-more.svg' />
@@ -144,7 +144,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                       <span>{formatNumbers(info?.especies_amenazadas_nacional_cr)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start'>
+                      <div className='flex items-start border-b-2 border-b-orange-en'>
                         <b>EN</b>
                         <Tooltip title={<b>{contentTooltip('amenazadas-nacional-en')}</b>}>
                           <img src='/images/icon-more.svg' />
@@ -153,7 +153,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                       <span>{formatNumbers(info?.especies_amenazadas_nacional_en)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start'>
+                      <div className='flex items-start border-b-2 border-b-yellow-vu'>
                         <b>UV</b>
                         <Tooltip title={<b>{contentTooltip('amenazadas-nacional-vu')}</b>}>
                           <img src='/images/icon-more.svg' />
@@ -167,6 +167,11 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                     <div className='bg-orange-en h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_nacional_en, (+info?.especies_amenazadas_nacional_cr + +info?.especies_amenazadas_nacional_en + +info?.especies_amenazadas_nacional_vu)) }}></div>
                     <div className='bg-yellow-vu h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_nacional_vu, (+info?.especies_amenazadas_nacional_cr + +info?.especies_amenazadas_nacional_en + +info?.especies_amenazadas_nacional_vu)) }}></div>
                   </div>
+                  {/* <div>
+                    <div className='bg-red-cr h-4' />
+                    <div className='bg-orange-en h-4' />
+                    <div className='bg-yellow-vu h-4' />
+                  </div> */}
                 </div>
               </div>
 
@@ -193,7 +198,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='flex flex-col justify-center h-full'>
                   <div className='font-lato flex justify-evenly gap-x-4'>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start'>
+                      <div className='flex items-start border-b-2 border-b-red-cr'>
                         <b>CR</b>
                         <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
                           <img src='/images/icon-more.svg' />
@@ -202,7 +207,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                       <span>{formatNumbers(info?.especies_amenazadas_global_cr)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start'>
+                      <div className='flex items-start border-b-2 border-b-orange-en'>
                         <b>EN</b>
                         <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
                           <img src='/images/icon-more.svg' />
@@ -211,7 +216,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                       <span>{formatNumbers(info?.especies_amenazadas_global_en)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start'>
+                      <div className='flex items-start border-b-2 border-b-yellow-vu'>
                         <b>VU</b>
                         <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
                           <img src='/images/icon-more.svg' />
@@ -250,21 +255,21 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                 <div className='flex flex-col justify-end h-full'>
                   <div className='font-lato flex justify-evenly gap-x-4'>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start'>
+                      <div className='flex items-start border-b-2 border-b-cerulean'>
                         <b>I</b>
                         {/* <img src='/images/icon-more.svg' /> */}
                       </div>
                       <span>{formatNumbers(info?.especies_cites_i)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start'>
+                      <div className='flex items-start border-b-2 border-b-sandstorm'>
                         <b>II</b>
                         {/* <img src='/images/icon-more.svg' /> */}
                       </div>
                       <span>{formatNumbers(info?.especies_cites_ii)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start'>
+                      <div className='flex items-start border-b-2 border-b-greenish-cyan'>
                         <b>III</b>
                         {/* <img src='/images/icon-more.svg' /> */}
                       </div>

@@ -7,12 +7,12 @@ const Slides = ({ data, region }) => {
   if (layout === 'title/chart') {
     return (
       <div className="px-5">
-        <div >
+        <div>
           <div className='flex flex-col items-center lg:justify-between gap-y-3 lg:gap-y-6'>
             <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>
               {title}
             </h2>
-            <iframe className='w-11/12 mx-auto h-[350px]' src={path} alt={title} />
+            <iframe className='w-11/12 mx-auto h-[350px]' src={'/' + path} alt={title} />
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@ const Slides = ({ data, region }) => {
               <p className='text-center font-bold 3xl:text-lg'>
                 Especies registradas en {region} vs. especies registradas en Colombia
               </p>
-              <img className='mx-auto mt-4 w-11/12' src={chart_url} alt={title} />
+              <img className='mx-auto mt-4 w-11/12' src={'/' + chart_url} alt={title} />
             </div>
           </div>
         </div>

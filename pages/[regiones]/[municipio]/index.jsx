@@ -27,6 +27,7 @@ function municipio ({ data, slug, municipality }) {
         especiesEstimadas={generalInfo.especies_region_estimadas}
         especiesObservadas={generalInfo.especies_region_total}
         marine={generalInfo.marino}
+        municipality
       />
       <PageComponent data={data} slug={slug} municipality={municipality}/>
     </>

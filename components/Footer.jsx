@@ -21,7 +21,7 @@ export default function Footer () {
             <div className="flex text-center flex-col gap-y-2.5 text-sm font-lato">
               <b > Acerca de</b>
               <a target='_blank' href='https://biodiversidad.co/post/2022/biodiversidad-colombia-cifras-2022/' rel="noreferrer">Esta versión</a>
-              <a target='_blank' href='http://repository.humboldt.org.co/handle/20.500.11761/35288' rel="noreferrer">Metodología</a>
+              <a target='_blank' href='/mas/metodologia' rel="noreferrer">Metodología</a>
               <a target='_blank' href='https://gitlab.com/sib-colombia/sintesis_cifras/-/tree/master' rel="noreferrer">Datos</a>
               <a target='_blank' href='https://biodiversidad.co/recursos/citar/#cifra-o-indicador-sobre-biodiversidad' rel="noreferrer">Cómo citar</a>
               <span>Reportar inconsistencias</span>

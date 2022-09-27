@@ -53,6 +53,7 @@ export default function Concentric ({ outer, inner, style = 'style-1' }) {
   }
 
   return (
+
     <div className='relative' style={outerStyle(style)}>
       <img className={classNames('absolute', style === 'style-2' ? 'top-1/2 left-[84px] h-28' : ' -top-[5.5%] left-1/2')} src={style === 'style-2' ? '/images/outer-arrow-black.svg' : '/images/external-arrow.svg'} />
       <img className={classNames('absolute', style === 'style-2' ? 'top-1/2 -left-1.5' : ' top-[45%] left-1/2')} src={style === 'style-2' ? '/images/inner-arrow-black.svg' : '/images/external-arrow.svg'} />

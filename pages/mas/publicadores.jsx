@@ -22,7 +22,7 @@ export default function publicadores () {
   const [query, setQuery] = useState('')
   const [selectedCountry, setSelectedCountry] = useState('')
   const [selectedOrganizacion, setSelectedOrganizacion] = useState('')
-
+  const [render, setRender] = useState(false)
   const citys = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.pais_publicacion], []))]
   const typeOrganization = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.tipo_organizacion], []))]
 
@@ -61,12 +61,18 @@ export default function publicadores () {
     setSelectedOrganizacion(value || '')
   }
 
+  const clearFilters = ({ target }) => {
+    setQuery('')
+    setSelectedCountry('')
+    setSelectedOrganizacion('')
+    setRender(prevState => !prevState)
+  }
+
   const currentPublisher = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize
     const lastPageIndex = firstPageIndex + PageSize
     return filteredPublishers.slice(firstPageIndex, lastPageIndex)
   }, [currentPage, filteredPublishers])
-
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
   }, [])
@@ -74,26 +80,25 @@ export default function publicadores () {
   return (
     <>
       <HeadMore title={'Publicadores'} description={textDescription} content slug='publicadores' />
-      <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid lg:grid-cols-3 gap-x-8 gap-y-3'>
-        <div>
+      <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid lg:grid-cols-4 gap-x-4 gap-y-3'>
+        <div >
           <div className='relative'>
             <img className="absolute top-2 left-3 h-6 w-6" src="/images/icon-search.svg" alt="icon search" />
-            <input onChange={handleChange} id="search" className="placeholder:italic placeholder:font-lato block w-full focus:outline-none py-2 pl-12 pr-8 border border-black rounded-full"
+            <input key={render} onChange={handleChange} autoComplete='off' id="search" className="placeholder:italic placeholder:font-lato block w-full focus:outline-none py-2 pl-12 pr-8 border border-black rounded-full"
               type="text" placeholder='Buscar publicador' />
           </div>
         </div>
-        <div>
-          <Selectable placeHolder={selectedCountry || 'Pais del Publicador'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
+        <div >
+          <Selectable key={render} placeHolder={selectedCountry || 'Pais del Publicador'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
         </div>
-        <div>
-          <Selectable placeHolder={selectedOrganizacion || 'Tipo de Organización'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
+        <div >
+          <Selectable key={render} placeHolder={selectedOrganizacion || 'Tipo de Organización'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
         </div>
-        {/* <div className='flex flex-col'>
-          <span className='font-bold font-lato'>Limpiar Filtros</span>
-          <button type='button' onClick={clearFilters} className='border border-black h-full'>
-            <span className='font-lato'>X</span>
+        <div className='flex items-center lg:justify-center'>
+          <button type='button' onClick={clearFilters} className='font-lato font-bold underline' value={'reset'}>
+            Limpiar filtros
           </button>
-        </div> */}
+        </div>
       </div>
       <div id="publishers" className="max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {
