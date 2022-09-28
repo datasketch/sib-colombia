@@ -97,7 +97,7 @@ export default function Navbar () {
             <div>
               <Link href="/">
                 <a className='flex items-center'>
-                  <img className='w-1/2' src="/images/logo-sib.svg" alt="logo humboldt" />
+                  <img className='min-h-[40px] min-w-[140px] w-1/2' src="/images/logo-biodiversidadcifras.svg" alt="Logo biodiversidadcifras" />
                 </a>
               </Link>
             </div>
@@ -123,7 +123,6 @@ export default function Navbar () {
                   </DropDown>
                 )}
               </ul>
-
             </nav>
           </div>
         </div>

@@ -6,12 +6,12 @@ import Concentric from '../Concentric'
 import classNames from 'classnames'
 function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false }) {
   return (
-    <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', 'bg-cover bg-center-bottom pt-8 lg:pt-14 pb-3.5 h-[500px]')}>
+    <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', 'bg-cover bg-center-bottom pt-8 lg:pt-14 pb-3.5 h-[500px] ')}>
       <div className="w-full max-w-screen-2xl mx-auto">
         <div className="min-h-[210px] flex justify-center md:justify-between  items-center w-10/12 mx-auto">
           <div className="font-black w-1/2 font-inter text-white text-6xl lg:text-8xl -mt-7 ">{title}</div>
           {imageMap && <div className="hidden md:flex justify-end ">
-            <img className=" md:w-4/5" src={imageMap} />
+            <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageMap} />
           </div>}
         </div>
         <div className="flex flex-col md:flex-row max-h-48 justify-between gap-y-4 w-10/12 mx-auto -mt-9 md:-mt-0">
@@ -34,7 +34,7 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
             </div>)
             : (<div className="text-yellow-green mx-auto flex flex-col justify-center  gap-x-4">
               <span className="text-lg lg:text-4xl font-black font-inter">{formatNumbers(especiesObservadas)}</span>
-              <div clas>
+              <div>
                 <span className="font-lato text-sm lg:text-lg">Especies observadas</span>
                 <div className='flex gap-x-2 pt-1.5'>
                   <img className='h-4 w-10' src='/images/icons/icon-green-continentales.svg' />

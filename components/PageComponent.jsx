@@ -196,7 +196,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
             </SimpleSlider>
           </div>
           <div className='text-center'>
-            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href={`/mas/publicadores?region=${slug}`}>
+            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href={`/mas/publicadores?region=${municipality || slug}`}>
               Todos los publicadores
             </a>
           </div>
@@ -232,11 +232,11 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
         <button type='button' onClick={handleRendder} value='graph' className={classNames('py-2 px-4 border border-black rounded-full  ', optionShow === 'graph' ? 'bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'bg-white text-black hover:bg-dartmouth-green hover:text-white')}>Gráficos</button>
         <button type='button' onClick={handleRendder} value='table' className={classNames('py-2 px-4 border border-black rounded-full ', optionShow === 'table' ? ' bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'bg-white text-black hover:bg-dartmouth-green hover:text-white')}>Tablas</button>
       </div>
-      {optionShow === 'graph' && <div className='mt-[55.13px] '>
+      {optionShow === 'graph' && <div className='mt-[55.13px] w-screen'>
         <iframe className='h-screen w-full' src={`https://datasketch.shinyapps.io/sib-data-app/?region=${slug}`}></iframe>
       </div>}
       {
-        optionShow === 'table' && (<div className='mt-[55.13px] '>
+        optionShow === 'table' && (<div className='mt-[55.13px] w-screen'>
           <iframe className='h-screen w-full' src={`https://datasketch.shinyapps.io/sib-data-app-tabla?region=${slug}`}></iframe>
         </div>)
       }

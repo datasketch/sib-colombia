@@ -7,13 +7,12 @@ import publishers from '../../static/data/publicador.json'
 import countrysCode from '../../data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 export default function publicadores () {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
   const PageSize = 15
-  // const { query: { region } } = useRouter()
-  // console.log(region)
+  const { query: { region } } = useRouter()
   const { setFooterBgColor } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
 
@@ -74,6 +73,7 @@ export default function publicadores () {
     return filteredPublishers.slice(firstPageIndex, lastPageIndex)
   }, [currentPage, filteredPublishers])
   useEffect(() => {
+    setQuery(region || '')
     setFooterBgColor('bg-footer-orange')
   }, [])
 

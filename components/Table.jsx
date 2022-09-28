@@ -14,11 +14,6 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
     }
   }, [tableData])
 
-  // console.log(tableData)
-  // console.log('*******')
-  // console.log('dataShow')
-  // console.log(dataShow)
-  // console.log('*******')
   const showData = ranking
     ? tableData?.reduce((acc, { slug_especie: name, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { name, registros, cbc, gbif }], []).sort((a, b) => a.registros > b.registros ? -1 : 1).splice(0, 10)
     : tableData?.reduce((acc, { slug_especie: name, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { name, registros, cbc, gbif }], [])
@@ -30,16 +25,17 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
           <table className="bg-white border">
             <thead>
               <tr className="bg-dartmouth-green text-white">
-                <th className="px-2 font-inter text-sm py-1">Nombre de la especie</th>
-                <th className="px-2 font-inter text-sm py-1">Número de observaciones</th>
+                <th className="font-inter text-sm py-1">Nombre de la especie</th>
+                <th className="font-inter text-sm py-1">Número de observaciones</th>
+                <th className="font-inter text-sm py-1">Perfil Especies</th>
               </tr>
             </thead>
             <tbody className="text-black text-center">
               {dataShow.map(({ name, registros, cbc, gbif }, key) =>
                 <tr key={key}>
                   <td className='pl text-xs font-lato italic text-center'>{name}</td>
-                  <td className='pl flex gap-2 justify-center items-center'>
-                    <span className='text-xs font-lato'>{formatNumbers(registros)}</span>
+                  <td className='pl text-xs flex iten gap-2 justify-center items-center'>{formatNumbers(registros)}</td>
+                  <td className='space-x-2'>
                    {cbc?.length !== 0 && <a href={cbc} target='_blank' className='font-inter underline text-azure' rel="noreferrer">CBC</a>}
                    {gbif?.length !== 0 && <a href={gbif} target='_blank' className='font-inter underline text-azure' rel="noreferrer">GBIF</a>}
                   </td>

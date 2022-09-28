@@ -23,7 +23,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
   const handleShow = () => {
     setShowTreeMap(prevState => !prevState)
   }
-  // console.log(info?.especies_cites_iii)
+
   useEffect(() => {
     const dataInfo = data?.length !== 0
     setShowTreeMap(dataInfo)
@@ -154,7 +154,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start border-b-2 border-b-yellow-vu'>
-                        <b>UV</b>
+                        <b>VU</b>
                         <Tooltip title={<b>{contentTooltip('amenazadas-nacional-vu')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>

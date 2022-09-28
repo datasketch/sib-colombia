@@ -14,11 +14,11 @@ export default function Footer () {
     <footer className={classNames(footerBgColor, 'bg-cover bg-center h-auto pt-6 pb-4 space-y-6')}>
       <div className="max-w-screen-xl px-20 mx-auto text-white ">
         <div className='flex flex-col gap-y-8 lg:flex-row justify-between'>
-          <div>
+          <a href='https://biodiversidad.co' target='_blank' rel="noreferrer">
             <img className='lg:h-[50%] lg:w-2/3' src='/images/sib-icon.svg' alt='icon sib ' />
-          </div>
+          </a>
           <div className="flex flex-col gap-y-6 lg:flex-row gap-x-16">
-            <div className="flex text-center flex-col gap-y-2.5 text-sm font-lato">
+            <div className="flex text-center lg:text-left flex-col gap-y-2.5 text-sm font-lato">
               <b > Acerca de</b>
               <a target='_blank' href='https://biodiversidad.co/post/2022/biodiversidad-colombia-cifras-2022/' rel="noreferrer">Esta versión</a>
               <a target='_blank' href='/mas/metodologia' rel="noreferrer">Metodología</a>
@@ -26,20 +26,20 @@ export default function Footer () {
               <a target='_blank' href='https://biodiversidad.co/recursos/citar/#cifra-o-indicador-sobre-biodiversidad' rel="noreferrer">Cómo citar</a>
               <span>Reportar inconsistencias</span>
             </div>
-            <div className="text-center flex flex-col gap-y-2.5 text-sm font-lato">
+            <div className="text-center lg:text-left flex flex-col gap-y-2.5 text-sm font-lato">
               <b>Enlaces</b>
               <a target='_blank' href='https://biodiversidad.co/' rel="noreferrer">SiB colombia</a>
               <a target='_blank' href='https://biodiversidad.co/terminos-y-condiciones/politica-de-uso' rel="noreferrer">Términos y condiciones</a>
               <a target='_blank' href='https://biodiversidad.co/boletin' rel="noreferrer">Suscribirse al boletín</a>
             </div>
 
-            <div className="text-center flex flex-col gap-y-2.5 text-sm font-lato">
+            <div className="text-center lg:text-left flex flex-col gap-y-2.5 text-sm font-lato">
               <b>Contacto</b>
               <a target='_blank' href='mailto:sib@humboldt.org.co' rel="noreferrer">sib@humboldt.org.co</a>
               <span>PBX:(+601) 3202767</span>
               <span>Calle 28A # 15-09</span>
               <span>Bogotá D.C, Colombia</span>
-              <div className="flex justify-evenly">
+              <div className="flex gap-x-4 justify-center  lg:justify-start items-center">
                 <a target='_blank' href='https://twitter.com/sibcolombia' rel="noreferrer">
                   <img src='/images/icons/icon-tw.svg' className='h-5 w-5'/>
                 </a>

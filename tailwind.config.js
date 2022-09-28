@@ -33,6 +33,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        'screen-75': '75vh'
+      },
       fontFamily: {
         'barlow-condensed': ['Barlow Condensed', 'sans-serif'],
         lato: ['Lato', 'sans-serif'],

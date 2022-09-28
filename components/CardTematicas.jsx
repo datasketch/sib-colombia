@@ -10,7 +10,7 @@ import ReactMarkdown from 'react-markdown'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb, region } = props
-  console.log(info)
+
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
@@ -55,7 +55,7 @@ const CardTematicas = props => {
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start border-b-2 border-b-yellow-vu'>
-                        <b className=''>UV</b>
+                        <b className=''>VU</b>
                         <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -138,7 +138,7 @@ const CardTematicas = props => {
           <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
             <div>
               <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_cites_i)} CITES I
+                {formatNumbers(info?.especies_cites_i)} especies CITES I
                 {info?.list_especies_cites_i?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_cites_i} />}>
                 </CustomTooltip>}
               </div>
@@ -148,7 +148,7 @@ const CardTematicas = props => {
               <div className=''>
                 <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
                 <div className='flex'>
-                  <div className='bg-dartmouth-green h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.especies_cites_i, +info?.especies_cites_i + +info?.parent_especies_cites_i) }}>{info?.especies_cites_i}</div>
+                  <div className='bg-cerulean h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.especies_cites_i, +info?.especies_cites_i + +info?.parent_especies_cites_i) }}>{info?.especies_cites_i}</div>
                   <div className='bg-lemon h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.parent_especies_cites_i, +info?.especies_cites_i + +info?.parent_especies_cites_i) }}>{info?.parent_especies_cites_i}</div>
                 </div>
               </div>
@@ -156,7 +156,7 @@ const CardTematicas = props => {
 
             <div>
               <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_cites_ii)} CITES II
+                {formatNumbers(info?.especies_cites_ii)} especies CITES II
                 {info?.list_registros_cites_iiength && <CustomTooltip placement='left' title={<Table tableData={info?.list_registros_cites_ii} />}>
                 </CustomTooltip>}
               </div>
@@ -166,7 +166,7 @@ const CardTematicas = props => {
               <div className=''>
                 <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
                 <div className='flex'>
-                  <div className='bg-dartmouth-green h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.especies_cites_ii, +info?.especies_cites_ii + +info?.parent_especies_cites_ii) }}>{info?.especies_cites_ii}</div>
+                  <div className='bg-sandstorm h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.especies_cites_ii, +info?.especies_cites_ii + +info?.parent_especies_cites_ii) }}>{info?.especies_cites_ii}</div>
                   <div className='bg-lemon h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.parent_especies_cites_ii, +info?.especies_cites_ii + +info?.parent_especies_cites_ii) }}>{info?.parent_especies_cites_ii}</div>
                 </div>
               </div>
@@ -174,7 +174,7 @@ const CardTematicas = props => {
 
             <div>
               <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_cites_iii)} CITES III
+                {formatNumbers(info?.especies_cites_iii)} especies CITES III
                 {info?.list_especies_cites_iii?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_cites_iii} />}>
                 </CustomTooltip>}
               </div>
@@ -184,7 +184,7 @@ const CardTematicas = props => {
               <div className=''>
                 <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
                 <div className='flex'>
-                  <div className='bg-dartmouth-green h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.especies_cites_iii, +info?.especies_cites_iii + +info?.parent_especies_cites_iii) }}>{info?.especies_cites_iii}</div>
+                  <div className='bg-greenish-cyan h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.especies_cites_iii, +info?.especies_cites_iii + +info?.parent_especies_cites_iii) }}>{info?.especies_cites_iii}</div>
                   <div className='bg-lemon h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.parent_especies_cites_iii, +info?.especies_cites_iii + +info?.parent_especies_cites_iii) }}>{info?.parent_especies_cites_iii}</div>
                 </div>
               </div>
@@ -282,7 +282,7 @@ const CardTematicas = props => {
           <div className='lg:w-[45%] flex flex-col justify-evenly gap-y-3 '>
             <div>
               <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_exoticas)} Exóticas
+                {formatNumbers(info?.especies_exoticas)} especies Exóticas
                 {info?.list_especies_exoticas?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_exoticas} />}>
                 </CustomTooltip>}
               </div>
@@ -300,7 +300,7 @@ const CardTematicas = props => {
 
             <div>
               <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_exoticas_riesgo_invasion)} Exóticas con potencial de invasión
+                {formatNumbers(info?.especies_exoticas_riesgo_invasion)} especies Exóticas con potencial de invasión
                 {info?.list_especies_exoticas_riesgo_observacion?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_exoticas_riesgo_observacion} />}>
                 </CustomTooltip>}
               </div>
@@ -318,7 +318,7 @@ const CardTematicas = props => {
 
             <div>
               <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_invasoras)} Invasoras
+                {formatNumbers(info?.especies_invasoras)} especies Invasoras
                 {info?.list_especies_invasoras?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_invasoras} />}>
                 </CustomTooltip>}
               </div>
