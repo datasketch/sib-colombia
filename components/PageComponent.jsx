@@ -146,11 +146,11 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
                     : (<>
                       <div className='py-3 w-2/5 mx-auto'>
                         <FormControl fullWidth>
-                          <InputLabel id="select-municipios">{deparment ? 'Deparmentos' : 'Municipios'}</InputLabel>
+                          <InputLabel id="select-municipios">{deparment ? 'Departamentos' : 'Municipios'}</InputLabel>
                           <Select
                             labelId="select-municipios"
                             id="demo-select-municipios"
-                            label={deparment ? 'Deparmentos' : 'Municipios'}
+                            label={deparment ? 'Departamentos' : 'Municipios'}
                             value={municipio}
                             onChange={handleChange}
                           >

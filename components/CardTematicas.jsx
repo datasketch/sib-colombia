@@ -7,6 +7,8 @@ import tooltips from '../static/data/tooltips.json'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 import ReactMarkdown from 'react-markdown'
+import BarPercent from './BarPercent'
+import CardContentTem from './CardContentTem'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb, region } = props
@@ -21,65 +23,65 @@ const CardTematicas = props => {
         <div className='grid lg:grid-cols-2 gap-y-6 gap-x-36 w-10/12 mx-auto'>
           {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr: crRegister, en: enRegister, vu: vuRegister }, key) => {
             return <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
-                <div className='flex flex-col items-start justify-start'>
-                  <span>Categoría UICN</span>
-                  <span className='text-6xl font-black font-inter'>
-                    {formatNumbers(especies)}
-                    <div className='border-t border-t-dartmouth-green' />
-                  </span>
-                  <div className='font-black font-inter text-lg'>Especies  de {label}
-                    {speciesList?.length && <CustomTooltip placement='left' title={<Table tableData={speciesList} />}>
-                      <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
-                    </CustomTooltip>}
-                  </div>
-                </div>
-                <div className='flex flex-col justify-center h-full w-full'>
-                  <div className='font-lato flex justify-evenly gap-x-4'>
-                    <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-red-cr'>
-                        <b className=''>CR</b>
-                        <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
-                          <img src='/images/icon-more.svg' />
-                        </Tooltip>
-                      </div>
-                      <span>{formatNumbers(crRegister)}</span>
-                    </div>
-                    <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-orange-en'>
-                        <b className=''>EN</b>
-                        <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
-                          <img src='/images/icon-more.svg' />
-                        </Tooltip>
-                      </div>
-                      <span>{formatNumbers(enRegister)}</span>
-                    </div>
-                    <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-yellow-vu'>
-                        <b className=''>VU</b>
-                        <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
-                          <img src='/images/icon-more.svg' />
-                        </Tooltip>
-                      </div>
-                      <span>{formatNumbers(vuRegister)}</span>
-                    </div>
-                  </div>
-                  <div className='flex'>
-                    <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(crRegister, +crRegister + +enRegister + +vuRegister) }}></div>
-                    <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(enRegister, +crRegister + +enRegister + +vuRegister) }}></div>
-                    <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vuRegister, +crRegister + +enRegister + +vuRegister) }}></div>
-                  </div>
-                  <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
-                    <p className='inline-block '><b>{formatNumbers(registros)}</b></p>
-                    <p className='inline-block'>Observaciones</p>
-                  </div>
-                </div>
-                <div className='flex flex-col pt-5 gap-y-10'>
-                  <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-1/2 lg:w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
-                    Ver más
-                    <img src='/images/arrow-black.svg' alt='arrow button' />
-                  </button>
+              <div className='flex flex-col items-start justify-start'>
+                <span>Categoría UICN</span>
+                <span className='text-6xl font-black font-inter'>
+                  {formatNumbers(especies)}
+                  <div className='border-t border-t-dartmouth-green' />
+                </span>
+                <div className='font-black font-inter text-lg'>Especies  de {label}
+                  {info?.especies_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tableData={info?.especies_list} />}>
+                    <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
+                  </CustomTooltip>}
                 </div>
               </div>
+              <div className='flex flex-col justify-center h-full w-full'>
+                <div className='font-lato flex justify-evenly gap-x-4'>
+                  <div className='flex flex-col items-center'>
+                    <div className='flex items-start border-b-2 border-b-red-cr'>
+                      <b className=''>CR</b>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tooltip>
+                    </div>
+                    <span>{formatNumbers(crRegister)}</span>
+                  </div>
+                  <div className='flex flex-col items-center'>
+                    <div className='flex items-start border-b-2 border-b-orange-en'>
+                      <b className=''>EN</b>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tooltip>
+                    </div>
+                    <span>{formatNumbers(enRegister)}</span>
+                  </div>
+                  <div className='flex flex-col items-center'>
+                    <div className='flex items-start border-b-2 border-b-yellow-vu'>
+                      <b className=''>VU</b>
+                      <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
+                        <img src='/images/icon-more.svg' />
+                      </Tooltip>
+                    </div>
+                    <span>{formatNumbers(vuRegister)}</span>
+                  </div>
+                </div>
+                <div className='flex'>
+                  <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(crRegister, +crRegister + +enRegister + +vuRegister) }}></div>
+                  <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(enRegister, +crRegister + +enRegister + +vuRegister) }}></div>
+                  <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vuRegister, +crRegister + +enRegister + +vuRegister) }}></div>
+                </div>
+                <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
+                  <p className='inline-block '><b>{formatNumbers(registros)}</b></p>
+                  <p className='inline-block'>Observaciones</p>
+                </div>
+              </div>
+              <div className='flex flex-col pt-5 gap-y-10'>
+                <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-1/2 lg:w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
+                  Ver más
+                  <img src='/images/arrow-black.svg' alt='arrow button' />
+                </button>
+              </div>
+            </div>
           })}
         </div>
       </div>
@@ -93,7 +95,7 @@ const CardTematicas = props => {
             <div className='flex flex-col items-start justify-start'>
               <span className='text-6xl font-black font-inter'>
                 {formatNumbers(info?.especies_cites_total)}
-                <div className='border-t border-t-dartmouth-green w-1/2' />
+                <div className='border-t border-t-dartmouth-green' />
               </span>
               <div className='font-black font-inter text-lg'>Especies {selected} observadas
                 {info.species_list?.length && <CustomTooltip placement='left' title={<Table tableData={info.species_list} />}>
@@ -101,7 +103,6 @@ const CardTematicas = props => {
                 </CustomTooltip>}
               </div>
               <div className='flex text-sm gap-x-2 text-blue-green'>
-                {/* <img src='/images/green-arrow-right.svg' alt='arrow right' /> */}
                 <p className='inline-block '><b>{formatNumbers(info?.registros_cites_total)}</b></p>
                 <p className='inline-block'>Observaciones</p>
               </div>
@@ -136,59 +137,39 @@ const CardTematicas = props => {
 
           </div>
           <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
-            <div>
-              <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_cites_i)} especies CITES I
-                {info?.list_especies_cites_i?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_cites_i} />}>
-                </CustomTooltip>}
-              </div>
-              <div className='text-dartmouth-green font-inter'>
-                {formatNumbers(info?.registros_cites_i)} <span className='font-lato'> Observaciones</span>
-              </div>
-              <div className=''>
-                <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
-                <div className='flex'>
-                  <div className='bg-cerulean h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.especies_cites_i, +info?.especies_cites_i + +info?.parent_especies_cites_i) }}>{info?.especies_cites_i}</div>
-                  <div className='bg-lemon h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.parent_especies_cites_i, +info?.especies_cites_i + +info?.parent_especies_cites_i) }}>{info?.parent_especies_cites_i}</div>
-                </div>
-              </div>
-            </div>
 
-            <div>
-              <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_cites_ii)} especies CITES II
-                {info?.list_registros_cites_iiength && <CustomTooltip placement='left' title={<Table tableData={info?.list_registros_cites_ii} />}>
-                </CustomTooltip>}
-              </div>
-              <div className='text-dartmouth-green font-inter'>
-                {formatNumbers(info?.registros_cites_ii)} <span className='font-lato'> Observaciones</span>
-              </div>
-              <div className=''>
-                <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
-                <div className='flex'>
-                  <div className='bg-sandstorm h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.especies_cites_ii, +info?.especies_cites_ii + +info?.parent_especies_cites_ii) }}>{info?.especies_cites_ii}</div>
-                  <div className='bg-lemon h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.parent_especies_cites_ii, +info?.especies_cites_ii + +info?.parent_especies_cites_ii) }}>{info?.parent_especies_cites_ii}</div>
-                </div>
-              </div>
-            </div>
+            <BarPercent
+              bgColor={'bg-cerulean'}
+              textColor={'text-white'}
+              region={region}
+              title={'CITES I'}
+              dataTable={info?.list_especies_cites_i}
+              especies={info?.especies_cites_i}
+              parentEspecies={info?.parent_especies_cites_i}
+              registros={info?.registros_cites_i}
+            />
 
-            <div>
-              <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_cites_iii)} especies CITES III
-                {info?.list_especies_cites_iii?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_cites_iii} />}>
-                </CustomTooltip>}
-              </div>
-              <div className='text-dartmouth-green font-inter'>
-                {formatNumbers(info?.registros_cites_iii)} <span className='font-lato'> Observaciones</span>
-              </div>
-              <div className=''>
-                <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
-                <div className='flex'>
-                  <div className='bg-greenish-cyan h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.especies_cites_iii, +info?.especies_cites_iii + +info?.parent_especies_cites_iii) }}>{info?.especies_cites_iii}</div>
-                  <div className='bg-lemon h-4 flex justify-end items-center text-white pr-1.5 text-sm' style={{ width: calculateWidth(+info?.parent_especies_cites_iii, +info?.especies_cites_iii + +info?.parent_especies_cites_iii) }}>{info?.parent_especies_cites_iii}</div>
-                </div>
-              </div>
-            </div>
+            <BarPercent
+              bgColor={'bg-sandstorm'}
+              textColor={'text-white'}
+              region={region}
+              title={'CITES II'}
+              dataTable={info?.list_especies_cites_ii}
+              especies={info?.especies_cites_ii}
+              parentEspecies={info?.parent_especies_cites_ii}
+              registros={info?.registros_cites_ii}
+            />
+            <BarPercent
+              bgColor={'bg-greenish-cyan'}
+              textColor={'text-white'}
+              region={region}
+              title={'CITES III'}
+              dataTable={info?.list_especies_cites_iii}
+              especies={info?.especies_cites_iii}
+              parentEspecies={info?.parent_especies_cites_iii}
+              registros={info?.registros_cites_iii}
+            />
+
           </div>
         </div>
       </div>)
@@ -198,22 +179,14 @@ const CardTematicas = props => {
       <div className='bg-white py-10'>
         <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
           <div className='lg:w-[45%] shadow-hard flex flex-col py-12 px-8'>
-            <div className='text-6xl font-black font-inter'>
-              {formatNumbers(info?.especies_migratorias)}
-              <div className='border-t border-t-dartmouth-green w-1/2' />
-            </div>
-            <div className='font-black font-inter text-lg'>Especies {selected} observadas</div>
-            <div className='flex text-sm gap-x-2 text-blue-green'>
-              <p className='inline-block font-inter'><b>{formatNumbers(info?.registros_migratorias)}</b></p>
-              <p className='inline-block font-lato '>Observaciones</p>
-            </div>
-            <div className='mt-12'>
-              <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
-              <div className='flex'>
-                <div className='bg-sandstorm  h-4 flex justify-end items-center  pr-1.5 text-sm' style={{ width: calculateWidth(+info?.especies_migratorias, +info?.especies_migratorias + +info?.parent_especies_migratorias) }}>{info?.especies_migratorias}</div>
-                <div className='bg-orange-500 h-4 flex justify-end items-center  pr-1.5 text-sm' style={{ width: calculateWidth(+info?.parent_especies_migratorias, +info?.especies_migratorias + +info?.parent_especies_migratorias) }}>{info?.parent_especies_migratorias}</div>
-              </div>
-            </div>
+            <CardContentTem
+              selected={selected}
+              region={region}
+              especies={info?.especies_migratorias}
+              parentEspecies={info?.parent_especies_migratorias}
+              registros={info?.registros_migratorias}
+              dataTable={info?.species_list}
+            />
           </div>
           <div className='lg:w-2/5 flex items-center'>
             <ReactMarkdown>
@@ -227,24 +200,49 @@ const CardTematicas = props => {
   if (selected.toLowerCase() === 'endémicas') {
     return (
       <div className='bg-white py-10'>
-        <div className='w-10/12 mx-auto flex flex-col justify-between'>
-          <div className='lg:w-[45%] shadow-hard flex flex-col py-12 px-8'>
-            <div className='text-6xl font-black font-inter'>
-              {formatNumbers(info?.especies_endemicas)}
-              <div className='border-t border-t-dartmouth-green w-1/2' />
-            </div>
-            <div className='font-black font-inter text-lg'>Especies {selected} observadas</div>
-            <div className='flex text-sm gap-x-2 text-blue-green'>
-              <p className='inline-block font-inter'><b>{formatNumbers(info?.registros_endemicas)}</b></p>
-              <p className='inline-block font-lato '>Observaciones</p>
-            </div>
-            <div className='mt-12'>
-              <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
-              <div className='flex'>
-                <div className='bg-sandstorm  h-4 flex justify-end items-center text-sm' style={{ width: calculateWidth(+info?.especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}>{info?.especies_endemicas}</div>
-                <div className='bg-orange-500 h-4 flex justify-end items-center text-sm' style={{ width: calculateWidth(+info?.parent_especies_endemicas, +info?.especies_endemicas + +info?.parent_especies_endemicas) }}>{info?.parent_especies_endemicas}</div>
-              </div>
-            </div>
+        <div className='w-10/12 mx-auto flex flex-col md:flex-row justify-between'>
+          <div className='lg:w-1/2 shadow-hard py-12 px-8 max-w-[450px]'>
+            <CardContentTem
+              selected={selected}
+              region={region}
+              especies={info?.especies_endemicas}
+              parentEspecies={info?.parent_especies_endemicas}
+              registros={info?.registros_endemicas}
+              dataTable={info?.especies_list}
+
+            />
+          </div>
+          <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
+
+            <BarPercent
+              bgColor={'bg-red-cr '}
+              region={region}
+              title={''}
+              dataTable={info?.list_especies_cites_i}
+              especies={info?.especies_cites_i}
+              parentEspecies={info?.parent_especies_cites_i}
+              registros={info?.registros_cites_i}
+            />
+
+            <BarPercent
+              bgColor={'bg-orange-en'}
+              region={region}
+              title={''}
+              dataTable={info?.list_especies_cites_ii}
+              especies={info?.especies_cites_ii}
+              parentEspecies={info?.parent_especies_cites_ii}
+              registros={info?.registros_cites_ii}
+            />
+            <BarPercent
+              bgColor={'bg-yellow-vu'}
+              region={region}
+              title={''}
+              dataTable={info?.list_especies_cites_iii}
+              especies={info?.especies_cites_iii}
+              parentEspecies={info?.parent_especies_cites_iii}
+              registros={info?.registros_cites_iii}
+            />
+
           </div>
 
         </div>
@@ -255,84 +253,46 @@ const CardTematicas = props => {
     return (
       <div className='bg-white py-10'>
         <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
-          <div className='lg:w-2/5 shadow-hard flex flex-col py-12 px-8'>
-            <div className='text-6xl font-black font-inter'>
-              {formatNumbers(info?.especies_exoticas_total)}
-              <div className='border-t border-t-dartmouth-green w-1/2' />
-            </div>
-            <div className='font-black font-inter text-lg'>
-              Especies {selected} observadas
-              {info?.list_especies_exoticas_total?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_exoticas_total} />}>
-              </CustomTooltip>}
-            </div>
+          <div className='lg:w-2/5 shadow-hard  py-12 px-8'>
+            <CardContentTem
+              selected={selected}
+              region={region}
+              especies={info?.especies_exoticas_total}
+              parentEspecies={info?.parent_especies_exoticas}
+              registros={info?.registros_exoticas_total}
+              dataTable={info?.list_especies_exoticas_total}
+            />
 
-            <div className='flex text-sm gap-x-2 text-blue-green'>
-              <p className='inline-block font-inter'><b>{formatNumbers(info?.registros_exoticas_total)}</b></p>
-              <p className='inline-block font-lato '>Observaciones</p>
-            </div>
-            <div className=''>
-              <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
-              <div className='flex'>
-                <div className='bg-sandstorm  h-4 flex justify-end items-center pr-1.5 text-sm' style={{ width: calculateWidth(+info?.especies_exoticas_total, +info?.especies_exoticas_total + +info?.parent_especies_exoticas_total) }}>{info?.especies_exoticas_total}</div>
-                <div className='bg-orange-500 h-4 flex justify-end items-center pr-1.5 text-sm' style={{ width: calculateWidth(+info?.parent_especies_exoticas_total, +info?.especies_exoticas_total + +info?.parent_especies_exoticas_total) }}>{info?.parent_especies_exoticas_total}</div>
-              </div>
-            </div>
           </div>
 
           <div className='lg:w-[45%] flex flex-col justify-evenly gap-y-3 '>
-            <div>
-              <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_exoticas)} especies Exóticas
-                {info?.list_especies_exoticas?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_exoticas} />}>
-                </CustomTooltip>}
-              </div>
-              <div className='text-dartmouth-green font-inter'>
-                {formatNumbers(info?.registros_exoticas)} <span className='font-lato'> Observaciones</span>
-              </div>
-              <div className=''>
-                <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
-                <div className='flex'>
-                  <div className='bg-sandstorm  h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+info?.especies_exoticas, +info?.especies_exoticas + +info?.parent_especies_exoticas) }}>{info?.especies_exoticas}</div>
-                  <div className='bg-orange-500 h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+info?.parent_especies_exoticas, +info?.especies_exoticas + +info?.parent_especies_exoticas) }}>{info?.parent_especies_exoticas}</div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_exoticas_riesgo_invasion)} especies Exóticas con potencial de invasión
-                {info?.list_especies_exoticas_riesgo_observacion?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_exoticas_riesgo_observacion} />}>
-                </CustomTooltip>}
-              </div>
-              <div className='text-dartmouth-green font-inter'>
-                {formatNumbers(info?.registros_exoticas_riesgo_invasion)} <span className='font-lato'> Observaciones</span>
-              </div>
-              <div className=''>
-                <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
-                <div className='flex'>
-                  <div className='bg-sandstorm  h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+info?.especies_exoticas_riesgo_invasion, +info?.especies_exoticas_riesgo_invasion + +info?.parent_especies_exoticas_riesgo_invasion) }}>{info?.especies_exoticas_riesgo_invasion}</div>
-                  <div className='bg-orange-500 h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+info?.parent_especies_exoticas_riesgo_invasion, +info?.especies_exoticas_riesgo_invasion + +info?.parent_especies_exoticas_riesgo_invasion) }}>{info?.parent_especies_exoticas_riesgo_invasion}</div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className='font-black font-inter text-lg'>
-                {formatNumbers(info?.especies_invasoras)} especies Invasoras
-                {info?.list_especies_invasoras?.length && <CustomTooltip placement='left' title={<Table tableData={info?.list_especies_invasoras} />}>
-                </CustomTooltip>}
-              </div>
-              <div className='text-dartmouth-green font-inter'>
-                {formatNumbers(info?.registros_invasoras)} <span className='font-lato'> Observaciones</span>
-              </div>
-              <div className=''>
-                <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
-                <div className='flex'>
-                  <div className='bg-sandstorm  h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+info?.especies_invasoras, +info?.especies_invasoras + +info?.parent_especies_invasoras) }}>{info?.especies_invasoras}</div>
-                  <div className='bg-orange-500 h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+info?.parent_especies_invasoras, +info?.especies_invasoras + +info?.parent_especies_invasoras) }}>{info?.parent_especies_invasoras}</div>
-                </div>
-              </div>
-            </div>
+            <BarPercent
+              bgColor={'bg-sandstorm'}
+              region={region}
+              title={'Exóticas'}
+              dataTable={info?.list_especies_exoticas}
+              especies={info?.especies_exoticas}
+              parentEspecies={info?.parent_especies_exoticas}
+              registros={info?.registros_exoticas}
+            />
+            <BarPercent
+              bgColor={'bg-sandstorm'}
+              region={region}
+              title={'Exóticas con potencial de invasion'}
+              dataTable={info?.list_especies_exoticas_riesgo_invasion}
+              especies={info?.especies_exoticas_riesgo_invasion}
+              parentEspecies={info?.parent_especies_exoticas_riesgo_invasion}
+              registros={info?.registros_exoticas_riesgo_invasion}
+            />
+            <BarPercent
+              bgColor={'bg-sandstorm'}
+              region={region}
+              title={'Invasoras'}
+              dataTable={info?.list_especies_invasoras}
+              especies={info?.especies_invasoras}
+              parentEspecies={info?.parent_especies_invasoras}
+              registros={info?.registros_invasoras}
+            />
 
           </div>
         </div>
@@ -378,7 +338,7 @@ const CardTematicas = props => {
               </div>
               <div className='flex flex-col items-center'>
                 <div className='flex items-start border-b-2 border-b-yellow-vu'>
-                  <b>UV</b>
+                  <b>VU</b>
                   <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
                     <img src='/images/icon-more.svg' />
                   </Tooltip>
@@ -397,7 +357,36 @@ const CardTematicas = props => {
             </div>
           </div>
         </div>
-        <div>
+        <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
+
+          <BarPercent
+            bgColor={'bg-red-cr '}
+            region={region}
+            title={''}
+            dataTable={info?.list_especies_cites_i}
+            especies={info?.especies_cites_i}
+            parentEspecies={info?.parent_especies_cites_i}
+            registros={info?.registros_cites_i}
+          />
+
+          <BarPercent
+            bgColor={'bg-orange-en'}
+            region={region}
+            title={''}
+            dataTable={info?.list_especies_cites_ii}
+            especies={info?.especies_cites_ii}
+            parentEspecies={info?.parent_especies_cites_ii}
+            registros={info?.registros_cites_ii}
+          />
+          <BarPercent
+            bgColor={'bg-yellow-vu'}
+            region={region}
+            title={''}
+            dataTable={info?.list_especies_cites_iii}
+            especies={info?.especies_cites_iii}
+            parentEspecies={info?.parent_especies_cites_iii}
+            registros={info?.registros_cites_iii}
+          />
 
         </div>
       </div>
