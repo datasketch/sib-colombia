@@ -12,7 +12,7 @@ import CardContentTem from './CardContentTem'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb, region } = props
-
+  console.log(info)
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
@@ -214,34 +214,34 @@ const CardTematicas = props => {
           </div>
           <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
 
-            <BarPercent
+            {/* <BarPercent
               bgColor={'bg-red-cr '}
               region={region}
               title={''}
-              dataTable={info?.list_especies_cites_i}
-              especies={info?.especies_cites_i}
-              parentEspecies={info?.parent_especies_cites_i}
-              registros={info?.registros_cites_i}
+              dataTable={ }
+              especies={ }
+              parentEspecies={ }
+              registros={ }
             />
 
             <BarPercent
               bgColor={'bg-orange-en'}
               region={region}
               title={''}
-              dataTable={info?.list_especies_cites_ii}
-              especies={info?.especies_cites_ii}
-              parentEspecies={info?.parent_especies_cites_ii}
-              registros={info?.registros_cites_ii}
+              dataTable={ }
+              especies={ }
+              parentEspecies={ }
+              registros={ }
             />
             <BarPercent
               bgColor={'bg-yellow-vu'}
               region={region}
               title={''}
-              dataTable={info?.list_especies_cites_iii}
-              especies={info?.especies_cites_iii}
-              parentEspecies={info?.parent_especies_cites_iii}
-              registros={info?.registros_cites_iii}
-            />
+              dataTable={ }
+              especies={ }
+              parentEspecies={ }
+              registros={ }
+            /> */}
 
           </div>
 
@@ -311,7 +311,7 @@ const CardTematicas = props => {
               <div className='border-t border-t-dartmouth-green' />
             </span>
             <div className='font-black font-inter text-lg'>Especies  de {info?.label}
-              {info?.speciesList?.length && <CustomTooltip placement='left' title={<Table tableData={info?.speciesList} />}>
+              {info?.especies_list?.length && <CustomTooltip placement='left' title={<Table tableData={info?.especies_list} />}>
                 <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
               </CustomTooltip>}
             </div>
@@ -362,30 +362,27 @@ const CardTematicas = props => {
           <BarPercent
             bgColor={'bg-red-cr '}
             region={region}
-            title={''}
-            dataTable={info?.list_especies_cites_i}
-            especies={info?.especies_cites_i}
-            parentEspecies={info?.parent_especies_cites_i}
-            registros={info?.registros_cites_i}
+            title={'CR'}
+            especies={info?.cr}
+            parentEspecies={info?.parent_especies_cr}
+            registros={info?.cr_registros}
           />
 
           <BarPercent
             bgColor={'bg-orange-en'}
             region={region}
-            title={''}
-            dataTable={info?.list_especies_cites_ii}
-            especies={info?.especies_cites_ii}
-            parentEspecies={info?.parent_especies_cites_ii}
-            registros={info?.registros_cites_ii}
+            title={'EN'}
+            especies={info?.en}
+            parentEspecies={info?.parent_especies_en}
+            registros={info?.en_registros}
           />
           <BarPercent
             bgColor={'bg-yellow-vu'}
             region={region}
-            title={''}
-            dataTable={info?.list_especies_cites_iii}
-            especies={info?.especies_cites_iii}
-            parentEspecies={info?.parent_especies_cites_iii}
-            registros={info?.registros_cites_iii}
+            title={'VU'}
+            especies={info?.vu}
+            parentEspecies={info?.parent_especies_vu}
+            registros={info?.vu_registros}
           />
 
         </div>

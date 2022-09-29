@@ -3,7 +3,7 @@ import { calculateWidth, formatNumbers } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
-const BarPercent = ({ region, title, dataTable, especies, registros, parentEspecies, bgColor, textColor }) => {
+const BarPercent = ({ region, title, dataTable = [], especies, registros, parentEspecies, bgColor, textColor }) => {
   return (
     <div>
       <div className='font-bold font-inter text-lg'>

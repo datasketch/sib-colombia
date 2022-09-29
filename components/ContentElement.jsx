@@ -167,11 +167,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                     <div className='bg-orange-en h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_nacional_en, (+info?.especies_amenazadas_nacional_cr + +info?.especies_amenazadas_nacional_en + +info?.especies_amenazadas_nacional_vu)) }}></div>
                     <div className='bg-yellow-vu h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_nacional_vu, (+info?.especies_amenazadas_nacional_cr + +info?.especies_amenazadas_nacional_en + +info?.especies_amenazadas_nacional_vu)) }}></div>
                   </div>
-                  {/* <div>
-                    <div className='bg-red-cr h-4' />
-                    <div className='bg-orange-en h-4' />
-                    <div className='bg-yellow-vu h-4' />
-                  </div> */}
+
                 </div>
               </div>
 
