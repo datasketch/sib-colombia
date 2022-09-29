@@ -27,8 +27,8 @@ const BarPercent = ({ region, title, dataTable = [], especies, registros, parent
       <div className=''>
         <span className='font-bold text-sm'>Especies {region} / Especies Colombia</span>
         <div className='flex'>
-          <div className={classNames(bgColor, textColor, ' h-4 flex justify-end items-center text-sm')} style={{ width: calculateWidth(+especies, +especies + +parentEspecies) }}>{especies}</div>
-          <div className={classNames('bg-white-smoke', ' h-4 flex justify-end items-center text-sm')} style={{ width: calculateWidth(+parentEspecies, +especies + +parentEspecies) }}>{parentEspecies}</div>
+          <div className={classNames(bgColor, textColor, ' h-4 flex justify-end items-center text-sm')} style={{ width: calculateWidth(+especies, +especies + +parentEspecies) }}>{calculateWidth(+especies, +especies + +parentEspecies)}</div>
+          <div className={classNames('bg-white-smoke', ' h-4 flex justify-end items-center text-sm')} style={{ width: calculateWidth(+parentEspecies, +especies + +parentEspecies) }}></div>
 
         </div>
       </div>

@@ -12,7 +12,7 @@ import CardContentTem from './CardContentTem'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb, region } = props
-
+  // console.log(info)
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
@@ -136,7 +136,7 @@ const CardTematicas = props => {
             </div>
 
           </div>
-          <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
+          <div className='lg:w-[45%] flex flex-col justify-evenly gap-y-3 '>
 
             <BarPercent
               bgColor={'bg-cerulean'}

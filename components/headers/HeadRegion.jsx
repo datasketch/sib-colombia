@@ -24,7 +24,7 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
               </div>
 
               <div className="text-yellow-green w-full  md:w-1/3 lg:w-full flex flex-col -space-y-1 top-[40%] md:top-[40%] lg:top-[35%] left-[226px] md:left-60 absolute">
-                <span className="text-lg lg:text-4xl font-black font-inter">{formatNumbers(especiesObservadas)}</span>
+                <span className="text-lg lg:text-4xl font-black font-inter">{typeof (especiesObservadas) === 'string' ? especiesObservadas : formatNumbers(especiesEstimadas) }</span>
                 <span className="font-lato text-sm lg:text-lg">Especies observadas</span>
                 <div className='flex gap-x-2 pt-1.5'>
                   <img className='h-4 w-10' src='/images/icons/icon-green-continentales.svg' />

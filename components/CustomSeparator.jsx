@@ -9,32 +9,40 @@ import { clearLink, clearText } from '../lib/functions'
 
 export default function CustomSeparator () {
   const [breadcrumb, setbreadcrumb] = useState([])
-  // const diccionary = [
-  //   {
-  //     slug: 'Mas',
-  //     label: 'Más'
-  //   },
-  //   {
-  //     slug: 'Metodologia',
-  //     label: 'Metodología'
-  //   },
-  //   {
-  //     slug: 'Boyaca',
-  //     label: 'Boyacá'
-  //   },
-  //   {
-  //     slug: 'Narino',
-  //     label: 'Nariño'
-  //   }
-
-  // ]
-
-  // console.log(breadcrumb)
   const route = useRouter()
+
+  const diccionary = [
+    {
+      slug: 'Mas',
+      label: 'Más'
+    },
+    {
+      slug: 'Metodologia',
+      label: 'Metodología'
+    },
+    {
+      slug: 'Boyaca',
+      label: 'Boyacá'
+    },
+    {
+      slug: 'Narino',
+      label: 'Nariño'
+    },
+    {
+      slug: 'Ibague',
+      label: 'Ibagué'
+    }
+
+  ]
 
   const handleClick = (event) => {
     event.preventDefault()
     // console.info('You clicked a breadcrumb.')
+  }
+
+  const corretWord = (el, dic) => {
+    const word = dic.filter((word) => word.slug === el)[0]
+    return word?.label || el
   }
 
   const breadcrumbs = breadcrumb?.map((item, i) => {
@@ -59,11 +67,12 @@ export default function CustomSeparator () {
   })
 
   useEffect(() => {
-    const crum = route.asPath.split('/')
+    const crum = route.asPath
+      .split('/')
       .reduce((acc, cur) => [...acc, { label: clearText(cur), path: route.asPath }], [])
       .filter(e => String(e.label).trim())
-    // const correctBC = crum?.map(({ label }) => { return label = searchTitle(label, diccionary) })
-    // console.log(correctBC)
+      .reduce((acc, { label, path }) => [...acc, { label: corretWord(label, diccionary), path }], [])
+
     setbreadcrumb(crum)
   }, [route])
 

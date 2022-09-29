@@ -24,7 +24,7 @@ const Slides = ({ data, region }) => {
     return (
       <div className="px-5">
         <div>
-          <div className=' flex flex-col items-center lg:flex-row lg:justify-between lg:gap-x-12'>
+          <div className=' flex flex-col items-center lg:flex-row justify-between lg:gap-x-12'>
             <div className='flex flex-col justify-start items-start lg:w-6/12 max-w-[586px]'>
               <h2 className='text-black-2 font-black text-2xl 3xl:text-4xl'>
                 {title}
