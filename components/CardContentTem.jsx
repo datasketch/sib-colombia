@@ -2,7 +2,7 @@ import { calculateWidth, formatNumbers } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
-const CardContentTem = ({ selected, region, dataTable, especies, parentEspecies, registros }) => {
+const CardContentTem = ({ selected, region, datatable, especies, parentEspecies, registros }) => {
   return (
     <div key={selected} className='flex flex-col justify-between h-full min-h-[300px] max-h-[430px] '>
       <div>
@@ -11,7 +11,7 @@ const CardContentTem = ({ selected, region, dataTable, especies, parentEspecies,
           <div className='border-t border-t-dartmouth-green w-1/2' />
         </div>
         <div className='font-black font-inter text-lg'>Especies {selected} observadas
-          {dataTable?.length !== 0 && <CustomTooltip placement='left' title={<Table tableData={dataTable} />}>
+          {datatable?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={datatable} />}>
             <img className='inline-block ' src='/images/icons/icon-table.svg' />
           </CustomTooltip>}
 

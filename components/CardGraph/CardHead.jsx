@@ -6,7 +6,7 @@ import { formatNumbers } from '../../lib/functions'
 import CustomTooltip from '../CustomTooltip'
 import Table from '../Table'
 
-export const CardHead = ({ title, especies, registros, dataTable }) => {
+export const CardHead = ({ title, especies, registros, datatable }) => {
   return (
     <>
       <span className='font-inter font-black text-4xl'>
@@ -15,7 +15,7 @@ export const CardHead = ({ title, especies, registros, dataTable }) => {
       </span>
       <div className='text-lg font-inter font-bold relative'>
         {title}
-        {dataTable && <CustomTooltip placement='left-start' title={<Table tableData={dataTable} />}>
+        {datatable?.length !== 0 && <CustomTooltip placement='left-start' title={<Table tabledata={datatable} />}>
           <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
         </CustomTooltip>}
       </div>

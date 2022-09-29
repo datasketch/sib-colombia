@@ -18,7 +18,7 @@ function ContentElement (props) {
 
   const data = info?.subgrupo_especies?.reduce((acc, { label_grupo: name, especies_region_total: especies }) => [...acc, { name, especies }], []) || []
   const [showTreeMap, setShowTreeMap] = useState(true)
-
+  console.log(info)
   // setShowTreeMap(dataInfo)
   const handleShow = () => {
     setShowTreeMap(prevState => !prevState)
@@ -63,7 +63,7 @@ function ContentElement (props) {
                   title={'Especies amenazadas nacional'}
                   especies={info?.especies_amenazadas_nacional_total}
                   registros={info?.registros_amenazadas_nacional_total}
-                  dataTable={info?.species_list_tematica['amenazadas-nacional']}
+                  datatable={info?.species_list_tematica['amenazadas-nacional']}
                 />
                 <div className='flex flex-col justify-center h-full'>
                   <div className='font-lato flex justify-evenly gap-x-4'>
@@ -111,7 +111,7 @@ function ContentElement (props) {
                 title={'Especies amenazadas global'}
                 especies={info?.especies_amenazadas_global_total}
                 registros={info?.registros_amenazadas_global_total}
-                dataTable={info?.species_list_tematica['amenazadas-global']}
+                datatable={info?.species_list_tematica['amenazadas-global']}
                 />
 
                 <div className='flex flex-col justify-center h-full'>
@@ -158,7 +158,7 @@ function ContentElement (props) {
                 title={'Especies CITES'}
                 especies={info?.especies_cites_total}
                 registros={info?.registros_cites_total}
-                dataTable={info?.species_list_tematica?.cites}
+                datatable={info?.species_list_tematica?.cites}
                 />
 
                 <div className='flex flex-col justify-end h-full'>
@@ -195,7 +195,7 @@ function ContentElement (props) {
               {/* Migrarotias */}
               <CardSimple
                 style={1}
-                dataTable={info?.species_list_tematica?.migratorias}
+                datatable={info?.species_list_tematica.migratorias}
                 title='Especies migratorias'
                 especies={info?.especies_migratorias}
                 registros={info?.registros_migratorias}
@@ -204,7 +204,7 @@ function ContentElement (props) {
               {/* Endemicas */}
               <CardSimple
                 style={1}
-                dataTable={info?.species_list_tematica?.endemicas}
+                datatable={info?.species_list_tematica.endemicas}
                 title='Especies endémicas'
                 especies={info?.especies_endemicas}
                 registros={info?.registros_endemicas}
@@ -213,8 +213,8 @@ function ContentElement (props) {
               {/* Exoticas */}
               <CardSimple
                 style={1}
-                dataTable={info?.species_list_tematica?.exoticas}
-                title='Especies endémicas'
+                datatable={info?.species_list_tematica.exoticas}
+                title='Especies exóticas'
                 especies={info?.especies_exoticas}
                 registros={info?.registros_exoticas}
               />

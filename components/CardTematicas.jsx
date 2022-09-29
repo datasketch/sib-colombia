@@ -30,7 +30,7 @@ const CardTematicas = props => {
                   <div className='border-t border-t-dartmouth-green' />
                 </span>
                 <div className='font-black font-inter text-lg'>Especies  de {label}
-                  {info?.especies_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tableData={info?.especies_list} />}>
+                  {info?.especies_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.especies_list} />}>
                     <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
                   </CustomTooltip>}
                 </div>
@@ -98,7 +98,7 @@ const CardTematicas = props => {
                 <div className='border-t border-t-dartmouth-green' />
               </span>
               <div className='font-black font-inter text-lg'>Especies {selected} observadas
-                {info.species_list?.length && <CustomTooltip placement='left' title={<Table tableData={info.species_list} />}>
+                {info.species_list?.length && <CustomTooltip placement='left' title={<Table tabledata={info.species_list} />}>
                   <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
                 </CustomTooltip>}
               </div>
@@ -143,7 +143,7 @@ const CardTematicas = props => {
               textColor={'text-white'}
               region={region}
               title={'CITES I'}
-              dataTable={info?.list_especies_cites_i}
+              datatable={info?.list_especies_cites_i}
               especies={info?.especies_cites_i}
               parentEspecies={info?.parent_especies_cites_i}
               registros={info?.registros_cites_i}
@@ -154,7 +154,7 @@ const CardTematicas = props => {
               textColor={'text-white'}
               region={region}
               title={'CITES II'}
-              dataTable={info?.list_especies_cites_ii}
+              datatable={info?.list_especies_cites_ii}
               especies={info?.especies_cites_ii}
               parentEspecies={info?.parent_especies_cites_ii}
               registros={info?.registros_cites_ii}
@@ -164,7 +164,7 @@ const CardTematicas = props => {
               textColor={'text-white'}
               region={region}
               title={'CITES III'}
-              dataTable={info?.list_especies_cites_iii}
+              datatable={info?.list_especies_cites_iii}
               especies={info?.especies_cites_iii}
               parentEspecies={info?.parent_especies_cites_iii}
               registros={info?.registros_cites_iii}
@@ -185,7 +185,7 @@ const CardTematicas = props => {
               especies={info?.especies_migratorias}
               parentEspecies={info?.parent_especies_migratorias}
               registros={info?.registros_migratorias}
-              dataTable={info?.species_list}
+              datatable={info?.species_list}
             />
           </div>
           <div className='lg:w-2/5 flex items-center'>
@@ -208,7 +208,7 @@ const CardTematicas = props => {
               especies={info?.especies_endemicas}
               parentEspecies={info?.parent_especies_endemicas}
               registros={info?.registros_endemicas}
-              dataTable={info?.especies_list}
+              datatable={info?.especies_list}
 
             />
           </div>
@@ -218,7 +218,7 @@ const CardTematicas = props => {
               bgColor={'bg-red-cr '}
               region={region}
               title={''}
-              dataTable={ }
+              datatable={ }
               especies={ }
               parentEspecies={ }
               registros={ }
@@ -228,7 +228,7 @@ const CardTematicas = props => {
               bgColor={'bg-orange-en'}
               region={region}
               title={''}
-              dataTable={ }
+              datatable={ }
               especies={ }
               parentEspecies={ }
               registros={ }
@@ -237,7 +237,7 @@ const CardTematicas = props => {
               bgColor={'bg-yellow-vu'}
               region={region}
               title={''}
-              dataTable={ }
+              datatable={ }
               especies={ }
               parentEspecies={ }
               registros={ }
@@ -260,7 +260,7 @@ const CardTematicas = props => {
               especies={info?.especies_exoticas_total}
               parentEspecies={info?.parent_especies_exoticas}
               registros={info?.registros_exoticas_total}
-              dataTable={info?.list_especies_exoticas_total}
+              datatable={info?.list_especies_exoticas_total}
             />
 
           </div>
@@ -270,7 +270,7 @@ const CardTematicas = props => {
               bgColor={'bg-sandstorm'}
               region={region}
               title={'Exóticas'}
-              dataTable={info?.list_especies_exoticas}
+              datatable={info?.list_especies_exoticas}
               especies={info?.especies_exoticas}
               parentEspecies={info?.parent_especies_exoticas}
               registros={info?.registros_exoticas}
@@ -279,7 +279,7 @@ const CardTematicas = props => {
               bgColor={'bg-sandstorm'}
               region={region}
               title={'Exóticas con potencial de invasion'}
-              dataTable={info?.list_especies_exoticas_riesgo_invasion}
+              datatable={info?.list_especies_exoticas_riesgo_invasion}
               especies={info?.especies_exoticas_riesgo_invasion}
               parentEspecies={info?.parent_especies_exoticas_riesgo_invasion}
               registros={info?.registros_exoticas_riesgo_invasion}
@@ -288,7 +288,7 @@ const CardTematicas = props => {
               bgColor={'bg-sandstorm'}
               region={region}
               title={'Invasoras'}
-              dataTable={info?.list_especies_invasoras}
+              datatable={info?.list_especies_invasoras}
               especies={info?.especies_invasoras}
               parentEspecies={info?.parent_especies_invasoras}
               registros={info?.registros_invasoras}
@@ -311,7 +311,7 @@ const CardTematicas = props => {
               <div className='border-t border-t-dartmouth-green' />
             </span>
             <div className='font-black font-inter text-lg'>Especies  de {info?.label}
-              {info?.especies_list?.length && <CustomTooltip placement='left' title={<Table tableData={info?.especies_list} />}>
+              {info?.especies_list?.length && <CustomTooltip placement='left' title={<Table tabledata={info?.especies_list} />}>
                 <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
               </CustomTooltip>}
             </div>

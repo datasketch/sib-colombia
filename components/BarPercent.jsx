@@ -3,7 +3,7 @@ import { calculateWidth, formatNumbers } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
-const BarPercent = ({ region, title, dataTable = [], especies, registros, parentEspecies, bgColor, textColor }) => {
+const BarPercent = ({ region, title, datatable, especies, registros, parentEspecies, bgColor, textColor }) => {
   return (
     <div>
       <div className='font-bold font-inter text-lg'>
@@ -15,7 +15,7 @@ const BarPercent = ({ region, title, dataTable = [], especies, registros, parent
            <p>
               Especies {title} observadas
             </p>
-            {dataTable?.length !== 0 && <CustomTooltip placement='left' title={<Table tableData={dataTable} />}>
+            {datatable?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={datatable} />}>
               <img className='inline-block pl-0.5' src='/images/icons/icon-table.svg' />
             </CustomTooltip>}
           </div>

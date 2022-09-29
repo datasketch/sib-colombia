@@ -5,6 +5,7 @@ import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
 const ConcentricCard = ({ slug, selected, info, region, estimadasCol }) => {
+  console.log(estimadasCol)
   return (
     <div className='flex flex-col gap-4 space-y-3 lg:w-4/12 mx-auto py-8 px-3'>
       <div className='font-bold'>
@@ -15,7 +16,7 @@ const ConcentricCard = ({ slug, selected, info, region, estimadasCol }) => {
         <div className='flex gap-x-2 ' >
           <div className='font-inter font-black text-lg'>
             Especies de {selected.toLowerCase()}
-            <CustomTooltip title={<Table tableData={info?.species_list_top} general />}>
+            <CustomTooltip title={<Table tabledata={info?.species_list_top} general />}>
               <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
             </CustomTooltip>
           </div>

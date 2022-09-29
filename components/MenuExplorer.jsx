@@ -78,7 +78,7 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
             <div className='bg-transparent shadow-3 h-24 w-auto flex' key={breadcrumb[0]} ref={container}>
               <button className={`w-full h-full py-4 px-2.5 ${breadcrumb[0] === leaf.label ? 'bg-gradient-to-r from-lemon to-dartmouth-green' : 'bg-white'}`} value={leaf.slug} onClick={firstPositionBC}>
                 <div className="min-w-[80px]">
-                  <img className="mx-auto h-4 w-9" src={breadcrumb[0] === leaf.label ? ('/' + leaf.icon_white || '/images/animales-cifras-icon-white.svg') : ('/' + leaf.icon_black || '/images/animales-cifras-icon-black.svg')} />
+                  <img className="mx-auto h-4 w-9" src={breadcrumb[0] === leaf.label ? ('/' + leaf?.icon_white || '/images/animales-cifras-icon-white.svg') : ('/' + leaf?.icon_black || '/images/animales-cifras-icon-black.svg')} />
                   <p className={`w-full font-bold font-lato break-words ${breadcrumb[0] === leaf.label ? 'text-white' : 'text-black-3'}`}>
                     {leaf.label}
                   </p>

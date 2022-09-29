@@ -2,21 +2,23 @@ import classNames from 'classnames'
 import { useEffect, useState } from 'react'
 import { formatNumbers } from '../lib/functions'
 
-const Table = ({ tableData, general = false, ranking = false, overflow = false }) => {
+const Table = ({ tabledata, general = false, ranking = false, overflow = false }) => {
   const [dataShow, setdataShow] = useState([])
+
+  // console.log(tabledata)
+  // const showData = ranking
+  //   ? tabledata?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], []).sort((a, b) => a.registros > b.registros ? -1 : 1).splice(0, 10)
+  //   : tabledata?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], [])
+  const showData = tabledata?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], [])
 
   useEffect(() => {
     general
       ? setdataShow(showData)
-      : setdataShow(tableData.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], []))
+      : setdataShow(tabledata?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], []))
     return () => {
 
     }
-  }, [tableData])
-
-  const showData = ranking
-    ? tableData?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], []).sort((a, b) => a.registros > b.registros ? -1 : 1).splice(0, 10)
-    : tableData?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], [])
+  }, [tabledata])
 
   if (dataShow) {
     return (

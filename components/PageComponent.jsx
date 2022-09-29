@@ -56,7 +56,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
       </div>
 
       {/* Grupos Tematicas */}
-      {navTematica && tematica && <div className='py-10 bg-white-2'>
+      {navTematica.length !== 0 && tematica.length !== 0 && <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={navTematica} search={ tematica}>
             <MenuExplorer.Title>
@@ -79,7 +79,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
       </div>}
 
       {/* Grupos Biologicos  */}
-      {navGruposBiologicos && gruposBiologicos && <div className='py-10 bg-white-2'>
+      {navGruposBiologicos.length !== 0 && gruposBiologicos.length !== 0 && <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={navGruposBiologicos} search={gruposBiologicos}>
             <MenuExplorer.Title>
@@ -94,7 +94,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body >
               {(selected, info) => (
-                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_estimadas} />
+                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -102,7 +102,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
       </div>}
 
       {/* Grupos Interes */}
-      {navGruposInteres && gruposInteres && <div className='py-10 bg-white-2'>
+      {navGruposInteres.length !== 0 && gruposInteres.length !== 0 && <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={navGruposInteres} search={gruposInteres}>
             <MenuExplorer.Title>
@@ -117,7 +117,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
-                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_estimadas}/>
+                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total}/>
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -125,7 +125,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
       </div>}
 
       {/* Conoce las cifras por regiones */}
-      {territorio && navTerritorio && <div className='py-10 bg-white-2'>
+      {territorio.length !== 0 && navTerritorio.length !== 0 && <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={navTerritorio} search={territorio}>
             <MenuExplorer.Title>
