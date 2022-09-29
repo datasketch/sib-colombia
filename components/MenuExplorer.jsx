@@ -148,6 +148,7 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
   const { selected, selectedValue, search, updateBreadcrumb } = useContext(MenuExplorerContext)
   const info = search?.find((item) => item.slug === selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+
   return (
     <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>
       {children(selected, info, updateBreadcrumb)}

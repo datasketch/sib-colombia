@@ -39148,8 +39148,8 @@
   ],
   "territorio": [
     {
-      "slug": "municipios",
-      "label": "Municipios",
+      "slug": "departamentos",
+      "label": "Departamentos",
       "charts": [
         {
           "title": "Especies por departamento",

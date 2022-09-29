@@ -120,8 +120,8 @@ const Slides = ({ data, region }) => {
           </h2>
           <div className='lg:py-2.5'>
             <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
-              <iframe type="html" className="h-[410px] w-full" src={chart1_url} ></iframe>
-              <iframe type="html" className="h-[410px] w-full" src={chart2_url} ></iframe>
+              <iframe type="html" className="h-[410px] w-full" src={'/' + chart1_url} ></iframe>
+              <iframe type="html" className="h-[410px] w-full" src={'/' + chart2_url} ></iframe>
             </div>
           </div>
         </div>
