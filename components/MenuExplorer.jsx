@@ -9,6 +9,7 @@ import classNames from 'classnames'
 const MenuExplorerContext = createContext(null)
 
 export default function MenuExplorer ({ children, tree, search, ...restProps }) {
+  console.log(search)
   const [breadcrumb, setBreadcrumb] = useState([])
   const [selected, setSelected] = useState('')
   const [selectedValue, setSelectedValue] = useState('')
@@ -130,12 +131,14 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
       {
         (breadcrumb || []).map((m, i) => {
           return (
-            <button className='flex space-x-2 items-center' key={i} value={m} type='button' onClick={updateBreadcrumb} onChange={resetBreadcrumb}>
-              <p className='py-2 font-lato font-bold'>
-                {m}
-              </p>
+            <div className='flex space-x-2 items-center' key={i}>
+              <button value={m} type='button' onClick={updateBreadcrumb} onChange={resetBreadcrumb}>
+                <p className='py-2 font-lato font-bold'>
+                  {m}
+                </p>
+              </button>
               <img src="/images/arrow-black.svg" alt="arrow-breadcrumbs" />
-            </button>
+            </div>
           )
         })
       }

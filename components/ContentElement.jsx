@@ -11,7 +11,7 @@ import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 import { Treemap, ResponsiveContainer } from 'recharts'
 
-function ContentElement ({ selected, info, region, typeTree = false }) {
+function ContentElement ({ slug, selected, info, region, estimadasCol }) {
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
@@ -24,8 +24,11 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
     setShowTreeMap(prevState => !prevState)
   }
 
+  console.log(slug)
+  console.log('***********')
+  console.log(info)
   useEffect(() => {
-    const dataInfo = data?.length !== 0
+    const dataInfo = data?.length !== 0 && data?.length >= 2
     setShowTreeMap(dataInfo)
     return () => {
 
@@ -59,23 +62,26 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
             </div>
 
             <div className='relative pt-1.5'>
-              <Concentric outer={info?.parent[0] ? info?.parent[0].especies_region_total : info?.especies_region_total} inner={info?.especies_region_total} style='style-2' />
-              <div className='absolute -left-4 top-[260px] flex flex-col'>
-                <span className='font-black text-lg'>
-                  {formatNumbers(info?.parent[0] ? info?.parent[0].especies_region_total : info?.especies_region_total)}
-                </span>
-                <span className='text-sm'> Especies de {selected.toLowerCase()} en Colombia</span>
-              </div>
-              <div className='absolute top-52 left-1/4 flex flex-col'>
+              <Concentric outer={info?.parent[0] ? info?.parent[0].especies_region_total : slug === 'colombia' ? estimadasCol : info?.especies_region_total} inner={info?.especies_region_total} style='style-2' />
+              <div className='absolute top-[200px] left-1/4 flex flex-col'>
                 <span className='font-black text-lg'>
                   {formatNumbers(info?.especies_region_total)}
                 </span>
-                <span className='text-sm'> Especies de {selected.toLowerCase()} en {region}</span>
+                < span className='text-sm'> Especies de {selected.toLowerCase()} en {region}</span>
+              </div>
+              <div className='absolute -left-4 top-[260px] flex flex-col'>
+                <span className='font-black text-lg'>
+                  {formatNumbers(info?.parent[0] ? info?.parent[0].especies_region_total : slug === 'colombia' ? estimadasCol : info?.especies_region_total)}
+                </span>
+                {slug === 'colombia'
+                  ? (<span className='text-sm'> Especies estimadas en Colombia</span>)
+                  : (<span className='text-sm'> Especies de {selected.toLowerCase()} en Colombia</span>)
+                }
               </div>
             </div>
           </div>
           <div className='flex justify-center relative'>
-            {data?.length !== 0 && <div className={classNames('pt-12 md:pt-0', showTreeMap ? 'block' : 'hidden')}>
+            {data?.length !== 0 && data?.lenght !== 1 && <div className={classNames('pt-12 md:pt-0', showTreeMap ? 'block' : 'hidden')}>
               <div className='h-72 w-72 lg:h-96 lg:w-10/12 max-w-4xl mx-auto pb-3 lg:pb-12'>
                 <ResponsiveContainer >
                   <Treemap width={400} height={200} data={data} dataKey="especies" ratio={1 / 2} stroke="#fff" fill="#00634B" isAnimationActive={false} />
@@ -167,7 +173,6 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
                     <div className='bg-orange-en h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_nacional_en, (+info?.especies_amenazadas_nacional_cr + +info?.especies_amenazadas_nacional_en + +info?.especies_amenazadas_nacional_vu)) }}></div>
                     <div className='bg-yellow-vu h-4' style={{ width: calculateWidth(+info?.especies_amenazadas_nacional_vu, (+info?.especies_amenazadas_nacional_cr + +info?.especies_amenazadas_nacional_en + +info?.especies_amenazadas_nacional_vu)) }}></div>
                   </div>
-
                 </div>
               </div>
 
@@ -344,7 +349,7 @@ function ContentElement ({ selected, info, region, typeTree = false }) {
               </div>
 
             </div>
-            {data?.length !== 0 &&
+            {data?.length !== 0 && data?.lenght !== 1 &&
               (<button onClick={handleShow} className={classNames('border-t border-t-dartmouth-green flex p-2 ', showTreeMap ? 'absolute right-0 md:right-28 lg:-right-6 translate-y-[335.5px] md:translate-y-[288.4px] lg:translate-y-[383.5px]  transition' : 'absolute right-20 lg:-right-10 transition')}>
                 <img className={classNames(showTreeMap ? 'rotate-90 ' : 'rotate-[270deg] ', 'h-6 w-6')} src='/images/arrow-left-carousel.svg' />
               </button>)

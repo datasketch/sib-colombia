@@ -58,7 +58,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
       {/* Grupos Tematicas */}
       {navTematica && tematica && <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
-          <MenuExplorer tree={navTematica} search={tematica}>
+          <MenuExplorer tree={navTematica} search={ tematica}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras de {generalInfo.label} por
@@ -94,7 +94,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body >
               {(selected, info) => (
-                <ContentElement selected={selected} info={info} region={generalInfo.label} typeTree />
+                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_estimadas} />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -117,7 +117,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
-                <ContentElement selected={selected} info={info} region={generalInfo.label} />
+                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_estimadas}/>
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
