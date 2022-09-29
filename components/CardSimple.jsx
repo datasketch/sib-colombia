@@ -4,7 +4,6 @@ import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
 const CardSimple = ({ title, especies, registros, datatable, style }) => {
-  console.log(title, datatable)
   if (style === 1) {
     return (
       <div className='space-y-2 shadow-md flex flex-col justify-start py-6 px-4'>

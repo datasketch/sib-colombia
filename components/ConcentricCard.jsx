@@ -5,7 +5,6 @@ import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
 const ConcentricCard = ({ slug, selected, info, region, estimadasCol }) => {
-  console.log(estimadasCol)
   return (
     <div className='flex flex-col gap-4 space-y-3 lg:w-4/12 mx-auto py-8 px-3'>
       <div className='font-bold'>

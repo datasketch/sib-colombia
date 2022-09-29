@@ -18,7 +18,7 @@ function ContentElement (props) {
 
   const data = info?.subgrupo_especies?.reduce((acc, { label_grupo: name, especies_region_total: especies }) => [...acc, { name, especies }], []) || []
   const [showTreeMap, setShowTreeMap] = useState(true)
-  console.log(info)
+
   // setShowTreeMap(dataInfo)
   const handleShow = () => {
     setShowTreeMap(prevState => !prevState)
