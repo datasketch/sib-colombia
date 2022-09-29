@@ -29,7 +29,6 @@ module.exports = {
     'bg-banner-preguntas-frecuentes',
     'bg-banner-prensa',
     'bg-banner-publicadores'
-
   ],
   theme: {
     extend: {

@@ -18,7 +18,8 @@ const CustomTooltip = ({ title, children, placement }) => {
     [`& .${tooltipClasses.tooltip}`]: {
       backgroundColor: theme.palette.common.white,
       color: 'rgba(0, 0, 0, 0.87)',
-      boxShadow: theme.shadows[1]
+      boxShadow: theme.shadows[1],
+      width: '500px'
 
     }
   }))

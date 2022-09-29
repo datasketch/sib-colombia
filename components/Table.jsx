@@ -34,7 +34,7 @@ const Table = ({ tableData, general = false, ranking = false, overflow = false }
               {dataShow.map(({ label, registros, cbc, gbif }, key) =>
                 <tr key={key}>
                   <td className='pl text-xs font-lato italic text-center'>{label}</td>
-                  <td className='pl text-xs flex iten gap-2 justify-center items-center'>{formatNumbers(registros)}</td>
+                  <td className='pl text-xs flex gap-2 justify-center items-center h-full'>{formatNumbers(registros)}</td>
                   <td className='space-x-2'>
                    {cbc?.length !== 0 && <a href={cbc} target='_blank' className='font-inter underline text-azure' rel="noreferrer">CBC</a>}
                    {gbif?.length !== 0 && <a href={gbif} target='_blank' className='font-inter underline text-azure' rel="noreferrer">GBIF</a>}

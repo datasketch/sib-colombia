@@ -9,7 +9,6 @@ import classNames from 'classnames'
 const MenuExplorerContext = createContext(null)
 
 export default function MenuExplorer ({ children, tree, search, ...restProps }) {
-  console.log(search)
   const [breadcrumb, setBreadcrumb] = useState([])
   const [selected, setSelected] = useState('')
   const [selectedValue, setSelectedValue] = useState('')
