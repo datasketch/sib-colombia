@@ -68,7 +68,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
               {(selected, info, updateBreadcrumb) => (
                 slug === 'colombia'
                   ? (<CardTematicasCol slugregion={slug} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} />)
-                  : (<CardTematicas slugregion={slug} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} municipalityflag />)
+                  : (<CardTematicas slugregion={slug} parentlabel={generalInfo.parent_label} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} municipalityflag={municipalityflag} />)
 
               )}
             </MenuExplorer.Body>
@@ -92,7 +92,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body >
               {(selected, info) => (
-                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} municipalityflag/>
+                <ContentElement slug={slug} selected={selected} info={info} parentlabel={generalInfo.parent_label} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} municipalityflag={municipalityflag} />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -115,7 +115,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
-                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} municipalityflag/>
+                <ContentElement slug={slug} selected={selected} info={info} parentlabel={generalInfo.parent_label} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} municipalityflag={municipalityflag} />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -152,11 +152,12 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                             value={municipio}
                             onChange={handleChange}
                           >
-                            {municipios?.map(({ slug, label }, key) =>
-                              <MenuItem key={key}>
-                                <a href={`/${slug}`}>{label}</a>
-                              </MenuItem>
-                            )}
+                            {
+                              municipios?.map((item, key) =>
+                                <MenuItem key={key}>
+                                  <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a>
+                                </MenuItem>
+                              )}
 
                           </Select>
                         </FormControl>

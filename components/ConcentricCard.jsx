@@ -4,7 +4,9 @@ import Concentric from './Concentric'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
-const ConcentricCard = ({ slug, selected, info, region, estimadasCol, municipalityflag }) => {
+const ConcentricCard = (props) => {
+  const { slug, selected, info, region, estimadasCol, municipalityflag, parentlabel } = props
+
   return (
     <div className='flex flex-col gap-4 space-y-3 lg:w-4/12 mx-auto py-8 px-3'>
       <div className='font-bold'>
@@ -43,7 +45,7 @@ const ConcentricCard = ({ slug, selected, info, region, estimadasCol, municipali
           </span>
           {slug === 'colombia'
             ? (<span className='text-sm'> Especies estimadas en Colombia</span>)
-            : (<span className='text-sm'> Especies de {selected.toLowerCase()} en {municipalityflag ? slug : 'Colombia'}</span>)
+            : (<span className='text-sm'> Especies de {selected.toLowerCase()} en {municipalityflag ? parentlabel : 'Colombia'}</span>)
           }
         </div>
       </div>

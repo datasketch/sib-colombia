@@ -601,8 +601,8 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "NARINO VS. COLOMBIA",
-      "description": "El departamento de Narino tiene alrededor del 14% de las especies del país.",
+      "title": "NARIÑO VS. COLOMBIA",
+      "description": "El departamento de Nariño tiene alrededor del 14% de las especies del país.",
       "chart_type": "image",
       "chart_url": "static/charts/narino/reg_vs_parent.png"
     },
@@ -36223,14 +36223,14 @@
       ]
     },
     {
-      "slug": "areas-protegidas",
-      "label": "Áreas protegidas",
+      "slug": "reserva-forestal-la-planada",
+      "label": "Reserva Forestal Protectora La Planada",
       "title": "Próximamente tendrás acceso a la información de las áreas protegidas",
       "charts": []
     },
     {
-      "slug": "ecosistemas-estrategicos",
-      "label": "Ecosistemas estratégicos",
+      "slug": "resguardo-indigena-pialapi-pueblo-viejo",
+      "label": "Resguardo Indígena Pialapí Pueblo Viejo",
       "title": "Próximamente tendrás acceso a la información de ecosistemas estratégicos",
       "charts": []
     }

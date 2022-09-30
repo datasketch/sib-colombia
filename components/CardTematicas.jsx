@@ -11,7 +11,7 @@ import BarPercent from './BarPercent'
 import CardContentTem from './CardContentTem'
 
 const CardTematicas = props => {
-  const { info, selected, updateBreadcrumb, region, municipalityflag, slugregion } = props
+  const { info, selected, updateBreadcrumb, region, municipalityflag, slugregion, parentlabel } = props
 
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
@@ -148,8 +148,8 @@ const CardTematicas = props => {
               parentEspecies={info?.parent_especies_cites_i}
               registros={info?.registros_cites_i}
               link={`region=${slugregion}&tematica=${info?.slug}`}
-              municipalityflag
-              regionparent={slugregion}
+              municipalityflag={municipalityflag}
+              regionparent={parentlabel}
             />
 
             <BarPercent
@@ -162,8 +162,8 @@ const CardTematicas = props => {
               parentEspecies={info?.parent_especies_cites_ii}
               registros={info?.registros_cites_ii}
               link={`region=${slugregion}&tematica=${info?.slug}`}
-              municipalityflag
-              regionparent={slugregion}
+              municipalityflag={municipalityflag}
+              regionparent={parentlabel}
             />
             <BarPercent
               bgColor={'bg-greenish-cyan'}
@@ -175,8 +175,8 @@ const CardTematicas = props => {
               parentEspecies={info?.parent_especies_cites_iii}
               registros={info?.registros_cites_iii}
               link={`region=${slugregion}&tematica=${info?.slug}`}
-              municipalityflag
-              regionparent={slugregion}
+              municipalityflag={municipalityflag}
+              regionparent={parentlabel}
             />
 
           </div>
@@ -196,8 +196,8 @@ const CardTematicas = props => {
               registros={info?.registros_migratorias}
               datatable={info?.species_list}
               link={`region=${slugregion}&tematica=${info?.slug}`}
-              municipalityflag
-              regionparent={slugregion}
+              municipalityflag={municipalityflag}
+              regionparent={parentlabel}
             />
           </div>
           <div className='lg:w-2/5 flex items-center'>
@@ -222,8 +222,8 @@ const CardTematicas = props => {
               registros={info?.registros_endemicas}
               datatable={info?.species_list}
               link={`region=${slugregion}&tematica=${info?.slug}`}
-              municipalityflag
-              regionparent={slugregion}
+              municipalityflag={municipalityflag}
+              regionparent={parentlabel}
 
             />
           </div>
@@ -277,8 +277,8 @@ const CardTematicas = props => {
               registros={info?.registros_exoticas_total}
               datatable={info?.list_especies_exoticas_total}
               link={`region=${slugregion}&tematica=exoticas`}
-              municipalityflag
-              regionparent={slugregion}
+              municipalityflag={municipalityflag}
+              regionparent={parentlabel}
             />
 
           </div>
@@ -293,8 +293,8 @@ const CardTematicas = props => {
               parentEspecies={info?.parent_especies_exoticas}
               registros={info?.registros_exoticas}
               link={`region=${slugregion}&tematica=exoticas`}
-              municipalityflag
-              regionparent={slugregion}
+              municipalityflag={municipalityflag}
+              regionparent={parentlabel}
             />
             <BarPercent
               bgColor={'bg-sandstorm'}
@@ -305,8 +305,8 @@ const CardTematicas = props => {
               parentEspecies={info?.parent_especies_exoticas_riesgo_invasion}
               registros={info?.registros_exoticas_riesgo_invasion}
               link={`region=${slugregion}&tematica=exoticas-riesgo-invasion`}
-              municipalityflag
-              regionparent={slugregion}
+              municipalityflag={municipalityflag}
+              regionparent={parentlabel}
             />
             <BarPercent
               bgColor={'bg-sandstorm'}
@@ -318,7 +318,7 @@ const CardTematicas = props => {
               registros={info?.registros_invasoras}
               link={`region=${slugregion}&tematica=invasoras`}
               municipalityflag
-              regionparent={slugregion}
+              regionparent={parentlabel}
             />
 
           </div>
