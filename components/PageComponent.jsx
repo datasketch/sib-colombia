@@ -230,7 +230,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         </div>
       </div>
       <div>
-        <iframe src='http://44.206.0.249/app_direct_i/sib/_/' className='h-screen w-full'></iframe>
+        <iframe src='https://shiny.datasketch.co/app_direct_i/sib/_/' className='h-screen w-full'></iframe>
       </div>
 
       {patrocinador.length !== 0 && <div className='py-10 bg-white'>

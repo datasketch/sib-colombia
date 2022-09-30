@@ -1,16 +1,26 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import HeadMore from '../components/headers/HeadMore'
 import { AppContext } from './_app'
 import { useRouter } from 'next/router'
+import qs from 'qs'
 
 function explorador () {
-  const { asPath: path } = useRouter()
-  const query = path.split('?')[1] !== undefined ? '?' + path.split('?')[1] : ''
-  // console.log(query)
+  const router = useRouter()
+  const [query, setQuery] = useState('')
   const { setFooterBgColor } = useContext(AppContext)
+  const appURL = query ? `https://shiny.datasketch.co/app_direct_i/sib/_/?${query}` : 'https://shiny.datasketch.co/app_direct_i/sib/_/'
+
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
   }, [])
+
+  useEffect(() => {
+    if (!router.isReady) return
+    const { query } = router
+    const queryString = qs.stringify(query)
+    setQuery(queryString)
+  }, [router.isReady])
+
   const textDescription = 'Realiza múltiples cruces de información y genera gráficos para visualizar y analizar el comportamiento de los datos sobre biodiversidad según tu interés'
   return (
     <>
@@ -33,7 +43,7 @@ function explorador () {
 
       </div>
       <div className='py-12'>
-        <iframe className='h-screen w-full' src={`http://44.206.0.249/app_direct_i/sib/_/${query}`}></iframe>
+        <iframe className='h-screen w-full' src={appURL}></iframe>
       </div>
     </>
   )
