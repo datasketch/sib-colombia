@@ -45,7 +45,6 @@ export async function getStaticPaths () {
 export async function getStaticProps (context) {
   const { regiones, municipio } = context.params
   const content = await getMunicipalityData(regiones, municipio)
-  // console.log(content)
   return {
     props: {
       data: JSON.parse(content),

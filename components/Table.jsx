@@ -5,7 +5,6 @@ import { formatNumbers } from '../lib/functions'
 const Table = ({ tabledata, general = false, link, overflow = false }) => {
   const [dataShow, setdataShow] = useState([])
 
-  // console.log(tabledata)
   // const showData = ranking
   //   ? tabledata?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], []).sort((a, b) => a.registros > b.registros ? -1 : 1).splice(0, 10)
   //   : tabledata?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], [])

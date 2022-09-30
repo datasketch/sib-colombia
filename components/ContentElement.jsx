@@ -11,7 +11,7 @@ import { CardHead } from './CardGraph/CardHead'
 import ConcentricCard from './ConcentricCard'
 
 function ContentElement (props) {
-  const { selected, info } = props
+  const { selected, info, slug } = props
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
@@ -28,7 +28,6 @@ function ContentElement (props) {
     const dataInfo = data?.length !== 0 && data?.length >= 2
     setShowTreeMap(dataInfo)
     return () => {
-
     }
   }, [info])
 
@@ -36,7 +35,7 @@ function ContentElement (props) {
     <>
       <div key={selected} className='bg-white py-10 min-h-[600px]'>
         <div className='w-11/12 gap-y-28 lg:w-11/12 flex flex-col lg:flex-row mx-auto justify-between'>
-          <ConcentricCard {...props}/>
+          <ConcentricCard {...props} />
 
           <div className='flex justify-center relative'>
             {data?.length !== 0 && data?.lenght !== 1 && <div className={classNames('pt-12 md:pt-0', showTreeMap ? 'block' : 'hidden')}>
@@ -64,7 +63,7 @@ function ContentElement (props) {
                   especies={info?.especies_amenazadas_nacional_total}
                   registros={info?.registros_amenazadas_nacional_total}
                   datatable={info?.species_list_tematica['amenazadas-nacional']}
-                  link={`region=${info?.slug}&grupo=amenazadas_nacional`}
+                  link={`region=${slug}&grupo=${info?.slug}&tematica=amenazadas_nacional`}
                 />
                 <div className='flex flex-col justify-center h-full'>
                   <div className='font-lato flex justify-evenly gap-x-4'>
@@ -109,11 +108,12 @@ function ContentElement (props) {
               {/* global */}
               <div className='space-y-2 shadow-md flex flex-col py-6 px-4'>
                 <CardHead
-                title={'Especies amenazadas global'}
-                especies={info?.especies_amenazadas_global_total}
-                registros={info?.registros_amenazadas_global_total}
-                datatable={info?.species_list_tematica['amenazadas-global']}
-                  link={`region=${info?.slug}&grupo=amenazadas_global`}
+                  title={'Especies amenazadas global'}
+                  especies={info?.especies_amenazadas_global_total}
+                  registros={info?.registros_amenazadas_global_total}
+                  datatable={info?.species_list_tematica['amenazadas-global']}
+                  link={`region=${slug}&grupo=${info?.slug}&tematica=amenazadas_global`}
+
                 />
 
                 <div className='flex flex-col justify-center h-full'>
@@ -157,11 +157,11 @@ function ContentElement (props) {
               {/* cites */}
               <div className='space-y-2 shadow-md flex flex-col py-6 px-4'>
                 <CardHead
-                title={'Especies CITES'}
-                especies={info?.especies_cites_total}
-                registros={info?.registros_cites_total}
-                datatable={info?.species_list_tematica?.cites}
-                link={`region=${info?.slug}&grupo=cites`}
+                  title={'Especies CITES'}
+                  especies={info?.especies_cites_total}
+                  registros={info?.registros_cites_total}
+                  datatable={info?.species_list_tematica?.cites}
+                  link={`region=${slug}&grupo=${info?.slug}&tematica=cites`}
                 />
 
                 <div className='flex flex-col justify-end h-full'>
@@ -202,7 +202,7 @@ function ContentElement (props) {
                 title='Especies migratorias'
                 especies={info?.especies_migratorias}
                 registros={info?.registros_migratorias}
-                link={`region=${info?.slug}&grupo=migratorias`}
+                link={`region=${slug}&grupo=${info?.slug}&tematica=migratorias`}
               />
 
               {/* Endemicas */}
@@ -212,7 +212,7 @@ function ContentElement (props) {
                 title='Especies endémicas'
                 especies={info?.especies_endemicas}
                 registros={info?.registros_endemicas}
-                link={`region=${info?.slug}&grupo=endemicas`}
+                link={`region=${slug}&grupo=${info?.slug}&tematica=endemicas`}
               />
 
               {/* Exoticas */}
@@ -222,7 +222,7 @@ function ContentElement (props) {
                 title='Especies exóticas'
                 especies={info?.especies_exoticas}
                 registros={info?.registros_exoticas}
-                link={`region=${info?.slug}&grupo=exoticas`}
+                link={`region=${slug}&grupo=${info?.slug}&tematica=exoticas`}
               />
 
             </div>
