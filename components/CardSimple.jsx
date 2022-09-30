@@ -3,7 +3,7 @@ import { formatNumbers } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
-const CardSimple = ({ title, especies, registros, datatable, style }) => {
+const CardSimple = ({ title, especies, registros, datatable, style, link }) => {
   if (style === 1) {
     return (
       <div className='space-y-2 shadow-md flex flex-col justify-start py-6 px-4'>
@@ -14,7 +14,7 @@ const CardSimple = ({ title, especies, registros, datatable, style }) => {
 
         <div className='text-lg font-inter font-bold'>
           {title}
-          {datatable?.length !== 0 && <CustomTooltip title={<Table tabledata={datatable} />}>
+          {datatable?.length !== 0 && <CustomTooltip title={<Table tabledata={datatable} link={link}/>}>
             <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
           </CustomTooltip>}
 

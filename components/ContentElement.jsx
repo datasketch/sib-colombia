@@ -64,6 +64,7 @@ function ContentElement (props) {
                   especies={info?.especies_amenazadas_nacional_total}
                   registros={info?.registros_amenazadas_nacional_total}
                   datatable={info?.species_list_tematica['amenazadas-nacional']}
+                  link={`region=${info?.slug}&grupo=amenazadas_nacional`}
                 />
                 <div className='flex flex-col justify-center h-full'>
                   <div className='font-lato flex justify-evenly gap-x-4'>
@@ -112,6 +113,7 @@ function ContentElement (props) {
                 especies={info?.especies_amenazadas_global_total}
                 registros={info?.registros_amenazadas_global_total}
                 datatable={info?.species_list_tematica['amenazadas-global']}
+                  link={`region=${info?.slug}&grupo=amenazadas_global`}
                 />
 
                 <div className='flex flex-col justify-center h-full'>
@@ -159,6 +161,7 @@ function ContentElement (props) {
                 especies={info?.especies_cites_total}
                 registros={info?.registros_cites_total}
                 datatable={info?.species_list_tematica?.cites}
+                link={`region=${info?.slug}&grupo=cites`}
                 />
 
                 <div className='flex flex-col justify-end h-full'>
@@ -199,6 +202,7 @@ function ContentElement (props) {
                 title='Especies migratorias'
                 especies={info?.especies_migratorias}
                 registros={info?.registros_migratorias}
+                link={`region=${info?.slug}&grupo=migratorias`}
               />
 
               {/* Endemicas */}
@@ -208,6 +212,7 @@ function ContentElement (props) {
                 title='Especies endémicas'
                 especies={info?.especies_endemicas}
                 registros={info?.registros_endemicas}
+                link={`region=${info?.slug}&grupo=endemicas`}
               />
 
               {/* Exoticas */}
@@ -217,6 +222,7 @@ function ContentElement (props) {
                 title='Especies exóticas'
                 especies={info?.especies_exoticas}
                 registros={info?.registros_exoticas}
+                link={`region=${info?.slug}&grupo=exoticas`}
               />
 
             </div>

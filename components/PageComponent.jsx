@@ -10,6 +10,7 @@ import MenuExplorer from '../components/MenuExplorer'
 import PublishersCard from '../components/PublishersCard'
 import SimpleSlider from '../components/Slider'
 import Slides from '../components/Slides'
+import CardTematicasCol from './CardTematicasCol'
 
 export default function PageComponent ({ data, slug, municipality, municipalityflag = false }) {
   const {
@@ -65,7 +66,10 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body >
               {(selected, info, updateBreadcrumb) => (
-                <CardTematicas info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} municipalityflag />
+                slug === 'colombia'
+                  ? (<CardTematicasCol slugregion={slug} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} />)
+                  : (<CardTematicas slugregion={slug} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} municipalityflag />)
+
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -88,7 +92,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body >
               {(selected, info) => (
-                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} />
+                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} municipalityflag/>
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -111,7 +115,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
-                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} />
+                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} municipalityflag/>
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -150,7 +154,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                           >
                             {municipios?.map(({ slug, label }, key) =>
                               <MenuItem key={key}>
-                                <a href='/narino'>{label}</a>
+                                <a href={`/${slug}`}>{label}</a>
                               </MenuItem>
                             )}
 

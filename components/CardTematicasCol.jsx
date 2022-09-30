@@ -10,8 +10,8 @@ import ReactMarkdown from 'react-markdown'
 import BarPercent from './BarPercent'
 import CardContentTem from './CardContentTem'
 
-const CardTematicas = props => {
-  const { info, selected, updateBreadcrumb, region, municipalityflag, slugregion } = props
+const CardTematicasCol = props => {
+  const { info, slugregion, selected, updateBreadcrumb, region, municipalityflag } = props
 
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
@@ -145,11 +145,10 @@ const CardTematicas = props => {
               title={'CITES I'}
               datatable={info?.list_especies_cites_i}
               especies={info?.especies_cites_i}
-              parentEspecies={info?.parent_especies_cites_i}
+              parentEspecies={info?.estimadas_cites_i}
               registros={info?.registros_cites_i}
               link={`region=${slugregion}&tematica=${info?.slug}`}
-              municipalityflag
-              regionparent={slugregion}
+
             />
 
             <BarPercent
@@ -159,11 +158,9 @@ const CardTematicas = props => {
               title={'CITES II'}
               datatable={info?.list_especies_cites_ii}
               especies={info?.especies_cites_ii}
-              parentEspecies={info?.parent_especies_cites_ii}
+              parentEspecies={info?.estimadas_cites_ii}
               registros={info?.registros_cites_ii}
               link={`region=${slugregion}&tematica=${info?.slug}`}
-              municipalityflag
-              regionparent={slugregion}
             />
             <BarPercent
               bgColor={'bg-greenish-cyan'}
@@ -172,11 +169,9 @@ const CardTematicas = props => {
               title={'CITES III'}
               datatable={info?.list_especies_cites_iii}
               especies={info?.especies_cites_iii}
-              parentEspecies={info?.parent_especies_cites_iii}
+              parentEspecies={info?.estimadas_cites_iii}
               registros={info?.registros_cites_iii}
               link={`region=${slugregion}&tematica=${info?.slug}`}
-              municipalityflag
-              regionparent={slugregion}
             />
 
           </div>
@@ -196,8 +191,6 @@ const CardTematicas = props => {
               registros={info?.registros_migratorias}
               datatable={info?.species_list}
               link={`region=${slugregion}&tematica=${info?.slug}`}
-              municipalityflag
-              regionparent={slugregion}
             />
           </div>
           <div className='lg:w-2/5 flex items-center'>
@@ -218,13 +211,10 @@ const CardTematicas = props => {
               selected={selected}
               region={region}
               especies={info?.especies_endemicas}
-              parentEspecies={info?.parent_especies_endemicas}
+              parentEspecies={info?.estimadas_endemicas}
               registros={info?.registros_endemicas}
               datatable={info?.species_list}
               link={`region=${slugregion}&tematica=${info?.slug}`}
-              municipalityflag
-              regionparent={slugregion}
-
             />
           </div>
           <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
@@ -273,12 +263,10 @@ const CardTematicas = props => {
               selected={selected}
               region={region}
               especies={info?.especies_exoticas_total}
-              parentEspecies={info?.parent_especies_exoticas_total}
+              parentEspecies={info?.estimadas_exoticas_total}
               registros={info?.registros_exoticas_total}
               datatable={info?.list_especies_exoticas_total}
-              link={`region=${slugregion}&tematica=exoticas`}
-              municipalityflag
-              regionparent={slugregion}
+              link={`region=${slugregion}&tematica=${info?.slug}`}
             />
 
           </div>
@@ -290,11 +278,9 @@ const CardTematicas = props => {
               title={'Exóticas'}
               datatable={info?.list_especies_exoticas}
               especies={info?.especies_exoticas}
-              parentEspecies={info?.parent_especies_exoticas}
+              parentEspecies={info?.estimadas_exoticas}
               registros={info?.registros_exoticas}
-              link={`region=${slugregion}&tematica=exoticas`}
-              municipalityflag
-              regionparent={slugregion}
+              link={`region=${slugregion}&tematica=${info?.slug}`}
             />
             <BarPercent
               bgColor={'bg-sandstorm'}
@@ -302,11 +288,9 @@ const CardTematicas = props => {
               title={'Exóticas con potencial de invasion'}
               datatable={info?.list_especies_exoticas_riesgo_invasion}
               especies={info?.especies_exoticas_riesgo_invasion}
-              parentEspecies={info?.parent_especies_exoticas_riesgo_invasion}
+              parentEspecies={info?.estimadas_exoticas_riesgo_invasion}
               registros={info?.registros_exoticas_riesgo_invasion}
-              link={`region=${slugregion}&tematica=exoticas-riesgo-invasion`}
-              municipalityflag
-              regionparent={slugregion}
+              link={`region=${slugregion}&tematica=${info?.slug}`}
             />
             <BarPercent
               bgColor={'bg-sandstorm'}
@@ -314,11 +298,9 @@ const CardTematicas = props => {
               title={'Invasoras'}
               datatable={info?.list_especies_invasoras}
               especies={info?.especies_invasoras}
-              parentEspecies={info?.parent_especies_invasoras}
+              parentEspecies={info?.estimadas_exoticas_invasoras}
               registros={info?.registros_invasoras}
-              link={`region=${slugregion}&tematica=invasoras`}
-              municipalityflag
-              regionparent={slugregion}
+              link={`region=${slugregion}&tematica=${info?.slug}`}
             />
 
           </div>
@@ -385,15 +367,16 @@ const CardTematicas = props => {
           </div>
         </div>
         <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
-          <Table tabledata={info?.species_list} />
+          <Table tabledata={info?.especies_list} link={false} />
 
-          {/* <BarPercent
+          <BarPercent
             bgColor={'bg-red-cr '}
             region={region}
             title={'CR'}
             especies={info?.cr}
-            parentEspecies={info?.parent_especies_cr}
+            parentEspecies={info?.estimadas_cr}
             registros={info?.cr_registros}
+            link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
           />
 
           <BarPercent
@@ -401,17 +384,19 @@ const CardTematicas = props => {
             region={region}
             title={'EN'}
             especies={info?.en}
-            parentEspecies={info?.parent_especies_en}
+            parentEspecies={info?.estimadas_en}
             registros={info?.en_registros}
+            link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
           />
           <BarPercent
             bgColor={'bg-yellow-vu'}
             region={region}
             title={'VU'}
             especies={info?.vu}
-            parentEspecies={info?.parent_especies_vu}
+            parentEspecies={info?.estimadas_vu}
             registros={info?.vu_registros}
-          /> */}
+            link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
+          />
 
         </div>
       </div>
@@ -419,10 +404,10 @@ const CardTematicas = props => {
 
   )
 }
-CardTematicas.propTypes = {
+CardTematicasCol.propTypes = {
   info: PropTypes.object,
   selected: PropTypes.string,
   updateBreadcrumb: PropTypes.func
 }
 
-export default CardTematicas
+export default CardTematicasCol
