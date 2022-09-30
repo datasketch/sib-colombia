@@ -1,8 +1,12 @@
 import { useContext, useEffect } from 'react'
 import HeadMore from '../components/headers/HeadMore'
 import { AppContext } from './_app'
+import { useRouter } from 'next/router'
 
 function explorador () {
+  const { asPath: path } = useRouter()
+  const query = path.split('?')[1] !== undefined ? '?' + path.split('?')[1] : ''
+  // console.log(query)
   const { setFooterBgColor } = useContext(AppContext)
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
@@ -27,9 +31,9 @@ function explorador () {
           </div>
         </details>
 
-        <div className='py-12'>
-          <iframe className='h-screen w-full' src="https://datasketch.shinyapps.io/sib-data-app"></iframe>
-        </div>
+      </div>
+      <div className='py-12'>
+        <iframe className='h-screen w-full' src={`http://44.206.0.249/app_direct_i/sib/_/${query}`}></iframe>
       </div>
     </>
   )

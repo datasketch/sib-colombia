@@ -29,7 +29,7 @@ function municipio ({ data, slug, municipality }) {
         marine={generalInfo.marino}
         municipality
       />
-      <PageComponent data={data} slug={slug} municipality={municipality}/>
+      <PageComponent data={data} slug={slug} municipality={municipality} municipalityflag />
     </>
   )
 }

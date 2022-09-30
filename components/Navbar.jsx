@@ -52,10 +52,10 @@ export default function Navbar () {
     //   href: '',
     //   childs: []
     // },
-    // {
-    //   label: 'Explorador',
-    //   href: '/explorador'
-    // },
+    {
+      label: 'Explorador',
+      href: '/explorador'
+    },
     {
       color: 'flame',
       label: 'Más',
@@ -103,7 +103,7 @@ export default function Navbar () {
             </div>
             <nav className='lg:self-end'>
               {/* DESKTOP */}
-              <ul className={'relative grid grid-cols-3 text-white gap-x-6'}>
+              <ul className={'relative grid grid-cols-4 text-white gap-x-6'}>
                 {nav.map((item, i) =>
                   <DropDown key={i} >
                     <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length}>

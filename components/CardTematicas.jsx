@@ -11,8 +11,8 @@ import BarPercent from './BarPercent'
 import CardContentTem from './CardContentTem'
 
 const CardTematicas = props => {
-  const { info, selected, updateBreadcrumb, region } = props
-  // console.log(info)
+  const { info, selected, updateBreadcrumb, region, municipalityflag } = props
+
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
@@ -185,7 +185,7 @@ const CardTematicas = props => {
               especies={info?.especies_migratorias}
               parentEspecies={info?.parent_especies_migratorias}
               registros={info?.registros_migratorias}
-              datatable={info?.species_list}
+              datatable={info?.especies_list}
             />
           </div>
           <div className='lg:w-2/5 flex items-center'>
@@ -213,7 +213,7 @@ const CardTematicas = props => {
             />
           </div>
           <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
-
+            <Table tabledata={info?.especies_list} link={false}/>
             {/* <BarPercent
               bgColor={'bg-red-cr '}
               region={region}
@@ -358,8 +358,9 @@ const CardTematicas = props => {
           </div>
         </div>
         <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
+          <Table tabledata={info?.especies_list} link={false}/>
 
-          <BarPercent
+          {/* <BarPercent
             bgColor={'bg-red-cr '}
             region={region}
             title={'CR'}
@@ -383,7 +384,7 @@ const CardTematicas = props => {
             especies={info?.vu}
             parentEspecies={info?.parent_especies_vu}
             registros={info?.vu_registros}
-          />
+          /> */}
 
         </div>
       </div>

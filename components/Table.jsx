@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { useEffect, useState } from 'react'
 import { formatNumbers } from '../lib/functions'
 
-const Table = ({ tabledata, general = false, ranking = false, overflow = false }) => {
+const Table = ({ tabledata, general = false, link, overflow = false }) => {
   const [dataShow, setdataShow] = useState([])
 
   // console.log(tabledata)
@@ -48,7 +48,7 @@ const Table = ({ tabledata, general = false, ranking = false, overflow = false }
             </tbody>
           </table>
         </div>
-        <a target='_blank' href='/mas/explorador?' className='font-bold flex justify-center'>Explora lista completa </a>
+        {link && <a target='_blank' href={'/mas/explorador?' + link} className='font-bold flex justify-center' rel="noreferrer">Explora lista completa </a>}
       </div>
     )
   }

@@ -1,5 +1,5 @@
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
-import classNames from 'classnames'
+
 import { useState } from 'react'
 
 import CardTematicas from '../components/CardTematicas'
@@ -11,7 +11,7 @@ import PublishersCard from '../components/PublishersCard'
 import SimpleSlider from '../components/Slider'
 import Slides from '../components/Slides'
 
-export default function PageComponent ({ data, slug, municipality, deparment = false }) {
+export default function PageComponent ({ data, slug, municipality, municipalityflag = false }) {
   const {
     general_info: generalInfo,
     grupos_biologicos: gruposBiologicos,
@@ -29,16 +29,10 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
     gallery
   } = data
 
-  const [optionShow, setOptionShow] = useState('graph')
   const [municipio, setMunicipio] = useState('')
 
   const handleChange = (event) => {
     setMunicipio(event.target.value)
-  }
-
-  const handleRendder = (e) => {
-    const { value } = e.target
-    setOptionShow(value)
   }
 
   return (
@@ -58,7 +52,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
       {/* Grupos Tematicas */}
       {navTematica.length !== 0 && tematica.length !== 0 && <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
-          <MenuExplorer tree={navTematica} search={ tematica}>
+          <MenuExplorer tree={navTematica} search={tematica}>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras de {generalInfo.label} por
@@ -71,7 +65,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body >
               {(selected, info, updateBreadcrumb) => (
-                <CardTematicas info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} />
+                <CardTematicas info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} municipalityflag />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -117,7 +111,7 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
-                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total}/>
+                <ContentElement slug={slug} selected={selected} info={info} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -155,7 +149,9 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
                             onChange={handleChange}
                           >
                             {municipios?.map(({ slug, label }, key) =>
-                              <MenuItem key={key} value={slug} >{label}</MenuItem>
+                              <MenuItem key={key}>
+                                <a href='/narino'>{label}</a>
+                              </MenuItem>
                             )}
 
                           </Select>
@@ -228,18 +224,9 @@ export default function PageComponent ({ data, slug, municipality, deparment = f
           </div>
         </div>
       </div>
-      <div className='py-4 flex gap-8 justify-center'>
-        <button type='button' onClick={handleRendder} value='graph' className={classNames('py-2 px-4 border border-black rounded-full  ', optionShow === 'graph' ? 'bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'bg-white text-black hover:bg-dartmouth-green hover:text-white')}>Gráficos</button>
-        <button type='button' onClick={handleRendder} value='table' className={classNames('py-2 px-4 border border-black rounded-full ', optionShow === 'table' ? ' bg-dartmouth-green text-white hover:bg-white hover:text-black' : 'bg-white text-black hover:bg-dartmouth-green hover:text-white')}>Tablas</button>
+      <div>
+        <iframe src='http://44.206.0.249/app_direct_i/sib/_/' className='h-screen w-full'></iframe>
       </div>
-      {optionShow === 'graph' && <div className='mt-[55.13px] w-screen'>
-        <iframe className='h-screen w-full' src={`https://datasketch.shinyapps.io/sib-data-app/?region=${slug}`}></iframe>
-      </div>}
-      {
-        optionShow === 'table' && (<div className='mt-[55.13px] w-screen'>
-          <iframe className='h-screen w-full' src={`https://datasketch.shinyapps.io/sib-data-app-tabla?region=${slug}`}></iframe>
-        </div>)
-      }
 
       {patrocinador.length !== 0 && <div className='py-10 bg-white'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-xl'>
