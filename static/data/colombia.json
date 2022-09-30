@@ -595,7 +595,7 @@
     {
       "id": "slide3",
       "layout": "title/(chart|chart)",
-      "title": "LOS MUNICIPIOS CON MÁS: ",
+      "title": "LOS DEPARTAMENTOS CON MÁS: ",
       "description": "",
       "chart_type": "html",
       "chart1_url": "static/charts/colombia/muni_mas_endemicas.html",

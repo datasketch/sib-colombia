@@ -12,43 +12,43 @@ export default function Home () {
     {
       type: 'Departamento',
       label: 'Tolima',
-      especies: 46508,
-      espObservadas: 8246,
+      especies: 8246,
+      espObservadas: 768144,
       link: '/tolima'
     },
     {
       type: 'Departamento',
       label: 'Nariño',
-      especies: 51947,
-      espObservadas: 10323,
+      especies: 10323,
+      espObservadas: 746039,
       link: '/narino'
     },
     {
       type: 'Departamento',
       label: 'Santander',
-      especies: 38198,
-      espObservadas: 12575,
+      especies: 12575,
+      espObservadas: 493137,
       link: '/santander'
     },
     {
       type: 'Departamento',
       label: 'Boyacá',
-      especies: 41344,
-      espObservadas: 10641,
+      especies: 10641,
+      espObservadas: 427815,
       link: '/boyaca'
     },
     {
       type: 'Reserva forestal',
       label: 'La Planada',
-      // especies: '',
-      espObservadas: 2144,
+      especies: 2144,
+      espObservadas: 382431,
       link: '/narino/reserva-forestal-la-planada'
     },
     {
       type: 'Resguardo indígena',
       label: 'Piapali Pueblo Viejo',
-      // especies: '',
-      espObservadas: 342,
+      especies: 342,
+      espObservadas: 1151,
       link: '/narino/resguardo-indigena-pialapi-pueblo-viejo'
     }
   ]

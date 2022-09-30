@@ -29,7 +29,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     municipios_lista: municipios,
     gallery
   } = data
-
+  const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
 
   const handleChange = (event) => {
@@ -230,7 +230,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         </div>
       </div>
       <div>
-        <iframe src='https://shiny.datasketch.co/app_direct_i/sib/_/' className='h-screen w-full'></iframe>
+        <iframe src={appURL} className='h-screen w-full'></iframe>
       </div>
 
       {patrocinador.length !== 0 && <div className='py-10 bg-white'>
