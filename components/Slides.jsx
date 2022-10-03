@@ -3,7 +3,6 @@
 import ReactMarkdown from 'react-markdown'
 
 const Slides = ({ data, region, municipalityflag, parentlabel }) => {
-  console.log(parentlabel)
   const { layout, chart_url, title, description, texts, chart1_url, chart2_url, path } = data
   if (layout === 'title/chart') {
     return (

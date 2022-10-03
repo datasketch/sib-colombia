@@ -514,7 +514,7 @@
     "registros_region_total_str": "1.151",
     "main_text": "A través del SiB Colombia se han publicado 1.151 observaciones\npara el territorios indígenas de Pialapí Pueblo-Viejo. Estos datos hacen referencia a un total de\n342 especies.",
     "parent": "territorios-indigenas",
-    "parent_label": "Nariño"
+    "parent_label": "Territorios indígenas"
   },
   "gallery": [],
   "slides": [
@@ -522,7 +522,7 @@
       "id": "slide1",
       "layout": "title/(text|chart)",
       "title": "RESGUARDO INDIGENA PIALAPÍ PUEBLO VIEJO VS. NARIÑO",
-      "description": "El municipio de Resguardo Indigena Pialapí Pueblo Viejo tiene alrededor del 3% de las especies del departamento",
+      "description": "El municipio de Resguardo Indígena Pialapí Pueblo Viejo tiene alrededor del 3% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/resguardo-indigena-pialapi-pueblo-viejo/reg_vs_parent.png"
     },

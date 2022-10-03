@@ -29,7 +29,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     municipios_lista: municipios,
     gallery
   } = data
-  console.log(territorio)
 
   const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
@@ -46,7 +45,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <SimpleSlider dots infinite slidestoshow={1} responsiveSlidesToShow={1}>
             {slides.map((element, key) =>
-              <Slides key={key} data={element} region={generalInfo.label} municipalityflag={municipalityflag} parentlabel={generalInfo.parent_label}/>
+              <Slides key={key} data={element} region={generalInfo.label} municipalityflag={municipalityflag} parentlabel={generalInfo.parent_label} />
             )}
           </SimpleSlider>
         </div>
@@ -141,7 +140,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <MenuExplorer.Body>
               {(selected, info) => (
                 <div className='bg-white py-10'>
-                  {console.log(info)}
                   {info?.charts.length === 0
                     ? (<div className='text-center text-3xl py-20 w-4/5 mx-auto'>
                       {/* <span>Conoce más en</span> */}
