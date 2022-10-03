@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "SAN-BERNARDO-NAR VS. NARINO",
+      "title": "SAN-BERNARDO-NAR VS. NARIÑO",
       "description": "El municipio de San-Bernardo-Nar tiene alrededor del 1% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/san-bernardo-nar/reg_vs_parent.png"
@@ -1243,7 +1243,7 @@
           "slug_tematica": "exoticas-riesgo-invasion"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Asplenium serra",

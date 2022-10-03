@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "MALLAMA VS. NARINO",
+      "title": "MALLAMA VS. NARIÑO",
       "description": "El municipio de Mallama tiene alrededor del 11% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/mallama/reg_vs_parent.png"
@@ -1507,7 +1507,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Blotiella lindeniana",

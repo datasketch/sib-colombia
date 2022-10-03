@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "COLON-NAR VS. NARINO",
+      "title": "COLON-NAR VS. NARIÑO",
       "description": "El municipio de Colon-Nar tiene alrededor del 2% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/colon-nar/reg_vs_parent.png"
@@ -1430,7 +1430,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Cupressus lusitanica",

@@ -70,6 +70,7 @@ MenuExplorer.Title = function MenuExplorerTitle ({ children }) {
 MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
   const { tree, updateBreadcrumb, resetBreadcrumb, firstPositionBC, breadcrumb } = useContext(MenuExplorerContext)
   const container = useRef(null)
+
   return (
     <div className={classNames(className)} {...restProps}>
       <SimpleSlider slidestoshow={restProps.slidestoshow || 5} responsive>
@@ -87,10 +88,10 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
               <Menu
                 portal
                 menuButton={
-                  leaf.children
+                  leaf?.children
                     ? (<MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label}
                       className={`${!breadcrumb.length || breadcrumb[0] !== leaf.label ? 'cursor-default opacity-40' : 'cursor-pointer bg-opacity-100 hover:bg-dartmouth-green'}`}>
-                      <div className={classNames(' flex items-center px-2.5', breadcrumb[0] !== leaf.label ? 'border-l border-l-dartmouth-green h-3/4' : '')}>
+                      <div className={classNames('flex items-center px-2.5', breadcrumb[0] !== leaf.label ? 'border-l border-l-dartmouth-green h-3/4' : '')}>
                         <img className='h-4 w-6' src="/images/green-arrow-down.svg" alt="arrow down" />
                       </div>
                     </MenuButton>)

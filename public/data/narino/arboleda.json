@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "ARBOLEDA VS. NARINO",
+      "title": "ARBOLEDA VS. NARIÑO",
       "description": "El municipio de Arboleda tiene alrededor del 1% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/arboleda/reg_vs_parent.png"
@@ -1300,7 +1300,7 @@
           "slug_tematica": "exoticas-riesgo-invasion"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Eucalyptus globulus",

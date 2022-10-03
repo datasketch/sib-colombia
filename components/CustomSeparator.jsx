@@ -72,7 +72,7 @@ export default function CustomSeparator () {
       .reduce((acc, cur) => [...acc, { label: clearText(cur), path: route.asPath }], [])
       .filter(e => String(e.label).trim())
       .reduce((acc, { label, path }) => [...acc, { label: corretWord(label, diccionary), path }], [])
-
+    console.log(crum)
     setbreadcrumb(crum)
   }, [route])
 

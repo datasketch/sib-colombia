@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
-import mapJson from '../data/maps.json'
+import mapJson from '../static/data/maps.json'
 import { ordinalSuffixOf } from '../lib/functions'
 const MapComponent = () => {
   const [key, setkey] = useState('1')

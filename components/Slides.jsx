@@ -2,7 +2,8 @@
 
 import ReactMarkdown from 'react-markdown'
 
-const Slides = ({ data, region }) => {
+const Slides = ({ data, region, municipalityflag, parentlabel }) => {
+  console.log(parentlabel)
   const { layout, chart_url, title, description, texts, chart1_url, chart2_url, path } = data
   if (layout === 'title/chart') {
     return (
@@ -34,9 +35,13 @@ const Slides = ({ data, region }) => {
               </p>
             </div>
             <div className='lg:w-6/12 max-w-[438px]'>
-              <p className='text-center font-bold 3xl:text-lg'>
+              {municipalityflag
+                ? (<p className='text-center font-bold 3xl:text-lg'>
+                  Especies registradas en {region} vs. especies registradas en {parentlabel}
+              </p>)
+                : (<p className='text-center font-bold 3xl:text-lg'>
                 Especies registradas en {region} vs. especies registradas en Colombia
-              </p>
+              </p>)}
               <img className='mx-auto mt-4 w-11/12' src={'/' + chart_url} alt={title} />
             </div>
           </div>

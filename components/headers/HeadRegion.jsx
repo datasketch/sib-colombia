@@ -8,8 +8,8 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
   return (
     <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', 'bg-cover bg-center-bottom pt-8 lg:pt-14 pb-3.5 h-[500px] ')}>
       <div className="w-full max-w-screen-2xl mx-auto">
-        <div className="min-h-[210px] flex justify-center md:justify-between  items-center w-10/12 mx-auto">
-          <div className="font-black w-2/3 font-inter text-white text-6xl lg:text-8xl  ">{title}</div>
+        <div className="min-h-[210px] mt-4 lg:mt-0 flex justify-center md:justify-between items-center w-10/12 mx-auto">
+          <div className={classNames('font-black lg:w-2/3 font-inter text-white text-6xl', title?.length >= 20 ? 'lg:text-7xl' : 'lg: text-8xl')}>{title}</div>
           {imageMap && <div className="hidden md:flex justify-end ">
             <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageMap} />
           </div>}

@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "ROBERTO-PAYAN VS. NARINO",
+      "title": "ROBERTO-PAYAN VS. NARIÑO",
       "description": "El municipio de Roberto-Payan tiene alrededor del 1% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/roberto-payan/reg_vs_parent.png"
@@ -1183,7 +1183,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": []
     }
   ],

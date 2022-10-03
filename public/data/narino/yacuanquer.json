@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "YACUANQUER VS. NARINO",
+      "title": "YACUANQUER VS. NARIÑO",
       "description": "El municipio de Yacuanquer tiene alrededor del 4% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/yacuanquer/reg_vs_parent.png"
@@ -1432,7 +1432,7 @@
           "slug_tematica": "exoticas-riesgo-invasion"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Columba livia",

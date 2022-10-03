@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "MOSQUERA-NAR VS. NARINO",
+      "title": "MOSQUERA-NAR VS. NARIÑO",
       "description": "El municipio de Mosquera-Nar tiene alrededor del 2% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/mosquera-nar/reg_vs_parent.png"
@@ -1238,7 +1238,7 @@
           "slug_tematica": "exoticas-riesgo-invasion"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Bubulcus ibis",

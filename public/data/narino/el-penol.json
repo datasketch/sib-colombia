@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "EL-PENOL VS. NARINO",
+      "title": "EL-PENOL VS. NARIÑO",
       "description": "El municipio de El-Penol tiene alrededor del 1% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/el-penol/reg_vs_parent.png"
@@ -1013,7 +1013,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": []
     }
   ],

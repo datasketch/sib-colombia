@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "TUQUERRES VS. NARINO",
+      "title": "TUQUERRES VS. NARIÑO",
       "description": "El municipio de Tuquerres tiene alrededor del 5% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/tuquerres/reg_vs_parent.png"
@@ -1504,7 +1504,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Bubulcus ibis",

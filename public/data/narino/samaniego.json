@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "SAMANIEGO VS. NARINO",
+      "title": "SAMANIEGO VS. NARIÑO",
       "description": "El municipio de Samaniego tiene alrededor del 1% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/samaniego/reg_vs_parent.png"
@@ -1145,7 +1145,7 @@
           "slug_tematica": "exoticas-riesgo-invasion"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Adiantum poiretii",

@@ -507,22 +507,22 @@
     "especies_continentales": "NA",
     "especies_marinas": "NA",
     "subtipo": "territorios indígenas",
-    "label": "Paialapí Pueblo Viejo",
+    "label": "Pialapí Pueblo Viejo",
     "marino": false,
     "marino_text": ".",
     "especies_region_total_str": "342",
     "registros_region_total_str": "1.151",
     "main_text": "A través del SiB Colombia se han publicado 1.151 observaciones\npara el territorios indígenas de Pialapí Pueblo-Viejo. Estos datos hacen referencia a un total de\n342 especies.",
     "parent": "territorios-indigenas",
-    "parent_label": "Territorios indígenas"
+    "parent_label": "Nariño"
   },
   "gallery": [],
   "slides": [
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "RESGUARDO-INDIGENA-PIALAPI-PUEBLO-VIEJO VS. NARINO",
-      "description": "El municipio de Resguardo-Indigena-Pialapi-Pueblo-Viejo tiene alrededor del 3% de las especies del departamento",
+      "title": "RESGUARDO INDIGENA PIALAPÍ PUEBLO VIEJO VS. NARIÑO",
+      "description": "El municipio de Resguardo Indigena Pialapí Pueblo Viejo tiene alrededor del 3% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/resguardo-indigena-pialapi-pueblo-viejo/reg_vs_parent.png"
     },
@@ -674,7 +674,7 @@
       "parent_registros_exoticas_riesgo_invasion": [],
       "list_especies_exoticas_total": [],
       "list_especies_exoticas": [],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": []
     }
   ],

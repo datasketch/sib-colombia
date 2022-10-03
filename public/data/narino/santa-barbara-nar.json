@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "SANTA-BARBARA-NAR VS. NARINO",
+      "title": "SANTA-BARBARA-NAR VS. NARIÑO",
       "description": "El municipio de Santa-Barbara-Nar tiene alrededor del 1% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/santa-barbara-nar/reg_vs_parent.png"
@@ -1326,7 +1326,7 @@
           "slug_tematica": "exoticas-riesgo-invasion"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Bubulcus ibis",

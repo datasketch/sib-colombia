@@ -46,7 +46,7 @@ export default function Home () {
     },
     {
       type: 'Resguardo indígena',
-      label: 'Piapali Pueblo Viejo',
+      label: 'Pialapí Pueblo Viejo',
       especies: 342,
       espObservadas: 1151,
       link: '/narino/resguardo-indigena-pialapi-pueblo-viejo'

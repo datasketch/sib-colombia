@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "SAN-PABLO-NAR VS. NARINO",
+      "title": "SAN-PABLO-NAR VS. NARIÑO",
       "description": "El municipio de San-Pablo-Nar tiene alrededor del 1% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/san-pablo-nar/reg_vs_parent.png"
@@ -1195,7 +1195,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": []
     }
   ],

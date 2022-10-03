@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "TAMINANGO VS. NARINO",
+      "title": "TAMINANGO VS. NARIÑO",
       "description": "El municipio de Taminango tiene alrededor del 3% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/taminango/reg_vs_parent.png"
@@ -1459,7 +1459,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Columba livia",

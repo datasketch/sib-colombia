@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "RESERVA-FORESTAL-LA-PLANADA VS. NARINO",
+      "title": "RESERVA-FORESTAL-LA-PLANADA VS. NARIÑO",
       "description": "El municipio de Reserva-Forestal-La-Planada tiene alrededor del 21% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/reserva-forestal-la-planada/reg_vs_parent.png"
@@ -674,7 +674,7 @@
       "parent_registros_exoticas_riesgo_invasion": [],
       "list_especies_exoticas_total": [],
       "list_especies_exoticas": [],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": []
     }
   ],

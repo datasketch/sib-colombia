@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "SAN-ANDRES-DE-TUMACO VS. NARINO",
+      "title": "SAN-ANDRES-DE-TUMACO VS. NARIÑO",
       "description": "El municipio de San-Andres-De-Tumaco tiene alrededor del 25% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/san-andres-de-tumaco/reg_vs_parent.png"
@@ -1593,7 +1593,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Bubulcus ibis",

@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "CUMBAL VS. NARINO",
+      "title": "CUMBAL VS. NARIÑO",
       "description": "El municipio de Cumbal tiene alrededor del 8% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/cumbal/reg_vs_parent.png"
@@ -1536,7 +1536,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Passiflora tripartita",

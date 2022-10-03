@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "PUERRES VS. NARINO",
+      "title": "PUERRES VS. NARIÑO",
       "description": "El municipio de Puerres tiene alrededor del 5% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/puerres/reg_vs_parent.png"
@@ -1462,7 +1462,7 @@
           "slug_tematica": "exoticas-riesgo-invasion"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Cyathea straminea",

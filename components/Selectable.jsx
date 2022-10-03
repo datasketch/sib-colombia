@@ -7,7 +7,7 @@ const Selectable = ({ data, optionSelected, placeHolder, titles }) => {
 
   const searchTitle = (el, search) => {
     const title = search?.filter(value => value.siglas === el)[0]
-    return title?.nombre
+    return title?.nombre || el
   }
   useEffect(() => {
     document.addEventListener('click', handleClickOutside, true)

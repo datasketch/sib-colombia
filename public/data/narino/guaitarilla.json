@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "GUAITARILLA VS. NARINO",
+      "title": "GUAITARILLA VS. NARIÑO",
       "description": "El municipio de Guaitarilla tiene alrededor del 0% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/guaitarilla/reg_vs_parent.png"
@@ -812,7 +812,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": []
     }
   ],

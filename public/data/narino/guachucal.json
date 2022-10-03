@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "GUACHUCAL VS. NARINO",
+      "title": "GUACHUCAL VS. NARIÑO",
       "description": "El municipio de Guachucal tiene alrededor del 1% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/guachucal/reg_vs_parent.png"
@@ -1328,7 +1328,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Passiflora tripartita",

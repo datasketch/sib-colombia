@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "CHACHAGUI VS. NARINO",
+      "title": "CHACHAGUI VS. NARIÑO",
       "description": "El municipio de Chachagui tiene alrededor del 4% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/chachagui/reg_vs_parent.png"
@@ -1496,7 +1496,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Bubulcus ibis",

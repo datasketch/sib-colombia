@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "LA-LLANADA VS. NARINO",
+      "title": "LA-LLANADA VS. NARIÑO",
       "description": "El municipio de La-Llanada tiene alrededor del 1% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/la-llanada/reg_vs_parent.png"
@@ -1204,7 +1204,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": []
     }
   ],

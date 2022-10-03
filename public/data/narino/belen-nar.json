@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "BELEN-NAR VS. NARINO",
+      "title": "BELEN-NAR VS. NARIÑO",
       "description": "El municipio de Belen-Nar tiene alrededor del 0% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/belen-nar/reg_vs_parent.png"
@@ -960,7 +960,7 @@
       "parent_registros_exoticas_riesgo_invasion": 25230,
       "list_especies_exoticas_total": [],
       "list_especies_exoticas": [],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": []
     }
   ],

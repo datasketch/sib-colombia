@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "TANGUA VS. NARINO",
+      "title": "TANGUA VS. NARIÑO",
       "description": "El municipio de Tangua tiene alrededor del 5% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/tangua/reg_vs_parent.png"
@@ -1485,7 +1485,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Jamesonia imbricata",

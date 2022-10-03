@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "NARINO-NAR VS. NARINO",
+      "title": "NARIÑO-NAR VS. NARIÑO",
       "description": "El municipio de Narino-Nar tiene alrededor del 1% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/narino-nar/reg_vs_parent.png"
@@ -1060,7 +1060,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Taraxacum officinale",

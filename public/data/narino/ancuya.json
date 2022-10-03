@@ -521,7 +521,7 @@
     {
       "id": "slide1",
       "layout": "title/(text|chart)",
-      "title": "ANCUYA VS. NARINO",
+      "title": "ANCUYA VS. NARIÑO",
       "description": "El municipio de Ancuya tiene alrededor del 1% de las especies del departamento",
       "chart_type": "image",
       "chart_url": "static/charts/ancuya/reg_vs_parent.png"
@@ -1090,7 +1090,7 @@
           "slug_tematica": "exoticas"
         }
       ],
-      "list_especies_invasoras": {},
+      "list_especies_invasoras": [],
       "list_especies_exoticas_riesgo_invasion": [
         {
           "label": "Campyloneurum phyllitidis",
