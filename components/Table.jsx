@@ -19,7 +19,7 @@ const Table = ({ tabledata, general = false, link, overflow = false }) => {
     }
   }, [tabledata])
 
-  if (dataShow) {
+  if (dataShow?.length !== 0) {
     return (
       <div className='flex flex-col gap-y-1.5 max-w-xl'>
         <div className={classNames(overflow ? '' : 'h-auto w-full')}>
@@ -32,7 +32,7 @@ const Table = ({ tabledata, general = false, link, overflow = false }) => {
               </tr>
             </thead>
             <tbody className="text-black text-center">
-              {dataShow.map(({ label, registros, cbc, gbif }, key) =>
+              {dataShow?.map(({ label, registros, cbc, gbif }, key) =>
                 <tr key={key}>
                   <td className='pl text-xs font-lato italic text-center'>{label}</td>
                   <td className='pl text-xs flex gap-2 justify-center items-center h-full'>{formatNumbers(registros)}</td>

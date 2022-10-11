@@ -96,7 +96,9 @@ module.exports = {
         'pastel-periwinkle': '#8FABFF',
         blueberry: '#4B3CB4',
         'pastel-orange': '#FF9739',
-        'light-orange': '#FFBC4E'
+        'light-orange': '#FFBC4E',
+        'peach-crayola': '#FFCC99',
+        'cornflower-blue': '#6699FF'
 
       },
 

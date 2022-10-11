@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useEffect, useRef, useState } from 'react'
 
-const Selectable = ({ data, optionSelected, placeHolder, titles }) => {
+const Selectable = ({ data, optionSelected, placeHolder, titles, disabled = false }) => {
   const [open, setOpen] = useState(false)
   const refSelectable = useRef(null)
 
@@ -24,7 +24,7 @@ const Selectable = ({ data, optionSelected, placeHolder, titles }) => {
 
   return (
     <div className='relative' ref={refSelectable}>
-      <button type='button' onClick={() => setOpen(prevState => !prevState)} className='border border-black flex items-center justify-between px-2.5 py-1.5 h-full w-full'>
+      <button type='button' onClick={() => setOpen(prevState => !prevState)} disabled={disabled} className={classNames('border border-black flex items-center justify-between px-2.5 py-1.5 h-full w-full', disabled ? 'bg-white-smoke' : '')}>
         <span>{placeHolder}</span>
         <img className={classNames(open ? '-rotate-90' : 'rotate-90', ' w-6 h-3')} src='/images/arrow-black.svg' />
       </button>

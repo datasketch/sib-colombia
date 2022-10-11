@@ -101,7 +101,7 @@ export default function publicadores () {
           <Selectable key={render} placeHolder={selectedCountry || 'Pais del Publicador'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
         </div>
         <div >
-          <Selectable key={render} placeHolder={selectedOrganizacion || 'Tipo de Organización'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
+          <Selectable disabled={selectedCountry !== 'CO'} key={render} placeHolder={selectedOrganizacion || 'Tipo de Organización'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
         </div>
         <div className='flex items-center lg:justify-center'>
           <button type='button' onClick={clearFilters} className='font-lato font-bold underline' value={'reset'}>

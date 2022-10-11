@@ -20,11 +20,11 @@ export default function Footer () {
           <div className="flex flex-col gap-y-6 lg:flex-row gap-x-16">
             <div className="flex text-center lg:text-left flex-col gap-y-2.5 text-sm font-lato">
               <b > Acerca de</b>
-              <a target='_blank' href='https://biodiversidad.co/post/2022/biodiversidad-colombia-cifras-2022/' rel="noreferrer">Esta versión</a>
+              <a target='_blank' href='/mas/acerca-de' rel="noreferrer">Esta versión</a>
               <a target='_blank' href='/mas/metodologia' rel="noreferrer">Metodología</a>
-              <a target='_blank' href='https://gitlab.com/sib-colombia/sintesis_cifras/-/tree/master' rel="noreferrer">Datos</a>
-              <a target='_blank' href='https://biodiversidad.co/recursos/citar/#cifra-o-indicador-sobre-biodiversidad' rel="noreferrer">Cómo citar</a>
-              <span>Reportar inconsistencias</span>
+              <a target='_blank' href='https://gitlab.com/sib-colombia/cifras-biodiversidad' rel="noreferrer">Datos</a>
+              <a target='_blank' href='/mas/acerca-de#como-citar' rel="noreferrer">Cómo citar</a>
+              <a target='_blank' href='https://github.com/datasketch/humboldt-biodiversidad-en-cifras/issues' rel="noreferrer">Reportar inconsistencias</a>
             </div>
             <div className="text-center lg:text-left flex flex-col gap-y-2.5 text-sm font-lato">
               <b>Enlaces</b>
@@ -38,7 +38,7 @@ export default function Footer () {
               <a target='_blank' href='mailto:sib@humboldt.org.co' rel="noreferrer">sib@humboldt.org.co</a>
               <span>PBX:(+601) 3202767</span>
               <span>Calle 28A # 15-09</span>
-              <span>Bogotá D.C, Colombia</span>
+              <span>Bogotá D.C., Colombia</span>
               <div className="flex gap-x-4 justify-center  lg:justify-start items-center">
                 <a target='_blank' href='https://twitter.com/sibcolombia' rel="noreferrer">
                   <img src='/images/icons/icon-tw.svg' className='h-5 w-5'/>
@@ -56,9 +56,9 @@ export default function Footer () {
         </div>
       </div>
       <div className="text-center w-6/12 lg:w-2/12 mx-auto">
-        <div className='underline text-sm font-lato text-white py-1'>
+        {/* <div className='underline text-sm font-lato text-white py-1'>
           Versión 2022-2
-        </div>
+        </div> */}
         <div className="border-b border-b-white pb-2 " />
         <div className='py-2'>
           <img className='lg:h-4 mx-auto' src='/images/powered-by.svg' alt='icon powered by datasketch' />

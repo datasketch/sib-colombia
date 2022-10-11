@@ -143,7 +143,7 @@ function acercaDe () {
             </div>
 
             <p className='font-lato' >
-              En cada uno de estos ejes encontrás un menú para que selecciones los perfiles sobre los cuáles deseas conocer cifras, ya sea Colombia, un departamento específico, un grupo_biologico_int o una temática de tu interés.
+              En cada uno de estos ejes encontrarás un menú para que selecciones los perfiles sobre los cuáles deseas conocer cifras, ya sea Colombia, un departamento específico, un grupo biológico o una temática de tu interés.
             </p>
             <p className='font-lato'>Dentro de cada perfil puedes ver diferentes franjas de información. Puedes concer el detalle de las cifras dando clic sobre cada franja y navegar en los árboles de los grupos biológicos, temáticas y regiones. Estas franjas varían dependiendo del perfil que estes visualizando.
 
@@ -151,7 +151,7 @@ function acercaDe () {
 
             <div className='flex flex-col gap-y-3  lg:flex-row justify-between'>
               <a href='/mas/glosario?search=grupos biologicos' target='_blank' className='font-lato py-2 px-2.5 border border-black rounded-full' rel="noreferrer" >Grupos biológicos</a>
-              <a href='/mas/glosario?search=grupos biologicos de interes' target='_blank' className='font-lato py-2 px-2.5 border border-black rounded-full' rel="noreferrer" >Grupos biológicos de interés</a>
+              <a href='/mas/glosario?search=grupos biologicos de interes' target='_blank' className='font-lato py-2 px-2.5 border border-black rounded-full' rel="noreferrer" >Grupos de interés</a>
               <a href='/mas/glosario?search=tematicas' target='_blank' className='font-lato py-2 px-2.5 border border-black rounded-full' rel="noreferrer" >Temáticas</a>
               <a href='/mas/glosario?search=regiones' target='_blank' className='font-lato py-2 px-2.5 border border-black rounded-full' rel="noreferrer" >Regiones</a>
             </div>

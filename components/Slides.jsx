@@ -35,12 +35,28 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
             </div>
             <div className='lg:w-6/12 max-w-[438px]'>
               {municipalityflag
-                ? (<p className='text-center font-bold 3xl:text-lg'>
-                  Especies registradas en {region} vs. especies registradas en {parentlabel}
-              </p>)
-                : (<p className='text-center font-bold 3xl:text-lg'>
-                Especies registradas en {region} vs. especies registradas en Colombia
-              </p>)}
+                ? (
+               <div className='text-center font-bold  flex flex-col items-center'>
+                  <div className='inline-flex gap-x-1.5 items-center'>
+                    <div className='w-4 h-4 bg-cornflower-blue' />
+                    Especies observadas en {region}
+                  </div>
+                  <div className='inline-flex gap-x-1.5 items-center'>
+                    <div className='w-4 h-4 bg-peach-crayola' />
+                    Especies observadas en {parentlabel}
+                  </div>
+                </div>
+                  )
+                : (<div className='text-center font-bold  flex flex-col items-center'>
+                  <div className='inline-flex gap-x-1.5 items-center'>
+                    <div className='w-4 h-4 bg-cornflower-blue' />
+                    Especies observadas en {region}
+                  </div>
+                  <div className='inline-flex gap-x-1.5 items-center'>
+                    <div className='w-4 h-4 bg-peach-crayola' />
+                    Especies observadas en Colombia
+                  </div>
+                </div>)}
               <img className='mx-auto mt-4 w-11/12' src={'/' + chart_url} alt={title} />
             </div>
           </div>

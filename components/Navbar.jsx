@@ -116,7 +116,6 @@ export default function Navbar () {
                             {children.label}
                           </DropDown.Item>
                         </div>
-
                       )
                       }
                     </DropDown.Items>
