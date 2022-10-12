@@ -9,11 +9,15 @@ import PageComponent from '../../../components/PageComponent'
 
 function municipio ({ data, slug, municipality }) {
   const { general_info: generalInfo } = data
-  const { setFooterBgColor } = useContext(AppContext)
+  const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
 
   useEffect(() => {
+    setBreadCrumb([{ label: generalInfo.parent_label, href: '/' + generalInfo.parent }, { label: generalInfo.label }])
     setFooterBgColor('bg-footer-green')
-  }, [])
+    return () => {
+
+    }
+  }, [data])
   return (
     <>
       <Head>

@@ -10,7 +10,7 @@ import { AppContext } from '../_app'
 export default function glosario () {
   const fuse = new Fuse(glosaryData, { keys: ['termino'], threshold: 1 })
 
-  const { setFooterBgColor } = useContext(AppContext)
+  const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const router = useRouter()
   const [query, setQuery] = useState('')
 
@@ -29,7 +29,9 @@ export default function glosario () {
 
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
+    setBreadCrumb([{ label: 'Más' }, { label: 'Glosario' }])
     return () => {
+
     }
   }, [])
   return (

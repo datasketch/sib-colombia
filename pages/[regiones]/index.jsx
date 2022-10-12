@@ -11,11 +11,15 @@ import PageComponent from '../../components/PageComponent'
 export default function index ({ data, slug }) {
   const { general_info: generalInfo } = data
 
-  const { setFooterBgColor } = useContext(AppContext)
+  const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
 
   useEffect(() => {
     setFooterBgColor('bg-footer-green')
-  }, [])
+    setBreadCrumb([{ label: generalInfo.label, href: generalInfo.slug }])
+    return () => {
+
+    }
+  }, [data])
 
   return (
     <>

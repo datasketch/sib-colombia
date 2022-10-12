@@ -7,8 +7,9 @@ export const AppContext = createContext()
 
 function MyApp ({ Component, pageProps }) {
   const [footerBgColor, setFooterBgColor] = useState('bg-footer-green')
+  const [breadCrumb, setBreadCrumb] = useState([])
   return (
-    <AppContext.Provider value={{ footerBgColor, setFooterBgColor }}>
+    <AppContext.Provider value={{ footerBgColor, setFooterBgColor, breadCrumb, setBreadCrumb }}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

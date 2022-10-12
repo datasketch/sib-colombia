@@ -14,7 +14,7 @@ export default function publicadores () {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
   const PageSize = 15
   const router = useRouter()
-  const { setFooterBgColor } = useContext(AppContext)
+  const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
 
   // eslint-disable-next-line no-unused-vars
@@ -83,7 +83,11 @@ export default function publicadores () {
   }, [router.isReady])
 
   useEffect(() => {
+    setBreadCrumb([{ label: 'Más' }, { label: 'Publicadores' }])
     setFooterBgColor('bg-footer-orange')
+    return () => {
+
+    }
   }, [])
 
   return (

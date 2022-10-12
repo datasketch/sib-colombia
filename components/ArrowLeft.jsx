@@ -1,8 +1,8 @@
 const ArrowLeft = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
+    width="15px"
+    height="14px"
     viewBox="0 0 14.832 13.983"
     {...props}
   >

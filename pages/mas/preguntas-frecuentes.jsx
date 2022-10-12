@@ -4,10 +4,14 @@ import HeadMore from '../../components/headers/HeadMore'
 import { AppContext } from '../_app'
 import questions from '../../static/data/preg_frecuentes.json'
 export default function preguntasFrecuentes () {
-  const { setFooterBgColor } = useContext(AppContext)
+  const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
 
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
+    setBreadCrumb([{ label: 'Más' }, { label: 'Preguntas frecuentes' }])
+    return () => {
+
+    }
   }, [])
   return (
     <>

@@ -18,9 +18,13 @@ function prensa () {
       link: 'https://biodiversidad.co/post/2022/biodiversidad-colombia-cifras-2022/'
     }
   ]
-  const { setFooterBgColor } = useContext(AppContext)
+  const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
+    setBreadCrumb([{ label: 'Más' }, { label: 'Prensa' }])
+    return () => {
+
+    }
   }, [])
   return (
     <>

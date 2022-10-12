@@ -5,10 +5,14 @@ import { useContext, useEffect } from 'react'
 import { AppContext } from '../_app'
 
 function acercaDe () {
-  const { setFooterBgColor } = useContext(AppContext)
+  const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
 
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
+    setBreadCrumb([{ label: 'Más' }, { label: 'Acerca de' }])
+    return () => {
+
+    }
   }, [])
 
   const contentNav = ['acerca-de', 'antes-de', 'porque-es', 'quienes-contribuyeron', 'como-aportar', 'como-citar', 'como-navegar']

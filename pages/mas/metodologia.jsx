@@ -115,9 +115,13 @@ export default function metodologia () {
     }
   ]
 
-  const { setFooterBgColor } = useContext(AppContext)
+  const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
+    setBreadCrumb([{ label: 'Más' }, { label: 'Metodología' }])
+    return () => {
+
+    }
   }, [])
   return (
     <>
@@ -357,7 +361,7 @@ export default function metodologia () {
                 <span className='text-base font-lato'>Descargar la metodología </span>
                 <img className='w-3 h-4' src='/images/icon-download.svg' />
               </a>
-              <a className='flex justify-center items-center gap-2 py-1 lg:w-4/12 px-1.5 border border-black rounded-full' href='#' >
+              <a className='flex justify-center items-center gap-2 py-1 lg:w-4/12 px-1.5 border border-black rounded-full' href='https://www.zotero.org/groups/4455905/biodiversidadencifras/library' target='_blank' rel="noreferrer" >
                 <span className='text-base font-lato'>Conocer la bibliografía</span>
               </a>
             </div>

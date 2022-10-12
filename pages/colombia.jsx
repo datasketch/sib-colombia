@@ -9,9 +9,13 @@ import PageComponent from '../components/PageComponent'
 export default function colombia () {
   const { general_info: generalInfo } = col
 
-  const { setFooterBgColor } = useContext(AppContext)
+  const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   useEffect(() => {
+    setBreadCrumb([{ label: generalInfo.label }])
     setFooterBgColor('bg-footer-green')
+    return () => {
+
+    }
   }, [])
 
   return (
