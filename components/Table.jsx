@@ -37,8 +37,8 @@ const Table = ({ tabledata, general = false, link, overflow = false }) => {
                   <td className='pl text-xs font-lato italic text-center'>{label}</td>
                   <td className='pl text-xs flex gap-2 justify-center items-center h-full'>{formatNumbers(registros)}</td>
                   <td className='space-x-2'>
-                   {cbc?.length !== 0 && <a href={cbc} target='_blank' className='font-inter underline text-azure' rel="noreferrer">CBC</a>}
-                   {gbif?.length !== 0 && <a href={gbif} target='_blank' className='font-inter underline text-azure' rel="noreferrer">GBIF</a>}
+                   {cbc !== '' && cbc !== undefined && <a href={cbc} target='_blank' className='font-inter underline text-azure' rel="noreferrer">CBC</a>}
+                   {gbif !== '' && gbif !== undefined && <a href={gbif} target='_blank' className='font-inter underline text-azure' rel="noreferrer">GBIF</a>}
                   </td>
 
                 </tr>

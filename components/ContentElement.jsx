@@ -2,7 +2,7 @@
 import classNames from 'classnames'
 import { useEffect, useState } from 'react'
 
-import { Treemap, ResponsiveContainer } from 'recharts'
+import { Treemap, ResponsiveContainer, Tooltip as TooltipTreemap } from 'recharts'
 
 import { Tooltip } from '@mui/material'
 import { calculateWidth, formatNumbers } from '../lib/functions'
@@ -10,6 +10,21 @@ import tooltips from '../static/data/tooltips.json'
 import CardSimple from './CardSimple'
 import { CardHead } from './CardGraph/CardHead'
 import ConcentricCard from './ConcentricCard'
+
+const CustomTooltip = (props) => {
+  const { active, payload } = props
+  if (active && payload && payload.length) {
+    const { name } = payload[0].payload
+    return (
+      <div className="bg-white p-2">
+        <p className="text-dartmouth-green font-bold">{`${name}: ${payload[0].value} especies`}</p>
+
+      </div>
+    )
+  }
+
+  return null
+}
 
 function ContentElement (props) {
   const { selected, info, slug } = props
@@ -42,7 +57,9 @@ function ContentElement (props) {
             {data?.length !== 0 && data?.lenght !== 1 && <div className={classNames('pt-12 md:pt-0', showTreeMap ? 'block' : 'hidden')}>
               <div className='h-72 w-72 lg:h-96 lg:w-10/12 max-w-4xl mx-auto pb-3 lg:pb-12'>
                 <ResponsiveContainer >
-                  <Treemap width={400} height={200} data={data} dataKey="especies" ratio={4 / 3} stroke="#fff" fill="#00634B" isAnimationActive={false} />
+                  <Treemap width={400} height={200} data={data} dataKey="especies" ratio={4 / 3} stroke="#fff" fill="#00634B" isAnimationActive={false} >
+                    <TooltipTreemap content={<CustomTooltip/>}/>
+                    </Treemap>
                 </ResponsiveContainer>
               </div>
               <div className={classNames('p-6 border-t border-t-dartmouth-green grid lg:grid-cols-3 pt-4 gap-2 ')}>

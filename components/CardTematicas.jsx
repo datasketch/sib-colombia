@@ -317,7 +317,7 @@ const CardTematicas = props => {
               parentEspecies={info?.parent_especies_invasoras}
               registros={info?.registros_invasoras}
               link={`region=${slugregion}&tematica=invasoras`}
-              municipalityflag
+              municipalityflag={municipalityflag}
               regionparent={parentlabel}
             />
 
