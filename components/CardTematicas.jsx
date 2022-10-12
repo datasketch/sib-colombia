@@ -201,7 +201,7 @@ const CardTematicas = props => {
             />
           </div>
           <div className='lg:w-2/5 flex items-center'>
-            <ReactMarkdown>
+            <ReactMarkdown className='rc-markdown font-lato'>
               {info?.texto}
             </ReactMarkdown>
           </div>

@@ -40,7 +40,6 @@ const Table = ({ tabledata, general = false, link, overflow = false }) => {
                    {cbc !== '' && cbc !== undefined && <a href={cbc} target='_blank' className='font-inter underline text-azure' rel="noreferrer">CBC</a>}
                    {gbif !== '' && gbif !== undefined && <a href={gbif} target='_blank' className='font-inter underline text-azure' rel="noreferrer">GBIF</a>}
                   </td>
-
                 </tr>
               )}
 

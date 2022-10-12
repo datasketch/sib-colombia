@@ -16,9 +16,8 @@ const CustomTooltip = (props) => {
   if (active && payload && payload.length) {
     const { name } = payload[0].payload
     return (
-      <div className="bg-white p-2">
-        <p className="text-dartmouth-green font-bold">{`${name}: ${payload[0].value} especies`}</p>
-
+      <div className="bg-white p-1.5">
+        <p className="text-dartmouth-green ">{`${name}: ${payload[0].value} especies`}</p>
       </div>
     )
   }
