@@ -53349,7 +53349,24 @@
       "url_socio": "https://biodiversidad.co/data/?publishingOrg=abd95fb6-cfae-4f16-9e57-c94f414ef38d"
     }
   ],
-  "municipios_lista": [],
+  "municipios_lista": [
+    {
+      "slug": "boyaca",
+      "label": "Boyacá"
+    },
+    {
+      "slug": "narino",
+      "label": "Nariño"
+    },
+    {
+      "slug": "santander",
+      "label": "Santander"
+    },
+    {
+      "slug": "tolima",
+      "label": "Tolima"
+    }
+  ],
   "departamentos_lista": [
     {
       "slug": "boyaca",

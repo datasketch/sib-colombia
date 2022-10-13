@@ -36269,16 +36269,18 @@
       ]
     },
     {
-      "slug": "areas-protegidas",
-      "label": "Áreas protegidas",
+      "slug": "reserva-forestal-la-planada",
+      "label": "Reserva Forestal Protectora La Planada",
       "title": "Próximamente tendrás acceso a la información de las áreas protegidas",
-      "charts": []
+      "charts": [],
+      "link":"/narino/reserva-forestal-la-planada"
     },
     {
-      "slug": "ecosistemas-estrategicos",
-      "label": "Ecosistemas estratégicos",
+      "slug": "resguardo-indigena-pialapi-pueblo-viejo",
+      "label": "Resguardo Indígena Pialapí Pueblo Viejo",
       "title": "Próximamente tendrás acceso a la información de ecosistemas estratégicos",
-      "charts": []
+      "charts": [],
+      "link":"/narino/resguardo-indigena-pialapi-pueblo-viejo"
     }
   ],
   "patrocinador": [
