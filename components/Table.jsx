@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import { formatNumbers } from '../lib/functions'
 
 const Table = ({ tabledata, general = false, link, overflow = false }) => {
+  // if (typeof tabledata !== 'object' && !Array.isArray(tabledata)) return null
+
   const [dataShow, setdataShow] = useState([])
 
   // const showData = ranking
