@@ -25,8 +25,13 @@ function explorador () {
   return (
     <>
       <HeadMore title={'Explorador'} content description={textDescription} />
-      <div className='max-w-screen-2xl mx-auto'>
-
+      <div className='max-w-screen-2xl mx-auto px-6'>
+        <div className='pt-8'>
+          <p className='flex items-center justify-end space-x-4 text-sm'>
+            <span className='bg-blueberry text-white px-3 py-2 rounded-full text-xs font-bold tracking-wider uppercase'>Versión Beta</span>
+            <a href='https://forms.gle/Wb45MnSCgN6YVsdc6' target="_blank" rel="noreferrer" className='underline'>Ayúdanos a mejorar la aplicación</a>
+          </p>
+        </div>
         <details className='pt-8'>
           <summary className='flex items-center w-3/12  justify-center mx-auto gap-x-4 border border-black px-3 py-2 rounded-full cursor-pointer'>
             <p>
