@@ -36,11 +36,9 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   const handleChange = (event) => {
     setMunicipio(event.target.value)
   }
-
   return (
     <>
-      {gallery && <Gallery gallery={gallery} />}
-
+      {gallery.length !== 0 && <Gallery gallery={gallery} />}
       <div className='bg-white-3 pt-3'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <SimpleSlider dots infinite slidestoshow={1} responsiveSlidesToShow={1}>
@@ -202,7 +200,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             </SimpleSlider>
           </div>
           <div className='text-center'>
-            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href={`/mas/publicadores?region=${municipalityflag ? generalInfo.parent_label : generalInfo.label || slug}`}>
+            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href={`/mas/publicadores?region=${generalInfo.label || slug}`}>
               Todos los publicadores
             </a>
           </div>

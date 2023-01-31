@@ -2,6 +2,7 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import rehypeRaw from 'rehype-raw'
 
 import classNames from 'classnames'
+import Tooltip from './Tooltip'
 
 const Gallery = ({ gallery }) => {
   if (!gallery) return
@@ -20,8 +21,11 @@ const Gallery = ({ gallery }) => {
         }
         if (image) {
           return (
-            <div key={key} /* className={[2, 7, 12, 17, 22, 27].includes(key) ? 'col-span-2' : ''} */>
-              <img className="min-h-36 max-h-36  w-full h-full object-cover" src={image} />
+            <div key={key} className='relative' /* className={[2, 7, 12, 17, 22, 27].includes(key) ? 'col-span-2' : ''} */>
+              <img className="min-h-[10rem] max-h-40 min-w-[10rem]  w-full h-full object-cover" src={image} />
+              <div className='absolute bottom-0.5 right-0.5'>
+                <Tooltip />
+              </div>
             </div>
           )
         }

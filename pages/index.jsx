@@ -3,7 +3,7 @@ import { useContext, useEffect } from 'react'
 
 import CardDestacada from '../components/CardDestacada'
 import HeadHome from '../components/headers/HeadHome'
-// import MapComponent from '../components/MapComponent'
+import MapComponent from '../components/MapComponent'
 import SimpleSlider from '../components/Slider'
 import { AppContext } from './_app'
 
@@ -63,10 +63,18 @@ export default function Home () {
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
       <HeadHome />
-      {/* <div className='w-10/12 flex flex-col items-center py-10 max-w-screen-2xl mx-auto'>
-        <MapComponent/>
-        <a href='/colombia' className='px-4 py-2 border border-black rounded-full'>Conocer cifras de Colombia</a>
-      </div> */}
+      <section className='bg-black'>
+        <div className='w-10/12 flex flex-col items-center py-10 max-w-screen-2xl mx-auto'>
+          <div className='text-white mx-auto space-y-4'>
+            <h2 className='text-3xl text-center font-bold' >Ranking mundial de biodiversidad</h2>
+            <p className='w-1/2 mx-auto'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetee dolore magna aliquam erat volutpat</p>
+            <div className='border-b-2 border-dotted  border-b-light-orange w-2/3 mx-auto'/>
+          </div>
+
+          <MapComponent />
+          <a href='/colombia' className='px-4 py-2 border border-black rounded-full'>Conocer cifras de Colombia</a>
+        </div>
+      </section>
 
       <div className='bg-white-3 py-8  mx-auto'>
         <div className='text-center font-inter space-y-2'>
@@ -77,7 +85,7 @@ export default function Home () {
           <SimpleSlider infinite slidestoshow={5} slidesToScroll={5}>
             {destacadas.map((item, key) =>
               <div key={key} className='px-2.5' >
-                <CardDestacada label={item.label} type={item.type} link={item.link} especies={item.especies} observadas={item.espObservadas}/>
+                <CardDestacada label={item.label} type={item.type} link={item.link} especies={item.especies} observadas={item.espObservadas} />
               </div>
             )}
 

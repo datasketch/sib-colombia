@@ -18,6 +18,7 @@ function municipio ({ data, slug, municipality }) {
 
     }
   }, [data])
+
   return (
     <>
       <Head>

@@ -192,7 +192,6 @@ function ContentElement (props) {
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start border-b-2 border-b-sandstorm'>
                         <b>II</b>
-
                       </div>
                       <span>{formatNumbers(info?.especies_cites_ii)}</span>
                     </div>

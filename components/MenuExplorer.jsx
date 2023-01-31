@@ -13,13 +13,16 @@ export default function MenuExplorer ({ children, tree, search, ...restProps }) 
   const [selected, setSelected] = useState('')
   const [selectedValue, setSelectedValue] = useState('')
 
-  const updateBreadcrumb = (e) => {
+  const updateBreadcrumb = (e, parent) => {
     let { textContent, value } = e.target
     const slug = e.target.getAttribute('aria-label')
     if (textContent === 'Ver más') {
       textContent = clearText(value)
     }
-    setBreadcrumb((prevState) => [...prevState, textContent || value].reduce((acc, element) => {
+    if (parent !== breadcrumb[0]) {
+      setBreadcrumb([])
+    }
+    setBreadcrumb((prevState) => [...prevState, parent, textContent || value].reduce((acc, element) => {
       if (!acc.includes(element)) {
         acc.push(element)
       }
@@ -89,15 +92,15 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
                 portal
                 menuButton={
                   leaf?.children
-                    ? (<MenuButton disabled={!breadcrumb.length || breadcrumb[0] !== leaf.label}
-                      className={`${!breadcrumb.length || breadcrumb[0] !== leaf.label ? 'cursor-default opacity-40' : 'cursor-pointer bg-opacity-100 hover:bg-dartmouth-green'}`}>
+                    ? (<MenuButton
+                      className={'cursor-pointer bg-opacity-100 '}>
                       <div className={classNames('flex items-center px-2.5', breadcrumb[0] !== leaf.label ? 'border-l border-l-dartmouth-green h-3/4' : '')}>
                         <img className='h-4 w-6' src="/images/green-arrow-down.svg" alt="arrow down" />
                       </div>
                     </MenuButton>)
                     : <div></div>
                 }
-                onClick={updateBreadcrumb}
+                onClick={(e) => updateBreadcrumb(e, leaf.label)}
                 onMenuChange={resetBreadcrumb}
               >
                 {(leaf.children || []).map((child, index) => {

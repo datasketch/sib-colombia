@@ -4,9 +4,11 @@ import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
 const BarPercent = ({ region, regionparent, title, datatable = [], especies, registros, parentEspecies, bgColor, textColor, link, municipalityflag }) => {
+  const widthBarSpecies = calculateWidth(+especies, +especies + +parentEspecies)
+  const widthBarParent = calculateWidth(+parentEspecies, +especies + +parentEspecies) || '100%'
   return (
     <div>
-      <div className='font-bold font-inter text-lg'>
+      <div className='font-bold font-inter text-lg '>
         <div>
           <div>
             {formatNumbers(especies)}
@@ -28,10 +30,9 @@ const BarPercent = ({ region, regionparent, title, datatable = [], especies, reg
         {region.toLowerCase() === 'colombia'
           ? <span className='font-bold text-sm'>Especies observadas CO | Especies estimadas CO</span>
           : <span className='font-bold text-sm'>Especies {region} | {municipalityflag ? `Especies ${regionparent}` : 'Especies Colombia'}</span>}
-        <div className='flex'>
-          <div className={classNames(bgColor, textColor, 'h-4 flex pl-px items-center text-xs')} style={{ width: calculateWidth(+especies, +especies + +parentEspecies) }}>{calculateWidth(+especies, +especies + +parentEspecies)}</div>
-          <div className={classNames('bg-white-smoke', 'h-4 flex pl-px items-center text-xs')} style={{ width: calculateWidth(+parentEspecies, +especies + +parentEspecies) }}></div>
-
+         <div className='flex'>
+          {widthBarSpecies !== null && <div className={classNames(bgColor, textColor, 'h-4 flex pl-px items-center text-xs')} style={{ width: widthBarSpecies }}>{widthBarSpecies}</div>}
+          <div className={classNames('bg-white-smoke', 'h-4 flex pl-px items-center text-xs')} style={{ width: widthBarParent }}></div>
         </div>
       </div>
     </div>

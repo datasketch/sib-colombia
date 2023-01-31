@@ -22,7 +22,6 @@ const CardSimple = ({ title, especies, registros, datatable, style, link }) => {
         <div className='flex text-sm gap-x-2 text-blue-green'>
           <p className='inline-block '><b>{formatNumbers(registros)}</b></p>
           <p className='inline-block'>Observaciones</p>
-
         </div>
       </div>
     )
