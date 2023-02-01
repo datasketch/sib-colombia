@@ -63,20 +63,21 @@ export default function Home () {
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
       <HeadHome />
-      <section className='bg-black'>
-        <div className='w-10/12 flex flex-col items-center py-10 max-w-screen-2xl mx-auto'>
+      <section className='bg-black pb-4'>
+        <div className='w-10/12 flex flex-col items-center pt-10 max-w-screen-2xl mx-auto'>
           <div className='text-white mx-auto space-y-4'>
-            <h2 className='text-3xl text-center font-bold' >Ranking mundial de biodiversidad</h2>
-            <p className='w-1/2 mx-auto'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetee dolore magna aliquam erat volutpat</p>
-            <div className='border-b-2 border-dotted  border-b-light-orange w-2/3 mx-auto'/>
+            <h2 className=' text-2xl lg:text-3xl text-center font-bold' >Ranking mundial de biodiversidad</h2>
+            <p className='w-10/12 lg:w-1/2 mx-auto text-sm lg:text-base'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetee dolore magna aliquam erat volutpat</p>
+            <div className='border-b-2 border-dotted  border-b-light-orange lg:w-2/3 mx-auto' />
           </div>
-
           <MapComponent />
-          <a href='/colombia' className='px-4 py-2 border border-black rounded-full'>Conocer cifras de Colombia</a>
+        </div>
+        <div className='w-10/12 xl:w-8/12 mx-auto my-2'>
+          <a href='/colombia' className='px-4 py-1.5 border border-white rounded-full text-white mt-2'>Conocer cifras de Colombia</a>
         </div>
       </section>
 
-      <div className='bg-white-3 py-8  mx-auto'>
+      <div className='bg-white-3 py-8 mx-auto'>
         <div className='text-center font-inter space-y-2'>
           <h2 className='font-black text-2xl'>Destacados</h2>
           <span className=''>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
