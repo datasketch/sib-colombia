@@ -2,9 +2,19 @@
 import Link from 'next/link'
 import CustomSeparatos from './CustomSeparator'
 import DropDown from './Dropdown'
+import { useState } from 'react'
 // import Dropdown from './Dropdown'
 
 export default function Navbar () {
+  const [childrenRegions, setChildrenRegions] = useState([])
+  console.log(childrenRegions)
+  const handleRegionsSelected = (children) => {
+    if (!children) {
+      setChildrenRegions([])
+      return
+    }
+    setChildrenRegions(children)
+  }
   const nav = [
     {
       label: 'Colombia',
@@ -14,31 +24,41 @@ export default function Navbar () {
     {
       color: 'dartmouth-green',
       label: 'Regiones',
+      icon: '/images/arrow-green-icon.svg',
       href: '',
       childs: [
         {
-          label: 'Boyacá',
-          href: '/boyaca'
+          label: 'Departamentos',
+          children: [
+            {
+              label: 'Boyacá',
+              href: '/boyaca'
+            },
+            {
+              label: 'Santander',
+              href: '/santander'
+            },
+            {
+              label: 'Nariño',
+              href: '/narino'
+            },
+            {
+              label: 'Tolima',
+              href: '/tolima'
+            }
+
+          ]
         },
         {
-          label: 'Santander',
-          href: '/santander'
-        },
-        {
-          label: 'Nariño',
-          href: '/narino'
-        },
-        {
-          label: 'Tolima',
-          href: '/tolima'
-        },
-        {
-          label: '',
-          href: '/'
-        },
-        {
-          label: '',
-          href: '/'
+          label: 'Áreas protegidas'
+          /*  children: [
+
+          ] */
+        }, {
+          label: 'Territorios indígenas'
+          /* children: [
+
+          ] */
         }
       ]
     },
@@ -110,12 +130,21 @@ export default function Navbar () {
                       {item.label}
                     </DropDown.Button>
                     <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-0.5 py-1.5 px-2.5'>
-                      {item.childs?.map((children, key) =>
-                        <div key={children.label + key}>
-                          <DropDown.Item className='text-black py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full' color={item.color} href={children.href}>
-                            {children.label}
-                          </DropDown.Item>
-                        </div>
+                      {item.childs?.map((el, key) =>
+                        <>
+
+                          <div key={el.label + key}>
+                            <DropDown.Item className='text-black  py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full flex justify-between' onClick={() => handleRegionsSelected(el.children)} color={item.color} href={el.href}>
+                              {el.label}
+                              {el.children && <img src={item.icon} alt='icon arrow'/>}
+                            </DropDown.Item>
+                          </div>
+                          {childrenRegions.length !== 0 && <div className='bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato'>
+                            {childrenRegions?.map(({ label, href }, index) =>
+                              <a href={href} key={index} className='text-black'>{label}</a>
+                            )}
+                          </div>}
+                        </>
                       )
                       }
                     </DropDown.Items>

@@ -64,12 +64,13 @@ DropDown.SubMenu = function DropdownSubMenu (props) {
 }
 
 DropDown.Item = function DropDownItem (props) {
-  const { children, href, className, color } = props
+  const { children, /*  href,  */className, color } = props
   return (
-    <li>
-      <Link href={href} >
+    <li {...props} className={classNames(className, color ? `hover:text-${color}` : '')}>
+      {children}
+      {/* <Link href={href} >
         <a className={classNames(className, color ? `hover:text-${color}` : '')}> {children} </a>
-      </Link>
+      </Link> */}
     </li>
   )
 }
