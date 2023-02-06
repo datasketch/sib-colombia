@@ -144,7 +144,7 @@ export default function Navbar () {
                           </div>
                           {childrenRegions.length !== 0 && <div className='bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato'>
                             {childrenRegions?.map(({ label, href }, index) =>
-                              <a href={href} key={index} className='text-black'>{label}</a>
+                              <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
                             )}
                           </div>}
                         </>
