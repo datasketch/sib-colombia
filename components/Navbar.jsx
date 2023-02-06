@@ -7,7 +7,7 @@ import { useState } from 'react'
 
 export default function Navbar () {
   const [childrenRegions, setChildrenRegions] = useState([])
-  console.log(childrenRegions)
+  // console.log(childrenRegions)
   const handleRegionsSelected = (children) => {
     if (!children) {
       setChildrenRegions([])
@@ -16,6 +16,7 @@ export default function Navbar () {
     setChildrenRegions(children)
   }
 
+  // eslint-disable-next-line no-unused-vars
   const [menuIsActive, setMenuIsActive] = useState(false)
 
   const nav = [
