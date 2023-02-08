@@ -156,17 +156,55 @@ export default function Navbar () {
               </ul>
 
               {/* Movile */}
-              <ul className="bg-transparent border-gray-200 px-4 py-2.5 rounded dark:bg-gray-900 lg:hidden">
-              {/* <ul className={`lg:hidden fixed top-0 w-full h-screen bg-white z-40 py-20 px-10 text-2xl space-y-6 duration-500 ${menuIsActive ? 'right-0' : '-right-full'}`}> */}
-                <div className='container flex flex-wrap items-center justify-between mx-auto'>
-                  <button onClick={() => setMenuIsActive(false)} type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500  rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-expanded="false">
-                    <span className="sr-only">Open</span>
-                    <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"></path></svg>
+
+              <ul className={`lg:hidden fixed w-3/4 top-0 h-full bg-white z-40 pt-14 px-8 space-y-6 duration-500 ease-in ${menuIsActive ? 'right-0' : '-right-full'}`}>
+                <div className='border-b border-black'>
+                  <button onClick={() => setMenuIsActive(false)} type='button' className='w-7 h-7 absolute right-8 top-4 cursor-pointer'>
+                    <img src='images/icons/Icon X feather-menu.svg' alt='close icon' />
                   </button>
                 </div>
-              </ul>
 
+                  {/* {nav.map((item, i) =>
+                    <DropDown key={i} >
+                      <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length}>
+                        {item.label}
+                      </DropDown.Button>
+                      <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-0.5 py-1.5 px-2.5'>
+                        {item.childs?.map((el, key) =>
+                          <>
+                            <div key={el.label + key}>
+                              <DropDown.Item className='text-black py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full flex justify-between' onClick={() => handleRegionsSelected(el.children)} color={item.color} href={el.href}>
+                                {el.label}
+                                {el.children && <img src={item.icon} alt='up arrow'/>}
+                              </DropDown.Item>
+                            </div>
+                            {childrenRegions.length !== 0 && <div className='bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato'>
+                              {childrenRegions?.map(({ label, href }, index) =>
+                                <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
+                              )}
+                            </div>}
+                          </>
+                        )
+                        }
+                      </DropDown.Items>
+                    </DropDown>
+                  )} */}
+
+
+
+                {
+                  nav.map((item)=> (
+                    <li key={item.label} className='flex flex-start gap-2 sm:ml-8 text-md sm:my-0 my-7'>
+                      <a href={item.href} className='text-gray-800 hover:text-gray-400 duration-500'>{item.label}</a>
+                      <img src='images/icons/icon-up-arrow.svg' alt='up arrow' />
+                    </li>
+                  ))
+                }
+              </ul>
             </nav>
+            <button onClick={() => setMenuIsActive(!menuIsActive)} type='button' className='lg:hidden w-7 h-7 mt-2 cursor-pointer'>
+              <img src='images/icons/Icon feather-menu.svg' alt='hamburguer icon' />
+            </button>
           </div>
         </div>
         <div>
