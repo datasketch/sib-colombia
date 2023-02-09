@@ -54,28 +54,27 @@ export default function Navbar () {
           ]
         },
         {
-          label: 'Áreas protegidas'
-          /*  children: [
+          label: 'Áreas protegidas',
+          children: [
 
-          ] */
+            {
+              label: 'La Planada',
+              href: '/narino/reserva-forestal-la-planada'
+            }
+
+          ]
         }, {
-          label: 'Territorios indígenas'
-          /* children: [
-
-          ] */
+          label: 'Territorios indígenas',
+          children: [
+            {
+              label: 'Pialapí Pueblo Viejo',
+              href: '/narino/resguardo-indigena-pialapi-pueblo-viejo'
+            }
+          ]
         }
       ]
     },
-    // {
-    //   label: 'Grupos',
-    //   href: ''
 
-    // },
-    // {
-    //   label: 'Temáticas',
-    //   href: '',
-    //   childs: []
-    // },
     {
       label: 'Explorador',
       href: '/explorador'
@@ -139,7 +138,7 @@ export default function Navbar () {
                           <div key={el.label + key}>
                             <DropDown.Item className='text-black  py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full flex justify-between' onClick={() => handleRegionsSelected(el.children)} color={item.color} href={el.href}>
                               {el.label}
-                              {el.children && <img src={item.icon} alt='icon arrow'/>}
+                              {el.children && <img src={item.icon} alt='icon arrow' />}
                             </DropDown.Item>
                           </div>
                           {childrenRegions.length !== 0 && <div className='bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato'>
@@ -167,7 +166,7 @@ export default function Navbar () {
                 {
                   nav.map((item) => (
                     <li key={item.label} className='flex flex-start gap-2 sm:ml-8 text-md sm:my-0 my-7'>
-                      <a href={item.href} className='text-gray-800 hover:bg-dartmouth-green duration-500'>{item.label}</a>
+                      <a href={item.href} className={`text-gray-800 hover:text-${item.color} duration-500`}>{item.label}</a>
                       <img src='images/icons/icon-up-arrow.svg' alt='up arrow' />
                     </li>
                   ))
