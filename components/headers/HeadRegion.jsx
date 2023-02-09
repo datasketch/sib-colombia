@@ -8,7 +8,7 @@ import Tooltip from '../Tooltip'
 function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false }) {
   return (
     <>
-      <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', 'bg-cover bg-center-bottom pt-8 lg:pt-14 pb-3.5 h-[550px] ')}>
+      <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', 'bg-cover bg-center pt-8 lg:pt-14 pb-3.5 h-[550px] ')}>
         <div className="w-full max-w-screen-2xl mx-auto">
           <div className="min-h-[210px] mt-4 lg:mt-0 flex justify-center md:justify-between items-center w-10/12 mx-auto">
             <div className={classNames('font-black lg:w-2/3 font-inter text-white text-6xl', title?.length >= 17 ? 'lg:text-[80px]' : 'lg: text-8xl')}>{title}</div>
@@ -56,6 +56,7 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
       </div >
       <div className='-mt-12 max-w-screen-xl w-9/12 mx-auto flex justify-end'>
         <Tooltip />
+        {/* <Tooltip /> */}
       </div>
     </>
 

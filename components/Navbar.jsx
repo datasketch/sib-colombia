@@ -3,6 +3,7 @@ import Link from 'next/link'
 import CustomSeparatos from './CustomSeparator'
 import DropDown from './Dropdown'
 import { useState } from 'react'
+import { ConstructionOutlined } from '@mui/icons-material'
 // import Dropdown from './Dropdown'
 
 export default function Navbar () {
@@ -18,6 +19,9 @@ export default function Navbar () {
 
   // eslint-disable-next-line no-unused-vars
   const [menuIsActive, setMenuIsActive] = useState(false)
+  
+
+
 
   const nav = [
     {
@@ -113,6 +117,10 @@ export default function Navbar () {
     }
   ]
 
+  for(let i = 0; i < nav; i++) {
+    console.log(nav)
+  }
+
   return (
     <header className="absolute top-0 left-0 w-full z-40 py-2">
       <div className='mx-auto w-10/12 max-w-[1300px] '>
@@ -164,38 +172,11 @@ export default function Navbar () {
                   </button>
                 </div>
 
-                  {/* {nav.map((item, i) =>
-                    <DropDown key={i} >
-                      <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length}>
-                        {item.label}
-                      </DropDown.Button>
-                      <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-0.5 py-1.5 px-2.5'>
-                        {item.childs?.map((el, key) =>
-                          <>
-                            <div key={el.label + key}>
-                              <DropDown.Item className='text-black py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full flex justify-between' onClick={() => handleRegionsSelected(el.children)} color={item.color} href={el.href}>
-                                {el.label}
-                                {el.children && <img src={item.icon} alt='up arrow'/>}
-                              </DropDown.Item>
-                            </div>
-                            {childrenRegions.length !== 0 && <div className='bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato'>
-                              {childrenRegions?.map(({ label, href }, index) =>
-                                <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
-                              )}
-                            </div>}
-                          </>
-                        )
-                        }
-                      </DropDown.Items>
-                    </DropDown>
-                  )} */}
-
-
-
                 {
                   nav.map((item)=> (
                     <li key={item.label} className='flex flex-start gap-2 sm:ml-8 text-md sm:my-0 my-7'>
-                      <a href={item.href} className='text-gray-800 hover:text-gray-400 duration-500'>{item.label}</a>
+                      <a href={item.href} className='text-gray-800 hover:bg-dartmouth-green duration-500'>{item.label}</a>
+                      
                       <img src='images/icons/icon-up-arrow.svg' alt='up arrow' />
                     </li>
                   ))

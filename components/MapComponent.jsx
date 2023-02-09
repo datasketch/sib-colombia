@@ -116,8 +116,8 @@ const MapComponent = () => {
   }
 
   const colorSelecter = (name, filter) => {
-    if (filter?.includes(name)) return '#F26330'
-    return '#00AFFF'
+    if (filter?.includes(name)) return '#FFBC4E'
+    return '#5151F2'
   }
 
   const details = dataFalse.find(({ label }) => label === key)
@@ -177,13 +177,13 @@ const MapComponent = () => {
                             outline: 'none'
                           },
                           hover: {
-                            fill: '#FFD150',
+                            fill: ' #FFF1D9',
                             outline: 'none',
                             cursor: 'pointer'
                           },
                           pressed: {
-                            outline: 'solid',
-                            fill: '#fdc5f5'
+                            outline: 'none',
+                            fill: '#FFBC4E'
                           }
                         }} />
                     ))
