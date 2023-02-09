@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useState } from 'react'
 
-const Tooltip = ({label, src}) => {
+const Tooltip = ({ label, src }) => {
   const [hoover, setHoover] = useState(false)
   return (
     <div className={classNames('flex flex-row-reverse max-w-sm items-center justify-between transition py-0.5', hoover ? 'bg-opacity-30 bg-white rounded-3xl pl-1.5 ' : '')}>

@@ -3,7 +3,6 @@ import Link from 'next/link'
 import CustomSeparatos from './CustomSeparator'
 import DropDown from './Dropdown'
 import { useState } from 'react'
-import { ConstructionOutlined } from '@mui/icons-material'
 // import Dropdown from './Dropdown'
 
 export default function Navbar () {
@@ -19,9 +18,6 @@ export default function Navbar () {
 
   // eslint-disable-next-line no-unused-vars
   const [menuIsActive, setMenuIsActive] = useState(false)
-  
-
-
 
   const nav = [
     {
@@ -117,10 +113,6 @@ export default function Navbar () {
     }
   ]
 
-  for(let i = 0; i < nav; i++) {
-    console.log(nav)
-  }
-
   return (
     <header className="absolute top-0 left-0 w-full z-40 py-2">
       <div className='mx-auto w-10/12 max-w-[1300px] '>
@@ -173,10 +165,9 @@ export default function Navbar () {
                 </div>
 
                 {
-                  nav.map((item)=> (
+                  nav.map((item) => (
                     <li key={item.label} className='flex flex-start gap-2 sm:ml-8 text-md sm:my-0 my-7'>
                       <a href={item.href} className='text-gray-800 hover:bg-dartmouth-green duration-500'>{item.label}</a>
-                      
                       <img src='images/icons/icon-up-arrow.svg' alt='up arrow' />
                     </li>
                   ))
