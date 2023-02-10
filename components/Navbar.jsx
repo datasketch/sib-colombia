@@ -139,7 +139,7 @@ export default function Navbar () {
                           <div key={el.label + key}>
                             <DropDown.Item className='text-black  py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full flex justify-between' onClick={() => handleRegionsSelected(el.children)} color={item.color} href={el.href}>
                               {el.label}
-                              {el.children && <img src={item.icon} alt='icon arrow'/>}
+                              {el.children && <img src={item.icon} alt='icon arrow' />}
                             </DropDown.Item>
                           </div>
                           {childrenRegions.length !== 0 && <div className='bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato'>
@@ -164,7 +164,7 @@ export default function Navbar () {
                   </button>
                 </div>
 
-                  {/* {nav.map((item, i) =>
+                {/* {nav.map((item, i) =>
                     <DropDown key={i} >
                       <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length}>
                         {item.label}
@@ -190,10 +190,8 @@ export default function Navbar () {
                     </DropDown>
                   )} */}
 
-
-
                 {
-                  nav.map((item, childs)=> (
+                  nav.map((item, childs) => (
                     <li key={item.label} className='flex flex-start gap-2 sm:ml-8 text-md sm:my-0 my-7'>
                       {/* <li key={item.childs}>Angela</li> */}
                       <a href={item.href} className='text-gray-800 hover:text-gray-400 duration-500'>{item.label}</a>
