@@ -1,7 +1,7 @@
 
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import Tooltip from '../Tooltip'
+import InfoTooltip from '../InfoTooltip'
 const HeadMore = ({ slug, title, description, content = false }) => {
   return (
     <>
@@ -17,7 +17,7 @@ const HeadMore = ({ slug, title, description, content = false }) => {
         </div>
       </div >
       <div className='-mt-12 max-w-screen-xl w-9/12 mx-auto flex justify-end'>
-        <Tooltip />
+        <InfoTooltip />
       </div>
     </>
   )

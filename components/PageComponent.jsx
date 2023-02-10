@@ -39,7 +39,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   return (
     <>
       {gallery.length !== 0 && <Gallery gallery={gallery} />}
-      <div className='bg-white-3 pt-3'>
+      <div className='bg-white-3 pt-3 my-3'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <SimpleSlider dots infinite slidestoshow={1} responsiveSlidesToShow={1}>
             {slides.map((element, key) =>

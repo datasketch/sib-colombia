@@ -54,15 +54,22 @@ export default function Navbar () {
           ]
         },
         {
-          label: 'Áreas protegidas'
-          /*  children: [
-
-          ] */
-        }, {
-          label: 'Territorios indígenas'
-          /* children: [
-
-          ] */
+          label: 'Áreas protegidas',
+          children: [
+            {
+              label: 'La Planada',
+              href: '/narino/reserva-forestal-la-planada'
+            }
+          ]
+        },
+        {
+          label: 'Territorios indígenas',
+          children: [
+            {
+              label: 'Pialapí Pueblo Viejo',
+              href: '/narino/resguardo-indigena-pialapi-pueblo-viejo'
+            }
+          ]
         }
       ]
     },

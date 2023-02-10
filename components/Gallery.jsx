@@ -2,7 +2,7 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import rehypeRaw from 'rehype-raw'
 
 import classNames from 'classnames'
-import Tooltip from './Tooltip'
+import Tooltip from './InfoTooltip'
 
 const Gallery = ({ gallery }) => {
   if (!gallery) return

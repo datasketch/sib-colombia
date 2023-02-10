@@ -4,8 +4,11 @@ import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
 import Concentric from '../Concentric'
 import classNames from 'classnames'
-import Tooltip from '../Tooltip'
+import InfoTooltip from '../InfoTooltip'
+import 'react-tooltip/dist/react-tooltip.css'
+
 function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel }) {
+  console.log(referencia)
   return (
     <>
       <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', 'bg-cover bg-center pt-8 lg:pt-14 pb-3.5 h-[550px] ')}>
@@ -53,10 +56,12 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
             </div>
           </div>
         </div>
-      </div >
-      <div className='-mt-12 max-w-screen-xl w-9/12 mx-auto flex justify-end'>
-        {referencia && <Tooltip label={referencia} src={'/images/icons/icon-information.svg'}/>}
-        {photoLabel && <Tooltip label={photoLabel} src={'/images/camera-icon.svg'}/>}
+      </div>
+      <div className='max-w-screen-xl w-9/12 mx-auto flex justify-end relative'>
+        <div className='absolute -top-10 flex gap-2'>
+          {referencia && <InfoTooltip label={referencia} src={'/images/icons/icon-information.svg'} id={'ref'}/>}
+          {photoLabel && <InfoTooltip label={photoLabel} src={'/images/camera-icon.svg'} id={'photo'} />}
+        </div>
       </div>
     </>
 

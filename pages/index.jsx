@@ -56,10 +56,11 @@ export default function Home () {
     return { ...des, ...el }
   })
 
-  const { setFooterBgColor } = useContext(AppContext)
+  const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
 
   useEffect(() => {
     setFooterBgColor('bg-footer-green')
+    setBreadCrumb([])
   }, [])
   return (
     <>
@@ -76,8 +77,11 @@ export default function Home () {
           </div>
           <MapComponent {...{ data: listDataMap }} />
         </div>
-        <div className='w-10/12 xl:w-8/12 mx-auto my-2'>
-          <a href='/colombia' className='px-4 py-1.5 border border-white rounded-full text-white mt-2'>Conocer cifras de Colombia</a>
+        <div className='w-10/12 mx-auto my-2 max-w-screen-2xl'>
+          <a href='/colombia' className='px-4 py-1.5 border border-white rounded-full text-white mt-2'>
+          Conocer cifras de Colombia
+          {/* <img src='/icons/arrow-right.svg' className='w-7 h-7'/> */}
+          </a>
         </div>
       </section>
 
