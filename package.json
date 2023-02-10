@@ -26,6 +26,7 @@
     "react-scrollspy": "^3.4.3",
     "react-simple-maps": "^3.0.0",
     "react-slick": "^0.29.0",
+    "react-tooltip": "^5.7.5",
     "recharts": "^2.1.10",
     "rehype-highlight": "^5.0.2",
     "rehype-raw": "^6.1.1",

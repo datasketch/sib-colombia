@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import Concentric from '../Concentric'
 import classNames from 'classnames'
 import Tooltip from '../Tooltip'
-function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false }) {
+function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel }) {
   return (
     <>
       <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', 'bg-cover bg-center pt-8 lg:pt-14 pb-3.5 h-[550px] ')}>
@@ -55,8 +55,8 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
         </div>
       </div >
       <div className='-mt-12 max-w-screen-xl w-9/12 mx-auto flex justify-end'>
-        <Tooltip />
-        {/* <Tooltip /> */}
+        {referencia && <Tooltip label={referencia} src={'/images/icons/icon-information.svg'}/>}
+        {photoLabel && <Tooltip label={photoLabel} src={'/images/camera-icon.svg'}/>}
       </div>
     </>
 

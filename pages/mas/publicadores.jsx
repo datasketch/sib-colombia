@@ -89,6 +89,7 @@ export default function publicadores () {
 
     }
   }, [])
+  console.log(currentPublisher)
 
   return (
     <>
@@ -109,17 +110,20 @@ export default function publicadores () {
         </div>
         <div className='flex items-center lg:justify-center border border-black opacity-75 hover:opacity-100'>
           <button type='button' onClick={clearFilters} className='flex gap-x-2 items-center font-lato font-bold ' value={'reset'}>
-            <img src='/images/icon-reset.svg'/>
+            <img src='/images/icon-reset.svg' />
             Limpiar filtros
           </button>
         </div>
       </div>
-      <div id="publishers" className="max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      { currentPublisher.length === 0
+        ? <p className='my-12 text-xl text-center font-black'>No existen registros de la información</p>
+        : <div id="publishers" className="max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-center">
         {
           currentPublisher.map((item, key) =>
             <PublishersCard key={key + item.label} title={item.label} country={item.pais_publicacion} totalEspecies={item.especies} observationsQuantity={item.registros} imagePath={item.url_logo} link={item.url_socio} />
           )}
       </div>
+      }
       <div className='py-8 flex justify-center'>
         <Pagination
           currentPage={currentPage}

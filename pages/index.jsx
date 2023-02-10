@@ -6,52 +6,56 @@ import HeadHome from '../components/headers/HeadHome'
 import MapComponent from '../components/MapComponent'
 import SimpleSlider from '../components/Slider'
 import { AppContext } from './_app'
+// eslint-disable-next-line import/no-absolute-path
+import home from '/static/data/home.json'
+
+const ENUM_DESTACADAS = [
+  {
+    type: 'Departamento',
+    slug: 'tolima',
+    label: 'Tolima',
+    link: '/tolima'
+  },
+  {
+    type: 'Departamento',
+    slug: 'narino',
+    label: 'Nariño',
+    link: '/narino'
+  },
+  {
+    type: 'Departamento',
+    slug: 'santander',
+    label: 'Santander',
+    link: '/santander'
+  },
+  {
+    type: 'Departamento',
+    label: 'Boyacá',
+    slug: 'boyaca',
+    link: '/boyaca'
+  },
+  {
+    type: 'Reserva forestal',
+    slug: 'reserva-forestal-la-planada',
+    label: 'La Planada',
+    link: '/narino/reserva-forestal-la-planada'
+  },
+  {
+    type: 'Resguardo indígena',
+    slug: 'resguardo-indigena-pialapi-pueblo-viejo',
+    label: 'Pialapí Pueblo Viejo',
+    link: '/narino/resguardo-indigena-pialapi-pueblo-viejo'
+  }
+]
 
 export default function Home () {
-  const destacadas = [
-    {
-      type: 'Departamento',
-      label: 'Tolima',
-      especies: 8246,
-      espObservadas: 768144,
-      link: '/tolima'
-    },
-    {
-      type: 'Departamento',
-      label: 'Nariño',
-      especies: 10323,
-      espObservadas: 746039,
-      link: '/narino'
-    },
-    {
-      type: 'Departamento',
-      label: 'Santander',
-      especies: 12575,
-      espObservadas: 493137,
-      link: '/santander'
-    },
-    {
-      type: 'Departamento',
-      label: 'Boyacá',
-      especies: 10641,
-      espObservadas: 427815,
-      link: '/boyaca'
-    },
-    {
-      type: 'Reserva forestal',
-      label: 'La Planada',
-      especies: 2144,
-      espObservadas: 382431,
-      link: '/narino/reserva-forestal-la-planada'
-    },
-    {
-      type: 'Resguardo indígena',
-      label: 'Pialapí Pueblo Viejo',
-      especies: 342,
-      espObservadas: 1151,
-      link: '/narino/resguardo-indigena-pialapi-pueblo-viejo'
-    }
-  ]
+  const { lista_mapa: listDataMap, destacados_regiones: destacadas } = home
+
+  const regionesDestacadas = destacadas.map((el) => {
+    const des = ENUM_DESTACADAS.find(d => d.slug === el.slug_region)
+    return { ...des, ...el }
+  })
+
   const { setFooterBgColor } = useContext(AppContext)
 
   useEffect(() => {
@@ -70,7 +74,7 @@ export default function Home () {
             <p className='w-10/12 lg:w-1/2 mx-auto text-sm lg:text-base'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetee dolore magna aliquam erat volutpat</p>
             <div className='border-b-2 border-dotted  border-b-light-orange lg:w-2/3 mx-auto' />
           </div>
-          <MapComponent />
+          <MapComponent {...{ data: listDataMap }} />
         </div>
         <div className='w-10/12 xl:w-8/12 mx-auto my-2'>
           <a href='/colombia' className='px-4 py-1.5 border border-white rounded-full text-white mt-2'>Conocer cifras de Colombia</a>
@@ -84,9 +88,9 @@ export default function Home () {
         </div>
         <div className='w-[85%] py-4 max-w-screen-2xl mx-auto'>
           <SimpleSlider infinite slidestoshow={5} slidesToScroll={5}>
-            {destacadas.map((item, key) =>
+            {regionesDestacadas.map((item, key) =>
               <div key={key} className='px-2.5' >
-                <CardDestacada label={item.label} type={item.type} link={item.link} especies={item.especies} observadas={item.espObservadas} />
+                <CardDestacada label={item.label} type={item.type} link={item.link} especies={item.especies_total} observadas={item.observadas} />
               </div>
             )}
 
