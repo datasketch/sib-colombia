@@ -54,27 +54,28 @@ export default function Navbar () {
           ]
         },
         {
-          label: 'Áreas protegidas',
-          children: [
+          label: 'Áreas protegidas'
+          /*  children: [
 
-            {
-              label: 'La Planada',
-              href: '/narino/reserva-forestal-la-planada'
-            }
-
-          ]
+          ] */
         }, {
-          label: 'Territorios indígenas',
-          children: [
-            {
-              label: 'Pialapí Pueblo Viejo',
-              href: '/narino/resguardo-indigena-pialapi-pueblo-viejo'
-            }
-          ]
+          label: 'Territorios indígenas'
+          /* children: [
+
+          ] */
         }
       ]
     },
+    // {
+    //   label: 'Grupos',
+    //   href: ''
 
+    // },
+    // {
+    //   label: 'Temáticas',
+    //   href: '',
+    //   childs: []
+    // },
     {
       label: 'Explorador',
       href: '/explorador'
@@ -138,7 +139,7 @@ export default function Navbar () {
                           <div key={el.label + key}>
                             <DropDown.Item className='text-black  py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full flex justify-between' onClick={() => handleRegionsSelected(el.children)} color={item.color} href={el.href}>
                               {el.label}
-                              {el.children && <img src={item.icon} alt='icon arrow' />}
+                              {el.children && <img src={item.icon} alt='icon arrow'/>}
                             </DropDown.Item>
                           </div>
                           {childrenRegions.length !== 0 && <div className='bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato'>
@@ -156,17 +157,46 @@ export default function Navbar () {
 
               {/* Movile */}
 
-              <ul className={`lg:hidden fixed w-3/4 md:w-2/4 top-0 h-full bg-white z-40 pt-14 px-8 space-y-6 duration-500 ease-in ${menuIsActive ? 'right-0' : '-right-full'}`}>
+              <ul className={`lg:hidden fixed w-3/4 top-0 h-full bg-white z-40 pt-14 px-8 space-y-6 duration-500 ease-in ${menuIsActive ? 'right-0' : '-right-full'}`}>
                 <div className='border-b border-black'>
                   <button onClick={() => setMenuIsActive(false)} type='button' className='w-7 h-7 absolute right-8 top-4 cursor-pointer'>
                     <img src='images/icons/Icon X feather-menu.svg' alt='close icon' />
                   </button>
                 </div>
 
+                  {/* {nav.map((item, i) =>
+                    <DropDown key={i} >
+                      <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length}>
+                        {item.label}
+                      </DropDown.Button>
+                      <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-0.5 py-1.5 px-2.5'>
+                        {item.childs?.map((el, key) =>
+                          <>
+                            <div key={el.label + key}>
+                              <DropDown.Item className='text-black py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full flex justify-between' onClick={() => handleRegionsSelected(el.children)} color={item.color} href={el.href}>
+                                {el.label}
+                                {el.children && <img src={item.icon} alt='up arrow'/>}
+                              </DropDown.Item>
+                            </div>
+                            {childrenRegions.length !== 0 && <div className='bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato'>
+                              {childrenRegions?.map(({ label, href }, index) =>
+                                <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
+                              )}
+                            </div>}
+                          </>
+                        )
+                        }
+                      </DropDown.Items>
+                    </DropDown>
+                  )} */}
+
+
+
                 {
-                  nav.map((item) => (
+                  nav.map((item, childs)=> (
                     <li key={item.label} className='flex flex-start gap-2 sm:ml-8 text-md sm:my-0 my-7'>
-                      <a href={item.href} className={`text-gray-800 hover:text-${item.color} duration-500`}>{item.label}</a>
+                      {/* <li key={item.childs}>Angela</li> */}
+                      <a href={item.href} className='text-gray-800 hover:text-gray-400 duration-500'>{item.label}</a>
                       <img src='images/icons/icon-up-arrow.svg' alt='up arrow' />
                     </li>
                   ))
