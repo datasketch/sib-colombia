@@ -320,7 +320,7 @@ const CardTematicasCol = props => {
               <div className='border-t border-t-dartmouth-green' />
             </span>
             <div className='font-black font-inter text-lg'>Especies  de {info?.label}
-              {info?.species_list?.length && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
+              {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
                 <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
               </CustomTooltip>}
             </div>
@@ -367,7 +367,7 @@ const CardTematicasCol = props => {
           </div>
         </div>
         <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
-          <Table tabledata={info?.especies_list} link={false} />
+          {/* <Table tabledata={info?.especies_list} link={false} /> */}
 
           <BarPercent
             bgColor={'bg-red-cr '}

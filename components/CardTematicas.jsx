@@ -16,7 +16,6 @@ const CardTematicas = props => {
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
-
   if (selected.toLowerCase() === 'amenazadas') {
     return (
       <div className='py-10 bg-white'>
@@ -338,7 +337,7 @@ const CardTematicas = props => {
               <div className='border-t border-t-dartmouth-green' />
             </span>
             <div className='font-black font-inter text-lg'>Especies  de {info?.label}
-              {info?.species_list?.length && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
+              {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
                 <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
               </CustomTooltip>}
             </div>
@@ -385,15 +384,15 @@ const CardTematicas = props => {
           </div>
         </div>
         <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
-          <Table tabledata={info?.species_list} />
+         {/*  <Table tabledata={info?.species_list} /> */}
 
-          {/* <BarPercent
+          <BarPercent
             bgColor={'bg-red-cr '}
             region={region}
             title={'CR'}
             especies={info?.cr}
-            parentEspecies={info?.parent_especies_cr}
-            registros={info?.cr_registros}
+            parentEspecies={info?.especies}
+            registros={info?.cr}
           />
 
           <BarPercent
@@ -401,17 +400,17 @@ const CardTematicas = props => {
             region={region}
             title={'EN'}
             especies={info?.en}
-            parentEspecies={info?.parent_especies_en}
-            registros={info?.en_registros}
+            parentEspecies={info?.especies}
+            registros={info?.en}
           />
           <BarPercent
             bgColor={'bg-yellow-vu'}
             region={region}
             title={'VU'}
             especies={info?.vu}
-            parentEspecies={info?.parent_especies_vu}
-            registros={info?.vu_registros}
-          /> */}
+            parentEspecies={info?.especies}
+            registros={info?.vu}
+          />
 
         </div>
       </div>

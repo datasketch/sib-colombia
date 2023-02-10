@@ -46,7 +46,7 @@ const Table = ({ tabledata, general = false, link, overflow = false }) => {
       </div>
     )
   }
-  return null
+  return <div></div>
 }
 
 export default Table
