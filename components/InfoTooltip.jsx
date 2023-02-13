@@ -3,7 +3,6 @@
 import { Tooltip } from 'react-tooltip'
 
 const InfoTooltip = ({ label, src, id }) => {
-  console.log(src)
   // const [hoover, setHoover] = useState(false)
   return (
     <>

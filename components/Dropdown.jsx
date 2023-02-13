@@ -9,7 +9,7 @@ export default function DropDown ({ children, ...restProps }) {
   const [open, setOpen] = useState(false)
 
   const showMenu = ({ target }) => {
-    setOpen(true)
+    setOpen((prevState) => !prevState)
   }
 
   useEffect(() => {
@@ -32,17 +32,22 @@ export default function DropDown ({ children, ...restProps }) {
   )
 }
 
-DropDown.Button = function DropDownButton ({ label, href, arrow, className }) {
-  const { showMenu } = useContext(DropDownContext)
+DropDown.Button = function DropDownButton ({ children, href, arrow, className, src }) {
+  const { showMenu, open } = useContext(DropDownContext)
 
-  if (!arrow) {
-    return <Link href={href}><a className={classNames(className || '')}>{label}</a></Link>
+  if (!arrow && href) {
+    return <Link href={href}><a className={classNames(className || '')}>{children}</a></Link>
   }
 
   return (
-    <button onClick={showMenu} type="button" value='open'>
+    <button onClick={showMenu} type="button" value='open' >
       <div className={classNames(className, 'flex gap-x-2 items-center')}>
-        {label}  <img className=' h-2.5' src="/images/arrow-white.svg" alt="arrow" />
+        {children}
+        {
+          src
+            ? <img className={classNames(open ? '' : 'rotate-180', 'h-2.5')} src={src} alt="arrow" />
+            : <img className='h-2.5' src='/images/arrow-white.svg' alt="arrow" />
+        }
       </div>
     </button>
   )
@@ -77,9 +82,6 @@ DropDown.Item = function DropDownItem (props) {
   return (
     <li {...props} className={classNames(className, color ? `hover:text-${color}` : '')}>
       {children}
-      {/* <Link href={href} >
-        <a className={classNames(className, color ? `hover:text-${color}` : '')}> {children} </a>
-      </Link> */}
     </li>
   )
 }

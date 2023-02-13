@@ -3,11 +3,12 @@ import Link from 'next/link'
 import CustomSeparatos from './CustomSeparator'
 import DropDown from './Dropdown'
 import { useState } from 'react'
-// import Dropdown from './Dropdown'
+import ResponsiveNavbarMenu from './ResponsiveNavbarMenu'
 
 export default function Navbar () {
   const [childrenRegions, setChildrenRegions] = useState([])
-  // console.log(childrenRegions)
+  const [menuIsActive, setMenuIsActive] = useState(false)
+
   const handleRegionsSelected = (children) => {
     if (!children) {
       setChildrenRegions([])
@@ -15,9 +16,6 @@ export default function Navbar () {
     }
     setChildrenRegions(children)
   }
-
-  // eslint-disable-next-line no-unused-vars
-  const [menuIsActive, setMenuIsActive] = useState(false)
 
   const nav = [
     {
@@ -73,16 +71,6 @@ export default function Navbar () {
         }
       ]
     },
-    // {
-    //   label: 'Grupos',
-    //   href: ''
-
-    // },
-    // {
-    //   label: 'Temáticas',
-    //   href: '',
-    //   childs: []
-    // },
     {
       label: 'Explorador',
       href: '/explorador'
@@ -133,6 +121,7 @@ export default function Navbar () {
               </Link>
             </div>
             <nav className='lg:self-end'>
+
               {/* DESKTOP */}
               <ul className={'hidden relative lg:grid lg:grid-cols-4 text-white gap-x-6'}>
                 {nav.map((item, i) =>
@@ -163,50 +152,7 @@ export default function Navbar () {
               </ul>
 
               {/* Movile */}
-
-              <ul className={`lg:hidden fixed w-3/4 top-0 h-full bg-white z-40 pt-14 px-8 space-y-6 duration-500 ease-in ${menuIsActive ? 'right-0' : '-right-full'}`}>
-                <div className='border-b border-black'>
-                  <button onClick={() => setMenuIsActive(false)} type='button' className='w-7 h-7 absolute right-8 top-4 cursor-pointer'>
-                    <img src='images/icons/Icon X feather-menu.svg' alt='close icon' />
-                  </button>
-                </div>
-
-                {/* {nav.map((item, i) =>
-                    <DropDown key={i} >
-                      <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length}>
-                        {item.label}
-                      </DropDown.Button>
-                      <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-0.5 py-1.5 px-2.5'>
-                        {item.childs?.map((el, key) =>
-                          <>
-                            <div key={el.label + key}>
-                              <DropDown.Item className='text-black py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full flex justify-between' onClick={() => handleRegionsSelected(el.children)} color={item.color} href={el.href}>
-                                {el.label}
-                                {el.children && <img src={item.icon} alt='up arrow'/>}
-                              </DropDown.Item>
-                            </div>
-                            {childrenRegions.length !== 0 && <div className='bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato'>
-                              {childrenRegions?.map(({ label, href }, index) =>
-                                <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
-                              )}
-                            </div>}
-                          </>
-                        )
-                        }
-                      </DropDown.Items>
-                    </DropDown>
-                  )} */}
-
-                {
-                  nav.map((item, childs) => (
-                    <li key={item.label} className='flex flex-start gap-2 sm:ml-8 text-md sm:my-0 my-7'>
-                      {/* <li key={item.childs}>Angela</li> */}
-                      <a href={item.href} className='text-gray-800 hover:text-gray-400 duration-500'>{item.label}</a>
-                      <img src='images/icons/icon-up-arrow.svg' alt='up arrow' />
-                    </li>
-                  ))
-                }
-              </ul>
+              <ResponsiveNavbarMenu nav={nav} setMenuIsActive={setMenuIsActive} menuIsActive={menuIsActive}/>
             </nav>
             <button onClick={() => setMenuIsActive(!menuIsActive)} type='button' className='lg:hidden w-7 h-7 mt-2 cursor-pointer'>
               <img src='images/icons/Icon feather-menu.svg' alt='hamburguer icon' />
