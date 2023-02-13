@@ -152,30 +152,7 @@ export default function Navbar () {
               </ul>
 
               {/* Movile */}
-<<<<<<< Updated upstream
               <ResponsiveNavbarMenu nav={nav} setMenuIsActive={setMenuIsActive} menuIsActive={menuIsActive} />
-=======
-
-              <ul className={`lg:hidden fixed w-3/4 top-0 h-full bg-white z-40 pt-14 px-8 space-y-6 duration-500 ease-in ${menuIsActive ? 'right-0' : '-right-full'}`}>
-                <div className='border-b border-black'>
-                  <button onClick={() => setMenuIsActive(false)} type='button' className='w-7 h-7 absolute right-8 top-4 cursor-pointer'>
-                    <img src='images/icons/Icon X feather-menu.svg' alt='close icon' />
-                  </button>
-                </div>
-                {
-                  nav.map((item) => (
-                    <ResponsiveNavbarMenu key={item}>
-
-                    </ResponsiveNavbarMenu>
-                    // <li key={item.label} className='flex flex-start gap-2 sm:ml-8 text-md sm:my-0 my-7'>
-                    //   {/* <li key={item.childs}>Angela</li> */}
-                    //   <a href={item.href} className='text-gray-800 hover:text-gray-400 duration-500'>{item.label}</a>
-                    //   <img src='images/icons/icon-up-arrow.svg' alt='up arrow' />
-                    // </li>
-                  ))
-                }
-              </ul>
->>>>>>> Stashed changes
             </nav>
             <button onClick={() => setMenuIsActive(!menuIsActive)} type='button' className='lg:hidden w-7 h-7 mt-2 cursor-pointer'>
               <img src='images/icons/Icon feather-menu.svg' alt='hamburguer icon' />
