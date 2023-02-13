@@ -11,19 +11,18 @@ const ResponsiveNavbarMenu = ({ nav, menuIsActive, setMenuIsActive }) => {
       {
         nav.map((item, i) => (
           <DropDown key={i} >
-            <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length} src={'/images/icons/icon-up-arrow.svg'}>
+            <DropDown.Button className='font-lato text-sm md:text-md' {...item} arrow={!!item.childs?.length} src={'/images/icons/icon-up-arrow.svg'}>
               {item.label}
             </DropDown.Button>
-            <DropDown.Items className=''>
+            <DropDown.Items className="pt-2 pl-4 space-y-2">
               {item.childs?.map((el, key) =>
-                <DropDown key={'SUB-' + key} >
-                  <DropDown.Button className='font-lato text-sm' arrow={!!item.children?.length} href={el.href} src={'/images/icons/icon-up-arrow.svg'}>
+                <DropDown key={'SUB-' + key}>
+                  <DropDown.Button className='font-lato text-sm md:text-md' arrow={!!item.children?.length} href={el.href} src={'/images/icons/icon-up-arrow.svg'}>
                     {el.label}
                   </DropDown.Button>
-                  <DropDown.Items className=''>
+                  <DropDown.Items className='flex flex-col'>
                     {el.children?.map(ch =>
-                      <DropDown.Item key={ch.label} className='text-black  py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full flex justify-between' color={item.color} href={ch.href}>
-
+                      <DropDown.Item key={ch.label} className='text-black py-4.5 pl-2 hover:font-bold font-lato opacity-80 text-sm md:text-md w-full flex justify-between' color={item.color} href={ch.href}>
                         {ch.label}
                         {ch.children && <img src={item.icon} alt='icon arrow' />}
                       </DropDown.Item>)}

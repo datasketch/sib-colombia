@@ -77,10 +77,10 @@ export default function Home () {
           </div>
           <MapComponent {...{ data: listDataMap }} />
         </div>
-        <div className='w-10/12 mx-auto my-2 max-w-screen-2xl'>
-          <a href='/colombia' className='px-4 py-1.5 border border-white rounded-full text-white mt-2'>
+        <div className='w-10/12 mx-auto my-2 max-w-screen-2xl inset-y-0'>
+          <a href='/colombia' className='flex items-center gap-x-2 max-w-[250px] px-4 py-1.5 border border-white rounded-full text-white mt-2'>
           Conocer cifras de Colombia
-          {/* <img src='/icons/arrow-right.svg' className='w-7 h-7'/> */}
+          <img src='/images/arrow-white-right.svg' className='w-3 h-4'/>
           </a>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function Home () {
       <div className='bg-white-3 py-8 mx-auto'>
         <div className='text-center font-inter space-y-2'>
           <h2 className='font-black text-2xl'>Destacados</h2>
-          <span className=''>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
+          <span className='px-4 text-center'>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
         </div>
         <div className='w-[85%] py-4 max-w-screen-2xl mx-auto'>
           <SimpleSlider infinite slidestoshow={5} slidesToScroll={5}>
