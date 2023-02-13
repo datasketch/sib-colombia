@@ -2,8 +2,8 @@
 import Link from 'next/link'
 import CustomSeparatos from './CustomSeparator'
 import DropDown from './Dropdown'
-import { useState } from 'react'
 import ResponsiveNavbarMenu from './ResponsiveNavbarMenu'
+import { useState } from 'react'
 
 export default function Navbar () {
   const [childrenRegions, setChildrenRegions] = useState([])
@@ -152,7 +152,7 @@ export default function Navbar () {
               </ul>
 
               {/* Movile */}
-              <ResponsiveNavbarMenu nav={nav} setMenuIsActive={setMenuIsActive} menuIsActive={menuIsActive}/>
+              <ResponsiveNavbarMenu nav={nav} setMenuIsActive={setMenuIsActive} menuIsActive={menuIsActive} />
             </nav>
             <button onClick={() => setMenuIsActive(!menuIsActive)} type='button' className='lg:hidden w-7 h-7 mt-2 cursor-pointer'>
               <img src='images/icons/Icon feather-menu.svg' alt='hamburguer icon' />

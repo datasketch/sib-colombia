@@ -23,7 +23,7 @@ const ResponsiveNavbarMenu = ({ nav, menuIsActive, setMenuIsActive }) => {
                   <DropDown.Items className=''>
                     {el.children?.map(ch =>
                       <DropDown.Item key={ch.label} className='text-black  py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full flex justify-between' color={item.color} href={ch.href}>
-                        {console.log(ch)}
+
                         {ch.label}
                         {ch.children && <img src={item.icon} alt='icon arrow' />}
                       </DropDown.Item>)}

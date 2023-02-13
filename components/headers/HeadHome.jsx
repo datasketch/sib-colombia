@@ -13,7 +13,7 @@ const HeadHome = ({ title, image, number }) => {
       <div className='bg-banner-home bg-center bg-cover h-screen-75'>
         <div className='max-w-screen-xl mx-auto h-full relative w-10/12'>
           <div
-            className='bg-black-2 bg-opacity-75 text-white absolute top-[20%] lg:top-1/4  max-w-md flex flex-col w-1/2  justify-center px-3 lg:px-6 py-1.5 lg:py-3'>
+            className='bg-black-2 bg-opacity-75 text-white absolute top-[20%] lg:top-1/4  max-w-md flex flex-col w-2/3 md:w-1/2  justify-center px-3 lg:px-6 py-1.5 lg:py-3'>
             <div className='flex flex-col'>
               <span className='font-inter font-black text-2xl lg:text-7xl'>75.947</span>
               <span className='font-inter font-black pb-2 text-sm lg:text-base'>Especies observadas en Colombia</span>
@@ -27,7 +27,7 @@ const HeadHome = ({ title, image, number }) => {
       </div>
       <div className='relative max-w-screen-xl w-9/12 mx-auto flex justify-end z-50'>
         <div className='absolute -top-12'>
-          <InfoTooltip src={'/images/camera-icon.svg'} />
+          <InfoTooltip src={'/images/camera-icon.svg'} label={'This a tooltip'} id='tt-home'/>
         </div>
       </div>
     </>

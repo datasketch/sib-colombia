@@ -29,7 +29,7 @@ const MapComponent = ({ data }) => {
     if (selectedCountry === undefined) setHoveredCountry({ pais: '', position: '' })
     setHoveredCountry({ pais: selectedCountry?.pais, position: selectedCountry?.puesto })
   }
-  // console.log(hoveredCountry)
+
   return (
     <>
       <Tooltip >

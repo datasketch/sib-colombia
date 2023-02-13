@@ -89,7 +89,6 @@ export default function publicadores () {
 
     }
   }, [])
-  console.log(currentPublisher)
 
   return (
     <>

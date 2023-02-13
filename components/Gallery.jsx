@@ -2,13 +2,13 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import rehypeRaw from 'rehype-raw'
 
 import classNames from 'classnames'
-import Tooltip from './InfoTooltip'
+import InfoTooltip from './InfoTooltip'
 
 const Gallery = ({ gallery }) => {
   if (!gallery) return
   return (
     <div className='py-8 grid grid-cols-2 md:grid-cols-5 max-w-screen-xl mx-auto w-10/12'>
-      {gallery.map(({ text, image }, key) => {
+      {gallery.map(({ text, image, id, ref }, key) => {
         if (key >= 15) return null
         if (text) {
           return (
@@ -21,10 +21,10 @@ const Gallery = ({ gallery }) => {
         }
         if (image) {
           return (
-            <div key={key} className='relative' /* className={[2, 7, 12, 17, 22, 27].includes(key) ? 'col-span-2' : ''} */>
+            <div key={key} className='relative' >
               <img className="min-h-[10rem] max-h-40 min-w-[10rem]  w-full h-full object-cover" src={image} />
               <div className='absolute bottom-0.5 right-0.5'>
-                <Tooltip />
+                <InfoTooltip src='/images/camera-icon.svg' id={'g' - id} label={'gallery tooltip'}/>
               </div>
             </div>
           )

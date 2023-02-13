@@ -8,7 +8,6 @@ import InfoTooltip from '../InfoTooltip'
 import 'react-tooltip/dist/react-tooltip.css'
 
 function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel }) {
-  console.log(referencia)
   return (
     <>
       <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', 'bg-cover bg-center pt-8 lg:pt-14 pb-3.5 h-[550px] ')}>
