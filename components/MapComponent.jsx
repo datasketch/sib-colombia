@@ -1,13 +1,15 @@
 import { useState } from 'react'
-import classNames from 'classnames'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
+import { Tooltip } from 'react-tooltip'
+import classNames from 'classnames'
 import 'react-tooltip/dist/react-tooltip.css'
 
 import mapJson from '../static/data/maps.json'
-import { Tooltip } from 'react-tooltip'
 
 const MapComponent = ({ data }) => {
   const [key, setkey] = useState('ranking-anfibios')
+
+  // eslint-disable-next-line no-unused-vars
   const [hoveredCountry, setHoveredCountry] = useState({ name: '', position: '' })
 
   const handleCountry = ({ target }) => {
@@ -32,13 +34,6 @@ const MapComponent = ({ data }) => {
 
   return (
     <>
-      <Tooltip >
-        Pais:
-        {hoveredCountry?.pais}
-        {' '}
-        Posicion en Ranking:{hoveredCountry?.position}
-      </Tooltip>
-
       <div className='flex flex-col gap-10 h-full w-full mt-6'>
         <div className='flex flex-wrap gap-4 mx-auto justify-center max-w-2xl'>
           {data.map((el, index) =>
@@ -72,16 +67,24 @@ const MapComponent = ({ data }) => {
             }
           </div>
           <div className='w-full lg:w-2/3'>
+            {/* {hoveredCountry?.pais !== '' && <Tooltip anchorId='map'>
+              Pais:
+              {hoveredCountry?.pais}
+              {' '}
+              Posicion en Ranking:{hoveredCountry?.position}
+            </Tooltip>} */}
 
             <ComposableMap
               projection="geoEqualEarth"
             // projection="geoStereographic"
             >
-              <Geographies geography={mapJson}>
+              <Geographies geography={mapJson} id='map'>
                 {({ geographies }) =>
                   geographies
                     .map((geo) => (
-                      <Geography key={geo.rsmKey} geography={geo}
+                      <Geography
+                        key={geo.rsmKey}
+                        geography={geo}
                         stroke='black' strokeWidth={0.5}
                         onMouseEnter={() => mouseEnterHandler(geo.properties.name)}
                         onMouseLeave={() => setHoveredCountry()}

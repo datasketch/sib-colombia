@@ -23,8 +23,8 @@ const Gallery = ({ gallery }) => {
           return (
             <div key={key} className='relative' >
               <img className="min-h-[10rem] max-h-40 min-w-[10rem]  w-full h-full object-cover" src={image} />
-              <div className='absolute bottom-0.5 right-0.5'>
-                <InfoTooltip src='/images/camera-icon.svg' id={'g' - id} label={'gallery tooltip'}/>
+              <div className='absolute bottom-1 right-1'>
+                <InfoTooltip src='/images/camera-icon.svg' id={'g-' + +id} label={'gallery tooltip'}/>
               </div>
             </div>
           )
