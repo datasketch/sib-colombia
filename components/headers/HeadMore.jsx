@@ -17,7 +17,7 @@ const HeadMore = ({ slug, title, description, content = false }) => {
         </div>
       </div>
       <div className='-mt-12 max-w-screen-xl w-9/12 mx-auto flex justify-end'>
-        <InfoTooltip />
+        <InfoTooltip id='tt-more' src='/images/camera-icon.svg' label='More Tooltip' />
       </div>
     </>
   )

@@ -7,11 +7,12 @@ import qs from 'qs'
 function explorador () {
   const router = useRouter()
   const [query, setQuery] = useState('')
-  const { setFooterBgColor } = useContext(AppContext)
+  const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const appURL = query ? `https://shiny.datasketch.co/app_direct_i/sib/_/?${query}` : 'https://shiny.datasketch.co/app_direct_i/sib/_/?region=colombia'
 
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
+    setBreadCrumb([{ label: 'Explorador' }])
   }, [])
 
   useEffect(() => {
@@ -32,8 +33,8 @@ function explorador () {
             <a href='https://forms.gle/Wb45MnSCgN6YVsdc6' target="_blank" rel="noreferrer" className='underline'>Ayúdanos a mejorar la aplicación</a>
           </p>
         </div>
-        <details className='pt-8'>
-          <summary className='flex items-center w-3/12  justify-center mx-auto gap-x-4 border border-black px-3 py-2 rounded-full cursor-pointer'>
+        <details className='pt-8 mx-auto w-2/3 md:w-2/5  lg:w-1/4'>
+          <summary className='flex items-center   justify-center mx-auto gap-x-4 border border-black px-3 py-2 rounded-full cursor-pointer'>
             <p>
               Cómo funciona esta herramienta
             </p>
