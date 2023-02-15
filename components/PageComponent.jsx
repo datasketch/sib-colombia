@@ -76,7 +76,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>}
 
       {/* Grupos Biologicos  */}
-      {navGruposBiologicos.length !== 0 && gruposBiologicos.length !== 0 && <div className='py-10 bg-white-2'>
+      <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={navGruposBiologicos} search={gruposBiologicos}>
             <MenuExplorer.Title>
@@ -96,7 +96,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             </MenuExplorer.Body>
           </MenuExplorer>
         </div>
-      </div>}
+      </div>
 
       {/* Grupos Interes */}
       {navGruposInteres.length !== 0 && gruposInteres.length !== 0 && <div className='py-10 bg-white-2'>
@@ -217,7 +217,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
               Utiliza nuestro explorador para visualizar las tablas completas de información y explorar con múltiples cruces y gráficos la información disponible para esta región.
             </p>
             <details>
-              <summary className='mx-auto w-4/6 flex justify-center items-center gap-x-2 border border-black rounded-full py-2  cursor-pointer'>
+              <summary className='mx-auto md:w-4/6 flex justify-center items-center gap-x-2 border border-black rounded-full py-2  cursor-pointer'>
                 <p>
                   Cómo funciona esta herramienta
                 </p>

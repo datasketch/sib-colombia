@@ -1,15 +1,14 @@
 import { useState } from 'react'
-import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
-import { Tooltip } from 'react-tooltip'
+import Tooltip from 'react-tooltip'
 import classNames from 'classnames'
-import 'react-tooltip/dist/react-tooltip.css'
+// import 'react-tooltip/dist/react-tooltip.css'
 
-import mapJson from '../static/data/maps.json'
+import Map from './Map'
+import { selectColorRanking } from '../lib/functions'
 
 const MapComponent = ({ data }) => {
-  const [key, setkey] = useState('ranking-anfibios')
-
   // eslint-disable-next-line no-unused-vars
+  const [key, setkey] = useState('ranking-anfibios')
   const [hoveredCountry, setHoveredCountry] = useState({ name: '', position: '' })
 
   const handleCountry = ({ target }) => {
@@ -17,24 +16,22 @@ const MapComponent = ({ data }) => {
     setkey(value)
   }
 
-  const colorSelecter = (name, filter) => {
+  const colorSelector = (name, filter) => {
     const contain = filter?.find(c => c['..gd_name'] === name)
-    if (contain) return '#FFBC4E'
-    return '#5151F2'
+    return selectColorRanking(contain?.puesto)
   }
 
   const details = data.find(({ slug }) => slug === key)
 
   const mouseEnterHandler = (name) => {
     const selectedCountry = details.ranking.find(c => c['..gd_name'] === name)
-
-    if (selectedCountry === undefined) setHoveredCountry({ pais: '', position: '' })
+    if (selectedCountry === undefined) return setHoveredCountry({ pais: '', position: '' })
     setHoveredCountry({ pais: selectedCountry?.pais, position: selectedCountry?.puesto })
   }
 
   return (
     <>
-      <div className='flex flex-col gap-10 h-full w-full mt-6'>
+      <div className='flex flex-col gap-10 h-full w-full mt-6 -mb-16'>
         <div className='flex flex-wrap gap-4 mx-auto justify-center max-w-2xl'>
           {data.map((el, index) =>
             <button
@@ -55,11 +52,13 @@ const MapComponent = ({ data }) => {
                     <div key={'cat-' + index} className='space-y-0.5 '>
                       <p className='text-white font-lato text-sm'>
                         {descripcion}
-                        <a id={'i' + index} className='m-0.5 inline-flex'>
+                        <a data-for={'i' + index} data-tip className='m-0.5 inline-flex' data-event='click' focus>
                           <img className='w-4 h-4' src='/images/icons/icon-info-yellow.svg' alt='icon info' />
                         </a>
                       </p>
-                      <Tooltip anchorId={'i' + index} place="bottom" noArrow positionStrategy='fixed' content={refs} style={{ background: '#ffffff', color: '#000', maxWidth: '340px', padding: '10px' }} />
+                      <Tooltip id={'i' + index} place="bottom" globalEventOff='click' arrowColor="transparent" arrowSize={0} backgroundColor='#fff' textColor='#000' className='tooltip'>
+                        {refs}
+                      </Tooltip>
                     </div>
                   )}
                 </div>
@@ -67,46 +66,9 @@ const MapComponent = ({ data }) => {
             }
           </div>
           <div className='w-full lg:w-2/3'>
-            {/* {hoveredCountry?.pais !== '' && <Tooltip anchorId='map'>
-              Pais:
-              {hoveredCountry?.pais}
-              {' '}
-              Posicion en Ranking:{hoveredCountry?.position}
-            </Tooltip>} */}
 
-            <ComposableMap
-              projection="geoEqualEarth"
-            // projection="geoStereographic"
-            >
-              <Geographies geography={mapJson} id='map'>
-                {({ geographies }) =>
-                  geographies
-                    .map((geo) => (
-                      <Geography
-                        key={geo.rsmKey}
-                        geography={geo}
-                        stroke='black' strokeWidth={0.5}
-                        onMouseEnter={() => mouseEnterHandler(geo.properties.name)}
-                        onMouseLeave={() => setHoveredCountry()}
-                        style={{
-                          default: {
-                            fill: colorSelecter(geo.properties.name, details?.ranking),
-                            outline: 'none'
-                          },
-                          hover: {
-                            fill: ' #FFF1D9',
-                            outline: 'none',
-                            cursor: 'pointer'
-                          },
-                          pressed: {
-                            outline: 'none',
-                            fill: '#FFBC4E'
-                          }
-                        }} />
-                    ))
-                }
-              </Geographies>
-            </ComposableMap>
+            <Map {...{ colorSelector, mouseEnterHandler, hoveredCountry, setHoveredCountry, details }} />
+
           </div>
         </section>
 

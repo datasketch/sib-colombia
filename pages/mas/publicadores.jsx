@@ -93,7 +93,7 @@ export default function publicadores () {
   return (
     <>
       <HeadMore title={'Publicadores'} description={textDescription} content slug='publicadores' />
-      <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid lg:grid-cols-4 gap-x-4 gap-y-3'>
+      <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid md:grid-cols-2  lg:grid-cols-4 gap-x-4 gap-y-3'>
         <div >
           <div className='relative'>
             <img className="absolute top-2 left-3 h-6 w-6" src="/images/icon-search.svg" alt="icon search" />
@@ -105,9 +105,9 @@ export default function publicadores () {
           <Selectable key={render} placeHolder={selectedCountry || 'Pais del Publicador'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
         </div>
         <div >
-          <Selectable /* disabled={selectedCountry !== 'CO'} */ key={render} placeHolder={selectedOrganizacion || 'Tipo de Organización'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
+          <Selectable key={render} placeHolder={selectedOrganizacion || 'Tipo de Organización'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
         </div>
-        <div className='flex items-center lg:justify-center border border-black opacity-75 hover:opacity-100'>
+        <div className='flex items-center lg:justify-center border md:row-start-1 md:col-start-2 lg:col-start-4  border-black opacity-75 hover:opacity-100 py-2 px-2'>
           <button type='button' onClick={clearFilters} className='flex gap-x-2 items-center font-lato font-bold ' value={'reset'}>
             <img src='/images/icon-reset.svg' />
             Limpiar filtros

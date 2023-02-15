@@ -328,7 +328,7 @@ const CardTematicas = props => {
 
   return (
     <div className='bg-white py-10'>
-      <div className='w-10/12 mx-auto flex justify-between'>
+      <div className='w-10/12 mx-auto flex flex-col gap-6 justify-between'>
         <div className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
           <div className='flex flex-col items-start justify-start'>
             <span>Categoría UICN</span>
@@ -383,8 +383,7 @@ const CardTematicas = props => {
             </div>
           </div>
         </div>
-        <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
-         {/*  <Table tabledata={info?.species_list} /> */}
+        <div className='md:w-[45%] flex flex-col justify-evenly gap-y-3 '>         {/*  <Table tabledata={info?.species_list} /> */}
 
           <BarPercent
             bgColor={'bg-red-cr '}

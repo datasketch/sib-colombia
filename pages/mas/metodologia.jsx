@@ -127,7 +127,7 @@ export default function metodologia () {
     <>
       <HeadMore title='Metodología' slug='metodologia' />
       <div className='max-w-screen-2xl w-10/12 mx-auto flex'>
-        <div className='space-y-4 lg:space-y-12 mx-auto lg:w-8/12 py-10'>
+        <div className='space-y-4 lg:space-y-12 mx-auto md:w-8/12 py-10'>
           <div className='space-y-2 lg:space-y-4'>
             <h2 id='biodiversidad' className='text-flame font-inter text-2xl font-black'>Biodiversidad en Cifras</h2>
             <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>

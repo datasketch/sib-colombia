@@ -68,7 +68,7 @@ export default function Home () {
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
       <HeadHome />
-      <section className='bg-black pb-4'>
+      <section className='bg-black pb-12'>
         <div className='w-10/12 flex flex-col items-center pt-10 max-w-screen-2xl mx-auto'>
           <div className='text-white mx-auto space-y-4'>
             <h2 className=' text-2xl lg:text-3xl text-center font-bold' >Ranking mundial de biodiversidad</h2>
@@ -76,12 +76,12 @@ export default function Home () {
             <div className='border-b-2 border-dotted  border-b-light-orange lg:w-2/3 mx-auto' />
           </div>
           <MapComponent {...{ data: listDataMap }} />
-        </div>
-        <div className='w-10/12 mx-auto my-2 max-w-screen-2xl inset-y-0'>
-          <a href='/colombia' className='flex items-center gap-x-2 max-w-[250px] px-4 py-1.5 border border-white rounded-full text-white mt-2'>
-          Conocer cifras de Colombia
-          <img src='/images/arrow-white-right.svg' className='w-3 h-4'/>
-          </a>
+          <div className='lg:self-start'>
+            <a href='/colombia' className='flex items-center mx-auto lg:mx-0 gap-x-2 max-w-[250px] px-4 py-1.5 border border-white rounded-full text-white '>
+              Conocer cifras de Colombia
+              <img src='/images/arrow-white-right.svg' className='w-3 h-4' />
+            </a>
+          </div>
         </div>
       </section>
 
