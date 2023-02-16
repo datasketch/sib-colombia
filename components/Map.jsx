@@ -1,7 +1,6 @@
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import mapJson from '../static/data/maps.json'
 import Tooltip from 'react-tooltip'
-// import 'react-tooltip/dist/react-tooltip.css'
 
 const Map = ({ mouseEnterHandler, setHoveredCountry, hoveredCountry, colorSelector, details }) => {
   return (

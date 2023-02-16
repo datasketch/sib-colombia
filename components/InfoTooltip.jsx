@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import Tooltip from 'react-tooltip'
-// import 'react-tooltip/dist/react-tooltip.css'
 
 const InfoTooltip = ({ label, src, id, classname, place = 'left' }) => {
   return (

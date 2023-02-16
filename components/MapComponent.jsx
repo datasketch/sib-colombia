@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Tooltip from 'react-tooltip'
 import classNames from 'classnames'
-// import 'react-tooltip/dist/react-tooltip.css'
 
 import Map from './Map'
 import { selectColorRanking } from '../lib/functions'
@@ -30,7 +29,6 @@ const MapComponent = ({ data }) => {
   }
 
   return (
-    <>
       <div className='flex flex-col gap-10 h-full w-full mt-6 -mb-16'>
         <div className='flex flex-wrap gap-4 mx-auto justify-center max-w-2xl'>
           {data.map((el, index) =>
@@ -73,7 +71,7 @@ const MapComponent = ({ data }) => {
         </section>
 
       </div>
-    </>
+
   )
 }
 

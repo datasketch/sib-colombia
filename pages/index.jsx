@@ -69,7 +69,7 @@ export default function Home () {
       </Head>
       <HeadHome />
       <section className='bg-black pb-12'>
-        <div className='w-10/12 flex flex-col items-center pt-10 max-w-screen-2xl mx-auto'>
+        <div className='w-10/12 flex flex-col items-center pt-10 max-w-screen-xl mx-auto'>
           <div className='text-white mx-auto space-y-4'>
             <h2 className=' text-2xl lg:text-3xl text-center font-bold' >Ranking mundial de biodiversidad</h2>
             <p className='w-10/12 lg:w-1/2 mx-auto text-sm lg:text-base'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetee dolore magna aliquam erat volutpat</p>
@@ -77,7 +77,7 @@ export default function Home () {
           </div>
           <MapComponent {...{ data: listDataMap }} />
           <div className='lg:self-start'>
-            <a href='/colombia' className='flex items-center mx-auto lg:mx-0 gap-x-2 max-w-[250px] px-4 py-1.5 border border-white rounded-full text-white '>
+            <a href='/colombia' className='flex items-center mx-auto lg:mx-0 gap-x-2 max-w-[280px] px-4 py-1.5 border border-white rounded-full text-white '>
               Conocer cifras de Colombia
               <img src='/images/arrow-white-right.svg' className='w-3 h-4' />
             </a>
@@ -85,22 +85,23 @@ export default function Home () {
         </div>
       </section>
 
-      <div className='bg-white-3 py-8 mx-auto'>
-        <div className='text-center font-inter space-y-2'>
-          <h2 className='font-black text-2xl'>Destacados</h2>
-          <span className='px-4 text-center'>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
+      <section className='bg-white-3 py-8'>
+        <div className='mx-auto max-w-screen-2xl'>
+          <div className='text-center font-inter space-y-2'>
+            <h2 className='font-black text-2xl'>Destacados</h2>
+            <span className='px-4 text-center'>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
+          </div>
+          <div className='w-[85%] py-4 max-w-screen-2xl mx-auto'>
+            <SimpleSlider infinite slidestoshow={5} slidesToScroll={5}>
+              {regionesDestacadas.map((item, key) =>
+                <div key={key} className='px-2.5' >
+                  <CardDestacada label={item.label} type={item.type} link={item.link} especies={item.especies_total} observadas={item.observadas} />
+                </div>
+              )}
+            </SimpleSlider>
+          </div>
         </div>
-        <div className='w-[85%] py-4 max-w-screen-2xl mx-auto'>
-          <SimpleSlider infinite slidestoshow={5} slidesToScroll={5}>
-            {regionesDestacadas.map((item, key) =>
-              <div key={key} className='px-2.5' >
-                <CardDestacada label={item.label} type={item.type} link={item.link} especies={item.especies_total} observadas={item.observadas} />
-              </div>
-            )}
-
-          </SimpleSlider>
-        </div>
-      </div>
+      </section>
     </>
   )
 }
