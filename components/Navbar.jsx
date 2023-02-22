@@ -125,7 +125,7 @@ export default function Navbar () {
               {/* DESKTOP */}
               <ul className={'hidden relative lg:grid lg:grid-cols-4 text-white gap-x-6'}>
                 {nav.map((item, i) =>
-                  <DropDown key={i} >
+                  <DropDown key={'nav-' + i} >
                     <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length}>
                       {item.label}
                     </DropDown.Button>
