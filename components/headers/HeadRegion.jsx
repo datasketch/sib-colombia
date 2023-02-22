@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import Concentric from '../Concentric'
 import classNames from 'classnames'
 import InfoTooltip from '../InfoTooltip'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 
 function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel }) {
   /* console.log(window.innerWidth)
