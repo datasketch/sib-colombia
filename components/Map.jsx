@@ -2,13 +2,14 @@ import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import mapJson from '../static/data/maps.json'
 import Tooltip from 'react-tooltip'
 
-const Map = ({ mouseEnterHandler, setHoveredCountry, hoveredCountry, colorSelector, details }) => {
+const Map = ({ mouseEnterHandler, setHoveredCountry, hoveredCountry, colorSelector, details, categories }) => {
   return (
     <>
-      {hoveredCountry?.pais !== '' && < Tooltip >
-        <div>
-          <p>Pais: {hoveredCountry?.pais}</p>
-          <p>Posicion: {hoveredCountry?.position}</p>
+      {hoveredCountry?.pais !== '' && <Tooltip type='light'>
+        <div className="font-lato">
+          <p className='font-black'>{hoveredCountry?.pais}</p>
+          <p className=''>{categories}</p>
+          <p className='italic font-light '>Puesto {hoveredCountry?.position}</p>
         </div>
       </Tooltip>}
 
@@ -23,7 +24,7 @@ const Map = ({ mouseEnterHandler, setHoveredCountry, hoveredCountry, colorSelect
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    stroke='black' strokeWidth={0.5}
+                    stroke='#333333' strokeWidth={0.5}
                     onMouseEnter={() => mouseEnterHandler(geo.properties.name)}
                     onMouseLeave={() => setHoveredCountry({ pais: '', position: '' })}
                     style={{
@@ -32,13 +33,13 @@ const Map = ({ mouseEnterHandler, setHoveredCountry, hoveredCountry, colorSelect
                         outline: 'none'
                       },
                       hover: {
-                        fill: ' #FFF1D9',
+                        fill: ' #628bf8',
                         outline: 'none',
                         cursor: 'pointer'
                       },
                       pressed: {
                         outline: 'none',
-                        fill: '#FFBC4E'
+                        fill: 'none'
                       }
                     }} />
                 ))

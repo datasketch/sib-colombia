@@ -68,7 +68,7 @@ export default function Home () {
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
       <HeadHome />
-      <section className='bg-black pb-12'>
+      <section className='bg-black pb-6 md:pb-12'>
         <div className='w-10/12 flex flex-col items-center pt-10 max-w-screen-xl mx-auto'>
           <div className='text-white mx-auto space-y-4'>
             <h2 className=' text-2xl lg:text-3xl text-center font-bold' >Ranking mundial de biodiversidad</h2>

@@ -17,6 +17,7 @@ export default function colombia () {
 
     }
   }, [])
+  console.log(generalInfo)
 
   return (
 
@@ -32,6 +33,8 @@ export default function colombia () {
         especiesObservadas={generalInfo.especies_region_total}
         marine={generalInfo.marino}
         imageMap='images/colombia.svg'
+        referencia={generalInfo.referencia}
+        photoLabel={generalInfo.credito_foto}
       />
       <PageComponent data={col} slug='colombia' deparment/>
     </div>
