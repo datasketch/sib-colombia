@@ -5,16 +5,21 @@ import ReactMarkdown from 'react-markdown'
 import Concentric from '../Concentric'
 import classNames from 'classnames'
 import InfoTooltip from '../InfoTooltip'
-// import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel }) {
-  /* console.log(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState(1000)
   useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWindowWidth(window.innerWidth)
+    })
     return () => {
-
+      window.removeEventListener('resize', () => {
+        setWindowWidth(window.innerWidth)
+      })
     }
   }, [])
- */
+
   return (
     <>
       <div className={classNames(slug ? `bg-banner-${slug}` : 'bg-banner-regiones', 'bg-cover bg-center pt-8 lg:pt-14 pb-3.5 h-[550px] ')}>
@@ -28,15 +33,16 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
           <div className="flex flex-col md:flex-row max-h-48 justify-between gap-y-4 w-10/12 mx-auto -mt-9 md:-mt-0">
             {!municipality
               ? (<div className="w-1/2 relative flex items-center">
-                <Concentric inner={especiesObservadas} outer={especiesEstimadas} /* movil *//>
-                <div className="absolute w-full md:w-1/3 lg:w-full  text-white flex -space-y-1 flex-col -top-[9%] md:top-0 lg:-top-[8%] left-[15rem] md:left-60">
+                <Concentric inner={especiesObservadas} outer={especiesEstimadas} movil={windowWidth < 450}/>
+
+                <div className={classNames(windowWidth < 450 ? 'left-[11.5rem]' : 'left-[15rem]', 'absolute w-full md:w-1/3 lg:w-full  text-white flex -space-y-1 flex-col -top-[9%]  lg:-top-[8%] left-[15rem] md:left-60')}>
                   <span className="font-inter font-black lg:text-xl">{formatNumbers(especiesEstimadas)}</span>
                   <p className="font-lato text-sm lg:text-base">Especies estimadas
-                    {referencia && <InfoTooltip classname={'inline-flex ml-2'} place='right' label={referencia} src={'/images/icons/icon-information.svg'} id={'ref'} />}
+                    {referencia && <InfoTooltip classname={'inline-flex ml-0.5'} place='right' label={referencia} src={'/images/icons/icon-information.svg'} id={'ref'} />}
                   </p>
                 </div>
 
-                <div className="text-yellow-green w-full  md:w-1/3 lg:w-full flex flex-col -space-y-1 top-[40%] md:top-[40%] lg:top-[35%] left-[15rem] md:left-60 absolute">
+                <div className={classNames(windowWidth < 450 ? 'left-[11.5rem]' : 'left-[15rem]', 'absolute text-yellow-green flex flex-col -space-y-1 w-full md:w-1/3 lg:w-full top-[38%] md:top-[40%] lg:top-[35%]  md:left-60')}>
                   <span className="text-lg lg:text-4xl font-black font-inter">{formatNumbers(especiesObservadas)}</span>
                   <span className="font-lato text-sm lg:text-lg">Especies observadas</span>
                   <div className='flex gap-x-2 pt-1.5'>

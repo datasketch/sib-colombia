@@ -17,7 +17,6 @@ export default function colombia () {
 
     }
   }, [])
-  console.log(generalInfo)
 
   return (
 

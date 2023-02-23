@@ -36,6 +36,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   const handleChange = (event) => {
     setMunicipio(event.target.value)
   }
+
   return (
     <>
       {gallery.length !== 0 && <Gallery gallery={gallery} />}

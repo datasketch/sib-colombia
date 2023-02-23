@@ -72,7 +72,7 @@ export default function Home () {
         <div className='w-10/12 flex flex-col items-center pt-10 max-w-screen-xl mx-auto'>
           <div className='text-white mx-auto space-y-4'>
             <h2 className=' text-2xl lg:text-3xl text-center font-bold' >Ranking mundial de biodiversidad</h2>
-            <p className='w-10/12 lg:w-1/2 mx-auto text-sm lg:text-base'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetee dolore magna aliquam erat volutpat</p>
+            {/* <p className='w-10/12 lg:w-1/2 mx-auto text-sm lg:text-base'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetee dolore magna aliquam erat volutpat</p> */}
             <div className='border-b-2 border-dotted  border-b-light-orange lg:w-2/3 mx-auto' />
           </div>
           <MapComponent {...{ data: listDataMap }} />
