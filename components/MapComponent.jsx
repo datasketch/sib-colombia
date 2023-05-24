@@ -42,14 +42,15 @@ const MapComponent = ({ data }) => {
       </div> */}
       <section className='flex flex-col lg:flex-row'>
         <div className='lg:w-1/3 mt-10 flex flex-col gap-3'>
-          {data?.positions.map(pos =>
-            <div key={pos.position}>
+          {data?.positions.map((pos, i) => {
+            const position = pos.position === 3 ? pos.position + 2 : pos.position
+            return (<div key={pos.position}>
               <div className='flex items-center'>
                 <div className='text-6xl font-bold'>
-                  {pos.position}
+                  {position}
                 </div>
                 <div>
-                  <div>{ordinalSuffixOf(pos.position)}</div>
+                  <div>{ordinalSuffixOf(position)}</div>
                   <p className='capitalize text-2xl'>país</p>
                 </div>
               </div>
@@ -57,8 +58,8 @@ const MapComponent = ({ data }) => {
               {/* <button clas>
                 <img className='rotate-90 bg-red-cr p-0.5 rounded-md' src='/images/icons/search.svg' />
               </button> */}
-
-            </div>
+            </div>)
+          }
           )}
         </div>
         <div className='w-full lg:w-2/3'>

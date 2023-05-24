@@ -18,7 +18,7 @@ const BarPercent = ({ label, region, regionparent, title, datatable = [], especi
             </CustomTooltip>}
           </p>
           {/* <div className='inline-flex -mt-3'>
-
+      //valor con el que se esta calculando
           </div> */}
         </div>
       </div>
