@@ -30,7 +30,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
-  const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
+  // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
 
   const handleChange = (event) => {
@@ -207,8 +207,8 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
           </div>
         </div>
       </div>
-
-      <div className='py-10 mx-auto w-10/12 max-w-screen-xl'>
+      {/* explorador */}
+      {/* <div className='py-10 mx-auto w-10/12 max-w-screen-xl'>
         <div className='mx-auto max-w-md text-center'>
           <div className='space-y-6'>
             <h2 className='font-black font-lato text-3xl 3xl:text-4xl'>
@@ -235,7 +235,8 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>
       <div>
         <iframe src={appURL} className='h-screen w-full'></iframe>
-      </div>
+      </div> */}
+      {/* explorador */}
 
       {patrocinador.length !== 0 && <div className='py-10 bg-white'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-xl'>

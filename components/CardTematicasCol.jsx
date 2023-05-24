@@ -2,7 +2,7 @@
 
 import { Tooltip } from '@mui/material'
 import PropTypes from 'prop-types'
-import { calculateWidth, formatNumbers } from '../lib/functions'
+import { calculateWidth, capitalize, formatNumbers } from '../lib/functions'
 import tooltips from '../static/data/tooltips.json'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
@@ -22,14 +22,15 @@ const CardTematicasCol = props => {
       <div className='py-10 bg-white'>
         <div className='grid lg:grid-cols-2 gap-y-6 gap-x-36 w-10/12 mx-auto'>
           {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr: crRegister, en: enRegister, vu: vuRegister }, key) => {
+            const title = capitalize(slug.replace('amenazadas-', ''))
             return <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
               <div className='flex flex-col items-start justify-start'>
-                <span>Categoría UICN</span>
+                <span>Categoría UICN {title}</span>
                 <span className='text-6xl font-black font-inter'>
                   {formatNumbers(especies)}
                   <div className='border-t border-t-dartmouth-green' />
                 </span>
-                <div className='font-black font-inter text-lg'>Especies  de {label}
+                <div className='font-black font-inter text-lg'>Especies amenazadas
                   {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${slug.replace('-', '_')}`} />}>
                     <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
                   </CustomTooltip>}
@@ -76,7 +77,7 @@ const CardTematicasCol = props => {
                 </div>
               </div>
               <div className='flex flex-col pt-5 gap-y-10'>
-                <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-1/2 lg:w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
+                <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-1/2 lg:w-4/12 self-end' value={slug} onClick={(e) => updateBreadcrumb(e, selected)}>
                   Ver más
                   <img src='/images/arrow-black.svg' alt='arrow button' />
                 </button>
@@ -312,14 +313,14 @@ const CardTematicasCol = props => {
   return (
     <div className='bg-white py-10'>
       <div className='w-10/12 mx-auto flex justify-between'>
-        <div className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
+        <div className='max-w-[45%] w-full shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
           <div className='flex flex-col items-start justify-start'>
-            <span>Categoría UICN</span>
+            <span>Categoría UICN {capitalize(info?.slug.replace('amenazadas-', ''))}</span>
             <span className='text-6xl font-black font-inter'>
               {formatNumbers(info?.especies)}
               <div className='border-t border-t-dartmouth-green' />
             </span>
-            <div className='font-black font-inter text-lg'>Especies  de {info?.label}
+            <div className='font-black font-inter text-lg'>Especies amenazadas
               {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
                 <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
               </CustomTooltip>}
@@ -367,9 +368,9 @@ const CardTematicasCol = props => {
           </div>
         </div>
         <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
-          {/* <Table tabledata={info?.especies_list} link={false} /> */}
 
           <BarPercent
+            label='vulnerables'
             bgColor={'bg-red-cr '}
             region={region}
             title={'CR'}
@@ -380,6 +381,7 @@ const CardTematicasCol = props => {
           />
 
           <BarPercent
+            label='en peligro'
             bgColor={'bg-orange-en'}
             region={region}
             title={'EN'}
@@ -389,6 +391,7 @@ const CardTematicasCol = props => {
             link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
           />
           <BarPercent
+            label='en peligro critico'
             bgColor={'bg-yellow-vu'}
             region={region}
             title={'VU'}

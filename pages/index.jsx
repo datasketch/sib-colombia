@@ -68,18 +68,20 @@ export default function Home () {
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
       <HeadHome />
-      <section className='bg-black pb-6 md:pb-12'>
+      <section className='bg-white-3 pb-6 md:pb-12'>
         <div className='w-10/12 flex flex-col items-center pt-10 max-w-screen-xl mx-auto'>
-          <div className='text-white mx-auto space-y-4'>
-            <h2 className=' text-2xl lg:text-3xl text-center font-bold' >Ranking mundial de biodiversidad</h2>
-            {/* <p className='w-10/12 lg:w-1/2 mx-auto text-sm lg:text-base'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreetee dolore magna aliquam erat volutpat</p> */}
-            <div className='border-b-2 border-dotted  border-b-light-orange lg:w-2/3 mx-auto' />
+          <div className=' mx-auto space-y-4'>
+            <div>
+              <h2 className='text-2xl lg:text-3xl text-center font-bold' >Biodiversidad de Colombia en el mundo</h2>
+              <p className='text-center'>Colombia es el tercer país con mayor biodiversidad en el mundo</p>
+            </div>
+            {/* <div className='border-b-2 border-dotted  border-b-light-orange lg:w-2/3 mx-auto' /> */}
           </div>
           <MapComponent {...{ data: listDataMap }} />
           <div className='lg:self-start'>
-            <a href='/colombia' className='flex items-center mx-auto lg:mx-0 gap-x-2 max-w-[280px] px-4 py-1.5 border border-white rounded-full text-white '>
+            <a href='/colombia' className='flex items-center mx-auto lg:mx-0 gap-x-2 max-w-[280px] px-4 py-1.5 border border-black rounded-full'>
               Conocer cifras de Colombia
-              <img src='/images/arrow-white-right.svg' className='w-3 h-4' />
+              <img src='/images/arrow-black.svg' className='w-3 h-4' />
             </a>
           </div>
         </div>

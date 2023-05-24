@@ -15,7 +15,7 @@ export const CardHead = ({ title, especies, registros, datatable, link }) => {
       </span>
       <div className='text-lg font-inter font-bold relative'>
         {title}
-        {datatable?.length !== 0 && <CustomTooltip placement='left-start' title={<Table tabledata={datatable} link={link}/>}>
+        {datatable && datatable?.length !== 0 && <CustomTooltip placement='left-start' title={<Table tabledata={datatable} link={link}/>}>
           <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
         </CustomTooltip>}
       </div>

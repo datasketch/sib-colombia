@@ -9,14 +9,6 @@ export default function Navbar () {
   const [childrenRegions, setChildrenRegions] = useState([])
   const [menuIsActive, setMenuIsActive] = useState(false)
 
-  const handleRegionsSelected = (children) => {
-    if (!children) {
-      setChildrenRegions([])
-      return
-    }
-    setChildrenRegions(children)
-  }
-
   const nav = [
     {
       label: 'Colombia',
@@ -108,6 +100,14 @@ export default function Navbar () {
     }
   ]
 
+  const handleRegionsSelected = (children) => {
+    if (!children) {
+      setChildrenRegions([])
+      return
+    }
+    setChildrenRegions(children)
+  }
+
   return (
     <header className="absolute top-0 left-0 w-full z-40 py-2">
       <div className='mx-auto w-10/12 max-w-[1300px] '>
@@ -125,8 +125,8 @@ export default function Navbar () {
               {/* DESKTOP */}
               <ul className={'hidden relative lg:grid lg:grid-cols-4 text-white gap-x-6'}>
                 {nav.map((item, i) =>
-                  <DropDown key={'nav-' + i} >
-                    <DropDown.Button className='font-lato text-sm' {...item} arrow={!!item.childs?.length}>
+                  <DropDown key={'nav-' + i} setRegions={setChildrenRegions}>
+                    <DropDown.Button {...item} arrow={!!item.childs?.length} className='font-lato text-sm'>
                       {item.label}
                     </DropDown.Button>
                     <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-0.5 py-1.5 px-2.5'>

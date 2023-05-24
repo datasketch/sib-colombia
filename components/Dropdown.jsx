@@ -4,12 +4,13 @@ import { createContext, useContext, useEffect, useRef, useState } from 'react'
 
 const DropDownContext = createContext(null)
 
-export default function DropDown ({ children, ...restProps }) {
+export default function DropDown ({ children, setRegions, ...restProps }) {
   const refDropdown = useRef(null)
   const [open, setOpen] = useState(false)
 
   const showMenu = ({ target }) => {
     setOpen((prevState) => !prevState)
+    setRegions([])
   }
 
   useEffect(() => {

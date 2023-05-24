@@ -29,7 +29,7 @@ const Map = ({ mouseEnterHandler, setHoveredCountry, hoveredCountry, colorSelect
                     onMouseLeave={() => setHoveredCountry({ pais: '', position: '' })}
                     style={{
                       default: {
-                        fill: colorSelector(geo.properties.name, details?.ranking),
+                        fill: colorSelector(geo.properties.name, details),
                         outline: 'none'
                       },
                       hover: {
