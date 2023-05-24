@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import classNames from 'classnames'
+// import classNames from 'classnames'
 
 import { ordinalSuffixOf, selectColorRanking } from '../lib/functions'
 import Map from './Map'
-import MapParagraph from './MapParagraph'
+// import MapParagraph from './MapParagraph'
 
 const MapComponent = ({ data }) => {
   // eslint-disable-next-line no-unused-vars
