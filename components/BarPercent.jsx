@@ -3,10 +3,11 @@ import { calculateWidth, formatNumbers } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
-const BarPercent = ({ label, region, regionparent, title, datatable = [], especies, registros, parentEspecies, bgColor, textColor, link, municipalityflag }) => {
+const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = [], especies, registros, parentEspecies, bgColor, textColor, link, municipalityflag }) => {
   const widthBarSpecies = calculateWidth(+especies, +especies + +parentEspecies)
   const widthBarParent = calculateWidth(+parentEspecies, +especies + +parentEspecies) || '100%'
   const text = label ? `observadas ${label} (${title})` : title + ' observadas'
+
   return (
     <div>
       <div className='font-bold font-inter text-lg '>
@@ -17,9 +18,10 @@ const BarPercent = ({ label, region, regionparent, title, datatable = [], especi
               <img className='inline-block pl-0.5' src='/images/icons/icon-table.svg' />
             </CustomTooltip>}
           </p>
-          {/* <div className='inline-flex -mt-3'>
-      //valor con el que se esta calculando
-          </div> */}
+          {cat === 'amenazadas' && <div className='inline-flex -mt-3 text-black-3'>
+            {/* //valor con el que se esta calculando */}
+            {parentEspecies} Especies estimadas  {label} ({title})
+          </div>}
         </div>
       </div>
       <div className='text-dartmouth-green font-inter'>

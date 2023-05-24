@@ -370,7 +370,8 @@ const CardTematicasCol = props => {
         <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
 
           <BarPercent
-            label='vulnerables'
+            cat='amenazadas'
+            label='en peligro critico'
             bgColor={'bg-red-cr '}
             region={region}
             title={'CR'}
@@ -381,6 +382,7 @@ const CardTematicasCol = props => {
           />
 
           <BarPercent
+            cat='amenazadas'
             label='en peligro'
             bgColor={'bg-orange-en'}
             region={region}
@@ -391,7 +393,8 @@ const CardTematicasCol = props => {
             link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
           />
           <BarPercent
-            label='en peligro critico'
+            cat='amenazadas'
+            label='vulnerables'
             bgColor={'bg-yellow-vu'}
             region={region}
             title={'VU'}

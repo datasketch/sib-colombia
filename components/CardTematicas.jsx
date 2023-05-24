@@ -387,8 +387,9 @@ const CardTematicas = props => {
         <div className='md:w-[45%] flex flex-col justify-evenly gap-y-3 '>         {/*  <Table tabledata={info?.species_list} /> */}
 
           <BarPercent
-            label='vulnerables'
-            bgColor={'bg-red-cr '}
+            cat='amenazadas'
+            label='en peligro critico'
+            bgColor={'bg-red-cr'}
             region={region}
             title={'CR'}
             especies={info?.cr}
@@ -397,6 +398,7 @@ const CardTematicas = props => {
           />
 
           <BarPercent
+            cat='amenazadas'
             label='en peligro'
             bgColor={'bg-orange-en'}
             region={region}
@@ -406,7 +408,8 @@ const CardTematicas = props => {
             registros={info?.en}
           />
           <BarPercent
-            label='en peligro critico'
+            cat='amenazadas'
+            label='vulnerables'
             bgColor={'bg-yellow-vu'}
             region={region}
             title={'VU'}
