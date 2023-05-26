@@ -31,12 +31,6 @@ export default function metodologia () {
     'descarga-bibliografia'
   ]
 
-  const table = `
-  |  luis  |  fabian  |  calderon  |
-  |   -    |    -     |     -      |
-  | esto   |    es    |  una tabla |
-  `
-
   const scrollspyContent = [
     {
       href: '#biodiversidad',
