@@ -388,34 +388,43 @@ const CardTematicas = props => {
 
           <BarPercent
             cat='amenazadas'
+            municipalityflag={municipalityflag}
             label='en peligro critico'
             bgColor={'bg-red-cr'}
             region={region}
+            regionparent={parentlabel}
             title={'CR'}
             especies={info?.cr}
-            parentEspecies={info?.especies}
+            parentEspecies={info?.estimadas_cr}
             registros={info?.cr}
+            colObservadas={info?.cr_registros}
           />
 
           <BarPercent
             cat='amenazadas'
+            municipalityflag={municipalityflag}
             label='en peligro'
+            regionparent={parentlabel}
             bgColor={'bg-orange-en'}
             region={region}
             title={'EN'}
             especies={info?.en}
-            parentEspecies={info?.especies}
+            parentEspecies={info?.estimadas_en}
             registros={info?.en}
+            colObservadas={info?.en_registros}
           />
           <BarPercent
             cat='amenazadas'
+            municipalityflag={municipalityflag}
             label='vulnerables'
+            regionparent={parentlabel}
             bgColor={'bg-yellow-vu'}
             region={region}
             title={'VU'}
             especies={info?.vu}
-            parentEspecies={info?.especies}
+            parentEspecies={info?.estimadas_vu}
             registros={info?.vu}
+            colObservadas={info?.vu_registros}
           />
 
         </div>

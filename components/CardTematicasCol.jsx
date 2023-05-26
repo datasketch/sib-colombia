@@ -117,6 +117,12 @@ const CardTematicasCol = props => {
                   <span>{formatNumbers(info?.especies_cites_i)}</span>
                 </div>
                 <div className='flex flex-col items-center'>
+                  <div className='flex items-start border-b-2 border-b-black'>
+                    <b>I/II</b>
+                  </div>
+                  <span>{formatNumbers(info?.especies_cites_i_ii)}</span>
+                </div>
+                <div className='flex flex-col items-center'>
                   <div className='flex items-start border-b-2 border-b-sandstorm'>
                     <b>II</b>
                   </div>
@@ -130,9 +136,10 @@ const CardTematicasCol = props => {
                 </div>
               </div>
               <div className='flex'>
-                <div className='bg-cerulean h-4' style={{ width: calculateWidth(+info?.especies_cites_i, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii) }}></div>
-                <div className='bg-sandstorm h-4' style={{ width: calculateWidth(+info?.especies_cites_ii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii) }}></div>
-                <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(+info?.especies_cites_iii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii) }}></div>
+                <div className='bg-cerulean h-4' style={{ width: calculateWidth(+info?.especies_cites_i, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_i_ii + +info?.especies_cites_iii) }}></div>
+                <div className='bg-sandstorm h-4' style={{ width: calculateWidth(+info?.especies_cites_ii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_i_ii + +info?.especies_cites_iii) }}></div>
+                <div className='bg-black h-4' style={{ width: calculateWidth(+info?.especies_cites_i_ii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_i_ii + +info?.especies_cites_iii) }}></div>
+                <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(+info?.especies_cites_iii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_i_ii + +info?.especies_cites_iii) }}></div>
               </div>
             </div>
 
@@ -148,6 +155,18 @@ const CardTematicasCol = props => {
               especies={info?.especies_cites_i}
               parentEspecies={info?.estimadas_cites_i}
               registros={info?.registros_cites_i}
+              link={`region=${slugregion}&tematica=${info?.slug}`}
+
+            />
+            <BarPercent
+              bgColor={'bg-black'}
+              textColor={'text-white'}
+              region={region}
+              title={'CITES I/II'}
+              datatable={info?.list_especies_cites_i_ii}
+              especies={info?.especies_cites_i_ii}
+              parentEspecies={info?.estimadas_cites_i_ii}
+              registros={info?.registros_cites_i_ii}
               link={`region=${slugregion}&tematica=${info?.slug}`}
 
             />
@@ -372,7 +391,7 @@ const CardTematicasCol = props => {
           <BarPercent
             cat='amenazadas'
             label='en peligro critico'
-            bgColor={'bg-red-cr '}
+            bgColor={'bg-red-cr'}
             region={region}
             title={'CR'}
             especies={info?.cr}

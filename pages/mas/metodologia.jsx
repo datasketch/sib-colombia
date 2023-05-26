@@ -4,7 +4,9 @@ import Scrollspy from 'react-scrollspy'
 import HeadMore from '../../components/headers/HeadMore'
 import { AppContext } from '../_app'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import metodology from '../../static/data/metodologia.json'
+import { tablaAnexos } from '../../lib/functions'
 
 export default function metodologia () {
   const content = [
@@ -28,6 +30,12 @@ export default function metodologia () {
     'anexos',
     'descarga-bibliografia'
   ]
+
+  const table = `
+  |  luis  |  fabian  |  calderon  |
+  |   -    |    -     |     -      |
+  | esto   |    es    |  una tabla |
+  `
 
   const scrollspyContent = [
     {
@@ -347,9 +355,13 @@ export default function metodologia () {
             <h2 id='anexos' className='text-flame font-inter text-2xl font-black'>Anexos</h2>
             <div className='space-y-3'>
               <b className='font-inter text-xl'>Fuentes de cifras estimadas</b>
-              <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato space-y-2'>
-                {metodology.anexos}
-              </ReactMarkdown>
+              {metodology.anexos.map((el, i) => {
+                return <ReactMarkdown key={'anexos-' + i} remarkPlugins={[remarkGfm]} linkTarget='_blank' className='rc-markdown font-lato space-y-2rc'>
+                  {typeof el === 'number' ? tablaAnexos : el }
+                </ReactMarkdown>
+              }
+              )
+              }
             </div>
           </div>
 

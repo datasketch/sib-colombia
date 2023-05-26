@@ -21,6 +21,18 @@
   .rc-markdown > p > a {
     @apply underline italic text-azure;
   }
+  .rc-markdown >table > tbody > tr >td > a {
+    @apply underline italic text-azure;
+  }
+
+ 
+  .rc-markdown table thead th {
+    @apply border-2 border-black px-4 py-2;
+  }
+
+  .rc-markdown table tbody td {
+  @apply border-2 border-black px-4 py-2;
+  }
 
   details > summary {
     list-style: none;

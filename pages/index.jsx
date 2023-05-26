@@ -64,7 +64,6 @@ export default function Home () {
     setBreadCrumb([])
   }, [])
 
-  // console.log(listDataMap)
   return (
     <>
       <Head>
