@@ -24,7 +24,7 @@ const ResponsiveNavbarMenu = ({ nav, menuIsActive, setMenuIsActive }) => {
       </div>
       {
         nav.map((item, i) => (
-          <DropDown key={i} >
+          <DropDown key={i}>
             <DropDown.Button className='font-lato text-sm md:text-md' {...item} arrow={!!item.childs?.length} src={'/images/icons/icon-up-arrow.svg'}>
               {item.label}
             </DropDown.Button>

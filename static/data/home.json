@@ -90,66 +90,71 @@
         "lon": 45.6768
       }
     ],
-    "ref_principal": "Butler, R. A. (2016). The top 10 most biodiverse countries. Mongabay. https://news.mongabay.com/2016/05/top-10-biodiverse-countries/?n3wsletter Consultado febrero 2023 Nash, M. H. (2022, julio 28). The 200 Most (& Least) Biodiverse Countries (2022). The Swiftest. https://theswiftest.com/biodiversity-index/",
+    "ref_principal": "Butler, R. A. (2016). The top 10 most biodiverse countries. Mongabay. [https://news.mongabay.com/2016/05/top-10-biodiverse-countries/?n3wsletter](https://news.mongabay.com/2016/05/top-10-biodiverse-countries/?n3wsletter) Consultado febrero 2023 Nash, M. H. (2022, julio 28). The 200 Most (& Least) Biodiverse Countries (2022). The Swiftest. [https://theswiftest.com/biodiversity-index/](https://theswiftest.com/biodiversity-index/)",
     "positions": [
       {
         "position": 1,
-        "position_text": "Primer lugar en diversidad de aves(42), orquídeas (41) y mariposas (13)"
+        "position_text": "lugar en diversidad de (42), (41) y (13)"
       },
       {
         "position": 2,
-        "position_text": "Segundo en plantas (51), anfibios(52), peces dulceacuícolas(10), reptiles(53), palmas(54) y murciélagos (53)"
+        "position_text": "en (51), (52), (10), (53), (54) y (58)"
       },
       {
-        "position": 3,
-        "position_text": "quinto en mamíferos (55)"
+        "position": 5,
+        "position_text": "en (55)"
       }
     ],
     "position_refs": [
       {
-        "ref_id": 10,
-        "label": "DoNascimiento, C., Herrera-Collazos, E. E., Herrera-R., G. A., Ortega-Lara, A., Villa-Navarro, F. A., Usma Oviedo, J. S., & Maldonado-Ocampo, J. A. (2017). Checklist of the freshwater fishes of Colombia: A Darwin Core alternative to the updating problem. ZooKeys, 708, 25-138. https://doi.org/10.3897/zookeys.708.13897",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/IX85I8LR/collection"
+        "ref_id":"10",
+        "label": "DoNascimiento, C., Herrera-Collazos, E. E., Herrera-R., G. A., Ortega-Lara, A., Villa-Navarro, F. A., Usma Oviedo, J. S., & Maldonado-Ocampo, J. A. (2017). Checklist of the freshwater fishes of Colombia: A Darwin Core alternative to the updating problem. ZooKeys, 708, 25-138. [https://doi.org/10.3897/zookeys.708.13897](https://doi.org/10.3897/zookeys.708.13897)",
+        "zotero": "[https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/IX85I8LR/collection](https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/IX85I8LR/collection)"
       },
       {
-        "ref_id": 13,
-        "label": "Garwood K., Huertas B., Ríos-Málaver I.C., Jaramillo J.G. (2022). Mariposas de Colombia Lista de chequeo/ Butterflies of Colombia Checklist (Lepidoptera: Papilionoidea). BioButterfly Database. 2da Edición. 304 pp. Disponible en / Available at http://www.butterflycatalogs.com",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/T7Q6BKX8/collection"
+        "ref_id":"13",
+        "label": "Garwood K., Huertas B., Ríos-Málaver I.C., Jaramillo J.G. (2022). Mariposas de Colombia Lista de chequeo/ Butterflies of Colombia Checklist (Lepidoptera: Papilionoidea). BioButterfly Database. 2da Edición. 304 pp. Disponible en / Available at [http://www.butterflycatalogs.com](http://www.butterflycatalogs.com)",
+        "zotero": "[https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/T7Q6BKX8/collection](https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/T7Q6BKX8/collection)"
       },
       {
-        "ref_id": 41,
+        "ref_id":"41",
         "label": "Hassler, Michael (2004 - 2023): World Orchids. Synonymic Checklist and Distribution of the Orchids of the World. Version 14.8; last update January 26th, 2023. - www.worldplants.de/orchids/.",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/3W72P33X/collection"
+        "zotero": "[https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/3W72P33X/collection](https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/3W72P33X/collection)"
       },
       {
-        "ref_id": 42,
-        "label": "South American Classification Committee (SACC). (2023). Species lists of birds for South American countries and territories. Checklist of South American Birds. https://www.museum.lsu.edu/~Remsen/SACCCountryLists.htm",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/ITGZ9FAD/collection"
+        "ref_id":"42",
+        "label": "South American Classification Committee (SACC). (2023). Species lists of birds for South American countries and territories. Checklist of South American Birds. [https://www.museum.lsu.edu/~Remsen/SACCCountryLists.htm](https://www.museum.lsu.edu/~Remsen/SACCCountryLists.htm)",
+        "zotero": "[https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/ITGZ9FAD/collection](https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/ITGZ9FAD/collection)"
       },
       {
-        "ref_id": 51,
-        "label": "Naciones Unidas, Ecoespaña, & Instituto de Recursos Mundiales (WRI)en  colaboración  con  el  Programa  de  las  Naciones Unidas para el Desarrollo, el Programa de las Naciones Unidaspara el Medio Ambiente y el Banco Mundial. (2007). Recursos mundiales: La riqueza del pobre-Gestionar los ecosistemas para combatir la pobreza. Instituto de Recursos Mundiales ; Ecoespaña. https://files.wri.org/d8/s3fs-public/pdf/recursos_mundiales_la_riqueza_del_pobre.pdf",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/KE92L6G3/collection"
+        "ref_id":"51",
+        "label": "Naciones Unidas, Ecoespaña, & Instituto de Recursos Mundiales (WRI)en  colaboración  con  el  Programa  de  las  Naciones Unidas para el Desarrollo, el Programa de las Naciones Unidaspara el Medio Ambiente y el Banco Mundial. (2007). Recursos mundiales: La riqueza del pobre-Gestionar los ecosistemas para combatir la pobreza. Instituto de Recursos Mundiales ; Ecoespaña. [https://files.wri.org/d8/s3fs-public/pdf/recursos_mundiales_la_riqueza_del_pobre.pdf](https://files.wri.org/d8/s3fs-public/pdf/recursos_mundiales_la_riqueza_del_pobre.pdf)",
+        "zotero": "[https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/KE92L6G3/collection](https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/KE92L6G3/collection)"
       },
       {
-        "ref_id": 52,
-        "label": "Butler, R. A. (2019). Total number of amphibian species, by country. Mongabay. https://rainforests.mongabay.com/03amphibian.htm",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/M88T892Q/collection"
+        "ref_id":"52",
+        "label": "Butler, R. A. (2019). Total number of amphibian species, by country. Mongabay. [https://rainforests.mongabay.com/03amphibian.htm](https://rainforests.mongabay.com/03amphibian.htm)",
+        "zotero": "[https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/M88T892Q/collection](https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/M88T892Q/collection)"
       },
       {
-        "ref_id": 53,
-        "label": "Martínez-Medina, Daniela, Acevedo-Charry, Orlando, Medellín-Becerra, Sofía, Rodríguez-Fuentes, Juliana, López-Casas, Silvia, Muñoz-Duque, Sebastián, Rivera-Correa, Mauricio, López-Aguirre, Yelenny, Vargas-Salinas, Fernando, Laverde-R., Oscar, & Rodríguez-Posada, Miguel E. (2021). Estado, desarrollo y tendencias de los estudios en acústica de la fauna en Colombia. Biota colombiana, 22(1), 7-25. https://doi.org/10.21068/c2021.v22n01a01",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/KHVZDIRJ/collection"
+        "ref_id":"53",
+        "label": "Martínez-Medina, Daniela, Acevedo-Charry, Orlando, Medellín-Becerra, Sofía, Rodríguez-Fuentes, Juliana, López-Casas, Silvia, Muñoz-Duque, Sebastián, Rivera-Correa, Mauricio, López-Aguirre, Yelenny, Vargas-Salinas, Fernando, Laverde-R., Oscar, & Rodríguez-Posada, Miguel E. (2021). Estado, desarrollo y tendencias de los estudios en acústica de la fauna en Colombia. Biota colombiana, 22(1), 7-25. [https://doi.org/10.21068/c2021.v22n01a01](https://doi.org/10.21068/c2021.v22n01a01)",
+        "zotero": "[https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/KHVZDIRJ/collection](https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/KHVZDIRJ/collection)"
       },
       {
-        "ref_id": 54,
+        "ref_id":"58",
+        "label": "Martínez-Medina, Daniela, Acevedo-Charry, Orlando, Medellín-Becerra, Sofía, Rodríguez-Fuentes, Juliana, López-Casas, Silvia, Muñoz-Duque, Sebastián, Rivera-Correa, Mauricio, López-Aguirre, Yelenny, Vargas-Salinas, Fernando, Laverde-R., Oscar, & Rodríguez-Posada, Miguel E. (2021). Estado, desarrollo y tendencias de los estudios en acústica de la fauna en Colombia. Biota colombiana, 22(1), 7-25. [https://doi.org/10.21068/c2021.v22n01a01](https://doi.org/10.21068/c2021.v22n01a01)",
+        "zotero": "[https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/KHVZDIRJ/collection](https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/KHVZDIRJ/collection)"
+      },
+      {
+        "ref_id":"54",
         "label": "Ministerio de Ambiente y Desarrollo Sostenible. (2015). Plan de conservación, manejo y uso sostenible de las palmas deColombia. Textos: Galeano G., R. Bernal, Y. Figueroa Cardozo. Ministerio de Ambiente y Desarrollo Sostenible - Universidad Nacional deColombia, Bogotá. 134 pp",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/PV6RI4N3/collection"
+        "zotero": "[https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/PV6RI4N3/collection](https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/PV6RI4N3/collection)"
       },
       {
-        "ref_id": 55,
-        "label": "Pacheco Torres, V. R., Diaz, S., Graham Angeles, L. A., Flores-Quispe, M., Calizaya-Mamani, G. ., Ruelas, D., & Sánchez-Vendizú, P. (2021). Lista actualizada de la diversidad de los mamíferos del Perú y una propuesta para su actualización. Revista Peruana De Biología, 28(4), e21019. https://doi.org/10.15381/rpb.v28i4.21019",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/XQAIUCSR/collection"
+        "ref_id":"55",
+        "label": "Pacheco Torres, V. R., Diaz, S., Graham Angeles, L. A., Flores-Quispe, M., Calizaya-Mamani, G. ., Ruelas, D., & Sánchez-Vendizú, P. (2021). Lista actualizada de la diversidad de los mamíferos del Perú y una propuesta para su actualización. Revista Peruana De Biología, 28(4), e21019. [https://doi.org/10.15381/rpb.v28i4.21019](https://doi.org/10.15381/rpb.v28i4.21019)",
+        "zotero": "[https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/XQAIUCSR/collection](https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/XQAIUCSR/collection)"
       }
     ]
   },

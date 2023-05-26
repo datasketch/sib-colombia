@@ -8,6 +8,7 @@ import SimpleSlider from '../components/Slider'
 import { AppContext } from './_app'
 // eslint-disable-next-line import/no-absolute-path
 import home from '/static/data/home.json'
+import InfoTooltip from '../components/InfoTooltip'
 
 const ENUM_DESTACADAS = [
   {
@@ -62,6 +63,8 @@ export default function Home () {
     setFooterBgColor('bg-footer-green')
     setBreadCrumb([])
   }, [])
+
+  // console.log(listDataMap)
   return (
     <>
       <Head>
@@ -73,7 +76,7 @@ export default function Home () {
           <div className=' mx-auto space-y-4'>
             <div>
               <h2 className='text-2xl lg:text-3xl text-center font-bold' >Biodiversidad de Colombia en el mundo</h2>
-              <p className='text-center'>Colombia es el tercer país con mayor biodiversidad en el mundo</p>
+              <p className='flex justify-center'>Colombia es el tercer país con mayor biodiversidad en el mundo <InfoTooltip classname='ml-0.5' label={listDataMap.ref_principal} src={'/images/icons/icon-information-black.svg'} id={'ref_principal'}/></p>
             </div>
             {/* <div className='border-b-2 border-dotted  border-b-light-orange lg:w-2/3 mx-auto' /> */}
           </div>
@@ -91,7 +94,7 @@ export default function Home () {
         <div className='mx-auto max-w-screen-2xl'>
           <div className='text-center font-inter space-y-2'>
             <h2 className='font-black text-2xl'>Destacados</h2>
-            <span className='px-4 text-center'>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
+            <span className='px-4'>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
           </div>
           <div className='w-[85%] py-4 max-w-screen-2xl mx-auto'>
             <SimpleSlider infinite slidestoshow={5} slidesToScroll={5}>
