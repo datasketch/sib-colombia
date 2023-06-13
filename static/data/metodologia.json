@@ -5,12 +5,12 @@
     "listas-referencia": {
         "p1": "Para entender el estado de conservación y amenaza de las especies que habitan el territorio Colombiano, el SiB Colombia cuenta con listas de referencia taxonómicas y temáticas consolidadas con un criterio científico, por grupos de expertos a partir de fuentes primarias y secundarias. Las siguientes listas son cruciales para la generación de las cifras:",
         "li": [
-            "[Lista de especies de peces de agua dulce de Colombia](http://listas.biodiversidad.co/list/7e3a2242-46d6-4b90-b80c-42c5d27ed93b)(Publicador: Asociación Colombiana de Ictiólogos)",
-            "[Lista de mamíferos de Colombia](http://listas.biodiversidad.co/list/e8b9ed9b-f715-4eac-ae24-772fbf40d7ae)(Publicador: Sociedad Colombiana de Mastozoología)",
-            "[Lista de referencia de especies de aves de Colom](https://listas.biodiversidad.co/list/6c9c4b08-4cec-4160-a708-7f16060d7db0)[bia](https://listas.biodiversidad.co/list/6c9c4b08-4cec-4160-a708-7f16060d7db0)(Publicador: Asociación Colombiana de Ornitología)",
-            "[Catálogo de plantas y líquenes de Colombia](https://listas.biodiversidad.co/list/5c0b1470-8884-4914-ae76-70a7c81d6d08) (Publicador: Universidad Nacional de Colombia)",
+            "[Lista de especies de peces de agua dulce de Colombia](https://doi.org/10.15472/numrso)(Publicador: Asociación Colombiana de Ictiólogos)",
+            "[Lista de mamíferos de Colombia](https://doi.org/10.15472/kl1whs)(Publicador: Sociedad Colombiana de Mastozoología)",
+            "[Lista de referencia de especies de aves de Colom](https://doi.org/10.15472/qhsz0p)(Publicador: Asociación Colombiana de Ornitología)",
+            "[Catálogo de plantas y líquenes de Colombia](https://doi.org/10.15472/7avdhn) (Publicador: Universidad Nacional de Colombia)",
             "[Listas de especies de Coleópteros de Colombia](https://www.gbif.org/dataset/search?publishing_org=2c39be5c-c11e-46d0-bcb4-552f2072d19f)(Grupo de Coleopterólogos de Colombia)",
-            "[Lista de especies amenazadas de Colombia](https://listas.biodiversidad.co/list/772de164-541d-4db6-ba38-41ac1c8612c0)(Publicador: Ministerio de Ambiente y Desarrollo Sostenible)"
+            "[Lista de especies amenazadas de Colombia](https://doi.org/10.15472/5an5tz)(Publicador: Ministerio de Ambiente y Desarrollo Sostenible)"
         ]
     },
     "listas-externas": {
