@@ -51,7 +51,7 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
             <div
               className={classNames(bgColor, textColor, widthBarSpecies === undefined ? '' : 'px-1 min-w-[3.5%]', 'text-xs h-4')} style={{ width: widthBarSpecies || '0%' }}>{especies}</div>
             <div
-              className={classNames('bg-white-smoke', 'text-xs pr-1 h-4 text-end')} style={{ width: widthBarParent || '100%' }}>{municipalityflag ? registros : parentEspecies}</div>
+              className={classNames('bg-white-smoke', 'text-xs pr-1 h-4 text-end')} style={{ width: widthBarParent || '100%' }}>{municipalityflag ? registros === 'NA' ? '' : registros : parentEspecies === 'NA' ? '' : parentEspecies}</div>
           </div>)
         }
       </div>

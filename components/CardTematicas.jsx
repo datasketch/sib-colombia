@@ -2,7 +2,7 @@
 
 import { Tooltip } from '@mui/material'
 import PropTypes from 'prop-types'
-import { calculateWidth, capitalize, formatNumbers } from '../lib/functions'
+import { calculateWidth, capitalize, formatNumbers, validateDifNa } from '../lib/functions'
 import tooltips from '../static/data/tooltips.json'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
@@ -23,6 +23,10 @@ const CardTematicas = props => {
         <div className='grid lg:grid-cols-2 gap-y-6 gap-x-36 w-10/12 mx-auto'>
           {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr: crRegister, en: enRegister, vu: vuRegister }, key) => {
             const title = capitalize(slug.replace('amenazadas-', ''))
+            const crVal = validateDifNa(crRegister)
+            const enVal = validateDifNa(enRegister)
+            const vuVal = validateDifNa(vuRegister)
+            const widthTotal = crVal + enVal + vuVal
             return <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
               <div className='flex flex-col items-start justify-start'>
                 <span>Categoría UICN {title}</span>
@@ -67,9 +71,9 @@ const CardTematicas = props => {
                   </div>
                 </div>
                 <div className='flex'>
-                  <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(crRegister, +crRegister + +enRegister + +vuRegister) }}></div>
-                  <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(enRegister, +crRegister + +enRegister + +vuRegister) }}></div>
-                  <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vuRegister, +crRegister + +enRegister + +vuRegister) }}></div>
+                  <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(crVal, widthTotal) }}></div>
+                  <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(enVal, widthTotal) }}></div>
+                  <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vuVal, widthTotal) }}></div>
                 </div>
                 <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
                   <p className='inline-block '><b>{formatNumbers(registros)}</b></p>
@@ -148,7 +152,7 @@ const CardTematicas = props => {
               especies={info?.especies_cites_i}
               parentEspecies={info?.parent_especies_cites_i}
               registros={info?.registros_cites_i}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=${info?.slug}_i`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
             />
@@ -162,7 +166,7 @@ const CardTematicas = props => {
               especies={info?.especies_cites_ii}
               parentEspecies={info?.parent_especies_cites_ii}
               registros={info?.registros_cites_ii}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=${info?.slug}_ii`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
             />
@@ -175,7 +179,7 @@ const CardTematicas = props => {
               especies={info?.especies_cites_iii}
               parentEspecies={info?.parent_especies_cites_iii}
               registros={info?.registros_cites_iii}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=${info?.slug}_iii`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
             />
@@ -328,6 +332,11 @@ const CardTematicas = props => {
     )
   }
 
+  const crVal = validateDifNa(info?.cr_registros)
+  const enVal = validateDifNa(info?.en_registros)
+  const vuVal = validateDifNa(info?.vu_registros)
+  const widthTotal = crVal + enVal + vuVal
+
   return (
     <div className='bg-white py-10'>
       <div className='w-10/12 mx-auto flex flex-col md:flex-row gap-6 justify-between'>
@@ -375,9 +384,9 @@ const CardTematicas = props => {
               </div>
             </div>
             <div className='flex'>
-              <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(+info?.cr_registros, +info?.cr_registros + +info?.en_registros + +info?.vu_registros) }}></div>
-              <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(+info?.en_registros, +info?.cr_registros + +info?.en_registros + +info?.vu_registros) }}></div>
-              <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(+info?.vu_registros, +info?.cr_registros + +info?.en_registros + +info?.vu_registros) }}></div>
+              <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(crVal, widthTotal) }}></div>
+              <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(enVal, widthTotal) }}></div>
+              <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vuVal, widthTotal) }}></div>
             </div>
             <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
               <p className='inline-block '><b>{formatNumbers(info?.registros)}</b></p>
@@ -397,8 +406,8 @@ const CardTematicas = props => {
             title={'CR'}
             especies={info?.cr}
             parentEspecies={info?.estimadas_cr || info?.parent_cr_estimadas}
-            registros={info?.parent_cr || info?.cr_registros }
-            colObservadas={info?.parent_cr }
+            registros={info?.parent_cr || info?.cr_registros}
+            colObservadas={info?.parent_cr}
           />
 
           <BarPercent
@@ -411,7 +420,7 @@ const CardTematicas = props => {
             title={'EN'}
             especies={info?.en}
             parentEspecies={info?.estimadas_en || info?.parent_en_estimadas}
-            registros={info?.parent_en || info?.en_registros }
+            registros={info?.parent_en || info?.en_registros}
             colObservadas={info?.parent_en}
           />
           <BarPercent
@@ -424,7 +433,7 @@ const CardTematicas = props => {
             title={'VU'}
             especies={info?.vu}
             parentEspecies={info?.estimadas_vu || info?.parent_vu_estimadas}
-            registros={info?.parent_vu || info?.vu_registros }
+            registros={info?.parent_vu || info?.vu_registros}
             colObservadas={info?.parent_vu}
           />
 

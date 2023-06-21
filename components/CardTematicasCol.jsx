@@ -145,7 +145,6 @@ const CardTematicasCol = props => {
 
           </div>
           <div className='lg:w-[45%] flex flex-col justify-evenly gap-y-3 '>
-
             <BarPercent
               bgColor={'bg-cerulean'}
               textColor={'text-white'}
@@ -153,9 +152,9 @@ const CardTematicasCol = props => {
               title={'CITES I'}
               datatable={info?.list_especies_cites_i}
               especies={info?.especies_cites_i}
-              parentEspecies={info?.estimadas_cites_i}
+              parentEspecies={info?.cites_i_estimadas}
               registros={info?.registros_cites_i}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=${info?.slug}_i`}
 
             />
             <BarPercent
@@ -165,9 +164,9 @@ const CardTematicasCol = props => {
               title={'CITES I/II'}
               datatable={info?.list_especies_cites_i_ii}
               especies={info?.especies_cites_i_ii}
-              parentEspecies={info?.estimadas_cites_i_ii}
+              parentEspecies={info?.cites_i_ii_estimadas}
               registros={info?.registros_cites_i_ii}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=${info?.slug}_i_ii`}
 
             />
 
@@ -178,9 +177,9 @@ const CardTematicasCol = props => {
               title={'CITES II'}
               datatable={info?.list_especies_cites_ii}
               especies={info?.especies_cites_ii}
-              parentEspecies={info?.estimadas_cites_ii}
+              parentEspecies={info?.cites_ii_estimadas}
               registros={info?.registros_cites_ii}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=${info?.slug}_ii`}
             />
             <BarPercent
               bgColor={'bg-greenish-cyan'}
@@ -189,9 +188,9 @@ const CardTematicasCol = props => {
               title={'CITES III'}
               datatable={info?.list_especies_cites_iii}
               especies={info?.especies_cites_iii}
-              parentEspecies={info?.estimadas_cites_iii}
+              parentEspecies={info?.cites_iii_estimadas}
               registros={info?.registros_cites_iii}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=${info?.slug}_iii`}
             />
 
           </div>
