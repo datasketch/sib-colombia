@@ -8,12 +8,12 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
   const text = label ? `observadas ${label} (${title})` : `${title} observadas`
   const widthBarGeneral = +especies + +parentEspecies + +colObservadas
 
-  const widthBarSpecies = calculateWidth(+especies, +parentEspecies)
-  const widthBarParent = calculateWidth(+parentEspecies - +especies, +parentEspecies)
+  const widthBarSpecies = calculateWidth(+especies, municipalityflag ? +registros : +parentEspecies)
+  const widthBarParent = calculateWidth(municipalityflag ? +registros : +parentEspecies - +especies, municipalityflag ? +registros : +parentEspecies)
   const widthRegEspecies = calculateWidth(+especies, widthBarGeneral)
   const widthColObservadas = calculateWidth(+colObservadas, widthBarGeneral)
   const widthColEstimadas = calculateWidth(+parentEspecies, widthBarGeneral)
-
+  console.log(widthBarParent)
   return (
     <div>
       <div className='font-bold font-inter text-lg '>
@@ -52,7 +52,7 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
             <div
               className={classNames(bgColor, textColor, widthBarSpecies === undefined ? '' : 'px-1 min-w-[3.5%]', 'text-xs h-4')} style={{ width: widthBarSpecies || '0%' }}>{especies}</div>
             <div
-              className={classNames('bg-white-smoke', 'text-xs pr-1 h-4 text-end')} style={{ width: widthBarParent || '100%' }}>{parentEspecies}</div>
+              className={classNames('bg-white-smoke', 'text-xs pr-1 h-4 text-end')} style={{ width: widthBarParent || '100%' }}>{municipalityflag ? registros : parentEspecies}</div>
           </div>)
         }
       </div>

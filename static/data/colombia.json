@@ -16,7 +16,7 @@
     "especies_region_total_str": "75.157",
     "registros_region_total_str": "20.640.920",
     "main_text": "A 19355, se han publicado 20.640.920 observaciones a través\ndel SiB Colombia. Estos datos respaldan la existencia de 75.157 especies\nen el territorio nacional; de las cuales 71.866 habitan al interior del\ncontinente y 5.896 en el mar.",
-    "referencia": "Arbeláez-Cortés, E. (2013). Knowledge of Colombian biodiversity: published and indexed. Biodiversity and Conservation, 22(12), 2875–2906. [https://doi.org/10.1007/s10531-013-0560-y](https://doi.org/10.1007/s10531-013-0560-y)",
+    "referencia": "Arbeláez-Cortés, E. (2013). Knowledge of Colombian biodiversity: published and indexed. Biodiversity and Conservation, 22(12), 2875–2906. https://doi.org/10.1007/s10531-013-0560-y",
     "credito_foto": "colombia. Foto: Pepito Pérez. Creative Commons"
   },
   "nav_tematica": {
@@ -679,7 +679,88 @@
           "en_registros": 97821,
           "vu": 602,
           "vu_registros": 342091,
-          "especies_estimadas": 200000
+          "especies_estimadas": 200000,
+          "species_list": [
+            {
+              "label": "Prochilodus magdalenae",
+              "slug_especie": "prochilodus-magdalenae",
+              "registros": 88147,
+              "url_gbif": "https://www.gbif.org/species/2352186",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/5928bfb8f827bf0c0cedd91b/summary",
+              "slug_tematica": "amenazadas-nacional-vu"
+            },
+            {
+              "label": "Pseudoplatystoma magdaleniatum",
+              "slug_especie": "pseudoplatystoma-magdaleniatum",
+              "registros": 23544,
+              "url_gbif": "https://www.gbif.org/species/2338659",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/59debb3c5f36934344301b8e/summary",
+              "slug_tematica": "amenazadas-nacional-cr"
+            },
+            {
+              "label": "Pimelodus grosskopfii",
+              "slug_especie": "pimelodus-grosskopfii",
+              "registros": 20287,
+              "url_gbif": "https://www.gbif.org/species/2338918",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/596f48c82f4fd7bc7f3a5417/summary",
+              "slug_tematica": "amenazadas-nacional-vu"
+            },
+            {
+              "label": "Sorubim cuspicaudus",
+              "slug_especie": "sorubim-cuspicaudus",
+              "registros": 19049,
+              "url_gbif": "https://www.gbif.org/species/2338683",
+              "slug_tematica": "amenazadas-nacional-vu"
+            },
+            {
+              "label": "Leporinus muyscorum",
+              "slug_especie": "leporinus-muyscorum",
+              "registros": 14186,
+              "url_gbif": "https://www.gbif.org/species/2355356",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/5970cfb32f4fd7bc7f3a65a2/summary",
+              "slug_tematica": "amenazadas-nacional-vu"
+            },
+            {
+              "label": "Ageneiosus pardalis",
+              "slug_especie": "ageneiosus-pardalis",
+              "registros": 9872,
+              "url_gbif": "https://www.gbif.org/species/2344515",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/594494352f4fd7bc7f396235/summary",
+              "slug_tematica": "amenazadas-nacional-vu"
+            },
+            {
+              "label": "Cedrela odorata",
+              "slug_especie": "cedrela-odorata",
+              "registros": 9661,
+              "url_gbif": "https://www.gbif.org/species/3190511",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/5fd91f79783b5b717668554e/summary",
+              "slug_tematica": "amenazadas-nacional-en"
+            },
+            {
+              "label": "Quercus humboldtii",
+              "slug_especie": "quercus-humboldtii",
+              "registros": 9262,
+              "url_gbif": "https://www.gbif.org/species/2880642",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/6078868dfa9e7d0d2908c2f6/summary",
+              "slug_tematica": "amenazadas-nacional-vu"
+            },
+            {
+              "label": "Hypopyrrhus pyrohypogaster",
+              "slug_especie": "hypopyrrhus-pyrohypogaster",
+              "registros": 9115,
+              "url_gbif": "https://www.gbif.org/species/2484281",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/56e2d91583c45700544e3d80/summary",
+              "slug_tematica": "amenazadas-nacional-vu"
+            },
+            {
+              "label": "Tremarctos ornatus",
+              "slug_especie": "tremarctos-ornatus",
+              "registros": 6733,
+              "url_gbif": "https://www.gbif.org/species/2433401",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/56ccae30207ecea54a561e3d/summary",
+              "slug_tematica": "amenazadas-nacional-vu"
+            }
+          ]
         },
         {
           "slug": "amenazadas-global",
@@ -692,95 +773,93 @@
           "en_registros": 98658,
           "vu": 604,
           "vu_registros": 221795,
-          "especies_estimadas": 200000
-        }
-      ],
-      "species_list": [
-        {
-          "label": "Prochilodus magdalenae",
-          "slug_especie": "prochilodus-magdalenae",
-          "registros": 88147,
-          "url_gbif": "https://www.gbif.org/species/2352186",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/5928bfb8f827bf0c0cedd91b/summary",
-          "slug_tematica": "amenazadas-nacional-vu"
-        },
-        {
-          "label": "Pseudoplatystoma magdaleniatum",
-          "slug_especie": "pseudoplatystoma-magdaleniatum",
-          "registros": 23544,
-          "url_gbif": "https://www.gbif.org/species/2338659",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/59debb3c5f36934344301b8e/summary",
-          "slug_tematica": "amenazadas-global-en"
-        },
-        {
-          "label": "Pseudoplatystoma magdaleniatum",
-          "slug_especie": "pseudoplatystoma-magdaleniatum",
-          "registros": 23544,
-          "url_gbif": "https://www.gbif.org/species/2338659",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/59debb3c5f36934344301b8e/summary",
-          "slug_tematica": "amenazadas-nacional-cr"
-        },
-        {
-          "label": "Pimelodus grosskopfii",
-          "slug_especie": "pimelodus-grosskopfii",
-          "registros": 20287,
-          "url_gbif": "https://www.gbif.org/species/2338918",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/596f48c82f4fd7bc7f3a5417/summary",
-          "slug_tematica": "amenazadas-global-cr"
-        },
-        {
-          "label": "Pimelodus grosskopfii",
-          "slug_especie": "pimelodus-grosskopfii",
-          "registros": 20287,
-          "url_gbif": "https://www.gbif.org/species/2338918",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/596f48c82f4fd7bc7f3a5417/summary",
-          "slug_tematica": "amenazadas-nacional-vu"
-        },
-        {
-          "label": "Sorubim cuspicaudus",
-          "slug_especie": "sorubim-cuspicaudus",
-          "registros": 19049,
-          "url_gbif": "https://www.gbif.org/species/2338683",
-          "slug_tematica": "amenazadas-nacional-vu"
-        },
-        {
-          "label": "Orbicella faveolata",
-          "slug_especie": "orbicella-faveolata",
-          "registros": 18863,
-          "url_gbif": "https://www.gbif.org/species/8279523",
-          "slug_tematica": "amenazadas-global-en"
-        },
-        {
-          "label": "Orbicella annularis",
-          "slug_especie": "orbicella-annularis",
-          "registros": 14577,
-          "url_gbif": "https://www.gbif.org/species/7617481",
-          "slug_tematica": "amenazadas-global-en"
-        },
-        {
-          "label": "Leporinus muyscorum",
-          "slug_especie": "leporinus-muyscorum",
-          "registros": 14186,
-          "url_gbif": "https://www.gbif.org/species/2355356",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/5970cfb32f4fd7bc7f3a65a2/summary",
-          "slug_tematica": "amenazadas-global-vu"
-        },
-        {
-          "label": "Leporinus muyscorum",
-          "slug_especie": "leporinus-muyscorum",
-          "registros": 14186,
-          "url_gbif": "https://www.gbif.org/species/2355356",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/5970cfb32f4fd7bc7f3a65a2/summary",
-          "slug_tematica": "amenazadas-nacional-vu"
+          "especies_estimadas": 200000,
+          "species_list": [
+            {
+              "label": "Pseudoplatystoma magdaleniatum",
+              "slug_especie": "pseudoplatystoma-magdaleniatum",
+              "registros": 23544,
+              "url_gbif": "https://www.gbif.org/species/2338659",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/59debb3c5f36934344301b8e/summary",
+              "slug_tematica": "amenazadas-global-en"
+            },
+            {
+              "label": "Pimelodus grosskopfii",
+              "slug_especie": "pimelodus-grosskopfii",
+              "registros": 20287,
+              "url_gbif": "https://www.gbif.org/species/2338918",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/596f48c82f4fd7bc7f3a5417/summary",
+              "slug_tematica": "amenazadas-global-cr"
+            },
+            {
+              "label": "Orbicella faveolata",
+              "slug_especie": "orbicella-faveolata",
+              "registros": 18863,
+              "url_gbif": "https://www.gbif.org/species/8279523",
+              "slug_tematica": "amenazadas-global-en"
+            },
+            {
+              "label": "Orbicella annularis",
+              "slug_especie": "orbicella-annularis",
+              "registros": 14577,
+              "url_gbif": "https://www.gbif.org/species/7617481",
+              "slug_tematica": "amenazadas-global-en"
+            },
+            {
+              "label": "Leporinus muyscorum",
+              "slug_especie": "leporinus-muyscorum",
+              "registros": 14186,
+              "url_gbif": "https://www.gbif.org/species/2355356",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/5970cfb32f4fd7bc7f3a65a2/summary",
+              "slug_tematica": "amenazadas-global-vu"
+            },
+            {
+              "label": "Siderastrea siderea",
+              "slug_especie": "siderastrea-siderea",
+              "registros": 11721,
+              "url_gbif": "https://www.gbif.org/species/2258895",
+              "slug_tematica": "amenazadas-global-cr"
+            },
+            {
+              "label": "Pseudodiploria strigosa",
+              "slug_especie": "pseudodiploria-strigosa",
+              "registros": 9976,
+              "url_gbif": "https://www.gbif.org/species/7454555",
+              "slug_tematica": "amenazadas-global-cr"
+            },
+            {
+              "label": "Cedrela odorata",
+              "slug_especie": "cedrela-odorata",
+              "registros": 9661,
+              "url_gbif": "https://www.gbif.org/species/3190511",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/5fd91f79783b5b717668554e/summary",
+              "slug_tematica": "amenazadas-global-vu"
+            },
+            {
+              "label": "Hypopyrrhus pyrohypogaster",
+              "slug_especie": "hypopyrrhus-pyrohypogaster",
+              "registros": 9115,
+              "url_gbif": "https://www.gbif.org/species/2484281",
+              "url_cbc": "https://catalogo.biodiversidad.co/file/56e2d91583c45700544e3d80/summary",
+              "slug_tematica": "amenazadas-global-vu"
+            },
+            {
+              "label": "Agaricia tenuifolia",
+              "slug_especie": "agaricia-tenuifolia",
+              "registros": 8981,
+              "url_gbif": "https://www.gbif.org/species/2260502",
+              "slug_tematica": "amenazadas-global-cr"
+            }
+          ]
         }
       ]
     },
     {
       "slug": "amenazadas-nacional",
       "label": "Amenazadas nacional",
-      "estimadas_cr": 182,
-      "estimadas_en": 428,
-      "estimadas_vu": 687,
+      "cr_estimadas": 182,
+      "en_estimadas": 428,
+      "vu_estimadas": 687,
       "especies": 1121,
       "registros": 497269,
       "cr": 157,
@@ -790,7 +869,7 @@
       "vu": 602,
       "vu_registros": 342091,
       "especies_estimadas": 200000,
-      "parent_especies_est": [],
+      "especies_total": 75157,
       "list_especies_amenazadas_nacional": {},
       "list_especies_amenazadas_nacional_vu": {},
       "list_especies_amenazadas_nacional_en": {},
@@ -880,9 +959,9 @@
     {
       "slug": "amenazadas-global",
       "label": "Amenazadas global",
-      "estimadas_cr": 383,
-      "estimadas_en": 672,
-      "estimadas_vu": 696,
+      "cr_estimadas": 383,
+      "en_estimadas": 672,
+      "vu_estimadas": 696,
       "especies": 1521,
       "registros": 409976,
       "cr": 339,
@@ -892,7 +971,7 @@
       "vu": 604,
       "vu_registros": 221795,
       "especies_estimadas": 200000,
-      "parent_especies_est": 200000,
+      "especies_total": 75157,
       "list_especies_amenazadas_global": {},
       "list_especies_amenazadas_global_vu": {},
       "list_especies_amenazadas_global_en": {},
@@ -977,11 +1056,11 @@
     },
     {
       "slug": "cites",
-      "estimadas_cites_total": 3545,
-      "estimadas_cites_i": 63,
-      "estimadas_cites_i_ii": 1,
-      "estimadas_cites_ii": 3450,
-      "estimadas_cites_iii": 31,
+      "cites_total_estimadas": 3545,
+      "cites_i_estimadas": 63,
+      "cites_i_ii_estimadas": 1,
+      "cites_ii_estimadas": 3450,
+      "cites_iii_estimadas": 31,
       "especies_cites_total": 2686,
       "especies_cites_i": 48,
       "especies_cites_ii": 2608,
@@ -1165,7 +1244,16 @@
           "slug_tematica": "cites-i"
         }
       ],
-      "list_especies_cites_i_ii": [],
+      "list_especies_cites_i_ii": [
+        {
+          "label": "Crocodylus acutus",
+          "slug_especie": "crocodylus-acutus",
+          "registros": 113,
+          "url_gbif": "https://www.gbif.org/species/2441329",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56718bdcf289f5a40c0cd305/summary",
+          "slug_tematica": "cites-i-ii"
+        }
+      ],
       "list_especies_cites_ii": [
         {
           "label": "Dimerandra emarginata",
@@ -1328,85 +1416,89 @@
       ],
       "species_list": [
         {
-          "label": "Pseudoplatystoma magdaleniatum",
-          "slug_especie": "pseudoplatystoma-magdaleniatum",
-          "registros": 23544,
-          "url_gbif": "https://www.gbif.org/species/2338659",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/59debb3c5f36934344301b8e/summary",
-          "slug_tematica": "amenazadas-global-en"
+          "label": "Dimerandra emarginata",
+          "slug_especie": "dimerandra-emarginata",
+          "registros": 129553,
+          "url_gbif": "https://www.gbif.org/species/2815832",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56df6a8d83c45700544e3c73/summary",
+          "slug_tematica": "cites-ii"
         },
         {
-          "label": "Pimelodus grosskopfii",
-          "slug_especie": "pimelodus-grosskopfii",
-          "registros": 20287,
-          "url_gbif": "https://www.gbif.org/species/2338918",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/596f48c82f4fd7bc7f3a5417/summary",
-          "slug_tematica": "amenazadas-global-cr"
+          "label": "Encyclia stellata",
+          "slug_especie": "encyclia-stellata",
+          "registros": 108708,
+          "url_gbif": "https://www.gbif.org/species/2827083",
+          "slug_tematica": "cites-ii"
         },
         {
-          "label": "Orbicella faveolata",
-          "slug_especie": "orbicella-faveolata",
-          "registros": 18863,
-          "url_gbif": "https://www.gbif.org/species/8279523",
-          "slug_tematica": "amenazadas-global-en"
+          "label": "Milvago chimachima",
+          "slug_especie": "milvago-chimachima",
+          "registros": 97234,
+          "url_gbif": "https://www.gbif.org/species/2481066",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c7b89cf0106c67230e7408/summary",
+          "slug_tematica": "cites-ii"
         },
         {
-          "label": "Orbicella annularis",
-          "slug_especie": "orbicella-annularis",
-          "registros": 14577,
-          "url_gbif": "https://www.gbif.org/species/7617481",
-          "slug_tematica": "amenazadas-global-en"
+          "label": "Amazilia tzacatl",
+          "slug_especie": "amazilia-tzacatl",
+          "registros": 71235,
+          "url_gbif": "https://www.gbif.org/species/2476441",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e782a283c45700544e407e/summary",
+          "slug_tematica": "cites-ii"
         },
         {
-          "label": "Leporinus muyscorum",
-          "slug_especie": "leporinus-muyscorum",
-          "registros": 14186,
-          "url_gbif": "https://www.gbif.org/species/2355356",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/5970cfb32f4fd7bc7f3a65a2/summary",
-          "slug_tematica": "amenazadas-global-vu"
+          "label": "Forpus conspicillatus",
+          "slug_especie": "forpus-conspicillatus",
+          "registros": 55732,
+          "url_gbif": "https://www.gbif.org/species/2479071",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c76fc3f0106c67230e73ed/summary",
+          "slug_tematica": "cites-ii"
         },
         {
-          "label": "Siderastrea siderea",
-          "slug_especie": "siderastrea-siderea",
-          "registros": 11721,
-          "url_gbif": "https://www.gbif.org/species/2258895",
-          "slug_tematica": "amenazadas-global-cr"
+          "label": "Colibri coruscans",
+          "slug_especie": "colibri-coruscans",
+          "registros": 52234,
+          "url_gbif": "https://www.gbif.org/species/5228474",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4a8dcf0106c67230e7385/summary",
+          "slug_tematica": "cites-ii"
         },
         {
-          "label": "Pseudodiploria strigosa",
-          "slug_especie": "pseudodiploria-strigosa",
-          "registros": 9976,
-          "url_gbif": "https://www.gbif.org/species/7454555",
-          "slug_tematica": "amenazadas-global-cr"
+          "label": "Pionus menstruus",
+          "slug_especie": "pionus-menstruus",
+          "registros": 48251,
+          "url_gbif": "https://www.gbif.org/species/2479902",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e6089483c45700544e3e8f/summary",
+          "slug_tematica": "cites-ii"
         },
         {
-          "label": "Cedrela odorata",
-          "slug_especie": "cedrela-odorata",
-          "registros": 9661,
-          "url_gbif": "https://www.gbif.org/species/3190511",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/5fd91f79783b5b717668554e/summary",
-          "slug_tematica": "amenazadas-global-vu"
+          "label": "Epidendrum stamfordianum",
+          "slug_especie": "epidendrum-stamfordianum",
+          "registros": 43197,
+          "url_gbif": "https://www.gbif.org/species/5320048",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e1cf4183c45700544e3d3e/summary",
+          "slug_tematica": "cites-ii"
         },
         {
-          "label": "Hypopyrrhus pyrohypogaster",
-          "slug_especie": "hypopyrrhus-pyrohypogaster",
-          "registros": 9115,
-          "url_gbif": "https://www.gbif.org/species/2484281",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/56e2d91583c45700544e3d80/summary",
-          "slug_tematica": "amenazadas-global-vu"
+          "label": "Brotogeris jugularis",
+          "slug_especie": "brotogeris-jugularis",
+          "registros": 34557,
+          "url_gbif": "https://www.gbif.org/species/2479563",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56df5ee983c45700544e3c6a/summary",
+          "slug_tematica": "cites-ii"
         },
         {
-          "label": "Agaricia tenuifolia",
-          "slug_especie": "agaricia-tenuifolia",
-          "registros": 8981,
-          "url_gbif": "https://www.gbif.org/species/2260502",
-          "slug_tematica": "amenazadas-global-cr"
+          "label": "Anthracothorax nigricollis",
+          "slug_especie": "anthracothorax-nigricollis",
+          "registros": 32757,
+          "url_gbif": "https://www.gbif.org/species/2476718",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56df4d0583c45700544e3c60/summary",
+          "slug_tematica": "cites-ii"
         }
       ]
     },
     {
       "slug": "endemicas",
-      "estimadas_endemicas": 8105,
+      "endemcias_estimadas": 8105,
       "especies_endemicas": 6390,
       "registros_endemicas": 717177,
       "parent_especies_endemicas": [],
@@ -1496,7 +1588,7 @@
     {
       "slug": "migratorias",
       "texto": "La información de especies migratorias se basa en la\n         [Lista de referencia de especies de aves de Colombia - 2020](https://doi.org/10.15472/qhsz0p).\n         Para aportar más datos sobre este y otros grupos bilógicos puede visitar nuestro sitio web\n         https://biodiversidad.co",
-      "estimadas_migratorias": "NA",
+      "migratorias_estimadas": "NA",
       "especies_migratorias": 148,
       "registros_migratorias": 1074239,
       "parent_especies_migratorias": [],
@@ -1586,10 +1678,10 @@
     },
     {
       "slug": "exoticas-invasoras",
-      "estimadas_exoticas_total": 2586,
-      "estimadas_exoticas": 1456,
-      "estimadas_exoticas_riesgo_invasion": 1095,
-      "estimadas_exoticas_invasoras": 22,
+      "exoticas_total_estimadas": 2586,
+      "exoticas_estimadas": 1456,
+      "exoticas_riesgo_invasion_estimadas": 1095,
+      "exoticas_invasoras_estimadas": 22,
       "especies_exoticas_total": 1869,
       "especies_exoticas": 1120,
       "especies_invasoras": 17,

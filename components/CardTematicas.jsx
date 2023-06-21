@@ -12,6 +12,7 @@ import CardContentTem from './CardContentTem'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb, region, municipalityflag, slugregion, parentlabel } = props
+  console.log(info)
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
@@ -395,9 +396,9 @@ const CardTematicas = props => {
             regionparent={parentlabel}
             title={'CR'}
             especies={info?.cr}
-            parentEspecies={info?.estimadas_cr}
-            registros={info?.cr}
-            colObservadas={info?.cr_registros}
+            parentEspecies={info?.estimadas_cr || info?.parent_cr_estimadas}
+            registros={info?.parent_cr || info?.cr_registros }
+            colObservadas={info?.parent_cr }
           />
 
           <BarPercent
@@ -409,9 +410,9 @@ const CardTematicas = props => {
             region={region}
             title={'EN'}
             especies={info?.en}
-            parentEspecies={info?.estimadas_en}
-            registros={info?.en}
-            colObservadas={info?.en_registros}
+            parentEspecies={info?.estimadas_en || info?.parent_en_estimadas}
+            registros={info?.parent_en || info?.en_registros }
+            colObservadas={info?.parent_en}
           />
           <BarPercent
             cat='amenazadas'
@@ -422,9 +423,9 @@ const CardTematicas = props => {
             region={region}
             title={'VU'}
             especies={info?.vu}
-            parentEspecies={info?.estimadas_vu}
-            registros={info?.vu}
-            colObservadas={info?.vu_registros}
+            parentEspecies={info?.estimadas_vu || info?.parent_vu_estimadas}
+            registros={info?.parent_vu || info?.vu_registros }
+            colObservadas={info?.parent_vu}
           />
 
         </div>

@@ -395,7 +395,7 @@ const CardTematicasCol = props => {
             region={region}
             title={'CR'}
             especies={info?.cr}
-            parentEspecies={info?.estimadas_cr}
+            parentEspecies={info?.cr_estimadas}
             registros={info?.cr_registros}
             link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
           />
@@ -407,7 +407,7 @@ const CardTematicasCol = props => {
             region={region}
             title={'EN'}
             especies={info?.en}
-            parentEspecies={info?.estimadas_en}
+            parentEspecies={info?.en_estimadas}
             registros={info?.en_registros}
             link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
           />
@@ -418,7 +418,7 @@ const CardTematicasCol = props => {
             region={region}
             title={'VU'}
             especies={info?.vu}
-            parentEspecies={info?.estimadas_vu}
+            parentEspecies={info?.vu_estimadas}
             registros={info?.vu_registros}
             link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
           />
