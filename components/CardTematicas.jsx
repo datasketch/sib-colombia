@@ -93,6 +93,10 @@ const CardTematicas = props => {
     )
   }
   if (selected.toLowerCase() === 'cites') {
+    const citesi = validateDifNa(info?.especies_cites_i)
+    const citesii = validateDifNa(info?.especies_cites_ii)
+    const citesiii = validateDifNa(info?.especies_cites_iii)
+    const widthBar = citesi + citesii + citesiii
     return (
       <div className='bg-white py-10'>
         <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
@@ -134,9 +138,9 @@ const CardTematicas = props => {
                 </div>
               </div>
               <div className='flex'>
-                <div className='bg-cerulean h-4' style={{ width: calculateWidth(+info?.especies_cites_i, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii) }}></div>
-                <div className='bg-sandstorm h-4' style={{ width: calculateWidth(+info?.especies_cites_ii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii) }}></div>
-                <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(+info?.especies_cites_iii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii) }}></div>
+                <div className='bg-cerulean h-4' style={{ width: calculateWidth(citesi, widthBar) }}></div>
+                <div className='bg-sandstorm h-4' style={{ width: calculateWidth(citesii, widthBar) }}></div>
+                <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(citesiii, widthBar) }}></div>
               </div>
             </div>
 
