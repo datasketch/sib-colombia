@@ -31,7 +31,7 @@ const CardTematicasCol = props => {
                   <div className='border-t border-t-dartmouth-green' />
                 </span>
                 <div className='font-black font-inter text-lg'>Especies amenazadas
-                  {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${slug.replace('-', '_')}`} />}>
+                  {speciesList?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={speciesList} link={`region=${slugregion}&tematica=${slug.replace('-', '_')}`} />}>
                     <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
                   </CustomTooltip>}
                 </div>

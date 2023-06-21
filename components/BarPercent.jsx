@@ -6,13 +6,12 @@ import Table from './Table'
 const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = [], especies, registros, parentEspecies, bgColor, textColor, link, municipalityflag, colObservadas }) => {
   const parenLabel = region !== 'Colombia' ? regionparent || 'Colombia' : ''
   const text = label ? `observadas ${label} (${title})` : `${title} observadas`
-  const widthBarGeneral = +especies + +parentEspecies + +colObservadas
-
+  const widthBarGeneral = +parentEspecies - +colObservadas
   const widthBarSpecies = calculateWidth(+especies, municipalityflag ? +registros : +parentEspecies)
   const widthBarParent = calculateWidth(municipalityflag ? +registros : +parentEspecies - +especies, municipalityflag ? +registros : +parentEspecies)
-  const widthRegEspecies = calculateWidth(+especies, widthBarGeneral)
-  const widthColObservadas = calculateWidth(+colObservadas, widthBarGeneral)
-  const widthColEstimadas = calculateWidth(+parentEspecies, widthBarGeneral)
+  const widthRegEspecies = calculateWidth(+especies, +colObservadas)
+  const widthColObservadas = calculateWidth(+colObservadas, +parentEspecies)
+  const widthColEstimadas = calculateWidth(widthBarGeneral, +parentEspecies)
 
   return (
     <div>
@@ -45,7 +44,7 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
               className={classNames(bgColor, 'bg-opacity-30 text-end pr-1 text-xs  h-4')}
               style={{ width: widthColObservadas }}>{colObservadas}</div>}
             <div
-              className={classNames('bg-white-smoke', 'text-xs pl-px h-4')}
+              className={classNames('bg-white-smoke text-end', 'text-xs pl-px h-4')}
               style={{ width: widthColEstimadas }}>{parentEspecies}</div>
           </div>)
           : (<div className='flex'>
