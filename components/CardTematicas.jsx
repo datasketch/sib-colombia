@@ -155,7 +155,7 @@ const CardTematicas = props => {
               datatable={info?.list_especies_cites_i}
               especies={info?.especies_cites_i}
               parentEspecies={info?.parent_especies_cites_i}
-              registros={info?.registros_cites_i}
+              registros={info?.parent_especies_cites_i}
               link={`region=${slugregion}&tematica=${info?.slug}_i`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
@@ -169,7 +169,7 @@ const CardTematicas = props => {
               datatable={info?.list_especies_cites_ii}
               especies={info?.especies_cites_ii}
               parentEspecies={info?.parent_especies_cites_ii}
-              registros={info?.registros_cites_ii}
+              registros={info?.parent_especies_cites_ii}
               link={`region=${slugregion}&tematica=${info?.slug}_ii`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
@@ -182,7 +182,7 @@ const CardTematicas = props => {
               datatable={info?.list_especies_cites_iii}
               especies={info?.especies_cites_iii}
               parentEspecies={info?.parent_especies_cites_iii}
-              registros={info?.registros_cites_iii}
+              registros={info?.parent_especies_cites_iii}
               link={`region=${slugregion}&tematica=${info?.slug}_iii`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
