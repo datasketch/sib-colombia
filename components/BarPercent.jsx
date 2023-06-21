@@ -13,7 +13,7 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
   const widthRegEspecies = calculateWidth(+especies, widthBarGeneral)
   const widthColObservadas = calculateWidth(+colObservadas, widthBarGeneral)
   const widthColEstimadas = calculateWidth(+parentEspecies, widthBarGeneral)
-  console.log(widthBarParent)
+
   return (
     <div>
       <div className='font-bold font-inter text-lg '>
