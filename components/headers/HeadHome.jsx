@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 
-import InfoTooltip from '../InfoTooltip'
+// import InfoTooltip from '../InfoTooltip'
 
 const HeadHome = ({ title, image, number }) => {
   const textHome = 'Colombia es uno de los pocos países megadiversos del mundo, una de cada diez especies conocidas habita nuestro territorio. \n\n Este sitio es una aproximación al conocimiento de la extensa riqueza biológica del país, ofrece una síntesis de cifras —constantemente actualizada— sobre las especies con al menos una observación publicada a través del <a href="https://biodiversidad.co/" target="_blank"><u style={{font}}>Sistema de Información sobre Biodiversidad de Colombia</u></a>.'
@@ -25,11 +25,11 @@ const HeadHome = ({ title, image, number }) => {
           </div>
         </div>
       </div>
-      <div className='relative max-w-screen-xl w-9/12 mx-auto flex justify-end'>
+      {/* <div className='relative max-w-screen-xl w-9/12 mx-auto flex justify-end'>
         <div className='absolute -top-12'>
           <InfoTooltip src={'/images/camera-icon.svg'} label={'This a tooltip'} id='tt-home'/>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

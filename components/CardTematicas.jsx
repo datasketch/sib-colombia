@@ -146,7 +146,6 @@ const CardTematicas = props => {
 
           </div>
           <div className='lg:w-[45%] flex flex-col justify-evenly gap-y-3 '>
-
             <BarPercent
               bgColor={'bg-cerulean'}
               textColor={'text-white'}
