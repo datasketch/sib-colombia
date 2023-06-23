@@ -154,7 +154,7 @@ const CardTematicas = props => {
               datatable={info?.list_especies_cites_i}
               especies={info?.especies_cites_i}
               parentEspecies={info?.parent_especies_cites_i}
-              registros={info?.parent_especies_cites_i}
+              registros={info?.registros_cites_i}
               link={`region=${slugregion}&tematica=${info?.slug}_i`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
@@ -168,7 +168,7 @@ const CardTematicas = props => {
               datatable={info?.list_especies_cites_ii}
               especies={info?.especies_cites_ii}
               parentEspecies={info?.parent_especies_cites_ii}
-              registros={info?.parent_especies_cites_ii}
+              registros={info?.registros_cites_ii}
               link={`region=${slugregion}&tematica=${info?.slug}_ii`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
@@ -181,7 +181,7 @@ const CardTematicas = props => {
               datatable={info?.list_especies_cites_iii}
               especies={info?.especies_cites_iii}
               parentEspecies={info?.parent_especies_cites_iii}
-              registros={info?.parent_especies_cites_iii}
+              registros={info?.registros_cites_iii}
               link={`region=${slugregion}&tematica=${info?.slug}_iii`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
@@ -402,14 +402,14 @@ const CardTematicas = props => {
           <BarPercent
             cat='amenazadas'
             municipalityflag={municipalityflag}
-            label='en peligro critico'
+            label='en peligro crítico'
             bgColor={'bg-red-cr'}
             region={region}
             regionparent={parentlabel}
             title={'CR'}
             especies={info?.cr}
             parentEspecies={info?.estimadas_cr || info?.parent_cr_estimadas}
-            registros={info?.parent_cr || info?.cr_registros}
+            registros={info?.cr_registros || info?.parent_cr}
             colObservadas={info?.parent_cr}
           />
 
@@ -423,7 +423,7 @@ const CardTematicas = props => {
             title={'EN'}
             especies={info?.en}
             parentEspecies={info?.estimadas_en || info?.parent_en_estimadas}
-            registros={info?.parent_en || info?.en_registros}
+            registros={info?.en_registros || info?.parent_en}
             colObservadas={info?.parent_en}
           />
           <BarPercent
@@ -436,7 +436,7 @@ const CardTematicas = props => {
             title={'VU'}
             especies={info?.vu}
             parentEspecies={info?.estimadas_vu || info?.parent_vu_estimadas}
-            registros={info?.parent_vu || info?.vu_registros}
+            registros={info?.vu_registros || info?.parent_vu}
             colObservadas={info?.parent_vu}
           />
 

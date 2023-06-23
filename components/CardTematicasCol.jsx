@@ -389,7 +389,7 @@ const CardTematicasCol = props => {
 
           <BarPercent
             cat='amenazadas'
-            label='en peligro critico'
+            label='en peligro crítico'
             bgColor={'bg-red-cr'}
             region={region}
             title={'CR'}
