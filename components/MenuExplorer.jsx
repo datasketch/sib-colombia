@@ -8,10 +8,11 @@ import classNames from 'classnames'
 
 const MenuExplorerContext = createContext(null)
 
-export default function MenuExplorer ({ children, tree, search, ...restProps }) {
+export default function MenuExplorer ({ children, tree, search, initialSelected = '', initialSelectedValue = '', ...restProps }) {
   const [breadcrumb, setBreadcrumb] = useState([])
-  const [selected, setSelected] = useState('')
-  const [selectedValue, setSelectedValue] = useState('')
+  const [selected, setSelected] = useState(initialSelected)
+
+  const [selectedValue, setSelectedValue] = useState(initialSelectedValue)
 
   const updateBreadcrumb = (e, parent) => {
     let { textContent, value } = e.target

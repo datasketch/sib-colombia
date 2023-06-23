@@ -125,7 +125,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       {/* Conoce las cifras por regiones */}
       {territorio.length !== 0 && navTerritorio.length !== 0 && <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
-          <MenuExplorer tree={navTerritorio} search={territorio}>
+          <MenuExplorer tree={navTerritorio} search={territorio} initialSelected='Municipios' initialSelectedValue='municipios'>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras de {generalInfo.label} por
@@ -134,7 +134,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                 Regiones
               </h2>
             </MenuExplorer.Title>
-            <MenuExplorer.Tree className='relative mt-[45.52px]' />
+            {/* <MenuExplorer.Tree className='relative mt-12' /> */}
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
