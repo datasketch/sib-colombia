@@ -100,7 +100,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>
 
       {/* Grupos Interes */}
-      {navGruposInteres.length !== 0 && gruposInteres.length !== 0 && <div className='py-10 bg-white-2'>
+      {navGruposInteres.length !== 0 && gruposInteres && gruposInteres.length !== 0 && <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={navGruposInteres} search={gruposInteres}>
             <MenuExplorer.Title>
