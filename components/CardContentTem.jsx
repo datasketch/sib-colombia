@@ -11,7 +11,7 @@ const CardContentTem = ({ selected, region, datatable, especies, parentEspecies,
           <div className='border-t border-t-dartmouth-green w-1/2' />
         </div>
         <div className='font-black font-inter text-lg'>Especies {selected} observadas
-          {datatable?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={datatable} link={link}/>}>
+          {datatable && datatable?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={datatable} link={link}/>}>
             <img className='inline-block ' src='/images/icons/icon-table.svg' />
           </CustomTooltip>}
 

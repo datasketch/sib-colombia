@@ -9,6 +9,7 @@ const Selectable = ({ data, optionSelected, placeHolder, titles, disabled = fals
     const title = search?.filter(value => value.siglas === el)[0]
     return title?.nombre || el
   }
+
   useEffect(() => {
     document.addEventListener('click', handleClickOutside, true)
     return () => {
@@ -24,7 +25,7 @@ const Selectable = ({ data, optionSelected, placeHolder, titles, disabled = fals
 
   return (
     <div className='relative' ref={refSelectable}>
-      <button type='button' onClick={() => setOpen(prevState => !prevState)} disabled={disabled} className={classNames('border border-black flex items-center justify-between px-2.5 py-1.5 h-full w-full', disabled ? 'bg-white-smoke' : '')}>
+      <button type='button' onClick={() => setOpen(prevState => !prevState)} disabled={disabled} className={classNames('border border-black flex items-center justify-between px-2.5 py-2 h-full w-full', disabled ? 'bg-white-smoke' : '')}>
         <span>{placeHolder}</span>
         <img className={classNames(open ? '-rotate-90' : 'rotate-90', ' w-6 h-3')} src='/images/arrow-black.svg' />
       </button>

@@ -98,7 +98,8 @@ module.exports = {
         'pastel-orange': '#FF9739',
         'light-orange': '#FFBC4E',
         'peach-crayola': '#FFCC99',
-        'cornflower-blue': '#6699FF'
+        'cornflower-blue': '#6699FF',
+        'navajo-white': '#FFDFAB'
 
       },
 

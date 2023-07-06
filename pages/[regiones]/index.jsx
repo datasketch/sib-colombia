@@ -34,6 +34,8 @@ export default function index ({ data, slug }) {
         especiesEstimadas={generalInfo.especies_region_estimadas}
         especiesObservadas={generalInfo.especies_region_total}
         marine={generalInfo.marino}
+        referencia={generalInfo.referencia}
+        photoLabel={generalInfo.credito_foto}
       />
 
       <PageComponent data={data} slug={slug} />

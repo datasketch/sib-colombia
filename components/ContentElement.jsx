@@ -67,7 +67,7 @@ function ContentElement (props) {
                 <CardSimple title={'Especies CITES'} especies={info?.especies_cites_total} />
                 <CardSimple title={'Especies migratorias'} especies={info?.especies_migratorias} />
                 <CardSimple title={'Especies endemicas'} especies={info?.especies_endemicas} />
-                <CardSimple title={'Especies exóticas'} especies={info?.especies_exoticas} />
+                <CardSimple title={'Especies exóticas'} especies={info?.especies_exoticas_total} />
               </div>
             </div>}
 
@@ -192,7 +192,6 @@ function ContentElement (props) {
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start border-b-2 border-b-sandstorm'>
                         <b>II</b>
-
                       </div>
                       <span>{formatNumbers(info?.especies_cites_ii)}</span>
                     </div>
@@ -237,7 +236,7 @@ function ContentElement (props) {
                 style={1}
                 datatable={info?.species_list_tematica.exoticas}
                 title='Especies exóticas'
-                especies={info?.especies_exoticas}
+                especies={info?.especies_exoticas_total}
                 registros={info?.registros_exoticas}
                 link={`region=${slug}&grupo=${info?.slug}&tematica=exoticas`}
               />

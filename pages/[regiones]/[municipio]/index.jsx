@@ -4,10 +4,10 @@ import { useContext, useEffect } from 'react'
 
 import HeadRegion from '../../../components/headers/HeadRegion'
 import { AppContext } from '../../_app'
-import { getMunicipalityData, getMunicipalitesPath } from '../../../lib/regions'
+import { getMunicipalityData, getMunicipalitesPath, getDepartmentData } from '../../../lib/regions'
 import PageComponent from '../../../components/PageComponent'
 
-function municipio ({ data, slug, municipality }) {
+function municipio ({ data, slug, municipality, sponsors }) {
   const { general_info: generalInfo } = data
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
 
@@ -18,6 +18,7 @@ function municipio ({ data, slug, municipality }) {
 
     }
   }, [data])
+
   return (
     <>
       <Head>
@@ -33,7 +34,7 @@ function municipio ({ data, slug, municipality }) {
         marine={generalInfo.marino}
         municipality
       />
-      <PageComponent data={data} slug={slug} municipality={municipality} municipalityflag />
+      <PageComponent data={{ ...data, patrocinador: sponsors }} slug={slug} municipality={municipality} municipalityflag />
     </>
   )
 }
@@ -49,11 +50,14 @@ export async function getStaticPaths () {
 export async function getStaticProps (context) {
   const { regiones, municipio } = context.params
   const content = await getMunicipalityData(regiones, municipio)
+  const region = await getDepartmentData(regiones)
+
   return {
     props: {
       data: JSON.parse(content),
       slug: regiones,
-      municipality: municipio
+      municipality: municipio,
+      sponsors: JSON.parse(region).patrocinador
     }
   }
 }

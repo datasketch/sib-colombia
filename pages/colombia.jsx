@@ -20,7 +20,7 @@ export default function colombia () {
 
   return (
 
-    <>
+    <div>
       <Head>
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
@@ -31,8 +31,11 @@ export default function colombia () {
         especiesEstimadas={generalInfo.especies_region_estimadas}
         especiesObservadas={generalInfo.especies_region_total}
         marine={generalInfo.marino}
+        imageMap='images/colombia.svg'
+        referencia={generalInfo.referencia}
+        photoLabel={generalInfo.credito_foto}
       />
       <PageComponent data={col} slug='colombia' deparment/>
-    </>
+    </div>
   )
 }

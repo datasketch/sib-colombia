@@ -30,7 +30,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
-  const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
+  // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
 
   const handleChange = (event) => {
@@ -39,9 +39,8 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
 
   return (
     <>
-      {gallery && <Gallery gallery={gallery} />}
-
-      <div className='bg-white-3 pt-3'>
+      {gallery.length !== 0 && <Gallery gallery={gallery} />}
+      <div className='bg-white-3 pt-3 my-3'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <SimpleSlider dots infinite slidestoshow={1} responsiveSlidesToShow={1}>
             {slides.map((element, key) =>
@@ -78,7 +77,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>}
 
       {/* Grupos Biologicos  */}
-      {navGruposBiologicos.length !== 0 && gruposBiologicos.length !== 0 && <div className='py-10 bg-white-2'>
+      <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={navGruposBiologicos} search={gruposBiologicos}>
             <MenuExplorer.Title>
@@ -98,10 +97,10 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             </MenuExplorer.Body>
           </MenuExplorer>
         </div>
-      </div>}
+      </div>
 
       {/* Grupos Interes */}
-      {navGruposInteres.length !== 0 && gruposInteres.length !== 0 && <div className='py-10 bg-white-2'>
+      {navGruposInteres.length !== 0 && gruposInteres && gruposInteres.length !== 0 && <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={navGruposInteres} search={gruposInteres}>
             <MenuExplorer.Title>
@@ -126,7 +125,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       {/* Conoce las cifras por regiones */}
       {territorio.length !== 0 && navTerritorio.length !== 0 && <div className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
-          <MenuExplorer tree={navTerritorio} search={territorio}>
+          <MenuExplorer tree={navTerritorio} search={territorio} initialSelected='Municipios' initialSelectedValue='municipios'>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras de {generalInfo.label} por
@@ -135,7 +134,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                 Regiones
               </h2>
             </MenuExplorer.Title>
-            <MenuExplorer.Tree className='relative mt-[45.52px]' />
+            {/* <MenuExplorer.Tree className='relative mt-12' /> */}
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
@@ -202,14 +201,14 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             </SimpleSlider>
           </div>
           <div className='text-center'>
-            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href={`/mas/publicadores?region=${municipalityflag ? generalInfo.parent_label : generalInfo.label || slug}`}>
+            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href={`/mas/publicadores?region=${generalInfo.label || slug}`}>
               Todos los publicadores
             </a>
           </div>
         </div>
       </div>
-
-      <div className='py-10 mx-auto w-10/12 max-w-screen-xl'>
+      {/* explorador */}
+      {/* <div className='py-10 mx-auto w-10/12 max-w-screen-xl'>
         <div className='mx-auto max-w-md text-center'>
           <div className='space-y-6'>
             <h2 className='font-black font-lato text-3xl 3xl:text-4xl'>
@@ -219,7 +218,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
               Utiliza nuestro explorador para visualizar las tablas completas de información y explorar con múltiples cruces y gráficos la información disponible para esta región.
             </p>
             <details>
-              <summary className='mx-auto w-4/6 flex justify-center items-center gap-x-2 border border-black rounded-full py-2  cursor-pointer'>
+              <summary className='mx-auto md:w-4/6 flex justify-center items-center gap-x-2 border border-black rounded-full py-2  cursor-pointer'>
                 <p>
                   Cómo funciona esta herramienta
                 </p>
@@ -236,7 +235,8 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>
       <div>
         <iframe src={appURL} className='h-screen w-full'></iframe>
-      </div>
+      </div> */}
+      {/* explorador */}
 
       {patrocinador.length !== 0 && <div className='py-10 bg-white'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-xl'>

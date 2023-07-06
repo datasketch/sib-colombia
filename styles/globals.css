@@ -1,101 +1,115 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap");
 
 @layer base {
-    body {
-        @apply font-lato font-normal 3xl:text-lg text-black-2
-    }
+  body {
+    @apply font-lato font-normal 3xl:text-lg text-black-2;
+  }
 }
 
 @layer components {
+  .tooltip {
+    padding: 4px;
+    max-width: 360px !important;
+  }
 
-    .rc-markdown >p >a {
-         @apply underline italic text-azure
-        
-    }
+  .rc-markdown-home > p > strong{
+    @apply text-navajo-white font-black
+  }
+  .rc-markdown > p > a {
+    @apply underline italic text-azure;
+  }
+  .rc-markdown >table > tbody > tr >td > a {
+    @apply underline italic text-azure;
+  }
 
-   details > summary {
-        list-style: none;
-    }
-    details > summary::-webkit-details-marker {
-        display: none;
-    }
-    .slick-list {
-        @apply py-1 overflow-y-scroll no-scrollbar !important;
-    }
-    .slick-arrow {
-        @apply hidden lg:block !important;
-    }
-    .slick-arrow::before {
-        content: '' !important;
-    }
-    .slick-prev.slick-disabled, .slick-next.slick-disabled {
-        opacity: .25 !important;
-    }
-    .slick-dots {
-        bottom: -35px !important;
-    }
-    .slick-dots li {
-        margin: 0 10px !important;
-    }
+ 
+  .rc-markdown table thead th {
+    @apply border-2 border-black px-4 py-2;
+  }
 
-    .slick-dots li {
-        position: relative !important;
-        display: inline-block !important;
-        width: 10px !important;
-        height: 10px !important;
-        margin: 0 10px !important;
-        border: 1px solid #09A274 !important;
-        border-radius: 100% !important;
-        cursor: pointer !important;
-    }
+  .rc-markdown table tbody td {
+  @apply border-2 border-black px-4 py-2;
+  }
 
-    .slick-dots li button:before {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 10px !important;
-        height: 10px !important;
-        content: '' !important;
-        background-color: 'transparent' !important;
-    }
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  .slick-list {
+    @apply py-1 overflow-y-scroll no-scrollbar !important;
+  }
+  .slick-arrow {
+    @apply hidden lg:block !important;
+  }
+  .slick-arrow::before {
+    content: "" !important;
+  }
+  .slick-prev.slick-disabled,
+  .slick-next.slick-disabled {
+    opacity: 0.25 !important;
+  }
+  .slick-dots {
+    bottom: -35px !important;
+  }
+  .slick-dots li {
+    margin: 0 10px !important;
+  }
 
-    .slick-dots .slick-active button:before {
-        position: absolute !important;
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        width: 11px !important;
-        height: 11px !important;
-        content: '' !important;
-        background-color: #09A274 !important;
-        border-radius: 100% !important;
-    }
+  .slick-dots li {
+    position: relative !important;
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    margin: 0 10px !important;
+    border: 1px solid #09a274 !important;
+    border-radius: 100% !important;
+    cursor: pointer !important;
+  }
 
-   
+  .slick-dots li button:before {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 10px !important;
+    height: 10px !important;
+    content: "" !important;
+    background-color: "transparent" !important;
+  }
+
+  .slick-dots .slick-active button:before {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 11px !important;
+    height: 11px !important;
+    content: "" !important;
+    background-color: #09a274 !important;
+    border-radius: 100% !important;
+  }
 }
 
 @layer utilities {
-    .shadow-1 {
-        box-shadow: 0px 8px 8px #0000001A;
-    }
-    .shadow-2 {
-        box-shadow: inset 0px 3px 6px #00000029, 0px 8px 8px #00000029;
-    }
-    .shadow-3 {
-        box-shadow: 0px 3px 6px #0000001A;
-    }
-     /* Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
-
-    
+  .shadow-1 {
+    box-shadow: 0px 8px 8px #0000001a;
+  }
+  .shadow-2 {
+    box-shadow: inset 0px 3px 6px #00000029, 0px 8px 8px #00000029;
+  }
+  .shadow-3 {
+    box-shadow: 0px 3px 6px #0000001a;
+  }
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }

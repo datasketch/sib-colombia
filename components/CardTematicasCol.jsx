@@ -2,7 +2,7 @@
 
 import { Tooltip } from '@mui/material'
 import PropTypes from 'prop-types'
-import { calculateWidth, formatNumbers } from '../lib/functions'
+import { calculateWidth, capitalize, formatNumbers } from '../lib/functions'
 import tooltips from '../static/data/tooltips.json'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
@@ -22,15 +22,16 @@ const CardTematicasCol = props => {
       <div className='py-10 bg-white'>
         <div className='grid lg:grid-cols-2 gap-y-6 gap-x-36 w-10/12 mx-auto'>
           {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr: crRegister, en: enRegister, vu: vuRegister }, key) => {
+            const title = capitalize(slug.replace('amenazadas-', ''))
             return <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
               <div className='flex flex-col items-start justify-start'>
-                <span>Categoría UICN</span>
+                <span>Categoría UICN {title}</span>
                 <span className='text-6xl font-black font-inter'>
                   {formatNumbers(especies)}
                   <div className='border-t border-t-dartmouth-green' />
                 </span>
-                <div className='font-black font-inter text-lg'>Especies  de {label}
-                  {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${slug.replace('-', '_')}`} />}>
+                <div className='font-black font-inter text-lg'>Especies amenazadas
+                  {speciesList?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={speciesList} link={`region=${slugregion}&tematica=${slug.replace('-', '_')}`} />}>
                     <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
                   </CustomTooltip>}
                 </div>
@@ -76,7 +77,7 @@ const CardTematicasCol = props => {
                 </div>
               </div>
               <div className='flex flex-col pt-5 gap-y-10'>
-                <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-1/2 lg:w-4/12 self-end' value={slug} onClick={updateBreadcrumb}>
+                <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-1/2 lg:w-4/12 self-end' value={slug} onClick={(e) => updateBreadcrumb(e, selected)}>
                   Ver más
                   <img src='/images/arrow-black.svg' alt='arrow button' />
                 </button>
@@ -116,6 +117,12 @@ const CardTematicasCol = props => {
                   <span>{formatNumbers(info?.especies_cites_i)}</span>
                 </div>
                 <div className='flex flex-col items-center'>
+                  <div className='flex items-start border-b-2 border-b-black'>
+                    <b>I/II</b>
+                  </div>
+                  <span>{formatNumbers(info?.especies_cites_i_ii)}</span>
+                </div>
+                <div className='flex flex-col items-center'>
                   <div className='flex items-start border-b-2 border-b-sandstorm'>
                     <b>II</b>
                   </div>
@@ -129,15 +136,15 @@ const CardTematicasCol = props => {
                 </div>
               </div>
               <div className='flex'>
-                <div className='bg-cerulean h-4' style={{ width: calculateWidth(+info?.especies_cites_i, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii) }}></div>
-                <div className='bg-sandstorm h-4' style={{ width: calculateWidth(+info?.especies_cites_ii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii) }}></div>
-                <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(+info?.especies_cites_iii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_iii) }}></div>
+                <div className='bg-cerulean h-4' style={{ width: calculateWidth(+info?.especies_cites_i, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_i_ii + +info?.especies_cites_iii) }}></div>
+                <div className='bg-sandstorm h-4' style={{ width: calculateWidth(+info?.especies_cites_ii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_i_ii + +info?.especies_cites_iii) }}></div>
+                <div className='bg-black h-4' style={{ width: calculateWidth(+info?.especies_cites_i_ii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_i_ii + +info?.especies_cites_iii) }}></div>
+                <div className='bg-greenish-cyan h-4' style={{ width: calculateWidth(+info?.especies_cites_iii, +info?.especies_cites_i + +info?.especies_cites_ii + +info?.especies_cites_i_ii + +info?.especies_cites_iii) }}></div>
               </div>
             </div>
 
           </div>
           <div className='lg:w-[45%] flex flex-col justify-evenly gap-y-3 '>
-
             <BarPercent
               bgColor={'bg-cerulean'}
               textColor={'text-white'}
@@ -145,9 +152,21 @@ const CardTematicasCol = props => {
               title={'CITES I'}
               datatable={info?.list_especies_cites_i}
               especies={info?.especies_cites_i}
-              parentEspecies={info?.estimadas_cites_i}
+              parentEspecies={info?.cites_i_estimadas}
               registros={info?.registros_cites_i}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=${info?.slug}_i`}
+
+            />
+            <BarPercent
+              bgColor={'bg-black'}
+              textColor={'text-white'}
+              region={region}
+              title={'CITES I/II'}
+              datatable={info?.list_especies_cites_i_ii}
+              especies={info?.especies_cites_i_ii}
+              parentEspecies={info?.cites_i_ii_estimadas}
+              registros={info?.registros_cites_i_ii}
+              link={`region=${slugregion}&tematica=${info?.slug}_i_ii`}
 
             />
 
@@ -158,9 +177,9 @@ const CardTematicasCol = props => {
               title={'CITES II'}
               datatable={info?.list_especies_cites_ii}
               especies={info?.especies_cites_ii}
-              parentEspecies={info?.estimadas_cites_ii}
+              parentEspecies={info?.cites_ii_estimadas}
               registros={info?.registros_cites_ii}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=${info?.slug}_ii`}
             />
             <BarPercent
               bgColor={'bg-greenish-cyan'}
@@ -169,9 +188,9 @@ const CardTematicasCol = props => {
               title={'CITES III'}
               datatable={info?.list_especies_cites_iii}
               especies={info?.especies_cites_iii}
-              parentEspecies={info?.estimadas_cites_iii}
+              parentEspecies={info?.cites_iii_estimadas}
               registros={info?.registros_cites_iii}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=${info?.slug}_iii`}
             />
 
           </div>
@@ -312,15 +331,15 @@ const CardTematicasCol = props => {
   return (
     <div className='bg-white py-10'>
       <div className='w-10/12 mx-auto flex justify-between'>
-        <div className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
+        <div className='max-w-[45%] w-full shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
           <div className='flex flex-col items-start justify-start'>
-            <span>Categoría UICN</span>
+            <span>Categoría UICN {capitalize(info?.slug.replace('amenazadas-', ''))}</span>
             <span className='text-6xl font-black font-inter'>
               {formatNumbers(info?.especies)}
               <div className='border-t border-t-dartmouth-green' />
             </span>
-            <div className='font-black font-inter text-lg'>Especies  de {info?.label}
-              {info?.species_list?.length && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
+            <div className='font-black font-inter text-lg'>Especies amenazadas
+              {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
                 <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
               </CustomTooltip>}
             </div>
@@ -367,33 +386,38 @@ const CardTematicasCol = props => {
           </div>
         </div>
         <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
-          <Table tabledata={info?.especies_list} link={false} />
 
           <BarPercent
-            bgColor={'bg-red-cr '}
+            cat='amenazadas'
+            label='en peligro crítico'
+            bgColor={'bg-red-cr'}
             region={region}
             title={'CR'}
             especies={info?.cr}
-            parentEspecies={info?.estimadas_cr}
+            parentEspecies={info?.cr_estimadas}
             registros={info?.cr_registros}
             link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
           />
 
           <BarPercent
+            cat='amenazadas'
+            label='en peligro'
             bgColor={'bg-orange-en'}
             region={region}
             title={'EN'}
             especies={info?.en}
-            parentEspecies={info?.estimadas_en}
+            parentEspecies={info?.en_estimadas}
             registros={info?.en_registros}
             link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
           />
           <BarPercent
+            cat='amenazadas'
+            label='vulnerables'
             bgColor={'bg-yellow-vu'}
             region={region}
             title={'VU'}
             especies={info?.vu}
-            parentEspecies={info?.estimadas_vu}
+            parentEspecies={info?.vu_estimadas}
             registros={info?.vu_registros}
             link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
           />

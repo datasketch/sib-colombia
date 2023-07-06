@@ -14,7 +14,7 @@ const CardSimple = ({ title, especies, registros, datatable, style, link }) => {
 
         <div className='text-lg font-inter font-bold'>
           {title}
-          {datatable?.length !== 0 && <CustomTooltip title={<Table tabledata={datatable} link={link}/>}>
+          {datatable && datatable?.length !== 0 && <CustomTooltip title={<Table tabledata={datatable} link={link}/>}>
             <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
           </CustomTooltip>}
 
@@ -22,7 +22,6 @@ const CardSimple = ({ title, especies, registros, datatable, style, link }) => {
         <div className='flex text-sm gap-x-2 text-blue-green'>
           <p className='inline-block '><b>{formatNumbers(registros)}</b></p>
           <p className='inline-block'>Observaciones</p>
-
         </div>
       </div>
     )

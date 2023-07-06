@@ -42,9 +42,9 @@ export default function SimpleSlider (props) {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 480,
         settings: {
-          slidesToShow: responsiveSlidesToShow || 3,
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite
         }
@@ -52,16 +52,16 @@ export default function SimpleSlider (props) {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: responsiveSlidesToShow || 2,
           slidesToScroll: 1,
           initialSlide: 0,
           infinite
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: responsiveSlidesToShow || 3,
           slidesToScroll: 1,
           infinite
         }

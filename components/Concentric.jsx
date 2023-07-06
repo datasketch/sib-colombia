@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import { scaleLinear } from 'd3-scale'
 
-export default function Concentric ({ outer, inner, style = 'style-1' }) {
-  const radius = style === 'style-2' ? 28000 : 25000
+export default function Concentric ({ outer, inner, style = 'style-1', movil = false }) {
+  const radius = style === 'style-2' ? 28000 : movil ? 15000 : 25000
   const radiusScale = scaleLinear().domain([0, outer]).range([0, radius])
 
   const outerStyle = (style) => {
