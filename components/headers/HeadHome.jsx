@@ -15,7 +15,7 @@ const HeadHome = ({ title, image, number }) => {
           <div
             className='bg-black-2 bg-opacity-75 text-white text flex flex-col items-center w-4/5 mx-auto md:w-2/3 justify-center px-6 lg:px-6 py-3.5 lg:py-3 lg:absolute lg:top-1/4 lg:w-5/12'>
             <div className='flex flex-col w-full text-left p-2'>
-              <span className='font-inter font-black text-4xl md:text-7xl'>75.947</span>
+              <span className='font-inter font-black text-4xl md:text-7xl'>75.157</span>
               <span className='font-inter font-black pb-2 pt-2 text-sm md:text-base'>Especies observadas en Colombia</span>
               <div className='w-1/3 border-t-2 border-dotted border-t-light-peagreen' />
             </div>
