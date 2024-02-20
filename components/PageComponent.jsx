@@ -12,6 +12,9 @@ import SimpleSlider from '../components/Slider'
 import Slides from '../components/Slides'
 import CardTematicasCol from './CardTematicasCol'
 
+import MapComponent from '../components/MapComponent'
+import MapDepartment from './MapDepartment'
+
 export default function PageComponent ({ data, slug, municipality, municipalityflag = false }) {
   const {
     general_info: generalInfo,
@@ -166,11 +169,12 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                           </Select>
                         </FormControl>
                       </div>
-                      <SimpleSlider dots>
+                      <MapDepartment />
+                      {/* <SimpleSlider dots>
                         {info?.charts.map((element, key) =>
                           <Slides key={key} data={element} />
                         )}
-                      </SimpleSlider>
+                      </SimpleSlider> */}
                     </>
                       )}
                 </div>
