@@ -12,7 +12,6 @@ import SimpleSlider from '../components/Slider'
 import Slides from '../components/Slides'
 import CardTematicasCol from './CardTematicasCol'
 
-import MapComponent from '../components/MapComponent'
 import MapDepartment from './MapDepartment'
 
 export default function PageComponent ({ data, slug, municipality, municipalityflag = false }) {
@@ -30,8 +29,11 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     slides,
     territorio,
     municipios_lista: municipios,
-    gallery
+    gallery,
+    map_data: mapData
   } = data
+
+  console.log(mapData)
 
   // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
@@ -169,7 +171,11 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                           </Select>
                         </FormControl>
                       </div>
-                      <MapDepartment />
+                      {
+                        data.territorio.map((element, key) =>
+                          <MapDepartment key={key} data={element} />
+                        )
+                      }
                       {/* <SimpleSlider dots>
                         {info?.charts.map((element, key) =>
                           <Slides key={key} data={element} />
