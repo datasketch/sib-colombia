@@ -171,11 +171,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                           </Select>
                         </FormControl>
                       </div>
-                      {
-                        data.territorio.map((element, key) =>
-                          <MapDepartment key={key} data={element} />
-                        )
-                      }
+                      <MapDepartment />
                       {/* <SimpleSlider dots>
                         {info?.charts.map((element, key) =>
                           <Slides key={key} data={element} />
