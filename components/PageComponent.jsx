@@ -14,7 +14,7 @@ import CardTematicasCol from './CardTematicasCol'
 
 import MapDepartment from './MapDepartment'
 
-export default function PageComponent ({ data, slug, municipality, municipalityflag = false }) {
+export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false }) {
   const {
     general_info: generalInfo,
     grupos_biologicos: gruposBiologicos,
@@ -168,7 +168,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                           </Select>
                         </FormControl>
                       </div>
-                      <MapDepartment data={territorio} />
+                      <MapDepartment data={territorio} isScale={isScale} />
                       {/* <SimpleSlider dots>
                         {info?.charts.map((element, key) =>
                           <Slides key={key} data={element} />

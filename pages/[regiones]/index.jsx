@@ -1,4 +1,3 @@
-
 import Head from 'next/head'
 import { useContext, useEffect } from 'react'
 
@@ -16,9 +15,7 @@ export default function index ({ data, slug }) {
   useEffect(() => {
     setFooterBgColor('bg-footer-green')
     setBreadCrumb([{ label: generalInfo.label, href: generalInfo.slug }])
-    return () => {
-
-    }
+    return () => {}
   }, [data])
 
   return (
@@ -37,8 +34,7 @@ export default function index ({ data, slug }) {
         referencia={generalInfo.referencia}
         photoLabel={generalInfo.credito_foto}
       />
-      <PageComponent data={data} slug={slug} />
-
+      <PageComponent data={data} slug={slug} isScale />
     </>
   )
 }
