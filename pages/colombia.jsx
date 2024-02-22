@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import HeadRegion from '../components/headers/HeadRegion'
 import { AppContext } from './_app'
-import col from '../static/data/colombia2.json'
+import col from '../static/data/colombia.json'
 import PageComponent from '../components/PageComponent'
 
 export default function colombia () {
