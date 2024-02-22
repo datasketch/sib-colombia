@@ -1,6 +1,6 @@
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import CardTematicas from '../components/CardTematicas'
 import Gallery from '../components/Gallery'
@@ -29,11 +29,10 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     slides,
     territorio,
     municipios_lista: municipios,
-    gallery,
-    map_data: mapData
+    gallery
   } = data
 
-  console.log(mapData)
+  console.log(territorio)
 
   // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
@@ -41,6 +40,23 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   const handleChange = (event) => {
     setMunicipio(event.target.value)
   }
+
+  // useEffect: Tenga
+  // - id Dpto
+  // - Lea dinamicamente el json - buscando - features
+  // - Componente: MapComponent - props - Topojson
+
+  const [importedComponent, setImportedComponent] = useState(null);
+
+  useEffect(() => {
+    const importComponent = async () => {
+      const module = await import('./MapDepartment');
+      const AnotherComponent = module.default;
+      setImportedComponent(<AnotherComponent />);
+    };
+
+    importComponent();
+  }, []);
 
   return (
     <>
@@ -171,7 +187,8 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                           </Select>
                         </FormControl>
                       </div>
-                      <MapDepartment />
+                      {importedComponent}
+                      {/* <MapDepartment /> */}
                       {/* <SimpleSlider dots>
                         {info?.charts.map((element, key) =>
                           <Slides key={key} data={element} />

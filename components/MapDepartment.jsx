@@ -1,9 +1,10 @@
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps'
-import boyacaJson from '../public/data/santander/santander2.json'
-import { useState } from "react";
+import data from '../public/data/santander/santander.json'
+import * as d3Geo from "d3-geo"
+
 
 const MapDepartment = () => {
-  const { territorio } = boyacaJson
+  const { territorio } = data
   const mapDataObj = territorio[0]
   const mapDataCoords = mapDataObj.map_data
 
@@ -28,39 +29,14 @@ const MapDepartment = () => {
     }, [])
   }
 
-  const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
-
-  function handleZoomIn() {
-    if (position.zoom >= 1) return;
-    setPosition((pos) => ({ ...pos, zoom: pos.zoom * 2 }));
-  }
-
-  function handleZoomOut() {
-    if (position.zoom <= 4) return;
-    setPosition((pos) => ({ ...pos, zoom: pos.zoom / 2 }));
-  }
-
-  function handleMoveEnd(position) {
-    setPosition(position);
-  }
+  const center = d3Geo.geoCentroid(geoJsonFormat)
 
   return (
     <>
-      <div className="border" style={{ width: '100%', height: '500px' }}>
+      <div className="border" style={{ height: 600 }}>
         <ComposableMap
-          width={800}
-          height={600}
-          projection="geoMercator"
-          projectionConfig={{
-            center: [-73.361944444444, -40.4541666666667],
-            scale: 0
-          }}
+          style={{ width: '100%', height: '100%' }} projection="geoMercator" projectionConfig={{center, scale: 10000}}
         >
-          <ZoomableGroup
-            zoom={position.zoom}
-            center={position.coordinates}
-            onMoveEnd={handleMoveEnd}
-          >
             <Geographies geography={geoJsonFormat}>
               {({ geographies }) =>
                 geographies.map((geo) => (
@@ -68,7 +44,6 @@ const MapDepartment = () => {
                 ))
               }
             </Geographies>
-          </ZoomableGroup>
         </ComposableMap>
       </div>
     </>

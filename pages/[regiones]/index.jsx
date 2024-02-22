@@ -37,7 +37,6 @@ export default function index ({ data, slug }) {
         referencia={generalInfo.referencia}
         photoLabel={generalInfo.credito_foto}
       />
-
       <PageComponent data={data} slug={slug} />
 
     </>
