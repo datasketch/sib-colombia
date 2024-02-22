@@ -7,9 +7,11 @@ const MapDepartment = ({ data, isScale = false }) => {
   const territorio = data
   const mapDataObj = territorio[0]
   const mapDataCoords = mapDataObj.map_data
-  console.log(isScale)
-
-  const [tooltipContent, setTooltipContent] = useState()
+  const [tooltipContent, setTooltipContent] = useState({
+    label: '',
+    n_especies: '',
+    n_registros: ''
+  })
 
   const geoJsonFormat = {
     type: 'FeatureCollection',
@@ -37,9 +39,13 @@ const MapDepartment = ({ data, isScale = false }) => {
   return (
     <>
       <Tooltip type="light">
-        <div className="font-lato">
-          <p className="font-black">{tooltipContent}</p>
-        </div>
+        {tooltipContent.label && (
+          <div className="font-lato text-center">
+            <p className="font-black">{tooltipContent.label}</p>
+            <p>Especies: {tooltipContent.n_especies}</p>
+            <p>Registros: {tooltipContent.n_registros}</p>
+          </div>
+        )}
       </Tooltip>
       <div data-tip="" style={{ height: 600 }}>
         <ComposableMap
@@ -54,10 +60,18 @@ const MapDepartment = ({ data, isScale = false }) => {
                   key={geo.rsmKey}
                   geography={geo}
                   onMouseEnter={() => {
-                    setTooltipContent(geo.properties.label)
+                    setTooltipContent({
+                      label: geo.properties.label,
+                      n_especies: geo.properties.n_especies,
+                      n_registros: geo.properties.n_registros
+                    })
                   }}
                   onMouseLeave={() => {
-                    setTooltipContent('')
+                    setTooltipContent({
+                      label: '',
+                      n_especies: '',
+                      n_registros: ''
+                    })
                   }}
                   style={{
                     default: {
