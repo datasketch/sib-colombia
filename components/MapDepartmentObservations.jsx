@@ -3,13 +3,12 @@ import * as d3Geo from 'd3-geo'
 import { useState } from 'react'
 import Tooltip from 'react-tooltip'
 
-const MapDepartment = ({ data, isScale = false }) => {
+const MapDepartmentObservations = ({ data, isScale = false }) => {
   const territorio = data
   const mapDataObj = territorio[0]
   const mapDataCoords = mapDataObj.map_data
   const [tooltipContent, setTooltipContent] = useState({
     label: '',
-    n_especies: '',
     n_registros: ''
   })
 
@@ -26,7 +25,6 @@ const MapDepartment = ({ data, isScale = false }) => {
             name: curr.name,
             depto: curr.depto,
             label: curr.label,
-            n_especies: curr.n_especies,
             n_registros: curr.n_registros
           }
         }
@@ -41,9 +39,8 @@ const MapDepartment = ({ data, isScale = false }) => {
       <Tooltip type="light">
         {tooltipContent.label && (
           <div className="font-lato text-center">
-            <p className="font-black">{tooltipContent.label}</p>
-            <p>Especies: {tooltipContent.n_especies}</p>
-            <p>Registros: {tooltipContent.n_registros}</p>
+            <p className="font-black">{tooltipContent.n_registros} observaciones</p>
+            <p>{tooltipContent.label}</p>
           </div>
         )}
       </Tooltip>
@@ -62,14 +59,12 @@ const MapDepartment = ({ data, isScale = false }) => {
                   onMouseEnter={() => {
                     setTooltipContent({
                       label: geo.properties.label,
-                      n_especies: geo.properties.n_especies,
                       n_registros: geo.properties.n_registros
                     })
                   }}
                   onMouseLeave={() => {
                     setTooltipContent({
                       label: '',
-                      n_especies: '',
                       n_registros: ''
                     })
                   }}
@@ -97,4 +92,4 @@ const MapDepartment = ({ data, isScale = false }) => {
   )
 }
 
-export default MapDepartment
+export default MapDepartmentObservations

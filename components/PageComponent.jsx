@@ -12,7 +12,8 @@ import SimpleSlider from '../components/Slider'
 import Slides from '../components/Slides'
 import CardTematicasCol from './CardTematicasCol'
 
-import MapDepartment from './MapDepartment'
+import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
+import MapDepartmentObservations from './MapDepartmentObservations.jsx'
 
 export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false }) {
   const {
@@ -32,11 +33,25 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
+  console.log(territorio.map_data?.n_especies)
+
   // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
+  const [mostrarEspecies, setMostrarEspecies] = useState(false)
+  const [mostrarObservaciones, setMostrarObservaciones] = useState(false)
 
   const handleChange = (event) => {
     setMunicipio(event.target.value)
+  }
+
+  const handleMostrarEspecies = () => {
+    setMostrarEspecies(true)
+    setMostrarObservaciones(false)
+  }
+
+  const handleMostrarObservaciones = () => {
+    setMostrarEspecies(false)
+    setMostrarObservaciones(true)
   }
 
   return (
@@ -168,7 +183,18 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                           </Select>
                         </FormControl>
                       </div>
-                      <MapDepartment data={territorio} isScale={isScale} />
+                      <div>
+                        <div className='flex flex-row justify-center items-center gap-3'>
+                          <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleMostrarEspecies}>Especies por municipio</button>
+                          <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleMostrarObservaciones}>Observaciones por municipio</button>
+                        </div>
+
+                        {mostrarEspecies && territorio && <MapDepartmentSpecies data={territorio} isScale={isScale} />}
+                        {mostrarObservaciones && territorio && <MapDepartmentObservations data={territorio} isScale={isScale} />}
+                      </div>
+
+                      {/* <MapDepartmentSpecies data={territorio} isScale={isScale} />
+                      <MapDepartmentObservations data={territorio} isScale={isScale} /> */}
                       {/* <SimpleSlider dots>
                         {info?.charts.map((element, key) =>
                           <Slides key={key} data={element} />
