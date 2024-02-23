@@ -44,7 +44,7 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
           </div>
         )}
       </Tooltip>
-      <div data-tip="" style={{ height: 600 }}>
+      <div data-tip="" style={{ height: 600 }} className='mt-5'>
         <ComposableMap
           style={{ width: '100%', height: '100%' }}
           projection="geoMercator"
@@ -74,11 +74,11 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
                       outline: 'none'
                     },
                     hover: {
-                      fill: '#F53',
+                      fill: '#28557D',
                       outline: 'none'
                     },
                     pressed: {
-                      fill: '#E42',
+                      fill: '#97C596',
                       outline: 'none'
                     }
                   }}

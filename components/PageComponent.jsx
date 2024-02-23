@@ -37,21 +37,21 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
 
   // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
-  const [mostrarEspecies, setMostrarEspecies] = useState(false)
-  const [mostrarObservaciones, setMostrarObservaciones] = useState(false)
+  const [showSpecies, setShowSpecies] = useState(true)
+  const [showRemarks, setShowRemarks] = useState(false)
 
   const handleChange = (event) => {
     setMunicipio(event.target.value)
   }
 
-  const handleMostrarEspecies = () => {
-    setMostrarEspecies(true)
-    setMostrarObservaciones(false)
+  const handleShowSpecies = () => {
+    setShowSpecies(true)
+    setShowRemarks(false)
   }
 
-  const handleMostrarObservaciones = () => {
-    setMostrarEspecies(false)
-    setMostrarObservaciones(true)
+  const handleShowRemarks = () => {
+    setShowSpecies(false)
+    setShowRemarks(true)
   }
 
   return (
@@ -185,12 +185,26 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                       </div>
                       <div>
                         <div className='flex flex-row justify-center items-center gap-3'>
-                          <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleMostrarEspecies}>Especies por municipio</button>
-                          <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleMostrarObservaciones}>Observaciones por municipio</button>
+                          <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowSpecies}>Especies por municipio</button>
+                          <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowRemarks}>Observaciones por municipio</button>
                         </div>
 
-                        {mostrarEspecies && territorio && <MapDepartmentSpecies data={territorio} isScale={isScale} />}
-                        {mostrarObservaciones && territorio && <MapDepartmentObservations data={territorio} isScale={isScale} />}
+                        {showSpecies && territorio &&
+                          <>
+                            <div className='mt-3'>
+                              <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2>
+                              <MapDepartmentSpecies data={territorio} isScale={isScale} />
+                            </div>
+                          </>
+                        }
+                        {showRemarks && territorio &&
+                          <>
+                          <div className='mt-3'>
+                            <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2>
+                            <MapDepartmentObservations data={territorio} isScale={isScale} />
+                          </div>
+                          </>
+                        }
                       </div>
 
                       {/* <MapDepartmentSpecies data={territorio} isScale={isScale} />
