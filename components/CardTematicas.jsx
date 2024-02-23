@@ -12,7 +12,6 @@ import CardContentTem from './CardContentTem'
 
 const CardTematicas = props => {
   const { info, selected, updateBreadcrumb, region, municipalityflag, slugregion, parentlabel } = props
-
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
