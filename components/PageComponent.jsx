@@ -33,8 +33,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
-  console.log(territorio.map_data?.n_especies)
-
   // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
   const [showSpecies, setShowSpecies] = useState(true)
@@ -206,9 +204,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                           </>
                         }
                       </div>
-
-                      {/* <MapDepartmentSpecies data={territorio} isScale={isScale} />
-                      <MapDepartmentObservations data={territorio} isScale={isScale} /> */}
                       {/* <SimpleSlider dots>
                         {info?.charts.map((element, key) =>
                           <Slides key={key} data={element} />

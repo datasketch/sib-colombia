@@ -2,6 +2,8 @@ import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import * as d3Geo from 'd3-geo'
 import { useState } from 'react'
 import Tooltip from 'react-tooltip'
+import * as d3Scale from 'd3-scale'
+/* import Legend from 'd3-color-legend' */
 
 const MapDepartmentSpecies = ({ data, isScale = false }) => {
   const territorio = data
@@ -34,6 +36,16 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
 
   const center = d3Geo.geoCentroid(geoJsonFormat)
 
+  const mapSpecies = geoJsonFormat.features.map((d) => d.properties.n_especies)
+
+  const max = Math.max(...mapSpecies)
+
+  const min = Math.min(...mapSpecies)
+
+  const colorScale = d3Scale.scaleLinear()
+    .domain([min, max])
+    .range(['#B6ECBF', '#29567D'])
+
   return (
     <>
       <Tooltip type="light">
@@ -52,7 +64,8 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
         >
           <Geographies geography={geoJsonFormat}>
             {({ geographies }) =>
-              geographies.map((geo) => (
+              geographies.map((geo) => {
+                return (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
@@ -68,25 +81,17 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
                       n_especies: ''
                     })
                   }}
-                  style={{
-                    default: {
-                      fill: '#D6D6DA',
-                      outline: 'none'
-                    },
-                    hover: {
-                      fill: '#28557D',
-                      outline: 'none'
-                    },
-                    pressed: {
-                      fill: '#97C596',
-                      outline: 'none'
-                    }
-                  }}
+                  fill={geo.properties.n_especies ? colorScale(geo.properties.n_especies) : '#F5F4F6'}
                 />
-              ))
+                )
+              }
+              )
             }
           </Geographies>
         </ComposableMap>
+        {/* <div className='bg-red-cr'>
+          <Legend scale={([min, max], colorScale)} title="Especies"/>
+        </div> */}
       </div>
     </>
   )

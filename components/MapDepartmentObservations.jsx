@@ -2,6 +2,7 @@ import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import * as d3Geo from 'd3-geo'
 import { useState } from 'react'
 import Tooltip from 'react-tooltip'
+import * as d3Scale from 'd3-scale'
 
 const MapDepartmentObservations = ({ data, isScale = false }) => {
   const territorio = data
@@ -33,6 +34,16 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
   }
 
   const center = d3Geo.geoCentroid(geoJsonFormat)
+
+  const mapObservations = geoJsonFormat.features.map((d) => d.properties.n_registros)
+
+  const max = Math.max(...mapObservations)
+
+  const min = Math.min(...mapObservations)
+
+  const colorScale = d3Scale.scaleLinear()
+    .domain([min, max])
+    .range(['#B6ECBF', '#29567D'])
 
   return (
     <>
@@ -68,20 +79,7 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
                       n_registros: ''
                     })
                   }}
-                  style={{
-                    default: {
-                      fill: '#D6D6DA',
-                      outline: 'none'
-                    },
-                    hover: {
-                      fill: '#F53',
-                      outline: 'none'
-                    },
-                    pressed: {
-                      fill: '#E42',
-                      outline: 'none'
-                    }
-                  }}
+                  fill={geo.properties.n_registros ? colorScale(geo.properties.n_registros) : '#F5F4F6'}
                 />
               ))
             }
