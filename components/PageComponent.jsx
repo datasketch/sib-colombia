@@ -12,7 +12,10 @@ import SimpleSlider from '../components/Slider'
 import Slides from '../components/Slides'
 import CardTematicasCol from './CardTematicasCol'
 
-export default function PageComponent ({ data, slug, municipality, municipalityflag = false }) {
+import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
+import MapDepartmentObservations from './MapDepartmentObservations.jsx'
+
+export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false }) {
   const {
     general_info: generalInfo,
     grupos_biologicos: gruposBiologicos,
@@ -32,9 +35,21 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
 
   // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
+  const [showSpecies, setShowSpecies] = useState(true)
+  const [showRemarks, setShowRemarks] = useState(false)
 
   const handleChange = (event) => {
     setMunicipio(event.target.value)
+  }
+
+  const handleShowSpecies = () => {
+    setShowSpecies(true)
+    setShowRemarks(false)
+  }
+
+  const handleShowRemarks = () => {
+    setShowSpecies(false)
+    setShowRemarks(true)
   }
 
   return (
@@ -166,11 +181,34 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                           </Select>
                         </FormControl>
                       </div>
-                      <SimpleSlider dots>
+                      <div>
+                        <div className='flex flex-row justify-center items-center gap-3'>
+                          <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowSpecies}>Especies por municipio</button>
+                          <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowRemarks}>Observaciones por municipio</button>
+                        </div>
+
+                        {showSpecies && territorio &&
+                          <>
+                            <div className='mt-3'>
+                              <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2>
+                              <MapDepartmentSpecies data={territorio} isScale={isScale} />
+                            </div>
+                          </>
+                        }
+                        {showRemarks && territorio &&
+                          <>
+                          <div className='mt-3'>
+                            <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2>
+                            <MapDepartmentObservations data={territorio} isScale={isScale} />
+                          </div>
+                          </>
+                        }
+                      </div>
+                      {/* <SimpleSlider dots>
                         {info?.charts.map((element, key) =>
                           <Slides key={key} data={element} />
                         )}
-                      </SimpleSlider>
+                      </SimpleSlider> */}
                     </>
                       )}
                 </div>
