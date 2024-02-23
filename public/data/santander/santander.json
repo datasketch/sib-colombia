@@ -37876,7 +37876,18 @@
           "n_registros": 965
         }
       ],
-      "charts": []
+      "charts": [
+        {
+          "title": "Especies por departamento",
+          "path": "",
+          "layout": "title/chart"
+        },
+        {
+          "title": "Observaciones por departamento",
+          "path": "",
+          "layout": "title/chart"
+        }
+      ]
     },
     {
       "slug": "areas-protegidas",
