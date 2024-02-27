@@ -15,7 +15,7 @@
     "marino_text": "; de las cuales 75.766 habitan al interior del\ncontinente y 7.650 en el mar.",
     "especies_region_total_str": "79.831",
     "registros_region_total_str": "27.901.077",
-    "main_text": "A 19722, se han publicado 27.901.077 observaciones a través\ndel SiB Colombia. Estos datos respaldan la existencia de 79.831 especies\nen el territorio nacional; de las cuales 75.766 habitan al interior del\ncontinente y 7.650 en el mar.",
+    "main_text": " se han publicado 27.901.077 observaciones a través\ndel SiB Colombia. Estos datos respaldan la existencia de 79.831 especies\nen el territorio nacional; de las cuales 75.766 habitan al interior del\ncontinente y 7.650 en el mar.",
     "referencia": "Arbeláez-Cortés, E. (2013). Knowledge of Colombian biodiversity: published and indexed. Biodiversity and Conservation, 22(12), 2875–2906. https://doi.org/10.1007/s10531-013-0560-y",
     "credito_foto": "Paisaje de Montaña"
   },
@@ -48297,7 +48297,10 @@
                 ]
               ]
             ]
-          }
+          },
+          "label": "",
+          "n_especies": 1,
+          "n_registros": 1
         },
         {
           "id": "13",

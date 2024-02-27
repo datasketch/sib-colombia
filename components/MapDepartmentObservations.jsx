@@ -45,6 +45,8 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
     .domain([min, max])
     .range(['#B6ECBF', '#29567D'])
 
+  const values = [max, 2500, 2000, 1500, 1000, 500, min]
+
   return (
     <>
       <Tooltip type="light">
@@ -85,6 +87,26 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
             }
           </Geographies>
         </ComposableMap>
+        <div className="p-4 shadow-lg w-[120px] rounded-md bottom-52 left-[68rem] block relative">
+          <span className='font-bold text-sm'>Observaciones</span>
+          <div className="mt-4">
+            {values.map(value => (
+              <>
+                <div
+                  key={value}
+                  className='font-medium'
+                  style={{
+                    backgroundColor: colorScale(value),
+                    width: '20px',
+                    height: '20px'
+                  }}
+                >
+                  <p className='font-medium right-4 text-right ml-10 text-right'>{value}</p>
+                </div>
+              </>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   )

@@ -18,6 +18,12 @@ export default function colombia () {
     }
   }, [])
 
+  const daysElapsed = generalInfo.fecha_corte
+  const dateReferenceDate = new Date('1970-01-01')
+  const date = new Date(dateReferenceDate.getTime() + daysElapsed * 24 * 60 * 60 * 1000)
+  const options = { year: 'numeric', month: 'long', day: 'numeric' }
+  const dateCurrent = date.toLocaleDateString('es-co', options)
+
   return (
 
     <div>
@@ -27,7 +33,7 @@ export default function colombia () {
       <HeadRegion
         slug='colombia'
         title={generalInfo.label}
-        description={generalInfo.main_text}
+        description={'A ' + dateCurrent + ',' + generalInfo.main_text}
         especiesEstimadas={generalInfo.especies_region_estimadas}
         especiesObservadas={generalInfo.especies_region_total}
         marine={generalInfo.marino}
@@ -36,6 +42,7 @@ export default function colombia () {
         photoLabel={generalInfo.credito_foto}
       />
       <PageComponent data={col} slug='colombia' deparment/>
+      {/* Faltan datos como especies y registros en Bogotá */}
     </div>
   )
 }

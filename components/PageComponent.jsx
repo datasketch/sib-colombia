@@ -15,7 +15,7 @@ import CardTematicasCol from './CardTematicasCol'
 import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
 import MapDepartmentObservations from './MapDepartmentObservations.jsx'
 
-export default function PageComponent({ data, slug, municipality, municipalityflag = false, isScale = false }) {
+export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false }) {
   const {
     general_info: generalInfo,
     grupos_biologicos: gruposBiologicos,
@@ -33,11 +33,6 @@ export default function PageComponent({ data, slug, municipality, municipalityfl
     gallery
   } = data
 
-  const diasTranscurridos = 19722;
-  const fechaDeReferencia = new Date('1970-01-01'); // Fecha de referencia (epoch)
-  const fecha = new Date(fechaDeReferencia.getTime() + diasTranscurridos * 24 * 60 * 60 * 1000);
-
-  console.log("Fecha convertida:", fecha);
   // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
   const [showSpecies, setShowSpecies] = useState(true)
@@ -195,7 +190,7 @@ export default function PageComponent({ data, slug, municipality, municipalityfl
                         {showSpecies && territorio &&
                           <>
                             <div className='mt-3'>
-                              <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2>
+                              {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2> */}
                               <MapDepartmentSpecies data={territorio} isScale={isScale} />
                             </div>
                           </>
@@ -203,7 +198,7 @@ export default function PageComponent({ data, slug, municipality, municipalityfl
                         {showRemarks && territorio &&
                           <>
                             <div className='mt-3'>
-                              <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2>
+                              {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2> */}
                               <MapDepartmentObservations data={territorio} isScale={isScale} />
                             </div>
                           </>
@@ -215,7 +210,7 @@ export default function PageComponent({ data, slug, municipality, municipalityfl
                         )}
                       </SimpleSlider> */}
                     </>
-                    )}
+                      )}
                 </div>
               )}
             </MenuExplorer.Body>

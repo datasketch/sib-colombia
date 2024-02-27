@@ -3,7 +3,8 @@ import * as d3Geo from 'd3-geo'
 import { useState } from 'react'
 import Tooltip from 'react-tooltip'
 import * as d3Scale from 'd3-scale'
-/* import Legend from 'd3-color-legend' */
+/* import Legend from 'd3-color-legend'
+import * as d3 from 'd3' */
 
 const MapDepartmentSpecies = ({ data, isScale = false }) => {
   const territorio = data
@@ -46,6 +47,8 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
     .domain([min, max])
     .range(['#B6ECBF', '#29567D'])
 
+  const values = [max, 2500, 2000, 1500, 1000, 500, min]
+
   return (
     <>
       <Tooltip type="light">
@@ -56,7 +59,7 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
           </div>
         )}
       </Tooltip>
-      <div data-tip="" style={{ height: 600 }} className='mt-5'>
+      <div data-tip="" style={{ height: 600 }} className=''>
         <ComposableMap
           style={{ width: '100%', height: '100%' }}
           projection="geoMercator"
@@ -66,32 +69,49 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
             {({ geographies }) =>
               geographies.map((geo) => {
                 return (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  onMouseEnter={() => {
-                    setTooltipContent({
-                      label: geo.properties.label,
-                      n_especies: geo.properties.n_especies
-                    })
-                  }}
-                  onMouseLeave={() => {
-                    setTooltipContent({
-                      label: '',
-                      n_especies: ''
-                    })
-                  }}
-                  fill={geo.properties.n_especies ? colorScale(geo.properties.n_especies) : '#F5F4F6'}
-                />
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    onMouseEnter={() => {
+                      setTooltipContent({
+                        label: geo.properties.label,
+                        n_especies: geo.properties.n_especies
+                      })
+                    }}
+                    onMouseLeave={() => {
+                      setTooltipContent({
+                        label: '',
+                        n_especies: ''
+                      })
+                    }}
+                    fill={geo.properties.n_especies ? colorScale(geo.properties.n_especies) : '#F5F4F6'}
+                  />
                 )
               }
               )
             }
           </Geographies>
         </ComposableMap>
-        {/* <div className='bg-red-cr'>
-          <Legend scale={([min, max], colorScale)} title="Especies"/>
-        </div> */}
+        <div className="p-4 shadow-lg w-[116px] rounded-md bottom-52 left-[68rem] block relative">
+          <span className='font-bold text-sm'>Especies</span>
+          <div className="mt-4">
+            {values.map(value => (
+              <>
+                <div
+                  key={value}
+                  className='font-medium'
+                  style={{
+                    backgroundColor: colorScale(value),
+                    width: '20px',
+                    height: '20px'
+                  }}
+                >
+                  <p className='font-medium right-4 text-right ml-10'>{value}</p>
+                </div>
+              </>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   )
