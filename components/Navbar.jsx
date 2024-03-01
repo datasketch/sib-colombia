@@ -25,20 +25,120 @@ export default function Navbar () {
           label: 'Departamentos',
           children: [
             {
+              label: 'Amazonas',
+              href: '/amazonas'
+            },
+            {
+              label: 'Antioquia',
+              href: '/antioquia'
+            },
+            {
+              label: 'Bolívar',
+              href: '/bolivar'
+            },
+            {
               label: 'Boyacá',
               href: '/boyaca'
             },
             {
-              label: 'Santander',
-              href: '/santander'
+              label: 'Caldas',
+              href: '/caldas'
+            },
+            {
+              label: 'Caqueta',
+              href: '/caqueta'
+            },
+            {
+              label: 'Casanare',
+              href: '/casanare'
+            },
+            {
+              label: 'Cauca',
+              href: '/cauca'
+            },
+            {
+              label: 'Cesar',
+              href: '/cesar'
+            },
+            {
+              label: 'Chocó',
+              href: '/choco'
+            },
+            {
+              label: 'Córdoba',
+              href: '/cordoba'
+            },
+            {
+              label: 'Cundinamarca',
+              href: '/cundinamarca'
+            },
+            {
+              label: 'Guainía',
+              href: '/guainia'
+            },
+            {
+              label: 'Guaviare',
+              href: '/guaviare'
+            },
+            {
+              label: 'Huila',
+              href: '/huila'
+            },
+            {
+              label: 'La guajira',
+              href: '/la-guajira'
+            },
+            {
+              label: 'Casanare',
+              href: '/casanare'
+            },
+            {
+              label: 'Magdalena',
+              href: '/magdalena'
+            },
+            {
+              label: 'Meta',
+              href: '/meta'
             },
             {
               label: 'Nariño',
               href: '/narino'
             },
             {
+              label: 'Norte de santander',
+              href: '/norte-santander'
+            },
+            {
+              label: 'Putumayo',
+              href: '/putumayo'
+            },
+            {
+              label: 'Quindío',
+              href: '/quindio'
+            },
+            {
+              label: 'San Andrés',
+              href: '/san-andres-providencia'
+            },
+            {
+              label: 'Sucre',
+              href: 'sucre'
+            },
+            {
               label: 'Tolima',
               href: '/tolima'
+            },
+            {
+              label: 'Valle del cauca',
+              href: '/valle-del-cauca'
+            },
+            {
+              label: 'Vaupés',
+              href: '/vaupes'
+            },
+            {
+              label: 'Vichada',
+              href: '/vichada'
             }
 
           ]
