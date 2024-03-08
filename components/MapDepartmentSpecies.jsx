@@ -47,7 +47,68 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
     .domain([min, max])
     .range(['#B6ECBF', '#29567D'])
 
-  const values = [max, 2500, 2000, 1500, 1000, 500, min]
+  /* const values = [2500, 2000, 1500, 1000, 500] */
+  const valueGroups = Math.ceil(max / 6)
+
+  const getRoundUnit = (number) => {
+    let longitud = number.toString().length
+    let roundingUnit
+
+    if (longitud === 1) {
+      roundingUnit = 1
+    } else {
+      roundingUnit = Math.pow(10, longitud - 1)
+    }
+
+    return roundingUnit
+  }
+
+  let redondear = getRoundUnit(valueGroups)
+
+  let firstDigit = parseInt(valueGroups.toString()[0])
+  let rounded
+
+  if (firstDigit === 9) {
+    rounded = valueGroups + redondear
+  } else {
+    rounded = Math.ceil(valueGroups / redondear) * redondear
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const initialValue = rounded
+    const quantityGroups = 6
+
+    const groups = divideInGroups(initialValue, quantityGroups)
+    const groupsList = document.getElementById("groups-list")
+
+    groups.forEach((group, i) => {
+      const li = document.createElement("li")
+      li.textContent = `[${group[0]} - ${group[1]}]`
+      groupsList.appendChild(li)
+    })
+  })
+
+  const divideInGroups = (initialValue, quantityGroups) => {
+    let groups = []
+    let rankStart = 0
+    let rangeEnd = initialValue
+
+    for (let i = 0; i < quantityGroups - 1; i++) {
+      groups.push([rankStart, rangeEnd])
+      rankStart = rangeEnd + 1
+      rangeEnd = rankStart + initialValue -1
+    }
+
+    groups.push([rankStart, rangeEnd])
+
+    return groups
+  }
+
+  /* console.log("Grupos:");
+  groups.forEach((grupo, index) => {
+    console.log(`Grupo ${index + 1}: [${grupo[0]}, ${grupo[1]}]`);
+  });
+ */
 
   return (
     <>
@@ -95,26 +156,30 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
         <div className="p-4 shadow-lg w-[116px] rounded-md bottom-52 left-[68rem] block relative">
           <span className='font-bold text-sm'>Especies</span>
           <div className="mt-4">
-            {values.map(value => (
-              <>
-                <div
-                  key={value}
-                  className='font-medium'
-                  style={{
-                    backgroundColor: colorScale(value),
-                    width: '20px',
-                    height: '20px'
-                  }}
-                >
-                  <p className='font-medium right-4 text-right ml-10'>{value}</p>
-                </div>
-              </>
-            ))}
+
+            <ul id="groups-list" />
+
+            {/* {values.map(value => (
+                <>
+                  <div
+                    key={value}
+                    className='font-medium'
+                    style={{
+                      backgroundColor: colorScale(value),
+                      width: '20px',
+                      height: '20px'
+                    }}
+                  >
+                    <p className='font-medium right-4 text-right ml-10'>{value}</p>
+                  </div>
+                </>
+              ))} */}
           </div>
         </div>
       </div>
     </>
   )
 }
+
 
 export default MapDepartmentSpecies
