@@ -1,6 +1,6 @@
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import * as d3Geo from 'd3-geo'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Tooltip from 'react-tooltip'
 import * as d3Scale from 'd3-scale'
 /* import Legend from 'd3-color-legend'
@@ -14,6 +14,7 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
     label: '',
     n_especies: ''
   })
+  const [rangeEnd, setRangeEnd] = useState(0)
 
   const geoJsonFormat = {
     type: 'FeatureCollection',
@@ -38,10 +39,13 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
   const center = d3Geo.geoCentroid(geoJsonFormat)
 
   const mapSpecies = geoJsonFormat.features.map((d) => d.properties.n_especies)
+  console.log(mapSpecies)
 
   const max = Math.max(...mapSpecies)
+  console.log(max)
 
   const min = Math.min(...mapSpecies)
+  console.log(min)
 
   const colorScale = d3Scale.scaleLinear()
     .domain([min, max])
@@ -51,7 +55,7 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
   const valueGroups = Math.ceil(max / 6)
 
   const getRoundUnit = (number) => {
-    let longitud = number.toString().length
+    const longitud = number.toString().length
     let roundingUnit
 
     if (longitud === 1) {
@@ -63,9 +67,9 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
     return roundingUnit
   }
 
-  let redondear = getRoundUnit(valueGroups)
+  const redondear = getRoundUnit(valueGroups)
 
-  let firstDigit = parseInt(valueGroups.toString()[0])
+  const firstDigit = parseInt(valueGroups.toString()[0])
   let rounded
 
   if (firstDigit === 9) {
@@ -74,35 +78,38 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
     rounded = Math.ceil(valueGroups / redondear) * redondear
   }
 
-  document.addEventListener("DOMContentLoaded", function() {
+  useEffect(() => {
     const initialValue = rounded
     const quantityGroups = 6
+    const groupsCalculated = divideInGroups(initialValue, quantityGroups)
+    const lastGroup = groupsCalculated[groupsCalculated.length - 1]
+    setRangeEnd(lastGroup[1])
+  }, [])
 
-    const groups = divideInGroups(initialValue, quantityGroups)
+  const divideInGroups = (initialValue, quantityGroups) => {
+    const groups = []
+    let rankStart = 0
+
+    for (let i = 0; i < quantityGroups - 1; i++) {
+      const rangeEnd = rankStart + initialValue
+      groups.push([rankStart, rangeEnd])
+      rankStart = rangeEnd + 1
+    }
+
+    const rangeFinLast = rankStart + initialValue - 1
+    groups.push([rankStart, rangeFinLast])
+
+    return groups
+  }
+
+  /* const groups = divideInGroups(initialValue, quantityGroups)
     const groupsList = document.getElementById("groups-list")
 
     groups.forEach((group, i) => {
       const li = document.createElement("li")
       li.textContent = `[${group[0]} - ${group[1]}]`
       groupsList.appendChild(li)
-    })
-  })
-
-  const divideInGroups = (initialValue, quantityGroups) => {
-    let groups = []
-    let rankStart = 0
-    let rangeEnd = initialValue
-
-    for (let i = 0; i < quantityGroups - 1; i++) {
-      groups.push([rankStart, rangeEnd])
-      rankStart = rangeEnd + 1
-      rangeEnd = rankStart + initialValue -1
-    }
-
-    groups.push([rankStart, rangeEnd])
-
-    return groups
-  }
+    }) */
 
   /* console.log("Grupos:");
   groups.forEach((grupo, index) => {
@@ -156,8 +163,26 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
         <div className="p-4 shadow-lg w-[116px] rounded-md bottom-52 left-[68rem] block relative">
           <span className='font-bold text-sm'>Especies</span>
           <div className="mt-4">
+            {rangeEnd}
 
-            <ul id="groups-list" />
+            {/* <ul id="groups-list">
+              {
+                groups.map((group, i) => (
+                  <div
+                    key={i}
+                    className='font-medium flex flex-col'
+                    style={{
+                      backgroundColor: colorScale(group),
+                      width: '20px',
+                      height: '20px'
+                    }}>
+                    <li className='font-medium right-4 text-right ml-10 w-52'>
+                      {i + 1}: [{group[0]} - {group[1]}]
+                    </li>
+                  </div>
+                ))
+              }
+            </ul> */}
 
             {/* {values.map(value => (
                 <>
@@ -180,6 +205,5 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
     </>
   )
 }
-
 
 export default MapDepartmentSpecies

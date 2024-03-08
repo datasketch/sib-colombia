@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import col from '../../static/data/colombia.json'
+import InfoTooltip from '../InfoTooltip'
 
 // import InfoTooltip from '../InfoTooltip'
 
@@ -30,11 +31,11 @@ const HeadHome = ({ title, image, number }) => {
           </div>
         </div>
       </div>
-      {/* <div className='relative max-w-screen-xl w-9/12 mx-auto flex justify-end'>
+      <div className='relative max-w-screen-xl w-9/12 mx-auto flex justify-end'>
         <div className='absolute -top-12'>
-          <InfoTooltip src={'/images/camera-icon.svg'} label={'This a tooltip'} id='tt-home'/>
+          <InfoTooltip src={'/images/camera-icon.svg'} label={'Sebastián Seck, Parque Nacional Natural Tayrona, Magdalena'} id='tt-home'/>
         </div>
-      </div> */}
+      </div>
     </>
   )
 }

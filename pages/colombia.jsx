@@ -33,7 +33,7 @@ export default function colombia () {
       <HeadRegion
         slug='colombia'
         title={generalInfo.label}
-        description={'A ' + dateCurrent + ',' + generalInfo.main_text}
+        description={'A ' + dateCurrent + generalInfo.main_text}
         especiesEstimadas={generalInfo.especies_region_estimadas}
         especiesObservadas={generalInfo.especies_region_total}
         marine={generalInfo.marino}
