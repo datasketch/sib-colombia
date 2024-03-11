@@ -14,7 +14,7 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
     label: '',
     n_especies: ''
   })
-  const [rangeEnd, setRangeEnd] = useState(0)
+  const [lastValueRange, setlastValueRange] = useState([])
 
   const geoJsonFormat = {
     type: 'FeatureCollection',
@@ -81,25 +81,22 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
   useEffect(() => {
     const initialValue = rounded
     const quantityGroups = 6
-    const groupsCalculated = divideInGroups(initialValue, quantityGroups)
-    const lastGroup = groupsCalculated[groupsCalculated.length - 1]
-    setRangeEnd(lastGroup[1])
+    const lastValues = getLastValueRanges(initialValue, quantityGroups)
+    setlastValueRange(lastValues)
   }, [])
 
-  const divideInGroups = (initialValue, quantityGroups) => {
-    const groups = []
-    let rankStart = 0
+  const getLastValueRanges = (initialValue, quantityGroups) => {
+    const lastValues = []
 
-    for (let i = 0; i < quantityGroups - 1; i++) {
-      const rangeEnd = rankStart + initialValue
-      groups.push([rankStart, rangeEnd])
-      rankStart = rangeEnd + 1
+    for (let i = 1; i <= quantityGroups; i++) {
+      const endValue = initialValue * i
+      lastValues.push(endValue)
     }
 
-    const rangeFinLast = rankStart + initialValue - 1
-    groups.push([rankStart, rangeFinLast])
+    /* const rangeFinLast = rankStart + initialValue - 1
+    lastValues.push(rangeFinLast) */
 
-    return groups
+    return lastValues.reverse()
   }
 
   /* const groups = divideInGroups(initialValue, quantityGroups)
@@ -163,26 +160,22 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
         <div className="p-4 shadow-lg w-[116px] rounded-md bottom-52 left-[68rem] block relative">
           <span className='font-bold text-sm'>Especies</span>
           <div className="mt-4">
-            {rangeEnd}
-
-            {/* <ul id="groups-list">
+            <ul>
               {
-                groups.map((group, i) => (
-                  <div
+                lastValueRange.map((value, i) => (
+                  <li
                     key={i}
-                    className='font-medium flex flex-col'
                     style={{
-                      backgroundColor: colorScale(group),
+                      backgroundColor: colorScale(value),
                       width: '20px',
                       height: '20px'
-                    }}>
-                    <li className='font-medium right-4 text-right ml-10 w-52'>
-                      {i + 1}: [{group[0]} - {group[1]}]
-                    </li>
-                  </div>
+                    }}
+                  >
+                    <p className='font-medium right-4 text-right ml-10'>{value}</p>
+                  </li>
                 ))
               }
-            </ul> */}
+            </ul>
 
             {/* {values.map(value => (
                 <>
