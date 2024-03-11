@@ -7,6 +7,9 @@ import Table from './Table'
 const ConcentricCard = (props) => {
   const { slug, selected, info, region, estimadasCol, municipalityflag, parentlabel } = props
 
+  console.log(estimadasCol)
+  console.log('ANGELA')
+
   return (
     <div className='flex flex-col gap-4 space-y-3 lg:w-4/12 mx-auto py-8 px-3'>
       <div className='font-bold'>
@@ -36,7 +39,7 @@ const ConcentricCard = (props) => {
           <span className='font-black text-lg'>
             {formatNumbers(info?.especies_region_total)}
           </span>
-          < span className='text-sm'> Especies de {selected.toLowerCase()} en {region}</span>
+          <span className='text-sm'> Especies de {selected.toLowerCase()} en {region}</span>
         </div>
 
         <div className='absolute -left-4 top-[260px] flex flex-col'>

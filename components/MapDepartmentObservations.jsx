@@ -1,6 +1,6 @@
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import * as d3Geo from 'd3-geo'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Tooltip from 'react-tooltip'
 import * as d3Scale from 'd3-scale'
 
@@ -12,6 +12,7 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
     label: '',
     n_registros: ''
   })
+  const [lastValueRange, setlastValueRange] = useState([])
 
   const geoJsonFormat = {
     type: 'FeatureCollection',
@@ -45,7 +46,49 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
     .domain([min, max])
     .range(['#B6ECBF', '#29567D'])
 
-  const values = [max, 2500, 2000, 1500, 1000, 500, min]
+  const valueGroups = Math.ceil(max / 6)
+
+  const getRoundUnit = (number) => {
+    const longitud = number.toString().length
+    let roundingUnit
+
+    if (longitud === 1) {
+      roundingUnit = 1
+    } else {
+      roundingUnit = Math.pow(10, longitud - 1)
+    }
+
+    return roundingUnit
+  }
+
+  const redondear = getRoundUnit(valueGroups)
+
+  const firstDigit = parseInt(valueGroups.toString()[0])
+  let rounded
+
+  if (firstDigit === 9) {
+    rounded = valueGroups + redondear
+  } else {
+    rounded = Math.ceil(valueGroups / redondear) * redondear
+  }
+
+  useEffect(() => {
+    const initialValue = rounded
+    const quantityGroups = 6
+    const lastValues = getLastValueRanges(initialValue, quantityGroups)
+    setlastValueRange(lastValues)
+  }, [])
+
+  const getLastValueRanges = (initialValue, quantityGroups) => {
+    const lastValues = []
+
+    for (let i = 1; i <= quantityGroups; i++) {
+      const endValue = initialValue * i
+      lastValues.push(endValue)
+    }
+
+    return lastValues.reverse()
+  }
 
   return (
     <>
@@ -87,24 +130,25 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
             }
           </Geographies>
         </ComposableMap>
-        <div className="p-4 shadow-lg w-[120px] rounded-md bottom-52 left-[68rem] block relative">
+        <div className="p-4 shadow-lg w-[140px] rounded-md bottom-52 left-[68rem] block relative">
           <span className='font-bold text-sm'>Observaciones</span>
           <div className="mt-4">
-            {values.map(value => (
-              <>
-                <div
-                  key={value}
-                  className='font-medium'
-                  style={{
-                    backgroundColor: colorScale(value),
-                    width: '20px',
-                    height: '20px'
-                  }}
-                >
-                  <p className='font-medium right-4 text-right ml-10 text-right'>{value}</p>
-                </div>
-              </>
-            ))}
+            <ul>
+              {
+                lastValueRange.map((value, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      backgroundColor: colorScale(value),
+                      width: '20px',
+                      height: '20px'
+                    }}
+                  >
+                    <p className='font-medium right-4 text-right ml-10'>{value}</p>
+                  </li>
+                ))
+              }
+            </ul>
           </div>
         </div>
       </div>

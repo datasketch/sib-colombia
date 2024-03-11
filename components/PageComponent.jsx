@@ -15,7 +15,7 @@ import CardTematicasCol from './CardTematicasCol'
 import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
 import MapDepartmentObservations from './MapDepartmentObservations.jsx'
 
-export default function PageComponent({ data, slug, municipality, municipalityflag = false, isScale = false }) {
+export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false }) {
   const {
     general_info: generalInfo,
     grupos_biologicos: gruposBiologicos,
@@ -57,8 +57,6 @@ export default function PageComponent({ data, slug, municipality, municipalityfl
     setShowSpecies(false)
     setShowRemarks(true)
   }
-
-  console.log(generalInfo.label)
 
   return (
     <>
@@ -196,8 +194,7 @@ export default function PageComponent({ data, slug, municipality, municipalityfl
 
                               </Select>
                             </FormControl>
-                            :
-                            <FormControl fullWidth>
+                            : <FormControl fullWidth>
                               <InputLabel id="select-municipios">Municipios</InputLabel>
                               <Select
                                 labelId="select-municipios"
@@ -241,8 +238,7 @@ export default function PageComponent({ data, slug, municipality, municipalityfl
                               <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowSpecies}>Especies por departamento</button>
                               <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowRemarks}>Observaciones por departamento</button>
                             </div>
-                            :
-                            <div className='flex flex-row justify-center items-center gap-3'>
+                            : <div className='flex flex-row justify-center items-center gap-3'>
                               <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowSpecies}>Especies por municipio</button>
                               <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowRemarks}>Observaciones por municipio</button>
                             </div>
@@ -271,7 +267,7 @@ export default function PageComponent({ data, slug, municipality, municipalityfl
                         )}
                       </SimpleSlider> */}
                     </>
-                    )}
+                      )}
                 </div>
               )}
             </MenuExplorer.Body>

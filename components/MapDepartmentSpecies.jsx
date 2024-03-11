@@ -3,8 +3,6 @@ import * as d3Geo from 'd3-geo'
 import { useState, useEffect } from 'react'
 import Tooltip from 'react-tooltip'
 import * as d3Scale from 'd3-scale'
-/* import Legend from 'd3-color-legend'
-import * as d3 from 'd3' */
 
 const MapDepartmentSpecies = ({ data, isScale = false }) => {
   const territorio = data
@@ -39,19 +37,15 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
   const center = d3Geo.geoCentroid(geoJsonFormat)
 
   const mapSpecies = geoJsonFormat.features.map((d) => d.properties.n_especies)
-  console.log(mapSpecies)
 
   const max = Math.max(...mapSpecies)
-  console.log(max)
 
   const min = Math.min(...mapSpecies)
-  console.log(min)
 
   const colorScale = d3Scale.scaleLinear()
     .domain([min, max])
     .range(['#B6ECBF', '#29567D'])
 
-  /* const values = [2500, 2000, 1500, 1000, 500] */
   const valueGroups = Math.ceil(max / 6)
 
   const getRoundUnit = (number) => {
@@ -93,26 +87,8 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
       lastValues.push(endValue)
     }
 
-    /* const rangeFinLast = rankStart + initialValue - 1
-    lastValues.push(rangeFinLast) */
-
     return lastValues.reverse()
   }
-
-  /* const groups = divideInGroups(initialValue, quantityGroups)
-    const groupsList = document.getElementById("groups-list")
-
-    groups.forEach((group, i) => {
-      const li = document.createElement("li")
-      li.textContent = `[${group[0]} - ${group[1]}]`
-      groupsList.appendChild(li)
-    }) */
-
-  /* console.log("Grupos:");
-  groups.forEach((grupo, index) => {
-    console.log(`Grupo ${index + 1}: [${grupo[0]}, ${grupo[1]}]`);
-  });
- */
 
   return (
     <>
@@ -176,22 +152,6 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
                 ))
               }
             </ul>
-
-            {/* {values.map(value => (
-                <>
-                  <div
-                    key={value}
-                    className='font-medium'
-                    style={{
-                      backgroundColor: colorScale(value),
-                      width: '20px',
-                      height: '20px'
-                    }}
-                  >
-                    <p className='font-medium right-4 text-right ml-10'>{value}</p>
-                  </div>
-                </>
-              ))} */}
           </div>
         </div>
       </div>
