@@ -6,8 +6,9 @@ import Concentric from '../Concentric'
 import classNames from 'classnames'
 import InfoTooltip from '../InfoTooltip'
 import { useEffect, useState } from 'react'
+import SmallMap from '../SmallMap'
 
-function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel }) {
+function HeadRegion({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel, data, isScale = false }) {
   const [windowWidth, setWindowWidth] = useState(1000)
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -20,15 +21,25 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
     }
   }, [])
 
+  const coordinates = data.territorio[0]
+  /* console.log(coordinates) */
+
   return (
     <>
       <div className={classNames('bg-cover bg-center pt-8 lg:pt-14 pb-3.5 h-[550px] ')} style={{ backgroundImage: 'url("/images/banner-principales/santander.jpg")' }}>
         <div className="w-full max-w-screen-2xl mx-auto">
           <div className="min-h-[210px] mt-4 lg:mt-0 flex md:justify-between items-center w-10/12 mx-auto">
             <div className={classNames('font-black lg:w-2/3 font-inter text-white text-6xl', title?.length >= 17 ? 'lg:text-[66px]' : 'lg:text-7xl')}>{title}</div>
-            {imageMap && <div className="hidden md:flex justify-end ">
+
+            {slug === 'colombia' || slug === 'boyaca' || slug === 'narino' || slug === 'santander' || slug === 'tolima' ?
+            ( imageMap &&
+            <div className="hidden md:flex justify-end ">
               <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageMap} />
-            </div>}
+            </div>
+            )
+            :
+              <SmallMap data={coordinates} isScale={isScale}/>}
+
           </div>
           <div className="flex flex-col md:flex-row max-h-48 justify-between gap-y-4 w-10/12 mx-auto -mt-9 md:-mt-0">
             {!municipality

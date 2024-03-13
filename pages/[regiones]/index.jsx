@@ -33,6 +33,8 @@ export default function index ({ data, slug }) {
         marine={generalInfo.marino}
         referencia={generalInfo.referencia}
         photoLabel={generalInfo.credito_foto}
+        data={data}
+        isScale
       />
       <PageComponent data={data} slug={slug} isScale />
     </>
