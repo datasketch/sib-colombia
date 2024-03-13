@@ -12,11 +12,19 @@ export default function MenuExplorer ({ children, tree, search, initialSelected 
   const [breadcrumb, setBreadcrumb] = useState([])
   const [selected, setSelected] = useState(initialSelected)
 
+  /* console.log(selected)
+  console.log(setSelected) */
+
   const [selectedValue, setSelectedValue] = useState(initialSelectedValue)
 
   const updateBreadcrumb = (e, parent) => {
     let { textContent, value } = e.target
     const slug = e.target.getAttribute('aria-label')
+
+    if (selected === textContent) {
+      return
+    }
+
     if (textContent === 'Ver más') {
       textContent = clearText(value)
     }
@@ -118,7 +126,7 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
 }
 
 MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restProps }) {
-  const { breadcrumb, updateBreadcrumb, resetBreadcrumb } = useContext(MenuExplorerContext)
+  const { breadcrumb, updateBreadcrumb, resetBreadcrumb, parent } = useContext(MenuExplorerContext)
 
   useEffect(() => {
   }, [breadcrumb])
@@ -133,12 +141,12 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
   return (
     <div {...restProps} className={className}>
       {
-        (breadcrumb || []).map((m, i) => {
+        (breadcrumb || []).map((value, i) => {
           return (
             <div className='flex space-x-2 items-center' key={i}>
-              <button value={m} type='button' onClick={updateBreadcrumb} onChange={resetBreadcrumb}>
+              <button value={value} type='button' onClick={e => updateBreadcrumb(e, parent)} onChange={resetBreadcrumb} aria-label={value}>
                 <p className='py-2 font-lato font-bold'>
-                  {m}
+                  {value}
                 </p>
               </button>
               <img src="/images/arrow-black.svg" alt="arrow-breadcrumbs" />

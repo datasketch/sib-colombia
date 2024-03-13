@@ -7,8 +7,8 @@ import Table from './Table'
 const ConcentricCard = (props) => {
   const { slug, selected, info, region, estimadasCol, municipalityflag, parentlabel } = props
 
-  console.log(estimadasCol)
-  console.log('ANGELA')
+  /* console.log(info?.parent[0] ? info?.parent[0].especies_region_total : slug === 'colombia' ? estimadasCol : info?.especies_region_total)
+  console.log('ANGELA') */
 
   return (
     <div className='flex flex-col gap-4 space-y-3 lg:w-4/12 mx-auto py-8 px-3'>

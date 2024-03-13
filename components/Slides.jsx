@@ -1,9 +1,11 @@
 /* eslint-disable camelcase */
 
 import ReactMarkdown from 'react-markdown'
+import WaffleChart from './WaffleChart'
 
 const Slides = ({ data, region, municipalityflag, parentlabel }) => {
   const { layout, chart_url, title, description, texts, chart1_url, chart2_url, path } = data
+
   if (layout === 'title/chart') {
     return (
       <div className="px-5">
@@ -33,7 +35,7 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
                 {description}
               </p>
             </div>
-            <div className='lg:w-6/12 max-w-[438px]'>
+            <div className='lg:w-6/12 max-w-[438px] mt-7'>
               {municipalityflag
                 ? (
                <div className='text-center font-bold  flex flex-col items-center'>
@@ -49,15 +51,21 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
                   )
                 : (<div className='text-center font-bold  flex flex-col items-center'>
                   <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 bg-cornflower-blue' />
+                    <div className='w-4 h-4 rounded-full bg-cornflower-blue' />
                     Especies observadas en {region}
                   </div>
                   <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 bg-peach-crayola' />
+                    <div className='w-4 h-4 rounded-full bg-peach-crayola' />
                     Especies observadas en Colombia
                   </div>
                 </div>)}
-              <img className='mx-auto mt-4 w-11/12' src={'/' + chart_url} alt={title} />
+              {/* <img className='mx-auto mt-4 w-11/12' src={'/' + chart_url} alt={title} /> */}
+              <WaffleChart data={data}/>
+
+              <figure id='waffle' className='flex flex-wrap w-[140px]'>
+                <div className='w-3 h-3 m-2' />
+              </figure>
+
             </div>
           </div>
         </div>

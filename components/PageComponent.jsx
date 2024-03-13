@@ -113,7 +113,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body >
               {(selected, info) => (
-                <ContentElement slug={slug} selected={selected} info={info} parentlabel={generalInfo.parent_label} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} municipalityflag={municipalityflag} />
+                <ContentElement slug={slug} selected={selected} info={info} parentlabel={generalInfo.parent_label} region={generalInfo.label} estimadasCol={generalInfo.species_region_estimadas} municipalityflag={municipalityflag} />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>
@@ -136,7 +136,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
-                <ContentElement slug={slug} selected={selected} info={info} parentlabel={generalInfo.parent_label} region={generalInfo.label} estimadasCol={generalInfo.especies_region_total} municipalityflag={municipalityflag} />
+                <ContentElement slug={slug} selected={selected} info={info} parentlabel={generalInfo.parent_label} region={generalInfo.label} estimadasCol={generalInfo.especies_region_estimadas} municipalityflag={municipalityflag} />
               )}
             </MenuExplorer.Body>
           </MenuExplorer>

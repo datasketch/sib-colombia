@@ -17,6 +17,8 @@ const CardTematicasCol = props => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
 
+  console.log(selected)
+
   if (selected.toLowerCase() === 'amenazadas') {
     return (
       <div className='py-10 bg-white'>

@@ -46,7 +46,7 @@ function ContentElement (props) {
     }
   }, [info])
 
-  /* console.log(info?.species_list_tematica.exoticas_total) */
+  /* console.log(props) */
 
   return (
     <>
