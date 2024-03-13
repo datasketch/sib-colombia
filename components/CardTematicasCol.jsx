@@ -282,7 +282,7 @@ const CardTematicasCol = props => {
               selected={selected}
               region={region}
               especies={info?.especies_exoticas_total}
-              parentEspecies={info?.estimadas_exoticas_total}
+              parentEspecies={info?.exoticas_total_estimadas}
               registros={info?.registros_exoticas_total}
               datatable={info?.list_especies_exoticas_total}
               link={`region=${slugregion}&tematica=${info?.slug}`}
@@ -297,7 +297,7 @@ const CardTematicasCol = props => {
               title={'Exóticas'}
               datatable={info?.list_especies_exoticas}
               especies={info?.especies_exoticas}
-              parentEspecies={info?.estimadas_exoticas}
+              parentEspecies={info?.exoticas_total_estimadas}
               registros={info?.registros_exoticas}
               link={`region=${slugregion}&tematica=${info?.slug}`}
             />
@@ -307,7 +307,7 @@ const CardTematicasCol = props => {
               title={'Exóticas con potencial de invasion'}
               datatable={info?.list_especies_exoticas_riesgo_invasion}
               especies={info?.especies_exoticas_riesgo_invasion}
-              parentEspecies={info?.estimadas_exoticas_riesgo_invasion}
+              parentEspecies={info?.exoticas_estimadas}
               registros={info?.registros_exoticas_riesgo_invasion}
               link={`region=${slugregion}&tematica=${info?.slug}`}
             />
@@ -317,7 +317,7 @@ const CardTematicasCol = props => {
               title={'Invasoras'}
               datatable={info?.list_especies_invasoras}
               especies={info?.especies_invasoras}
-              parentEspecies={info?.estimadas_exoticas_invasoras}
+              parentEspecies={info?.exoticas_invasoras_estimadas}
               registros={info?.registros_invasoras}
               link={`region=${slugregion}&tematica=${info?.slug}`}
             />

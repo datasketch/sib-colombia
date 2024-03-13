@@ -283,7 +283,7 @@ const CardTematicas = props => {
               parentEspecies={info?.parent_especies_exoticas_total}
               registros={info?.registros_exoticas_total}
               datatable={info?.list_especies_exoticas_total}
-              link={`region=${slugregion}&tematica=exoticas`}
+              link={`region=${slugregion}&tematica=list_especies_exoticas_total`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
             />
@@ -407,7 +407,7 @@ const CardTematicas = props => {
             regionparent={parentlabel}
             title={'CR'}
             especies={info?.cr}
-            parentEspecies={info?.estimadas_cr || info?.parent_cr_estimadas}
+            parentEspecies={info?.estimadas_cr || info?.parent_cr}
             registros={info?.cr_registros || info?.parent_cr}
             colObservadas={info?.parent_cr}
           />
@@ -421,7 +421,7 @@ const CardTematicas = props => {
             region={region}
             title={'EN'}
             especies={info?.en}
-            parentEspecies={info?.estimadas_en || info?.parent_en_estimadas}
+            parentEspecies={info?.estimadas_en || info?.parent_en}
             registros={info?.en_registros || info?.parent_en}
             colObservadas={info?.parent_en}
           />
@@ -434,7 +434,7 @@ const CardTematicas = props => {
             region={region}
             title={'VU'}
             especies={info?.vu}
-            parentEspecies={info?.estimadas_vu || info?.parent_vu_estimadas}
+            parentEspecies={info?.estimadas_vu || info?.parent_vu}
             registros={info?.vu_registros || info?.parent_vu}
             colObservadas={info?.parent_vu}
           />
