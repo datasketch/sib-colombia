@@ -5,7 +5,7 @@ import DropDown from './Dropdown'
 import ResponsiveNavbarMenu from './ResponsiveNavbarMenu'
 import { useState } from 'react'
 
-export default function Navbar() {
+export default function Navbar () {
   const [childrenRegions, setChildrenRegions] = useState([])
   const [menuIsActive, setMenuIsActive] = useState(false)
 

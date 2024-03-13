@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import WaffleChart from './WaffleChart'
 
 const Slides = ({ data, region, municipalityflag, parentlabel }) => {
-  const { layout, chart_url, title, description, texts, chart1_url, chart2_url, path } = data
+  const { layout, title, description, texts, chart1_url, chart2_url, path } = data
 
   if (layout === 'title/chart') {
     return (

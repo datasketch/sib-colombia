@@ -12,9 +12,6 @@ export default function MenuExplorer ({ children, tree, search, initialSelected 
   const [breadcrumb, setBreadcrumb] = useState([])
   const [selected, setSelected] = useState(initialSelected)
 
-  /* console.log(selected)
-  console.log(setSelected) */
-
   const [selectedValue, setSelectedValue] = useState(initialSelectedValue)
 
   const updateBreadcrumb = (e, parent) => {
@@ -24,7 +21,6 @@ export default function MenuExplorer ({ children, tree, search, initialSelected 
     if (selected === textContent) {
       return
     }
-
     if (textContent === 'Ver más') {
       textContent = clearText(value)
     }

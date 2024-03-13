@@ -46,8 +46,6 @@ function ContentElement (props) {
     }
   }, [info])
 
-  /* console.log(props) */
-
   return (
     <>
       <div key={selected} className='bg-white py-10 min-h-[600px]'>

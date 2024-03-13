@@ -2,17 +2,15 @@ import { useEffect } from 'react'
 import * as d3 from 'd3'
 
 const WaffleChart = ({ data }) => {
-
-  const speciesRegionTotalCol = data.waffle[0].especies_region_total
-  const speciesRegionTotalDep = data.waffle[1].especies_region_total
-
+  const speciesRegionTotalCol = data.waffle ? data.waffle[0].especies_region_total : 100
+  const speciesRegionTotalDep = data.waffle ? data.waffle[1].especies_region_total : 5
   const percentage = Math.round((speciesRegionTotalDep / speciesRegionTotalCol) * 100)
 
   useEffect(() => {
     const waffle = d3.select('#waffle')
-    const rows = 10;
-    const cols = 10;
-    const totalBlocks = rows * cols;
+    const rows = 10
+    const cols = 10
+    const totalBlocks = rows * cols
 
     waffle.selectAll('.block').remove()
 
@@ -37,6 +35,6 @@ const WaffleChart = ({ data }) => {
       </figure>
     </div>
   )
-};
+}
 
-export default WaffleChart;
+export default WaffleChart
