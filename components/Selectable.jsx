@@ -23,6 +23,9 @@ const Selectable = ({ data, optionSelected, placeHolder, titles, disabled = fals
     }
   }
 
+  console.log(data)
+  console.log('data')
+
   return (
     <div className='relative' ref={refSelectable}>
       <button type='button' onClick={() => setOpen(prevState => !prevState)} disabled={disabled} className={classNames('border border-black flex items-center justify-between px-2.5 py-2 h-full w-full', disabled ? 'bg-white-smoke' : '')}>

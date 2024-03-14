@@ -14,6 +14,7 @@ import CardTematicasCol from './CardTematicasCol'
 
 import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
 import MapDepartmentObservations from './MapDepartmentObservations.jsx'
+import InfoPublishers from './InfoPublishers.jsx'
 
 export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false }) {
   const {
@@ -33,6 +34,8 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     departamentos_lista: departamentos,
     gallery
   } = data
+
+  /* console.log(publicadores) */
 
   // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
@@ -284,7 +287,8 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             </h2>
             <div className='h-0.5 bg-gradient-to-r from-dartmouth-green to-yellow-green' />
           </div>
-          <div className='py-4'>
+          <div className='py-4 space-y-5'>
+            <InfoPublishers data={publicadores} />
             <SimpleSlider slidesToScroll={4} slidestoshow={4} >
               {
                 publicadores.map((item, index) =>

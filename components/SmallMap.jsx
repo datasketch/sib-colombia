@@ -2,8 +2,7 @@ import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import * as d3Geo from 'd3-geo'
 
 const SmallMap = ({ data, isScale = false }) => {
-
-  const mapDataCoords = data.map_data
+  const mapDataCoords = data.territorio[0].map_data
   const geoJsonFormat = {
     type: 'FeatureCollection',
     features: mapDataCoords.reduce((prev, curr) => {
@@ -15,7 +14,7 @@ const SmallMap = ({ data, isScale = false }) => {
           properties: {
             id: curr.id,
             name: curr.name,
-            depto: curr.depto,
+            depto: curr.depto
           }
         }
       ]

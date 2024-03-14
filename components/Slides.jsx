@@ -6,6 +6,29 @@ import WaffleChart from './WaffleChart'
 const Slides = ({ data, region, municipalityflag, parentlabel }) => {
   const { layout, title, description, texts, chart1_url, chart2_url, path } = data
 
+  const ListRender = ({ texts }) => {
+    const text = texts.split(': ')[0]
+    const joinText = text + ':'
+    return (
+      <>
+        <ReactMarkdown className='3xl:text-lg'>
+          {joinText}
+        </ReactMarkdown>
+        <ul className='pl-8'>
+          {texts.split(': ')[1].split(', ').map((element, i) => {
+            return (
+              <li key={i} className='list-disc' >
+                <ReactMarkdown className='3xl:text-lg'>
+                  {element}
+                </ReactMarkdown>
+              </li>
+            )
+          })}
+        </ul>
+      </>
+    )
+  }
+
   if (layout === 'title/chart') {
     return (
       <div className="px-5">
@@ -38,16 +61,16 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
             <div className='lg:w-6/12 max-w-[438px] mt-7'>
               {municipalityflag
                 ? (
-               <div className='text-center font-bold  flex flex-col items-center'>
-                  <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 bg-cornflower-blue' />
-                    Especies observadas en {region}
+                  <div className='text-center font-bold  flex flex-col items-center'>
+                    <div className='inline-flex gap-x-1.5 items-center'>
+                      <div className='w-4 h-4 bg-cornflower-blue' />
+                      Especies observadas en {region}
+                    </div>
+                    <div className='inline-flex gap-x-1.5 items-center'>
+                      <div className='w-4 h-4 bg-peach-crayola' />
+                      Especies observadas en {parentlabel}
+                    </div>
                   </div>
-                  <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 bg-peach-crayola' />
-                    Especies observadas en {parentlabel}
-                  </div>
-                </div>
                   )
                 : (<div className='text-center font-bold  flex flex-col items-center'>
                   <div className='inline-flex gap-x-1.5 items-center'>
@@ -60,7 +83,7 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
                   </div>
                 </div>)}
               {/* <img className='mx-auto mt-4 w-11/12' src={'/' + chart_url} alt={title} /> */}
-              <WaffleChart data={data}/>
+              <WaffleChart data={data} />
 
               <figure id='waffle' className='flex flex-wrap w-[140px]'>
                 <div className='w-3 h-3 m-2' />
@@ -109,28 +132,52 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
           </div>
         </div>
       )
-    } if (texts.length === 2) {
-      return (
-        <div className='px-5 '>
-          <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-5'>
-            <div className='lg:col-start-1 lg:col-end-6'>
-              <div className='bg-blue-green h-full py-10 px-12 text-white'>
-                <ReactMarkdown className='3xl:text-lg'>
-                  {texts[0]}
-                </ReactMarkdown>
+    } if (region === 'Colombia' || region === 'Boyacá' || region === 'Nariño' || region === 'Santander' || region === 'Tolima') {
+      if (texts.length === 2) {
+        return (
+          <div className='px-5 '>
+            <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-5'>
+              <div className='lg:col-start-1 lg:col-end-6'>
+                <div className='bg-blue-green h-full py-10 px-12 text-white'>
+                  <ReactMarkdown className='3xl:text-lg'>
+                    {texts[0]}
+                  </ReactMarkdown>
+                </div>
+              </div>
+              <div className='lg:col-start-6 lg:col-end-13'>
+                <img className='w-full h-full object-center object-cover' src="/images/gallery-4.png" alt="gallery 4" />
+              </div>
+              <div className='lg:col-start-1 lg:col-end-8'>
+                <img className='w-full h-full object-center object-cover' src="/images/gallery-5.png" alt="gallery 5" />
+              </div>
+              <div className='lg:col-start-8 lg:col-end-13'>
+                <div className='bg-blue-green h-full py-10 px-12 text-white'>
+                  <ReactMarkdown className='3xl:text-lg'>
+                    {texts[1]}
+                  </ReactMarkdown>
+                </div>
               </div>
             </div>
-            <div className='lg:col-start-6 lg:col-end-13'>
-              <img className='w-full h-full object-center object-cover' src="/images/gallery-4.png" alt="gallery 4" />
+          </div>
+        )
+      }
+    } else {
+      return (
+        <div className='px-5 py-16'>
+          <div className='space-y-5 flex flex-col justify-center items-center'>
+            <img className='w-20 h-20' src='/images/quotes.png' />
+            <h2 className='text-3xl font-bold text-dartmouth-green'>Destacados</h2>
+          </div>
+          <div className='flex flex-row justify-center items-center gap-28 px-10'>
+            <div className='lg:col-start-1 lg:col-end-6'>
+              <div className='h-full py-10 px-12'>
+                <ListRender texts={texts[0]} />
+              </div>
             </div>
-            <div className='lg:col-start-1 lg:col-end-8'>
-              <img className='w-full h-full object-center object-cover' src="/images/gallery-5.png" alt="gallery 5" />
-            </div>
+            <div className='border-r-2 border-b/40 h-44' />
             <div className='lg:col-start-8 lg:col-end-13'>
-              <div className='bg-blue-green h-full py-10 px-12 text-white'>
-                <ReactMarkdown className='3xl:text-lg'>
-                  {texts[1]}
-                </ReactMarkdown>
+              <div className='h-full py-10 px-12'>
+                <ListRender texts={texts[1]} />
               </div>
             </div>
           </div>

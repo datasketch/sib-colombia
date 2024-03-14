@@ -1,6 +1,6 @@
 
 import classNames from 'classnames'
-import { useEffect, useState } from 'react'
+/* import { useEffect, useState } from 'react' */
 
 import { Treemap, ResponsiveContainer, Tooltip as TooltipTreemap } from 'recharts'
 
@@ -32,19 +32,19 @@ function ContentElement (props) {
   }
 
   const data = info?.subgrupo_especies?.reduce((acc, { label_grupo: name, especies_region_total: especies }) => [...acc, { name, especies }], []) || []
-  const [showTreeMap, setShowTreeMap] = useState(true)
+  /* const [showTreeMap, setShowTreeMap] = useState(true) */
 
   // setShowTreeMap(dataInfo)
-  const handleShow = () => {
+  /* const handleShow = () => {
     setShowTreeMap(prevState => !prevState)
-  }
+  } */
 
-  useEffect(() => {
+  /* useEffect(() => {
     const dataInfo = data?.length !== 0 && data?.length >= 2
     setShowTreeMap(dataInfo)
     return () => {
     }
-  }, [info])
+  }, [info]) */
 
   return (
     <>
@@ -52,26 +52,26 @@ function ContentElement (props) {
         <div className='w-11/12 gap-y-28 lg:w-11/12 flex flex-col lg:flex-row mx-auto justify-between'>
           <ConcentricCard {...props} />
 
-          <div className='flex justify-center relative'>
-            {data?.length !== 0 && data?.lenght !== 1 && <div className={classNames('pt-12 md:pt-0', showTreeMap ? 'block' : 'hidden')}>
+          <div className='flex flex-col justify-center relative'>
+            {data?.length !== 0 && data?.lenght !== 1 && <div className={classNames('pt-12 md:pt-0')}>
               <div className='h-72 w-72 lg:h-96 lg:w-10/12 max-w-4xl mx-auto pb-3 lg:pb-12'>
                 <ResponsiveContainer >
                   <Treemap width={400} height={200} data={data} dataKey="especies" ratio={4 / 3} stroke="#fff" fill="#00634B" isAnimationActive={false} >
-                    <TooltipTreemap content={<CustomTooltip/>}/>
-                    </Treemap>
+                    <TooltipTreemap content={<CustomTooltip />} />
+                  </Treemap>
                 </ResponsiveContainer>
               </div>
-              <div className={classNames('p-6 border-t border-t-dartmouth-green grid lg:grid-cols-3 pt-4 gap-2 ')}>
+              {/* <div className={classNames('p-6 border-t border-t-dartmouth-green grid lg:grid-cols-3 pt-4 gap-2 ')}>
                 <CardSimple title={'Especies amenazadas nacional'} especies={info?.especies_amenazadas_nacional_total} />
                 <CardSimple title={'Especies amenazadas global'} especies={info?.especies_amenazadas_global_total} />
                 <CardSimple title={'Especies CITES'} especies={info?.especies_cites_total} />
                 <CardSimple title={'Especies migratorias'} especies={info?.especies_migratorias} />
                 <CardSimple title={'Especies endemicas'} especies={info?.especies_endemicas} />
                 <CardSimple title={'Especies exóticas'} especies={info?.especies_exoticas_total} />
-              </div>
+              </div> */}
             </div>}
 
-            <div className={classNames('grid grid-cols-1 lg:grid-cols-3 gap-3 border-t border-t-dartmouth-green pt-2', showTreeMap ? 'hidden' : '')}>
+            <div className={classNames('grid grid-cols-1 lg:grid-cols-3 gap-3 border-t border-t-dartmouth-green pt-2')}>
 
               {/* nacional */}
               <div className='space-y-2 shadow-md flex flex-col py-6 px-4'>
@@ -85,8 +85,11 @@ function ContentElement (props) {
                 <div className='flex flex-col justify-center h-full'>
                   <div className='font-lato flex justify-evenly gap-x-4'>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-red-cr'>
-                        <b>CR</b>
+                      <div className='flex items-start'>
+                        <div className='flex flex-row gap-1 items-center'>
+                          <div className='rounded-full bg-red-cr w-3 h-3' />
+                          <b>CR</b>
+                        </div>
                         <Tooltip title={<b>{contentTooltip('amenazadas-nacional-cr')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -95,8 +98,11 @@ function ContentElement (props) {
                       <span>{formatNumbers(info?.especies_amenazadas_nacional_cr)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-orange-en'>
-                        <b>EN</b>
+                      <div className='flex items-start'>
+                        <div className='flex flex-row gap-1 items-center'>
+                          <div className='rounded-full bg-orange-en w-3 h-3' />
+                          <b>EN</b>
+                        </div>
                         <Tooltip title={<b>{contentTooltip('amenazadas-nacional-en')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -104,8 +110,11 @@ function ContentElement (props) {
                       <span>{formatNumbers(info?.especies_amenazadas_nacional_en)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-yellow-vu'>
-                        <b>VU</b>
+                      <div className='flex items-start'>
+                        <div className='flex flex-row gap-1 items-center'>
+                          <div className='rounded-full bg-yellow-vu w-3 h-3' />
+                          <b>VU</b>
+                        </div>
                         <Tooltip title={<b>{contentTooltip('amenazadas-nacional-vu')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -136,8 +145,11 @@ function ContentElement (props) {
                 <div className='flex flex-col justify-center h-full'>
                   <div className='font-lato flex justify-evenly gap-x-4'>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-red-cr'>
-                        <b>CR</b>
+                      <div className='flex items-start'>
+                        <div className='flex flex-row gap-1 items-center'>
+                          <div className='rounded-full bg-red-cr w-3 h-3' />
+                          <b>CR</b>
+                        </div>
                         <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -145,8 +157,11 @@ function ContentElement (props) {
                       <span>{formatNumbers(info?.especies_amenazadas_global_cr)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-orange-en'>
-                        <b>EN</b>
+                      <div className='flex items-start'>
+                        <div className='flex flex-row gap-1 items-center'>
+                          <div className='rounded-full bg-orange-en w-3 h-3' />
+                          <b>EN</b>
+                        </div>
                         <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -154,8 +169,11 @@ function ContentElement (props) {
                       <span>{formatNumbers(info?.especies_amenazadas_global_en)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-yellow-vu'>
-                        <b>VU</b>
+                      <div className='flex items-start'>
+                        <div className='flex flex-row gap-1 items-center'>
+                          <div className='rounded-full bg-yellow-vu w-3 h-3' />
+                          <b>VU</b>
+                        </div>
                         <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -184,21 +202,29 @@ function ContentElement (props) {
                 <div className='flex flex-col justify-end h-full'>
                   <div className='font-lato flex justify-evenly gap-x-4'>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-cerulean'>
-                        <b>I</b>
+                      <div className='flex items-start'>
+                        <div className='flex flex-row gap-1 items-center'>
+                          <div className='rounded-full bg-cerulean w-3 h-3' />
+                          <b>I</b>
+                        </div>
                       </div>
                       <span>{formatNumbers(info?.especies_cites_i)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-sandstorm'>
-                        <b>II</b>
+                      <div className='flex items-start'>
+                        <div className='flex flex-row gap-1 items-center'>
+                          <div className='rounded-full bg-sandstorm w-3 h-3' />
+                          <b>II</b>
+                        </div>
                       </div>
                       <span>{formatNumbers(info?.especies_cites_ii)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
-                      <div className='flex items-start border-b-2 border-b-greenish-cyan'>
-                        <b>III</b>
-
+                      <div className='flex items-start'>
+                        <div className='flex flex-row gap-1 items-center'>
+                          <div className='rounded-full bg-greenish-cyan w-3 h-3' />
+                          <b>III</b>
+                        </div>
                       </div>
                       <span>{formatNumbers(info?.especies_cites_iii)}</span>
                     </div>
@@ -242,11 +268,11 @@ function ContentElement (props) {
               />
 
             </div>
-            {data?.length !== 0 && data?.lenght !== 1 &&
+            {/* {data?.length !== 0 && data?.lenght !== 1 &&
               (<button onClick={handleShow} className={classNames('border-t border-t-dartmouth-green flex p-2 ', showTreeMap ? 'absolute right-0 md:right-28 lg:-right-6 translate-y-[335.5px] md:translate-y-[288.4px] lg:translate-y-[383.5px]  transition' : 'absolute right-20 lg:-right-10 transition')}>
                 <img className={classNames(showTreeMap ? 'rotate-90 ' : 'rotate-[270deg] ', 'h-6 w-6')} src='/images/arrow-left-carousel.svg' />
               </button>)
-            }
+            } */}
           </div>
         </div>
       </div>
