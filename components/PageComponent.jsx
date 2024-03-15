@@ -288,7 +288,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <div className='h-0.5 bg-gradient-to-r from-dartmouth-green to-yellow-green' />
           </div>
           <div className='py-4 space-y-5'>
-            <InfoPublishers data={publicadores} />
+            <InfoPublishers data={publicadores} region={generalInfo} />
             <SimpleSlider slidesToScroll={4} slidestoshow={4} >
               {
                 publicadores.map((item, index) =>

@@ -23,8 +23,8 @@ const Selectable = ({ data, optionSelected, placeHolder, titles, disabled = fals
     }
   }
 
-  console.log(data)
-  console.log('data')
+  /* console.log(data)
+  console.log('data') */
 
   return (
     <div className='relative' ref={refSelectable}>

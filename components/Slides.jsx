@@ -2,9 +2,12 @@
 
 import ReactMarkdown from 'react-markdown'
 import WaffleChart from './WaffleChart'
+import GraphsTopMun from './GraphsTopMun'
 
 const Slides = ({ data, region, municipalityflag, parentlabel }) => {
   const { layout, title, description, texts, chart1_url, chart2_url, path } = data
+
+  /* console.log(data) */
 
   const ListRender = ({ texts }) => {
     const text = texts.split(': ')[0]
@@ -195,8 +198,9 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
           </h2>
           <div className='lg:py-2.5'>
             <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
-              <iframe type="html" className="h-[410px] w-full" src={'/' + chart1_url} ></iframe>
-              <iframe type="html" className="h-[410px] w-full" src={'/' + chart2_url} ></iframe>
+              <GraphsTopMun data={data} />
+              {/* <iframe type="html" className="h-[410px] w-full" src={'/' + chart1_url} ></iframe>
+              <iframe type="html" className="h-[410px] w-full" src={'/' + chart2_url} ></iframe> */}
             </div>
           </div>
         </div>
