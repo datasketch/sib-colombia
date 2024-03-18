@@ -35,7 +35,7 @@ const ENUM_DESTACADAS = [
     slug: 'boyaca',
     link: '/boyaca'
   },
-  {
+  /* {
     type: 'Departamento',
     label: 'Amazonas',
     slug: 'amazonas',
@@ -52,7 +52,7 @@ const ENUM_DESTACADAS = [
     label: 'Bolivar',
     slug: 'bolivar',
     link: '/bolivar'
-  },
+  }, */
   {
     type: 'Reserva forestal',
     slug: 'reserva-forestal-la-planada',

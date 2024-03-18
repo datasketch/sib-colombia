@@ -1,56 +1,83 @@
-import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts'
-
 export default function GraphsTopMun ({ data }) {
   const dataEndemicas = data.n_muni_mas_endemicas
-
   const dataAmenazadasNal = data.n_muni_mas_amenazadas_nacional
+
+  const maxValueE = dataEndemicas ? Math.max(...dataEndemicas.map(obj => obj.n)) : 'En proceso...'
+  const maxValueA = dataAmenazadasNal ? Math.max(...dataAmenazadasNal.map(obj => obj.n)) : 'En proceso...'
 
   return (
     <>
-      <div className='flex flex-row gap-52'>
-        <div>
-          <h2>Núm. de especies endémicas</h2>
-          <BarChart
-            width={500}
-            height={300}
-            data={dataEndemicas}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="label" />
-            <YAxis />
-            <Legend />
-            <Tooltip />
-            <Bar dataKey="n" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-          </BarChart>
-        </div>
-        <div>
-          <h2>Núm. de especies amenazadas (nacional)</h2>
-          <BarChart
-            width={500}
-            height={300}
-            data={dataAmenazadasNal}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="label" />
-            <YAxis />
-            <Legend />
-            <Tooltip />
-            <Bar dataKey="n" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-          </BarChart>
-        </div>
-      </div>
+      {/* Table of endemic species */}
+      <table>
+        <thead>
+          <tr className="border-b border-black/50">
+            <th className="text-left">Municipio</th>
+            <th className="text-left">Núm. de especies endémicas</th>
+          </tr>
+        </thead>
+        {
+          dataEndemicas
+            ? dataEndemicas.map(obj => {
+              const percentage = Math.round((obj.n / maxValueE) * 100)
+              const styleDiv = {
+                background: '#5151F2',
+                width: `${percentage}px`,
+                height: '12px',
+                marginButton: '5px',
+                rowGap: '0.25rem',
+                borderRadius: '9999px'
+              }
+              return (
+                <tbody key={obj.label}>
+                  <tr>
+                    <td className="w-2/4">{obj.label}</td>
+                    <div className="flex flex-row items-center justify-start gap-x-3 w-4/4">
+                      <div key={obj.label} style={styleDiv} />
+                      <td>{obj.n}</td>
+                    </div>
+                  </tr>
+                </tbody>
+              )
+            })
+            : <div>En proceso...</div>
+        }
+      </table>
+
+      {/* National endangered species table */}
+      <table>
+        <thead>
+          <tr className="border-b border-black/50">
+            <th className="text-left">Municipio</th>
+            <th className="text-left">Núm. de especies amenazadas (nacional)</th>
+          </tr>
+        </thead>
+        {
+          dataAmenazadasNal
+            ? dataAmenazadasNal.map(obj => {
+              const percentage = Math.round((obj.n / maxValueA) * 100)
+              const styleDiv = {
+                background: '#F26330',
+                width: `${percentage}px`,
+                height: '12px',
+                marginButton: '5px',
+                rowGap: '0.25rem',
+                borderRadius: '9999px'
+              }
+              return (
+                <tbody key={obj.label}>
+                  <tr>
+                    <td className="w-2/4">{obj.label}</td>
+                    <div className="flex flex-row items-center justify-start gap-x-3 w-3/4">
+                      <div key={obj.label} style={styleDiv} />
+                      <td>{obj.n}</td>
+                    </div>
+                  </tr>
+                </tbody>
+              )
+            })
+            : <div>En proceso...</div>
+        }
+      </table>
     </>
   )
 }

@@ -5,9 +5,7 @@ import WaffleChart from './WaffleChart'
 import GraphsTopMun from './GraphsTopMun'
 
 const Slides = ({ data, region, municipalityflag, parentlabel }) => {
-  const { layout, title, description, texts, chart1_url, chart2_url, path } = data
-
-  /* console.log(data) */
+  const { layout, title, description, texts, path } = data
 
   const ListRender = ({ texts }) => {
     const text = texts.split(': ')[0]
@@ -197,7 +195,7 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
             {title}
           </h2>
           <div className='lg:py-2.5'>
-            <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
+            <div className='flex flex-col items-center justify-center gap-y-8 lg:flex-row lg:gap-x-52 lg:mt-10'>
               <GraphsTopMun data={data} />
               {/* <iframe type="html" className="h-[410px] w-full" src={'/' + chart1_url} ></iframe>
               <iframe type="html" className="h-[410px] w-full" src={'/' + chart2_url} ></iframe> */}

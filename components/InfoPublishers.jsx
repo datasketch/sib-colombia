@@ -5,9 +5,6 @@ export default function InfoPublishers ({ data, region }) {
   const totalPublishers = data.length
   const place = region.label
 
-  /* const typeOrganization = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.tipo_organizacion], []))]
-  const region = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.region], []))] */
-
   const counts = {
     type: {},
     region: {},
@@ -41,8 +38,6 @@ export default function InfoPublishers ({ data, region }) {
       }
     }
   }
-
-  console.log(counts.remarks[place])
 
   const regionCounts = counts.region[place]
   const regionCountsArray = []
@@ -93,14 +88,16 @@ export default function InfoPublishers ({ data, region }) {
     top: '50%',
     right: 0,
     transform: 'translate(0, -50%)',
-    lineHeight: '24px'
+    lineHeight: '20px',
+    fontSize: '15px',
+    paddingLeft: '20px'
   }
 
   return (
     <div className="flex flex-row gap-5 px-2">
-      <div className='bg-white flex flex-col justify-between text-black-2 py-6 px-7 shadow-default hover:shadow-select w-[514px]'>
+      <div className='bg-white flex flex-col text-black-2 py-6 px-7 shadow-default hover:shadow-select w-[514px]'>
         <h2 className="text-2xl font-bold">Total de publicadores</h2>
-        <div className="flex items-center justify-center py-8 px-20">
+        <div className="flex items-center justify-center px-20 my-auto">
           <p className="text-7xl font-black">{totalPublishers}</p>
         </div>
       </div>
@@ -123,7 +120,7 @@ export default function InfoPublishers ({ data, region }) {
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-            <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" />
+            <Legend iconSize={9} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle"/>
           </PieChart>
         </ResponsiveContainer>
       </div>

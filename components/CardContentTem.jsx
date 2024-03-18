@@ -3,7 +3,6 @@ import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
 const CardContentTem = ({ selected, region, datatable, especies, parentEspecies, registros, link, municipalityflag, regionparent }) => {
-  console.log(parentEspecies)
   return (
     <div key={selected} className='flex flex-col justify-between h-full min-h-[300px] max-h-[430px] '>
       <div>
