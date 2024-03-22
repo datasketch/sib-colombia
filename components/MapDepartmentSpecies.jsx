@@ -10,7 +10,8 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
   const mapDataCoords = mapDataObj.map_data
   const [tooltipContent, setTooltipContent] = useState({
     label: '',
-    n_especies: ''
+    n_especies: '',
+    link: ''
   })
   const [lastValueRange, setlastValueRange] = useState([])
 
@@ -97,6 +98,7 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
           <div className="font-lato text-center">
             <p className="font-black">{tooltipContent.n_especies} especies</p>
             <p>{tooltipContent.label}</p>
+            <a href="/">Ver más</a>
           </div>
         )}
       </Tooltip>

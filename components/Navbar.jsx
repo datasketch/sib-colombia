@@ -24,7 +24,7 @@ export default function Navbar () {
         {
           label: 'Departamentos',
           children: [
-            /* {
+            {
               label: 'Amazonas',
               href: '/amazonas'
             },
@@ -35,12 +35,12 @@ export default function Navbar () {
             {
               label: 'Bolívar',
               href: '/bolivar'
-            }, */
+            },
             {
               label: 'Boyacá',
               href: '/boyaca'
             },
-            /* {
+            {
               label: 'Caldas',
               href: '/caldas'
             },
@@ -89,22 +89,18 @@ export default function Navbar () {
               href: '/la-guajira'
             },
             {
-              label: 'Casanare',
-              href: '/casanare'
-            },
-            {
               label: 'Magdalena',
               href: '/magdalena'
             },
             {
               label: 'Meta',
               href: '/meta'
-            }, */
+            },
             {
               label: 'Nariño',
               href: '/narino'
             },
-            /* {
+            {
               label: 'Norte de Santander',
               href: '/norte-santander'
             },
@@ -119,19 +115,19 @@ export default function Navbar () {
             {
               label: 'San Andrés',
               href: '/san-andres-providencia'
-            }, */
+            },
             {
               label: 'Santander',
               href: 'santander'
             },
-            /* {
+            {
               label: 'Sucre',
               href: 'sucre'
-            }, */
+            },
             {
               label: 'Tolima',
               href: '/tolima'
-            }/* ,
+            },
             {
               label: 'Valle del Cauca',
               href: '/valle-del-cauca'
@@ -143,7 +139,7 @@ export default function Navbar () {
             {
               label: 'Vichada',
               href: '/vichada'
-            } */
+            }
           ]
         },
         {
@@ -241,19 +237,11 @@ export default function Navbar () {
                               {el.children && <img src={item.icon} alt='icon arrow' />}
                             </DropDown.Item>
                           </div>
-                          {childrenRegions.length !== 0 && <div className='bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato'>
+                          {childrenRegions.length !== 0 && <div className='bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-500 ease-in -right-2/3'>
                             {childrenRegions?.map(({ label, href }, index) =>
                               <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
                             )}
                           </div>}
-
-                          {/* Esto es para cuando aparezcan los 32 dptos */}
-                          {/* {childrenRegions.length !== 0 && <div className='bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-500 ease-in -right-2/3'>
-                            {childrenRegions?.map(({ label, href }, index) =>
-                              <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
-                            )}
-                          </div>} */}
-
                         </>
                       )
                       }

@@ -39,8 +39,11 @@ const CardTematicasCol = props => {
               <div className='flex flex-col justify-center h-full w-full'>
                 <div className='font-lato flex justify-evenly gap-x-4'>
                   <div className='flex flex-col items-center'>
-                    <div className='flex items-start border-b-2 border-b-red-cr'>
-                      <b className=''>CR</b>
+                    <div className='flex items-start'>
+                      <div className='flex flex-row gap-1 items-center'>
+                        <div className='rounded-full bg-red-cr w-3 h-3' />
+                        <b>CR</b>
+                      </div>
                       <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
@@ -48,8 +51,11 @@ const CardTematicasCol = props => {
                     <span>{formatNumbers(crRegister)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
-                    <div className='flex items-start border-b-2 border-b-orange-en'>
-                      <b className=''>EN</b>
+                    <div className='flex items-start'>
+                      <div className='flex flex-row gap-1 items-center'>
+                        <div className='rounded-full bg-orange-en w-3 h-3' />
+                        <b>EN</b>
+                      </div>
                       <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
@@ -57,8 +63,11 @@ const CardTematicasCol = props => {
                     <span>{formatNumbers(enRegister)}</span>
                   </div>
                   <div className='flex flex-col items-center'>
-                    <div className='flex items-start border-b-2 border-b-yellow-vu'>
-                      <b className=''>VU</b>
+                    <div className='flex items-start'>
+                      <div className='flex flex-row gap-1 items-center'>
+                        <div className='rounded-full bg-yellow-vu w-3 h-3' />
+                        <b>VU</b>
+                      </div>
                       <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
