@@ -64,11 +64,11 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
                 ? (
                   <div className='text-center font-bold  flex flex-col items-center'>
                     <div className='inline-flex gap-x-1.5 items-center'>
-                      <div className='w-4 h-4 bg-cornflower-blue' />
+                      <div className='w-4 h-4 rounded-full bg-cornflower-blue' />
                       Especies observadas en {region}
                     </div>
                     <div className='inline-flex gap-x-1.5 items-center'>
-                      <div className='w-4 h-4 bg-peach-crayola' />
+                      <div className='w-4 h-4 rounded-full bg-peach-crayola' />
                       Especies observadas en {parentlabel}
                     </div>
                   </div>
@@ -134,7 +134,7 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
         </div>
       )
     } if (region === 'Colombia' || region === 'Boyacá' || region === 'Nariño' || region === 'Santander' || region === 'Tolima') {
-      if (texts.length === 2) {
+      if (texts.length >= 2) {
         return (
           <div className='px-5 '>
             <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-5'>
@@ -162,7 +162,7 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
           </div>
         )
       }
-    } else {
+    } else if (texts.length >= 2) {
       return (
         <div className='px-5 py-16'>
           <div className='space-y-5 flex flex-col justify-center items-center'>
@@ -180,6 +180,20 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
               <div className='h-full py-10 px-12'>
                 <ListRender texts={texts[1]} />
               </div>
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className='px-5 py-16'>
+          <div className='space-y-5 flex flex-col justify-center items-center'>
+            <img className='w-20 h-20' src='/images/quotes.png' />
+            <h2 className='text-3xl font-bold text-dartmouth-green'>Destacados</h2>
+          </div>
+          <div className='flex flex-col justify-center items-center'>
+            <div className='h-full py-10 px-12'>
+              <ListRender texts={texts[0]} />
             </div>
           </div>
         </div>

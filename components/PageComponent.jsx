@@ -167,53 +167,52 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <MenuExplorer.Body>
               {(selected, info) => (
                 <div className='bg-white py-10'>
-                  {info?.charts.length === 0
+                  {/* {info?.charts.length === 0
                     ? (<div className='text-center text-3xl py-20 w-4/5 mx-auto'>
-                      {/* <span>Conoce más en</span> */}
                       Conoce más en {' '}
                       <a href={info?.link} className='underline text-azure'>{info?.label}</a>
-                    </div>)
-                    : (<>
-                      <div className='py-3 w-2/5 mx-auto'>
-                        {
-                          generalInfo.label === 'Colombia'
-                            ? <FormControl fullWidth>
-                              <InputLabel id="select-departamentos">Departamentos</InputLabel>
-                              <Select
-                                labelId="select-departamentos"
-                                id="demo-select-departamentos"
-                                label={info?.label}
-                                value={departamento}
-                                onChange={handleChangeDepartamento}
-                              >
-                                {
-                                  departamentos?.map((item, key) =>
-                                    <MenuItem key={key}>
-                                      <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a>
-                                    </MenuItem>
-                                  )}
+                    </div>) */}
+                  <>
+                    <div className='py-3 w-2/5 mx-auto'>
+                      {
+                        generalInfo.label === 'Colombia'
+                          ? <FormControl fullWidth>
+                            <InputLabel id="select-departamentos">Departamentos</InputLabel>
+                            <Select
+                              labelId="select-departamentos"
+                              id="demo-select-departamentos"
+                              label={info?.label}
+                              value={departamento}
+                              onChange={handleChangeDepartamento}
+                            >
+                              {
+                                departamentos?.map((item, key) =>
+                                  <MenuItem key={key}>
+                                    <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a>
+                                  </MenuItem>
+                                )}
 
-                              </Select>
-                            </FormControl>
-                            : <FormControl fullWidth>
-                              <InputLabel id="select-municipios">Municipios</InputLabel>
-                              <Select
-                                labelId="select-municipios"
-                                id="demo-select-municipios"
-                                label={info?.label}
-                                value={municipio}
-                                onChange={handleChangeMunicipio}
-                              >
-                                {
-                                  municipios?.map((item, key) =>
-                                    <MenuItem key={key}>
-                                      <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a>
-                                    </MenuItem>
-                                  )}
-                              </Select>
-                            </FormControl>
-                        }
-                        {/* <FormControl fullWidth>
+                            </Select>
+                          </FormControl>
+                          : <FormControl fullWidth>
+                            <InputLabel id="select-municipios">Municipios</InputLabel>
+                            <Select
+                              labelId="select-municipios"
+                              id="demo-select-municipios"
+                              label={info?.label}
+                              value={municipio}
+                              onChange={handleChangeMunicipio}
+                            >
+                              {
+                                municipios?.map((item, key) =>
+                                  <MenuItem key={key}>
+                                    <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a>
+                                  </MenuItem>
+                                )}
+                            </Select>
+                          </FormControl>
+                      }
+                      {/* <FormControl fullWidth>
                           <InputLabel id="select-municipios">{info?.label}</InputLabel>
                           <Select
                             labelId="select-municipios"
@@ -231,44 +230,43 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
 
                           </Select>
                         </FormControl> */}
-                      </div>
-                      <div>
-                        {
-                          generalInfo.label === 'Colombia'
-                            ? <div className='flex flex-row justify-center items-center gap-3'>
-                              <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowSpecies}>Especies por departamento</button>
-                              <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowRemarks}>Observaciones por departamento</button>
-                            </div>
-                            : <div className='flex flex-row justify-center items-center gap-3'>
-                              <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowSpecies}>Especies por municipio</button>
-                              <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowRemarks}>Observaciones por municipio</button>
-                            </div>
-                        }
+                    </div>
+                    <div>
+                      {
+                        generalInfo.label === 'Colombia'
+                          ? <div className='flex flex-row justify-center items-center gap-3'>
+                            <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowSpecies}>Especies por departamento</button>
+                            <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowRemarks}>Observaciones por departamento</button>
+                          </div>
+                          : <div className='flex flex-row justify-center items-center gap-3'>
+                            <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowSpecies}>Especies por municipio</button>
+                            <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowRemarks}>Observaciones por municipio</button>
+                          </div>
+                      }
 
-                        {showSpecies && territorio &&
-                          <>
-                            <div className='mt-3'>
-                              {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2> */}
-                              <MapDepartmentSpecies data={territorio} isScale={isScale} />
-                            </div>
-                          </>
-                        }
-                        {showRemarks && territorio &&
-                          <>
-                            <div className='mt-3'>
-                              {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2> */}
-                              <MapDepartmentObservations data={territorio} isScale={isScale} />
-                            </div>
-                          </>
-                        }
-                      </div>
-                      {/* <SimpleSlider dots>
+                      {showSpecies && territorio &&
+                        <>
+                          <div className='mt-3'>
+                            {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2> */}
+                            <MapDepartmentSpecies data={territorio} isScale={isScale} />
+                          </div>
+                        </>
+                      }
+                      {showRemarks && territorio &&
+                        <>
+                          <div className='mt-3'>
+                            {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2> */}
+                            <MapDepartmentObservations data={territorio} isScale={isScale} />
+                          </div>
+                        </>
+                      }
+                    </div>
+                    {/* <SimpleSlider dots>
                         {info?.charts.map((element, key) =>
                           <Slides key={key} data={element} />
                         )}
                       </SimpleSlider> */}
-                    </>
-                      )}
+                  </>
                 </div>
               )}
             </MenuExplorer.Body>

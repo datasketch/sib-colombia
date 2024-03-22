@@ -21,6 +21,9 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
     }
   }, [])
 
+  /* console.log(especiesObservadas)
+  console.log(especiesEstimadas) */
+
   return (
     <>
       <div className={classNames('bg-cover bg-center pt-8 lg:pt-14 pb-3.5 h-[550px] ')} style={{ backgroundImage: 'url("/images/banner-principales/santander.jpg")' }}>

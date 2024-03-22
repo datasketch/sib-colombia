@@ -37650,18 +37650,7 @@
           "n_registros": 13546
         }
       ],
-      "charts": [
-        {
-          "title": "Especies por departamento",
-          "path": "",
-          "layout": "title/chart"
-        },
-        {
-          "title": "Registros por departamento",
-          "path": "",
-          "layout": "title/chart"
-        }
-      ]
+      "charts": []
     },
     {
       "slug": "areas-protegidas",
