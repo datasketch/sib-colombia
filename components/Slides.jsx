@@ -133,36 +133,7 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
           </div>
         </div>
       )
-    } if (region === 'Colombia' || region === 'Boyacá' || region === 'Nariño' || region === 'Santander' || region === 'Tolima') {
-      if (texts.length >= 2) {
-        return (
-          <div className='px-5 '>
-            <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-5'>
-              <div className='lg:col-start-1 lg:col-end-6'>
-                <div className='bg-blue-green h-full py-10 px-12 text-white'>
-                  <ReactMarkdown className='3xl:text-lg'>
-                    {texts[0]}
-                  </ReactMarkdown>
-                </div>
-              </div>
-              <div className='lg:col-start-6 lg:col-end-13'>
-                <img className='w-full h-full object-center object-cover' src="/images/gallery-4.png" alt="gallery 4" />
-              </div>
-              <div className='lg:col-start-1 lg:col-end-8'>
-                <img className='w-full h-full object-center object-cover' src="/images/gallery-5.png" alt="gallery 5" />
-              </div>
-              <div className='lg:col-start-8 lg:col-end-13'>
-                <div className='bg-blue-green h-full py-10 px-12 text-white'>
-                  <ReactMarkdown className='3xl:text-lg'>
-                    {texts[1]}
-                  </ReactMarkdown>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-      }
-    } else if (texts.length >= 2) {
+    } if (texts.length >= 2) {
       return (
         <div className='px-5 py-16'>
           <div className='space-y-5 flex flex-col justify-center items-center'>

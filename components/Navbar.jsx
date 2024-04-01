@@ -118,11 +118,11 @@ export default function Navbar () {
             },
             {
               label: 'Santander',
-              href: 'santander'
+              href: '/santander'
             },
             {
               label: 'Sucre',
-              href: 'sucre'
+              href: '/sucre'
             },
             {
               label: 'Tolima',

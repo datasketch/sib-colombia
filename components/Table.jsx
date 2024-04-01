@@ -7,9 +7,11 @@ const Table = ({ tabledata, general = false, link, overflow = false }) => {
   const showData = tabledata?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], [])
 
   useEffect(() => {
+    const slicedData = tabledata?.slice(0, 10).map(({ label, registros, url_cbc: cbc, url_gbif: gbif }) => ({ label, registros, cbc, gbif }))
+
     general
       ? setDataShow(showData)
-      : setDataShow(tabledata?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], []))
+      : setDataShow(slicedData)
     return () => {
 
     }
