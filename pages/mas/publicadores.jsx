@@ -9,6 +9,7 @@ import publishers from '../../static/data/publicador.json'
 import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
+/* import InfoPublishers from '../../components/InfoPublishers' */
 
 export default function publicadores () {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
@@ -20,7 +21,9 @@ export default function publicadores () {
   // eslint-disable-next-line no-unused-vars
   const [publicadors, setPublicadors] = useState(publishers)
 
-  const [query, setQuery] = useState('')
+  console.log(publishers?.filter(p => p?.region?.includes('Paya')))
+
+  const [query, setQuery] = useState('Paya')
   const [selectedCountry, setSelectedCountry] = useState('')
   const [selectedOrganizacion, setSelectedOrganizacion] = useState('')
 
@@ -28,9 +31,12 @@ export default function publicadores () {
   const citys = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.pais_publicacion], []))]
   const typeOrganization = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.tipo_organizacion], []))]
 
+  /* console.log(citys) */
+
   function filterBySearch (publisher) {
-    const { label, pais_publicacion: paisPublicacion, region } = publisher
-    return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase()) || region?.toLowerCase().includes(query.toLowerCase())
+    const { /* label, pais_publicacion: paisPublicacion,  */region } = publisher
+    /* console.log(publisher) */
+    return region?.split(',').filter((r) => r.toLowerCase() === query.toLowerCase())
   }
 
   function filterByCountry (publisher) {
@@ -60,8 +66,10 @@ export default function publicadores () {
 
   const filteredPublishers = publicadors
     .filter(filterBySearch)
-    .filter(filterByCountry)
-    .filter(filterByOrgType)
+    /* .filter(filterByCountry)
+    .filter(filterByOrgType) */
+
+  /* console.log(filteredPublishers.slice(0, 9)) */
 
   const clearFilters = () => {
     setQuery('')
@@ -114,14 +122,17 @@ export default function publicadores () {
           </button>
         </div>
       </div>
-      { currentPublisher.length === 0
+      {/* <div>
+        <InfoPublishers/>
+      </div> */}
+      {currentPublisher.length === 0
         ? <p className='my-12 text-xl text-center font-black'>No existen registros de la información</p>
         : <div id="publishers" className="max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-center">
-        {
-          currentPublisher.map((item, key) =>
-            <PublishersCard key={key + item.label} title={item.label} country={item.pais_publicacion} totalEspecies={item.especies} observationsQuantity={item.registros} imagePath={item.url_logo} link={item.url_socio} />
-          )}
-      </div>
+          {
+            currentPublisher.map((item, key) =>
+              <PublishersCard key={key + item.label} title={item.label} country={item.pais_publicacion} totalEspecies={item.especies} observationsQuantity={item.registros} imagePath={item.url_logo} link={item.url_socio} />
+            )}
+        </div>
       }
       <div className='py-8 flex justify-center'>
         <Pagination
