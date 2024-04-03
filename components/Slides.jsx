@@ -40,11 +40,11 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
                 ? (
                <div className='text-center font-bold  flex flex-col items-center'>
                   <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 bg-cornflower-blue' />
+                      <div className='w-4 h-4 rounded-full bg-cornflower-blue' />
                     Especies observadas en {region}
                   </div>
                   <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 bg-peach-crayola' />
+                      <div className='w-4 h-4 rounded-full bg-peach-crayola' />
                     Especies observadas en {parentlabel}
                   </div>
                 </div>
@@ -61,11 +61,6 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
                 </div>)}
               {/* <img className='mx-auto mt-4 w-11/12' src={'/' + chart_url} alt={title} /> */}
               <WaffleChart data={data}/>
-
-              <figure id='waffle' className='flex flex-wrap w-[140px]'>
-                <div className='w-3 h-3 m-2' />
-              </figure>
-
             </div>
           </div>
         </div>

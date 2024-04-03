@@ -1,13 +1,16 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import * as d3 from 'd3'
 
 const WaffleChart = ({ data }) => {
   const speciesRegionTotalCol = data.waffle ? data.waffle[0].especies_region_total : 100
   const speciesRegionTotalDep = data.waffle ? data.waffle[1].especies_region_total : 5
   const percentage = Math.round((speciesRegionTotalDep / speciesRegionTotalCol) * 100)
+  const figureRef = useRef(null)
 
   useEffect(() => {
-    const waffle = d3.select('#waffle')
+    if (!figureRef.current) return
+
+    const waffle = d3.select(figureRef.current)
     const rows = 10
     const cols = 10
     const totalBlocks = rows * cols
@@ -27,11 +30,11 @@ const WaffleChart = ({ data }) => {
       .style('border-radius', '9999px')
 
     return () => blocks.remove()
-  }, [])
+  }, [figureRef])
 
   return (
     <div className='mx-auto mt-24 w-11/12 flex justify-center items-center'>
-      <figure id='waffle' className='flex flex-wrap-reverse w-[240px]'>
+      <figure ref={figureRef} className='flex flex-wrap-reverse w-[240px]'>
       </figure>
     </div>
   )

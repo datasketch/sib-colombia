@@ -49,7 +49,7 @@ const ENUM_DESTACADAS = [
   },
   {
     type: 'Departamento',
-    label: 'Bolivar',
+    label: 'Bolívar',
     slug: 'bolivar',
     link: '/bolivar'
   },
