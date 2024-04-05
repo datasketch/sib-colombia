@@ -35,6 +35,8 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
+  /* console.log(slug, '---slug') */
+
   // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
   const [departamento, setDepartamento] = useState('')
@@ -296,7 +298,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             </SimpleSlider>
           </div>
           <div className='text-center'>
-            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href={`/mas/publicadores?region=${generalInfo.label || slug}`}>
+            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href={`/mas/publicadores?region=${slug}`}>
               Todos los publicadores
             </a>
           </div>

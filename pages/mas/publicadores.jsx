@@ -9,7 +9,8 @@ import publishers from '../../static/data/publicador.json'
 import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
-/* import InfoPublishers from '../../components/InfoPublishers' */
+
+const normalize = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 
 export default function publicadores () {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
@@ -17,13 +18,15 @@ export default function publicadores () {
   const router = useRouter()
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
+  const [query, setQuery] = useState('')
+
+  /* console.log(query, '-----query') */
 
   // eslint-disable-next-line no-unused-vars
   const [publicadors, setPublicadors] = useState(publishers)
 
-  console.log(publishers?.filter(p => p?.region?.includes('Paya')))
+  /* console.log(publishers?.filter(p => p?.region?.includes('Paya'))) */
 
-  const [query, setQuery] = useState('Paya')
   const [selectedCountry, setSelectedCountry] = useState('')
   const [selectedOrganizacion, setSelectedOrganizacion] = useState('')
 
@@ -31,12 +34,17 @@ export default function publicadores () {
   const citys = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.pais_publicacion], []))]
   const typeOrganization = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.tipo_organizacion], []))]
 
-  /* console.log(citys) */
-
   function filterBySearch (publisher) {
-    const { /* label, pais_publicacion: paisPublicacion,  */region } = publisher
-    /* console.log(publisher) */
-    return region?.split(',').filter((r) => r.toLowerCase() === query.toLowerCase())
+    if (!query) return true
+
+    const { label, pais_publicacion: paisPublicacion } = publisher
+
+    const region = publisher.region ? normalize(publisher.region) : publisher.region
+    const normalizedQuery = normalize(query)
+    /* console.log(region) */
+
+    return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase()) || region?.includes(normalizedQuery)
+    /* return region?.split(',').filter((r) => r.toLowerCase() === query.toLowerCase()) */
   }
 
   function filterByCountry (publisher) {
@@ -66,8 +74,8 @@ export default function publicadores () {
 
   const filteredPublishers = publicadors
     .filter(filterBySearch)
-    /* .filter(filterByCountry)
-    .filter(filterByOrgType) */
+    .filter(filterByCountry)
+    .filter(filterByOrgType)
 
   /* console.log(filteredPublishers.slice(0, 9)) */
 
@@ -88,6 +96,17 @@ export default function publicadores () {
     if (!router.isReady) return
     const { query: { region } } = router
     setQuery(region || '')
+
+    const currentUrl = window.location.href
+    const isProfile = currentUrl.includes(region)
+    if (isProfile) {
+      // Este usuario viene de PageComponent
+      console.log('El usuario estaba en el perfil de ' + isProfile)
+
+      // importar <region>/<region>.json
+
+      // modificar registros para que tenga region: <region>
+    }
   }, [router.isReady])
 
   useEffect(() => {
@@ -122,6 +141,7 @@ export default function publicadores () {
           </button>
         </div>
       </div>
+      <div>Total {publishers.length}. Mostrando: {filteredPublishers.length}</div>
       {/* <div>
         <InfoPublishers/>
       </div> */}
