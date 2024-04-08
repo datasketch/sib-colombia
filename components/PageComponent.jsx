@@ -15,6 +15,15 @@ import CardTematicasCol from './CardTematicasCol'
 import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
 import MapDepartmentObservations from './MapDepartmentObservations.jsx'
 import InfoPublishers from './InfoPublishers.jsx'
+import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
+
+/* import { useLocalStorage } from "@uidotdev/usehooks" */
+
+/* const {useLocalStorage} = dynamic(() =>
+  import('@uidotdev/usehooks'), {
+  ssr: false,
+}) */
 
 export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false }) {
   const {
@@ -42,6 +51,15 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   const [departamento, setDepartamento] = useState('')
   const [showSpecies, setShowSpecies] = useState(true)
   const [showRemarks, setShowRemarks] = useState(false)
+  const router = useRouter()
+  /* const [publishers, savePublishers] = useLocalStorage('publishers', []) */
+
+  const handlePublishers = () => {
+    localStorage.setItem('publishers', JSON.stringify(publicadores.map(p => ({...p, region: slug}))))
+    router.push(`/mas/publicadores?region=${slug}`)
+    /* savePublishers(publicadores) */
+    /* `/mas/publicadores?region=${slug}` */
+  }
 
   const handleChangeMunicipio = (event) => {
     setMunicipio(event.target.value)
@@ -298,9 +316,9 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             </SimpleSlider>
           </div>
           <div className='text-center'>
-            <a className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' href={`/mas/publicadores?region=${slug}`}>
+            <button className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' onClick={() => handlePublishers(slug)} >
               Todos los publicadores
-            </a>
+            </button>
           </div>
         </div>
       </div>

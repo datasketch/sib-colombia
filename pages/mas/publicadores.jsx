@@ -9,6 +9,7 @@ import publishers from '../../static/data/publicador.json'
 import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
+/* import data from '../../public/data/boyaca/boyaca.json' */
 
 const normalize = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 
@@ -24,6 +25,7 @@ export default function publicadores () {
 
   // eslint-disable-next-line no-unused-vars
   const [publicadors, setPublicadors] = useState(publishers)
+  const [localPublishers, setLocalPublishers] = useState([])
 
   /* console.log(publishers?.filter(p => p?.region?.includes('Paya'))) */
 
@@ -97,21 +99,29 @@ export default function publicadores () {
     const { query: { region } } = router
     setQuery(region || '')
 
-    const currentUrl = window.location.href
-    const isProfile = currentUrl.includes(region)
-    if (isProfile) {
+    /* if () {
       // Este usuario viene de PageComponent
-      console.log('El usuario estaba en el perfil de ' + isProfile)
-
       // importar <region>/<region>.json
-
       // modificar registros para que tenga region: <region>
-    }
+    } */
+
   }, [router.isReady])
 
   useEffect(() => {
-    setBreadCrumb([{ label: 'Más' }, { label: 'Publicadores' }])
-    setFooterBgColor('bg-footer-orange')
+    try {
+      setBreadCrumb([{ label: 'Más' }, { label: 'Publicadores' }])
+      setFooterBgColor('bg-footer-orange')
+      const savePublishers = localStorage.getItem('publishers')
+      console.log(savePublishers)
+      const data = JSON.parse(savePublishers)
+      console.log(data)
+      if (Array.isArray(data) && localPublishers.length === 0) {
+        setLocalPublishers(data)
+      }
+      localStorage.removeItem('publishers')
+    } catch (error) {
+
+    }
     return () => {
 
     }
@@ -142,6 +152,7 @@ export default function publicadores () {
         </div>
       </div>
       <div>Total {publishers.length}. Mostrando: {filteredPublishers.length}</div>
+      <p>{localPublishers.length}</p>
       {/* <div>
         <InfoPublishers/>
       </div> */}
