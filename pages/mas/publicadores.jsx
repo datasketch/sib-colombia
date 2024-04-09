@@ -9,7 +9,7 @@ import publishers from '../../static/data/publicador.json'
 import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
-/* import data from '../../public/data/boyaca/boyaca.json' */
+import dataBoyaca from '../../public/data/boyaca/boyaca.json'
 
 const normalize = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 
@@ -20,6 +20,8 @@ export default function publicadores () {
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
   const [query, setQuery] = useState('')
+
+  /* console.log(dataBoyaca.publicadores) */
 
   /* console.log(query, '-----query') */
 
@@ -104,17 +106,35 @@ export default function publicadores () {
       // importar <region>/<region>.json
       // modificar registros para que tenga region: <region>
     } */
-
   }, [router.isReady])
+
+  /* const data = JSON.parse(savePublishers) */
+  /* const dataProfile = JSON.parse(JSON.stringify(dataBoyaca.publicadores))
+  console.log(dataProfile) */
 
   useEffect(() => {
     try {
       setBreadCrumb([{ label: 'Más' }, { label: 'Publicadores' }])
       setFooterBgColor('bg-footer-orange')
       const savePublishers = localStorage.getItem('publishers')
-      console.log(savePublishers)
+      /* console.log(savePublishers) */
       const data = JSON.parse(savePublishers)
       console.log(data)
+      /* const dataProfile = dataBoyaca.publicadores */
+      const dataProfile = JSON.stringify(dataBoyaca.publicadores)
+      console.log(dataProfile)
+
+      const dataValidations = (data, dataProfile) => {
+        for (const key in data) {
+          if (key === 'slug_publicador' && dataProfile.hasOwnProperty('slug')) {
+            dataProfile.slug = data[key]
+          } else if (!dataProfile(key)) {
+            dataProfile[key] = data[key]
+          }
+        }
+      }
+      console.log(dataValidations)
+      /* console.log(data) */
       if (Array.isArray(data) && localPublishers.length === 0) {
         setLocalPublishers(data)
       }

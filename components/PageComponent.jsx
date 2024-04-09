@@ -15,7 +15,7 @@ import CardTematicasCol from './CardTematicasCol'
 import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
 import MapDepartmentObservations from './MapDepartmentObservations.jsx'
 import InfoPublishers from './InfoPublishers.jsx'
-import dynamic from 'next/dynamic'
+/* import dynamic from 'next/dynamic' */
 import { useRouter } from 'next/router'
 
 /* import { useLocalStorage } from "@uidotdev/usehooks" */
@@ -55,7 +55,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   /* const [publishers, savePublishers] = useLocalStorage('publishers', []) */
 
   const handlePublishers = () => {
-    localStorage.setItem('publishers', JSON.stringify(publicadores.map(p => ({...p, region: slug}))))
+    localStorage.setItem('publishers', JSON.stringify(publicadores.map(p => ({ ...p, region: slug }))))
     router.push(`/mas/publicadores?region=${slug}`)
     /* savePublishers(publicadores) */
     /* `/mas/publicadores?region=${slug}` */
