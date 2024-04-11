@@ -44,8 +44,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
-  /* console.log(slug, '---slug') */
-
   // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
   const [municipio, setMunicipio] = useState('')
   const [departamento, setDepartamento] = useState('')

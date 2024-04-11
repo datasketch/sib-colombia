@@ -1,4 +1,3 @@
-
 import { useRouter } from 'next/router'
 import { useContext, useEffect, useMemo, useState } from 'react'
 
@@ -9,7 +8,6 @@ import publishers from '../../static/data/publicador.json'
 import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
-/* import dataBoyaca from '../../public/data/boyaca/boyaca.json' */
 
 const normalize = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 
@@ -21,17 +19,9 @@ export default function publicadores () {
   const [currentPage, setCurrentPage] = useState(1)
   const [query, setQuery] = useState('')
 
-  /* console.log(dataBoyaca.publicadores) */
-  /* console.log(query, '-----query') */
-
   // eslint-disable-next-line no-unused-vars
   const [publicadors, setPublicadors] = useState(publishers)
   const [localPublishers, setLocalPublishers] = useState([])
-  /* const [propertiesMatch, setPropertiesMatch] = useState(false) */
-
-  /* console.log(publicadors) */
-
-  /* console.log(publishers?.filter(p => p?.region?.includes('Paya'))) */
 
   const [selectedCountry, setSelectedCountry] = useState('')
   const [selectedOrganizacion, setSelectedOrganizacion] = useState('')
@@ -47,10 +37,8 @@ export default function publicadores () {
 
     const region = publisher.region ? normalize(publisher.region) : publisher.region
     const normalizedQuery = normalize(query)
-    /* console.log(region) */
 
     return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase()) || region?.includes(normalizedQuery)
-    /* return region?.split(',').filter((r) => r.toLowerCase() === query.toLowerCase()) */
   }
 
   function filterByCountry (publisher) {
@@ -83,8 +71,6 @@ export default function publicadores () {
     .filter(filterByCountry)
     .filter(filterByOrgType)
 
-  /* console.log(filteredPublishers.slice(0, 9)) */
-
   const clearFilters = () => {
     setQuery('')
     setSelectedCountry('')
@@ -110,41 +96,20 @@ export default function publicadores () {
     } */
   }, [router.isReady])
 
-  /* const data = JSON.parse(savePublishers) */
-  /* const dataProfile = JSON.parse(JSON.stringify(dataBoyaca.publicadores))
-  console.log(dataProfile) */
-
   useEffect(() => {
     try {
       setBreadCrumb([{ label: 'Más' }, { label: 'Publicadores' }])
       setFooterBgColor('bg-footer-orange')
       const savePublishers = localStorage.getItem('publishers')
-      /* console.log(savePublishers) */
       const data = JSON.parse(savePublishers)
       console.log(data)
-      /* const dataProfile = JSON.parse(publicadors) */
-      /* const dataProfile = dataBoyaca.publicadores */
-      /* const dataProfile = JSON.stringify(dataBoyaca.publicadores) */
 
-      /* console.log(data) */
       if (Array.isArray(data) && localPublishers.length === 0) {
         setLocalPublishers(data)
         setPublicadors(state => [...state, ...data])
         console.log('------')
       }
       localStorage.removeItem('publishers')
-
-      /* const dataValidations = (data, dataProfile) => {
-        for (const key in data) {
-          if (key === 'slug_publicador' && dataProfile.hasOwnProperty('slug')) {
-            dataProfile.slug = data[key]
-          } else if (!dataProfile(key)) {
-            dataProfile[key] = data[key]
-          }
-        }
-      }
-      console.log(dataValidations(data, dataProfile)) */
-
     } catch (error) {
 
     }
@@ -152,9 +117,6 @@ export default function publicadores () {
 
     }
   }, [])
-
-
-  /* console.log(propertiesMatch ? 'si tienen' : 'no tienen') */
 
   return (
     <>
@@ -180,8 +142,8 @@ export default function publicadores () {
           </button>
         </div>
       </div>
-      <div>Total {publishers.length}. Mostrando: {filteredPublishers.length}</div>
-      <p>{localPublishers.length}</p>
+      {/* <div>Total {publishers.length}. Mostrando: {filteredPublishers.length}</div>
+      <p>{localPublishers.length}</p> */}
       {/* <div>
         <InfoPublishers/>
       </div> */}
