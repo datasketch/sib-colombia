@@ -9,7 +9,7 @@ import publishers from '../../static/data/publicador.json'
 import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
-import dataBoyaca from '../../public/data/boyaca/boyaca.json'
+/* import dataBoyaca from '../../public/data/boyaca/boyaca.json' */
 
 const normalize = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 
@@ -22,12 +22,14 @@ export default function publicadores () {
   const [query, setQuery] = useState('')
 
   /* console.log(dataBoyaca.publicadores) */
-
   /* console.log(query, '-----query') */
 
   // eslint-disable-next-line no-unused-vars
   const [publicadors, setPublicadors] = useState(publishers)
   const [localPublishers, setLocalPublishers] = useState([])
+  /* const [propertiesMatch, setPropertiesMatch] = useState(false) */
+
+  /* console.log(publicadors) */
 
   /* console.log(publishers?.filter(p => p?.region?.includes('Paya'))) */
 
@@ -120,11 +122,19 @@ export default function publicadores () {
       /* console.log(savePublishers) */
       const data = JSON.parse(savePublishers)
       console.log(data)
+      /* const dataProfile = JSON.parse(publicadors) */
       /* const dataProfile = dataBoyaca.publicadores */
-      const dataProfile = JSON.stringify(dataBoyaca.publicadores)
-      console.log(dataProfile)
+      /* const dataProfile = JSON.stringify(dataBoyaca.publicadores) */
 
-      const dataValidations = (data, dataProfile) => {
+      /* console.log(data) */
+      if (Array.isArray(data) && localPublishers.length === 0) {
+        setLocalPublishers(data)
+        setPublicadors(state => [...state, ...data])
+        console.log('------')
+      }
+      localStorage.removeItem('publishers')
+
+      /* const dataValidations = (data, dataProfile) => {
         for (const key in data) {
           if (key === 'slug_publicador' && dataProfile.hasOwnProperty('slug')) {
             dataProfile.slug = data[key]
@@ -133,12 +143,8 @@ export default function publicadores () {
           }
         }
       }
-      console.log(dataValidations)
-      /* console.log(data) */
-      if (Array.isArray(data) && localPublishers.length === 0) {
-        setLocalPublishers(data)
-      }
-      localStorage.removeItem('publishers')
+      console.log(dataValidations(data, dataProfile)) */
+
     } catch (error) {
 
     }
@@ -146,6 +152,9 @@ export default function publicadores () {
 
     }
   }, [])
+
+
+  /* console.log(propertiesMatch ? 'si tienen' : 'no tienen') */
 
   return (
     <>
