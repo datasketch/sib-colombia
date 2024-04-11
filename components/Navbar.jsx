@@ -1,4 +1,3 @@
-
 import Link from 'next/link'
 import CustomSeparatos from './CustomSeparator'
 import DropDown from './Dropdown'
@@ -122,7 +121,7 @@ export default function Navbar () {
             }, */
             {
               label: 'Santander',
-              href: 'santander'
+              href: '/santander'
             },
             /* {
               label: 'Sucre',
