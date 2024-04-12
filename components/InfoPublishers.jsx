@@ -73,14 +73,14 @@ export default function InfoPublishers ({ data, region }) {
 
   const RADIAN = Math.PI / 180
   const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.7
+    const radius = innerRadius + (outerRadius - innerRadius) * 1.7
     const x = cx + radius * Math.cos(-midAngle * RADIAN)
     const y = cy + radius * Math.sin(-midAngle * RADIAN)
 
     return (
-      <text x={x} y={y} fill="black" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-        {`${(percent * 100).toFixed(0)}%`}
-      </text>
+        <text x={x} y={y} fill="black" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+          {`${(percent * 100).toFixed(0)}%`}
+        </text>
     )
   }
 
@@ -90,7 +90,7 @@ export default function InfoPublishers ({ data, region }) {
     transform: 'translate(0, -50%)',
     lineHeight: '20px',
     fontSize: '15px',
-    paddingLeft: '20px'
+    paddingLeft: '15px'
   }
 
   return (
@@ -104,14 +104,15 @@ export default function InfoPublishers ({ data, region }) {
       <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[514px] h-[284px]'>
         <h2 className="text-2xl font-bold">Publicadores por tipo de organización</h2>
         <ResponsiveContainer width="100%" height="100%" className="mt-6">
-          <PieChart width={400} height={400} className='left-0'>
+          <PieChart width={200} height={200} className='left-0'>
             <Pie
+              isAnimationActive={false}
               data={infoRegion}
               cx="50%"
               cy="50%"
-              labelLine={false}
+
               label={renderCustomizedLabel}
-              outerRadius={80}
+              outerRadius={30}
               fill="#8884d8"
               dataKey="value"
               className='text-xs'
@@ -120,21 +121,21 @@ export default function InfoPublishers ({ data, region }) {
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-            <Legend iconSize={9} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle"/>
+            <Legend iconSize={9} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" />
           </PieChart>
         </ResponsiveContainer>
       </div>
       <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[514px]'>
         <h2 className="text-2xl font-bold">Observaciones aportadas por tipo de organización</h2>
         <ResponsiveContainer width="100%" height="100%" className="mt-6">
-          <PieChart width={400} height={400} className='left-0'>
+          <PieChart width={300} height={300} className='left-0'>
             <Pie
               data={infoRemark}
               cx="50%"
               cy="50%"
               labelLine={false}
               label={renderCustomizedLabel}
-              outerRadius={80}
+              outerRadius={55}
               fill="#8884d8"
               dataKey="value"
               className='text-xs'

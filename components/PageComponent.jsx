@@ -53,7 +53,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   /* const [publishers, savePublishers] = useLocalStorage('publishers', []) */
 
   const handlePublishers = () => {
-    localStorage.setItem('publishers', JSON.stringify(publicadores.map(p => ({ ...p, region: slug, slug: p.slug_publicador }))))
+    localStorage.setItem('publishers', JSON.stringify(Array.isArray(publicadores) ? publicadores.map(p => ({ ...p, region: slug, slug: p.slug_publicador.map(p => ({ ...p, region: slug, slug: p.slug_publicador })) })) : publicadores.publicadores_list))
     router.push(`/mas/publicadores?region=${slug}`)
     /* savePublishers(publicadores) */
     /* `/mas/publicadores?region=${slug}` */
@@ -302,14 +302,22 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <div className='h-0.5 bg-gradient-to-r from-dartmouth-green to-yellow-green' />
           </div>
           <div className='py-4 space-y-5'>
-            <InfoPublishers data={publicadores} region={generalInfo} />
+            <InfoPublishers data={Array.isArray(publicadores) ? publicadores : publicadores.publicadores_list} region={generalInfo} />
             <SimpleSlider slidesToScroll={4} slidestoshow={4} >
               {
-                publicadores.map((item, index) =>
-                  <div key={index} className='px-2'>
-                    <PublishersCard link={item.url_socio} truncate title={item.label} imagePath={item.url_logo || '/images/un-icon.png'} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
-                  </div>
-                )
+                Array.isArray(publicadores)
+                  ? (publicadores.map((item, index) =>
+                    <div key={index} className='px-2'>
+                      <PublishersCard link={item.url_socio} truncate title={item.label} imagePath={item.url_logo || '/images/un-icon.png'} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
+                    </div>
+                    ))
+                  : (
+                      publicadores.publicadores_list.map((item, index) =>
+                      <div key={index} className='px-2'>
+                        <PublishersCard link={item.url_socio} truncate title={item.label} imagePath={item.url_logo || '/images/un-icon.png'} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
+                      </div>
+                      )
+                    )
               }
             </SimpleSlider>
           </div>

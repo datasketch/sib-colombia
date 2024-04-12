@@ -1,4 +1,3 @@
-
 import Link from 'next/link'
 import CustomSeparatos from './CustomSeparator'
 import DropDown from './Dropdown'
@@ -31,6 +30,14 @@ export default function Navbar () {
             {
               label: 'Antioquia',
               href: '/antioquia'
+            },
+            {
+              label: 'Arauca',
+              href: '/arauca'
+            },
+            {
+              label: 'Atlántico',
+              href: '/atlantico'
             },
             {
               label: 'Bolívar',
@@ -111,6 +118,10 @@ export default function Navbar () {
             {
               label: 'Quindío',
               href: '/quindio'
+            },
+            {
+              label: 'Risaralda',
+              href: '/risaralda'
             },
             {
               label: 'San Andrés',

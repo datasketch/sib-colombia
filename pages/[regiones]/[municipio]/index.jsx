@@ -1,4 +1,3 @@
-
 import Head from 'next/head'
 import { useContext, useEffect } from 'react'
 

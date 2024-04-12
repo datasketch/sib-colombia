@@ -1,4 +1,3 @@
-
 import { formatNumbers } from '../lib/functions'
 import Concentric from './Concentric'
 import CustomTooltip from './CustomTooltip'
