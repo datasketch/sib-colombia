@@ -279,7 +279,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
           <div className='py-4'>
             <SimpleSlider slidesToScroll={4} slidestoshow={4} >
               {
-                generalInfo.label === 'Colombia' || generalInfo.label === 'La Planada' || generalInfo.label === 'Pialapí Pueblo-Viejo'
+                Array.isArray(publicadores)
                   ? (publicadores.map((item, index) =>
                     <div key={index} className='px-2'>
                       <PublishersCard link={item.url_socio} truncate title={item.label} imagePath={item.url_logo || '/images/un-icon.png'} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
@@ -293,13 +293,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                       )
                     )
               }
-              {/* {
-                publicadores.publicadores_list.map((item, index) =>
-                  <div key={index} className='px-2'>
-                    <PublishersCard link={item.url_socio} truncate title={item.label} imagePath={item.url_logo || '/images/un-icon.png'} totalEspecies={item.especies} observationsQuantity={item.registros} country={item.pais_publicacion} />
-                  </div>
-                )
-              } */}
             </SimpleSlider>
           </div>
           <div className='text-center'>

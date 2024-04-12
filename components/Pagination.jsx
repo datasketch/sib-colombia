@@ -1,4 +1,3 @@
-
 import classNames from 'classnames'
 import { usePagination, DOTS } from '../hooks/usePagination'
 

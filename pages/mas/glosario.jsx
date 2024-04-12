@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Fuse from 'fuse.js'

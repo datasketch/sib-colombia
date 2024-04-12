@@ -1,4 +1,3 @@
-
 import { DIC_REF, ordinalSuffixOf } from '../lib/functions'
 
 import reactStringReplace from 'react-string-replace'

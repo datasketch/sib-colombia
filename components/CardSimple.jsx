@@ -1,4 +1,3 @@
-
 import { formatNumbers } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'

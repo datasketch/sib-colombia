@@ -1,4 +1,3 @@
-
 const CardGlosario = ({ title, definition }) => {
   return (
     <div className='border-l-2 hover:bg-light-orange hover:bg-opacity-5 border-l-flame border-dotted space-y-3 px-3'>

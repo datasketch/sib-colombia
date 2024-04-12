@@ -1,4 +1,3 @@
-
 import { formatNumbers } from '../../lib/functions'
 import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
