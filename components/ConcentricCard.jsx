@@ -43,7 +43,7 @@ const ConcentricCard = (props) => {
             {formatNumbers(info?.parent[0] ? info?.parent[0].especies_region_total : slug === 'colombia' ? estimadasCol : info?.especies_region_total)}
           </span>
           {slug === 'colombia'
-            ? (<span className='text-sm'> Especies estimadas en Colombia</span>)
+            ? (<span className='text-sm'> Especies observadas en Colombia</span>)
             : (<span className='text-sm'> Especies de {selected.toLowerCase()} en {municipalityflag ? parentlabel : 'Colombia'}</span>)
           }
         </div>

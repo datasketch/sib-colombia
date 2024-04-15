@@ -1,8 +1,9 @@
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import * as d3Geo from 'd3-geo'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Tooltip from 'react-tooltip'
 import * as d3Scale from 'd3-scale'
+import { useLegend } from '../hooks/useLegend'
 
 const MapDepartmentSpecies = ({ data, isScale = false }) => {
   const territorio = data
@@ -13,7 +14,6 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
     n_especies: '',
     link: ''
   })
-  const [lastValueRange, setlastValueRange] = useState([])
 
   const geoJsonFormat = {
     type: 'FeatureCollection',
@@ -39,57 +39,15 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
 
   const mapSpecies = geoJsonFormat.features.map((d) => d.properties.n_especies)
 
-  const max = Math.max(...mapSpecies)
+  const maximum = Math.max(...mapSpecies)
 
-  const min = Math.min(...mapSpecies)
+  const minimum = Math.min(...mapSpecies)
 
   const colorScale = d3Scale.scaleLinear()
-    .domain([min, max])
+    .domain([minimum, maximum])
     .range(['#B6ECBF', '#29567D'])
 
-  const valueGroups = Math.ceil(max / 6)
-
-  const getRoundUnit = (number) => {
-    const longitud = number.toString().length
-    let roundingUnit
-
-    if (longitud === 1) {
-      roundingUnit = 1
-    } else {
-      roundingUnit = Math.pow(10, longitud - 1)
-    }
-
-    return roundingUnit
-  }
-
-  const redondear = getRoundUnit(valueGroups)
-
-  const firstDigit = parseInt(valueGroups.toString()[0])
-  let rounded
-
-  if (firstDigit === 9) {
-    rounded = valueGroups + redondear
-  } else {
-    rounded = Math.ceil(valueGroups / redondear) * redondear
-  }
-
-  useEffect(() => {
-    const initialValue = rounded
-    const quantityGroups = 6
-    const lastValues = getLastValueRanges(initialValue, quantityGroups)
-    setlastValueRange(lastValues)
-  }, [])
-
-  const getLastValueRanges = (initialValue, quantityGroups) => {
-    const lastValues = []
-
-    for (let i = 1; i <= quantityGroups; i++) {
-      const endValue = initialValue * i
-      lastValues.push(endValue)
-    }
-
-    return lastValues.reverse()
-  }
+  const lastValueRange = useLegend(maximum)
 
   return (
     <>

@@ -85,11 +85,6 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
                 </div>)}
               {/* <img className='mx-auto mt-4 w-11/12' src={'/' + chart_url} alt={title} /> */}
               <WaffleChart data={data} />
-
-              <figure id='waffle' className='flex flex-wrap w-[140px]'>
-                <div className='w-3 h-3 m-2' />
-              </figure>
-
             </div>
           </div>
         </div>
@@ -180,7 +175,7 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
             {title}
           </h2>
           <div className='lg:py-2.5'>
-            <div className='flex flex-col items-center justify-center gap-y-8 lg:flex-row lg:gap-x-52 lg:mt-10'>
+            <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
               <GraphsTopMun data={data} />
               {/* <iframe type="html" className="h-[410px] w-full" src={'/' + chart1_url} ></iframe>
               <iframe type="html" className="h-[410px] w-full" src={'/' + chart2_url} ></iframe> */}
