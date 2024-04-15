@@ -23,7 +23,7 @@ const WaffleChart = ({ data }) => {
       .enter()
       .append('div')
       .attr('class', 'block')
-      .style('background-color', d => (d < percentage ? '#6699FF' : '#FFCC99'))
+      .style('background-color', d => (d < percentage ? '#F26330' : '#5151F2'))
       .style('width', '20px')
       .style('height', '20px')
       .style('margin', '2px')

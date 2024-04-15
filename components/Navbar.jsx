@@ -92,7 +92,7 @@ export default function Navbar () {
               href: '/huila'
             },
             {
-              label: 'La guajira',
+              label: 'La Guajira',
               href: '/la-guajira'
             },
             {

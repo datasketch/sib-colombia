@@ -15,15 +15,7 @@ import CardTematicasCol from './CardTematicasCol'
 import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
 import MapDepartmentObservations from './MapDepartmentObservations.jsx'
 import InfoPublishers from './InfoPublishers.jsx'
-/* import dynamic from 'next/dynamic' */
 import { useRouter } from 'next/router'
-
-/* import { useLocalStorage } from "@uidotdev/usehooks" */
-
-/* const {useLocalStorage} = dynamic(() =>
-  import('@uidotdev/usehooks'), {
-  ssr: false,
-}) */
 
 export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false }) {
   const {

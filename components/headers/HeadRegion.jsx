@@ -20,9 +20,6 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
     }
   }, [])
 
-  /* console.log(especiesObservadas)
-  console.log(especiesEstimadas) */
-
   return (
     <>
       <div className={classNames('bg-cover bg-center pt-8 lg:pt-14 pb-3.5 h-[550px] ')} style={{ backgroundImage: 'url("/images/banner-principales/santander.jpg")' }}>
@@ -30,7 +27,7 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
           <div className="min-h-[210px] mt-4 lg:mt-0 flex md:justify-between items-center w-10/12 mx-auto">
             <div className={classNames('font-black lg:w-2/3 font-inter text-white text-6xl', title?.length >= 17 ? 'lg:text-[66px]' : 'lg:text-7xl')}>{title}</div>
 
-            {slug === 'colombia' || slug === 'boyaca' || slug === 'narino' || slug === 'santander' || slug === 'tolima'
+            {['colombia', 'boyaca', 'narino', 'santander', 'tomila'].includes(slug)
               ? (imageMap &&
             <div className="hidden md:flex justify-end ">
               <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageMap} />

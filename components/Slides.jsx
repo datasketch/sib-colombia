@@ -4,31 +4,31 @@ import ReactMarkdown from 'react-markdown'
 import WaffleChart from './WaffleChart'
 import GraphsTopMun from './GraphsTopMun'
 
+const ListRender = ({ texts }) => {
+  const text = texts.split(': ')[0]
+  const joinText = text + ':'
+  return (
+    <>
+      <ReactMarkdown className='3xl:text-lg'>
+        {joinText}
+      </ReactMarkdown>
+      <ul className='pl-8'>
+        {texts.split(': ')[1].split(', ').map((element, i) => {
+          return (
+            <li key={i} className='list-disc' >
+              <ReactMarkdown className='3xl:text-lg'>
+                {element}
+              </ReactMarkdown>
+            </li>
+          )
+        })}
+      </ul>
+    </>
+  )
+}
+
 const Slides = ({ data, region, municipalityflag, parentlabel }) => {
   const { layout, title, description, texts, path } = data
-
-  const ListRender = ({ texts }) => {
-    const text = texts.split(': ')[0]
-    const joinText = text + ':'
-    return (
-      <>
-        <ReactMarkdown className='3xl:text-lg'>
-          {joinText}
-        </ReactMarkdown>
-        <ul className='pl-8'>
-          {texts.split(': ')[1].split(', ').map((element, i) => {
-            return (
-              <li key={i} className='list-disc' >
-                <ReactMarkdown className='3xl:text-lg'>
-                  {element}
-                </ReactMarkdown>
-              </li>
-            )
-          })}
-        </ul>
-      </>
-    )
-  }
 
   if (layout === 'title/chart') {
     return (
@@ -64,22 +64,22 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
                 ? (
                   <div className='text-center font-bold  flex flex-col items-center'>
                     <div className='inline-flex gap-x-1.5 items-center'>
-                      <div className='w-4 h-4 rounded-full bg-cornflower-blue' />
+                      <div className='w-4 h-4 rounded-full bg-giants-orange' />
                       Especies observadas en {region}
                     </div>
                     <div className='inline-flex gap-x-1.5 items-center'>
-                      <div className='w-4 h-4 rounded-full bg-peach-crayola' />
+                      <div className='w-4 h-4 rounded-full bg-majorelle-blue' />
                       Especies observadas en {parentlabel}
                     </div>
                   </div>
                   )
                 : (<div className='text-center font-bold  flex flex-col items-center'>
                   <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 rounded-full bg-cornflower-blue' />
+                    <div className='w-4 h-4 rounded-full bg-giants-orange' />
                     Especies observadas en {region}
                   </div>
                   <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 rounded-full bg-peach-crayola' />
+                    <div className='w-4 h-4 rounded-full bg-majorelle-blue' />
                     Especies observadas en Colombia
                   </div>
                 </div>)}
@@ -174,8 +174,8 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
           <h2 className='text-black-2 font-black text-center text-2xl 3xl:text-4xl'>
             {title}
           </h2>
-          <div className='lg:py-2.5'>
-            <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
+          <div className='lg:py-14'>
+            <div className=''>
               <GraphsTopMun data={data} />
               {/* <iframe type="html" className="h-[410px] w-full" src={'/' + chart1_url} ></iframe>
               <iframe type="html" className="h-[410px] w-full" src={'/' + chart2_url} ></iframe> */}
