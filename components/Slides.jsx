@@ -64,22 +64,22 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
                 ? (
                   <div className='text-center font-bold  flex flex-col items-center'>
                     <div className='inline-flex gap-x-1.5 items-center'>
-                      <div className='w-4 h-4 rounded-full bg-cornflower-blue' />
+                      <div className='w-4 h-4 rounded-full bg-giants-orange' />
                       Especies observadas en {region}
                     </div>
                     <div className='inline-flex gap-x-1.5 items-center'>
-                      <div className='w-4 h-4 rounded-full bg-peach-crayola' />
+                      <div className='w-4 h-4 rounded-full bg-majorelle-blue' />
                       Especies observadas en {parentlabel}
                     </div>
                   </div>
                   )
                 : (<div className='text-center font-bold  flex flex-col items-center'>
                   <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 rounded-full bg-cornflower-blue' />
+                    <div className='w-4 h-4 rounded-full bg-giants-orange' />
                     Especies observadas en {region}
                   </div>
                   <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 rounded-full bg-peach-crayola' />
+                    <div className='w-4 h-4 rounded-full bg-majorelle-blue' />
                     Especies observadas en Colombia
                   </div>
                 </div>)}
@@ -175,7 +175,7 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
             {title}
           </h2>
           <div className='lg:py-2.5'>
-            <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
+            <div className=''>
               <GraphsTopMun data={data} />
               {/* <iframe type="html" className="h-[410px] w-full" src={'/' + chart1_url} ></iframe>
               <iframe type="html" className="h-[410px] w-full" src={'/' + chart2_url} ></iframe> */}
