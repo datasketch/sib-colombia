@@ -40,6 +40,10 @@ export default function Navbar () {
               href: '/atlantico'
             },
             {
+              label: 'Bogotá D. C.',
+              href: '/bogota-dc'
+            },
+            {
               label: 'Bolívar',
               href: '/bolivar'
             },
