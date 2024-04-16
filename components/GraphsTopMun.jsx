@@ -1,4 +1,4 @@
-export default function GraphsTopMun({ data }) {
+export default function GraphsTopMun ({ data }) {
   const dataEndemicas = data.n_muni_mas_endemicas
   const dataAmenazadasNal = data.n_muni_mas_amenazadas_nacional
 
@@ -6,10 +6,10 @@ export default function GraphsTopMun({ data }) {
   const maxValueA = dataAmenazadasNal ? Math.max(...dataAmenazadasNal.map(obj => obj.n)) : 'En proceso...'
 
   const getDivStyles = (category, obj) => {
-    const percentage = category === "endemicas" ? Math.round((obj.n / maxValueE) * 100) : Math.round((obj.n / maxValueA) * 100)
+    const percentage = category === 'endemicas' ? Math.round((obj.n / maxValueE) * 100) : Math.round((obj.n / maxValueA) * 100)
 
     return {
-      background: category === "endemicas" ? '#5151F2' : '#F26330',
+      background: category === 'endemicas' ? '#5151F2' : '#F26330',
       width: `${percentage}px`,
       height: '12px',
       marginBottom: '5px',
@@ -22,7 +22,7 @@ export default function GraphsTopMun({ data }) {
     <>
       <div className="flex flex-col items-center gap-y-8 lg:flex-row lg:justify-center lg:gap-[235px]">
         {/* Table of endemic species */}
-        {<table>
+        <table>
           <thead>
             <tr className="border-b border-black/50">
               <th className="text-left">Municipio</th>
@@ -36,7 +36,7 @@ export default function GraphsTopMun({ data }) {
                   <tr>
                     <td className="w-2/4">{obj.label}</td>
                     <td className="flex flex-row items-center justify-start gap-x-3 w-3/4">
-                      <span key={obj.label} style={getDivStyles("endemicas", obj)} />
+                      <span key={obj.label} style={getDivStyles('endemicas', obj)} />
                       <span>{obj.n}</span>
                     </td>
                   </tr>
@@ -44,7 +44,7 @@ export default function GraphsTopMun({ data }) {
               ))
               : <div>En proceso...</div>
           }
-        </table>}
+        </table>
 
         {/* National endangered species table */}
         <table>
@@ -56,13 +56,12 @@ export default function GraphsTopMun({ data }) {
           </thead>
           {
             dataAmenazadasNal && Array.isArray(dataAmenazadasNal) && dataAmenazadasNal.length > 0
-              ?
-              dataAmenazadasNal.map(obj => (
+              ? dataAmenazadasNal.map(obj => (
                 <tbody key={obj.label}>
                   <tr>
                     <td className="w-2/4">{obj.label}</td>
                     <td className="flex flex-row items-center justify-start gap-x-3 w-3/4">
-                      <span key={obj.label} style={getDivStyles("amenazadas", obj)} />
+                      <span key={obj.label} style={getDivStyles('amenazadas', obj)} />
                       <span>{obj.n}</span>
                     </td>
                   </tr>
@@ -72,7 +71,6 @@ export default function GraphsTopMun({ data }) {
           }
         </table>
       </div>
-
     </>
   )
 }
