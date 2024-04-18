@@ -258,7 +258,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                         <>
                           <div className='mt-3'>
                             {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2> */}
-                            <MapDepartmentSpecies data={territorio} isScale={isScale} />
+                            <MapDepartmentSpecies data={territorio} isScale={isScale} slug={slug} />
                           </div>
                         </>
                       }
@@ -294,7 +294,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <div className='h-0.5 bg-gradient-to-r from-dartmouth-green to-yellow-green' />
           </div>
           <div className='py-4 space-y-5'>
-            <InfoPublishers data={Array.isArray(publicadores) ? publicadores : publicadores.publicadores_list} region={generalInfo} />
+            <InfoPublishers total={Array.isArray(publicadores) ? publicadores : publicadores.publicadores_list} data={Array.isArray(publicadores) ? publicadores : publicadores.publicadores_tipo} region={generalInfo} />
             <SimpleSlider slidesToScroll={4} slidestoshow={4} >
               {
                 Array.isArray(publicadores)

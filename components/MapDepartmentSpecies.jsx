@@ -5,14 +5,13 @@ import Tooltip from 'react-tooltip'
 import * as d3Scale from 'd3-scale'
 import { useLegend } from '../hooks/useLegend'
 
-const MapDepartmentSpecies = ({ data, isScale = false }) => {
+const MapDepartmentSpecies = ({ data, isScale = false, slug }) => {
   const territorio = data
   const mapDataObj = territorio[0]
   const mapDataCoords = mapDataObj.map_data
   const [tooltipContent, setTooltipContent] = useState({
     label: '',
     n_especies: '',
-    link: ''
   })
 
   const geoJsonFormat = {
@@ -51,7 +50,34 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
 
   return (
     <>
-      <Tooltip type="light">
+      {
+        tooltipContent.label && (
+          <>
+            {/* <a data-tip data-event='mouseenter'>Ver más</a> */}
+            {/* <Tooltip id='clic' clickable={true} delayHide={2000} delayUpdate={2000} getContent={(dataTip) =>
+              <div><h3>This little buddy is {dataTip}</h3><p>Put mouse here</p></div>}
+            > */}
+            <Tooltip>
+              <div className="font-lato text-center">
+                <p className="font-black">{tooltipContent.n_especies} especies</p>
+                <p>{tooltipContent.label}</p>
+                <a data-tip data-event='mouseenter' href='/'>Ver más</a>
+              </div>
+            </Tooltip>
+          </>
+        )
+      }
+      {/* <a id="clickable">Holaaa</a>
+      <Tooltip anchorSelect="#clickable" clickable delayHide={500}>
+        {tooltipContent.label && (
+          <div className="font-lato text-center">
+            <p className="font-black">{tooltipContent.n_especies} especies</p>
+            <p>{tooltipContent.label}</p>
+            <button id="clickable" href="/">Ver más</button>
+          </div>
+        )}
+      </Tooltip> */}
+      {/* <Tooltip clickable={true}>
         {tooltipContent.label && (
           <div className="font-lato text-center">
             <p className="font-black">{tooltipContent.n_especies} especies</p>
@@ -59,8 +85,12 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
             <a href="/">Ver más</a>
           </div>
         )}
-      </Tooltip>
-      <div data-tip="" style={{ height: 600 }} className=''>
+      </Tooltip> */}
+      {/* <a id="clickable">◕‿‿◕</a>
+      <Tooltip anchorSelect="#clickable" clickable>
+        <button>You can click me!</button>
+      </Tooltip> */}
+      <div data-tip="clic" style={{ height: 600 }} className=''>
         <ComposableMap
           style={{ width: '100%', height: '100%' }}
           projection="geoMercator"

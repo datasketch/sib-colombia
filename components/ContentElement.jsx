@@ -9,6 +9,7 @@ import tooltips from '../static/data/tooltips.json'
 import CardSimple from './CardSimple'
 import { CardHead } from './CardGraph/CardHead'
 import ConcentricCard from './ConcentricCard'
+import ColorLabel from './ColorLabel'
 
 const CustomTooltip = (props) => {
   const { active, payload } = props
@@ -85,10 +86,7 @@ function ContentElement (props) {
                   <div className='font-lato flex justify-evenly gap-x-4'>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
-                        <div className='flex flex-row gap-1 items-center'>
-                          <div className='rounded-full bg-red-cr w-3 h-3' />
-                          <b>CR</b>
-                        </div>
+                        <ColorLabel backgroundColor={'bg-red-cr'} label={'CR'} />
                         <Tooltip title={<b>{contentTooltip('amenazadas-nacional-cr')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -98,10 +96,7 @@ function ContentElement (props) {
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
-                        <div className='flex flex-row gap-1 items-center'>
-                          <div className='rounded-full bg-orange-en w-3 h-3' />
-                          <b>EN</b>
-                        </div>
+                        <ColorLabel backgroundColor={'bg-orange-en'} label={'EN'} />
                         <Tooltip title={<b>{contentTooltip('amenazadas-nacional-en')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -110,10 +105,7 @@ function ContentElement (props) {
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
-                        <div className='flex flex-row gap-1 items-center'>
-                          <div className='rounded-full bg-yellow-vu w-3 h-3' />
-                          <b>VU</b>
-                        </div>
+                        <ColorLabel backgroundColor={'bg-yellow-vu'} label={'VU'} />
                         <Tooltip title={<b>{contentTooltip('amenazadas-nacional-vu')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -145,10 +137,7 @@ function ContentElement (props) {
                   <div className='font-lato flex justify-evenly gap-x-4'>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
-                        <div className='flex flex-row gap-1 items-center'>
-                          <div className='rounded-full bg-red-cr w-3 h-3' />
-                          <b>CR</b>
-                        </div>
+                        <ColorLabel backgroundColor={'bg-red-cr'} label={'CR'} />
                         <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -157,10 +146,7 @@ function ContentElement (props) {
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
-                        <div className='flex flex-row gap-1 items-center'>
-                          <div className='rounded-full bg-orange-en w-3 h-3' />
-                          <b>EN</b>
-                        </div>
+                        <ColorLabel backgroundColor={'bg-orange-en'} label={'EN'} />
                         <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -169,10 +155,7 @@ function ContentElement (props) {
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
-                        <div className='flex flex-row gap-1 items-center'>
-                          <div className='rounded-full bg-yellow-vu w-3 h-3' />
-                          <b>VU</b>
-                        </div>
+                        <ColorLabel backgroundColor={'bg-yellow-vu'} label={'VU'} />
                         <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
                           <img src='/images/icon-more.svg' />
                         </Tooltip>
@@ -202,28 +185,19 @@ function ContentElement (props) {
                   <div className='font-lato flex justify-evenly gap-x-4'>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
-                        <div className='flex flex-row gap-1 items-center'>
-                          <div className='rounded-full bg-cerulean w-3 h-3' />
-                          <b>I</b>
-                        </div>
+                        <ColorLabel backgroundColor={'bg-cerulean'} label={'I'} />
                       </div>
                       <span>{formatNumbers(info?.especies_cites_i)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
-                        <div className='flex flex-row gap-1 items-center'>
-                          <div className='rounded-full bg-sandstorm w-3 h-3' />
-                          <b>II</b>
-                        </div>
+                        <ColorLabel backgroundColor={'bg-sandstorm'} label={'II'} />
                       </div>
                       <span>{formatNumbers(info?.especies_cites_ii)}</span>
                     </div>
                     <div className='flex flex-col items-center'>
                       <div className='flex items-start'>
-                        <div className='flex flex-row gap-1 items-center'>
-                          <div className='rounded-full bg-greenish-cyan w-3 h-3' />
-                          <b>III</b>
-                        </div>
+                        <ColorLabel backgroundColor={'bg-greenish-cyan'} label={'III'} />
                       </div>
                       <span>{formatNumbers(info?.especies_cites_iii)}</span>
                     </div>

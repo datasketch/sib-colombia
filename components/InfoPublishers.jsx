@@ -1,9 +1,21 @@
 import publishers from '../static/data/publicador.json'
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts'
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip as TooltipPieChart } from 'recharts'
 
-export default function InfoPublishers ({ data, region }) {
-  const totalPublishers = data.length
-  const place = region.label
+export default function InfoPublishers ({ total, data, region }) {
+
+  const totalPublishers = total.length
+
+  const infoRegion = data.map(item => ({
+    name: item.tipo_organizacion,
+    value: item.n_tipo
+  }))
+
+  const infoRemark = data.map(item => ({
+    name: item.tipo_organizacion,
+    value: item.n_tipo_obs
+  }))
+
+  /* const place = region.label
 
   const counts = {
     type: {},
@@ -67,30 +79,44 @@ export default function InfoPublishers ({ data, region }) {
 
   const infoRemark = remarksCountsArray.sort((a, b) => {
     return a.name.localeCompare(b.name)
-  })
+  }) */
 
-  const COLORS = ['#5151F2', '#00AFFF', '#4AD3AC', '#FFD150', '#FFE0BB', '#F26330', '#163875']
+  const COLORS = ['#5151F2', '#00AFFF', '#4AD3AC', '#FFD150', '#FFE0BB', '#F26330', '#163875', '#F25050']
 
-  const RADIAN = Math.PI / 180
+  /* const RADIAN = Math.PI / 180
   const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 1.7
     const x = cx + radius * Math.cos(-midAngle * RADIAN)
     const y = cy + radius * Math.sin(-midAngle * RADIAN)
 
     return (
-        <text x={x} y={y} fill="black" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-          {`${(percent * 100).toFixed(0)}%`}
-        </text>
+      <text x={x} y={y} fill="black" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+        {`${(percent * 100).toFixed(0)}%`}
+      </text>
     )
-  }
+  } */
 
-  const style = {
+  /* const style = {
     top: '50%',
     right: 0,
     transform: 'translate(0, -50%)',
     lineHeight: '20px',
     fontSize: '15px',
     paddingLeft: '15px'
+  } */
+
+  const CustomTooltip = (props) => {
+    const { active, payload } = props
+    if (active && payload && payload.length) {
+      const { name } = payload[0].payload
+      return (
+        <div className="bg-white p-1.5">
+          <p className="text-dartmouth-green ">{`${name}: ${payload[0].value}`}</p>
+        </div>
+      )
+    }
+
+    return null
   }
 
   return (
@@ -106,13 +132,12 @@ export default function InfoPublishers ({ data, region }) {
         <ResponsiveContainer width="100%" height="100%" className="mt-6">
           <PieChart width={200} height={200} className='left-0'>
             <Pie
-              isAnimationActive={false}
               data={infoRegion}
               cx="50%"
               cy="50%"
-
-              label={renderCustomizedLabel}
-              outerRadius={30}
+              labelLine={false}
+              /* label={renderCustomizedLabel} */
+              outerRadius={80}
               fill="#8884d8"
               dataKey="value"
               className='text-xs'
@@ -121,21 +146,22 @@ export default function InfoPublishers ({ data, region }) {
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-            <Legend iconSize={9} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" />
+            <TooltipPieChart content={<CustomTooltip />} />
+            {/* <Legend iconSize={9} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" /> */}
           </PieChart>
         </ResponsiveContainer>
       </div>
       <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[514px]'>
         <h2 className="text-2xl font-bold">Observaciones aportadas por tipo de organización</h2>
         <ResponsiveContainer width="100%" height="100%" className="mt-6">
-          <PieChart width={300} height={300} className='left-0'>
+          <PieChart width={200} height={300} className='left-0'>
             <Pie
               data={infoRemark}
               cx="50%"
               cy="50%"
               labelLine={false}
-              label={renderCustomizedLabel}
-              outerRadius={55}
+              /* label={renderCustomizedLabel} */
+              outerRadius={80}
               fill="#8884d8"
               dataKey="value"
               className='text-xs'
@@ -144,7 +170,8 @@ export default function InfoPublishers ({ data, region }) {
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-            <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" />
+            <TooltipPieChart content={<CustomTooltip />} />
+            {/* <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" /> */}
           </PieChart>
         </ResponsiveContainer>
       </div>

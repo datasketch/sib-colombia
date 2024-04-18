@@ -9,6 +9,7 @@ import Table from './Table'
 import ReactMarkdown from 'react-markdown'
 import BarPercent from './BarPercent'
 import CardContentTem from './CardContentTem'
+import ColorLabel from './ColorLabel'
 
 const CardTematicasCol = props => {
   const { info, slugregion, selected, updateBreadcrumb, region, municipalityflag } = props
@@ -40,10 +41,11 @@ const CardTematicasCol = props => {
                 <div className='font-lato flex justify-evenly gap-x-4'>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
-                      <div className='flex flex-row gap-1 items-center'>
+                      <ColorLabel backgroundColor={'bg-red-cr'} label={'CR'} />
+                      {/* <div className='flex flex-row gap-1 items-center'>
                         <div className='rounded-full bg-red-cr w-3 h-3' />
                         <b>CR</b>
-                      </div>
+                      </div> */}
                       <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
@@ -52,10 +54,11 @@ const CardTematicasCol = props => {
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
-                      <div className='flex flex-row gap-1 items-center'>
+                      <ColorLabel backgroundColor={'bg-orange-en'} label={'EN'} />
+                      {/* <div className='flex flex-row gap-1 items-center'>
                         <div className='rounded-full bg-orange-en w-3 h-3' />
                         <b>EN</b>
-                      </div>
+                      </div> */}
                       <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
@@ -64,10 +67,11 @@ const CardTematicasCol = props => {
                   </div>
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
-                      <div className='flex flex-row gap-1 items-center'>
+                      <ColorLabel backgroundColor={'bg-yellow-vu'} label={'VU'} />
+                      {/* <div className='flex flex-row gap-1 items-center'>
                         <div className='rounded-full bg-yellow-vu w-3 h-3' />
                         <b>VU</b>
-                      </div>
+                      </div> */}
                       <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
@@ -120,26 +124,29 @@ const CardTematicasCol = props => {
             <div className='flex flex-col justify-center h-full w-full'>
               <div className='font-lato flex justify-evenly gap-x-4'>
                 <div className='flex flex-col items-center'>
-                  <div className='flex items-start border-b-2 border-cerulean'>
-                    <b>I</b>
+                  <div className='flex items-start'>
+                    <ColorLabel backgroundColor={'bg-cerulean'} label={'I'} />
                   </div>
                   <span>{formatNumbers(info?.especies_cites_i)}</span>
                 </div>
                 <div className='flex flex-col items-center'>
-                  <div className='flex items-start border-b-2 border-b-black'>
-                    <b>I/II</b>
+                  <div className='flex items-start'>
+                    <ColorLabel backgroundColor={'bg-black'} label={'I/II'} />
                   </div>
+                  {/* <div className='flex items-start border-b-2 border-b-black'>
+                    <b>I/II</b>
+                  </div> */}
                   <span>{formatNumbers(info?.especies_cites_i_ii)}</span>
                 </div>
                 <div className='flex flex-col items-center'>
-                  <div className='flex items-start border-b-2 border-b-sandstorm'>
-                    <b>II</b>
+                  <div className='flex items-start'>
+                    <ColorLabel backgroundColor={'bg-sandstorm'} label={'II'} />
                   </div>
                   <span>{formatNumbers(info?.especies_cites_ii)}</span>
                 </div>
                 <div className='flex flex-col items-center'>
-                  <div className='flex items-start border-b-2 border-greenish-cyan'>
-                    <b>III</b>
+                  <div className='flex items-start'>
+                    <ColorLabel backgroundColor={'bg-greenish-cyan'} label={'III'} />
                   </div>
                   <span>{formatNumbers(info?.especies_cites_iii)}</span>
                 </div>
@@ -356,8 +363,8 @@ const CardTematicasCol = props => {
           <div className='flex flex-col justify-center h-full w-full'>
             <div className='font-lato flex justify-evenly gap-x-4'>
               <div className='flex flex-col items-center'>
-                <div className='flex items-start border-b-2 border-b-red-cr'>
-                  <b>CR</b>
+                <div className='flex items-start'>
+                  <ColorLabel backgroundColor={'bg-red-cr'} label={'CR'} />
                   <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
                     <img src='/images/icon-more.svg' />
                   </Tooltip>
@@ -365,8 +372,8 @@ const CardTematicasCol = props => {
                 <span>{formatNumbers(info?.cr)}</span>
               </div>
               <div className='flex flex-col items-center'>
-                <div className='flex items-start border-b-2 border-b-orange-en'>
-                  <b>EN</b>
+                <div className='flex items-start'>
+                  <ColorLabel backgroundColor={'bg-orange-en'} label={'EN'} />
                   <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
                     <img src='/images/icon-more.svg' />
                   </Tooltip>
@@ -374,8 +381,8 @@ const CardTematicasCol = props => {
                 <span>{formatNumbers(info?.en)}</span>
               </div>
               <div className='flex flex-col items-center'>
-                <div className='flex items-start border-b-2 border-b-yellow-vu'>
-                  <b>VU</b>
+                <div className='flex items-start'>
+                  <ColorLabel backgroundColor={'bg-yellow-vu'} label={'VU'} />
                   <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
                     <img src='/images/icon-more.svg' />
                   </Tooltip>
