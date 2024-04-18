@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Tooltip from 'react-tooltip'
 import * as d3Scale from 'd3-scale'
 import { useLegend } from '../hooks/useLegend'
+/* import 'react-tooltip/dist/react-tooltip.css' */
+/* import { Tooltip } from '@headlessui/react' */
 
 const MapDepartmentSpecies = ({ data, isScale = false, slug }) => {
   const territorio = data
@@ -11,7 +13,7 @@ const MapDepartmentSpecies = ({ data, isScale = false, slug }) => {
   const mapDataCoords = mapDataObj.map_data
   const [tooltipContent, setTooltipContent] = useState({
     label: '',
-    n_especies: '',
+    n_especies: ''
   })
 
   const geoJsonFormat = {
@@ -50,47 +52,15 @@ const MapDepartmentSpecies = ({ data, isScale = false, slug }) => {
 
   return (
     <>
-      {
-        tooltipContent.label && (
-          <>
-            {/* <a data-tip data-event='mouseenter'>Ver más</a> */}
-            {/* <Tooltip id='clic' clickable={true} delayHide={2000} delayUpdate={2000} getContent={(dataTip) =>
-              <div><h3>This little buddy is {dataTip}</h3><p>Put mouse here</p></div>}
-            > */}
-            <Tooltip>
-              <div className="font-lato text-center">
-                <p className="font-black">{tooltipContent.n_especies} especies</p>
-                <p>{tooltipContent.label}</p>
-                <a data-tip data-event='mouseenter' href='/'>Ver más</a>
-              </div>
-            </Tooltip>
-          </>
-        )
-      }
-      {/* <a id="clickable">Holaaa</a>
-      <Tooltip anchorSelect="#clickable" clickable delayHide={500}>
+      <Tooltip type="light">
         {tooltipContent.label && (
           <div className="font-lato text-center">
             <p className="font-black">{tooltipContent.n_especies} especies</p>
             <p>{tooltipContent.label}</p>
-            <button id="clickable" href="/">Ver más</button>
           </div>
         )}
-      </Tooltip> */}
-      {/* <Tooltip clickable={true}>
-        {tooltipContent.label && (
-          <div className="font-lato text-center">
-            <p className="font-black">{tooltipContent.n_especies} especies</p>
-            <p>{tooltipContent.label}</p>
-            <a href="/">Ver más</a>
-          </div>
-        )}
-      </Tooltip> */}
-      {/* <a id="clickable">◕‿‿◕</a>
-      <Tooltip anchorSelect="#clickable" clickable>
-        <button>You can click me!</button>
-      </Tooltip> */}
-      <div data-tip="clic" style={{ height: 600 }} className=''>
+      </Tooltip>
+      <div data-tip="" style={{ height: 600 }}>
         <ComposableMap
           style={{ width: '100%', height: '100%' }}
           projection="geoMercator"
@@ -101,6 +71,7 @@ const MapDepartmentSpecies = ({ data, isScale = false, slug }) => {
               geographies.map((geo) => {
                 return (
                   <Geography
+                    className='my-link'
                     key={geo.rsmKey}
                     geography={geo}
                     onMouseEnter={() => {

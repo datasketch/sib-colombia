@@ -102,12 +102,12 @@ export default function publicadores () {
       setFooterBgColor('bg-footer-orange')
       const savePublishers = localStorage.getItem('publishers')
       const data = JSON.parse(savePublishers)
-      console.log(data)
+      /* console.log(data) */
 
       if (Array.isArray(data) && localPublishers.length === 0) {
         setLocalPublishers(data)
         setPublicadors(state => [...state, ...data])
-        console.log('------')
+        /* console.log('------') */
       }
       localStorage.removeItem('publishers')
     } catch (error) {

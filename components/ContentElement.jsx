@@ -56,7 +56,7 @@ function ContentElement (props) {
             {data?.length !== 0 && data?.lenght !== 1 && <div className={classNames('pt-12 md:pt-0')}>
               <div className='h-72 w-72 lg:h-96 lg:w-10/12 max-w-4xl mx-auto pb-3 lg:pb-12'>
                 <ResponsiveContainer >
-                  <Treemap width={400} height={200} data={data} dataKey="especies" ratio={4 / 3} stroke="#fff" fill="#00634B" isAnimationActive={false} >
+                  <Treemap width={400} height={200} data={data} dataKey="especies" ratio={4 / 3} sx={{ stroke: '#fff', fill: '#8884d8' }} >
                     <TooltipTreemap content={<CustomTooltip />} />
                   </Treemap>
                 </ResponsiveContainer>

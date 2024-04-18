@@ -1,19 +1,20 @@
-import publishers from '../static/data/publicador.json'
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip as TooltipPieChart } from 'recharts'
+/* import publishers from '../static/data/publicador.json' */
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as TooltipPieChart } from 'recharts'
 
 export default function InfoPublishers ({ total, data, region }) {
-
   const totalPublishers = total.length
 
   const infoRegion = data.map(item => ({
     name: item.tipo_organizacion,
-    value: item.n_tipo
+    value: item.pct_tipo * 100
   }))
 
   const infoRemark = data.map(item => ({
     name: item.tipo_organizacion,
-    value: item.n_tipo_obs
+    value: item.pct_tipo_obs * 100
   }))
+
+  const COLORS = ['#5151F2', '#00AFFF', '#4AD3AC', '#FFD150', '#FFE0BB', '#F26330', '#163875', '#161B33']
 
   /* const place = region.label
 
@@ -81,8 +82,6 @@ export default function InfoPublishers ({ total, data, region }) {
     return a.name.localeCompare(b.name)
   }) */
 
-  const COLORS = ['#5151F2', '#00AFFF', '#4AD3AC', '#FFD150', '#FFE0BB', '#F26330', '#163875', '#F25050']
-
   /* const RADIAN = Math.PI / 180
   const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 1.7
@@ -111,7 +110,7 @@ export default function InfoPublishers ({ total, data, region }) {
       const { name } = payload[0].payload
       return (
         <div className="bg-white p-1.5">
-          <p className="text-dartmouth-green ">{`${name}: ${payload[0].value}`}</p>
+          <p className="text-dartmouth-green ">{`${name}: ${payload[0].value.toFixed(0)}%`}</p>
         </div>
       )
     }

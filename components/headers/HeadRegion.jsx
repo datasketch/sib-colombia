@@ -24,7 +24,7 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
     <>
       <div className={classNames('bg-cover bg-center pt-8 lg:pt-14 pb-3.5 h-[550px] ')} style={{ backgroundImage: 'url("/images/banner-principales/santander.jpg")' }}>
         <div className="w-full max-w-screen-2xl mx-auto">
-          <div className="min-h-[210px] mt-4 lg:mt-0 flex md:justify-between items-center w-10/12 mx-auto">
+          <div className="min-h-[210px] mt-4 lg:mt-5 flex md:justify-between items-center w-10/12 mx-auto">
             <div className={classNames('font-black lg:w-2/3 font-inter text-white text-6xl', title?.length >= 17 ? 'lg:text-[66px]' : 'lg:text-7xl')}>{title}</div>
 
             {['colombia', 'boyaca', 'narino', 'santander', 'tomila'].includes(slug)

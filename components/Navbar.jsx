@@ -3,6 +3,7 @@ import CustomSeparatos from './CustomSeparator'
 import DropDown from './Dropdown'
 import ResponsiveNavbarMenu from './ResponsiveNavbarMenu'
 import { useState } from 'react'
+import classNames from 'classnames'
 
 export default function Navbar () {
   const [childrenRegions, setChildrenRegions] = useState([])
@@ -222,6 +223,8 @@ export default function Navbar () {
     setChildrenRegions(children)
   }
 
+  console.log(childrenRegions.length)
+
   return (
     <header className="absolute top-0 left-0 w-full z-40 py-2">
       <div className='mx-auto w-10/12 max-w-[1300px] '>
@@ -252,11 +255,24 @@ export default function Navbar () {
                               {el.children && <img src={item.icon} alt='icon arrow' />}
                             </DropDown.Item>
                           </div>
-                          {childrenRegions.length !== 0 && <div className='bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-500 ease-in -right-2/3'>
+                          {childrenRegions.length !== 0 && childrenRegions.length !== 1 && <div className={classNames('bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-400 ease-in -right-2/3')}>
                             {childrenRegions?.map(({ label, href }, index) =>
                               <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
                             )}
                           </div>}
+
+                          {childrenRegions.length === 1 && <div className={classNames('bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato')}>
+                            {childrenRegions?.map(({ label, href }, index) =>
+                              <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
+                            )}
+                          </div>}
+                          {/* {
+                            childrenRegions.length !== 1 && <div className='bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-500 ease-in -right-2/3'>
+                            {childrenRegions?.map(({ label, href }, index) =>
+                              <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
+                            )}
+                          </div>
+                          } */}
                         </>
                       )
                       }

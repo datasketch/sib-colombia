@@ -3,7 +3,6 @@ import * as d3Geo from 'd3-geo'
 
 const SmallMap = ({ data, isScale = false }) => {
   const mapDataCoords = data.territorio ? data.territorio[0].map_data : []
-  /* console.log(mapDataCoords) */
   const geoJsonFormat = {
     type: 'FeatureCollection',
     features: mapDataCoords.reduce((prev, curr) => {
