@@ -223,8 +223,6 @@ export default function Navbar () {
     setChildrenRegions(children)
   }
 
-  console.log(childrenRegions.length)
-
   return (
     <header className="absolute top-0 left-0 w-full z-40 py-2">
       <div className='mx-auto w-10/12 max-w-[1300px] '>
