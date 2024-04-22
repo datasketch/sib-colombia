@@ -9,14 +9,25 @@ import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
 import InfoPublishers from '../../components/InfoPublishers'
-import { getDepartmentData } from '../../lib/regions'
+import { getDepartmentData } from '../../lib/regions.jsx'
 
 const normalize = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 
-export default function publicadores ({ departmentData }) {
+export default function publicadores({ departmentData }) {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
   const PageSize = 15
+
+  /* const [departmentData, setDepartmentData] = useState(null) */
+
   const router = useRouter()
+
+  /* if (router.query.region) {
+    const regionData = JSON.parse(await getDepartmentData(query.region))
+    setDepartmentData(regionData)
+  } */
+
+
+  /* console.log(router, 'router') */
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
   const [query, setQuery] = useState('')

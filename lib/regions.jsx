@@ -1,4 +1,4 @@
-const fs = require('fs').promises
+export const fs = require('fs').promises
 const path = require('path')
 
 const dataDir = path.resolve(process.cwd(), 'public', 'data')
