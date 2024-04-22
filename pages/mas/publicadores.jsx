@@ -8,10 +8,12 @@ import publishers from '../../static/data/publicador.json'
 import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
+import InfoPublishers from '../../components/InfoPublishers'
+import { getDepartmentData } from '../../lib/regions'
 
 const normalize = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 
-export default function publicadores () {
+export default function publicadores ({ departmentData }) {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
   const PageSize = 15
   const router = useRouter()
@@ -21,6 +23,9 @@ export default function publicadores () {
 
   // eslint-disable-next-line no-unused-vars
   const [publicadors, setPublicadors] = useState(publishers)
+
+  /* console.log(publishers) */
+
   const [localPublishers, setLocalPublishers] = useState([])
 
   const [selectedCountry, setSelectedCountry] = useState('')
@@ -118,6 +123,9 @@ export default function publicadores () {
     }
   }, [])
 
+  /* const amazonasData = await getDepartmentData('amazonas')
+  console.log(amazonasData) */
+
   return (
     <>
       <HeadMore title={'Publicadores'} description={textDescription} content slug='publicadores' />
@@ -142,11 +150,19 @@ export default function publicadores () {
           </button>
         </div>
       </div>
-      {/* <div>Total {publishers.length}. Mostrando: {filteredPublishers.length}</div>
-      <p>{localPublishers.length}</p> */}
-      {/* <div>
-        <InfoPublishers/>
-      </div> */}
+      {/* <div>Total {publishers.length}. Mostrando: {filteredPublishers.length}</div> */}
+      {/* <p>{localPublishers.length}</p> */}
+      <div>
+        {
+          departmentData &&
+          <InfoPublishers total={Array.isArray(departmentData.publicadores) ? departmentData.publicadores : departmentData.publicadores.publicadores_list} data={Array.isArray(departmentData.publicadores) ? departmentData.publicadores : departmentData.publicadores.publicadores_tipo} />
+        }
+        {/* {
+          publishers.map(publisher => (
+            <InfoPublishers total={publisher.length} data={publisher.registros} region={publisher.region}/>
+          ))
+        } */}
+      </div>
       {currentPublisher.length === 0
         ? <p className='my-12 text-xl text-center font-black'>No existen registros de la información</p>
         : <div id="publishers" className="max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-center">
@@ -166,4 +182,22 @@ export default function publicadores () {
       </div>
     </>
   )
+}
+
+export async function getServerSideProps (context) {
+  const { query } = context
+  if (query.region) {
+    const departmentData = JSON.parse(await getDepartmentData(query.region))
+    return {
+      props: {
+        departmentData: departmentData
+      }
+    }
+  }
+
+  return {
+    props: {
+      departmentData: null
+    }
+  }
 }

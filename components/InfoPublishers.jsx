@@ -9,6 +9,8 @@ export default function InfoPublishers ({ total, data, region }) {
     value: item.pct_tipo * 100
   }))
 
+  console.log(infoRegion)
+
   const infoRemark = data.map(item => ({
     name: item.tipo_organizacion,
     value: item.pct_tipo_obs * 100
