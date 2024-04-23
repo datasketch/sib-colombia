@@ -1,4 +1,4 @@
-export default function GraphsTopMun ({ data }) {
+export default function GraphsTopMun ({ data, region }) {
   const dataEndemicas = data.n_muni_mas_endemicas
   const dataAmenazadasNal = data.n_muni_mas_amenazadas_nacional
 
@@ -12,7 +12,9 @@ export default function GraphsTopMun ({ data }) {
         <table>
           <thead>
             <tr className="border-b border-black/50">
-              <th className="text-left">Municipio</th>
+              {
+                region === 'Colombia' ? <th className="text-left">Departamento</th> : <th className="text-left">Municipio</th>
+              }
               <th className="text-left">Núm. de especies endémicas</th>
             </tr>
           </thead>
@@ -48,7 +50,9 @@ export default function GraphsTopMun ({ data }) {
         <table>
           <thead>
             <tr className="border-b border-black/50">
-              <th className="text-left">Municipio</th>
+              {
+                region === 'Colombia' ? <th className="text-left">Departamento</th> : <th className="text-left">Municipio</th>
+              }
               <th className="text-left">Núm. de especies amenazadas (nacional)</th>
             </tr>
           </thead>

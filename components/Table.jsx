@@ -7,13 +7,19 @@ const Table = ({ tabledata, general = false, link, overflow = false }) => {
   const showData = tabledata?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], [])
 
   useEffect(() => {
+    const filteredData = tabledata.filter(item => item !== undefined)
+    /* console.log(filteredData, 'filteredData') */
+    const slicedData = filteredData?.slice(0, 10).map(({ label, registros, url_cbc: cbc, url_gbif: gbif }) => ({ label, registros, cbc, gbif }))
+
+    console.log(slicedData, 'slicedData')
+
     general
       ? setDataShow(showData)
-      : setDataShow(tabledata?.reduce((acc, { label, registros, url_cbc: cbc, url_gbif: gbif }) => [...acc, { label, registros, cbc, gbif }], []))
+      : setDataShow(slicedData)
     return () => {
 
     }
-  }, [tabledata])
+  }, [tabledata, general])
 
   if (dataShow?.length !== 0) {
     return (
