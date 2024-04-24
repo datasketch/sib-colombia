@@ -9,15 +9,16 @@ import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
 import InfoPublishers from '../../components/InfoPublishers'
-import { getDepartmentData } from '../../lib/regions.jsx'
+import { regionsDropdown } from '../../lib/util'
+import SelectableV2 from '../../components/SelectableV2'
 
 const normalize = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 
-export default function publicadores({ departmentData }) {
+export default function publicadores() {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
   const PageSize = 15
 
-  /* const [departmentData, setDepartmentData] = useState(null) */
+  const [departmentData, setDepartmentData] = useState(null)
 
   const router = useRouter()
 
@@ -31,6 +32,7 @@ export default function publicadores({ departmentData }) {
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
   const [query, setQuery] = useState('')
+  const [display, setDisplay] = useState(true)
 
   // eslint-disable-next-line no-unused-vars
   const [publicadors, setPublicadors] = useState(publishers)
@@ -39,6 +41,7 @@ export default function publicadores({ departmentData }) {
 
   const [localPublishers, setLocalPublishers] = useState([])
 
+  const [selectedRegion, setSelectedRegion] = useState('')
   const [selectedCountry, setSelectedCountry] = useState('')
   const [selectedOrganizacion, setSelectedOrganizacion] = useState('')
 
@@ -46,7 +49,7 @@ export default function publicadores({ departmentData }) {
   const citys = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.pais_publicacion], []))]
   const typeOrganization = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.tipo_organizacion], []))]
 
-  function filterBySearch (publisher) {
+  /* function filterBySearch (publisher) {
     if (!query) return true
 
     const { label, pais_publicacion: paisPublicacion } = publisher
@@ -55,14 +58,14 @@ export default function publicadores({ departmentData }) {
     const normalizedQuery = normalize(query)
 
     return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase()) || region?.includes(normalizedQuery)
-  }
+  } */
 
-  function filterByCountry (publisher) {
+  function filterByCountry(publisher) {
     const { pais_publicacion: paisPublicacion } = publisher
     return paisPublicacion?.includes(selectedCountry)
   }
 
-  function filterByOrgType (publisher) {
+  function filterByOrgType(publisher) {
     const { tipo_organizacion: organizacion = '' } = publisher
     return organizacion?.includes(selectedOrganizacion)
   }
@@ -72,18 +75,38 @@ export default function publicadores({ departmentData }) {
     setQuery(value || '')
   }
 
+  const handleRegionChange = ({ target }) => {
+    const { value } = target
+    setSelectedRegion(regionsDropdown.find(e => e.value === value).label)
+    setDisplay(true)
+    router.push(`/mas/publicadores?region=${value}`)
+    import(`../../public/data/${value}/${value}.json`).then(data => {
+      setPublicadors(data.publicadores.publicadores_list.map(e => {
+        const found = publishers.find(f => f.slug === e.slug_publicador)
+        if (found) {
+          e.tipo_organizacion = found.tipo_organizacion
+        } else {
+          e.tipo_organizacion = ''
+        }
+        return e
+      }))
+      setDepartmentData(data)
+    })
+  }
+
   const handleCountryChange = ({ target }) => {
     const { value } = target
+    setDisplay(false)
     setSelectedCountry(value)
   }
 
   const handleOrganizacionChange = ({ target }) => {
     const { value } = target
+    setDisplay(false)
     setSelectedOrganizacion(value || '')
   }
 
   const filteredPublishers = publicadors
-    .filter(filterBySearch)
     .filter(filterByCountry)
     .filter(filterByOrgType)
 
@@ -91,6 +114,10 @@ export default function publicadores({ departmentData }) {
     setQuery('')
     setSelectedCountry('')
     setSelectedOrganizacion('')
+    setDepartmentData(null)
+    setSelectedRegion('')
+    setPublicadors(publishers)
+    router.push('/mas/publicadores')
     setRender(prevState => !prevState)
   }
 
@@ -104,28 +131,35 @@ export default function publicadores({ departmentData }) {
     if (!router.isReady) return
     const { query: { region } } = router
     setQuery(region || '')
-
-    /* if () {
-      // Este usuario viene de PageComponent
-      // importar <region>/<region>.json
-      // modificar registros para que tenga region: <region>
-    } */
+    setSelectedRegion(regionsDropdown.find(e => e.value === region).label || '')
+    if (region) {
+      import(`../../public/data/${region}/${region}.json`).then(data => {
+        setPublicadors(data.publicadores.publicadores_list.map(e => {
+          const found = publishers.find(f => f.slug === e.slug_publicador)
+          if (found) {
+            e.tipo_organizacion = found.tipo_organizacion
+          } else {
+            e.tipo_organizacion = ''
+          }
+          return e
+        }))
+        setDepartmentData(data)
+      })
+    }
   }, [router.isReady])
 
   useEffect(() => {
     try {
       setBreadCrumb([{ label: 'Más' }, { label: 'Publicadores' }])
       setFooterBgColor('bg-footer-orange')
-      const savePublishers = localStorage.getItem('publishers')
+      /* const savePublishers = localStorage.getItem('publishers')
       const data = JSON.parse(savePublishers)
-      /* console.log(data) */
 
       if (Array.isArray(data) && localPublishers.length === 0) {
         setLocalPublishers(data)
         setPublicadors(state => [...state, ...data])
-        /* console.log('------') */
       }
-      localStorage.removeItem('publishers')
+      localStorage.removeItem('publishers') */
     } catch (error) {
 
     }
@@ -134,19 +168,19 @@ export default function publicadores({ departmentData }) {
     }
   }, [])
 
-  /* const amazonasData = await getDepartmentData('amazonas')
-  console.log(amazonasData) */
-
   return (
     <>
       <HeadMore title={'Publicadores'} description={textDescription} content slug='publicadores' />
       <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-3'>
-        <div >
+        {/* <div >
           <div className='relative'>
             <img className="absolute top-2 left-3 h-6 w-6" src="/images/icon-search.svg" alt="icon search" />
             <input key={render} value={query} onChange={handleChange} autoComplete='off' id="search" className="placeholder:italic placeholder:font-lato block w-full focus:outline-none py-2 pl-12 pr-8 border border-black rounded-full"
               type="text" placeholder='Buscar publicador' />
           </div>
+        </div> */}
+        <div >
+          <SelectableV2 key={render} placeHolder={ selectedRegion || 'Region'} data={regionsDropdown} optionSelected={handleRegionChange} />
         </div>
         <div >
           <Selectable key={render} placeHolder={selectedCountry || 'Pais del Publicador'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
@@ -163,9 +197,9 @@ export default function publicadores({ departmentData }) {
       </div>
       {/* <div>Total {publishers.length}. Mostrando: {filteredPublishers.length}</div> */}
       {/* <p>{localPublishers.length}</p> */}
-      <div>
+      <div className='mt-5'>
         {
-          departmentData &&
+          departmentData && display &&
           <InfoPublishers total={Array.isArray(departmentData.publicadores) ? departmentData.publicadores : departmentData.publicadores.publicadores_list} data={Array.isArray(departmentData.publicadores) ? departmentData.publicadores : departmentData.publicadores.publicadores_tipo} />
         }
         {/* {
@@ -195,7 +229,7 @@ export default function publicadores({ departmentData }) {
   )
 }
 
-export async function getServerSideProps (context) {
+/* export async function getServerSideProps (context) {
   const { query } = context
   if (query.region) {
     const departmentData = JSON.parse(await getDepartmentData(query.region))
@@ -211,4 +245,4 @@ export async function getServerSideProps (context) {
       departmentData: null
     }
   }
-}
+} */
