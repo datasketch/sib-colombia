@@ -45,9 +45,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   /* const [publishers, savePublishers] = useLocalStorage('publishers', []) */
 
   const handlePublishers = () => {
-    console.log(localStorage);
     localStorage.setItem('publishers', JSON.stringify(Array.isArray(publicadores) ? publicadores.map(p => ({ ...p, region: slug, slug: p.slug_publicador.map(p => ({ ...p, region: slug, slug: p.slug_publicador })) })) : publicadores.publicadores_list))
-    console.log(localStorage);
     router.push(`/mas/publicadores?region=${slug}`)
     /* savePublishers(publicadores) */
     /* `/mas/publicadores?region=${slug}` */

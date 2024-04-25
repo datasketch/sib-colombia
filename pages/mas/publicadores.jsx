@@ -12,9 +12,7 @@ import InfoPublishers from '../../components/InfoPublishers'
 import { regionsDropdown } from '../../lib/util'
 import SelectableV2 from '../../components/SelectableV2'
 
-const normalize = (str) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
-
-export default function publicadores() {
+export default function publicadores () {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
   const PageSize = 15
 
@@ -22,24 +20,14 @@ export default function publicadores() {
 
   const router = useRouter()
 
-  /* if (router.query.region) {
-    const regionData = JSON.parse(await getDepartmentData(query.region))
-    setDepartmentData(regionData)
-  } */
-
-
-  /* console.log(router, 'router') */
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
+  // eslint-disable-next-line no-unused-vars
   const [query, setQuery] = useState('')
   const [display, setDisplay] = useState(true)
 
   // eslint-disable-next-line no-unused-vars
   const [publicadors, setPublicadors] = useState(publishers)
-
-  /* console.log(publishers) */
-
-  const [localPublishers, setLocalPublishers] = useState([])
 
   const [selectedRegion, setSelectedRegion] = useState('')
   const [selectedCountry, setSelectedCountry] = useState('')
@@ -60,19 +48,14 @@ export default function publicadores() {
     return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase()) || region?.includes(normalizedQuery)
   } */
 
-  function filterByCountry(publisher) {
+  function filterByCountry (publisher) {
     const { pais_publicacion: paisPublicacion } = publisher
     return paisPublicacion?.includes(selectedCountry)
   }
 
-  function filterByOrgType(publisher) {
+  function filterByOrgType (publisher) {
     const { tipo_organizacion: organizacion = '' } = publisher
     return organizacion?.includes(selectedOrganizacion)
-  }
-
-  const handleChange = ({ target }) => {
-    const { value } = target
-    setQuery(value || '')
   }
 
   const handleRegionChange = ({ target }) => {
