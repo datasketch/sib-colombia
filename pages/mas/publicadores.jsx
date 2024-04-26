@@ -5,12 +5,20 @@ import HeadMore from '../../components/headers/HeadMore'
 import Pagination from '../../components/Pagination'
 import PublishersCard from '../../components/PublishersCard'
 import publishers from '../../static/data/publicador.json'
+import publishersExtend from '../../static/data/publicadorExtend.json'
 import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
 import InfoPublishers from '../../components/InfoPublishers'
 import { regionsDropdown } from '../../lib/util'
 import SelectableV2 from '../../components/SelectableV2'
+
+function slugToNormal (slug) {
+  return slug
+    .split('-') // Divide la cadena en palabras utilizando el guión como delimitador
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitaliza la primera letra de cada palabra
+    .join(' ') // Une las palabras de nuevo en una cadena, separadas por un espacio
+}
 
 export default function publicadores () {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
@@ -30,8 +38,10 @@ export default function publicadores () {
   const [publicadors, setPublicadors] = useState(publishers)
 
   const [selectedRegion, setSelectedRegion] = useState('')
+  const [selectedArea, setSelectedArea] = useState('')
   const [selectedCountry, setSelectedCountry] = useState('')
   const [selectedOrganizacion, setSelectedOrganizacion] = useState('')
+  const [areaDropdowm, setAreaDropdown] = useState([])
 
   const [render, setRender] = useState(false)
   const citys = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.pais_publicacion], []))]
@@ -61,20 +71,30 @@ export default function publicadores () {
   const handleRegionChange = ({ target }) => {
     const { value } = target
     setSelectedRegion(regionsDropdown.find(e => e.value === value).label)
+    setQuery(value)
     setDisplay(true)
     router.push(`/mas/publicadores?region=${value}`)
-    import(`../../public/data/${value}/${value}.json`).then(data => {
-      setPublicadors(data.publicadores.publicadores_list.map(e => {
-        const found = publishers.find(f => f.slug === e.slug_publicador)
-        if (found) {
-          e.tipo_organizacion = found.tipo_organizacion
-        } else {
-          e.tipo_organizacion = ''
-        }
-        return e
-      }))
-      setDepartmentData(data)
-    })
+
+    const found = publishersExtend.find(e => e.name === value)
+    setAreaDropdown(found.extra.map(f => {
+      return {
+        label: slugToNormal(f.name),
+        value: f.name
+      }
+    }))
+    setPublicadors(found.list)
+    setDepartmentData(found.graph)
+  }
+
+  const handleAreaChange = ({ target }) => {
+    const { value } = target
+    setSelectedArea(value)
+    setDisplay(false)
+
+    router.push(`/mas/publicadores?region=${query}&area=${value}`)
+
+    setPublicadors(publishersExtend.find(e => e.name === query).extra.find(f => f.name === value).list)
+    setDepartmentData(null)
   }
 
   const handleCountryChange = ({ target }) => {
@@ -99,6 +119,7 @@ export default function publicadores () {
     setSelectedOrganizacion('')
     setDepartmentData(null)
     setSelectedRegion('')
+    setSelectedArea('')
     setPublicadors(publishers)
     router.push('/mas/publicadores')
     setRender(prevState => !prevState)
@@ -112,22 +133,23 @@ export default function publicadores () {
 
   useEffect(() => {
     if (!router.isReady) return
-    const { query: { region } } = router
+    const { query: { region, area } } = router
     setQuery(region || '')
-    setSelectedRegion(regionsDropdown.find(e => e.value === region).label || '')
+
     if (region) {
-      import(`../../public/data/${region}/${region}.json`).then(data => {
-        setPublicadors(data.publicadores.publicadores_list.map(e => {
-          const found = publishers.find(f => f.slug === e.slug_publicador)
-          if (found) {
-            e.tipo_organizacion = found.tipo_organizacion
-          } else {
-            e.tipo_organizacion = ''
+      const found = publishersExtend.find(e => e.name === region)
+      setSelectedRegion(regionsDropdown.find(e => e.value === region).label || '')
+      setPublicadors(found.list)
+      setDepartmentData(found.graph)
+      if (area) {
+        setPublicadors(found.extra.find(f => f.name === area).list)
+        setAreaDropdown(found.extra.map(f => {
+          return {
+            label: slugToNormal(f.name),
+            value: f.name
           }
-          return e
         }))
-        setDepartmentData(data)
-      })
+      }
     }
   }, [router.isReady])
 
@@ -135,14 +157,6 @@ export default function publicadores () {
     try {
       setBreadCrumb([{ label: 'Más' }, { label: 'Publicadores' }])
       setFooterBgColor('bg-footer-orange')
-      /* const savePublishers = localStorage.getItem('publishers')
-      const data = JSON.parse(savePublishers)
-
-      if (Array.isArray(data) && localPublishers.length === 0) {
-        setLocalPublishers(data)
-        setPublicadors(state => [...state, ...data])
-      }
-      localStorage.removeItem('publishers') */
     } catch (error) {
 
     }
@@ -154,7 +168,7 @@ export default function publicadores () {
   return (
     <>
       <HeadMore title={'Publicadores'} description={textDescription} content slug='publicadores' />
-      <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-3'>
+      <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid md:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-3'>
         {/* <div >
           <div className='relative'>
             <img className="absolute top-2 left-3 h-6 w-6" src="/images/icon-search.svg" alt="icon search" />
@@ -163,7 +177,10 @@ export default function publicadores () {
           </div>
         </div> */}
         <div >
-          <SelectableV2 key={render} placeHolder={ selectedRegion || 'Region'} data={regionsDropdown} optionSelected={handleRegionChange} />
+          <SelectableV2 key={render} placeHolder={selectedRegion || 'Region'} data={regionsDropdown} optionSelected={handleRegionChange} />
+        </div>
+        <div >
+          <SelectableV2 key={render} placeHolder={slugToNormal(selectedArea) || 'Area o Territorio'} data={areaDropdowm} optionSelected={handleAreaChange} />
         </div>
         <div >
           <Selectable key={render} placeHolder={selectedCountry || 'Pais del Publicador'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
@@ -171,25 +188,18 @@ export default function publicadores () {
         <div >
           <Selectable key={render} placeHolder={selectedOrganizacion || 'Tipo de Organización'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
         </div>
-        <div className='flex items-center lg:justify-center border md:row-start-1 md:col-start-2 lg:col-start-4  border-black opacity-75 hover:opacity-100 py-2 px-2'>
+        <div className='flex items-center lg:justify-center border md:row-start-1 md:col-start-2 lg:col-start-5  border-black opacity-75 hover:opacity-100 py-2 px-2'>
           <button type='button' onClick={clearFilters} className='flex gap-x-2 items-center font-lato font-bold ' value={'reset'}>
             <img src='/images/icon-reset.svg' />
             Limpiar filtros
           </button>
         </div>
       </div>
-      {/* <div>Total {publishers.length}. Mostrando: {filteredPublishers.length}</div> */}
-      {/* <p>{localPublishers.length}</p> */}
       <div className='mt-5'>
         {
           departmentData && display &&
-          <InfoPublishers total={Array.isArray(departmentData.publicadores) ? departmentData.publicadores : departmentData.publicadores.publicadores_list} data={Array.isArray(departmentData.publicadores) ? departmentData.publicadores : departmentData.publicadores.publicadores_tipo} />
+          <InfoPublishers total={publicadors} data={departmentData} />
         }
-        {/* {
-          publishers.map(publisher => (
-            <InfoPublishers total={publisher.length} data={publisher.registros} region={publisher.region}/>
-          ))
-        } */}
       </div>
       {currentPublisher.length === 0
         ? <p className='my-12 text-xl text-center font-black'>No existen registros de la información</p>
