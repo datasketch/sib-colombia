@@ -28,7 +28,8 @@ async function main() {
 
         let parseContent = []
         try {
-          parseContent = JSON.parse(content).publicadores.map(e => {
+          const tmp = Array.isArray(JSON.parse(content).publicadores) ? JSON.parse(content).publicadores : JSON.parse(content).publicadores.publicadores_list
+          parseContent = tmp.map(e => {
             const found = publishers.find(f => f.slug === e.slug_publicador)
             if (found) {
               e.tipo_organizacion = found.tipo_organizacion
@@ -38,15 +39,7 @@ async function main() {
             return e
           })
         } catch (error) {
-          parseContent = JSON.parse(content).publicadores.publicadores_list.map(e => {
-            const found = publishers.find(f => f.slug === e.slug_publicador)
-            if (found) {
-              e.tipo_organizacion = found.tipo_organizacion
-            } else {
-              e.tipo_organizacion = ''
-            }
-            return e
-          })
+          console.log(error)
         }
         return {
           name: file.slice(0, -5),
@@ -77,13 +70,16 @@ async function main() {
 
   const ruta = './static/data/publicadorExtend.json'
 
-  fs.writeFile(ruta, json, 'utf8', (err) => {
-    if (err) {
-      console.error('Error al guardar el archivo JSON:', err);
-      return;
-    }
-    console.log('El archivo JSON ha sido guardado correctamente.');
-  });
+  try {
+    fs.writeFile(ruta, json, 'utf8', (err) => {
+      if (err) {
+        throw new Error('Error al guardar el archivo JSON: ' + err);
+      }
+      console.log('El archivo JSON ha sido guardado correctamente.');
+    })
+  } catch (error) {
+    console.error('Se produjo un error al intentar guardar el archivo JSON:', error.message)
+  }
 }
 
-main()
+main().catch(e => { process.exit(1) })

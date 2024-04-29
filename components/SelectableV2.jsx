@@ -34,7 +34,7 @@ const SelectableV2 = ({ data, optionSelected, placeHolder, titles, disabled = fa
               </label>
               <input
                 type="radio"
-                name="country"
+                name="area"
                 className="accent-flame cursor-pointer"
                 id={el.value}
                 value={el.value}

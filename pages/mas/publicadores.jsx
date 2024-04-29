@@ -11,14 +11,8 @@ import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
 import InfoPublishers from '../../components/InfoPublishers'
 import { regionsDropdown } from '../../lib/util'
+import { clearText } from '../../lib/functions'
 import SelectableV2 from '../../components/SelectableV2'
-
-function slugToNormal (slug) {
-  return slug
-    .split('-') // Divide la cadena en palabras utilizando el guión como delimitador
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitaliza la primera letra de cada palabra
-    .join(' ') // Une las palabras de nuevo en una cadena, separadas por un espacio
-}
 
 export default function publicadores () {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
@@ -30,11 +24,9 @@ export default function publicadores () {
 
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
-  // eslint-disable-next-line no-unused-vars
   const [query, setQuery] = useState('')
   const [display, setDisplay] = useState(true)
 
-  // eslint-disable-next-line no-unused-vars
   const [publicadors, setPublicadors] = useState(publishers)
 
   const [selectedRegion, setSelectedRegion] = useState('')
@@ -78,7 +70,7 @@ export default function publicadores () {
     const found = publishersExtend.find(e => e.name === value)
     setAreaDropdown(found.extra.map(f => {
       return {
-        label: slugToNormal(f.name),
+        label: clearText(f.name),
         value: f.name
       }
     }))
@@ -145,7 +137,7 @@ export default function publicadores () {
         setPublicadors(found.extra.find(f => f.name === area).list)
         setAreaDropdown(found.extra.map(f => {
           return {
-            label: slugToNormal(f.name),
+            label: clearText(f.name),
             value: f.name
           }
         }))
@@ -180,7 +172,7 @@ export default function publicadores () {
           <SelectableV2 key={render} placeHolder={selectedRegion || 'Region'} data={regionsDropdown} optionSelected={handleRegionChange} />
         </div>
         <div >
-          <SelectableV2 key={render} placeHolder={slugToNormal(selectedArea) || 'Area o Territorio'} data={areaDropdowm} optionSelected={handleAreaChange} />
+          <SelectableV2 key={render} placeHolder={clearText(selectedArea) || 'Area o Territorio'} data={areaDropdowm} optionSelected={handleAreaChange} />
         </div>
         <div >
           <Selectable key={render} placeHolder={selectedCountry || 'Pais del Publicador'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
