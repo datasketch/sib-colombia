@@ -1,20 +1,27 @@
 /* import publishers from '../static/data/publicador.json' */
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as TooltipPieChart } from 'recharts'
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as TooltipPieChart, Legend } from 'recharts'
 
 export default function InfoPublishers ({ total, data, region }) {
   const totalPublishers = total.length
 
-  const infoRegion = data.map(item => ({
+  const maxInfoRegion = data.sort((a, b) => b.pct_tipo - a.pct_tipo).slice(0, 5)
+
+  const infoRegion = maxInfoRegion.map(item => ({
     name: item.tipo_organizacion,
-    value: item.pct_tipo * 100
+    value: item.pct_tipo * 100,
+    label: item.n_tipo
   }))
 
-  const infoRemark = data.map(item => ({
+
+  const maxInfoRemark = data.sort((a, b) => b.pct_tipo_obs - a.pct_tipo_obs).slice(0, 5)
+
+  const infoRemark = maxInfoRemark.map(item => ({
     name: item.tipo_organizacion,
-    value: item.pct_tipo_obs * 100
+    value: item.pct_tipo_obs * 100,
+    label: item.n_tipo_obs
   }))
 
-  const COLORS = ['#5151F2', '#00AFFF', '#4AD3AC', '#FFD150', '#FFE0BB', '#F26330', '#163875', '#161B33']
+  const COLORS = ['#5151F2', '#00AFFF', '#4AD3AC', '#F26330', '#163875', '#161B33', '#FFD150', '#FFE0BB']
 
   /* const place = region.label
 
@@ -95,22 +102,39 @@ export default function InfoPublishers ({ total, data, region }) {
     )
   } */
 
-  /* const style = {
+  const style = {
     top: '50%',
     right: 0,
     transform: 'translate(0, -50%)',
     lineHeight: '20px',
     fontSize: '15px',
     paddingLeft: '15px'
+  }
+
+  /* const renderLegend = (props) => {
+    const { payload } = props
+    return (
+      <ul>
+        {
+          payload.map((entry, index) => (
+            <li className='rounded-full' style={style} key={`item-${index}`}>{entry.value}</li>
+          ))
+        }
+      </ul>
+    )
   } */
 
   const CustomTooltip = (props) => {
     const { active, payload } = props
+    /* console.log(payload, 'payload') */
     if (active && payload && payload.length) {
       const { name } = payload[0].payload
+      const { label } = payload[0].payload
       return (
-        <div className="bg-white p-1.5">
-          <p className="text-dartmouth-green ">{`${name}: ${payload[0].value.toFixed(0)}%`}</p>
+        <div className="bg-white p-1.5 rounded shadow-md">
+          <p className="text-xs font-medium">{`Tipo de organización: ${name}`}</p>
+          <p className="text-xs font-lato">{`Porcentaje de publicador: ${payload[0].value.toFixed(0)}%`}</p>
+          <p className='text-xs'>{`Cantidad de publicadores: ${label}`}</p>
         </div>
       )
     }
@@ -121,13 +145,13 @@ export default function InfoPublishers ({ total, data, region }) {
   return (
     <div className="flex flex-row gap-5 px-2">
       <div className='bg-white flex flex-col text-black-2 py-6 px-7 shadow-default hover:shadow-select w-[514px]'>
-        <h2 className="text-2xl font-bold">Total de publicadores</h2>
+        <h2 className="text-xl font-bold">Total de publicadores</h2>
         <div className="flex items-center justify-center px-20 my-auto">
           <p className="text-7xl font-black">{totalPublishers}</p>
         </div>
       </div>
       <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[514px] h-[284px]'>
-        <h2 className="text-2xl font-bold">Publicadores por tipo de organización</h2>
+        <h2 className="text-xl font-bold">Publicadores por tipo de organización</h2>
         <ResponsiveContainer width="100%" height="100%" className="mt-6">
           <PieChart width={200} height={200} className='left-0'>
             <Pie
@@ -146,12 +170,12 @@ export default function InfoPublishers ({ total, data, region }) {
               ))}
             </Pie>
             <TooltipPieChart content={<CustomTooltip />} />
-            {/* <Legend iconSize={9} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" /> */}
+            <Legend iconSize={9} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" />
           </PieChart>
         </ResponsiveContainer>
       </div>
       <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[514px]'>
-        <h2 className="text-2xl font-bold">Observaciones aportadas por tipo de organización</h2>
+        <h2 className="text-xl font-bold">Observaciones aportadas por tipo de organización</h2>
         <ResponsiveContainer width="100%" height="100%" className="mt-6">
           <PieChart width={200} height={300} className='left-0'>
             <Pie
@@ -170,7 +194,7 @@ export default function InfoPublishers ({ total, data, region }) {
               ))}
             </Pie>
             <TooltipPieChart content={<CustomTooltip />} />
-            {/* <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" /> */}
+            <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" />
           </PieChart>
         </ResponsiveContainer>
       </div>

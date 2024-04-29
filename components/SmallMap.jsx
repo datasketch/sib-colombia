@@ -27,7 +27,7 @@ const SmallMap = ({ data, isScale = false }) => {
       <ComposableMap
         style={{ width: '100%', height: '100%' }}
         projection="geoMercator"
-        projectionConfig={{ center, scale: !isScale ? 2000 : 8000 }}
+        projectionConfig={{ center, scale: !isScale ? 2000 : 6000 }}
       >
         <Geographies geography={geoJsonFormat}>
           {({ geographies }) =>
