@@ -1,5 +1,6 @@
 /* import publishers from '../static/data/publicador.json' */
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as TooltipPieChart, Legend } from 'recharts'
+import { formatNumbers } from '../lib/functions'
 
 export default function InfoPublishers ({ total, data, region }) {
   const totalPublishers = total.length
@@ -20,7 +21,7 @@ export default function InfoPublishers ({ total, data, region }) {
     label: item.n_tipo_obs
   }))
 
-  const COLORS = ['#5151F2', '#00AFFF', '#4AD3AC', '#F26330', '#163875', '#161B33', '#FFD150', '#FFE0BB']
+  const COLORS = ['#5151F2', '#00AFFF', '#4AD3AC', '#F26330', '#FFD150', '#FFE0BB', '#163875', '#161B33']
 
   /* const place = region.label
 
@@ -110,30 +111,34 @@ export default function InfoPublishers ({ total, data, region }) {
     paddingLeft: '15px'
   }
 
-  /* const renderLegend = (props) => {
+  const renderLegend = (props) => {
     const { payload } = props
     return (
       <ul>
         {
           payload.map((entry, index) => (
-            <li className='rounded-full' style={style} key={`item-${index}`}>{entry.value}</li>
+            <li key={`item-${index}`} className='flex items-center gap-1'>
+              <span style={{ color: entry.color, fontSize: '22px' }}>
+                {'\u25CF'}
+              </span>
+              {entry.value}
+            </li>
           ))
         }
       </ul>
     )
-  } */
+  }
 
   const CustomTooltip = (props) => {
     const { active, payload } = props
-    /* console.log(payload, 'payload') */
     if (active && payload && payload.length) {
       const { name } = payload[0].payload
       const { label } = payload[0].payload
       return (
         <div className="bg-white p-1.5 rounded shadow-md">
           <p className="text-xs font-medium">{`Tipo de organización: ${name}`}</p>
-          <p className="text-xs font-lato">{`Porcentaje de publicador: ${payload[0].value.toFixed(0)}%`}</p>
-          <p className='text-xs'>{`Cantidad de publicadores: ${label}`}</p>
+          <p className="text-xs">{`Porcentaje de publicador: ${payload[0].value.toFixed(0)}%`}</p>
+          <p className='text-xs'>{`Cantidad de publicadores: ${formatNumbers(label)}`}</p>
         </div>
       )
     }
@@ -169,7 +174,7 @@ export default function InfoPublishers ({ total, data, region }) {
               ))}
             </Pie>
             <TooltipPieChart content={<CustomTooltip />} />
-            <Legend iconSize={9} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" />
+            <Legend iconSize={9} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" content={renderLegend} />
           </PieChart>
         </ResponsiveContainer>
       </div>
@@ -193,7 +198,7 @@ export default function InfoPublishers ({ total, data, region }) {
               ))}
             </Pie>
             <TooltipPieChart content={<CustomTooltip />} />
-            <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" />
+            <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} align='right' iconType="circle" content={renderLegend} />
           </PieChart>
         </ResponsiveContainer>
       </div>
