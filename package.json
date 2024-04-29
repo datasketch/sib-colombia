@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preprocess" : "node scripts/preprocessData.js"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
