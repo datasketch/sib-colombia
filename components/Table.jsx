@@ -8,14 +8,13 @@ const Table = ({ tabledata, general = false, link, overflow = false }) => {
 
   useEffect(() => {
     const slicedData = tabledata?.slice(0, 10).map(({ label, registros, url_cbc: cbc, url_gbif: gbif }) => ({ label, registros, cbc, gbif }))
-
     general
       ? setDataShow(showData)
       : setDataShow(slicedData)
     return () => {
 
     }
-  }, [tabledata])
+  }, [tabledata, general])
 
   if (dataShow?.length !== 0) {
     return (

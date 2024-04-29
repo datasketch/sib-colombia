@@ -176,7 +176,7 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
           </h2>
           <div className='lg:py-14'>
             <div className=''>
-              <GraphsTopMun data={data} />
+              <GraphsTopMun data={data} region={region} />
               {/* <iframe type="html" className="h-[410px] w-full" src={'/' + chart1_url} ></iframe>
               <iframe type="html" className="h-[410px] w-full" src={'/' + chart2_url} ></iframe> */}
             </div>
