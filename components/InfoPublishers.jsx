@@ -12,7 +12,6 @@ export default function InfoPublishers ({ total, data, region }) {
     label: item.n_tipo
   }))
 
-
   const maxInfoRemark = data.sort((a, b) => b.pct_tipo_obs - a.pct_tipo_obs).slice(0, 5)
 
   const infoRemark = maxInfoRemark.map(item => ({

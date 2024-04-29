@@ -14,16 +14,13 @@ import { regionsDropdown } from '../../lib/util'
 import { clearText } from '../../lib/functions'
 import SelectableV2 from '../../components/SelectableV2'
 
-
 export default function publicadores () {
-
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
   const PageSize = 15
 
   const [departmentData, setDepartmentData] = useState(null)
 
   const router = useRouter()
-
 
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
