@@ -5,6 +5,19 @@ export default function GraphsTopMun ({ data, region }) {
   const maxValueE = dataEndemicas ? Math.max(...dataEndemicas.map(obj => obj.n)) : 'En proceso...'
   const maxValueA = dataAmenazadasNal ? Math.max(...dataAmenazadasNal.map(obj => obj.n)) : 'En proceso...'
 
+  const getDivStyles = (category, obj) => {
+    const percentage = category === 'endemicas' ? Math.round((obj.n / maxValueE) * 100) : Math.round((obj.n / maxValueA) * 100)
+
+    return {
+      background: category === 'endemicas' ? '#5151F2' : '#F26330',
+      width: `${percentage}px`,
+      height: '12px',
+      marginBottom: '5px',
+      rowGap: '0.25rem',
+      borderRadius: '9999px'
+    }
+  }
+
   return (
     <>
       <div className="flex flex-col items-center gap-y-8 lg:flex-row lg:justify-center lg:gap-[235px]">
@@ -19,29 +32,18 @@ export default function GraphsTopMun ({ data, region }) {
             </tr>
           </thead>
           {
-            dataEndemicas
-              ? dataEndemicas.map(obj => {
-                const percentage = Math.round((obj.n / maxValueE) * 100)
-                const styleDiv = {
-                  background: '#5151F2',
-                  width: `${percentage}px`,
-                  height: '12px',
-                  marginBottom: '5px',
-                  rowGap: '0.25rem',
-                  borderRadius: '9999px'
-                }
-                return (
-                  <tbody key={obj.label}>
-                    <tr>
-                      <td className="w-2/4">{obj.label}</td>
-                      <div className="flex flex-row items-center justify-start gap-x-3 w-4/4">
-                        <div key={obj.label} style={styleDiv} />
-                        <td>{obj.n}</td>
-                      </div>
-                    </tr>
-                  </tbody>
-                )
-              })
+            dataEndemicas && Array.isArray(dataEndemicas) && dataEndemicas.length > 0
+              ? dataEndemicas.map(obj => (
+                <tbody key={obj.label}>
+                  <tr>
+                    <td className="w-2/4">{obj.label}</td>
+                    <td className="flex flex-row items-center justify-start gap-x-3 w-3/4">
+                      <span key={obj.label} style={getDivStyles('endemicas', obj)} />
+                      <span>{obj.n}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              ))
               : <div>En proceso...</div>
           }
         </table>
@@ -57,29 +59,18 @@ export default function GraphsTopMun ({ data, region }) {
             </tr>
           </thead>
           {
-            dataAmenazadasNal
-              ? dataAmenazadasNal.map(obj => {
-                const percentage = Math.round((obj.n / maxValueA) * 100)
-                const styleDiv = {
-                  background: '#F26330',
-                  width: `${percentage}px`,
-                  height: '12px',
-                  marginBottom: '5px',
-                  rowGap: '0.25rem',
-                  borderRadius: '9999px'
-                }
-                return (
-                  <tbody key={obj.label}>
-                    <tr>
-                      <td className="w-2/4">{obj.label}</td>
-                      <div className="flex flex-row items-center justify-start gap-x-3 w-3/4">
-                        <div key={obj.label} style={styleDiv} />
-                        <td>{obj.n}</td>
-                      </div>
-                    </tr>
-                  </tbody>
-                )
-              })
+            dataAmenazadasNal && Array.isArray(dataAmenazadasNal) && dataAmenazadasNal.length > 0
+              ? dataAmenazadasNal.map(obj => (
+                <tbody key={obj.label}>
+                  <tr>
+                    <td className="w-2/4">{obj.label}</td>
+                    <td className="flex flex-row items-center justify-start gap-x-3 w-3/4">
+                      <span key={obj.label} style={getDivStyles('amenazadas', obj)} />
+                      <span>{obj.n}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              ))
               : <div>En proceso...</div>
           }
         </table>
