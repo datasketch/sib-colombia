@@ -894,14 +894,6 @@
           "registros_str": "1.226"
         }
       ]
-    },
-    {
-      "id": "slide3",
-      "layout": "title/(chart|chart)",
-      "title": "Top municipios",
-      "description": "",
-      "n_muni_mas_endemicas": [],
-      "n_muni_mas_amenazadas_nacional": []
     }
   ],
   "tematica": [

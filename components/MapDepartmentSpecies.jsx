@@ -64,7 +64,7 @@ const MapDepartmentSpecies = ({ data, isScale = false, slug }) => {
         <ComposableMap
           style={{ width: '100%', height: '100%' }}
           projection="geoMercator"
-          projectionConfig={{ center, scale: !isScale ? 2000 : 10000 }}
+          projectionConfig={{ center, scale: !isScale ? 1900 : 10000 }}
         >
           <Geographies geography={geoJsonFormat}>
             {({ geographies }) =>
