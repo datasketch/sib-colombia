@@ -187,7 +187,7 @@ export default function publicadores () {
           </button>
         </div>
       </div>
-      <div className='mt-5'>
+      <div className='w-10/12 lg:w-9/12 mx-auto mt-5'>
         {
           departmentData && display &&
           <InfoPublishers total={publicadors} data={departmentData} />
