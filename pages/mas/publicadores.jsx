@@ -68,26 +68,37 @@ export default function publicadores () {
     router.push(`/mas/publicadores?region=${value}`)
 
     const found = publishersExtend.find(e => e.name === value)
-    setAreaDropdown(found.extra.map(f => {
-      return {
-        label: clearText(f.name),
-        value: f.name
-      }
-    }))
-    setPublicadors(found.list)
-    setDepartmentData(found.graph)
+    if (found && found.extra) {
+      setAreaDropdown(found.extra.map(f => {
+        return {
+          label: clearText(f.name),
+          value: f.name
+        }
+      }))
+      setPublicadors(found.list)
+      setDepartmentData(found.graph)
+    } else {
+      setAreaDropdown([])
+      setPublicadors([])
+      setDepartmentData(null)
+      setSelectedArea('')
+    }
   }
 
   const handleAreaChange = ({ target }) => {
     const { value } = target
-    setSelectedArea(value)
     setDisplay(false)
+    setSelectedArea(value)
 
     router.push(`/mas/publicadores?region=${query}&area=${value}`)
 
     setPublicadors(publishersExtend.find(e => e.name === query).extra.find(f => f.name === value).list)
     setDepartmentData(null)
   }
+
+  useEffect(() => {
+    setSelectedArea('')
+  }, [query])
 
   const handleCountryChange = ({ target }) => {
     const { value } = target
@@ -160,7 +171,7 @@ export default function publicadores () {
   return (
     <>
       <HeadMore title={'Publicadores'} description={textDescription} content slug='publicadores' />
-      <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid md:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-3'>
+      <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-3 items-end'>
         {/* <div >
           <div className='relative'>
             <img className="absolute top-2 left-3 h-6 w-6" src="/images/icon-search.svg" alt="icon search" />
@@ -168,20 +179,31 @@ export default function publicadores () {
               type="text" placeholder='Buscar publicador' />
           </div>
         </div> */}
-        <div >
-          <SelectableV2 key={render} placeHolder={selectedRegion || 'Region'} data={regionsDropdown} optionSelected={handleRegionChange} />
+        <div className='flex flex-col gap-2'>
+          <h3 className='font-bold'>Región</h3>
+          <SelectableV2 key={render} placeHolder={selectedRegion || 'Selecciona una opción'} data={regionsDropdown} optionSelected={handleRegionChange} />
         </div>
-        <div >
-          <SelectableV2 key={render} placeHolder={clearText(selectedArea) || 'Area o Territorio'} data={areaDropdowm} optionSelected={handleAreaChange} />
+
+        {
+          areaDropdowm.length > 0 && (
+            <div className='flex flex-col gap-2'>
+              <h3 className='font-bold'>Municipios</h3>
+              <SelectableV2 key={render} placeHolder={clearText(selectedArea) || 'Selecciona una opción'} data={areaDropdowm} optionSelected={handleAreaChange} />
+            </div>
+          )
+        }
+        {/* <SelectableV2 key={render} placeHolder={clearText(selectedArea) || 'Selecciona una opción'} data={areaDropdowm} optionSelected={handleAreaChange} /> */}
+
+        <div className='flex flex-col gap-2'>
+          <h3 className='font-bold'>País del Publicador</h3>
+          <Selectable key={render} placeHolder={selectedCountry || 'Selecciona una opción'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
         </div>
-        <div >
-          <Selectable key={render} placeHolder={selectedCountry || 'Pais del Publicador'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
+        <div className='flex flex-col gap-2'>
+          <h3 className='font-bold'>Tipo de Organización</h3>
+          <Selectable key={render} placeHolder={selectedOrganizacion || 'Selecciona una opción'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
         </div>
-        <div >
-          <Selectable key={render} placeHolder={selectedOrganizacion || 'Tipo de Organización'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
-        </div>
-        <div className='flex items-center lg:justify-center border md:row-start-1 md:col-start-2 lg:col-start-5  border-black opacity-75 hover:opacity-100 py-2 px-2'>
-          <button type='button' onClick={clearFilters} className='flex gap-x-2 items-center font-lato font-bold ' value={'reset'}>
+        <div className='flex items-center lg:justify-center border md:row-start-1 md:col-start-2 lg:col-start-5  border-black opacity-75 hover:opacity-100 py-2 px-2 h-max'>
+          <button type='button' onClick={clearFilters} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
             <img src='/images/icon-reset.svg' />
             Limpiar filtros
           </button>

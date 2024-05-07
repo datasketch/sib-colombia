@@ -29,7 +29,7 @@ const Selectable = ({ data, optionSelected, placeHolder, titles, disabled = fals
         <span>{placeHolder}</span>
         <img className={classNames(open ? '-rotate-90' : 'rotate-90', ' w-6 h-3')} src='/images/arrow-black.svg' />
       </button>
-      <form onChange={optionSelected} className={classNames('flex flex-col max-h-48 w-full overflow-y-scroll top-full py-2 px-2 bg-white-smoke', open ? 'absolute ' : 'hidden')} >
+      <form onChange={optionSelected} className={classNames('flex flex-col max-h-48 w-full overflow-y-scroll top-full py-2 px-2 bg-white-smoke', open ? 'absolute z-10' : 'hidden')} >
         {data?.sort().map(el => {
           if (el === undefined) { return null }
           return (

@@ -11,8 +11,6 @@ export default function InfoPublishers ({ total, data, region }) {
 
   const nTypeInternational = internationalPublisher ? internationalPublisher.n_tipo : 0
 
-  /* console.log(nTypeInternational, 'nTypeInternational') */
-
   const totalPublishersNational = data.reduce((total, obj) => {
     if (obj.tipo_organizacion !== 'Internacional') {
       return total + obj.n_tipo
@@ -20,8 +18,6 @@ export default function InfoPublishers ({ total, data, region }) {
       return total
     }
   }, 0)
-
-  /* console.log(totalPublishersNational, 'totalPublishersNational') */
 
   const infoRegion = data.map(item => ({
     name: item.tipo_organizacion,
@@ -179,14 +175,14 @@ export default function InfoPublishers ({ total, data, region }) {
 
   return (
     <div className="flex flex-row gap-5">
-      <div className='bg-white flex flex-col text-black-2 py-6 px-7 shadow-default hover:shadow-select w-[514px]'>
+      <div className='bg-white flex flex-col text-black-2 py-6 px-7 shadow-default hover:shadow-select w-[500px]'>
         <h2 className="text-xl font-bold">Total de publicadores</h2>
         <div className="flex flex-col justify-center items-center h-full space-y-5">
           <p className="text-4xl">Nacional: {totalPublishersNational}</p>
           <p className="text-xl">Internacional: {nTypeInternational}</p>
         </div>
       </div>
-      <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[514px] h-[284px]'>
+      <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[521px] h-[284px]'>
         <h2 className="text-xl font-bold">Publicadores por tipo de organización</h2>
         <ResponsiveContainer width="100%" height="100%" className="mt-6">
           <PieChart width={200} height={200} className='left-0'>
@@ -210,7 +206,7 @@ export default function InfoPublishers ({ total, data, region }) {
           </PieChart>
         </ResponsiveContainer>
       </div>
-      <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[514px]'>
+      <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[521px]'>
         <h2 className="text-xl font-bold">Observaciones aportadas por tipo de organización</h2>
         <ResponsiveContainer width="100%" height="100%" className="mt-6">
           <PieChart width={200} height={300} className='left-0'>
