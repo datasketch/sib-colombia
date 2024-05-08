@@ -208,7 +208,7 @@ export default function InfoPublishers ({ total, data, region }) {
       </div>
       <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[521px]'>
         <h2 className="text-xl font-bold">Observaciones aportadas por tipo de organización</h2>
-        <ResponsiveContainer width="100%" height="100%" className="mt-6">
+        <ResponsiveContainer width="100%" height="100%" className="">
           <PieChart width={200} height={300} className='left-0'>
             <Pie
               data={infoRemark}

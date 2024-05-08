@@ -63,8 +63,8 @@ export default function publicadores () {
   const handleRegionChange = ({ target }) => {
     const { value } = target
     setSelectedRegion(regionsDropdown.find(e => e.value === value).label)
-    setQuery(value)
     setDisplay(true)
+    setQuery(value)
     router.push(`/mas/publicadores?region=${value}`)
 
     const found = publishersExtend.find(e => e.name === value)
@@ -102,14 +102,14 @@ export default function publicadores () {
 
   const handleCountryChange = ({ target }) => {
     const { value } = target
-    setDisplay(false)
     setSelectedCountry(value)
+    setDisplay(false)
   }
 
   const handleOrganizacionChange = ({ target }) => {
     const { value } = target
-    setDisplay(false)
     setSelectedOrganizacion(value || '')
+    setDisplay(false)
   }
 
   const filteredPublishers = publicadors
