@@ -21,11 +21,10 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
         ...prev,
         {
           type: 'Feature',
-          geometry: curr.geometry,
+          geometry: curr.geom,
           properties: {
             id: curr.id,
             name: curr.name,
-            depto: curr.depto,
             label: curr.label,
             n_especies: curr.n_especies
           }
@@ -33,6 +32,8 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
       ]
     }, [])
   }
+
+  console.log(mapDataCoords, 'mapDataCoords')
 
   const center = d3Geo.geoCentroid(geoJsonFormat)
 
@@ -62,30 +63,58 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
         <ComposableMap
           style={{ width: '100%', height: '100%' }}
           projection="geoMercator"
-          projectionConfig={{ center, scale: !isScale ? 1900 : 10000 }}
+          projectionConfig={{ center: [0, 0], scale: 5000 }}
         >
           <Geographies geography={geoJsonFormat}>
             {({ geographies }) =>
               geographies.map((geo) => {
-                return (
-                  <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    onMouseEnter={() => {
-                      setTooltipContent({
-                        label: geo.properties.label,
-                        n_especies: geo.properties.n_especies
-                      })
-                    }}
-                    onMouseLeave={() => {
-                      setTooltipContent({
-                        label: '',
-                        n_especies: ''
-                      })
-                    }}
-                    fill={geo.properties.n_especies ? colorScale(geo.properties.n_especies) : '#F5F4F6'}
-                  />
-                )
+                console.log(geographies, 'geographies')
+                const { geometry, properties } = geo
+
+                if (geometry.type === 'MultiPolygon') {
+                  return geometry.coordinates.map((polygonCoordinates, index) => (
+                    <Geography
+                      key={`${properties.id}-${index}`}
+                      geography={{
+                        type: "Polygon",
+                        coordinates: polygonCoordinates
+                      }}
+                      onMouseEnter={() => {
+                        setTooltipContent({
+                          label: properties.label,
+                          n_especies: properties.n_especies
+                        })
+                      }}
+                      onMouseLeave={() => {
+                        setTooltipContent({
+                          label: '',
+                          n_especies: ''
+                        })
+                      }}
+                      fill={properties.n_especies ? colorScale(properties.n_especies) : '#F5F4F6'}
+                    />
+                  ))
+                } else {
+                  return (
+                    <Geography
+                      key={properties.id}
+                      geography={geo}
+                      onMouseEnter={() => {
+                        setTooltipContent({
+                          label: properties.label,
+                          n_especies: properties.n_especies
+                        })
+                      }}
+                      onMouseLeave={() => {
+                        setTooltipContent({
+                          label: '',
+                          n_especies: ''
+                        })
+                      }}
+                      fill={properties.n_especies ? colorScale(properties.n_especies) : '#F5F4F6'}
+                    />
+                  )
+                }
               }
               )
             }
