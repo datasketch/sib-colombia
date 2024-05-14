@@ -12,6 +12,7 @@ export default function Navbar () {
     {
       label: 'Colombia',
       href: '/colombia'
+      /* static\data\colombia\colombia.json */
 
     },
     {

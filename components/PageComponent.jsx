@@ -12,8 +12,11 @@ import SimpleSlider from '../components/Slider'
 import Slides from '../components/Slides'
 import CardTematicasCol from './CardTematicasCol'
 
-import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
+/* import MapDepartmentSpecies from './MapDepartmentSpecies.jsx' */
 import MapDepartmentObservations from './MapDepartmentObservations.jsx'
+
+/* import DataMapColombia from '../static/data-maps/colombia.json' */
+import DemoMapSpecies from './DemoMapSpecies.jsx'
 
 export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false }) {
   const {
@@ -242,7 +245,8 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                       <>
                         <div className='mt-3'>
                           {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2> */}
-                          <MapDepartmentSpecies data={territorio} isScale={isScale} />
+                          {/* <MapDepartmentSpecies data={DataMapColombia} isScale={isScale} /> */}
+                          <DemoMapSpecies />
                         </div>
                       </>
                     }

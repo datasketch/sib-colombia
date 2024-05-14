@@ -6,7 +6,8 @@ import * as d3Scale from 'd3-scale'
 import { useLegend } from '../hooks/useLegend'
 
 const MapDepartmentSpecies = ({ data, isScale = false }) => {
-  const territorio = data
+  /* console.log(data, 'data') */
+  /* const territorio = data
   const mapDataObj = territorio[0]
   const mapDataCoords = mapDataObj.map_data
   const [tooltipContent, setTooltipContent] = useState({
@@ -31,13 +32,15 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
         }
       ]
     }, [])
-  }
+  } */
 
-  console.log(mapDataCoords, 'mapDataCoords')
+  /* console.log(geoJsonFormat) */
 
-  const center = d3Geo.geoCentroid(geoJsonFormat)
+  // console.log(mapDataCoords, 'mapDataCoords')
 
-  const mapSpecies = geoJsonFormat.features.map((d) => d.properties.n_especies)
+  const center = d3Geo.geoCentroid(data)
+
+  const mapSpecies = data.features.map((d) => d.properties.n_especies)
 
   const maximum = Math.max(...mapSpecies)
 
@@ -51,97 +54,27 @@ const MapDepartmentSpecies = ({ data, isScale = false }) => {
 
   return (
     <>
-      <Tooltip type="light">
+      {/* <Tooltip type="light">
         {tooltipContent.label && (
           <div className="font-lato text-center">
             <p className="font-black">{tooltipContent.n_especies} especies</p>
             <p>{tooltipContent.label}</p>
           </div>
         )}
-      </Tooltip>
-      <div data-tip="" style={{ height: 600 }} className=''>
-        <ComposableMap
-          style={{ width: '100%', height: '100%' }}
+      </Tooltip> */}
+      <ComposableMap
+          style={{ width: 800, height: 600 }}
           projection="geoMercator"
-          projectionConfig={{ center: [0, 0], scale: 5000 }}
+          projectionConfig={{ center: [4.089722, -72.961944].reverse(), scale: 1000 }}
         >
-          <Geographies geography={geoJsonFormat}>
-            {({ geographies }) =>
-              geographies.map((geo) => {
-                console.log(geographies, 'geographies')
-                const { geometry, properties } = geo
-
-                if (geometry.type === 'MultiPolygon') {
-                  return geometry.coordinates.map((polygonCoordinates, index) => (
-                    <Geography
-                      key={`${properties.id}-${index}`}
-                      geography={{
-                        type: "Polygon",
-                        coordinates: polygonCoordinates
-                      }}
-                      onMouseEnter={() => {
-                        setTooltipContent({
-                          label: properties.label,
-                          n_especies: properties.n_especies
-                        })
-                      }}
-                      onMouseLeave={() => {
-                        setTooltipContent({
-                          label: '',
-                          n_especies: ''
-                        })
-                      }}
-                      fill={properties.n_especies ? colorScale(properties.n_especies) : '#F5F4F6'}
-                    />
-                  ))
-                } else {
-                  return (
-                    <Geography
-                      key={properties.id}
-                      geography={geo}
-                      onMouseEnter={() => {
-                        setTooltipContent({
-                          label: properties.label,
-                          n_especies: properties.n_especies
-                        })
-                      }}
-                      onMouseLeave={() => {
-                        setTooltipContent({
-                          label: '',
-                          n_especies: ''
-                        })
-                      }}
-                      fill={properties.n_especies ? colorScale(properties.n_especies) : '#F5F4F6'}
-                    />
-                  )
-                }
-              }
-              )
-            }
+          <Geographies geography={data} fill='#ffffff'>
+          {({ geographies }) => geographies.map(geo => {
+            const { geometry, properties } = geo
+            return <Geography key={geo.rsmKey} geography={geo} fill={properties.n_especies ? colorScale(properties.n_especies) : '#F5F4F6'} />
+          })}
           </Geographies>
         </ComposableMap>
-        <div className="p-4 shadow-lg w-[116px] rounded-md bottom-52 left-[68rem] block relative">
-          <span className='font-bold text-sm'>Especies</span>
-          <div className="mt-4">
-            <ul>
-              {
-                lastValueRange.map((value, i) => (
-                  <li
-                    key={i}
-                    style={{
-                      backgroundColor: colorScale(value),
-                      width: '20px',
-                      height: '20px'
-                    }}
-                  >
-                    <p className='font-medium right-4 text-right ml-10'>{value}</p>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </div>
-      </div>
+
     </>
   )
 }
