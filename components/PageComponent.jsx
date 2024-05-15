@@ -241,15 +241,18 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                         </div>
                     }
 
-                    {showSpecies && territorio &&
+                    {/* {showSpecies && territorio &&
                       <>
                         <div className='mt-3'>
-                          {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2> */}
-                          {/* <MapDepartmentSpecies data={DataMapColombia} isScale={isScale} /> */}
+                          <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2>
+                          <MapDepartmentSpecies data={DataMapColombia} isScale={isScale} />
                           <DemoMapSpecies />
                         </div>
                       </>
-                    }
+                    } */}
+
+                    <DemoMapSpecies />
+
                     {showRemarks && territorio &&
                       <>
                         <div className='mt-3'>

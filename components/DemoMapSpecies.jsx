@@ -1,14 +1,10 @@
 import DataMapColombia from '../static/data-maps/colombia.json'
 import * as d3Geo from 'd3-geo'
-/* import { useState, useMemo } from 'react' */
-/* import { MapContainer, TileLayer } from 'react-leaflet' */
-/* import Tooltip from 'react-tooltip' */
-
-import { MapContainer } from 'https://cdn.esm.sh/react-leaflet/MapContainer'
-import { TileLayer } from 'https://cdn.esm.sh/react-leaflet/TileLayer'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 const DemoMapSpecies = () => {
   const data = DataMapColombia
+  console.log(data, 'data')
 
   const centroid = d3Geo.geoCentroid(data)
   const center = centroid.map((coord, index) => {
