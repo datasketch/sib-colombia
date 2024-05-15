@@ -19,6 +19,7 @@
     "d3-color-legend": "^1.4.1",
     "d3-scale": "^4.0.2",
     "fuse.js": "^6.6.2",
+    "leaflet": "^1.9.4",
     "next": "^12.1.4",
     "nextjs-google-analytics": "^2.2.0",
     "qs": "^6.11.0",

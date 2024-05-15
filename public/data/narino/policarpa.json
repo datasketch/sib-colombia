@@ -579,9 +579,7 @@
       "id": "slide1",
       "layout": "title/(text|chart)",
       "title": "¿Cómo está Policarpa frente al resto de Nariño?",
-      "description": "De las 11.227 especies observadas en Nariño,\nel municipio de Policarpa aporta 248, equivalentes a 2%.\nDe estas 6 especies son endémicas.",
-      "chart_type": "image",
-      "chart_url": "static/charts/policarpa/reg_vs_parent.png",
+      "description": "De las 11.227 especies observadas en Nariño,\nel municipio de Policarpa aporta 248, equivalentes a 2.2%.\nDe estas 6 especies son endémicas.",
       "waffle": [
         {
           "slug_region": "narino",
@@ -9358,124 +9356,163 @@
   ],
   "territorio": [],
   "patrocinador": [],
-  "publicadores": [
-    {
-      "slug_publicador": "e2e717bf-551a-4917-bdc9-4fa0f342c530",
-      "registros": 1358,
-      "especies": 158,
-      "label": "eBird Colombia",
-      "pais_publicacion": "CO",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/logos-socios/500px/ebird.jpg",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=e2e717bf-551a-4917-bdc9-4fa0f342c530"
-    },
-    {
-      "slug_publicador": "2627e955-93f5-4206-bac5-a1e3bd91ee37",
-      "registros": 141,
-      "especies": 34,
-      "label": "Corporación Paisajes Rurales",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-paisajesrurales.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=2627e955-93f5-4206-bac5-a1e3bd91ee37"
-    },
-    {
-      "slug_publicador": "58c7e325-82fc-446d-9406-851b4d357db7",
-      "registros": 37,
-      "especies": 32,
-      "label": "Universidad de Nariño",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-udenar.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=58c7e325-82fc-446d-9406-851b4d357db7"
-    },
-    {
-      "slug_publicador": "eac88d99-9f6c-4031-8fc4-8088f0e0dfe7",
-      "registros": 35,
-      "especies": 20,
-      "label": "Universidad Nacional de Colombia",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-unal.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=eac88d99-9f6c-4031-8fc4-8088f0e0dfe7"
-    },
-    {
-      "slug_publicador": "007a7e84-3793-4a7c-aa29-8987e27f4d1f",
-      "registros": 32,
-      "especies": 19,
-      "label": "Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia - Ideam",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-ideam.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=007a7e84-3793-4a7c-aa29-8987e27f4d1f"
-    },
-    {
-      "slug_publicador": "66522820-055c-11d8-b84e-b8a03c50a862",
-      "registros": 27,
-      "especies": 2,
-      "label": "California Academy of Sciences",
-      "pais_publicacion": "US",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=66522820-055c-11d8-b84e-b8a03c50a862"
-    },
-    {
-      "slug_publicador": "90fd6680-349f-11d8-aa2d-b8a03c50a862",
-      "registros": 15,
-      "especies": 7,
-      "label": "Missouri Botanical Garden",
-      "pais_publicacion": "US",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=90fd6680-349f-11d8-aa2d-b8a03c50a862"
-    },
-    {
-      "slug_publicador": "a7e6d0ba-9e3d-4be2-b3ac-2c5e812e0a31",
-      "registros": 4,
-      "especies": 4,
-      "label": "Instituto para la Investigación y la Preservación del Patrimonio Cultural y Natural del Valle del Cauca - INCIVA",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-inciva.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=a7e6d0ba-9e3d-4be2-b3ac-2c5e812e0a31"
-    },
-    {
-      "slug_publicador": "cccff716-2694-4209-9f9e-2f7a484465a0",
-      "registros": 3,
-      "especies": 1,
-      "label": "Universidad de Antioquia",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-udea.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=cccff716-2694-4209-9f9e-2f7a484465a0"
-    },
-    {
-      "slug_publicador": "da86174a-a605-43a4-a5e8-53d484152cd3",
-      "registros": 2,
-      "especies": 2,
-      "label": "Pl@ntNet",
-      "pais_publicacion": "FR",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=da86174a-a605-43a4-a5e8-53d484152cd3"
-    },
-    {
-      "slug_publicador": "ae447c50-b8a8-11d8-92a4-b8a03c50a862",
-      "registros": 2,
-      "especies": 2,
-      "label": "The New York Botanical Garden",
-      "pais_publicacion": "US",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=ae447c50-b8a8-11d8-92a4-b8a03c50a862"
-    },
-    {
-      "slug_publicador": "28eb1a3f-1c15-4a95-931a-4af90ecb574d",
-      "registros": 2,
-      "especies": 2,
-      "label": "Naturalista Colombia",
-      "pais_publicacion": "CO",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/logos-socios/portal-sib/logo-naturalistaco.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=28eb1a3f-1c15-4a95-931a-4af90ecb574d"
-    },
-    {
-      "slug_publicador": "fee3882f-5360-4f01-a1ca-767c48fa629c",
-      "registros": 1,
-      "especies": 1,
-      "label": "Centro Internacional de Agricultura Tropical - CIAT",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-ciat.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=fee3882f-5360-4f01-a1ca-767c48fa629c"
-    }
-  ],
+  "publicadores": {
+    "publicadores_tipo": [
+      {
+        "tipo_organizacion": "Internacional",
+        "n_tipo": 4,
+        "n_tipo_obs": 46,
+        "pct_tipo": 0.3077,
+        "pct_tipo_obs": 0.0277
+      },
+      {
+        "tipo_organizacion": "Centros de investigación",
+        "n_tipo": 3,
+        "n_tipo_obs": 37,
+        "pct_tipo": 0.2308,
+        "pct_tipo_obs": 0.0223
+      },
+      {
+        "tipo_organizacion": "Redes e iniciativas",
+        "n_tipo": 2,
+        "n_tipo_obs": 1360,
+        "pct_tipo": 0.1538,
+        "pct_tipo_obs": 0.8198
+      },
+      {
+        "tipo_organizacion": "ONG",
+        "n_tipo": 1,
+        "n_tipo_obs": 141,
+        "pct_tipo": 0.0769,
+        "pct_tipo_obs": 0.085
+      },
+      {
+        "tipo_organizacion": "Academia",
+        "n_tipo": 3,
+        "n_tipo_obs": 75,
+        "pct_tipo": 0.2308,
+        "pct_tipo_obs": 0.0452
+      }
+    ],
+    "publicadores_list": [
+      {
+        "slug_publicador": "e2e717bf-551a-4917-bdc9-4fa0f342c530",
+        "registros": 1358,
+        "especies": 158,
+        "label": "eBird Colombia",
+        "pais_publicacion": "CO",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/logos-socios/500px/ebird.jpg",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=e2e717bf-551a-4917-bdc9-4fa0f342c530"
+      },
+      {
+        "slug_publicador": "2627e955-93f5-4206-bac5-a1e3bd91ee37",
+        "registros": 141,
+        "especies": 34,
+        "label": "Corporación Paisajes Rurales",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-paisajesrurales.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=2627e955-93f5-4206-bac5-a1e3bd91ee37"
+      },
+      {
+        "slug_publicador": "58c7e325-82fc-446d-9406-851b4d357db7",
+        "registros": 37,
+        "especies": 32,
+        "label": "Universidad de Nariño",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-udenar.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=58c7e325-82fc-446d-9406-851b4d357db7"
+      },
+      {
+        "slug_publicador": "eac88d99-9f6c-4031-8fc4-8088f0e0dfe7",
+        "registros": 35,
+        "especies": 20,
+        "label": "Universidad Nacional de Colombia",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-unal.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=eac88d99-9f6c-4031-8fc4-8088f0e0dfe7"
+      },
+      {
+        "slug_publicador": "007a7e84-3793-4a7c-aa29-8987e27f4d1f",
+        "registros": 32,
+        "especies": 19,
+        "label": "Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia - Ideam",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-ideam.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=007a7e84-3793-4a7c-aa29-8987e27f4d1f"
+      },
+      {
+        "slug_publicador": "66522820-055c-11d8-b84e-b8a03c50a862",
+        "registros": 27,
+        "especies": 2,
+        "label": "California Academy of Sciences",
+        "pais_publicacion": "US",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=66522820-055c-11d8-b84e-b8a03c50a862"
+      },
+      {
+        "slug_publicador": "90fd6680-349f-11d8-aa2d-b8a03c50a862",
+        "registros": 15,
+        "especies": 7,
+        "label": "Missouri Botanical Garden",
+        "pais_publicacion": "US",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=90fd6680-349f-11d8-aa2d-b8a03c50a862"
+      },
+      {
+        "slug_publicador": "a7e6d0ba-9e3d-4be2-b3ac-2c5e812e0a31",
+        "registros": 4,
+        "especies": 4,
+        "label": "Instituto para la Investigación y la Preservación del Patrimonio Cultural y Natural del Valle del Cauca - INCIVA",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-inciva.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=a7e6d0ba-9e3d-4be2-b3ac-2c5e812e0a31"
+      },
+      {
+        "slug_publicador": "cccff716-2694-4209-9f9e-2f7a484465a0",
+        "registros": 3,
+        "especies": 1,
+        "label": "Universidad de Antioquia",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-udea.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=cccff716-2694-4209-9f9e-2f7a484465a0"
+      },
+      {
+        "slug_publicador": "da86174a-a605-43a4-a5e8-53d484152cd3",
+        "registros": 2,
+        "especies": 2,
+        "label": "Pl@ntNet",
+        "pais_publicacion": "FR",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=da86174a-a605-43a4-a5e8-53d484152cd3"
+      },
+      {
+        "slug_publicador": "ae447c50-b8a8-11d8-92a4-b8a03c50a862",
+        "registros": 2,
+        "especies": 2,
+        "label": "The New York Botanical Garden",
+        "pais_publicacion": "US",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=ae447c50-b8a8-11d8-92a4-b8a03c50a862"
+      },
+      {
+        "slug_publicador": "28eb1a3f-1c15-4a95-931a-4af90ecb574d",
+        "registros": 2,
+        "especies": 2,
+        "label": "Naturalista Colombia",
+        "pais_publicacion": "CO",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/logos-socios/portal-sib/logo-naturalistaco.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=28eb1a3f-1c15-4a95-931a-4af90ecb574d"
+      },
+      {
+        "slug_publicador": "fee3882f-5360-4f01-a1ca-767c48fa629c",
+        "registros": 1,
+        "especies": 1,
+        "label": "Centro Internacional de Agricultura Tropical - CIAT",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-ciat.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=fee3882f-5360-4f01-a1ca-767c48fa629c"
+      }
+    ]
+  },
   "municipios_lista": []
 }

@@ -3,11 +3,11 @@ import { useContext, useEffect } from 'react'
 
 import HeadRegion from '../../components/headers/HeadRegion'
 
-import { getDepartmentData, getDepartmentsPath } from '../../lib/regions'
+import { getDepartmentData, getDepartmentsPath, getMapData } from '../../lib/regions'
 import { AppContext } from '../_app'
 import PageComponent from '../../components/PageComponent'
 
-export default function index ({ data, slug }) {
+export default function index ({ data, slug, map }) {
   const { general_info: generalInfo } = data
 
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
@@ -34,7 +34,7 @@ export default function index ({ data, slug }) {
         referencia={generalInfo.referencia}
         photoLabel={generalInfo.credito_foto}
       />
-      <PageComponent data={data} slug={slug} isScale />
+      <PageComponent data={data} slug={slug} isScale map={map} />
     </>
   )
 }
@@ -49,10 +49,12 @@ export async function getStaticPaths () {
 
 export async function getStaticProps (context) {
   const content = await getDepartmentData(context.params.regiones)
+  const map = await getMapData(context.params.regiones)
 
   return {
     props: {
       data: JSON.parse(content),
+      map: JSON.parse(map),
       slug: context.params.regiones
     }
   }

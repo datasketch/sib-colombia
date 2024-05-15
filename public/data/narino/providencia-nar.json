@@ -580,8 +580,6 @@
       "layout": "title/(text|chart)",
       "title": "¿Cómo está Providencia frente al resto de Nariño?",
       "description": "De las 11.227 especies observadas en Nariño,\nel municipio de Providencia aporta 1, equivalentes a 0%.\nDe estas NA especies son endémicas.",
-      "chart_type": "image",
-      "chart_url": "static/charts/providencia-nar/reg_vs_parent.png",
       "waffle": [
         {
           "slug_region": "narino",
@@ -1571,25 +1569,43 @@
   "grupos_interes": [],
   "territorio": [],
   "patrocinador": [],
-  "publicadores": [
-    {
-      "slug_publicador": "a3c228d0-3110-11db-abb8-b8a03c50a862",
-      "registros": 4,
-      "especies": 1,
-      "label": "Bioversity International",
-      "pais_publicacion": "ZZ",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=a3c228d0-3110-11db-abb8-b8a03c50a862"
-    },
-    {
-      "slug_publicador": "fee3882f-5360-4f01-a1ca-767c48fa629c",
-      "registros": 1,
-      "especies": 1,
-      "label": "Centro Internacional de Agricultura Tropical - CIAT",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-ciat.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=fee3882f-5360-4f01-a1ca-767c48fa629c"
-    }
-  ],
+  "publicadores": {
+    "publicadores_tipo": [
+      {
+        "tipo_organizacion": "Internacional",
+        "n_tipo": 1,
+        "n_tipo_obs": 4,
+        "pct_tipo": 0.5,
+        "pct_tipo_obs": 0.8
+      },
+      {
+        "tipo_organizacion": "Centros de investigación",
+        "n_tipo": 1,
+        "n_tipo_obs": 1,
+        "pct_tipo": 0.5,
+        "pct_tipo_obs": 0.2
+      }
+    ],
+    "publicadores_list": [
+      {
+        "slug_publicador": "a3c228d0-3110-11db-abb8-b8a03c50a862",
+        "registros": 4,
+        "especies": 1,
+        "label": "Bioversity International",
+        "pais_publicacion": "ZZ",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=a3c228d0-3110-11db-abb8-b8a03c50a862"
+      },
+      {
+        "slug_publicador": "fee3882f-5360-4f01-a1ca-767c48fa629c",
+        "registros": 1,
+        "especies": 1,
+        "label": "Centro Internacional de Agricultura Tropical - CIAT",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-ciat.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=fee3882f-5360-4f01-a1ca-767c48fa629c"
+      }
+    ]
+  },
   "municipios_lista": []
 }

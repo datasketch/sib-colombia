@@ -579,9 +579,7 @@
       "id": "slide1",
       "layout": "title/(text|chart)",
       "title": "¿Cómo está Belén frente al resto de Nariño?",
-      "description": "De las 11.227 especies observadas en Nariño,\nel municipio de Belén aporta 27, equivalentes a 0%.\nDe estas NA especies son endémicas.",
-      "chart_type": "image",
-      "chart_url": "static/charts/belen-nar/reg_vs_parent.png",
+      "description": "De las 11.227 especies observadas en Nariño,\nel municipio de Belén aporta 27, equivalentes a 0.2%.\nDe estas NA especies son endémicas.",
       "waffle": [
         {
           "slug_region": "narino",
@@ -5077,49 +5075,74 @@
   "grupos_interes": [],
   "territorio": [],
   "patrocinador": [],
-  "publicadores": [
-    {
-      "slug_publicador": "e2e717bf-551a-4917-bdc9-4fa0f342c530",
-      "registros": 34,
-      "especies": 26,
-      "label": "eBird Colombia",
-      "pais_publicacion": "CO",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/logos-socios/500px/ebird.jpg",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=e2e717bf-551a-4917-bdc9-4fa0f342c530"
-    },
-    {
-      "slug_publicador": "b8cd2cdb-ee95-409c-b1b8-e09bab4f9a70",
-      "registros": 2,
-      "label": "Universidad Distrital Francisco José de Caldas",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-udistrital.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=b8cd2cdb-ee95-409c-b1b8-e09bab4f9a70"
-    },
-    {
-      "slug_publicador": "770c30d2-c2a8-4bb2-8056-6167297cddae",
-      "registros": 1,
-      "label": "Australian Museum",
-      "pais_publicacion": "AU",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=770c30d2-c2a8-4bb2-8056-6167297cddae"
-    },
-    {
-      "slug_publicador": "bc092ff0-02e4-11dc-991f-b8a03c50a862",
-      "registros": 1,
-      "label": "National Museum of Natural History, Smithsonian Institution",
-      "pais_publicacion": "US",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=bc092ff0-02e4-11dc-991f-b8a03c50a862"
-    },
-    {
-      "slug_publicador": "6ea87510-0561-11d8-b851-b8a03c50a862",
-      "registros": 1,
-      "especies": 1,
-      "label": "University of Michigan Museum of Zoology",
-      "pais_publicacion": "US",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=6ea87510-0561-11d8-b851-b8a03c50a862"
-    }
-  ],
+  "publicadores": {
+    "publicadores_tipo": [
+      {
+        "tipo_organizacion": "Internacional",
+        "n_tipo": 3,
+        "n_tipo_obs": 3,
+        "pct_tipo": 0.6,
+        "pct_tipo_obs": 0.0769
+      },
+      {
+        "tipo_organizacion": "Redes e iniciativas",
+        "n_tipo": 1,
+        "n_tipo_obs": 34,
+        "pct_tipo": 0.2,
+        "pct_tipo_obs": 0.8718
+      },
+      {
+        "tipo_organizacion": "Academia",
+        "n_tipo": 1,
+        "n_tipo_obs": 2,
+        "pct_tipo": 0.2,
+        "pct_tipo_obs": 0.0513
+      }
+    ],
+    "publicadores_list": [
+      {
+        "slug_publicador": "e2e717bf-551a-4917-bdc9-4fa0f342c530",
+        "registros": 34,
+        "especies": 26,
+        "label": "eBird Colombia",
+        "pais_publicacion": "CO",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/logos-socios/500px/ebird.jpg",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=e2e717bf-551a-4917-bdc9-4fa0f342c530"
+      },
+      {
+        "slug_publicador": "b8cd2cdb-ee95-409c-b1b8-e09bab4f9a70",
+        "registros": 2,
+        "label": "Universidad Distrital Francisco José de Caldas",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-udistrital.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=b8cd2cdb-ee95-409c-b1b8-e09bab4f9a70"
+      },
+      {
+        "slug_publicador": "770c30d2-c2a8-4bb2-8056-6167297cddae",
+        "registros": 1,
+        "label": "Australian Museum",
+        "pais_publicacion": "AU",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=770c30d2-c2a8-4bb2-8056-6167297cddae"
+      },
+      {
+        "slug_publicador": "bc092ff0-02e4-11dc-991f-b8a03c50a862",
+        "registros": 1,
+        "label": "National Museum of Natural History, Smithsonian Institution",
+        "pais_publicacion": "US",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=bc092ff0-02e4-11dc-991f-b8a03c50a862"
+      },
+      {
+        "slug_publicador": "6ea87510-0561-11d8-b851-b8a03c50a862",
+        "registros": 1,
+        "especies": 1,
+        "label": "University of Michigan Museum of Zoology",
+        "pais_publicacion": "US",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=6ea87510-0561-11d8-b851-b8a03c50a862"
+      }
+    ]
+  },
   "municipios_lista": []
 }

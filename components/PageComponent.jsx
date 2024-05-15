@@ -13,12 +13,16 @@ import Slides from '../components/Slides'
 import CardTematicasCol from './CardTematicasCol'
 
 /* import MapDepartmentSpecies from './MapDepartmentSpecies.jsx' */
-import MapDepartmentObservations from './MapDepartmentObservations.jsx'
+/* import MapDepartmentObservations from './MapDepartmentObservations.jsx' */
 
 /* import DataMapColombia from '../static/data-maps/colombia.json' */
-import DemoMapSpecies from './DemoMapSpecies.jsx'
+// import DemoMapSpecies from './DemoMapSpecies.jsx'
+import dynamic from 'next/dynamic'
 
-export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false }) {
+const DemoMapSpecies = dynamic(() => import('./DemoMapSpecies.jsx'), { ssr: false })
+const DemoMapObservations = dynamic(() => import('./DemoMapObservations.jsx'), { ssr: false })
+
+export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false, map }) {
   const {
     general_info: generalInfo,
     grupos_biologicos: gruposBiologicos,
@@ -168,7 +172,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
-                <div className='bg-white py-10'>
+                <div className='bg-white pt-5'>
 
                   <div className='py-3 w-2/5 mx-auto'>
                     {
@@ -241,23 +245,23 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                         </div>
                     }
 
-                    {/* {showSpecies && territorio &&
+                    {showSpecies && territorio &&
                       <>
                         <div className='mt-3'>
-                          <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2>
-                          <MapDepartmentSpecies data={DataMapColombia} isScale={isScale} />
-                          <DemoMapSpecies />
+                          {/* <MapDepartmentSpecies data={DataMapColombia} isScale={isScale} /> */}
+                          <DemoMapSpecies data={map} />
                         </div>
                       </>
-                    } */}
+                    }
 
-                    <DemoMapSpecies />
+                    {/* <DemoMapSpecies /> */}
 
                     {showRemarks && territorio &&
                       <>
                         <div className='mt-3'>
                           {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2> */}
-                          <MapDepartmentObservations data={territorio} isScale={isScale} />
+                          {/* <MapDepartmentObservations data={territorio} isScale={isScale} /> */}
+                          <DemoMapObservations data={map} />
                         </div>
                       </>
                     }
