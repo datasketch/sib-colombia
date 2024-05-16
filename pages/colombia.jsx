@@ -4,6 +4,7 @@ import Head from 'next/head'
 import HeadRegion from '../components/headers/HeadRegion'
 import { AppContext } from './_app'
 import col from '../static/data/colombia.json'
+import DataMapColombia from '../static/data-maps/colombia.json'
 import PageComponent from '../components/PageComponent'
 
 export default function colombia () {
@@ -41,7 +42,7 @@ export default function colombia () {
         referencia={generalInfo.referencia}
         photoLabel={generalInfo.credito_foto}
       />
-      <PageComponent data={col} slug='colombia' deparment/>
+      <PageComponent data={col} slug='colombia' deparment map={DataMapColombia}/>
       {/* Faltan datos como especies y registros en Bogotá */}
     </div>
   )

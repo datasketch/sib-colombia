@@ -5,9 +5,12 @@ import Concentric from '../Concentric'
 import classNames from 'classnames'
 import InfoTooltip from '../InfoTooltip'
 import { useEffect, useState } from 'react'
-import SmallMap from '../SmallMap'
+/* import SmallMap from '../SmallMap' */
+import dynamic from 'next/dynamic'
 
-function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel, data, isScale = false }) {
+const SmallMap = dynamic(() => import('../SmallMap.jsx'), { ssr: false })
+
+function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel, isScale = false, map }) {
   const [windowWidth, setWindowWidth] = useState(1000)
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -29,11 +32,14 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
 
             {['colombia', 'boyaca', 'narino', 'santander', 'tolima'].includes(slug)
               ? (imageMap &&
-            <div className="hidden md:flex justify-end ">
-              <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageMap} />
-            </div>
+                <div className="hidden md:flex justify-end ">
+                  <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageMap} />
+                </div>
                 )
-              : <SmallMap data={data} isScale={isScale}/>}
+              : <div className='relative'>
+                  <SmallMap data={map} isScale={isScale} />
+              </div>
+            }
 
           </div>
           <div className="flex flex-col md:flex-row max-h-48 justify-between gap-y-4 w-10/12 mx-auto -mt-9 md:-mt-0">

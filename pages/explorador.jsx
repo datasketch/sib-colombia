@@ -8,7 +8,7 @@ function explorador () {
   const router = useRouter()
   const [query, setQuery] = useState('')
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
-  const appURL = query ? `https://services.datasketch.co/sibdata-tables-app/?${query}` : 'https://services.datasketch.co/sibdata-tables-app/?region=colombia'
+  const appURL = query ? `https://services.datasketch.co/org_sibhumboldt_sibdata_app/?region=${query}` : 'https://services.datasketch.co/org_sibhumboldt_sibdata_app'
 
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')

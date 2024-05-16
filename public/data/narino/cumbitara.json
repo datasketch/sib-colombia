@@ -579,9 +579,7 @@
       "id": "slide1",
       "layout": "title/(text|chart)",
       "title": "¿Cómo está Cumbitara frente al resto de Nariño?",
-      "description": "De las 11.227 especies observadas en Nariño,\nel municipio de Cumbitara aporta 122, equivalentes a 1%.\nDe estas 2 especies son endémicas.",
-      "chart_type": "image",
-      "chart_url": "static/charts/cumbitara/reg_vs_parent.png",
+      "description": "De las 11.227 especies observadas en Nariño,\nel municipio de Cumbitara aporta 122, equivalentes a 1.1%.\nDe estas 2 especies son endémicas.",
       "waffle": [
         {
           "slug_region": "narino",
@@ -6143,51 +6141,83 @@
   ],
   "territorio": [],
   "patrocinador": [],
-  "publicadores": [
-    {
-      "slug_publicador": "2627e955-93f5-4206-bac5-a1e3bd91ee37",
-      "registros": 659,
-      "especies": 119,
-      "label": "Corporación Paisajes Rurales",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-paisajesrurales.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=2627e955-93f5-4206-bac5-a1e3bd91ee37"
-    },
-    {
-      "slug_publicador": "ae447c50-b8a8-11d8-92a4-b8a03c50a862",
-      "registros": 2,
-      "especies": 1,
-      "label": "The New York Botanical Garden",
-      "pais_publicacion": "US",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=ae447c50-b8a8-11d8-92a4-b8a03c50a862"
-    },
-    {
-      "slug_publicador": "3ecddc17-a081-4e85-92c3-d8e31716342c",
-      "registros": 1,
-      "especies": 1,
-      "label": "Asociación Colombiana de Zoología",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-acz.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=3ecddc17-a081-4e85-92c3-d8e31716342c"
-    },
-    {
-      "slug_publicador": "fee3882f-5360-4f01-a1ca-767c48fa629c",
-      "registros": 1,
-      "especies": 1,
-      "label": "Centro Internacional de Agricultura Tropical - CIAT",
-      "pais_publicacion": "CO",
-      "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-ciat.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=fee3882f-5360-4f01-a1ca-767c48fa629c"
-    },
-    {
-      "slug_publicador": "7b8aff00-a9f8-11d8-944b-b8a03c50a862",
-      "registros": 1,
-      "label": "Field Museum",
-      "pais_publicacion": "US",
-      "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
-      "url_socio": "https://biodiversidad.co/data/?publishingOrg=7b8aff00-a9f8-11d8-944b-b8a03c50a862"
-    }
-  ],
+  "publicadores": {
+    "publicadores_tipo": [
+      {
+        "tipo_organizacion": "Redes e iniciativas",
+        "n_tipo": 1,
+        "n_tipo_obs": 1,
+        "pct_tipo": 0.2,
+        "pct_tipo_obs": 0.0015
+      },
+      {
+        "tipo_organizacion": "Centros de investigación",
+        "n_tipo": 1,
+        "n_tipo_obs": 1,
+        "pct_tipo": 0.2,
+        "pct_tipo_obs": 0.0015
+      },
+      {
+        "tipo_organizacion": "ONG",
+        "n_tipo": 1,
+        "n_tipo_obs": 659,
+        "pct_tipo": 0.2,
+        "pct_tipo_obs": 0.9925
+      },
+      {
+        "tipo_organizacion": "Internacional",
+        "n_tipo": 2,
+        "n_tipo_obs": 3,
+        "pct_tipo": 0.4,
+        "pct_tipo_obs": 0.0045
+      }
+    ],
+    "publicadores_list": [
+      {
+        "slug_publicador": "2627e955-93f5-4206-bac5-a1e3bd91ee37",
+        "registros": 659,
+        "especies": 119,
+        "label": "Corporación Paisajes Rurales",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-paisajesrurales.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=2627e955-93f5-4206-bac5-a1e3bd91ee37"
+      },
+      {
+        "slug_publicador": "ae447c50-b8a8-11d8-92a4-b8a03c50a862",
+        "registros": 2,
+        "especies": 1,
+        "label": "The New York Botanical Garden",
+        "pais_publicacion": "US",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=ae447c50-b8a8-11d8-92a4-b8a03c50a862"
+      },
+      {
+        "slug_publicador": "3ecddc17-a081-4e85-92c3-d8e31716342c",
+        "registros": 1,
+        "especies": 1,
+        "label": "Asociación Colombiana de Zoología",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-acz.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=3ecddc17-a081-4e85-92c3-d8e31716342c"
+      },
+      {
+        "slug_publicador": "fee3882f-5360-4f01-a1ca-767c48fa629c",
+        "registros": 1,
+        "especies": 1,
+        "label": "Centro Internacional de Agricultura Tropical - CIAT",
+        "pais_publicacion": "CO",
+        "url_logo": "https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-ciat.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=fee3882f-5360-4f01-a1ca-767c48fa629c"
+      },
+      {
+        "slug_publicador": "7b8aff00-a9f8-11d8-944b-b8a03c50a862",
+        "registros": 1,
+        "label": "Field Museum",
+        "pais_publicacion": "US",
+        "url_logo": "https://statics.sibcolombia.net/sib-resources/images/santander/world.png",
+        "url_socio": "https://biodiversidad.co/data/?publishingOrg=7b8aff00-a9f8-11d8-944b-b8a03c50a862"
+      }
+    ]
+  },
   "municipios_lista": []
 }

@@ -12,12 +12,17 @@ import SimpleSlider from '../components/Slider'
 import Slides from '../components/Slides'
 import CardTematicasCol from './CardTematicasCol'
 
-import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
-import MapDepartmentObservations from './MapDepartmentObservations.jsx'
+/* import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
+import MapDepartmentObservations from './MapDepartmentObservations.jsx' */
 import InfoPublishers from './InfoPublishers.jsx'
 import { useRouter } from 'next/router'
 
-export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false }) {
+import dynamic from 'next/dynamic'
+
+const DemoMapSpecies = dynamic(() => import('./DemoMapSpecies.jsx'), { ssr: false })
+const DemoMapObservations = dynamic(() => import('./DemoMapObservations.jsx'), { ssr: false })
+
+export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false, map }) {
   const {
     general_info: generalInfo,
     grupos_biologicos: gruposBiologicos,
@@ -36,7 +41,8 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
-  // const appURL = `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}`
+  const appURL = `https://services.datasketch.co/org_sibhumboldt_sibdata_app/?region=${slug}`
+  /* `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}` */
   const [municipio, setMunicipio] = useState('')
   const [departamento, setDepartamento] = useState('')
   const [showSpecies, setShowSpecies] = useState(true)
@@ -176,7 +182,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
-                <div className='bg-white py-10'>
+                <div className='bg-white pt-5'>
                   {/* {info?.charts.length === 0
                     ? (<div className='text-center text-3xl py-20 w-4/5 mx-auto'>
                       Conoce más en {' '}
@@ -257,16 +263,19 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                       {showSpecies && territorio &&
                         <>
                           <div className='mt-3'>
-                            {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2> */}
-                            <MapDepartmentSpecies data={territorio} isScale={isScale} slug={slug} />
+                            <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2>
+                            {/* <MapDepartmentSpecies data={territorio} isScale={isScale} slug={slug} /> */}
+                            <DemoMapSpecies data={map} isScale={isScale} />
                           </div>
                         </>
                       }
+
                       {showRemarks && territorio &&
                         <>
                           <div className='mt-3'>
                             {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2> */}
-                            <MapDepartmentObservations data={territorio} isScale={isScale} />
+                            {/* <MapDepartmentObservations data={territorio} isScale={isScale} /> */}
+                            <DemoMapObservations data={map} isScale={isScale} />
                           </div>
                         </>
                       }
@@ -321,7 +330,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         </div>
       </div>
       {/* explorador */}
-      {/* <div className='py-10 mx-auto w-10/12 max-w-screen-xl'>
+      <div className='py-10 mx-auto w-10/12 max-w-screen-xl'>
         <div className='mx-auto max-w-md text-center'>
           <div className='space-y-6'>
             <h2 className='font-black font-lato text-3xl 3xl:text-4xl'>
@@ -348,7 +357,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>
       <div>
         <iframe src={appURL} className='h-screen w-full'></iframe>
-      </div> */}
+      </div>
       {/* explorador */}
 
       {patrocinador.length !== 0 && <div className='py-10 bg-white'>
