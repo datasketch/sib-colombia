@@ -5,8 +5,8 @@ import * as d3Scale from 'd3-scale'
 import { useLegend } from '../hooks/useLegend'
 /* import removeAccents from '../lib/functions.js' */
 
-const DemoMapSpecies = ({ data }) => {
-  /* const data = DataMapColombia */
+const DemoMapSpecies = ({ data, isScale = false }) => {
+  const local = data.name.normalize('NFD').toLowerCase().replace(/[\u0300-\u036f]/g, '')
 
   const mapSpecies = data.features.map((d) => d.properties.n_especies)
   const maximum = Math.max(...mapSpecies)
@@ -26,7 +26,8 @@ const DemoMapSpecies = ({ data }) => {
 
   const handleEachFeature = (feature, layer) => {
     // feature.properties.n_especies / n_registros / label || name
-    const content = `<div class='popup'><div><strong>${feature.properties.n_especies} especies</strong></div><div>${feature.properties.label}</div><a href="/${feature.properties.label.normalize('NFD').toLowerCase().replace(/[\u0300-\u036f]/g, '')}" target="_blank">Ver más</a></div>`
+    const content = `<div class='popup'><div><strong>${feature.properties.n_especies} especies</strong></div><div>${feature.properties.label}</div><a href=${local === 'colombia' ? `/${feature.properties.label.normalize('NFD').toLowerCase().replace(/[\u0300-\u036f]/g, '').replace(/,/g, '').split(' ').join('-')}` : `/${local}/${feature.properties.label.normalize('NFD').toLowerCase().replace(/[\u0300-\u036f]/g, '').split(' ').join('-')}`} target="_blank">Ver más</a></div>`
+
     // layer.bindTooltip(content)
     layer.bindPopup(content)
     layer.setStyle({
@@ -40,7 +41,7 @@ const DemoMapSpecies = ({ data }) => {
 
   return (
     <>
-      <MapContainer center={center} zoom={5} style={{ height: 600, background: 'transparent' }}>
+      <MapContainer center={center} zoom={!isScale ? 5 : 8} scrollWheelZoom={false} style={{ height: 600, background: 'transparent' }}>
         <GeoJSON data={data} onEachFeature={handleEachFeature} eventHandlers={{
           mouseover: (event) => {
             event.layer.openPopup()

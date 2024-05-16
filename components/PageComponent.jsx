@@ -249,7 +249,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                       <>
                         <div className='mt-3'>
                           {/* <MapDepartmentSpecies data={DataMapColombia} isScale={isScale} /> */}
-                          <DemoMapSpecies data={map} />
+                          <DemoMapSpecies data={map} isScale={isScale} />
                         </div>
                       </>
                     }
@@ -261,7 +261,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                         <div className='mt-3'>
                           {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2> */}
                           {/* <MapDepartmentObservations data={territorio} isScale={isScale} /> */}
-                          <DemoMapObservations data={map} />
+                          <DemoMapObservations data={map} isScale={isScale} />
                         </div>
                       </>
                     }
