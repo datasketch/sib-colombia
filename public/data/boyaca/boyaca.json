@@ -44299,7 +44299,7 @@
       "label": "Arcabuco"
     },
     {
-      "slug": "belen-boy",
+      "slug": "belen",
       "label": "Belén"
     },
     {
@@ -44319,11 +44319,11 @@
       "label": "Boyacá"
     },
     {
-      "slug": "briceno-boy",
+      "slug": "briceno",
       "label": "Briceño"
     },
     {
-      "slug": "buenavista-boy",
+      "slug": "buenavista",
       "label": "Buenavista"
     },
     {
@@ -44331,7 +44331,7 @@
       "label": "Busbanzá"
     },
     {
-      "slug": "caldas-boy",
+      "slug": "caldas",
       "label": "Caldas"
     },
     {
@@ -44463,7 +44463,7 @@
       "label": "Jenesano"
     },
     {
-      "slug": "jerico-boy",
+      "slug": "jerico",
       "label": "Jericó"
     },
     {
@@ -44475,7 +44475,7 @@
       "label": "La Uvita"
     },
     {
-      "slug": "la-victoria-boy",
+      "slug": "la-victoria",
       "label": "La Victoria"
     },
     {
@@ -44491,7 +44491,7 @@
       "label": "Maripí"
     },
     {
-      "slug": "miraflores-boy",
+      "slug": "miraflores",
       "label": "Miraflores"
     },
     {
@@ -44535,7 +44535,7 @@
       "label": "Pachavita"
     },
     {
-      "slug": "paez-boy",
+      "slug": "paez",
       "label": "Páez"
     },
     {
@@ -44627,7 +44627,7 @@
       "label": "San Pablo de Borbur"
     },
     {
-      "slug": "santa-maria-boy",
+      "slug": "santa-maria",
       "label": "Santa María"
     },
     {
