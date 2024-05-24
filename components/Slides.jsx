@@ -7,17 +7,20 @@ import GraphsTopMun from './GraphsTopMun'
 const ListRender = ({ texts }) => {
   const text = texts.split(': ')[0]
   const joinText = text + ':'
+  const listItimes = texts.split(': ')[1].split(', ')
   return (
     <>
       <ReactMarkdown className='3xl:text-lg'>
         {joinText}
       </ReactMarkdown>
       <ul className='pl-8'>
-        {texts.split(': ')[1].split(', ').map((element, i) => {
+        {listItimes.map((element, i) => {
+          const lastItem = i === listItimes.length - 1
+          const elementText = lastItem ? element.replace(/\.$/, '') : element
           return (
             <li key={i} className='list-disc' >
               <ReactMarkdown className='3xl:text-lg'>
-                {element}
+                {elementText}
               </ReactMarkdown>
             </li>
           )

@@ -3,7 +3,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as TooltipPieChart, L
 import { formatNumbers } from '../lib/functions'
 
 export default function InfoPublishers ({ total, data, region }) {
-  /* const totalPublishers = total.length */
+  const totalPublishers = total.length
 
   /* console.log(total, 'total') */
 
@@ -177,9 +177,23 @@ export default function InfoPublishers ({ total, data, region }) {
     <div className="flex flex-row gap-5">
       <div className='bg-white flex flex-col text-black-2 py-6 px-7 shadow-default hover:shadow-select w-[500px]'>
         <h2 className="text-xl font-bold">Total de publicadores</h2>
-        <div className="flex flex-col justify-center items-center h-full space-y-5">
-            <p className="text-3xl">Nacionales: {totalPublishersNational} </p>
-            <p className="text-xl">Internacionales: {nTypeInternational}</p>
+        <div className='mt-8 flex flex-row justify-center gap-16 items-center'>
+          <div className='flex flex-col justify- items-center gap-1'>
+            <h3 className='text-xl'>{totalPublishers} <span className='text-lg'>en total</span></h3>
+            {/* <p>Publicadores en total</p> */}
+          </div>
+          <div className="flex flex-col justify-center items-center h-full space-y-5">
+            <div className='bg-dartmouth-green p-3 flex flex-col justify-center items-center'>
+              <p className="text-white font-black text-3xl">{totalPublishersNational}</p>
+              <p className="text-white text-xl">Nacionales</p>
+            </div>
+            {/* <div className='bg-dartmouth-green/20 w-20 h-[1px]' /> */}
+            <div className='flex flex-col justify-center items-center'>
+              <p className="font-black text-3xl">{nTypeInternational}</p>
+              <p className="text-xl">Internacionales</p>
+            </div>
+          </div>
+          {/* <p className="text-xl">{totalPublishers} Publicadores en total</p> */}
         </div>
       </div>
       <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[521px] h-[284px]'>

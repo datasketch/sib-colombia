@@ -263,7 +263,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                       {showSpecies && territorio &&
                         <>
                           <div className='mt-3'>
-                            <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2>
+                            {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2> */}
                             {/* <MapDepartmentSpecies data={territorio} isScale={isScale} slug={slug} /> */}
                             <DemoMapSpecies data={map} isScale={isScale} />
                           </div>
