@@ -18,13 +18,18 @@ const SelectableV2 = ({ data, optionSelected, placeHolder, titles, disabled = fa
     }
   }
 
+  const handleOptionChange = (e) => {
+    optionSelected(e)
+    setOpen(false)
+  }
+
   return (
     <div className='relative' ref={refSelectable}>
       <button type='button' onClick={() => setOpen(prevState => !prevState)} disabled={disabled} className={classNames('border border-black flex items-center justify-between px-2.5 py-2 h-full w-full truncate', disabled ? 'bg-white-smoke' : '')}>
         <span>{placeHolder}</span>
         <img className={classNames(open ? '-rotate-90' : 'rotate-90', ' w-6 h-3')} src='/images/arrow-black.svg' />
       </button>
-      <form onChange={optionSelected} className={classNames('flex flex-col max-h-48 w-full overflow-y-scroll top-full py-2 px-2 bg-white-smoke', open ? 'absolute z-10' : 'hidden')} >
+      <form onChange={handleOptionChange} className={classNames('flex flex-col max-h-48 w-full overflow-y-scroll top-full py-2 px-2 bg-white-smoke', open ? 'absolute z-10' : 'hidden')} >
         {data?.sort().map((el, index) => {
           if (el === undefined) { return null }
           if (index === 0 && el.value === 'colombia') {

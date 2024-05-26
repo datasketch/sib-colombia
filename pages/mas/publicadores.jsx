@@ -14,7 +14,7 @@ import { regionsDropdown } from '../../lib/util'
 import { clearText } from '../../lib/functions'
 import SelectableV2 from '../../components/SelectableV2'
 
-export default function publicadores () {
+export default function publicadores() {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
   const PageSize = 15
 
@@ -34,10 +34,19 @@ export default function publicadores () {
   const [selectedCountry, setSelectedCountry] = useState('')
   const [selectedOrganizacion, setSelectedOrganizacion] = useState('')
   const [areaDropdowm, setAreaDropdown] = useState([])
+  const [isOrgDisabled, setIsOrgDisabled] = useState(true)
 
   const [render, setRender] = useState(false)
   const citys = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.pais_publicacion], []))]
   const typeOrganization = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.tipo_organizacion], []))]
+  /* const typeOrganization = [...new Set(
+    publishers.reduce((acc, curr) => {
+      const type = curr.tipo_organizacion !== undefined ? curr.tipo_organizacion : "Internacional"
+      return [...acc, type]
+    }, [])
+  )] */
+
+  /* console.log(typeOrganization, 'typeOrganization') */
 
   /* function filterBySearch (publisher) {
     if (!query) return true
@@ -50,12 +59,12 @@ export default function publicadores () {
     return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase()) || region?.includes(normalizedQuery)
   } */
 
-  function filterByCountry (publisher) {
+  function filterByCountry(publisher) {
     const { pais_publicacion: paisPublicacion } = publisher
     return paisPublicacion?.includes(selectedCountry)
   }
 
-  function filterByOrgType (publisher) {
+  function filterByOrgType(publisher) {
     const { tipo_organizacion: organizacion = '' } = publisher
     return organizacion?.includes(selectedOrganizacion)
   }
@@ -85,6 +94,13 @@ export default function publicadores () {
     }
   }
 
+  const resetRegion = () => {
+    setSelectedRegion('')
+    setPublicadors(publishers)
+    setAreaDropdown([])
+    router.push('/mas/publicadores')
+  }
+
   const handleAreaChange = ({ target }) => {
     const { value } = target
     setDisplay(false)
@@ -96,6 +112,12 @@ export default function publicadores () {
     setDepartmentData(null)
   }
 
+  const resetArea = () => {
+    setSelectedArea('')
+    setPublicadors(publishers)
+    router.push('/mas/publicadores')
+  }
+
   useEffect(() => {
     setSelectedArea('')
   }, [query])
@@ -103,13 +125,27 @@ export default function publicadores () {
   const handleCountryChange = ({ target }) => {
     const { value } = target
     setSelectedCountry(value)
+    if (value === 'CO') {
+      setIsOrgDisabled(false)
+    } else {
+      setIsOrgDisabled(true)
+      setSelectedOrganizacion('')
+    }
     setDisplay(false)
+  }
+
+  const resetCountry = () => {
+    setSelectedCountry('')
   }
 
   const handleOrganizacionChange = ({ target }) => {
     const { value } = target
     setSelectedOrganizacion(value || '')
     setDisplay(false)
+  }
+
+  const resetOrg = () => {
+    setSelectedOrganizacion('')
   }
 
   const filteredPublishers = publicadors
@@ -182,6 +218,9 @@ export default function publicadores () {
         <div className='flex flex-col gap-2'>
           <h3 className='font-bold'>Región</h3>
           <SelectableV2 key={render} placeHolder={selectedRegion || 'Selecciona una opción'} data={regionsDropdown} optionSelected={handleRegionChange} />
+          <button type='button' onClick={resetRegion} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
+            <img src='/images/icon-reset.svg' />
+          </button>
         </div>
 
         {
@@ -189,6 +228,9 @@ export default function publicadores () {
             <div className='flex flex-col gap-2'>
               <h3 className='font-bold'>Municipios</h3>
               <SelectableV2 key={render} placeHolder={clearText(selectedArea) || 'Selecciona una opción'} data={areaDropdowm} optionSelected={handleAreaChange} />
+              <button type='button' onClick={resetArea} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
+                <img src='/images/icon-reset.svg' />
+              </button>
             </div>
           )
         }
@@ -197,10 +239,16 @@ export default function publicadores () {
         <div className='flex flex-col gap-2'>
           <h3 className='font-bold'>País del Publicador</h3>
           <Selectable key={render} placeHolder={selectedCountry || 'Selecciona una opción'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
+          <button type='button' onClick={resetCountry} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
+            <img src='/images/icon-reset.svg' />
+          </button>
         </div>
         <div className='flex flex-col gap-2'>
           <h3 className='font-bold'>Tipo de Organización</h3>
-          <Selectable key={render} placeHolder={selectedOrganizacion || 'Selecciona una opción'} optionSelected={handleOrganizacionChange} data={typeOrganization} />
+          <Selectable key={render} placeHolder={selectedOrganizacion || 'Selecciona una opción'} optionSelected={handleOrganizacionChange} data={typeOrganization} disabled={isOrgDisabled} />
+          <button type='button' onClick={resetOrg} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
+            <img src='/images/icon-reset.svg' />
+          </button>
         </div>
         <div className='flex items-center lg:justify-center border md:row-start-1 md:col-start-2 lg:col-start-5  border-black opacity-75 hover:opacity-100 py-2 px-2 h-max'>
           <button type='button' onClick={clearFilters} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>

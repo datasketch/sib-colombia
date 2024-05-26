@@ -22,6 +22,7 @@ const CardTematicas = props => {
       <div className='py-10 bg-white'>
         <div className='grid lg:grid-cols-2 gap-y-6 gap-x-36 w-10/12 mx-auto'>
           {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr: crRegister, en: enRegister, vu: vuRegister }, key) => {
+            /* console.log(speciesList, 'speciesList') */
             const title = capitalize(slug.replace('amenazadas-', ''))
             const crVal = validateDifNa(crRegister)
             const enVal = validateDifNa(enRegister)
@@ -45,10 +46,6 @@ const CardTematicas = props => {
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <ColorLabel backgroundColor={'bg-red-cr'} label={'CR'} />
-                      {/* <div className='flex flex-row gap-1 items-center'>
-                        <div className='rounded-full bg-red-cr w-3 h-3' />
-                        <b>CR</b>
-                      </div> */}
                       <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
@@ -58,10 +55,6 @@ const CardTematicas = props => {
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <ColorLabel backgroundColor={'bg-orange-en'} label={'EN'} />
-                      {/* <div className='flex flex-row gap-1 items-center'>
-                        <div className='rounded-full bg-orange-en w-3 h-3' />
-                        <b>EN</b>
-                      </div> */}
                       <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
@@ -71,10 +64,6 @@ const CardTematicas = props => {
                   <div className='flex flex-col items-center'>
                     <div className='flex items-start'>
                       <ColorLabel backgroundColor={'bg-yellow-vu'} label={'VU'} />
-                      {/* <div className='flex flex-row gap-1 items-center'>
-                        <div className='rounded-full bg-yellow-vu w-3 h-3' />
-                        <b>VU</b>
-                      </div> */}
                       <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
                         <img src='/images/icon-more.svg' />
                       </Tooltip>
@@ -352,112 +341,152 @@ const CardTematicas = props => {
   const vuVal = validateDifNa(info?.vu_registros)
   const widthTotal = crVal + enVal + vuVal
 
-  return (
-    <div className='bg-white py-10'>
-      <div className='w-10/12 mx-auto flex flex-col md:flex-row gap-6 justify-between'>
-        <div className='max-w-[45%] w-full shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
-          <div className='flex flex-col items-start justify-start'>
-            <span>Categoría UICN {capitalize(info?.slug.replace('amenazadas-', ''))}</span>
-            <span className='text-6xl font-black font-inter'>
-              {formatNumbers(info?.especies)}
-              <div className='border-t border-t-dartmouth-green' />
-            </span>
-            <div className='font-black font-inter text-lg'>Especies amenazadas {/* de {info?.label} */}
-              {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
-                <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
-              </CustomTooltip>}
+  if (info && info.species_list) {
+    const speciesListTable = info.species_list
+
+    const specieAmenazadaNalEn = []
+    const specieAmenazadaNalCr = []
+    const specieAmenazadaNalVu = []
+
+    speciesListTable.forEach(specie => {
+      if (specie.slug_tematica === 'amenazadas-nacional-en') {
+        specieAmenazadaNalEn.push(specie)
+      } else if (specie.slug_tematica === 'amenazadas-nacional-cr') {
+        specieAmenazadaNalCr.push(specie)
+      } else if (specie.slug_tematica === 'amenazadas-nacional-vu') {
+        specieAmenazadaNalVu.push(specie)
+      }
+    })
+
+    const specieAmenazadaGlobalEn = []
+    const specieAmenazadaGlobalCr = []
+    const specieAmenazadaGlobalVu = []
+
+    speciesListTable.forEach(specie => {
+      if (specie.slug_tematica === 'amenazadas-global-en') {
+        specieAmenazadaGlobalEn.push(specie)
+      } else if (specie.slug_tematica === 'amenazadas-global-cr') {
+        specieAmenazadaGlobalCr.push(specie)
+      } else if (specie.slug_tematica === 'amenazadas-global-vu') {
+        specieAmenazadaGlobalVu.push(specie)
+      }
+    })
+
+    return (
+      <div className='bg-white py-10'>
+        <div className='w-10/12 mx-auto flex flex-col md:flex-row gap-6 justify-between'>
+          <div className='max-w-[45%] w-full shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
+            <div className='flex flex-col items-start justify-start'>
+              <span>Categoría UICN {capitalize(info?.slug.replace('amenazadas-', ''))}</span>
+              <span className='text-6xl font-black font-inter'>
+                {formatNumbers(info?.especies)}
+                <div className='border-t border-t-dartmouth-green' />
+              </span>
+              <div className='font-black font-inter text-lg'>Especies amenazadas{/* de {info?.label} */}
+                {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
+                  <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
+                </CustomTooltip>}
+              </div>
+            </div>
+            <div className='flex flex-col justify-center h-full w-full'>
+              <div className='font-lato flex justify-evenly gap-x-4'>
+                <div className='flex flex-col items-center'>
+                  <div className='flex items-start'>
+                    <ColorLabel backgroundColor={'bg-red-cr'} label={'CR'} />
+                    <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
+                      <img src='/images/icon-more.svg' />
+                    </Tooltip>
+                  </div>
+                  <span>{formatNumbers(info?.cr)}</span>
+                </div>
+                <div className='flex flex-col items-center'>
+                  <div className='flex items-start'>
+                    <ColorLabel backgroundColor={'bg-orange-en'} label={'EN'} />
+                    <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
+                      <img src='/images/icon-more.svg' />
+                    </Tooltip>
+                  </div>
+                  <span>{formatNumbers(info?.en)}</span>
+                </div>
+                <div className='flex flex-col items-center'>
+                  <div className='flex items-start'>
+                    <ColorLabel backgroundColor={'bg-yellow-vu'} label={'VU'} />
+                    <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
+                      <img src='/images/icon-more.svg' />
+                    </Tooltip>
+                  </div>
+                  <span>{formatNumbers(info?.vu)}</span>
+                </div>
+              </div>
+              <div className='flex'>
+                <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(crVal, widthTotal) }}></div>
+                <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(enVal, widthTotal) }}></div>
+                <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vuVal, widthTotal) }}></div>
+              </div>
+              <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
+                <p className='inline-block '><b>{formatNumbers(info?.registros)}</b></p>
+                <p className='inline-block'>Observaciones</p>
+              </div>
             </div>
           </div>
-          <div className='flex flex-col justify-center h-full w-full'>
-            <div className='font-lato flex justify-evenly gap-x-4'>
-              <div className='flex flex-col items-center'>
-                <div className='flex items-start'>
-                  <ColorLabel backgroundColor={'bg-red-cr'} label={'CR'} />
-                  <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
-                    <img src='/images/icon-more.svg' />
-                  </Tooltip>
-                </div>
-                <span>{formatNumbers(info?.cr)}</span>
-              </div>
-              <div className='flex flex-col items-center'>
-                <div className='flex items-start'>
-                  <ColorLabel backgroundColor={'bg-orange-en'} label={'EN'} />
-                  <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
-                    <img src='/images/icon-more.svg' />
-                  </Tooltip>
-                </div>
-                <span>{formatNumbers(info?.en)}</span>
-              </div>
-              <div className='flex flex-col items-center'>
-                <div className='flex items-start'>
-                  <ColorLabel backgroundColor={'bg-yellow-vu'} label={'VU'} />
-                  <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
-                    <img src='/images/icon-more.svg' />
-                  </Tooltip>
-                </div>
-                <span>{formatNumbers(info?.vu)}</span>
-              </div>
-            </div>
-            <div className='flex'>
-              <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(crVal, widthTotal) }}></div>
-              <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(enVal, widthTotal) }}></div>
-              <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(vuVal, widthTotal) }}></div>
-            </div>
-            <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
-              <p className='inline-block '><b>{formatNumbers(info?.registros)}</b></p>
-              <p className='inline-block'>Observaciones</p>
-            </div>
+          <div className='md:w-[45%] flex flex-col justify-evenly gap-y-3 '>
+            {/*  <Table tabledata={info?.species_list} /> */}
+
+            <BarPercent
+              cat='amenazadas'
+              municipalityflag={municipalityflag}
+              label='en peligro crítico'
+              bgColor={'bg-red-cr'}
+              region={region}
+              regionparent={parentlabel}
+              title={'CR'}
+              datatable={info.slug === 'amenazadas-global' ? specieAmenazadaGlobalCr : specieAmenazadaNalCr}
+              especies={info?.cr}
+              parentEspecies={info?.estimadas_cr || info?.parent_cr}
+              registros={info?.cr_registros || info?.parent_cr}
+              colObservadas={info?.parent_cr}
+            />
+
+            <BarPercent
+              cat='amenazadas'
+              municipalityflag={municipalityflag}
+              label='en peligro'
+              regionparent={parentlabel}
+              bgColor={'bg-orange-en'}
+              region={region}
+              title={'EN'}
+              datatable={info.slug === 'amenazadas-global' ? specieAmenazadaGlobalEn : specieAmenazadaNalEn}
+              especies={info?.en}
+              parentEspecies={info?.estimadas_en || info?.parent_en}
+              registros={info?.en_registros || info?.parent_en}
+              colObservadas={info?.parent_en}
+            />
+            <BarPercent
+              cat='amenazadas'
+              municipalityflag={municipalityflag}
+              label='vulnerables'
+              regionparent={parentlabel}
+              bgColor={'bg-yellow-vu'}
+              region={region}
+              title={'VU'}
+              datatable={info.slug === 'amenazadas-global' ? specieAmenazadaGlobalVu : specieAmenazadaNalVu}
+              especies={info?.vu}
+              parentEspecies={info?.estimadas_vu || info?.parent_vu}
+              registros={info?.vu_registros || info?.parent_vu}
+              colObservadas={info?.parent_vu}
+            />
           </div>
-        </div>
-        <div className='md:w-[45%] flex flex-col justify-evenly gap-y-3 '>         {/*  <Table tabledata={info?.species_list} /> */}
-
-          <BarPercent
-            cat='amenazadas'
-            municipalityflag={municipalityflag}
-            label='en peligro crítico'
-            bgColor={'bg-red-cr'}
-            region={region}
-            regionparent={parentlabel}
-            title={'CR'}
-            especies={info?.cr}
-            parentEspecies={info?.estimadas_cr || info?.parent_cr}
-            registros={info?.cr_registros || info?.parent_cr}
-            colObservadas={info?.parent_cr}
-          />
-
-          <BarPercent
-            cat='amenazadas'
-            municipalityflag={municipalityflag}
-            label='en peligro'
-            regionparent={parentlabel}
-            bgColor={'bg-orange-en'}
-            region={region}
-            title={'EN'}
-            especies={info?.en}
-            parentEspecies={info?.estimadas_en || info?.parent_en}
-            registros={info?.en_registros || info?.parent_en}
-            colObservadas={info?.parent_en}
-          />
-          <BarPercent
-            cat='amenazadas'
-            municipalityflag={municipalityflag}
-            label='vulnerables'
-            regionparent={parentlabel}
-            bgColor={'bg-yellow-vu'}
-            region={region}
-            title={'VU'}
-            especies={info?.vu}
-            parentEspecies={info?.estimadas_vu || info?.parent_vu}
-            registros={info?.vu_registros || info?.parent_vu}
-            colObservadas={info?.parent_vu}
-          />
-
         </div>
       </div>
-    </div>
+    )
 
+  }
+
+  return (
+    null
   )
 }
+
 CardTematicas.propTypes = {
   info: PropTypes.object,
   selected: PropTypes.string,
@@ -465,3 +494,4 @@ CardTematicas.propTypes = {
 }
 
 export default CardTematicas
+

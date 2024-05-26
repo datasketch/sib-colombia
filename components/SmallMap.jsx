@@ -10,16 +10,16 @@ const SmallMap = ({ data, isScale = false }) => {
   }).reverse()
 
   const geoJSONStyle = {
-    fillColor: '#B3CFC0', // Cambia el color de relleno según tu preferencia
-    color: '##B2CECF', // Cambia el color del borde según tu preferencia
-    weight: 0, // Grosor del borde
-    opacity: 0, // Opacidad del borde
-    fillOpacity: 1 // Opacidad del rellen
+    fillColor: '#B3CFC0',
+    color: '##B2CECF',
+    weight: 0,
+    opacity: 0,
+    fillOpacity: 1
   }
 
   return (
     <>
-      <MapContainer center={center} zoom={!isScale ? 3 : 6} scrollWheelZoom={false} style={{ height: 200, width: 200, background: 'transparent', position: 'sticky' }}>
+      <MapContainer center={center} zoom={!isScale ? 3 : 7} scrollWheelZoom={false} style={{ height: 200, width: 200, background: 'transparent', position: 'sticky' }} zoomControl={false} attributionControl={false}>
         <GeoJSON data={data} style={geoJSONStyle} />
       </MapContainer>
     </>
