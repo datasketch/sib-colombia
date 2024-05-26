@@ -13,6 +13,15 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
   const widthColObservadas = calculateWidth(+colObservadas, +parentEspecies)
   const widthColEstimadas = calculateWidth(widthBarGeneral, +parentEspecies)
 
+  const capitalizeWords = (str) => {
+    if (typeof str !== 'string') {
+      return ''
+    }
+    return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')
+  }
+
+  const capitalizeRegion = capitalizeWords(regionparent)
+
   return (
     <div>
       <div className='font-bold font-inter text-lg '>
@@ -46,7 +55,7 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
                 {
                   municipalityflag
                     ? (
-                      <span className="text-black-3">Especies observadas {regionparent} ({parentEspecies})</span>
+                      <span className="text-black-3">Especies observadas {capitalizeRegion} ({parentEspecies})</span>
                       )
                     : (
                       <span className='text-black-3'>Especies observadas Colombia ({parentEspecies}) {cat === '' ? '' : '| Especies estimadas Colombia'}</span>
