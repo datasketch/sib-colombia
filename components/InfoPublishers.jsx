@@ -5,8 +5,6 @@ import { formatNumbers } from '../lib/functions'
 export default function InfoPublishers ({ total, data, region }) {
   const totalPublishers = total.length
 
-  /* console.log(total, 'total') */
-
   const internationalPublisher = data.find(item => item.tipo_organizacion === 'Internacional')
 
   const nTypeInternational = internationalPublisher ? internationalPublisher.n_tipo : 0
@@ -146,9 +144,10 @@ export default function InfoPublishers ({ total, data, region }) {
       const { label } = payload[0].payload
       return (
         <div className="bg-white p-1.5 rounded shadow-lg w-2/3">
-          <p className="label text-xs">{`Tipo de organización: ${name}`}</p>
+          {/* Tipo de organización: Internacional, cantidad de publicadores: 63 (60%) */}
+          <p className="label text-xs">{`Tipo de organización: ${name}, cantidad de publicadores: ${formatNumbers(label)} (${payload[0].value.toFixed(0)}%)`}</p>
           {/* <p className="text-xs">{`Porcentaje de publicador: ${payload[0].value.toFixed(0)}%`}</p> */}
-          <p className='text-xs'>{`Cantidad de publicadores por tipo de organización: ${formatNumbers(label)} (${payload[0].value.toFixed(0)}%)`}</p>
+          {/* <p className='text-xs'>{`Cantidad de publicadores por tipo de organización: ${formatNumbers(label)} (${payload[0].value.toFixed(0)}%)`}</p> */}
         </div>
       )
     }
@@ -163,9 +162,9 @@ export default function InfoPublishers ({ total, data, region }) {
       const { label } = payload[0].payload
       return (
         <div className="bg-white p-1.5 rounded shadow-lg w-2/3">
-          <p className="text-xs font-medium">{`Tipo de organización: ${name}`}</p>
+          <p className="text-xs font-medium">{`Tipo de organización: ${name}, cantidad de observaciones: ${formatNumbers(label)} (${payload[0].value.toFixed(0)}%)`}</p>
           {/* <p className="text-xs">{`Porcentaje de publicador: ${payload[0].value.toFixed(0)}%`}</p> */}
-          <p className='text-xs'>{`Cantidad de observaciones por tipo de organización: ${formatNumbers(label)} (${payload[0].value.toFixed(0)}%)`}</p>
+          {/* <p className='text-xs'>{`Cantidad de observaciones por tipo de organización: ${formatNumbers(label)} (${payload[0].value.toFixed(0)}%)`}</p> */}
         </div>
       )
     }

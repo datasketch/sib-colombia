@@ -22,7 +22,6 @@ const CardTematicas = props => {
       <div className='py-10 bg-white'>
         <div className='grid lg:grid-cols-2 gap-y-6 gap-x-36 w-10/12 mx-auto'>
           {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr: crRegister, en: enRegister, vu: vuRegister }, key) => {
-            /* console.log(speciesList, 'speciesList') */
             const title = capitalize(slug.replace('amenazadas-', ''))
             const crVal = validateDifNa(crRegister)
             const enVal = validateDifNa(enRegister)
@@ -479,7 +478,6 @@ const CardTematicas = props => {
         </div>
       </div>
     )
-
   }
 
   return (
@@ -494,4 +492,3 @@ CardTematicas.propTypes = {
 }
 
 export default CardTematicas
-

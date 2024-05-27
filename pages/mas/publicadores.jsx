@@ -14,7 +14,7 @@ import { regionsDropdown } from '../../lib/util'
 import { clearText } from '../../lib/functions'
 import SelectableV2 from '../../components/SelectableV2'
 
-export default function publicadores() {
+export default function publicadores () {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
   const PageSize = 15
 
@@ -59,12 +59,12 @@ export default function publicadores() {
     return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase()) || region?.includes(normalizedQuery)
   } */
 
-  function filterByCountry(publisher) {
+  function filterByCountry (publisher) {
     const { pais_publicacion: paisPublicacion } = publisher
     return paisPublicacion?.includes(selectedCountry)
   }
 
-  function filterByOrgType(publisher) {
+  function filterByOrgType (publisher) {
     const { tipo_organizacion: organizacion = '' } = publisher
     return organizacion?.includes(selectedOrganizacion)
   }
@@ -98,6 +98,7 @@ export default function publicadores() {
     setSelectedRegion('')
     setPublicadors(publishers)
     setAreaDropdown([])
+    setDisplay(false)
     router.push('/mas/publicadores')
   }
 
@@ -114,8 +115,23 @@ export default function publicadores() {
 
   const resetArea = () => {
     setSelectedArea('')
-    setPublicadors(publishers)
-    router.push('/mas/publicadores')
+    setAreaDropdown([])
+    setPublicadors([])
+    setDepartmentData(null)
+    setDisplay(true)
+    router.push(`/mas/publicadores?region=${query}`)
+
+    const found = publishersExtend.find(e => e.name === query)
+    if (found && found.extra) {
+      setAreaDropdown(found.extra.map(f => {
+        return {
+          label: clearText(f.name),
+          value: f.name
+        }
+      }))
+      setPublicadors(found.list)
+      setDepartmentData(found.graph)
+    }
   }
 
   useEffect(() => {
@@ -217,20 +233,24 @@ export default function publicadores() {
         </div> */}
         <div className='flex flex-col gap-2'>
           <h3 className='font-bold'>Región</h3>
-          <SelectableV2 key={render} placeHolder={selectedRegion || 'Selecciona una opción'} data={regionsDropdown} optionSelected={handleRegionChange} />
-          <button type='button' onClick={resetRegion} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
-            <img src='/images/icon-reset.svg' />
-          </button>
+          {<div className='flex flex-row gap-2'>
+            <SelectableV2 key={render} placeHolder={selectedRegion || 'Selecciona una opción'} data={regionsDropdown} optionSelected={handleRegionChange} />
+            <button type='button' onClick={resetRegion} value={'reset'}>
+              <img src='/images/icon-reset.svg' />
+            </button>
+          </div>}
         </div>
 
         {
           areaDropdowm.length > 0 && (
             <div className='flex flex-col gap-2'>
               <h3 className='font-bold'>Municipios</h3>
-              <SelectableV2 key={render} placeHolder={clearText(selectedArea) || 'Selecciona una opción'} data={areaDropdowm} optionSelected={handleAreaChange} />
-              <button type='button' onClick={resetArea} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
-                <img src='/images/icon-reset.svg' />
-              </button>
+              <div className='flex flex-row gap-2'>
+                <SelectableV2 key={render} placeHolder={clearText(selectedArea) || 'Selecciona una opción'} data={areaDropdowm} optionSelected={handleAreaChange} />
+                <button type='button' onClick={resetArea} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
+                  <img src='/images/icon-reset.svg' />
+                </button>
+              </div>
             </div>
           )
         }
@@ -238,17 +258,21 @@ export default function publicadores() {
 
         <div className='flex flex-col gap-2'>
           <h3 className='font-bold'>País del Publicador</h3>
-          <Selectable key={render} placeHolder={selectedCountry || 'Selecciona una opción'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
-          <button type='button' onClick={resetCountry} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
-            <img src='/images/icon-reset.svg' />
-          </button>
+          <div className='flex flex-row gap-2'>
+            <Selectable key={render} placeHolder={selectedCountry || 'Selecciona una opción'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
+            <button type='button' onClick={resetCountry} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
+              <img src='/images/icon-reset.svg' />
+            </button>
+          </div>
         </div>
         <div className='flex flex-col gap-2'>
           <h3 className='font-bold'>Tipo de Organización</h3>
-          <Selectable key={render} placeHolder={selectedOrganizacion || 'Selecciona una opción'} optionSelected={handleOrganizacionChange} data={typeOrganization} disabled={isOrgDisabled} />
-          <button type='button' onClick={resetOrg} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
-            <img src='/images/icon-reset.svg' />
-          </button>
+          <div className='flex flex-row gap-2'>
+            <Selectable key={render} placeHolder={selectedOrganizacion || 'Selecciona una opción'} optionSelected={handleOrganizacionChange} data={typeOrganization} disabled={isOrgDisabled} />
+            <button type='button' onClick={resetOrg} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
+              <img src='/images/icon-reset.svg' />
+            </button>
+          </div>
         </div>
         <div className='flex items-center lg:justify-center border md:row-start-1 md:col-start-2 lg:col-start-5  border-black opacity-75 hover:opacity-100 py-2 px-2 h-max'>
           <button type='button' onClick={clearFilters} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>

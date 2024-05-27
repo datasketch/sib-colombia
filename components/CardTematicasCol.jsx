@@ -476,7 +476,6 @@ const CardTematicasCol = props => {
         </div>
       </div>
     )
-
   }
 
   return (
