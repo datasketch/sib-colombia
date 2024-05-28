@@ -11,7 +11,7 @@ const SmallMap = ({ data, isScale = false }) => {
 
   const geoJSONStyle = {
     fillColor: '#B3CFC0',
-    color: '##B2CECF',
+    color: '#B2CECF',
     weight: 0,
     opacity: 0,
     fillOpacity: 1
@@ -19,9 +19,16 @@ const SmallMap = ({ data, isScale = false }) => {
 
   return (
     <>
-      <MapContainer center={center} zoom={!isScale ? 3 : 7} scrollWheelZoom={false} style={{ height: 200, width: 200, background: 'transparent', position: 'sticky' }} zoomControl={false} attributionControl={false}>
-        <GeoJSON data={data} style={geoJSONStyle} />
-      </MapContainer>
+      <div className='flex flex-row gap-6'>
+        <div className='mt-5 cursor-default'>
+          <MapContainer center={center} zoom={!isScale ? 3 : 6} scrollWheelZoom={false} style={{ height: 200, width: 200, background: 'transparent', position: 'sticky' }} zoomControl={false} attributionControl={false} dragging={false}>
+            <GeoJSON data={data} style={geoJSONStyle} />
+          </MapContainer>
+        </div>
+        <div className='w-[100px] h-[123px]'>
+          <img src='/images/mapa-co.svg' alt='mapa-co' />
+        </div>
+      </div>
     </>
   )
 

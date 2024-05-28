@@ -49,13 +49,13 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
                       <span className="text-black-3">Especies observadas {regionparent} ({parentEspecies})</span>
                       )
                     : (
-                      <span className='text-black-3'>Especies observadas Colombia ({parentEspecies}) {cat === '' ? '' : '| Especies estimadas Colombia'}</span>
+                      <span className='text-black-3'>Especies observadas Colombia  ANGELA({parentEspecies}) {cat === '' ? '' : '| Especies estimadas Colombia'}</span>
                       )
                 }
               </p>
               )
         }
-        {(region !== 'Colombia' && !municipalityflag && cat === 'amenazadas')
+        {(region !== 'Colombia' && !municipalityflag)
           ? (<div className='flex'>
             <div
               className={classNames(bgColor, textColor, 'text-xs pl-px h-4 min-w-[3.5%]')}

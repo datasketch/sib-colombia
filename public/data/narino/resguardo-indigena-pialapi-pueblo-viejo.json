@@ -17,7 +17,9 @@
     "registros_region_total_str": "1.697",
     "main_text": "A través del SiB Colombia se han publicado 1.697 observaciones\npara el territorios indígenas de Pialapí Pueblo-Viejo. Estos datos hacen referencia a un total de\n411 especies.",
     "referencia": [],
-    "credito_foto": []
+    "credito_foto": [],
+    "parent": "colombia",
+    "parent_label": "Colombia"
   },
   "nav_tematica": {
     "slug": "0",
