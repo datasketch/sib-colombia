@@ -177,12 +177,12 @@ export default function InfoPublishers ({ total, data, region }) {
       <div className='bg-white flex flex-col text-black-2 py-6 px-7 shadow-default hover:shadow-select w-[500px]'>
         <h2 className="text-xl font-bold">Total de publicadores</h2>
         <div className='mt-8 flex flex-row justify-center gap-16 items-center'>
-          <div className='flex flex-col justify- items-center gap-1'>
+          {/* <div className='flex flex-col justify- items-center gap-1'>
             <h3 className='text-xl'>{totalPublishers} <span className='text-lg'>en total</span></h3>
-            {/* <p>Publicadores en total</p> */}
-          </div>
+            <p>Publicadores en total</p>
+          </div> */}
           <div className="flex flex-col justify-center items-center h-full space-y-5">
-            <div className='bg-dartmouth-green p-3 flex flex-col justify-center items-center'>
+            <div className='bg-platinum p-3 flex flex-col justify-center items-center'>
               <p className="text-white font-black text-3xl">{totalPublishersNational}</p>
               <p className="text-white text-xl">Nacionales</p>
             </div>

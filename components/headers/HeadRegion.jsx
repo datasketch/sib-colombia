@@ -43,7 +43,7 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
 
           </div>
           <div className="flex flex-col md:flex-row max-h-48 justify-between gap-y-4 w-10/12 mx-auto -mt-9 md:-mt-0">
-            {!municipality
+            {!municipality && slug !== 'bogota-dc' && slug !== 'san-andres-y-providencia'
               ? (<div className="w-1/2 relative flex items-center">
                 <Concentric inner={especiesObservadas} outer={especiesEstimadas} movil={windowWidth < 450} />
 

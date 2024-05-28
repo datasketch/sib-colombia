@@ -19,13 +19,13 @@ const SmallMap = ({ data, isScale = false }) => {
 
   return (
     <>
-      <div className='flex flex-row gap-6'>
-        <div className='mt-5 cursor-default'>
+      <div className='flex flex-row mt-10 px-7'>
+        <div className='cursor-default'>
           <MapContainer center={center} zoom={!isScale ? 3 : 6} scrollWheelZoom={false} style={{ height: 200, width: 200, background: 'transparent', position: 'sticky' }} zoomControl={false} attributionControl={false} dragging={false}>
             <GeoJSON data={data} style={geoJSONStyle} />
           </MapContainer>
         </div>
-        <div className='w-[100px] h-[123px]'>
+        <div className='w-14 h-[123px]'>
           <img src='/images/mapa-co.svg' alt='mapa-co' />
         </div>
       </div>

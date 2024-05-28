@@ -577,15 +577,15 @@
       "id": "slide1",
       "layout": "title/(text|chart)",
       "title": "¿Cómo está Bogotá, D. C. frente al resto de Colombia?",
-      "description": "De las 79.831 especies observadas en Colombia,\ndepartamento de Bogotá, D. C. aporta 4.715, equivalentes a 1693.1%.\nDe estas 300 especies son endémicas.",
+      "description": "De las 79.831 especies observadas en Colombia,\ndepartamento de Bogotá, D. C. aporta 4.715, equivalentes a 5.9%.\nDe estas 300 especies son endémicas.",
       "waffle": [
-        {
-          "slug_region": "bogota-dc",
-          "especies_region_total": 4715
-        },
         {
           "slug_region": "colombia",
           "especies_region_total": 79831
+        },
+        {
+          "slug_region": "bogota-dc",
+          "especies_region_total": 4715
         }
       ]
     },
