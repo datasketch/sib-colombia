@@ -6,46 +6,30 @@ El Instituto Humboldt tiene como misión promover, coordinar y realizar investig
 
 ## Instalación
 
+### Frontend del sitio
+
+- Micrositios estáticos se generan a partir de la información en bases de datos.
+- Cada página usa plantillas repetibles para mostrar la misma estructura de información.
+- Las estructuras incluyen:
+  - Imágenes y banners específicos.
+  - Datos totales con textos en diferentes secciones.
+  - Gráficos que muestran contenido según el contexto.
+  - Textos explicativos y auto generados basados en la información de las bases de datos.
+
+### Visualización con Datasketch Apps
+
+- Las herramientas de Datasketch muestran datos en varios formatos y estilos, estructurados como tablas con metadatos.
+- Usan bases de datos del proyecto para mostrar información con diferentes tipos de visualización, adaptándose a los datos del usuario.
+- El servidor de visualización está hecho en R con Shiny y usa múltiples librerías de Javascript.
+- Las herramientas se mantienen fácilmente con todos los paquetes y librerías en un contenedor Docker.
+
+## Instalación
+
 Para la instalación del proyecto es necesario tener en cuenta las siguientes herramientas:
 
 - Un editor de código fuente como puede ser Visual Studio Code.
 - Necesitarás Git para clonar el [repositorio](https://github.com/datasketch/sib-colombia) de GitHub en tu máquina local. Puedes descargar Git desde [git-scm.com](https://git-scm.com/), e instalarlo según las instrucciones para tu sistema operativo (Windows, Linux, MacOs).
 - Instalar un administrador de paquetes como lo es npm para Node.js.
-
-## Infraestructura
-
-Este proyecto consta de una página web de contenido estático realizada con las siguientes tecnologías:
-
-- Node >=6.9.0
-- Next ^12.1.4
-- React ^17.0.2
-- Para estilos se utiliza tailwindcss ^3.1.6
-  - La configuración general de estilos se configura en el archivo tailwind.config.js
-- Para realizar los mapas de cada perfil se utiliza la librería react-simple-maps ^3.0.0
-- Para los tooltips se utiliza la librería react-tooltip ^4.5.1
-- Para las gráficas de pie charts se utiliza la librería recharts ^2.1.10
-
-## Componentes
-
-El proyecto consta de un componente FrontEnd que renderiza información estática y un componente BackEnd, base de datos.
-
-## Dependencias tecnológicas directas o con terceros
-
-Las siguientes dependencias deben instalarse utilizando el comando npm install:
-
-- react 17.0.2
-- tailwindcss 3.1.6
-- react-simple-maps 3.0.0
-- react-tooltip 4.5.1
-- recharts 2.1.10
-
-Ejemplo de instalación de dependencias:
-
-```bash
-  npm install react
-```
-
-## Instalación y despliegue
 
 ### Ejecutar el sitio localmente para desarrollo
 
@@ -64,6 +48,42 @@ Para compilar el sitio para producción se debe ejecutar el comando:
  ```bash
   npm run build
 ```
+
+## Infraestructura
+
+Este proyecto consta de una página web de contenido estático realizada con las siguientes tecnologías:
+
+- Node >=6.9.0
+- Next ^12.1.4
+- React ^17.0.2
+- Para estilos se utiliza tailwindcss ^3.1.6
+  - La configuración general de estilos se configura en el archivo tailwind.config.js
+- Para realizar los mapas de cada perfil se utiliza la librería leaflet ^1.9.4 y react-leaflet ^4.2.1
+- Para los tooltips se utiliza la librería react-tooltip ^4.5.1
+- Para las gráficas de pie charts se utiliza la librería recharts ^2.1.10
+
+## Dependencias tecnológicas directas o con terceros
+
+Las siguientes dependencias deben instalarse utilizando el comando npm install:
+
+- react 17.0.2
+- tailwindcss 3.1.6
+- leaflet 1.9.4
+- react-leaflet 4.2.1
+- react-tooltip 4.5.1
+- recharts 2.1.10
+
+Ejemplo de instalación de dependencias:
+
+```bash
+  npm install react
+```
+
+### Despliegue
+
+El despliegue del sitio web y de las aplicaciones se realizará en dos etapas. La primera de ellas consiste en desplegar un ambiente de previsualización o staging con el fin de verificar que los cambios realizados se encuentren correctamente implementados. Esto se puede lograr por medio de una acción de github cuyo trigger sea la actualización del repositorio, que es el resultado final de cualquiera de los escenarios anteriores.
+
+La segunda etapa consiste en mover los archivos desde el ambiente de staging hacia el ambiente de producción, que es el resultado final que se muestra y comparte a los usuarios.
 
 ## Código FrontEnd
 
