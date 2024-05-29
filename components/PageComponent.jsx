@@ -47,6 +47,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   const [departamento, setDepartamento] = useState('')
   const [showSpecies, setShowSpecies] = useState(true)
   const [showRemarks, setShowRemarks] = useState(false)
+  const [activeButton, setActiveButton] = useState('species')
   const router = useRouter()
   /* const [publishers, savePublishers] = useLocalStorage('publishers', []) */
 
@@ -68,11 +69,18 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   const handleShowSpecies = () => {
     setShowSpecies(true)
     setShowRemarks(false)
+    setActiveButton('species')
   }
 
   const handleShowRemarks = () => {
     setShowSpecies(false)
     setShowRemarks(true)
+    setActiveButton('remarks')
+  }
+
+  const handleMenuItemClick = (itemSlug) => {
+    const url = slug === 'colombia' ? `/${itemSlug}` : `/${slug}/${itemSlug}`
+    window.open(url, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -203,8 +211,9 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                             >
                               {
                                 departamentos?.map((item, key) =>
-                                  <MenuItem key={key}>
-                                    <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a>
+                                  <MenuItem key={key} onClick={() => handleMenuItemClick(item.slug)}>
+                                    {item.label}
+                                    {/* <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a> */}
                                   </MenuItem>
                                 )}
 
@@ -221,8 +230,9 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                             >
                               {
                                 municipios?.map((item, key) =>
-                                  <MenuItem key={key}>
-                                    <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a>
+                                  <MenuItem key={key} onClick={() => handleMenuItemClick(item.slug)}>
+                                    {item.label}
+                                    {/* <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a> */}
                                   </MenuItem>
                                 )}
                             </Select>
@@ -251,18 +261,18 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                       {
                         generalInfo.label === 'Colombia'
                           ? <div className='flex flex-row justify-center items-center gap-3'>
-                            <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowSpecies}>Especies por departamento</button>
-                            <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowRemarks}>Observaciones por departamento</button>
+                            <button className={`rounded-md py-2 px-4 ${activeButton === 'species' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowSpecies}>Especies por departamento</button>
+                            <button className={`rounded-md py-2 px-4 ${activeButton === 'remarks' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowRemarks}>Observaciones por departamento</button>
                           </div>
                           : <div className='flex flex-row justify-center items-center gap-3'>
-                            <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowSpecies}>Especies por municipio</button>
-                            <button className='bg-dartmouth-green text-white rounded-2xl py-2 px-4' onClick={handleShowRemarks}>Observaciones por municipio</button>
+                            <button className={`rounded-md py-2 px-4 ${activeButton === 'species' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowSpecies}>Especies por municipio</button>
+                            <button className={`rounded-md py-2 px-4 ${activeButton === 'remarks' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowRemarks}>Observaciones por municipio</button>
                           </div>
                       }
 
                       {showSpecies && territorio &&
                         <>
-                          <div className='mt-3'>
+                          <div className='mt-3 h-[600px]'>
                             {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2> */}
                             {/* <MapDepartmentSpecies data={territorio} isScale={isScale} slug={slug} /> */}
                             <DemoMapSpecies data={map} isScale={isScale} />
@@ -272,7 +282,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
 
                       {showRemarks && territorio &&
                         <>
-                          <div className='mt-3'>
+                        <div className='mt-3 h-[600px]'>
                             {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2> */}
                             {/* <MapDepartmentObservations data={territorio} isScale={isScale} /> */}
                             <DemoMapObservations data={map} isScale={isScale} />

@@ -3,15 +3,15 @@ import { calculateWidth, formatNumbers } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
-const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = [], especies, registros, parentEspecies, bgColor, textColor, link, municipalityflag, colObservadas }) => {
+const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = [], especies, registros, parentEspecies, speciesEstimadasCol, bgColor, textColor, link, municipalityflag, colObservadas }) => {
   const parenLabel = region !== 'Colombia' ? regionparent || 'Colombia' : ''
   const text = label ? `observadas ${label} (${title})` : `${title} observadas`
   const widthBarGeneral = +parentEspecies - +colObservadas
   const widthBarSpecies = calculateWidth(+especies, municipalityflag ? +registros : +parentEspecies)
   const widthBarParent = calculateWidth(municipalityflag ? +registros : +parentEspecies - +especies, municipalityflag ? +registros : +parentEspecies)
-  const widthRegEspecies = calculateWidth(+especies, +colObservadas)
-  const widthColObservadas = calculateWidth(+colObservadas, +parentEspecies)
-  const widthColEstimadas = calculateWidth(widthBarGeneral, +parentEspecies)
+  const widthRegEspecies = calculateWidth(+especies, +parentEspecies)
+  const widthColObservadas = calculateWidth(+parentEspecies, +parentEspecies)
+  const widthColEstimadas = calculateWidth(widthBarGeneral, +speciesEstimadasCol)
 
   return (
     <div>
@@ -49,7 +49,7 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
                       <span className="text-black-3">Especies observadas {regionparent} ({parentEspecies})</span>
                       )
                     : (
-                      <span className='text-black-3'>Especies observadas Colombia  ANGELA({parentEspecies}) {cat === '' ? '' : '| Especies estimadas Colombia'}</span>
+                      <span className='text-black-3'>Especies observadas Colombia({parentEspecies}) | Especies estimadas Colombia ({speciesEstimadasCol}) </span>
                       )
                 }
               </p>
@@ -62,10 +62,10 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
               style={{ width: widthRegEspecies }}>{especies}</div>
             {<div
               className={classNames(bgColor, 'bg-opacity-30 text-end pr-1 text-xs  h-4')}
-              style={{ width: widthColObservadas }}>{colObservadas}</div>}
+              style={{ width: widthColObservadas }}>{parentEspecies}</div>}
             <div
               className={classNames('bg-white-smoke text-end', 'text-xs pl-px h-4')}
-              style={{ width: widthColEstimadas }}>{parentEspecies}</div>
+              style={{ width: widthColEstimadas }}>{speciesEstimadasCol}</div>
           </div>)
           : (<div className='flex'>
             <div

@@ -2,7 +2,7 @@ import * as d3Geo from 'd3-geo'
 import { MapContainer, GeoJSON } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 
-const SmallMap = ({ data, isScale = false }) => {
+const SmallMap = ({ data, isScale = false, slug }) => {
   const centroid = d3Geo.geoCentroid(data)
   const center = centroid.map((coord, index) => {
     if (index === 0) return coord - 180
@@ -21,7 +21,7 @@ const SmallMap = ({ data, isScale = false }) => {
     <>
       <div className='flex flex-row mt-10 px-7'>
         <div className='cursor-default'>
-          <MapContainer center={center} zoom={!isScale ? 3 : 6} scrollWheelZoom={false} style={{ height: 200, width: 200, background: 'transparent', position: 'sticky' }} zoomControl={false} attributionControl={false} dragging={false}>
+          <MapContainer center={center} zoom={['atlantico', 'bogota-dc', 'caldas', 'quindio', 'risaralda', 'san-andres-y-providencia'].includes(slug) ? (!isScale ? 3 : 8) : !isScale ? 3 : 6} scrollWheelZoom={false} style={{ height: 200, width: 300, background: 'transparent', position: 'sticky' }} zoomControl={false} attributionControl={false} dragging={false} doubleClickZoom={false}>
             <GeoJSON data={data} style={geoJSONStyle} />
           </MapContainer>
         </div>

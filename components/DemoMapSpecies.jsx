@@ -40,13 +40,14 @@ const DemoMapSpecies = ({ data, isScale = false }) => {
 
   return (
     <>
-      <MapContainer center={center} zoom={!isScale ? 5 : 8} scrollWheelZoom={false} style={{ height: 600, background: 'transparent' }}>
+      <MapContainer center={center} zoom={!isScale ? 5 : 8} scrollWheelZoom={false} style={{ height: 600, background: 'transparent', position: 'sticky' }} attributionControl={false}>
         <GeoJSON data={data} onEachFeature={handleEachFeature} eventHandlers={{
           mouseover: (event) => {
             event.layer.openPopup()
           }
         }} />
-      </MapContainer><div className="p-4 shadow-lg w-[140px] rounded-md bottom-52 left-[68rem] block relative">
+      </MapContainer>
+      <div className="p-4 shadow-lg w-[140px] rounded-md bottom-52 left-[68rem] block relative bg-white">
         <span className='font-bold text-sm'>Especies</span>
         <div className="mt-4">
           <ul>

@@ -37,7 +37,7 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
                 </div>
                 )
               : <div className='relative'>
-                  <SmallMap data={map} isScale={isScale} />
+                  <SmallMap data={map} isScale={isScale} slug={slug} />
               </div>
             }
 

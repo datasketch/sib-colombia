@@ -225,7 +225,7 @@ const CardTematicasCol = props => {
               parentEspecies={info?.parent_especies_migratorias}
               registros={info?.registros_migratorias}
               datatable={info?.species_list}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=${info?.slug}`} rel="noopener noreferrer"
             />
           </div>
           <div className='lg:w-2/5 flex items-center'>
@@ -246,7 +246,7 @@ const CardTematicasCol = props => {
               selected={selected}
               region={region}
               especies={info?.especies_endemicas}
-              parentEspecies={info?.estimadas_endemicas}
+              parentEspecies={info?.endemcias_estimadas}
               registros={info?.registros_endemicas}
               datatable={info?.species_list}
               link={`region=${slugregion}&tematica=${info?.slug}`}
@@ -308,7 +308,7 @@ const CardTematicasCol = props => {
 
           <div className='lg:w-[45%] flex flex-col justify-evenly gap-y-3 '>
             <BarPercent
-              bgColor={'bg-sandstorm'}
+              bgColor={'bg-orange-en'}
               region={region}
               title={'Exóticas'}
               datatable={info?.list_especies_exoticas}
@@ -318,7 +318,7 @@ const CardTematicasCol = props => {
               link={`region=${slugregion}&tematica=${info?.slug}`}
             />
             <BarPercent
-              bgColor={'bg-sandstorm'}
+              bgColor={'bg-orange-en'}
               region={region}
               title={'Exóticas con potencial de invasion'}
               datatable={info?.list_especies_exoticas_riesgo_invasion}
@@ -328,7 +328,7 @@ const CardTematicasCol = props => {
               link={`region=${slugregion}&tematica=${info?.slug}`}
             />
             <BarPercent
-              bgColor={'bg-sandstorm'}
+              bgColor={'bg-orange-en'}
               region={region}
               title={'Invasoras'}
               datatable={info?.list_especies_invasoras}
