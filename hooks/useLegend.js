@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 
-
 export const useLegend = (maximum) => {
   const [lastValueRange, setLastValueRange] = useState([])
 
@@ -9,29 +8,15 @@ export const useLegend = (maximum) => {
 
     const getRoundUnit = (number) => {
       const longitud = number.toString().length
-      let roundingUnit
 
-      if (longitud === 1) {
-        roundingUnit = 1
-      } else {
-        roundingUnit = Math.pow(10, longitud - 1)
-      }
-
-      return roundingUnit
+      return longitud === 1 ? 1 : Math.pow(10, longitud - 1)
     }
 
     const redondear = getRoundUnit(valueGroups)
 
     const firstDigit = parseInt(valueGroups.toString()[0])
-    let rounded
 
-    if (firstDigit === 9) {
-      rounded = valueGroups + redondear
-    } else {
-      rounded = Math.ceil(valueGroups / redondear) * redondear
-    }
-
-    const initialValue = rounded
+    const initialValue = firstDigit === 9 ? valueGroups + redondear : Math.ceil(valueGroups / redondear) * redondear
     const quantityGroups = 6
     const lastValues = getLastValueRanges(initialValue, quantityGroups)
     setLastValueRange(lastValues)

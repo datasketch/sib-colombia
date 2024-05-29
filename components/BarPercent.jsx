@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { calculateWidth, formatNumbers } from '../lib/functions'
+import { calculateWidth, formatNumbers, capitalize } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
@@ -13,14 +13,7 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
   const widthColObservadas = calculateWidth(+colObservadas, +parentEspecies)
   const widthColEstimadas = calculateWidth(widthBarGeneral, +parentEspecies)
 
-  const capitalizeWords = (str) => {
-    if (typeof str !== 'string') {
-      return ''
-    }
-    return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')
-  }
-
-  const capitalizeRegion = capitalizeWords(regionparent)
+  const capitalizeRegion = capitalize(regionparent)
 
   return (
     <div>
