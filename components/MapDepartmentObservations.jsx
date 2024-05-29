@@ -3,6 +3,7 @@ import * as d3Geo from 'd3-geo'
 import { useState } from 'react'
 import Tooltip from 'react-tooltip'
 import * as d3Scale from 'd3-scale'
+import { useLegend } from '../hooks/useLegend'
 
 const MapDepartmentObservations = ({ data, isScale = false }) => {
   const territorio = data
@@ -37,13 +38,15 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
 
   const mapObservations = geoJsonFormat.features.map((d) => d.properties.n_registros)
 
-  const max = Math.max(...mapObservations)
+  const maximum = Math.max(...mapObservations)
 
-  const min = Math.min(...mapObservations)
+  const minimum = Math.min(...mapObservations)
 
   const colorScale = d3Scale.scaleLinear()
-    .domain([min, max])
+    .domain([minimum, maximum])
     .range(['#B6ECBF', '#29567D'])
+
+  const lastValueRange = useLegend(maximum)
 
   return (
     <>
@@ -59,7 +62,7 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
         <ComposableMap
           style={{ width: '100%', height: '100%' }}
           projection="geoMercator"
-          projectionConfig={{ center, scale: !isScale ? 2000 : 10000 }}
+          projectionConfig={{ center, scale: !isScale ? 1900 : 10000 }}
         >
           <Geographies geography={geoJsonFormat}>
             {({ geographies }) =>
@@ -85,6 +88,27 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
             }
           </Geographies>
         </ComposableMap>
+        <div className="p-4 shadow-lg w-[140px] rounded-md bottom-52 left-[68rem] block relative">
+          <span className='font-bold text-sm'>Observaciones</span>
+          <div className="mt-4">
+            <ul>
+              {
+                lastValueRange.map((value, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      backgroundColor: colorScale(value),
+                      width: '20px',
+                      height: '20px'
+                    }}
+                  >
+                    <p className='font-medium right-4 text-right ml-10'>{value}</p>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
       </div>
     </>
   )

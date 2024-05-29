@@ -41,7 +41,7 @@ module.exports = {
         inter: ['inter', 'sans-serif']
       },
       backgroundImage: {
-        'banner-home': "url('/images/headers/banner-home.png')",
+        'banner-home': "url('/images/headers/banner-home-2.png')",
         'banner-home-2': "url('/images/home-banner-2.png')",
         'banner-footer': "url('/images/footer-banner.svg')",
         'footer-2022': "url('/images/footer-2022.svg')",
@@ -99,7 +99,9 @@ module.exports = {
         'light-orange': '#FFBC4E',
         'peach-crayola': '#FFCC99',
         'cornflower-blue': '#6699FF',
-        'navajo-white': '#FFDFAB'
+        'navajo-white': '#FFDFAB',
+        'majorelle-blue': '#5151F2',
+        'giants-orange': '#F26330'
 
       },
 

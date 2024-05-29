@@ -1,9 +1,35 @@
 /* eslint-disable camelcase */
 
 import ReactMarkdown from 'react-markdown'
+import WaffleChart from './WaffleChart'
+import GraphsTopMun from './GraphsTopMun'
 
 const Slides = ({ data, region, municipalityflag, parentlabel }) => {
-  const { layout, chart_url, title, description, texts, chart1_url, chart2_url, path } = data
+  const { layout, title, description, texts, path } = data
+
+  const ListRender = ({ texts }) => {
+    const text = texts.split(': ')[0]
+    const joinText = text + ':'
+    return (
+      <>
+        <ReactMarkdown className='3xl:text-lg'>
+          {joinText}
+        </ReactMarkdown>
+        <ul className='pl-8'>
+          {texts.split(': ')[1].split(', ').map((element, i) => {
+            return (
+              <li key={i} className='list-disc' >
+                <ReactMarkdown className='3xl:text-lg'>
+                  {element}
+                </ReactMarkdown>
+              </li>
+            )
+          })}
+        </ul>
+      </>
+    )
+  }
+
   if (layout === 'title/chart') {
     return (
       <div className="px-5">
@@ -33,31 +59,32 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
                 {description}
               </p>
             </div>
-            <div className='lg:w-6/12 max-w-[438px]'>
+            <div className='lg:w-6/12 max-w-[438px] mt-7'>
               {municipalityflag
                 ? (
-               <div className='text-center font-bold  flex flex-col items-center'>
-                  <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 bg-cornflower-blue' />
-                    Especies observadas en {region}
+                  <div className='text-center font-bold  flex flex-col items-center'>
+                    <div className='inline-flex gap-x-1.5 items-center'>
+                      <div className='w-4 h-4 rounded-full bg-giants-orange' />
+                      Especies observadas en {region}
+                    </div>
+                    <div className='inline-flex gap-x-1.5 items-center'>
+                      <div className='w-4 h-4 rounded-full bg-majorelle-blue' />
+                      Especies observadas en {parentlabel}
+                    </div>
                   </div>
-                  <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 bg-peach-crayola' />
-                    Especies observadas en {parentlabel}
-                  </div>
-                </div>
                   )
                 : (<div className='text-center font-bold  flex flex-col items-center'>
                   <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 bg-cornflower-blue' />
+                    <div className='w-4 h-4 rounded-full bg-giants-orange' />
                     Especies observadas en {region}
                   </div>
                   <div className='inline-flex gap-x-1.5 items-center'>
-                    <div className='w-4 h-4 bg-peach-crayola' />
+                    <div className='w-4 h-4 rounded-full bg-majorelle-blue' />
                     Especies observadas en Colombia
                   </div>
                 </div>)}
-              <img className='mx-auto mt-4 w-11/12' src={'/' + chart_url} alt={title} />
+              {/* <img className='mx-auto mt-4 w-11/12' src={'/' + chart_url} alt={title} /> */}
+              <WaffleChart data={data} />
             </div>
           </div>
         </div>
@@ -101,29 +128,38 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
           </div>
         </div>
       )
-    } if (texts.length === 2) {
+    } if (texts.length >= 2) {
       return (
-        <div className='px-5 '>
-          <div className='grid md:grid-cols-2 lg:grid-cols-12 gap-5'>
+        <div className='px-5 py-16'>
+          <div className='space-y-5 flex flex-col justify-center items-center'>
+            <img className='w-20 h-20' src='/images/quotes.png' />
+            <h2 className='text-3xl font-bold text-dartmouth-green'>Destacados</h2>
+          </div>
+          <div className='flex flex-row justify-center items-center gap-28 px-10'>
             <div className='lg:col-start-1 lg:col-end-6'>
-              <div className='bg-blue-green h-full py-10 px-12 text-white'>
-                <ReactMarkdown className='3xl:text-lg'>
-                  {texts[0]}
-                </ReactMarkdown>
+              <div className='h-full py-10 px-12'>
+                <ListRender texts={texts[0]} />
               </div>
             </div>
-            <div className='lg:col-start-6 lg:col-end-13'>
-              <img className='w-full h-full object-center object-cover' src="/images/gallery-4.png" alt="gallery 4" />
-            </div>
-            <div className='lg:col-start-1 lg:col-end-8'>
-              <img className='w-full h-full object-center object-cover' src="/images/gallery-5.png" alt="gallery 5" />
-            </div>
+            <div className='border-r-2 border-b/40 h-44' />
             <div className='lg:col-start-8 lg:col-end-13'>
-              <div className='bg-blue-green h-full py-10 px-12 text-white'>
-                <ReactMarkdown className='3xl:text-lg'>
-                  {texts[1]}
-                </ReactMarkdown>
+              <div className='h-full py-10 px-12'>
+                <ListRender texts={texts[1]} />
               </div>
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className='px-5 py-16'>
+          <div className='space-y-5 flex flex-col justify-center items-center'>
+            <img className='w-20 h-20' src='/images/quotes.png' />
+            <h2 className='text-3xl font-bold text-dartmouth-green'>Destacados</h2>
+          </div>
+          <div className='flex flex-col justify-center items-center'>
+            <div className='h-full py-10 px-12'>
+              <ListRender texts={texts[0]} />
             </div>
           </div>
         </div>
@@ -139,9 +175,10 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
             {title}
           </h2>
           <div className='lg:py-2.5'>
-            <div className='flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:gap-x-12'>
-              <iframe type="html" className="h-[410px] w-full" src={'/' + chart1_url} ></iframe>
-              <iframe type="html" className="h-[410px] w-full" src={'/' + chart2_url} ></iframe>
+            <div className=''>
+              <GraphsTopMun data={data} region={region} />
+              {/* <iframe type="html" className="h-[410px] w-full" src={'/' + chart1_url} ></iframe>
+              <iframe type="html" className="h-[410px] w-full" src={'/' + chart2_url} ></iframe> */}
             </div>
           </div>
         </div>

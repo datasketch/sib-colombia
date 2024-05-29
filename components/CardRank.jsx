@@ -1,4 +1,3 @@
-
 import { DIC_REF, ordinalSuffixOf } from '../lib/functions'
 
 import reactStringReplace from 'react-string-replace'
@@ -19,13 +18,13 @@ const CardRank = ({ info, refs }) => {
     <div>
 
       <p className='inline-block gap-x-0.5 max-w-xs'>
-      {reactStringReplace(info.position_text, regex, (match) => {
-        const tooltip = DIC_REF.find(({ ref_id: refId }) => match === refId)
-        const md = refs.find(({ ref_id: refId }) => match === refId)
-        const reactMD = `${md.label} \n\n ${md.zotero}`
-        return <TooltipText key={tooltip.ref_id} label={tooltip.label} md={reactMD} id={tooltip.ref_id} />
-      })}
-    </p>
+        {reactStringReplace(info.position_text, regex, (match) => {
+          const tooltip = DIC_REF.find(({ ref_id: refId }) => match === refId)
+          const md = refs.find(({ ref_id: refId }) => +match === +refId)
+          const reactMD = `${md.label} \n\n ${md.zotero}`
+          return <TooltipText key={tooltip.ref_id} label={tooltip.label} md={reactMD} id={tooltip.ref_id} />
+        })}
+      </p>
     </div>
 
   </>)

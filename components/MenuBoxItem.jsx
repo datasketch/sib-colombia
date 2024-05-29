@@ -9,7 +9,7 @@ export default function MenuBoxItem ({ child }) {
         <MenuItem value={child.label} aria-label={child.slug}> {child.label} </MenuItem>
         )
       : (
-        <SubMenu label={child.label} itemProps={{ 'aria-label': child.slug }} openTrigger="clickOnly">
+        <SubMenu label={child.label} itemProps={{ 'aria-label': child.slug }}>
           {child.children.map((grandChild, index) => (
             <MenuBoxItem key={index} child={grandChild} />
           ))}

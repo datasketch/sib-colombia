@@ -92,6 +92,14 @@
     background-color: #09a274 !important;
     border-radius: 100% !important;
   }
+
+  .popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+  }
 }
 
 @layer utilities {

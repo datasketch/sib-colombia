@@ -1,4 +1,3 @@
-
 import classNames from 'classnames'
 import { useEffect, useState } from 'react'
 
@@ -234,11 +233,11 @@ function ContentElement (props) {
               {/* Exoticas */}
               <CardSimple
                 style={1}
-                datatable={info?.species_list_tematica.exoticas}
                 title='Especies exóticas'
                 especies={info?.especies_exoticas_total}
-                registros={info?.registros_exoticas}
-                link={`region=${slug}&grupo=${info?.slug}&tematica=exoticas`}
+                registros={info?.registros_exoticas_total}
+                datatable={info?.species_list_tematica['exoticas-total']}
+                link={`region=${slug}&grupo=${info?.slug}&tematica=exoticas_total`}
               />
 
             </div>

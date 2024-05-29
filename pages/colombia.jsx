@@ -4,6 +4,7 @@ import Head from 'next/head'
 import HeadRegion from '../components/headers/HeadRegion'
 import { AppContext } from './_app'
 import col from '../static/data/colombia.json'
+import DataMapColombia from '../static/data-maps/colombia.json'
 import PageComponent from '../components/PageComponent'
 
 export default function colombia () {
@@ -18,6 +19,12 @@ export default function colombia () {
     }
   }, [])
 
+  const daysElapsed = generalInfo.fecha_corte
+  const dateReferenceDate = new Date('1970-01-01')
+  const date = new Date(dateReferenceDate.getTime() + daysElapsed * 24 * 60 * 60 * 1000)
+  const options = { year: 'numeric', month: 'long', day: 'numeric' }
+  const dateCurrent = date.toLocaleDateString('es-co', options)
+
   return (
 
     <div>
@@ -27,7 +34,7 @@ export default function colombia () {
       <HeadRegion
         slug='colombia'
         title={generalInfo.label}
-        description={generalInfo.main_text}
+        description={'A ' + dateCurrent + generalInfo.main_text}
         especiesEstimadas={generalInfo.especies_region_estimadas}
         especiesObservadas={generalInfo.especies_region_total}
         marine={generalInfo.marino}
@@ -35,7 +42,8 @@ export default function colombia () {
         referencia={generalInfo.referencia}
         photoLabel={generalInfo.credito_foto}
       />
-      <PageComponent data={col} slug='colombia' deparment/>
+      <PageComponent data={col} slug='colombia' deparment map={DataMapColombia}/>
+      {/* Faltan datos como especies y registros en Bogotá */}
     </div>
   )
 }
