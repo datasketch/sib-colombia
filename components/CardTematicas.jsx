@@ -12,7 +12,7 @@ import CardContentTem from './CardContentTem'
 import ColorLabel from './ColorLabel'
 
 const CardTematicas = props => {
-  const { info, selected, updateBreadcrumb, region, municipalityflag, slugregion, parentlabel } = props
+  const { info, selected, updateBreadcrumb, region, municipalityflag, slugregion, parentlabel, especiesObservadas } = props
   const contentTooltip = (value) => {
     return tooltips.filter((item) => item.slug === value)[0]?.tooltip
   }
@@ -159,6 +159,7 @@ const CardTematicas = props => {
               link={`region=${slugregion}&tematica=${info?.slug}_i`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
+              especiesObservadas={especiesObservadas}
             />
 
             <BarPercent
@@ -174,6 +175,7 @@ const CardTematicas = props => {
               link={`region=${slugregion}&tematica=${info?.slug}_ii`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
+              especiesObservadas={especiesObservadas}
             />
             <BarPercent
               bgColor={'bg-greenish-cyan'}
@@ -188,6 +190,7 @@ const CardTematicas = props => {
               link={`region=${slugregion}&tematica=${info?.slug}_iii`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
+              especiesObservadas={especiesObservadas}
             />
 
           </div>
@@ -209,6 +212,7 @@ const CardTematicas = props => {
               link={`region=${slugregion}&tematica=${info?.slug}`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
+              especiesObservadas={especiesObservadas}
             />
           </div>
           <div className='lg:w-2/5 flex items-center'>
@@ -235,7 +239,7 @@ const CardTematicas = props => {
               link={`region=${slugregion}&tematica=${info?.slug}`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
-
+              especiesObservadas={especiesObservadas}
             />
           </div>
           <div className='md:w-[45%] flex flex-col justify-evenly gap-y-3 mx-auto'>
@@ -295,6 +299,7 @@ const CardTematicas = props => {
               link={`region=${slugregion}&tematica=list_especies_exoticas_total`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
+              especiesObservadas={especiesObservadas}
             />
 
           </div>
@@ -312,6 +317,7 @@ const CardTematicas = props => {
               link={`region=${slugregion}&tematica=exoticas`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
+              especiesObservadas={especiesObservadas}
             />
             <BarPercent
               bgColor={'bg-sandstorm'}
@@ -325,6 +331,7 @@ const CardTematicas = props => {
               link={`region=${slugregion}&tematica=exoticas-riesgo-invasion`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
+              especiesObservadas={especiesObservadas}
             />
             <BarPercent
               bgColor={'bg-sandstorm'}
@@ -338,6 +345,7 @@ const CardTematicas = props => {
               link={`region=${slugregion}&tematica=invasoras`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
+              especiesObservadas={especiesObservadas}
             />
 
           </div>
@@ -456,6 +464,7 @@ const CardTematicas = props => {
               speciesEstimadasCol={info?.parent_cr_estimadas}
               registros={info?.cr_registros || info?.parent_cr}
               colObservadas={info?.parent_cr}
+              especiesObservadas={especiesObservadas}
             />
 
             <BarPercent
@@ -472,6 +481,7 @@ const CardTematicas = props => {
               speciesEstimadasCol={info?.parent_en_estimadas}
               registros={info?.en_registros || info?.parent_en}
               colObservadas={info?.parent_en}
+              especiesObservadas={especiesObservadas}
             />
             <BarPercent
               cat='amenazadas'
@@ -487,6 +497,7 @@ const CardTematicas = props => {
               speciesEstimadasCol={info?.parent_vu_estimadas}
               registros={info?.vu_registros || info?.parent_vu}
               colObservadas={info?.parent_vu}
+              especiesObservadas={especiesObservadas}
             />
           </div>
         </div>

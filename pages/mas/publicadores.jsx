@@ -59,6 +59,11 @@ export default function publicadores () {
     return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase()) || region?.includes(normalizedQuery)
   } */
 
+  function filterBySearch (publisher) {
+    const { label } = publisher
+    return label?.toLowerCase().includes(query.toLowerCase())
+  }
+
   function filterByCountry (publisher) {
     const { pais_publicacion: paisPublicacion } = publisher
     return paisPublicacion?.includes(selectedCountry)
@@ -67,6 +72,15 @@ export default function publicadores () {
   function filterByOrgType (publisher) {
     const { tipo_organizacion: organizacion = '' } = publisher
     return organizacion?.includes(selectedOrganizacion)
+  }
+
+  const handleChange = ({ target }) => {
+    const { value } = target
+    setQuery(value || '')
+  }
+
+  const resetSearch = () => {
+    setQuery('')
   }
 
   const handleRegionChange = ({ target }) => {
@@ -165,6 +179,7 @@ export default function publicadores () {
   }
 
   const filteredPublishers = publicadors
+    .filter(filterBySearch)
     .filter(filterByCountry)
     .filter(filterByOrgType)
 
@@ -223,86 +238,95 @@ export default function publicadores () {
   return (
     <>
       <HeadMore title={'Publicadores'} description={textDescription} content slug='publicadores' />
-      <div className='max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-3 items-end'>
-        {/* <div >
-          <div className='relative'>
-            <img className="absolute top-2 left-3 h-6 w-6" src="/images/icon-search.svg" alt="icon search" />
-            <input key={render} value={query} onChange={handleChange} autoComplete='off' id="search" className="placeholder:italic placeholder:font-lato block w-full focus:outline-none py-2 pl-12 pr-8 border border-black rounded-full"
-              type="text" placeholder='Buscar publicador' />
-          </div>
-        </div> */}
-        <div className='flex flex-col gap-2'>
-          <h3 className='font-bold'>Región</h3>
-          {<div className='flex flex-row gap-2'>
-            <SelectableV2 key={render} placeHolder={selectedRegion || 'Selecciona una opción'} data={regionsDropdown} optionSelected={handleRegionChange} />
-            <button type='button' onClick={resetRegion} value={'reset'}>
-              <img src='/images/icon-reset.svg' />
-            </button>
-          </div>}
-        </div>
+      <div className='mx-auto max-w-7xl px-4 flex flex-row gap-10'>
+        <div className='w-1/4 flex flex-col gap-5 pt-10'>
+          <div className='flex flex-col gap-5'>
 
-        {
-          areaDropdowm.length > 0 && (
-            <div className='flex flex-col gap-2'>
-              <h3 className='font-bold'>Municipios</h3>
-              <div className='flex flex-row gap-2'>
-                <SelectableV2 key={render} placeHolder={clearText(selectedArea) || 'Selecciona una opción'} data={areaDropdowm} optionSelected={handleAreaChange} />
-                <button type='button' onClick={resetArea} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
-                  <img src='/images/icon-reset.svg' />
-                </button>
-              </div>
+            <h3 className='font-bold'>Publicador</h3>
+            <div className='relative flex flex-row'>
+              <img className="absolute top-3 left-3 h-5 w-5" src="/images/icon-search.svg" alt="icon search" />
+              <input key={render} value={query} onChange={handleChange} autoComplete='off' id="search" className="placeholder:font-lato block w-full focus:outline-none py-2 pl-12 pr-8 border border-black rounded-full"
+                type="text" placeholder='Palabra clave' />
+              <button className='absolute right-4 top-3' type='button' onClick={resetSearch} value={'reset'}>
+                <img src='/images/icon-reset-black.svg' />
+              </button>
             </div>
-          )
-        }
-        {/* <SelectableV2 key={render} placeHolder={clearText(selectedArea) || 'Selecciona una opción'} data={areaDropdowm} optionSelected={handleAreaChange} /> */}
 
-        <div className='flex flex-col gap-2'>
-          <h3 className='font-bold'>País del Publicador</h3>
-          <div className='flex flex-row gap-2'>
-            <Selectable key={render} placeHolder={selectedCountry || 'Selecciona una opción'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
-            <button type='button' onClick={resetCountry} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
-              <img src='/images/icon-reset.svg' />
-            </button>
+            <h3 className='font-bold'>Región</h3>
+            {<div className='flex flex-row gap-2'>
+              <SelectableV2 reset={resetRegion} key={render} placeHolder={selectedRegion || 'Selecciona una opción'} data={regionsDropdown} optionSelected={handleRegionChange} />
+              {/* <button type='button' onClick={resetRegion} value={'reset'}>
+                <img src='/images/icon-reset-black.svg' />
+              </button> */}
+            </div>}
           </div>
-        </div>
-        <div className='flex flex-col gap-2'>
-          <h3 className='font-bold'>Tipo de Organización</h3>
-          <div className='flex flex-row gap-2'>
-            <Selectable key={render} placeHolder={selectedOrganizacion || 'Selecciona una opción'} optionSelected={handleOrganizacionChange} data={typeOrganization} disabled={isOrgDisabled} />
-            <button type='button' onClick={resetOrg} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
-              <img src='/images/icon-reset.svg' />
-            </button>
-          </div>
-        </div>
-        <div className='flex items-center lg:justify-center border md:row-start-1 md:col-start-2 lg:col-start-5  border-black opacity-75 hover:opacity-100 py-2 px-2 h-max'>
-          <button type='button' onClick={clearFilters} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
-            <img src='/images/icon-reset.svg' />
-            Limpiar filtros
-          </button>
-        </div>
-      </div>
-      <div className='w-10/12 lg:w-9/12 mx-auto mt-5'>
-        {
-          departmentData && display &&
-          <InfoPublishers total={publicadors} data={departmentData} />
-        }
-      </div>
-      {currentPublisher.length === 0
-        ? <p className='my-12 text-xl text-center font-black'>No existen registros de la información</p>
-        : <div id="publishers" className="max-w-screen-2xl pt-8 w-10/12 lg:w-9/12 mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-center">
+
           {
-            currentPublisher.map((item, key) =>
-              <PublishersCard key={key + item.label} title={item.label} country={item.pais_publicacion} totalEspecies={item.especies} observationsQuantity={item.registros} imagePath={item.url_logo} link={item.url_socio} />
-            )}
+            areaDropdowm.length > 0 && (
+              <div className='flex flex-col gap-2'>
+                <h3 className='font-bold'>Municipios</h3>
+                <div className='flex flex-row gap-2'>
+                  <SelectableV2 reset={resetArea} key={render} placeHolder={clearText(selectedArea) || 'Selecciona una opción'} data={areaDropdowm} optionSelected={handleAreaChange} />
+                  {/* <button type='button' onClick={resetArea} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
+                    <img src='/images/icon-reset-black.svg' />
+                  </button> */}
+                </div>
+              </div>
+            )
+          }
+          {/* <SelectableV2 key={render} placeHolder={clearText(selectedArea) || 'Selecciona una opción'} data={areaDropdowm} optionSelected={handleAreaChange} /> */}
+          <div className='flex flex-col gap-2'>
+            <h3 className='font-bold'>Tipo de Organización</h3>
+            <div className='flex flex-row gap-2'>
+              <Selectable reset={resetOrg} key={render} placeHolder={selectedOrganizacion || 'Selecciona una opción'} optionSelected={handleOrganizacionChange} data={typeOrganization} disabled={isOrgDisabled} />
+              {/* <button type='button' onClick={resetOrg} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
+                <img src='/images/icon-reset-black.svg' />
+              </button> */}
+            </div>
+          </div>
+
+          <div className='flex flex-col gap-2'>
+            <h3 className='font-bold'>País del Publicador</h3>
+            <div className='flex flex-row gap-2'>
+              <Selectable reset={resetCountry} key={render} placeHolder={selectedCountry || 'Selecciona una opción'} data={citys} optionSelected={handleCountryChange} titles={countrysCode} />
+              {/* <button type='button' onClick={resetCountry} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
+                <img src='/images/icon-reset-black.svg' />
+              </button> */}
+            </div>
+          </div>
+
+          <div className='bg-flame mx-auto w-1/2 flex items-center lg:justify-center border md:row-start-1 md:col-start-2 lg:col-start-5 py-2 px-2 h-max'>
+            <button type='button' onClick={clearFilters} className='flex gap-x-2 items-center font-lato font-bold text-white' value={'reset'}>
+              <img src='/images/icon-reset-white.svg' />
+              Limpiar filtros
+            </button>
+          </div>
         </div>
-      }
-      <div className='py-8 flex justify-center'>
-        <Pagination
-          currentPage={currentPage}
-          totalCount={filteredPublishers.length}
-          pageSize={PageSize}
-          onPageChange={page => setCurrentPage(page)}
-        />
+        <div className='w-3/4'>
+          <div className='mt-5'>
+            {
+              departmentData && display &&
+              <InfoPublishers total={publicadors} data={departmentData} />
+            }
+          </div>
+          {currentPublisher.length === 0
+            ? <p className='my-12 text-xl text-center font-black'>No existen registros de la información</p>
+            : <div id="publishers" className="pt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-center">
+              {
+                currentPublisher.map((item, key) =>
+                  <PublishersCard key={key + item.label} title={item.label} country={item.pais_publicacion} totalEspecies={item.especies} observationsQuantity={item.registros} imagePath={item.url_logo} link={item.url_socio} />
+                )}
+            </div>
+          }
+          <div className='py-8 flex justify-center'>
+            <Pagination
+              currentPage={currentPage}
+              totalCount={filteredPublishers.length}
+              pageSize={PageSize}
+              onPageChange={page => setCurrentPage(page)}
+            />
+          </div>
+        </div>
       </div>
     </>
   )

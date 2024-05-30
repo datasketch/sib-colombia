@@ -42060,7 +42060,7 @@
   },
   "municipios_lista": [
     {
-      "slug": "alban-nar",
+      "slug": "alban",
       "label": "Albán"
     },
     {
@@ -42080,7 +42080,7 @@
       "label": "Barbacoas"
     },
     {
-      "slug": "belen-nar",
+      "slug": "belen",
       "label": "Belén"
     },
     {
@@ -42092,7 +42092,7 @@
       "label": "Chachagüí"
     },
     {
-      "slug": "colon-nar",
+      "slug": "colon",
       "label": "Colón"
     },
     {
@@ -42104,7 +42104,7 @@
       "label": "Contadero"
     },
     {
-      "slug": "cordoba-nar",
+      "slug": "cordoba",
       "label": "Córdoba"
     },
     {
@@ -42136,7 +42136,7 @@
       "label": "El Tablón de Gómez"
     },
     {
-      "slug": "el-tambo-nar",
+      "slug": "el-tambo",
       "label": "El Tambo"
     },
     {
@@ -42188,7 +42188,7 @@
       "label": "La Tola"
     },
     {
-      "slug": "la-union-nar",
+      "slug": "la-union",
       "label": "La Unión"
     },
     {
@@ -42212,11 +42212,11 @@
       "label": "Mallama"
     },
     {
-      "slug": "mosquera-nar",
+      "slug": "mosquera",
       "label": "Mosquera"
     },
     {
-      "slug": "narino-nar",
+      "slug": "narino",
       "label": "Nariño"
     },
     {
@@ -42240,7 +42240,7 @@
       "label": "Potosí"
     },
     {
-      "slug": "providencia-nar",
+      "slug": "providencia",
       "label": "Providencia"
     },
     {
@@ -42252,7 +42252,7 @@
       "label": "Pupiales"
     },
     {
-      "slug": "ricaurte-nar",
+      "slug": "ricaurte",
       "label": "Ricaurte"
     },
     {
@@ -42268,7 +42268,7 @@
       "label": "San Andrés de Tumaco"
     },
     {
-      "slug": "san-bernardo-nar",
+      "slug": "san-bernardo",
       "label": "San Bernardo"
     },
     {
@@ -42276,7 +42276,7 @@
       "label": "San Lorenzo"
     },
     {
-      "slug": "san-pablo-nar",
+      "slug": "san-pablo",
       "label": "San Pablo"
     },
     {
@@ -42288,7 +42288,7 @@
       "label": "Sandoná"
     },
     {
-      "slug": "santa-barbara-nar",
+      "slug": "santa-barbara",
       "label": "Santa Bárbara"
     },
     {

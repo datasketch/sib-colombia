@@ -3,7 +3,7 @@ import { calculateWidth, formatNumbers, capitalize } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
-const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = [], especies, registros, parentEspecies, speciesEstimadasCol, bgColor, textColor, link, municipalityflag, colObservadas }) => {
+const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = [], especies, registros, parentEspecies, speciesEstimadasCol, bgColor, textColor, link, municipalityflag, colObservadas, especiesObservadas }) => {
   const parenLabel = region !== 'Colombia' ? regionparent || 'Colombia' : ''
   const text = label ? `observadas ${label} (${title})` : `${title} observadas`
   const widthBarGeneral = +parentEspecies - +colObservadas
@@ -46,9 +46,9 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
               <p className='font-bold text-sm'>
                 <span>Especies observadas {region} |</span>{' '}
                 {
-                  municipalityflag
+                  municipalityflag && ['La Planada', 'Pialapí Pueblo-Viejo'].includes(region)
                     ? (
-                      <span className="text-black-3">Especies observadas {capitalizeRegion} ({parentEspecies})</span>
+                      <span className="text-black-3">Especies observadas {capitalizeRegion} ({especiesObservadas})</span>
                       )
                     : (
                       <span className='text-black-3'>Especies observadas Colombia({parentEspecies}) | Especies estimadas Colombia ({speciesEstimadasCol}) </span>
@@ -72,17 +72,24 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
           : (<div className='flex'>
             <div
               className={classNames(bgColor, textColor, widthBarSpecies === undefined ? '' : 'px-1 min-w-[3.5%]', 'text-xs h-4')} style={{ width: widthBarSpecies || '0%' }}>{especies}</div>
-            <div
-              className={classNames('bg-white-smoke', 'text-xs pr-1 h-4 text-end')} style={{ width: widthBarParent || '100%' }}>
-              {/* {
+            {
+              ['La Planada', 'Pialapí Pueblo-Viejo'].includes(region)
+                ? <div
+                  className={classNames('bg-white-smoke', 'text-xs pr-1 h-4 text-end')} style={{ width: widthBarParent || '100%' }}>
+                  {especiesObservadas}
+                </div>
+                : <div
+                  className={classNames('bg-white-smoke', 'text-xs pr-1 h-4 text-end')} style={{ width: widthBarParent || '100%' }}>
+                  {/* {
                 municipalityflag
                   ? (
                       registros === 'NA' ? '' : registros
                     )
                   : (parentEspecies === 'NA' ? '' : parentEspecies)
               } */}
-              {parentEspecies === 'NA' ? '' : parentEspecies}
-            </div>
+                  {parentEspecies === 'NA' ? '' : parentEspecies}
+                </div>
+            }
           </div>)
         }
       </div>

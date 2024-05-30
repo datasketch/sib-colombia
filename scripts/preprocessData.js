@@ -8,7 +8,7 @@ async function getDepartmentsPath () {
   return files
 }
 
-async function main() {
+async function main () {
   const data = await getDepartmentsPath()
 
   const publishersFile = await fs.readFile(path.resolve(path.join(process.cwd(), 'static', 'data'), 'publicador.json'), 'utf8')
@@ -73,9 +73,9 @@ async function main() {
   try {
     fs.writeFile(ruta, json, 'utf8', (err) => {
       if (err) {
-        throw new Error('Error al guardar el archivo JSON: ' + err);
+        throw new Error('Error al guardar el archivo JSON: ' + err)
       }
-      console.log('El archivo JSON ha sido guardado correctamente.');
+      console.log('El archivo JSON ha sido guardado correctamente.')
     })
   } catch (error) {
     console.error('Se produjo un error al intentar guardar el archivo JSON:', error.message)

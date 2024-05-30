@@ -13,8 +13,6 @@ export default function Navbar () {
     {
       label: 'Colombia',
       href: '/colombia'
-      /* static\data\colombia\colombia.json */
-
     },
     {
       color: 'dartmouth-green',
@@ -25,18 +23,6 @@ export default function Navbar () {
         {
           label: 'Departamentos',
           children: [
-            /* {
-              label: 'Amazonas',
-              href: '/amazonas'
-            },
-            {
-              label: 'Antioquia',
-              href: '/antioquia'
-            },
-            {
-              label: 'Bolívar',
-              href: '/bolivar'
-            }, */
             {
               label: 'Amazonas',
               href: '/amazonas'
@@ -70,7 +56,7 @@ export default function Navbar () {
               href: '/caldas'
             },
             {
-              label: 'Caqueta',
+              label: 'Caquetá',
               href: '/caqueta'
             },
             {
@@ -122,88 +108,8 @@ export default function Navbar () {
               href: '/meta'
             },
             {
-              label: 'Caqueta',
-              href: '/caqueta'
-            },
-            {
-              label: 'Casanare',
-              href: '/casanare'
-            },
-            {
-              label: 'Cauca',
-              href: '/cauca'
-            },
-            {
-              label: 'Cesar',
-              href: '/cesar'
-            },
-            {
-              label: 'Chocó',
-              href: '/choco'
-            },
-            {
-              label: 'Córdoba',
-              href: '/cordoba'
-            },
-            {
-              label: 'Cundinamarca',
-              href: '/cundinamarca'
-            },
-            {
-              label: 'Guainía',
-              href: '/guainia'
-            },
-            {
-              label: 'Guaviare',
-              href: '/guaviare'
-            },
-            {
-              label: 'Huila',
-              href: '/huila'
-            },
-            {
-              label: 'La guajira',
-              href: '/la-guajira'
-            },
-            {
-              label: 'Casanare',
-              href: '/casanare'
-            },
-            {
-              label: 'Magdalena',
-              href: '/magdalena'
-            },
-            {
-              label: 'Meta',
-              href: '/meta'
-            },
-            {
               label: 'Nariño',
               href: '/narino'
-            },
-            {
-              label: 'Norte de Santander',
-              href: '/norte-santander'
-            },
-            {
-              label: 'Putumayo',
-              href: '/putumayo'
-            },
-            {
-              label: 'Quindío',
-              href: '/quindio'
-            },
-            {
-              label: 'San Andrés',
-              href: '/san-andres-providencia'
-            },
-            {
-              label: 'Santander',
-              href: '/santander'
-            },
-            {
-              label: 'Sucre',
-              href: 'sucre'
             },
             {
               label: 'Norte de Santander',
@@ -222,8 +128,8 @@ export default function Navbar () {
               href: '/risaralda'
             },
             {
-              label: 'San Andrés',
-              href: '/san-andres-y-providencia'
+              label: 'San Andrés y Providencia',
+              href: '/san-andres-providencia'
             },
             {
               label: 'Santander',

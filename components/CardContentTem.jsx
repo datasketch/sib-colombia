@@ -2,7 +2,7 @@ import { calculateWidth, formatNumbers, capitalize } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
-const CardContentTem = ({ selected, region, datatable, especies, parentEspecies, registros, link, municipalityflag, regionparent }) => {
+const CardContentTem = ({ selected, region, datatable, especies, parentEspecies, registros, link, municipalityflag, regionparent, especiesObservadas }) => {
   const capitalizeRegion = capitalize(regionparent)
 
   return (
@@ -36,7 +36,11 @@ const CardContentTem = ({ selected, region, datatable, especies, parentEspecies,
             <span className='font-bold text-sm'>Especies {region} | {municipalityflag ? `Especies ${regionparent}` : 'Especies Colombia'}</span>
             <div className='flex'>
               <div className='bg-sandstorm  h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+especies, +especies + +parentEspecies) }}>{especies}</div>
-              <div className='bg-white-smoke h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+parentEspecies, +especies + +parentEspecies) }}>{parentEspecies}</div>
+              {
+                ['La Planada', 'Pialapí Pueblo-Viejo'].includes(region)
+                  ? <div className='bg-white-smoke h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+especiesObservadas, +especies + +especiesObservadas) }}>{especiesObservadas}</div>
+                  : <div className='bg-white-smoke h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+parentEspecies, +especies + +parentEspecies) }}>{parentEspecies}</div>
+              }
             </div>
           </>
         }

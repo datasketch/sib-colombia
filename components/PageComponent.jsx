@@ -39,6 +39,8 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
+  /* console.log(municipalityflag, 'municipalityflag') */
+
   const appURL = `https://services.datasketch.co/org_sibhumboldt_sibdata_app/?region=${slug}`
   /* `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}` */
   const [municipio, setMunicipio] = useState('')
@@ -50,11 +52,30 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   /* const [publishers, savePublishers] = useLocalStorage('publishers', []) */
 
   const handlePublishers = () => {
-    localStorage.setItem('publishers', JSON.stringify(Array.isArray(publicadores) ? publicadores.map(p => ({ ...p, region: slug, slug: p.slug_publicador.map(p => ({ ...p, region: slug, slug: p.slug_publicador })) })) : publicadores.publicadores_list))
-    router.push(`/mas/publicadores?region=${slug}`)
-    /* savePublishers(publicadores) */
-    /* `/mas/publicadores?region=${slug}` */
+    localStorage.setItem('publishers', JSON.stringify(Array.isArray(publicadores)
+      ? publicadores.map(p => ({
+        ...p,
+        region: slug,
+        slug: p.slug_publicador.map(p => ({
+          ...p,
+          region: slug,
+          slug: p.slug_publicador
+        }))
+      }))
+      : publicadores.publicadores_list))
+
+    if (generalInfo.label === 'La Planada') {
+      router.push('/mas/publicadores?region=reserva-forestal-la-planada')
+    } else if (generalInfo.label === 'Pialapí Pueblo-Viejo') {
+      router.push('/mas/publicadores?region=resguardo-indigena-pialapi-pueblo-viejo')
+    } else if (municipalityflag === true) {
+      router.push(`/mas/publicadores?region=${slug}&area=${municipality}`)
+    } else {
+      router.push(`/mas/publicadores?region=${slug}`)
+    }
   }
+
+  /* console.log(generalInfo.label, 'label') */
 
   const handleChangeMunicipio = (event) => {
     setMunicipio(event.target.value)
@@ -112,7 +133,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
               {(selected, info, updateBreadcrumb) => (
                 slug === 'colombia'
                   ? (<CardTematicasCol slugregion={slug} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} />)
-                  : (<CardTematicas slugregion={slug} parentlabel={['La Planada', 'Pialapí Pueblo-Viejo'].includes(generalInfo.label) ? generalInfo.subtipo : generalInfo.parent_label} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} municipalityflag={municipalityflag} />)
+                  : (<CardTematicas slugregion={slug} parentlabel={['La Planada', 'Pialapí Pueblo-Viejo'].includes(generalInfo.label) ? generalInfo.subtipo : generalInfo.parent_label} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} municipalityflag={municipalityflag} especiesObservadas={generalInfo.especies_region_total} />)
 
               )}
             </MenuExplorer.Body>
@@ -280,7 +301,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
 
                       {showRemarks && territorio &&
                         <>
-                        <div className='mt-3 h-[600px]'>
+                          <div className='mt-3 h-[600px]'>
                             {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2> */}
                             {/* <MapDepartmentObservations data={territorio} isScale={isScale} /> */}
                             <DemoMapObservations data={map} isScale={isScale} />
@@ -331,7 +352,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             </SimpleSlider>
           </div>
           <div className='text-center'>
-            <button className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' onClick={() => handlePublishers(slug)} >
+            <button className='inline-block border border-burnham rounded-full py-1.5 px-5 hover:shadow-default hover:text-blue-green hover:border-none' onClick={() => handlePublishers()} >
               Todos los publicadores
             </button>
           </div>

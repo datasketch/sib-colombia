@@ -254,6 +254,12 @@ const CardTematicasCol = props => {
           </div>
           <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
             <Table tabledata={info?.species_list} />
+            <div className='flex flex-col pt-5 gap-y-10'>
+              <button type='button' className='flex gap-3 justify-center  items-center py-1 border border-black rounded-full w-1/2 lg:w-[42%] self-end'>
+                <a target='_blank' rel="noopener noreferrer" href={`/explorador?region=${slugregion}&tematica=${info?.slug}`}>Explora lista completa</a>
+                <img src='/images/arrow-black.svg' alt='arrow button' />
+              </button>
+            </div>
             {/* <BarPercent
               bgColor={'bg-red-cr '}
               region={region}
