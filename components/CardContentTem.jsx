@@ -33,7 +33,7 @@ const CardContentTem = ({ selected, region, datatable, especies, parentEspecies,
             </div>
           </>
           : <>
-            <span className='font-bold text-sm'>Especies {region} | {municipalityflag ? `Especies ${regionparent}` : 'Especies Colombia'}</span>
+            <span className='font-bold text-sm'>Especies {region} | {municipalityflag ? `Especies ${capitalizeRegion}` : 'Especies Colombia'}</span>
             <div className='flex'>
               <div className='bg-sandstorm  h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+especies, +especies + +parentEspecies) }}>{especies}</div>
               {
