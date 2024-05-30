@@ -1,4 +1,3 @@
-
 import { useContext, useEffect } from 'react'
 import Scrollspy from 'react-scrollspy'
 import HeadMore from '../../components/headers/HeadMore'

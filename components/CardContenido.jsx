@@ -1,4 +1,3 @@
-
 const CardContenido = ({ date, title, description, href }) => {
   return (
     <div className='shadow-default space-y-3 max-w-sm p-5'>

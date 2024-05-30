@@ -1,11 +1,10 @@
-
 import { formatNumbers } from '../lib/functions'
 import Concentric from './Concentric'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
 const ConcentricCard = (props) => {
-  const { slug, selected, info, region, estimadasCol, municipalityflag, parentlabel } = props
+  const { slug, selected, info, region, observadasCol, municipalityflag, parentlabel } = props
 
   return (
     <div className='flex flex-col gap-4 space-y-3 lg:w-4/12 mx-auto py-8 px-3'>
@@ -30,21 +29,21 @@ const ConcentricCard = (props) => {
       </div>
 
       <div className='relative pt-1.5'>
-        <Concentric outer={info?.parent[0] ? info?.parent[0].especies_region_total : slug === 'colombia' ? estimadasCol : info?.especies_region_total} inner={info?.especies_region_total} style='style-2' />
+        <Concentric outer={info?.parent[0] ? info?.parent[0].especies_region_total : slug === 'colombia' ? observadasCol : info?.especies_region_total} inner={info?.especies_region_total} style='style-2' />
 
         <div className='absolute top-[200px] left-1/4 xl:left-[15%] flex flex-col'>
           <span className='font-black text-lg'>
             {formatNumbers(info?.especies_region_total)}
           </span>
-          < span className='text-sm'> Especies de {selected.toLowerCase()} en {region}</span>
+          <span className='text-sm'> Especies de {selected.toLowerCase()} en {region}</span>
         </div>
 
         <div className='absolute -left-4 top-[260px] flex flex-col'>
           <span className='font-black text-lg'>
-            {formatNumbers(info?.parent[0] ? info?.parent[0].especies_region_total : slug === 'colombia' ? estimadasCol : info?.especies_region_total)}
+            {formatNumbers(info?.parent[0] ? info?.parent[0].especies_region_total : slug === 'colombia' ? observadasCol : info?.especies_region_total)}
           </span>
           {slug === 'colombia'
-            ? (<span className='text-sm'> Especies estimadas en Colombia</span>)
+            ? (<span className='text-sm'> Especies observadas en Colombia</span>)
             : (<span className='text-sm'> Especies de {selected.toLowerCase()} en {municipalityflag ? parentlabel : 'Colombia'}</span>)
           }
         </div>

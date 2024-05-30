@@ -18,7 +18,7 @@ export default function CustomSeparator () {
       {breadCrumb.map((el, key) => {
         if (el.href) {
           return (
-            <div className='flex gap-x-2 items-center'>
+            <div key={el} className='flex gap-x-2 items-center'>
               <Link href={el.href}>
                 <a className='text-white font'>{el.label}</a>
               </Link>
