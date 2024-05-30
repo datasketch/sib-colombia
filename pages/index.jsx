@@ -54,6 +54,24 @@ const ENUM_DESTACADAS = [
     link: '/bolivar'
   }, */
   {
+    type: 'Departamento',
+    label: 'Amazonas',
+    slug: 'amazonas',
+    link: '/amazonas'
+  },
+  {
+    type: 'Departamento',
+    label: 'Antioquia',
+    slug: 'antioquia',
+    link: '/antioquia'
+  },
+  {
+    type: 'Departamento',
+    label: 'Bolívar',
+    slug: 'bolivar',
+    link: '/bolivar'
+  },
+  {
     type: 'Reserva forestal',
     slug: 'reserva-forestal-la-planada',
     label: 'La Planada',
@@ -93,7 +111,7 @@ export default function Home () {
           <div className=' mx-auto space-y-4'>
             <div>
               <h2 className='text-2xl lg:text-3xl text-center font-bold' >Biodiversidad de Colombia en el mundo</h2>
-              <p className='flex justify-center'>Colombia es el tercer país con mayor biodiversidad en el mundo <InfoTooltip classname='ml-0.5' label={listDataMap.ref_principal} src={'/images/icons/icon-information-black.svg'} id={'ref_principal'}/></p>
+              <p className='flex justify-center'>Colombia es el cuarto país con mayor biodiversidad del mundo <InfoTooltip classname='ml-0.5' label={listDataMap.ref_principal} src={'/images/icons/icon-information-black.svg'} id={'ref_principal'}/></p>
             </div>
             {/* <div className='border-b-2 border-dotted  border-b-light-orange lg:w-2/3 mx-auto' /> */}
           </div>

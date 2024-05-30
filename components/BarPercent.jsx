@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { calculateWidth, formatNumbers } from '../lib/functions'
+import { calculateWidth, formatNumbers, capitalize } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
@@ -12,6 +12,8 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
   const widthRegEspecies = calculateWidth(+especies, +parentEspecies)
   const widthColObservadas = calculateWidth(+parentEspecies, +parentEspecies)
   const widthColEstimadas = calculateWidth(widthBarGeneral, +speciesEstimadasCol)
+
+  const capitalizeRegion = capitalize(regionparent)
 
   return (
     <div>
@@ -46,7 +48,7 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
                 {
                   municipalityflag
                     ? (
-                      <span className="text-black-3">Especies observadas {regionparent} ({parentEspecies})</span>
+                      <span className="text-black-3">Especies observadas {capitalizeRegion} ({parentEspecies})</span>
                       )
                     : (
                       <span className='text-black-3'>Especies observadas Colombia({parentEspecies}) | Especies estimadas Colombia ({speciesEstimadasCol}) </span>

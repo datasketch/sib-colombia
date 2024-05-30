@@ -3,7 +3,7 @@ import { useContext, useEffect } from 'react'
 
 import HeadRegion from '../../../components/headers/HeadRegion'
 import { AppContext } from '../../_app'
-import { getMunicipalityData, getMunicipalitesPath, getDepartmentData } from '../../../lib/regions'
+import { getMunicipalityData, getMunicipalitesPath, getDepartmentData /* getMapData */ } from '../../../lib/regions'
 import PageComponent from '../../../components/PageComponent'
 
 function municipio ({ data, slug, municipality, sponsors }) {
@@ -50,10 +50,12 @@ export async function getStaticProps (context) {
   const { regiones, municipio } = context.params
   const content = await getMunicipalityData(regiones, municipio)
   const region = await getDepartmentData(regiones)
+  /* const map = await getMapData(regiones) */
 
   return {
     props: {
       data: JSON.parse(content),
+      /* map: JSON.parse(map), */
       slug: regiones,
       municipality: municipio,
       sponsors: JSON.parse(region).patrocinador

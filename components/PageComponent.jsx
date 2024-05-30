@@ -12,8 +12,6 @@ import SimpleSlider from '../components/Slider'
 import Slides from '../components/Slides'
 import CardTematicasCol from './CardTematicasCol'
 
-/* import MapDepartmentSpecies from './MapDepartmentSpecies.jsx'
-import MapDepartmentObservations from './MapDepartmentObservations.jsx' */
 import InfoPublishers from './InfoPublishers.jsx'
 import { useRouter } from 'next/router'
 
@@ -114,7 +112,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
               {(selected, info, updateBreadcrumb) => (
                 slug === 'colombia'
                   ? (<CardTematicasCol slugregion={slug} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} />)
-                  : (<CardTematicas slugregion={slug} parentlabel={generalInfo.parent_label} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} municipalityflag={municipalityflag} />)
+                  : (<CardTematicas slugregion={slug} parentlabel={['La Planada', 'Pialapí Pueblo-Viejo'].includes(generalInfo.label) ? generalInfo.subtipo : generalInfo.parent_label} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} municipalityflag={municipalityflag} />)
 
               )}
             </MenuExplorer.Body>
