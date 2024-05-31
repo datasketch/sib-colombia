@@ -75,8 +75,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     }
   }
 
-  /* console.log(generalInfo.label, 'label') */
-
   const handleChangeMunicipio = (event) => {
     setMunicipio(event.target.value)
   }

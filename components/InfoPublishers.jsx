@@ -2,7 +2,7 @@
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as TooltipPieChart, Legend } from 'recharts'
 import { formatNumbers } from '../lib/functions'
 
-export default function InfoPublishers ({ total, data, region }) {
+export default function InfoPublishers ({ total, data, region, router }) {
   const totalPublishers = total.length
 
   const internationalPublisher = data.find(item => item.tipo_organizacion === 'Internacional')
@@ -119,6 +119,12 @@ export default function InfoPublishers ({ total, data, region }) {
     paddingLeft: '15px'
   }
 
+  /* const styleDiv = {
+    width,
+    padding,
+    fontSize
+  } */
+
   const renderLegend = (props) => {
     const { payload } = props
     return (
@@ -173,8 +179,8 @@ export default function InfoPublishers ({ total, data, region }) {
   }
 
   return (
-    <div className="flex flex-row gap-5">
-      <div className='bg-white flex flex-col text-black-2 py-6 px-7 shadow-default hover:shadow-select w-[500px]'>
+    <div className={`${router === '/mas/publicadores' ? 'flex flex-row gap-3 mt-10' : 'flex flex-row gap-5'} `}>
+      <div className={`${router === '/mas/publicadores' ? 'bg-white flex flex-col text-black-2 p-2 shadow-default hover:shadow-select w-[280px]' : 'bg-white flex flex-col text-black-2 py-6 px-7 shadow-default hover:shadow-select w-[500px]'} `}>
         <h2 className="text-xl font-bold">Total de publicadores</h2>
         <div className='w-full mt-4 flex flex-col justify-center items-center'>
           <div className="w-full flex flex-col justify-center items-center h-full space-y-5">
@@ -194,7 +200,8 @@ export default function InfoPublishers ({ total, data, region }) {
           {/* <p className="text-xl">{totalPublishers} Publicadores en total</p> */}
         </div>
       </div>
-      <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[521px]'>
+
+      <div className={`${router === '/mas/publicadores' ? 'bg-white flex flex-col text-black-2 p-2 shadow-default hover:shadow-select w-[521px]' : 'bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[521px]'} `}>
         <h2 className="text-xl font-bold">Publicadores por tipo de organización</h2>
         <ResponsiveContainer width="100%" height="100%" className="mt-6">
           <PieChart width={200} height={200} className='left-0'>
@@ -218,7 +225,8 @@ export default function InfoPublishers ({ total, data, region }) {
           </PieChart>
         </ResponsiveContainer>
       </div>
-      <div className='bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[521px]'>
+
+      <div className={`${router === '/mas/publicadores' ? 'bg-white flex flex-col text-black-2 p-2 shadow-default hover:shadow-select w-[521px]' : 'bg-white flex flex-col justify-between text-black-2 py-3 px-4 gap-y-2 shadow-default hover:shadow-select w-[521px]'} `}>
         <h2 className="text-xl font-bold">Observaciones aportadas por tipo de organización</h2>
         <ResponsiveContainer width="100%" height="100%" className="">
           <PieChart width={200} height={300} className='left-0'>

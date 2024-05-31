@@ -18,7 +18,7 @@ async function main () {
   const files = await Promise.all(data.map(async (dir) => {
     const dirPath = path.resolve(process.cwd(), 'public', 'data', dir)
     const files = await fs.readdir(dirPath)
-    const filterFiles = files.filter(e => e !== dir + '.json')
+    const filterFiles = files.filter(e => e !== dir + '.json' && !e.includes('_map'))
 
     let extra = []
 
