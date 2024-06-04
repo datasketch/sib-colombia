@@ -131,7 +131,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
               {(selected, info, updateBreadcrumb) => (
                 slug === 'colombia'
                   ? (<CardTematicasCol slugregion={slug} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} />)
-                  : (<CardTematicas slugregion={slug} parentlabel={['La Planada', 'Pialapí Pueblo-Viejo'].includes(generalInfo.label) ? generalInfo.subtipo : generalInfo.parent_label} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} municipalityflag={municipalityflag} especiesObservadas={generalInfo.especies_region_total} />)
+                  : (<CardTematicas slugregion={slug} parentlabel={['La Planada', 'Pialapí Pueblo-Viejo'].includes(generalInfo.label) ? generalInfo.label : generalInfo.parent_label} info={info} selected={selected} updateBreadcrumb={updateBreadcrumb} region={generalInfo.label} municipalityflag={municipalityflag} especiesObservadas={generalInfo.especies_region_total} />)
 
               )}
             </MenuExplorer.Body>

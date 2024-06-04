@@ -1201,11 +1201,7 @@
       "parent_en": 684,
       "parent_vu": 736,
       "parent_especies_total": 79831,
-      "list_especies_amenazadas_nacional": {},
-      "list_especies_amenazadas_nacional_vu": {},
-      "list_especies_amenazadas_nacional_en": {},
-      "list_especies_amenazadas_nacional_cr": {},
-      "species_list": [
+      "list_especies_amenazadas_nacional": [
         {
           "label": "Chrysuronia lilliae",
           "slug_especie": "chrysuronia-lilliae",
@@ -1283,6 +1279,226 @@
           "url_cbc": "https://catalogo.biodiversidad.co/file/56702bfef289f5a40c0cd2ac/summary",
           "slug_tematica": "amenazadas-nacional-vu"
         }
+      ],
+      "list_especies_amenazadas_nacional_vu": [
+        {
+          "label": "Chauna chavaria",
+          "slug_especie": "chauna-chavaria",
+          "registros": 89,
+          "url_gbif": "https://www.gbif.org/species/5959223",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Egretta rufescens",
+          "slug_especie": "egretta-rufescens",
+          "registros": 86,
+          "url_gbif": "https://www.gbif.org/species/2480888",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Mugil liza",
+          "slug_especie": "mugil-liza",
+          "registros": 46,
+          "url_gbif": "https://www.gbif.org/species/2400654",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/569bf1c63fd33faa0c3fa4ff/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Chelonoidis carbonarius",
+          "slug_especie": "chelonoidis-carbonarius",
+          "registros": 44,
+          "url_gbif": "https://www.gbif.org/species/9533689",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d920643c16479905cba98f/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Arremon schlegeli",
+          "slug_especie": "arremon-schlegeli",
+          "registros": 24,
+          "url_gbif": "https://www.gbif.org/species/2491624",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Handroanthus coralibe",
+          "slug_especie": "handroanthus-coralibe",
+          "registros": 23,
+          "url_gbif": "https://www.gbif.org/species/4092392",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56702bfef289f5a40c0cd2ac/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Triplaris purdiei",
+          "slug_especie": "triplaris-purdiei",
+          "registros": 20,
+          "url_gbif": "https://www.gbif.org/species/4037728",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56702f8ff289f5a40c0cd2d1/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Larkinia grandis",
+          "slug_especie": "larkinia-grandis",
+          "registros": 16,
+          "url_gbif": "https://www.gbif.org/species/6529601",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Aotus griseimembra",
+          "slug_especie": "aotus-griseimembra",
+          "registros": 8,
+          "url_gbif": "https://www.gbif.org/species/5786069",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c0c817f0106c67230e72fe/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Cebus capucinus",
+          "slug_especie": "cebus-capucinus",
+          "registros": 8,
+          "url_gbif": "https://www.gbif.org/species/2436637",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c3da43f0106c67230e7363/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        }
+      ],
+      "list_especies_amenazadas_nacional_en": [
+        {
+          "label": "Chrysuronia lilliae",
+          "slug_especie": "chrysuronia-lilliae",
+          "registros": 218,
+          "url_gbif": "https://www.gbif.org/species/10983511",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/61d919b5182759fd3656918f/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Phoenicopterus ruber",
+          "slug_especie": "phoenicopterus-ruber",
+          "registros": 24,
+          "url_gbif": "https://www.gbif.org/species/9691034",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5e3b48fd7312d26d51df5a05/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Ficus eliadis",
+          "slug_especie": "ficus-eliadis",
+          "registros": 15,
+          "url_gbif": "https://www.gbif.org/species/5572022",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Aspidosperma polyneuron",
+          "slug_especie": "aspidosperma-polyneuron",
+          "registros": 7,
+          "url_gbif": "https://www.gbif.org/species/7316900",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e5ed0483c45700544e3e8a/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Crocodylus acutus",
+          "slug_especie": "crocodylus-acutus",
+          "registros": 7,
+          "url_gbif": "https://www.gbif.org/species/2441329",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56718bdcf289f5a40c0cd305/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Sula leucogaster",
+          "slug_especie": "sula-leucogaster",
+          "registros": 7,
+          "url_gbif": "https://www.gbif.org/species/2480975",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/61d90294182759fd36568de7/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Cebus versicolor",
+          "slug_especie": "cebus-versicolor",
+          "registros": 6,
+          "url_gbif": "https://www.gbif.org/species/7832196",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5e3b3b0d7312d26d51df580e/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Elaeis oleifera",
+          "slug_especie": "elaeis-oleifera",
+          "registros": 5,
+          "url_gbif": "https://www.gbif.org/species/8791596",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56709135f289f5a40c0cd2f8/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Podocnemis unifilis",
+          "slug_especie": "podocnemis-unifilis",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/2442782",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56707a81f289f5a40c0cd2de/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Annona rufinervis",
+          "slug_especie": "annona-rufinervis",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/5541601",
+          "slug_tematica": "amenazadas-nacional-en"
+        }
+      ],
+      "list_especies_amenazadas_nacional_cr": [
+        {
+          "label": "Saguinus oedipus",
+          "slug_especie": "saguinus-oedipus",
+          "registros": 66,
+          "url_gbif": "https://www.gbif.org/species/2436469",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cbd225207ecea54a561e0a/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Guaiacum officinale",
+          "slug_especie": "guaiacum-officinale",
+          "registros": 24,
+          "url_gbif": "https://www.gbif.org/species/3986813",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/566ef9fef289f5a40c0cd26b/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Graphis mokanarum",
+          "slug_especie": "graphis-mokanarum",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/10842082",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Podocnemis lewyana",
+          "slug_especie": "podocnemis-lewyana",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2442789",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5670695cf289f5a40c0cd2d6/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Fissurina linoana",
+          "slug_especie": "fissurina-linoana",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/10673444",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Phaeographis galeanoae",
+          "slug_especie": "phaeographis-galeanoae",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/10848900",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Ateles hybridus",
+          "slug_especie": "ateles-hybridus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/4267251",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c15c46f0106c67230e7314/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Megalops atlanticus",
+          "slug_especie": "megalops-atlanticus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5203123",
+          "slug_tematica": "amenazadas-nacional-cr"
+        }
       ]
     },
     {
@@ -1305,11 +1521,7 @@
       "parent_en": 588,
       "parent_vu": 611,
       "parent_especies_total": 79831,
-      "list_especies_amenazadas_global": {},
-      "list_especies_amenazadas_global_vu": {},
-      "list_especies_amenazadas_global_en": {},
-      "list_especies_amenazadas_global_cr": {},
-      "species_list": [
+      "list_especies_amenazadas_global": [
         {
           "label": "Chrysuronia lilliae",
           "slug_especie": "chrysuronia-lilliae",
@@ -1386,6 +1598,232 @@
           "url_gbif": "https://www.gbif.org/species/5786069",
           "url_cbc": "https://catalogo.biodiversidad.co/file/56c0c817f0106c67230e72fe/summary",
           "slug_tematica": "amenazadas-global-vu"
+        }
+      ],
+      "list_especies_amenazadas_global_vu": [
+        {
+          "label": "Handroanthus chrysanthus",
+          "slug_especie": "handroanthus-chrysanthus",
+          "registros": 153,
+          "url_gbif": "https://www.gbif.org/species/6401337",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5ff0b5a0a31867213a68a8ff/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Pterocarpus acapulcensis",
+          "slug_especie": "pterocarpus-acapulcensis",
+          "registros": 29,
+          "url_gbif": "https://www.gbif.org/species/5349262",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Handroanthus coralibe",
+          "slug_especie": "handroanthus-coralibe",
+          "registros": 23,
+          "url_gbif": "https://www.gbif.org/species/4092392",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56702bfef289f5a40c0cd2ac/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Triplaris purdiei",
+          "slug_especie": "triplaris-purdiei",
+          "registros": 20,
+          "url_gbif": "https://www.gbif.org/species/4037728",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56702f8ff289f5a40c0cd2d1/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Pseudopiptadenia pittieri",
+          "slug_especie": "pseudopiptadenia-pittieri",
+          "registros": 17,
+          "url_gbif": "https://www.gbif.org/species/2952928",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Aotus griseimembra",
+          "slug_especie": "aotus-griseimembra",
+          "registros": 8,
+          "url_gbif": "https://www.gbif.org/species/5786069",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c0c817f0106c67230e72fe/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Cebus capucinus",
+          "slug_especie": "cebus-capucinus",
+          "registros": 8,
+          "url_gbif": "https://www.gbif.org/species/2436637",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c3da43f0106c67230e7363/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Crocodylus acutus",
+          "slug_especie": "crocodylus-acutus",
+          "registros": 7,
+          "url_gbif": "https://www.gbif.org/species/2441329",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56718bdcf289f5a40c0cd305/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Agamia agami",
+          "slug_especie": "agamia-agami",
+          "registros": 5,
+          "url_gbif": "https://www.gbif.org/species/2480836",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Myrmecophaga tridactyla",
+          "slug_especie": "myrmecophaga-tridactyla",
+          "registros": 5,
+          "url_gbif": "https://www.gbif.org/species/2436346",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c942fff0106c67230e743c/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        }
+      ],
+      "list_especies_amenazadas_global_en": [
+        {
+          "label": "Chrysuronia lilliae",
+          "slug_especie": "chrysuronia-lilliae",
+          "registros": 218,
+          "url_gbif": "https://www.gbif.org/species/10983511",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/61d919b5182759fd3656918f/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Guaiacum officinale",
+          "slug_especie": "guaiacum-officinale",
+          "registros": 24,
+          "url_gbif": "https://www.gbif.org/species/3986813",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/566ef9fef289f5a40c0cd26b/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Ficus eliadis",
+          "slug_especie": "ficus-eliadis",
+          "registros": 15,
+          "url_gbif": "https://www.gbif.org/species/5572022",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Aspidosperma polyneuron",
+          "slug_especie": "aspidosperma-polyneuron",
+          "registros": 7,
+          "url_gbif": "https://www.gbif.org/species/7316900",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e5ed0483c45700544e3e8a/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Cebus versicolor",
+          "slug_especie": "cebus-versicolor",
+          "registros": 6,
+          "url_gbif": "https://www.gbif.org/species/7832196",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5e3b3b0d7312d26d51df580e/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Orbicella annularis",
+          "slug_especie": "orbicella-annularis",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/7617481",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Annona rufinervis",
+          "slug_especie": "annona-rufinervis",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/5541601",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Austrofundulus myersi",
+          "slug_especie": "austrofundulus-myersi",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2349136",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/59debf855f36934344301c55/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Handroanthus serratifolius",
+          "slug_especie": "handroanthus-serratifolius",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/4092017",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e34d7083c45700544e3dc9/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Sphyrna tiburo",
+          "slug_especie": "sphyrna-tiburo",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2418800",
+          "slug_tematica": "amenazadas-global-en"
+        }
+      ],
+      "list_especies_amenazadas_global_cr": [
+        {
+          "label": "Saguinus oedipus",
+          "slug_especie": "saguinus-oedipus",
+          "registros": 66,
+          "url_gbif": "https://www.gbif.org/species/2436469",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cbd225207ecea54a561e0a/summary",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Pseudodiploria strigosa",
+          "slug_especie": "pseudodiploria-strigosa",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/7454555",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Podocnemis lewyana",
+          "slug_especie": "podocnemis-lewyana",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2442789",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5670695cf289f5a40c0cd2d6/summary",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Diploria labyrinthiformis",
+          "slug_especie": "diploria-labyrinthiformis",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2260167",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Siderastrea siderea",
+          "slug_especie": "siderastrea-siderea",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2258895",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Ateles hybridus",
+          "slug_especie": "ateles-hybridus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/4267251",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c15c46f0106c67230e7314/summary",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Meandrina meandrites",
+          "slug_especie": "meandrina-meandrites",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2259752",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Millepora complanata",
+          "slug_especie": "millepora-complanata",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2265096",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Pimelodus grosskopfii",
+          "slug_especie": "pimelodus-grosskopfii",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2338918",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/596f48c82f4fd7bc7f3a5417/summary",
+          "slug_tematica": "amenazadas-global-cr"
         }
       ]
     },
@@ -2019,6 +2457,14 @@
       "parent_registros_exoticas_riesgo_invasion": 452154,
       "list_especies_exoticas_total": [
         {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 970,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion"
+        },
+        {
           "label": "Gliricidia sepium",
           "slug_especie": "gliricidia-sepium",
           "registros": 813,
@@ -2027,12 +2473,35 @@
           "slug_tematica": "exoticas"
         },
         {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 675,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion"
+        },
+        {
           "label": "Mangifera indica",
           "slug_especie": "mangifera-indica",
           "registros": 89,
           "url_gbif": "https://www.gbif.org/species/3190638",
           "url_cbc": "https://catalogo.biodiversidad.co/file/56e78b3b83c45700544e4113/summary",
           "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Calotropis procera",
+          "slug_especie": "calotropis-procera",
+          "registros": 71,
+          "url_gbif": "https://www.gbif.org/species/5414566",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7778383c45700544e401a/summary",
+          "slug_tematica": "exotica-riesgo-invasion"
+        },
+        {
+          "label": "Digitonthophagus gazella",
+          "slug_especie": "digitonthophagus-gazella",
+          "registros": 63,
+          "url_gbif": "https://www.gbif.org/species/1092466",
+          "slug_tematica": "exotica-riesgo-invasion"
         },
         {
           "label": "Ricinus communis",
@@ -2062,35 +2531,6 @@
           "slug_especie": "aedes-aegypti",
           "registros": 30,
           "url_gbif": "https://www.gbif.org/species/1651891",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Swinglea glutinosa",
-          "slug_especie": "swinglea-glutinosa",
-          "registros": 30,
-          "url_gbif": "https://www.gbif.org/species/3837155",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Eucalyptus tereticornis",
-          "slug_especie": "eucalyptus-tereticornis",
-          "registros": 28,
-          "url_gbif": "https://www.gbif.org/species/3176719",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Momordica charantia",
-          "slug_especie": "momordica-charantia",
-          "registros": 27,
-          "url_gbif": "https://www.gbif.org/species/2874581",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Heliotropium indicum",
-          "slug_especie": "heliotropium-indicum",
-          "registros": 26,
-          "url_gbif": "https://www.gbif.org/species/2925788",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/56e59f8e83c45700544e3e77/summary",
           "slug_tematica": "exoticas"
         }
       ],
@@ -31150,7 +31590,6 @@
       "map_data": [
         {
           "id": "08001",
-          "name": "BARRANQUILLA",
           "label": "Barranquilla",
           "n_especies": 1087,
           "n_registros": 20782,
@@ -31200,7 +31639,6 @@
         },
         {
           "id": "08078",
-          "name": "BARANOA",
           "label": "Baranoa",
           "n_especies": 415,
           "n_registros": 4427,
@@ -31244,7 +31682,6 @@
         },
         {
           "id": "08137",
-          "name": "CAMPO DE LA CRUZ",
           "label": "Campo de la Cruz",
           "n_especies": 36,
           "n_registros": 57,
@@ -31289,7 +31726,6 @@
         },
         {
           "id": "08141",
-          "name": "CANDELARIA",
           "label": "Candelaria",
           "n_especies": 7,
           "n_registros": 11,
@@ -31331,7 +31767,6 @@
         },
         {
           "id": "08296",
-          "name": "GALAPA",
           "label": "Galapa",
           "n_especies": 378,
           "n_registros": 1789,
@@ -31365,7 +31800,6 @@
         },
         {
           "id": "08372",
-          "name": "JUAN DE ACOSTA",
           "label": "Juan de Acosta",
           "n_especies": 394,
           "n_registros": 5961,
@@ -31417,7 +31851,6 @@
         },
         {
           "id": "08421",
-          "name": "LURUACO",
           "label": "Luruaco",
           "n_especies": 509,
           "n_registros": 7828,
@@ -31466,7 +31899,6 @@
         },
         {
           "id": "08433",
-          "name": "MALAMBO",
           "label": "Malambo",
           "n_especies": 323,
           "n_registros": 2740,
@@ -31500,7 +31932,6 @@
         },
         {
           "id": "08436",
-          "name": "MANATÍ",
           "label": "Manatí",
           "n_especies": 77,
           "n_registros": 123,
@@ -31547,7 +31978,6 @@
         },
         {
           "id": "08520",
-          "name": "PALMAR DE VARELA",
           "label": "Palmar de Varela",
           "n_especies": 137,
           "n_registros": 199,
@@ -31579,7 +32009,6 @@
         },
         {
           "id": "08549",
-          "name": "PIOJÓ",
           "label": "Piojó",
           "n_especies": 668,
           "n_registros": 18151,
@@ -31629,7 +32058,6 @@
         },
         {
           "id": "08558",
-          "name": "POLONUEVO",
           "label": "Polonuevo",
           "n_especies": 67,
           "n_registros": 93,
@@ -31661,7 +32089,6 @@
         },
         {
           "id": "08560",
-          "name": "PONEDERA",
           "label": "Ponedera",
           "n_especies": 191,
           "n_registros": 786,
@@ -31704,7 +32131,6 @@
         },
         {
           "id": "08573",
-          "name": "PUERTO COLOMBIA",
           "label": "Puerto Colombia",
           "n_especies": 881,
           "n_registros": 27471,
@@ -31746,7 +32172,6 @@
         },
         {
           "id": "08606",
-          "name": "REPELÓN",
           "label": "Repelón",
           "n_especies": 295,
           "n_registros": 2085,
@@ -31796,7 +32221,6 @@
         },
         {
           "id": "08634",
-          "name": "SABANAGRANDE",
           "label": "Sabanagrande",
           "n_especies": 202,
           "n_registros": 1855,
@@ -31824,7 +32248,6 @@
         },
         {
           "id": "08638",
-          "name": "SABANALARGA",
           "label": "Sabanalarga",
           "n_especies": 390,
           "n_registros": 2830,
@@ -31876,7 +32299,6 @@
         },
         {
           "id": "08675",
-          "name": "SANTA LUCÍA",
           "label": "Santa Lucía",
           "n_especies": 16,
           "n_registros": 39,
@@ -31913,7 +32335,6 @@
         },
         {
           "id": "08685",
-          "name": "SANTO TOMÁS",
           "label": "Santo Tomás",
           "n_especies": 194,
           "n_registros": 1012,
@@ -31946,7 +32367,6 @@
         },
         {
           "id": "08758",
-          "name": "SOLEDAD",
           "label": "Soledad",
           "n_especies": 192,
           "n_registros": 1442,
@@ -31982,7 +32402,6 @@
         },
         {
           "id": "08770",
-          "name": "SUAN",
           "label": "Suan",
           "n_especies": 79,
           "n_registros": 290,
@@ -32009,7 +32428,6 @@
         },
         {
           "id": "08832",
-          "name": "TUBARÁ",
           "label": "Tubará",
           "n_especies": 456,
           "n_registros": 3502,
@@ -32053,7 +32471,6 @@
         },
         {
           "id": "08849",
-          "name": "USIACURÍ",
           "label": "Usiacurí",
           "n_especies": 993,
           "n_registros": 15699,

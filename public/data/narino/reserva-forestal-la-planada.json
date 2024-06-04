@@ -17,9 +17,7 @@
     "registros_region_total_str": "389.289",
     "main_text": "A través del SiB Colombia se han publicado 389.289 observaciones\npara el reservas forestales protectoras de La Planada. Estos datos hacen referencia a un total de\n1.969 especies.",
     "referencia": [],
-    "credito_foto": [],
-    "parent": "colombia",
-    "parent_label": "Colombia"
+    "credito_foto": []
   },
   "nav_tematica": {
     "slug": "0",
@@ -884,6 +882,9 @@
           "registros_str": "6.328"
         }
       ]
+    },
+    {
+      "info": "No hay información para municipios en este territorio"
     }
   ],
   "tematica": [

@@ -28,6 +28,7 @@ export default function index ({ data, slug, map }) {
         title={generalInfo.label}
         description={generalInfo.main_text}
         imageMap={`images/mapas-svg-dep/mapa-${slug}.svg`}
+        imageSmallDpto={`images/mapas-svg-dep/${slug}.svg`}
         especiesEstimadas={generalInfo.especies_region_estimadas}
         especiesObservadas={generalInfo.especies_region_total}
         marine={generalInfo.marino}

@@ -48,7 +48,7 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
                 {
                   municipalityflag && ['La Planada', 'Pialapí Pueblo-Viejo'].includes(region)
                     ? (
-                      <span className="text-black-3">Especies observadas {capitalizeRegion} ({especiesObservadas})</span>
+                      <span className="text-black-3">Especies totales observadas {capitalizeRegion} ({especiesObservadas})</span>
                       )
                     : (
                       <span className='text-black-3'>Especies observadas Colombia({parentEspecies}) | Especies estimadas Colombia ({speciesEstimadasCol}) </span>

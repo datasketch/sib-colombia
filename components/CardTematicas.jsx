@@ -21,7 +21,7 @@ const CardTematicas = props => {
     return (
       <div className='py-10 bg-white'>
         <div className='grid lg:grid-cols-2 gap-y-6 gap-x-36 w-10/12 mx-auto'>
-          {info?.children.map(({ label, slug, especies, registros, species_list: speciesList, cr: crRegister, en: enRegister, vu: vuRegister }, key) => {
+          {info?.children.map(({ label, slug, especies, species_list: speciesList, registros, cr: crRegister, en: enRegister, vu: vuRegister }, key) => {
             const title = capitalize(slug.replace('amenazadas-', ''))
             const crVal = validateDifNa(crRegister)
             const enVal = validateDifNa(enRegister)
@@ -359,38 +359,7 @@ const CardTematicas = props => {
   const vuVal = validateDifNa(info?.vu_registros)
   const widthTotal = crVal + enVal + vuVal
 
-  if (info && info.species_list) {
-    const speciesListTable = info.species_list
-
-    const specieAmenazadaNalEn = []
-    const specieAmenazadaNalCr = []
-    const specieAmenazadaNalVu = []
-
-    speciesListTable.forEach(specie => {
-      if (specie.slug_tematica === 'amenazadas-nacional-en') {
-        specieAmenazadaNalEn.push(specie)
-      } else if (specie.slug_tematica === 'amenazadas-nacional-cr') {
-        specieAmenazadaNalCr.push(specie)
-      } else if (specie.slug_tematica === 'amenazadas-nacional-vu') {
-        specieAmenazadaNalVu.push(specie)
-      }
-    })
-
-    const specieAmenazadaGlobalEn = []
-    const specieAmenazadaGlobalCr = []
-    const specieAmenazadaGlobalVu = []
-
-    speciesListTable.forEach(specie => {
-      if (specie.slug_tematica === 'amenazadas-global-en') {
-        specieAmenazadaGlobalEn.push(specie)
-      } else if (specie.slug_tematica === 'amenazadas-global-cr') {
-        specieAmenazadaGlobalCr.push(specie)
-      } else if (specie.slug_tematica === 'amenazadas-global-vu') {
-        specieAmenazadaGlobalVu.push(specie)
-      }
-    })
-
-    return (
+  return (
       <div className='bg-white py-10'>
         <div className='w-10/12 mx-auto flex flex-col md:flex-row gap-6 justify-between'>
           <div className='max-w-[45%] w-full shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
@@ -401,7 +370,7 @@ const CardTematicas = props => {
                 <div className='border-t border-t-dartmouth-green' />
               </span>
               <div className='font-black font-inter text-lg'>Especies amenazadas{/* de {info?.label} */}
-                {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
+                {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.slug === 'amenazadas-global' ? info?.list_especies_amenazadas_global : info?.list_especies_amenazadas_nacional} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
                   <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
                 </CustomTooltip>}
               </div>
@@ -458,7 +427,7 @@ const CardTematicas = props => {
               region={region}
               regionparent={parentlabel}
               title={'CR'}
-              datatable={info.slug === 'amenazadas-global' ? specieAmenazadaGlobalCr : specieAmenazadaNalCr}
+              datatable={info?.slug === 'amenazadas-global' ? info?.list_especies_amenazadas_global_cr : info?.list_especies_amenazadas_nacional_cr}
               especies={info?.cr}
               parentEspecies={info?.estimadas_cr || info?.parent_cr}
               speciesEstimadasCol={info?.parent_cr_estimadas}
@@ -475,7 +444,7 @@ const CardTematicas = props => {
               bgColor={'bg-orange-en'}
               region={region}
               title={'EN'}
-              datatable={info.slug === 'amenazadas-global' ? specieAmenazadaGlobalEn : specieAmenazadaNalEn}
+              datatable={info?.slug === 'amenazadas-global' ? info?.list_especies_amenazadas_global_en : info?.list_especies_amenazadas_nacional_en}
               especies={info?.en}
               parentEspecies={info?.estimadas_en || info?.parent_en}
               speciesEstimadasCol={info?.parent_en_estimadas}
@@ -491,7 +460,7 @@ const CardTematicas = props => {
               bgColor={'bg-yellow-vu'}
               region={region}
               title={'VU'}
-              datatable={info.slug === 'amenazadas-global' ? specieAmenazadaGlobalVu : specieAmenazadaNalVu}
+              datatable={info?.slug === 'amenazadas-global' ? info?.list_especies_amenazadas_global_vu : info?.list_especies_amenazadas_nacional_vu}
               especies={info?.vu}
               parentEspecies={info?.estimadas_vu || info?.parent_vu}
               speciesEstimadasCol={info?.parent_vu_estimadas}
@@ -499,16 +468,16 @@ const CardTematicas = props => {
               colObservadas={info?.parent_vu}
               especiesObservadas={especiesObservadas}
             />
+
           </div>
         </div>
       </div>
-    )
-  }
-
-  return (
-    null
   )
 }
+
+/* return (
+    null
+  ) */
 
 CardTematicas.propTypes = {
   info: PropTypes.object,

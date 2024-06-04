@@ -122,7 +122,8 @@ export default function publicadores () {
       }
     } else {
       setPublicadors(publishers)
-      router.push('/mas/publicadores')
+      router.push('/mas/publicadores?region=colombia')
+      setDisplay(true)
     }
   }
 
@@ -230,6 +231,11 @@ export default function publicadores () {
     if (!router.isReady) return
     const { query: { region, area } } = router
     setQuery(region || '')
+
+    if (region === 'colombia') {
+      setSelectedRegion('Colombia')
+      setPublicadors(publishers)
+    }
 
     if (territories.includes(region)) {
       const found = publishersExtend.find(e => e.name === 'narino')

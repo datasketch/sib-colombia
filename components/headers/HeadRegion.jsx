@@ -6,11 +6,11 @@ import classNames from 'classnames'
 import InfoTooltip from '../InfoTooltip'
 import { useEffect, useState } from 'react'
 /* import SmallMap from '../SmallMap' */
-import dynamic from 'next/dynamic'
+/* import dynamic from 'next/dynamic'
 
-const SmallMap = dynamic(() => import('../SmallMap.jsx'), { ssr: false })
+const SmallMap = dynamic(() => import('../SmallMap.jsx'), { ssr: false }) */
 
-function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel, isScale = false, map }) {
+function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel, isScale = false, map, imageSmallDpto }) {
   const [windowWidth, setWindowWidth] = useState(1000)
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -37,7 +37,15 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
                 </div>
                 )
               : <div className='relative'>
-                  <SmallMap data={map} isScale={isScale} slug={slug} />
+                <div className='flex flex-row mt-10 px-7'>
+                  <div>
+                    <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageSmallDpto} />
+                  </div>
+                  <div className='w-14 h-[123px]'>
+                    <img src='/images/mapa-co.svg' alt='mapa-co' />
+                  </div>
+                </div>
+                {/* <SmallMap data={map} isScale={isScale} slug={slug} /> */}
               </div>
             }
 

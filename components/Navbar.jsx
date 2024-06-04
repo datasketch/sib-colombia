@@ -129,7 +129,7 @@ export default function Navbar () {
             },
             {
               label: 'San Andrés y Providencia',
-              href: '/san-andres-providencia'
+              href: '/san-andres-y-providencia'
             },
             {
               label: 'Santander',
