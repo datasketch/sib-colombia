@@ -4,8 +4,6 @@
 
 El Instituto Humboldt tiene como misión promover, coordinar y realizar investigación que contribuya al conocimiento, la conservación y el uso sostenible de la biodiversidad como un factor de desarrollo y bienestar de la población colombiana. En este contexto, se ha llevado a cabo  ajustes de datos en perfiles existentes de Biodiversidad en Cifras (Boyacá, Nariño, Santander, Tolima, La Planada y Pialapi Pueblo Indigena) y desarrollo de nuevos perfiles de cifras, permitiendo acceder, visualizar y consultar las cifras sobre biodiversidad con énfasis en la división departamental de Colombia basados en datos publicados en el SiB Colombia, optimizando la plataforma a partir de mejoras técnicas en gráficos, visualizaciones y la solución de incidencias.
 
-## Instalación
-
 ### Frontend del sitio
 
 - Micrositios estáticos se generan a partir de la información en bases de datos.
