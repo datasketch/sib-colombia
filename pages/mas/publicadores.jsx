@@ -26,12 +26,12 @@ export default function publicadores () {
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
   const [search, setSearch] = useState('')
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState('colombia')
   const [display, setDisplay] = useState(true)
 
   const [publicadors, setPublicadors] = useState(publishers)
 
-  const [selectedRegion, setSelectedRegion] = useState('')
+  const [selectedRegion, setSelectedRegion] = useState('Colombia')
   const [selectedArea, setSelectedArea] = useState('')
   const [selectedCountry, setSelectedCountry] = useState('')
   const [selectedOrganizacion, setSelectedOrganizacion] = useState('')
@@ -93,15 +93,20 @@ export default function publicadores () {
   const handleRegionChange = ({ target }) => {
     const { value } = target
     setSelectedRegion(regionsDropdown.find(e => e.value === value).label)
+    setDisplay(true)
     if (value !== 'colombia') {
-      setDisplay(true)
+      /* setDisplay(true) */
       setQuery(value)
       router.push(`/mas/publicadores?region=${value}`)
 
       if (territories.includes(value)) {
+        console.log(value, 'value')
         const found = publishersExtend.find(e => e.name === 'narino')
+        const foundGraph = publishersExtend.find(e => e.name === value)
         setSelectedArea(value)
         setPublicadors(found.extra.find(f => f.name === value).list)
+        setDepartmentData(foundGraph.graph)
+        setDisplay(true)
       } else {
         const found = publishersExtend.find(e => e.name === value)
         if (found && found.extra) {
@@ -121,9 +126,13 @@ export default function publicadores () {
         }
       }
     } else {
+      const found = publishersExtend.find(e => e.name === 'colombia')
+      setQuery('colombia')
       setPublicadors(publishers)
+      setDepartmentData(found.graph)
+      setSelectedArea('')
+      setAreaDropdown([])
       router.push('/mas/publicadores?region=colombia')
-      setDisplay(true)
     }
   }
 
@@ -230,11 +239,16 @@ export default function publicadores () {
   useEffect(() => {
     if (!router.isReady) return
     const { query: { region, area } } = router
-    setQuery(region || '')
+    const selectedRegion = region || 'colombia'
 
-    if (region === 'colombia') {
+    setQuery(selectedRegion)
+
+    if (selectedRegion === 'colombia') {
+      const found = publishersExtend.find(e => e.name === 'colombia')
       setSelectedRegion('Colombia')
       setPublicadors(publishers)
+      setDepartmentData(found.graph)
+      setDisplay(true)
     }
 
     if (territories.includes(region)) {
@@ -260,7 +274,7 @@ export default function publicadores () {
         }))
       }
     }
-  }, [router.isReady])
+  }, [router.isReady, router.query])
 
   useEffect(() => {
     try {

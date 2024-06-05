@@ -39,8 +39,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
-  /* console.log(municipalityflag, 'municipalityflag') */
-
   const appURL = `https://services.datasketch.co/org_sibhumboldt_sibdata_app/?region=${slug}`
   /* `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}` */
   const [municipio, setMunicipio] = useState('')
@@ -52,6 +50,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   /* const [publishers, savePublishers] = useLocalStorage('publishers', []) */
 
   const handlePublishers = () => {
+    console.log(localStorage.getItem('publishers'), '******************')
     localStorage.setItem('publishers', JSON.stringify(Array.isArray(publicadores)
       ? publicadores.map(p => ({
         ...p,
