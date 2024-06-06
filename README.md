@@ -39,7 +39,7 @@ Para correr el sitio localmente se debe ejecutar el comando:
 
  Este comando levantará el sitio en **localhost:3000** para realizar pruebas durante el desarrollo en el navegador.
 
-### Buildear el sitio para producción
+### Compilar el sitio para producción
 
 Para compilar el sitio para producción se debe ejecutar el comando:
 
@@ -51,9 +51,9 @@ Para compilar el sitio para producción se debe ejecutar el comando:
 
 Este proyecto consta de una página web de contenido estático realizada con las siguientes tecnologías:
 
-- Node >=6.9.0
+- Node >=16
 - Next ^12.1.4
-- React ^17.0.2
+- React ^18
 - Para estilos se utiliza tailwindcss ^3.1.6
   - La configuración general de estilos se configura en el archivo tailwind.config.js
 - Para realizar los mapas de cada perfil se utiliza la librería leaflet ^1.9.4 y react-leaflet ^4.2.1
@@ -64,7 +64,7 @@ Este proyecto consta de una página web de contenido estático realizada con las
 
 Las siguientes dependencias deben instalarse utilizando el comando npm install:
 
-- react 17.0.2
+- react 18
 - tailwindcss 3.1.6
 - leaflet 1.9.4
 - react-leaflet 4.2.1
@@ -105,3 +105,13 @@ El código fuente de la página web se encuentra en un repositorio privado perte
   - **icons:** íconos de la página web.
   - **photos:** carpetas con archivos de imágenes de Colombia y Nariño.
 - **styles:** archivo con los estilos generales de la página web.
+
+### Para tener en cuenta
+
+Cada vez que se actualicen los datos de cada perfil Departamental y/o de los Municipios, es importante correr este comando:
+
+```bash
+  npm run preprocess
+```
+
+Para que se modifique el archivo publicadorExtend.json y así se pueda visualizar toda la información en la sección de Publicadores de la página web.
