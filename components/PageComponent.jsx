@@ -50,7 +50,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   /* const [publishers, savePublishers] = useLocalStorage('publishers', []) */
 
   const handlePublishers = () => {
-    console.log(localStorage.getItem('publishers'), '******************')
     localStorage.setItem('publishers', JSON.stringify(Array.isArray(publicadores)
       ? publicadores.map(p => ({
         ...p,

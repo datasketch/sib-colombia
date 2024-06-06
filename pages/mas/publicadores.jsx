@@ -95,12 +95,10 @@ export default function publicadores () {
     setSelectedRegion(regionsDropdown.find(e => e.value === value).label)
     setDisplay(true)
     if (value !== 'colombia') {
-      /* setDisplay(true) */
       setQuery(value)
       router.push(`/mas/publicadores?region=${value}`)
 
       if (territories.includes(value)) {
-        console.log(value, 'value')
         const found = publishersExtend.find(e => e.name === 'narino')
         const foundGraph = publishersExtend.find(e => e.name === value)
         setSelectedArea(value)
@@ -253,8 +251,11 @@ export default function publicadores () {
 
     if (territories.includes(region)) {
       const found = publishersExtend.find(e => e.name === 'narino')
+      const foundGraph = publishersExtend.find(e => e.name === region)
       setSelectedRegion(regionsDropdown.find(e => e.value === region).label)
       setPublicadors(found.extra.find(f => f.name === region).list)
+      setDepartmentData(foundGraph.graph)
+      setDisplay(true)
     }
 
     if (region && !territories.includes(region)) {

@@ -350,143 +350,111 @@ const CardTematicasCol = props => {
     )
   }
 
-  if (info && info.species_list) {
-    const speciesListTable = info.species_list
-
-    const specieAmenazadaNalEn = []
-    const specieAmenazadaNalCr = []
-    const specieAmenazadaNalVu = []
-
-    speciesListTable.forEach(specie => {
-      if (specie.slug_tematica === 'amenazadas-nacional-en') {
-        specieAmenazadaNalEn.push(specie)
-      } else if (specie.slug_tematica === 'amenazadas-nacional-cr') {
-        specieAmenazadaNalCr.push(specie)
-      } else if (specie.slug_tematica === 'amenazadas-nacional-vu') {
-        specieAmenazadaNalVu.push(specie)
-      }
-    })
-
-    const specieAmenazadaGlobalEn = []
-    const specieAmenazadaGlobalCr = []
-    const specieAmenazadaGlobalVu = []
-
-    speciesListTable.forEach(specie => {
-      if (specie.slug_tematica === 'amenazadas-global-en') {
-        specieAmenazadaGlobalEn.push(specie)
-      } else if (specie.slug_tematica === 'amenazadas-global-cr') {
-        specieAmenazadaGlobalCr.push(specie)
-      } else if (specie.slug_tematica === 'amenazadas-global-vu') {
-        specieAmenazadaGlobalVu.push(specie)
-      }
-    })
-
-    return (
-      <div className='bg-white py-10'>
-        <div className='w-10/12 mx-auto flex justify-between'>
-          <div className='max-w-[45%] w-full shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
-            <div className='flex flex-col items-start justify-start'>
-              <span>Categoría UICN {capitalize(info?.slug.replace('amenazadas-', ''))}</span>
-              <span className='text-6xl font-black font-inter'>
-                {formatNumbers(info?.especies)}
-                <div className='border-t border-t-dartmouth-green' />
-              </span>
-              <div className='font-black font-inter text-lg'>Especies amenazadas
-                {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.species_list} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
-                  <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
-                </CustomTooltip>}
-              </div>
-            </div>
-            <div className='flex flex-col justify-center h-full w-full'>
-              <div className='font-lato flex justify-evenly gap-x-4'>
-                <div className='flex flex-col items-center'>
-                  <div className='flex items-start'>
-                    <ColorLabel backgroundColor={'bg-red-cr'} label={'CR'} />
-                    <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
-                      <img src='/images/icon-more.svg' />
-                    </Tooltip>
-                  </div>
-                  <span>{formatNumbers(info?.cr)}</span>
-                </div>
-                <div className='flex flex-col items-center'>
-                  <div className='flex items-start'>
-                    <ColorLabel backgroundColor={'bg-orange-en'} label={'EN'} />
-                    <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
-                      <img src='/images/icon-more.svg' />
-                    </Tooltip>
-                  </div>
-                  <span>{formatNumbers(info?.en)}</span>
-                </div>
-                <div className='flex flex-col items-center'>
-                  <div className='flex items-start'>
-                    <ColorLabel backgroundColor={'bg-yellow-vu'} label={'VU'} />
-                    <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
-                      <img src='/images/icon-more.svg' />
-                    </Tooltip>
-                  </div>
-                  <span>{formatNumbers(info?.vu)}</span>
-                </div>
-              </div>
-              <div className='flex'>
-                <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(+info?.cr_registros, +info?.cr_registros + +info?.en_registros + +info?.vu_registros) }}></div>
-                <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(+info?.en_registros, +info?.cr_registros + +info?.en_registros + +info?.vu_registros) }}></div>
-                <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(+info?.vu_registros, +info?.cr_registros + +info?.en_registros + +info?.vu_registros) }}></div>
-              </div>
-              <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
-                <p className='inline-block '><b>{formatNumbers(info?.registros)}</b></p>
-                <p className='inline-block'>Observaciones</p>
-              </div>
+  return (
+    <div className='bg-white py-10'>
+      <div className='w-10/12 mx-auto flex justify-between'>
+        <div className='max-w-[45%] w-full shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
+          <div className='flex flex-col items-start justify-start'>
+            <span>Categoría UICN {capitalize(info?.slug.replace('amenazadas-', ''))}</span>
+            <span className='text-6xl font-black font-inter'>
+              {formatNumbers(info?.especies)}
+              <div className='border-t border-t-dartmouth-green' />
+            </span>
+            <div className='font-black font-inter text-lg'>Especies amenazadas
+              {info?.species_list?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={info?.slug === 'amenazadas-global' ? info?.list_especies_amenazadas_global : info?.list_especies_amenazadas_nacional} link={`region=${slugregion}&tematica=${info?.slug}`} />}>
+                <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
+              </CustomTooltip>}
             </div>
           </div>
-          <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
-
-            <BarPercent
-              cat='amenazadas'
-              label='en peligro crítico'
-              bgColor={'bg-red-cr'}
-              region={region}
-              title={'CR'}
-              datatable={info.slug === 'amenazadas-global' ? specieAmenazadaGlobalCr : specieAmenazadaNalCr}
-              especies={info?.cr}
-              parentEspecies={info?.cr_estimadas}
-              registros={info?.cr_registros}
-              link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
-            />
-
-            <BarPercent
-              cat='amenazadas'
-              label='en peligro'
-              bgColor={'bg-orange-en'}
-              region={region}
-              title={'EN'}
-              datatable={info.slug === 'amenazadas-global' ? specieAmenazadaGlobalEn : specieAmenazadaNalEn}
-              especies={info?.en}
-              parentEspecies={info?.en_estimadas}
-              registros={info?.en_registros}
-              link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
-            />
-            <BarPercent
-              cat='amenazadas'
-              label='vulnerables'
-              bgColor={'bg-yellow-vu'}
-              region={region}
-              title={'VU'}
-              datatable={info.slug === 'amenazadas-global' ? specieAmenazadaGlobalVu : specieAmenazadaNalVu}
-              especies={info?.vu}
-              parentEspecies={info?.vu_estimadas}
-              registros={info?.vu_registros}
-              link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
-            />
-
+          <div className='flex flex-col justify-center h-full w-full'>
+            <div className='font-lato flex justify-evenly gap-x-4'>
+              <div className='flex flex-col items-center'>
+                <div className='flex items-start'>
+                  <ColorLabel backgroundColor={'bg-red-cr'} label={'CR'} />
+                  <Tooltip title={<b>{contentTooltip('amenazadas-global-cr')}</b>}>
+                    <img src='/images/icon-more.svg' />
+                  </Tooltip>
+                </div>
+                <span>{formatNumbers(info?.cr)}</span>
+              </div>
+              <div className='flex flex-col items-center'>
+                <div className='flex items-start'>
+                  <ColorLabel backgroundColor={'bg-orange-en'} label={'EN'} />
+                  <Tooltip title={<b>{contentTooltip('amenazadas-global-en')}</b>}>
+                    <img src='/images/icon-more.svg' />
+                  </Tooltip>
+                </div>
+                <span>{formatNumbers(info?.en)}</span>
+              </div>
+              <div className='flex flex-col items-center'>
+                <div className='flex items-start'>
+                  <ColorLabel backgroundColor={'bg-yellow-vu'} label={'VU'} />
+                  <Tooltip title={<b>{contentTooltip('amenazadas-global-vu')}</b>}>
+                    <img src='/images/icon-more.svg' />
+                  </Tooltip>
+                </div>
+                <span>{formatNumbers(info?.vu)}</span>
+              </div>
+            </div>
+            <div className='flex'>
+              <div className='bg-red-cr h-4 ' style={{ width: calculateWidth(+info?.cr_registros, +info?.cr_registros + +info?.en_registros + +info?.vu_registros) }}></div>
+              <div className='bg-orange-en h-4 ' style={{ width: calculateWidth(+info?.en_registros, +info?.cr_registros + +info?.en_registros + +info?.vu_registros) }}></div>
+              <div className='bg-yellow-vu h-4 ' style={{ width: calculateWidth(+info?.vu_registros, +info?.cr_registros + +info?.en_registros + +info?.vu_registros) }}></div>
+            </div>
+            <div className='flex text-sm gap-x-2 text-blue-green pt-2.5'>
+              <p className='inline-block '><b>{formatNumbers(info?.registros)}</b></p>
+              <p className='inline-block'>Observaciones</p>
+            </div>
           </div>
         </div>
-      </div>
-    )
-  }
+        <div className='w-[45%] flex flex-col justify-evenly gap-y-3 '>
 
-  return (
-    null
+          <BarPercent
+            cat='amenazadas'
+            label='en peligro crítico'
+            bgColor={'bg-red-cr'}
+            region={region}
+            title={'CR'}
+            datatable={info?.slug === 'amenazadas-global' ? info?.list_especies_amenazadas_global_cr : info?.list_especies_amenazadas_nacional_cr}
+            especies={info?.cr}
+            parentEspecies={info?.cr_estimadas}
+            registros={info?.cr_registros}
+            link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
+          />
+
+          <BarPercent
+            cat='amenazadas'
+            label='en peligro'
+            bgColor={'bg-orange-en'}
+            region={region}
+            title={'EN'}
+            datatable={info?.slug === 'amenazadas-global' ? info?.list_especies_amenazadas_global_en : info?.list_especies_amenazadas_nacional_en}
+            especies={info?.en}
+            parentEspecies={info?.en_estimadas}
+            registros={info?.en_registros}
+            link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
+          />
+          <BarPercent
+            cat='amenazadas'
+            label='vulnerables'
+            bgColor={'bg-yellow-vu'}
+            region={region}
+            title={'VU'}
+            datatable={info?.slug === 'amenazadas-global' ? info?.list_especies_amenazadas_global_vu : info?.list_especies_amenazadas_nacional_vu}
+            especies={info?.vu}
+            parentEspecies={info?.vu_estimadas}
+            registros={info?.vu_registros}
+            link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
+          />
+
+        </div>
+      </div>
+    </div>
   )
+
+  /* return (
+    null
+  ) */
 
   /* return (
     <div className='bg-white py-10'>
