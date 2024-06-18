@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preprocess": "node scripts/preprocessData.js"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@headlessui/react": "^1.7.19",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.2",
     "@szhsin/react-menu": "^3.1.1",
@@ -23,9 +25,9 @@
     "next": "^12.1.4",
     "nextjs-google-analytics": "^2.2.0",
     "qs": "^6.11.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-leaflet": "^3.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
     "react-markdown": "^8.0.3",
     "react-scrollspy": "^3.4.3",
     "react-simple-maps": "^3.0.0",

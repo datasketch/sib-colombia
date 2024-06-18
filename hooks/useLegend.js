@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 export const useLegend = (maximum) => {
   const [lastValueRange, setLastValueRange] = useState([])

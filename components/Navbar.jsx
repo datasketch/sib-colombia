@@ -3,6 +3,7 @@ import CustomSeparatos from './CustomSeparator'
 import DropDown from './Dropdown'
 import ResponsiveNavbarMenu from './ResponsiveNavbarMenu'
 import { useState } from 'react'
+import classNames from 'classnames'
 
 export default function Navbar () {
   const [childrenRegions, setChildrenRegions] = useState([])
@@ -12,8 +13,6 @@ export default function Navbar () {
     {
       label: 'Colombia',
       href: '/colombia'
-      /* static\data\colombia\colombia.json */
-
     },
     {
       color: 'dartmouth-green',
@@ -24,7 +23,7 @@ export default function Navbar () {
         {
           label: 'Departamentos',
           children: [
-            /* {
+            {
               label: 'Amazonas',
               href: '/amazonas'
             },
@@ -33,19 +32,31 @@ export default function Navbar () {
               href: '/antioquia'
             },
             {
+              label: 'Arauca',
+              href: '/arauca'
+            },
+            {
+              label: 'Atlántico',
+              href: '/atlantico'
+            },
+            {
+              label: 'Bogotá D. C.',
+              href: '/bogota-dc'
+            },
+            {
               label: 'Bolívar',
               href: '/bolivar'
-            }, */
+            },
             {
               label: 'Boyacá',
               href: '/boyaca'
             },
-            /* {
+            {
               label: 'Caldas',
               href: '/caldas'
             },
             {
-              label: 'Caqueta',
+              label: 'Caquetá',
               href: '/caqueta'
             },
             {
@@ -85,12 +96,8 @@ export default function Navbar () {
               href: '/huila'
             },
             {
-              label: 'La guajira',
+              label: 'La Guajira',
               href: '/la-guajira'
-            },
-            {
-              label: 'Casanare',
-              href: '/casanare'
             },
             {
               label: 'Magdalena',
@@ -99,12 +106,12 @@ export default function Navbar () {
             {
               label: 'Meta',
               href: '/meta'
-            }, */
+            },
             {
               label: 'Nariño',
               href: '/narino'
             },
-            /* {
+            {
               label: 'Norte de Santander',
               href: '/norte-santander'
             },
@@ -117,21 +124,25 @@ export default function Navbar () {
               href: '/quindio'
             },
             {
-              label: 'San Andrés',
-              href: '/san-andres-providencia'
-            }, */
+              label: 'Risaralda',
+              href: '/risaralda'
+            },
+            {
+              label: 'San Andrés y Providencia',
+              href: '/san-andres-y-providencia'
+            },
             {
               label: 'Santander',
               href: '/santander'
             },
-            /* {
+            {
               label: 'Sucre',
-              href: 'sucre'
-            }, */
+              href: '/sucre'
+            },
             {
               label: 'Tolima',
               href: '/tolima'
-            }/* ,
+            },
             {
               label: 'Valle del Cauca',
               href: '/valle-del-cauca'
@@ -143,7 +154,7 @@ export default function Navbar () {
             {
               label: 'Vichada',
               href: '/vichada'
-            } */
+            }
           ]
         },
         {
@@ -241,19 +252,24 @@ export default function Navbar () {
                               {el.children && <img src={item.icon} alt='icon arrow' />}
                             </DropDown.Item>
                           </div>
-                          {childrenRegions.length !== 0 && <div className='bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato'>
+                          {childrenRegions.length !== 0 && childrenRegions.length !== 1 && <div className={classNames('bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-400 ease-in -right-2/3')}>
                             {childrenRegions?.map(({ label, href }, index) =>
                               <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
                             )}
                           </div>}
 
-                          {/* Esto es para cuando aparezcan los 32 dptos */}
-                          {/* {childrenRegions.length !== 0 && <div className='bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-500 ease-in -right-2/3'>
+                          {childrenRegions.length === 1 && <div className={classNames('bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato')}>
                             {childrenRegions?.map(({ label, href }, index) =>
                               <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
                             )}
-                          </div>} */}
-
+                          </div>}
+                          {/* {
+                            childrenRegions.length !== 1 && <div className='bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-500 ease-in -right-2/3'>
+                            {childrenRegions?.map(({ label, href }, index) =>
+                              <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
+                            )}
+                          </div>
+                          } */}
                         </>
                       )
                       }

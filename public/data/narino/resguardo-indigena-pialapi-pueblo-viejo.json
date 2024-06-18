@@ -1002,11 +1002,7 @@
       "parent_en": [],
       "parent_vu": [],
       "parent_especies_total": [],
-      "list_especies_amenazadas_nacional": {},
-      "list_especies_amenazadas_nacional_vu": {},
-      "list_especies_amenazadas_nacional_en": {},
-      "list_especies_amenazadas_nacional_cr": {},
-      "species_list": [
+      "list_especies_amenazadas_nacional": [
         {
           "label": "Otoba lehmannii",
           "slug_especie": "otoba-lehmannii",
@@ -1037,6 +1033,42 @@
           "url_cbc": "https://catalogo.biodiversidad.co/file/567c05ebf289f5a40c0cd33d/summary",
           "slug_tematica": "amenazadas-nacional-cr"
         }
+      ],
+      "list_especies_amenazadas_nacional_vu": [
+        {
+          "label": "Otoba lehmannii",
+          "slug_especie": "otoba-lehmannii",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/3743742",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Bangsia flavovirens",
+          "slug_especie": "bangsia-flavovirens",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/9697915",
+          "slug_tematica": "amenazadas-nacional-vu"
+        }
+      ],
+      "list_especies_amenazadas_nacional_en": [
+        {
+          "label": "Cedrela odorata",
+          "slug_especie": "cedrela-odorata",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/3190511",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5fd91f79783b5b717668554e/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        }
+      ],
+      "list_especies_amenazadas_nacional_cr": [
+        {
+          "label": "Humiriastrum procerum",
+          "slug_especie": "humiriastrum-procerum",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/3649128",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/567c05ebf289f5a40c0cd33d/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        }
       ]
     },
     {
@@ -1059,11 +1091,7 @@
       "parent_en": [],
       "parent_vu": [],
       "parent_especies_total": [],
-      "list_especies_amenazadas_global": {},
-      "list_especies_amenazadas_global_vu": {},
-      "list_especies_amenazadas_global_en": {},
-      "list_especies_amenazadas_global_cr": {},
-      "species_list": [
+      "list_especies_amenazadas_global": [
         {
           "label": "Bangsia flavovirens",
           "slug_especie": "bangsia-flavovirens",
@@ -1095,7 +1123,43 @@
           "url_cbc": "https://catalogo.biodiversidad.co/file/567c05ebf289f5a40c0cd33d/summary",
           "slug_tematica": "amenazadas-global-vu"
         }
-      ]
+      ],
+      "list_especies_amenazadas_global_vu": [
+        {
+          "label": "Bangsia flavovirens",
+          "slug_especie": "bangsia-flavovirens",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/9697915",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Cedrela odorata",
+          "slug_especie": "cedrela-odorata",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/3190511",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5fd91f79783b5b717668554e/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Humiriastrum procerum",
+          "slug_especie": "humiriastrum-procerum",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/3649128",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/567c05ebf289f5a40c0cd33d/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        }
+      ],
+      "list_especies_amenazadas_global_en": [
+        {
+          "label": "Coffea arabica",
+          "slug_especie": "coffea-arabica",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2895345",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/59494dbc2f4fd7bc7f39799f/summary",
+          "slug_tematica": "amenazadas-global-en"
+        }
+      ],
+      "list_especies_amenazadas_global_cr": []
     },
     {
       "slug": "cites",
@@ -1494,12 +1558,33 @@
           "slug_tematica": "exoticas"
         },
         {
+          "label": "Asplenium cuspidatum",
+          "slug_especie": "asplenium-cuspidatum",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/7310919",
+          "slug_tematica": "exotica-riesgo-invasion"
+        },
+        {
+          "label": "Brugmansia arborea",
+          "slug_especie": "brugmansia-arborea",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2650675",
+          "slug_tematica": "exotica-riesgo-invasion"
+        },
+        {
           "label": "Brugmansia arborea",
           "slug_especie": "brugmansia-arborea",
           "registros": 1,
           "url_gbif": "https://www.gbif.org/species/5341759",
           "url_cbc": "https://catalogo.biodiversidad.co/file/6075b76a72e7b30705d39a92/summary",
           "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Cucurbita maxima",
+          "slug_especie": "cucurbita-maxima",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/4023978",
+          "slug_tematica": "exotica-riesgo-invasion"
         },
         {
           "label": "Cucurbita maxima",
@@ -1512,48 +1597,30 @@
           "label": "Cymbopogon citratus",
           "slug_especie": "cymbopogon-citratus",
           "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/3598563",
+          "slug_tematica": "exotica-riesgo-invasion"
+        },
+        {
+          "label": "Cymbopogon citratus",
+          "slug_especie": "cymbopogon-citratus",
+          "registros": 1,
           "url_gbif": "https://www.gbif.org/species/2705275",
           "url_cbc": "https://catalogo.biodiversidad.co/file/56de0ef983c45700544e3bf5/summary",
           "slug_tematica": "exoticas"
         },
         {
-          "label": "Erechtites valerianifolius",
-          "slug_especie": "erechtites-valerianifolius",
+          "label": "Diplazium trianae",
+          "slug_especie": "diplazium-trianae",
           "registros": 1,
-          "url_gbif": "https://www.gbif.org/species/8199967",
-          "slug_tematica": "exoticas"
+          "url_gbif": "https://www.gbif.org/species/4015571",
+          "slug_tematica": "exotica-riesgo-invasion"
         },
         {
-          "label": "Musa acuminata",
-          "slug_especie": "musa-acuminata",
+          "label": "Elaphoglossum antioquianum",
+          "slug_especie": "elaphoglossum-antioquianum",
           "registros": 1,
-          "url_gbif": "https://www.gbif.org/species/2762680",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/56e792b283c45700544e4184/summary",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Musa paradisiaca",
-          "slug_especie": "musa-paradisiaca",
-          "registros": 1,
-          "url_gbif": "https://www.gbif.org/species/2762752",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/56e792ef83c45700544e4186/summary",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Psidium guajava",
-          "slug_especie": "psidium-guajava",
-          "registros": 1,
-          "url_gbif": "https://www.gbif.org/species/5420380",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/5948609c2f4fd7bc7f39699c/summary",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Tithonia diversifolia",
-          "slug_especie": "tithonia-diversifolia",
-          "registros": 1,
-          "url_gbif": "https://www.gbif.org/species/5396557",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/593b777a2f4fd7bc7f387e0f/summary",
-          "slug_tematica": "exoticas"
+          "url_gbif": "https://www.gbif.org/species/4012707",
+          "slug_tematica": "exotica-riesgo-invasion"
         }
       ],
       "list_especies_exoticas": [
@@ -13079,7 +13146,7 @@
     {
       "slug": "municipios",
       "label": "Municipios",
-      "map_data": [],
+      "map_data": {},
       "charts": []
     },
     {
