@@ -222,7 +222,7 @@ const CardTematicasCol = props => {
               selected={selected}
               region={region}
               especies={info?.especies_migratorias}
-              parentEspecies={info?.parent_especies_migratorias}
+              parentEspecies={info?.migratorias_estimadas}
               registros={info?.registros_migratorias}
               datatable={info?.species_list}
               link={`region=${slugregion}&tematica=${info?.slug}`} rel="noopener noreferrer"
