@@ -36421,6 +36421,10 @@
       "map_data": [
         {
           "id": "52001",
+<<<<<<< HEAD
+=======
+          "name": "PASTO",
+>>>>>>> main
           "label": "Pasto",
           "n_especies": 2613,
           "n_registros": 53491,
@@ -36516,6 +36520,10 @@
         },
         {
           "id": "52019",
+<<<<<<< HEAD
+=======
+          "name": "ALBÁN",
+>>>>>>> main
           "label": "Albán",
           "n_especies": 93,
           "n_registros": 145,
@@ -36543,6 +36551,10 @@
         },
         {
           "id": "52022",
+<<<<<<< HEAD
+=======
+          "name": "ALDANA",
+>>>>>>> main
           "label": "Aldana",
           "n_especies": 17,
           "n_registros": 51,
@@ -36576,6 +36588,10 @@
         },
         {
           "id": "52036",
+<<<<<<< HEAD
+=======
+          "name": "ANCUYA",
+>>>>>>> main
           "label": "Ancuya",
           "n_especies": 64,
           "n_registros": 138,
@@ -36607,6 +36623,10 @@
         },
         {
           "id": "52051",
+<<<<<<< HEAD
+=======
+          "name": "ARBOLEDA",
+>>>>>>> main
           "label": "Arboleda",
           "n_especies": 137,
           "n_registros": 755,
@@ -36636,6 +36656,10 @@
         },
         {
           "id": "52079",
+<<<<<<< HEAD
+=======
+          "name": "BARBACOAS",
+>>>>>>> main
           "label": "Barbacoas",
           "n_especies": 2794,
           "n_registros": 132950,
@@ -36801,6 +36825,10 @@
         },
         {
           "id": "52083",
+<<<<<<< HEAD
+=======
+          "name": "BELÉN",
+>>>>>>> main
           "label": "Belén",
           "n_especies": 27,
           "n_registros": 39,
@@ -36838,6 +36866,10 @@
         },
         {
           "id": "52110",
+<<<<<<< HEAD
+=======
+          "name": "BUESACO",
+>>>>>>> main
           "label": "Buesaco",
           "n_especies": 562,
           "n_registros": 4872,
@@ -36909,6 +36941,10 @@
         },
         {
           "id": "52203",
+<<<<<<< HEAD
+=======
+          "name": "COLÓN",
+>>>>>>> main
           "label": "Colón",
           "n_especies": 216,
           "n_registros": 1457,
@@ -36950,6 +36986,10 @@
         },
         {
           "id": "52207",
+<<<<<<< HEAD
+=======
+          "name": "CONSACÁ",
+>>>>>>> main
           "label": "Consacá",
           "n_especies": 533,
           "n_registros": 8393,
@@ -36984,6 +37024,10 @@
         },
         {
           "id": "52210",
+<<<<<<< HEAD
+=======
+          "name": "CONTADERO",
+>>>>>>> main
           "label": "Contadero",
           "n_especies": 80,
           "n_registros": 627,
@@ -37015,6 +37059,10 @@
         },
         {
           "id": "52215",
+<<<<<<< HEAD
+=======
+          "name": "CÓRDOBA",
+>>>>>>> main
           "label": "Córdoba",
           "n_especies": 150,
           "n_registros": 362,
@@ -37081,6 +37129,10 @@
         },
         {
           "id": "52224",
+<<<<<<< HEAD
+=======
+          "name": "CUASPUD CARLOSAMA",
+>>>>>>> main
           "label": "Cuaspud",
           "n_especies": 8,
           "n_registros": 9,
@@ -37118,6 +37170,10 @@
         },
         {
           "id": "52227",
+<<<<<<< HEAD
+=======
+          "name": "CUMBAL",
+>>>>>>> main
           "label": "Cumbal",
           "n_especies": 906,
           "n_registros": 4615,
@@ -37185,6 +37241,10 @@
         },
         {
           "id": "52233",
+<<<<<<< HEAD
+=======
+          "name": "CUMBITARA",
+>>>>>>> main
           "label": "Cumbitara",
           "n_especies": 122,
           "n_registros": 664,
@@ -37251,6 +37311,10 @@
         },
         {
           "id": "52240",
+<<<<<<< HEAD
+=======
+          "name": "CHACHAGÜÍ",
+>>>>>>> main
           "label": "Chachagüí",
           "n_especies": 445,
           "n_registros": 2676,
@@ -37302,6 +37366,10 @@
         },
         {
           "id": "52250",
+<<<<<<< HEAD
+=======
+          "name": "EL CHARCO",
+>>>>>>> main
           "label": "El Charco",
           "n_especies": 173,
           "n_registros": 2013,
@@ -37491,6 +37559,10 @@
         },
         {
           "id": "52254",
+<<<<<<< HEAD
+=======
+          "name": "EL PEÑOL",
+>>>>>>> main
           "label": "El Peñol",
           "n_especies": 60,
           "n_registros": 121,
@@ -37530,6 +37602,10 @@
         },
         {
           "id": "52256",
+<<<<<<< HEAD
+=======
+          "name": "EL ROSARIO",
+>>>>>>> main
           "label": "El Rosario",
           "n_especies": 169,
           "n_registros": 1387,
@@ -37612,6 +37688,10 @@
         },
         {
           "id": "52258",
+<<<<<<< HEAD
+=======
+          "name": "EL TABLÓN DE GÓMEZ",
+>>>>>>> main
           "label": "El Tablón de Gómez",
           "n_especies": 287,
           "n_registros": 3188,
@@ -37661,6 +37741,10 @@
         },
         {
           "id": "52260",
+<<<<<<< HEAD
+=======
+          "name": "EL TAMBO",
+>>>>>>> main
           "label": "El Tambo",
           "n_especies": 181,
           "n_registros": 570,
@@ -37712,6 +37796,10 @@
         },
         {
           "id": "52287",
+<<<<<<< HEAD
+=======
+          "name": "FUNES",
+>>>>>>> main
           "label": "Funes",
           "n_especies": 187,
           "n_registros": 668,
@@ -37778,6 +37866,10 @@
         },
         {
           "id": "52317",
+<<<<<<< HEAD
+=======
+          "name": "GUACHUCAL",
+>>>>>>> main
           "label": "Guachucal",
           "n_especies": 133,
           "n_registros": 329,
@@ -37823,6 +37915,10 @@
         },
         {
           "id": "52320",
+<<<<<<< HEAD
+=======
+          "name": "GUAITARILLA",
+>>>>>>> main
           "label": "Guaitarilla",
           "n_especies": 11,
           "n_registros": 30,
@@ -37862,6 +37958,10 @@
         },
         {
           "id": "52323",
+<<<<<<< HEAD
+=======
+          "name": "GUALMATÁN",
+>>>>>>> main
           "label": "Gualmatán",
           "n_especies": 204,
           "n_registros": 2340,
@@ -37889,6 +37989,10 @@
         },
         {
           "id": "52352",
+<<<<<<< HEAD
+=======
+          "name": "ILES",
+>>>>>>> main
           "label": "Iles",
           "n_especies": 88,
           "n_registros": 142,
@@ -37923,6 +38027,10 @@
         },
         {
           "id": "52354",
+<<<<<<< HEAD
+=======
+          "name": "IMUÉS",
+>>>>>>> main
           "label": "Imués",
           "n_especies": 259,
           "n_registros": 1031,
@@ -37959,6 +38067,10 @@
         },
         {
           "id": "52356",
+<<<<<<< HEAD
+=======
+          "name": "IPIALES",
+>>>>>>> main
           "label": "Ipiales",
           "n_especies": 1056,
           "n_registros": 4919,
@@ -38088,6 +38200,10 @@
         },
         {
           "id": "52378",
+<<<<<<< HEAD
+=======
+          "name": "LA CRUZ",
+>>>>>>> main
           "label": "La Cruz",
           "n_especies": 408,
           "n_registros": 4061,
@@ -38136,6 +38252,10 @@
         },
         {
           "id": "52381",
+<<<<<<< HEAD
+=======
+          "name": "LA FLORIDA",
+>>>>>>> main
           "label": "La Florida",
           "n_especies": 424,
           "n_registros": 1807,
@@ -38184,6 +38304,10 @@
         },
         {
           "id": "52385",
+<<<<<<< HEAD
+=======
+          "name": "LA LLANADA",
+>>>>>>> main
           "label": "La Llanada",
           "n_especies": 80,
           "n_registros": 177,
@@ -38253,6 +38377,10 @@
         },
         {
           "id": "52390",
+<<<<<<< HEAD
+=======
+          "name": "LA TOLA",
+>>>>>>> main
           "label": "La Tola",
           "n_especies": 280,
           "n_registros": 6026,
@@ -38324,6 +38452,10 @@
         },
         {
           "id": "52399",
+<<<<<<< HEAD
+=======
+          "name": "LA UNIÓN",
+>>>>>>> main
           "label": "La Unión",
           "n_especies": 450,
           "n_registros": 3243,
@@ -38375,6 +38507,10 @@
         },
         {
           "id": "52405",
+<<<<<<< HEAD
+=======
+          "name": "LEIVA",
+>>>>>>> main
           "label": "Leiva",
           "n_especies": 81,
           "n_registros": 164,
@@ -38442,6 +38578,10 @@
         },
         {
           "id": "52411",
+<<<<<<< HEAD
+=======
+          "name": "LINARES",
+>>>>>>> main
           "label": "Linares",
           "n_especies": 35,
           "n_registros": 49,
@@ -38484,6 +38624,10 @@
         },
         {
           "id": "52418",
+<<<<<<< HEAD
+=======
+          "name": "LOS ANDES",
+>>>>>>> main
           "label": "Los Andes",
           "n_especies": 296,
           "n_registros": 1771,
@@ -38587,6 +38731,10 @@
         },
         {
           "id": "52427",
+<<<<<<< HEAD
+=======
+          "name": "MAGÜÍ",
+>>>>>>> main
           "label": "Magüí",
           "n_especies": 164,
           "n_registros": 346,
@@ -38706,6 +38854,10 @@
         },
         {
           "id": "52435",
+<<<<<<< HEAD
+=======
+          "name": "MALLAMA",
+>>>>>>> main
           "label": "Mallama",
           "n_especies": 1159,
           "n_registros": 7805,
@@ -38779,6 +38931,10 @@
         },
         {
           "id": "52473",
+<<<<<<< HEAD
+=======
+          "name": "MOSQUERA",
+>>>>>>> main
           "label": "Mosquera",
           "n_especies": 183,
           "n_registros": 6257,
@@ -38851,6 +39007,10 @@
         },
         {
           "id": "52480",
+<<<<<<< HEAD
+=======
+          "name": "NARIÑO",
+>>>>>>> main
           "label": "Nariño",
           "n_especies": 190,
           "n_registros": 965,
@@ -38878,6 +39038,10 @@
         },
         {
           "id": "52490",
+<<<<<<< HEAD
+=======
+          "name": "OLAYA HERRERA",
+>>>>>>> main
           "label": "Olaya Herrera",
           "n_especies": 138,
           "n_registros": 2656,
@@ -38959,6 +39123,10 @@
         },
         {
           "id": "52506",
+<<<<<<< HEAD
+=======
+          "name": "OSPINA",
+>>>>>>> main
           "label": "Ospina",
           "n_especies": 128,
           "n_registros": 705,
@@ -38993,6 +39161,10 @@
         },
         {
           "id": "52520",
+<<<<<<< HEAD
+=======
+          "name": "FRANCISCO PIZARRO",
+>>>>>>> main
           "label": "Francisco Pizarro",
           "n_especies": 142,
           "n_registros": 1206,
@@ -39067,6 +39239,10 @@
         },
         {
           "id": "52540",
+<<<<<<< HEAD
+=======
+          "name": "POLICARPA",
+>>>>>>> main
           "label": "Policarpa",
           "n_especies": 248,
           "n_registros": 1659,
@@ -39136,6 +39312,10 @@
         },
         {
           "id": "52560",
+<<<<<<< HEAD
+=======
+          "name": "POTOSÍ",
+>>>>>>> main
           "label": "Potosí",
           "n_especies": 159,
           "n_registros": 583,
@@ -39199,6 +39379,10 @@
         },
         {
           "id": "52565",
+<<<<<<< HEAD
+=======
+          "name": "PROVIDENCIA",
+>>>>>>> main
           "label": "Providencia",
           "n_especies": 1,
           "n_registros": 5,
@@ -39229,6 +39413,10 @@
         },
         {
           "id": "52573",
+<<<<<<< HEAD
+=======
+          "name": "PUERRES",
+>>>>>>> main
           "label": "Puerres",
           "n_especies": 647,
           "n_registros": 5740,
@@ -39295,6 +39483,10 @@
         },
         {
           "id": "52585",
+<<<<<<< HEAD
+=======
+          "name": "PUPIALES",
+>>>>>>> main
           "label": "Pupiales",
           "n_especies": 89,
           "n_registros": 187,
@@ -39337,6 +39529,10 @@
         },
         {
           "id": "52612",
+<<<<<<< HEAD
+=======
+          "name": "RICAURTE",
+>>>>>>> main
           "label": "Ricaurte",
           "n_especies": 2955,
           "n_registros": 421221,
@@ -39427,6 +39623,10 @@
         },
         {
           "id": "52621",
+<<<<<<< HEAD
+=======
+          "name": "ROBERTO PAYÁN",
+>>>>>>> main
           "label": "Roberto Payán",
           "n_especies": 82,
           "n_registros": 142,
@@ -39540,6 +39740,10 @@
         },
         {
           "id": "52678",
+<<<<<<< HEAD
+=======
+          "name": "SAMANIEGO",
+>>>>>>> main
           "label": "Samaniego",
           "n_especies": 152,
           "n_registros": 246,
@@ -39623,6 +39827,10 @@
         },
         {
           "id": "52683",
+<<<<<<< HEAD
+=======
+          "name": "SANDONÁ",
+>>>>>>> main
           "label": "Sandoná",
           "n_especies": 272,
           "n_registros": 612,
@@ -39659,6 +39867,10 @@
         },
         {
           "id": "52685",
+<<<<<<< HEAD
+=======
+          "name": "SAN BERNARDO",
+>>>>>>> main
           "label": "San Bernardo",
           "n_especies": 121,
           "n_registros": 239,
@@ -39696,6 +39908,10 @@
         },
         {
           "id": "52687",
+<<<<<<< HEAD
+=======
+          "name": "SAN LORENZO",
+>>>>>>> main
           "label": "San Lorenzo",
           "n_especies": 156,
           "n_registros": 315,
@@ -39747,6 +39963,10 @@
         },
         {
           "id": "52693",
+<<<<<<< HEAD
+=======
+          "name": "SAN PABLO",
+>>>>>>> main
           "label": "San Pablo",
           "n_especies": 104,
           "n_registros": 453,
@@ -39786,6 +40006,10 @@
         },
         {
           "id": "52694",
+<<<<<<< HEAD
+=======
+          "name": "SAN PEDRO DE CARTAGO",
+>>>>>>> main
           "label": "San Pedro de Cartago",
           "n_especies": 142,
           "n_registros": 1087,
@@ -39820,6 +40044,10 @@
         },
         {
           "id": "52696",
+<<<<<<< HEAD
+=======
+          "name": "SANTA BÁRBARA",
+>>>>>>> main
           "label": "Santa Bárbara",
           "n_especies": 193,
           "n_registros": 1708,
@@ -39935,6 +40163,10 @@
         },
         {
           "id": "52699",
+<<<<<<< HEAD
+=======
+          "name": "SANTACRUZ",
+>>>>>>> main
           "label": "Santacruz",
           "n_especies": 96,
           "n_registros": 156,
@@ -40001,6 +40233,10 @@
         },
         {
           "id": "52720",
+<<<<<<< HEAD
+=======
+          "name": "SAPUYES",
+>>>>>>> main
           "label": "Sapuyes",
           "n_especies": 344,
           "n_registros": 1345,
@@ -40045,6 +40281,10 @@
         },
         {
           "id": "52786",
+<<<<<<< HEAD
+=======
+          "name": "TAMINANGO",
+>>>>>>> main
           "label": "Taminango",
           "n_especies": 339,
           "n_registros": 4438,
@@ -40090,6 +40330,10 @@
         },
         {
           "id": "52788",
+<<<<<<< HEAD
+=======
+          "name": "TANGUA",
+>>>>>>> main
           "label": "Tangua",
           "n_especies": 509,
           "n_registros": 2022,
@@ -40139,6 +40383,10 @@
         },
         {
           "id": "52835",
+<<<<<<< HEAD
+=======
+          "name": "SAN ANDRÉS DE TUMACO",
+>>>>>>> main
           "label": "San Andrés de Tumaco",
           "n_especies": 2643,
           "n_registros": 107293,
@@ -40375,6 +40623,10 @@
         },
         {
           "id": "52838",
+<<<<<<< HEAD
+=======
+          "name": "TÚQUERRES",
+>>>>>>> main
           "label": "Túquerres",
           "n_especies": 552,
           "n_registros": 3849,
@@ -40419,6 +40671,10 @@
         },
         {
           "id": "52885",
+<<<<<<< HEAD
+=======
+          "name": "YACUANQUER",
+>>>>>>> main
           "label": "Yacuanquer",
           "n_especies": 399,
           "n_registros": 6208,

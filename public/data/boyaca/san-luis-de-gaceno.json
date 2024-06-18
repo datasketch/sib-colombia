@@ -1596,6 +1596,46 @@
           "url_gbif": "https://www.gbif.org/species/5329904",
           "url_cbc": "https://catalogo.biodiversidad.co/file/56cf61553c16479905cba7db/summary",
           "slug_tematica": "exoticas"
+<<<<<<< HEAD
+=======
+        },
+        {
+          "label": "Apis mellifera",
+          "slug_especie": "apis-mellifera",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/1341976",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/58b995177bd3becd0fc7395e/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Caiman crocodilus",
+          "slug_especie": "caiman-crocodilus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/8953936",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c92645f0106c67230e7437/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Drymaria cordata",
+          "slug_especie": "drymaria-cordata",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5384509",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Selaginella willdenowii",
+          "slug_especie": "selaginella-willdenowii",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/8688934",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Urochloa brizantha",
+          "slug_especie": "urochloa-brizantha",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2705862",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         }
       ],
       "list_especies_exoticas": [

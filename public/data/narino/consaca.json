@@ -1503,8 +1503,34 @@
           "label": "Elaphoglossum mathewsii",
           "slug_especie": "elaphoglossum-mathewsii",
           "registros": 2,
+<<<<<<< HEAD
           "url_gbif": "https://www.gbif.org/species/4012515",
           "slug_tematica": "exotica-riesgo-invasion"
+=======
+          "url_gbif": "https://www.gbif.org/species/3132570",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Rhaphiolepis bibas",
+          "slug_especie": "rhaphiolepis-bibas",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/10786206",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Salvia hispanica",
+          "slug_especie": "salvia-hispanica",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2926992",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Amaranthus blitum",
+          "slug_especie": "amaranthus-blitum",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5384336",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         }
       ],
       "list_especies_exoticas": [

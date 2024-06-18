@@ -1681,6 +1681,31 @@
           "registros": 1,
           "url_gbif": "https://www.gbif.org/species/7270041",
           "slug_tematica": "exoticas"
+<<<<<<< HEAD
+=======
+        },
+        {
+          "label": "Cenchrus clandestinus",
+          "slug_especie": "cenchrus-clandestinus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5828201",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7782683c45700544e401e/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Dysphania ambrosioides",
+          "slug_especie": "dysphania-ambrosioides",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5568446",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Elodea densa",
+          "slug_especie": "elodea-densa",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5329263",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         }
       ],
       "list_especies_exoticas": [

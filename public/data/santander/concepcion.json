@@ -1563,6 +1563,75 @@
           "registros": 2,
           "url_gbif": "https://www.gbif.org/species/5708806",
           "slug_tematica": "exoticas"
+<<<<<<< HEAD
+=======
+        },
+        {
+          "label": "Acacia melanoxylon",
+          "slug_especie": "acacia-melanoxylon",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2979000",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/595e5f352f4fd7bc7f3a210a/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Petroselinum crispum",
+          "slug_especie": "petroselinum-crispum",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/3034907",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Rhaphiolepis bibas",
+          "slug_especie": "rhaphiolepis-bibas",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/10786206",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Rumex crispus",
+          "slug_especie": "rumex-crispus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2888944",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Solanum tuberosum",
+          "slug_especie": "solanum-tuberosum",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2930262",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7a57083c45700544e4283/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Tigridia pavonia",
+          "slug_especie": "tigridia-pavonia",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5297439",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Vachellia farnesiana",
+          "slug_especie": "vachellia-farnesiana",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2979265",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/595d2c1f2f4fd7bc7f3a167a/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Vicia faba",
+          "slug_especie": "vicia-faba",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2974832",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Viola tricolor",
+          "slug_especie": "viola-tricolor",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5331347",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         }
       ],
       "list_especies_exoticas": [

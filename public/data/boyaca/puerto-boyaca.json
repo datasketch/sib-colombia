@@ -2000,8 +2000,13 @@
           "label": "Blechnum polypodioides",
           "slug_especie": "blechnum-polypodioides",
           "registros": 3,
+<<<<<<< HEAD
           "url_gbif": "https://www.gbif.org/species/2651528",
           "slug_tematica": "exotica-riesgo-invasion"
+=======
+          "url_gbif": "https://www.gbif.org/species/4108550",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         },
         {
           "label": "Cochlidium serrulatum",

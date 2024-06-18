@@ -1376,6 +1376,47 @@
           "slug_especie": "rhaphiolepis-bibas",
           "registros": 2,
           "url_gbif": "https://www.gbif.org/species/10786206",
+<<<<<<< HEAD
+=======
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Tecoma stans",
+          "slug_especie": "tecoma-stans",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/3172492",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7aa5783c45700544e42c2/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Anthurium bogotense",
+          "slug_especie": "anthurium-bogotense",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2872779",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Bidens pilosa",
+          "slug_especie": "bidens-pilosa",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5391845",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/593b6a272f4fd7bc7f387b6a/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Brugmansia arborea",
+          "slug_especie": "brugmansia-arborea",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5341759",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/6075b76a72e7b30705d39a92/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Erigeron bonariensis",
+          "slug_especie": "erigeron-bonariensis",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/3146717",
+>>>>>>> main
           "slug_tematica": "exoticas"
         }
       ],

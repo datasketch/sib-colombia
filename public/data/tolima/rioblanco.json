@@ -889,6 +889,7 @@
           "url_gbif": "https://www.gbif.org/species/5216644",
           "url_cbc": "https://catalogo.biodiversidad.co/file/5f7e3d2b5d603ff70fa80c4c/summary",
           "slug_tematica": "amenazadas-nacional-cr"
+<<<<<<< HEAD
         }
       ],
       "list_especies_amenazadas_nacional_vu": [
@@ -1010,6 +1011,8 @@
           "url_gbif": "https://www.gbif.org/species/5216644",
           "url_cbc": "https://catalogo.biodiversidad.co/file/5f7e3d2b5d603ff70fa80c4c/summary",
           "slug_tematica": "amenazadas-nacional-cr"
+=======
+>>>>>>> main
         }
       ]
     },

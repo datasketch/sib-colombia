@@ -1830,6 +1830,7 @@
           "label": "Asplenium cristatum",
           "slug_especie": "asplenium-cristatum",
           "registros": 4,
+<<<<<<< HEAD
           "url_gbif": "https://www.gbif.org/species/2650645",
           "url_cbc": "https://catalogo.biodiversidad.co/file/56d3a5783c16479905cba872/summary",
           "slug_tematica": "exotica-riesgo-invasion"
@@ -1841,6 +1842,76 @@
           "url_gbif": "https://www.gbif.org/species/7287803",
           "url_cbc": "https://catalogo.biodiversidad.co/file/56e1f09183c45700544e3d4a/summary",
           "slug_tematica": "exotica-riesgo-invasion"
+=======
+          "url_gbif": "https://www.gbif.org/species/2651796",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Nephrolepis cordifolia",
+          "slug_especie": "nephrolepis-cordifolia",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2650930",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e78d9c83c45700544e413d/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Begonia maculata",
+          "slug_especie": "begonia-maculata",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/7303475",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Juncus tenuis",
+          "slug_especie": "juncus-tenuis",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2702084",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Megathyrsus maximus",
+          "slug_especie": "megathyrsus-maximus",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/4108550",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Spathiphyllum cannifolium",
+          "slug_especie": "spathiphyllum-cannifolium",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2869701",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Ageratum houstonianum",
+          "slug_especie": "ageratum-houstonianum",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5401760",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Apis mellifera",
+          "slug_especie": "apis-mellifera",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/1341976",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/58b995177bd3becd0fc7395e/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Erechtites valerianifolius",
+          "slug_especie": "erechtites-valerianifolius",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/8199967",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Hibiscus rosa-sinensis",
+          "slug_especie": "hibiscus-rosa-sinensis",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/3152559",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/594942f62f4fd7bc7f397469/summary",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         }
       ],
       "list_especies_exoticas": [

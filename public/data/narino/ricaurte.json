@@ -1878,6 +1878,74 @@
           "registros": 13,
           "url_gbif": "https://www.gbif.org/species/5398421",
           "slug_tematica": "exoticas"
+<<<<<<< HEAD
+=======
+        },
+        {
+          "label": "Erechtites valerianifolius",
+          "slug_especie": "erechtites-valerianifolius",
+          "registros": 12,
+          "url_gbif": "https://www.gbif.org/species/8199967",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Impatiens walleriana",
+          "slug_especie": "impatiens-walleriana",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/2891772",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Syzygium jambos",
+          "slug_especie": "syzygium-jambos",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/3183534",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5949473e2f4fd7bc7f39766e/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Anthurium bogotense",
+          "slug_especie": "anthurium-bogotense",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2872779",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Cestrum nocturnum",
+          "slug_especie": "cestrum-nocturnum",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2928791",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e72b8483c45700544e3f24/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Erigeron bonariensis",
+          "slug_especie": "erigeron-bonariensis",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/3146717",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Pityrogramma ebenea",
+          "slug_especie": "pityrogramma-ebenea",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2651796",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Syngonium podophyllum",
+          "slug_especie": "syngonium-podophyllum",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2867866",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Aglaonema modestum",
+          "slug_especie": "aglaonema-modestum",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2866488",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         }
       ],
       "list_especies_exoticas": [

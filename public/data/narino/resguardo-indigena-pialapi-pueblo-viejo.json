@@ -1002,7 +1002,15 @@
       "parent_en": [],
       "parent_vu": [],
       "parent_especies_total": [],
+<<<<<<< HEAD
       "list_especies_amenazadas_nacional": [
+=======
+      "list_especies_amenazadas_nacional": {},
+      "list_especies_amenazadas_nacional_vu": {},
+      "list_especies_amenazadas_nacional_en": {},
+      "list_especies_amenazadas_nacional_cr": {},
+      "species_list": [
+>>>>>>> main
         {
           "label": "Otoba lehmannii",
           "slug_especie": "otoba-lehmannii",
@@ -1032,6 +1040,7 @@
           "url_gbif": "https://www.gbif.org/species/3649128",
           "url_cbc": "https://catalogo.biodiversidad.co/file/567c05ebf289f5a40c0cd33d/summary",
           "slug_tematica": "amenazadas-nacional-cr"
+<<<<<<< HEAD
         }
       ],
       "list_especies_amenazadas_nacional_vu": [
@@ -1058,6 +1067,8 @@
           "url_gbif": "https://www.gbif.org/species/3190511",
           "url_cbc": "https://catalogo.biodiversidad.co/file/5fd91f79783b5b717668554e/summary",
           "slug_tematica": "amenazadas-nacional-en"
+=======
+>>>>>>> main
         }
       ],
       "list_especies_amenazadas_nacional_cr": [
@@ -1091,7 +1102,15 @@
       "parent_en": [],
       "parent_vu": [],
       "parent_especies_total": [],
+<<<<<<< HEAD
       "list_especies_amenazadas_global": [
+=======
+      "list_especies_amenazadas_global": {},
+      "list_especies_amenazadas_global_vu": {},
+      "list_especies_amenazadas_global_en": {},
+      "list_especies_amenazadas_global_cr": {},
+      "species_list": [
+>>>>>>> main
         {
           "label": "Bangsia flavovirens",
           "slug_especie": "bangsia-flavovirens",
@@ -1552,6 +1571,7 @@
         {
           "label": "Ananas comosus",
           "slug_especie": "ananas-comosus",
+<<<<<<< HEAD
           "registros": 1,
           "url_gbif": "https://www.gbif.org/species/5288819",
           "url_cbc": "https://catalogo.biodiversidad.co/file/56cfc4023c16479905cba801/summary",
@@ -1563,11 +1583,18 @@
           "registros": 1,
           "url_gbif": "https://www.gbif.org/species/7310919",
           "slug_tematica": "exotica-riesgo-invasion"
+=======
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5288819",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cfc4023c16479905cba801/summary",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         },
         {
-          "label": "Asplenium rutaceum",
-          "slug_especie": "asplenium-rutaceum",
+          "label": "Brugmansia arborea",
+          "slug_especie": "brugmansia-arborea",
           "registros": 1,
+<<<<<<< HEAD
           "url_gbif": "https://www.gbif.org/species/2650675",
           "slug_tematica": "exotica-riesgo-invasion"
         },
@@ -1575,14 +1602,17 @@
           "label": "Brugmansia arborea",
           "slug_especie": "brugmansia-arborea",
           "registros": 1,
+=======
+>>>>>>> main
           "url_gbif": "https://www.gbif.org/species/5341759",
           "url_cbc": "https://catalogo.biodiversidad.co/file/6075b76a72e7b30705d39a92/summary",
           "slug_tematica": "exoticas"
         },
         {
-          "label": "Campyloneurum sphenodes",
-          "slug_especie": "campyloneurum-sphenodes",
+          "label": "Cucurbita maxima",
+          "slug_especie": "cucurbita-maxima",
           "registros": 1,
+<<<<<<< HEAD
           "url_gbif": "https://www.gbif.org/species/4023978",
           "slug_tematica": "exotica-riesgo-invasion"
         },
@@ -1590,15 +1620,23 @@
           "label": "Cucurbita maxima",
           "slug_especie": "cucurbita-maxima",
           "registros": 1,
+=======
+>>>>>>> main
           "url_gbif": "https://www.gbif.org/species/2874515",
           "slug_tematica": "exoticas"
         },
         {
-          "label": "Cyathea delgadii",
-          "slug_especie": "cyathea-delgadii",
+          "label": "Cymbopogon citratus",
+          "slug_especie": "cymbopogon-citratus",
           "registros": 1,
+<<<<<<< HEAD
           "url_gbif": "https://www.gbif.org/species/3598563",
           "slug_tematica": "exotica-riesgo-invasion"
+=======
+          "url_gbif": "https://www.gbif.org/species/2705275",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56de0ef983c45700544e3bf5/summary",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         },
         {
           "label": "Cymbopogon citratus",
@@ -1609,6 +1647,7 @@
           "slug_tematica": "exoticas"
         },
         {
+<<<<<<< HEAD
           "label": "Diplazium trianae",
           "slug_especie": "diplazium-trianae",
           "registros": 1,
@@ -1621,6 +1660,38 @@
           "registros": 1,
           "url_gbif": "https://www.gbif.org/species/4012707",
           "slug_tematica": "exotica-riesgo-invasion"
+=======
+          "label": "Musa acuminata",
+          "slug_especie": "musa-acuminata",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2762680",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e792b283c45700544e4184/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Musa paradisiaca",
+          "slug_especie": "musa-paradisiaca",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2762752",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e792ef83c45700544e4186/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Psidium guajava",
+          "slug_especie": "psidium-guajava",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5420380",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5948609c2f4fd7bc7f39699c/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Tithonia diversifolia",
+          "slug_especie": "tithonia-diversifolia",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5396557",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/593b777a2f4fd7bc7f387e0f/summary",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         }
       ],
       "list_especies_exoticas": [
@@ -13146,7 +13217,11 @@
     {
       "slug": "municipios",
       "label": "Municipios",
+<<<<<<< HEAD
       "map_data": {},
+=======
+      "map_data": [],
+>>>>>>> main
       "charts": []
     },
     {

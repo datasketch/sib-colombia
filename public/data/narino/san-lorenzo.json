@@ -1185,8 +1185,13 @@
           "label": "Sticherus bifidus",
           "slug_especie": "sticherus-bifidus",
           "registros": 1,
+<<<<<<< HEAD
           "url_gbif": "https://www.gbif.org/species/2651575",
           "slug_tematica": "exotica-riesgo-invasion"
+=======
+          "url_gbif": "https://www.gbif.org/species/4150772",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         }
       ],
       "list_especies_exoticas": [

@@ -39365,6 +39365,10 @@
       "map_data": [
         {
           "id": "68001",
+<<<<<<< HEAD
+=======
+          "name": "BUCARAMANGA",
+>>>>>>> main
           "label": "Bucaramanga",
           "n_especies": 2174,
           "n_registros": 51149,
@@ -39409,6 +39413,10 @@
         },
         {
           "id": "68013",
+<<<<<<< HEAD
+=======
+          "name": "AGUADA",
+>>>>>>> main
           "label": "Aguada",
           "n_especies": 46,
           "n_registros": 135,
@@ -39448,6 +39456,10 @@
         },
         {
           "id": "68020",
+<<<<<<< HEAD
+=======
+          "name": "ALBANIA",
+>>>>>>> main
           "label": "Albania",
           "n_especies": 81,
           "n_registros": 157,
@@ -39500,6 +39512,10 @@
         },
         {
           "id": "68051",
+<<<<<<< HEAD
+=======
+          "name": "ARATOCA",
+>>>>>>> main
           "label": "Aratoca",
           "n_especies": 355,
           "n_registros": 2749,
@@ -39544,6 +39560,10 @@
         },
         {
           "id": "68077",
+<<<<<<< HEAD
+=======
+          "name": "BARBOSA",
+>>>>>>> main
           "label": "Barbosa",
           "n_especies": 178,
           "n_registros": 495,
@@ -39569,6 +39589,10 @@
         },
         {
           "id": "68079",
+<<<<<<< HEAD
+=======
+          "name": "BARICHARA",
+>>>>>>> main
           "label": "Barichara",
           "n_especies": 578,
           "n_registros": 8255,
@@ -39611,6 +39635,10 @@
         },
         {
           "id": "68081",
+<<<<<<< HEAD
+=======
+          "name": "BARRANCABERMEJA",
+>>>>>>> main
           "label": "Barrancabermeja",
           "n_especies": 2122,
           "n_registros": 107027,
@@ -39708,6 +39736,10 @@
         },
         {
           "id": "68092",
+<<<<<<< HEAD
+=======
+          "name": "BETULIA",
+>>>>>>> main
           "label": "Betulia",
           "n_especies": 1171,
           "n_registros": 66533,
@@ -39782,6 +39814,10 @@
         },
         {
           "id": "68101",
+<<<<<<< HEAD
+=======
+          "name": "BOLÍVAR",
+>>>>>>> main
           "label": "Bolívar",
           "n_especies": 730,
           "n_registros": 21502,
@@ -39973,6 +40009,10 @@
         },
         {
           "id": "68121",
+<<<<<<< HEAD
+=======
+          "name": "CABRERA",
+>>>>>>> main
           "label": "Cabrera",
           "n_especies": 56,
           "n_registros": 97,
@@ -40005,6 +40045,10 @@
         },
         {
           "id": "68132",
+<<<<<<< HEAD
+=======
+          "name": "CALIFORNIA",
+>>>>>>> main
           "label": "California",
           "n_especies": 711,
           "n_registros": 2933,
@@ -40039,6 +40083,10 @@
         },
         {
           "id": "68147",
+<<<<<<< HEAD
+=======
+          "name": "CAPITANEJO",
+>>>>>>> main
           "label": "Capitanejo",
           "n_especies": 118,
           "n_registros": 250,
@@ -40079,6 +40127,10 @@
         },
         {
           "id": "68152",
+<<<<<<< HEAD
+=======
+          "name": "CARCASÍ",
+>>>>>>> main
           "label": "Carcasí",
           "n_especies": 151,
           "n_registros": 1889,
@@ -40130,6 +40182,10 @@
         },
         {
           "id": "68160",
+<<<<<<< HEAD
+=======
+          "name": "CEPITÁ",
+>>>>>>> main
           "label": "Cepitá",
           "n_especies": 148,
           "n_registros": 466,
@@ -40170,6 +40226,10 @@
         },
         {
           "id": "68162",
+<<<<<<< HEAD
+=======
+          "name": "CERRITO",
+>>>>>>> main
           "label": "Cerrito",
           "n_especies": 350,
           "n_registros": 1790,
@@ -40223,6 +40283,10 @@
         },
         {
           "id": "68167",
+<<<<<<< HEAD
+=======
+          "name": "CHARALÁ",
+>>>>>>> main
           "label": "Charalá",
           "n_especies": 1915,
           "n_registros": 22509,
@@ -40316,6 +40380,10 @@
         },
         {
           "id": "68169",
+<<<<<<< HEAD
+=======
+          "name": "CHARTA",
+>>>>>>> main
           "label": "Charta",
           "n_especies": 323,
           "n_registros": 973,
@@ -40364,6 +40432,10 @@
         },
         {
           "id": "68176",
+<<<<<<< HEAD
+=======
+          "name": "CHIMA",
+>>>>>>> main
           "label": "Chima",
           "n_especies": 171,
           "n_registros": 594,
@@ -40409,6 +40481,10 @@
         },
         {
           "id": "68179",
+<<<<<<< HEAD
+=======
+          "name": "CHIPATÁ",
+>>>>>>> main
           "label": "Chipatá",
           "n_especies": 97,
           "n_registros": 179,
@@ -40446,6 +40522,10 @@
         },
         {
           "id": "68190",
+<<<<<<< HEAD
+=======
+          "name": "CIMITARRA",
+>>>>>>> main
           "label": "Cimitarra",
           "n_especies": 1880,
           "n_registros": 31324,
@@ -40563,6 +40643,10 @@
         },
         {
           "id": "68207",
+<<<<<<< HEAD
+=======
+          "name": "CONCEPCIÓN",
+>>>>>>> main
           "label": "Concepción",
           "n_especies": 254,
           "n_registros": 2653,
@@ -40625,6 +40709,10 @@
         },
         {
           "id": "68209",
+<<<<<<< HEAD
+=======
+          "name": "CONFINES",
+>>>>>>> main
           "label": "Confines",
           "n_especies": 103,
           "n_registros": 421,
@@ -40660,6 +40748,10 @@
         },
         {
           "id": "68211",
+<<<<<<< HEAD
+=======
+          "name": "CONTRATACIÓN",
+>>>>>>> main
           "label": "Contratación",
           "n_especies": 157,
           "n_registros": 1163,
@@ -40708,6 +40800,10 @@
         },
         {
           "id": "68217",
+<<<<<<< HEAD
+=======
+          "name": "COROMORO",
+>>>>>>> main
           "label": "Coromoro",
           "n_especies": 248,
           "n_registros": 1016,
@@ -40780,6 +40876,10 @@
         },
         {
           "id": "68229",
+<<<<<<< HEAD
+=======
+          "name": "CURITÍ",
+>>>>>>> main
           "label": "Curití",
           "n_especies": 257,
           "n_registros": 4042,
@@ -40835,6 +40935,10 @@
         },
         {
           "id": "68235",
+<<<<<<< HEAD
+=======
+          "name": "EL CARMEN DE CHUCURÍ",
+>>>>>>> main
           "label": "El Carmen de Chucurí",
           "n_especies": 1880,
           "n_registros": 41287,
@@ -40911,6 +41015,10 @@
         },
         {
           "id": "68245",
+<<<<<<< HEAD
+=======
+          "name": "EL GUACAMAYO",
+>>>>>>> main
           "label": "El Guacamayo",
           "n_especies": 30,
           "n_registros": 48,
@@ -40951,6 +41059,10 @@
         },
         {
           "id": "68250",
+<<<<<<< HEAD
+=======
+          "name": "EL PEÑÓN",
+>>>>>>> main
           "label": "El Peñón",
           "n_especies": 440,
           "n_registros": 8724,
@@ -41011,6 +41123,10 @@
         },
         {
           "id": "68255",
+<<<<<<< HEAD
+=======
+          "name": "EL PLAYÓN",
+>>>>>>> main
           "label": "El Playón",
           "n_especies": 433,
           "n_registros": 1491,
@@ -41077,6 +41193,10 @@
         },
         {
           "id": "68264",
+<<<<<<< HEAD
+=======
+          "name": "ENCINO",
+>>>>>>> main
           "label": "Encino",
           "n_especies": 1076,
           "n_registros": 15658,
@@ -41146,6 +41266,10 @@
         },
         {
           "id": "68266",
+<<<<<<< HEAD
+=======
+          "name": "ENCISO",
+>>>>>>> main
           "label": "Enciso",
           "n_especies": 176,
           "n_registros": 1461,
@@ -41178,6 +41302,10 @@
         },
         {
           "id": "68271",
+<<<<<<< HEAD
+=======
+          "name": "FLORIÁN",
+>>>>>>> main
           "label": "Florián",
           "n_especies": 257,
           "n_registros": 1370,
@@ -41226,6 +41354,10 @@
         },
         {
           "id": "68276",
+<<<<<<< HEAD
+=======
+          "name": "FLORIDABLANCA",
+>>>>>>> main
           "label": "Floridablanca",
           "n_especies": 2015,
           "n_registros": 33123,
@@ -41268,6 +41400,10 @@
         },
         {
           "id": "68296",
+<<<<<<< HEAD
+=======
+          "name": "GALÁN",
+>>>>>>> main
           "label": "Galán",
           "n_especies": 290,
           "n_registros": 1106,
@@ -41314,6 +41450,10 @@
         },
         {
           "id": "68298",
+<<<<<<< HEAD
+=======
+          "name": "GÁMBITA",
+>>>>>>> main
           "label": "Gámbita",
           "n_especies": 967,
           "n_registros": 10849,
@@ -41395,6 +41535,10 @@
         },
         {
           "id": "68307",
+<<<<<<< HEAD
+=======
+          "name": "GIRÓN",
+>>>>>>> main
           "label": "Girón",
           "n_especies": 1699,
           "n_registros": 23271,
@@ -41493,6 +41637,10 @@
         },
         {
           "id": "68318",
+<<<<<<< HEAD
+=======
+          "name": "GUACA",
+>>>>>>> main
           "label": "Guaca",
           "n_especies": 297,
           "n_registros": 2893,
@@ -41549,6 +41697,10 @@
         },
         {
           "id": "68320",
+<<<<<<< HEAD
+=======
+          "name": "GUADALUPE",
+>>>>>>> main
           "label": "Guadalupe",
           "n_especies": 223,
           "n_registros": 1390,
@@ -41591,6 +41743,10 @@
         },
         {
           "id": "68322",
+<<<<<<< HEAD
+=======
+          "name": "GUAPOTÁ",
+>>>>>>> main
           "label": "Guapotá",
           "n_especies": 137,
           "n_registros": 972,
@@ -41625,6 +41781,10 @@
         },
         {
           "id": "68324",
+<<<<<<< HEAD
+=======
+          "name": "GUAVATÁ",
+>>>>>>> main
           "label": "Guavatá",
           "n_especies": 24,
           "n_registros": 33,
@@ -41660,6 +41820,10 @@
         },
         {
           "id": "68327",
+<<<<<<< HEAD
+=======
+          "name": "GÜEPSA",
+>>>>>>> main
           "label": "Güepsa",
           "n_especies": 42,
           "n_registros": 100,
@@ -41689,6 +41853,10 @@
         },
         {
           "id": "68344",
+<<<<<<< HEAD
+=======
+          "name": "HATO",
+>>>>>>> main
           "label": "Hato",
           "n_especies": 543,
           "n_registros": 4170,
@@ -41726,6 +41894,10 @@
         },
         {
           "id": "68368",
+<<<<<<< HEAD
+=======
+          "name": "JESÚS MARÍA",
+>>>>>>> main
           "label": "Jesús María",
           "n_especies": 90,
           "n_registros": 189,
@@ -41771,6 +41943,10 @@
         },
         {
           "id": "68370",
+<<<<<<< HEAD
+=======
+          "name": "JORDÁN",
+>>>>>>> main
           "label": "Jordán",
           "n_especies": 96,
           "n_registros": 341,
@@ -41803,6 +41979,10 @@
         },
         {
           "id": "68377",
+<<<<<<< HEAD
+=======
+          "name": "LA BELLEZA",
+>>>>>>> main
           "label": "La Belleza",
           "n_especies": 310,
           "n_registros": 744,
@@ -41865,6 +42045,10 @@
         },
         {
           "id": "68385",
+<<<<<<< HEAD
+=======
+          "name": "LANDÁZURI",
+>>>>>>> main
           "label": "Landázuri",
           "n_especies": 319,
           "n_registros": 1398,
@@ -41942,6 +42126,10 @@
         },
         {
           "id": "68397",
+<<<<<<< HEAD
+=======
+          "name": "LA PAZ",
+>>>>>>> main
           "label": "La Paz",
           "n_especies": 70,
           "n_registros": 171,
@@ -41997,6 +42185,10 @@
         },
         {
           "id": "68406",
+<<<<<<< HEAD
+=======
+          "name": "LEBRIJA",
+>>>>>>> main
           "label": "Lebrija",
           "n_especies": 1137,
           "n_registros": 33100,
@@ -42076,6 +42268,10 @@
         },
         {
           "id": "68418",
+<<<<<<< HEAD
+=======
+          "name": "LOS SANTOS",
+>>>>>>> main
           "label": "Los Santos",
           "n_especies": 1003,
           "n_registros": 11449,
@@ -42118,6 +42314,10 @@
         },
         {
           "id": "68425",
+<<<<<<< HEAD
+=======
+          "name": "MACARAVITA",
+>>>>>>> main
           "label": "Macaravita",
           "n_especies": 22,
           "n_registros": 30,
@@ -42159,6 +42359,10 @@
         },
         {
           "id": "68432",
+<<<<<<< HEAD
+=======
+          "name": "MÁLAGA",
+>>>>>>> main
           "label": "Málaga",
           "n_especies": 295,
           "n_registros": 2690,
@@ -42189,6 +42393,10 @@
         },
         {
           "id": "68444",
+<<<<<<< HEAD
+=======
+          "name": "MATANZA",
+>>>>>>> main
           "label": "Matanza",
           "n_especies": 336,
           "n_registros": 1077,
@@ -42243,6 +42451,10 @@
         },
         {
           "id": "68464",
+<<<<<<< HEAD
+=======
+          "name": "MOGOTES",
+>>>>>>> main
           "label": "Mogotes",
           "n_especies": 189,
           "n_registros": 541,
@@ -42309,6 +42521,10 @@
         },
         {
           "id": "68468",
+<<<<<<< HEAD
+=======
+          "name": "MOLAGAVITA",
+>>>>>>> main
           "label": "Molagavita",
           "n_especies": 80,
           "n_registros": 449,
@@ -42350,6 +42566,10 @@
         },
         {
           "id": "68498",
+<<<<<<< HEAD
+=======
+          "name": "OCAMONTE",
+>>>>>>> main
           "label": "Ocamonte",
           "n_especies": 91,
           "n_registros": 418,
@@ -42385,6 +42605,10 @@
         },
         {
           "id": "68500",
+<<<<<<< HEAD
+=======
+          "name": "OIBA",
+>>>>>>> main
           "label": "Oiba",
           "n_especies": 214,
           "n_registros": 1040,
@@ -42436,6 +42660,10 @@
         },
         {
           "id": "68502",
+<<<<<<< HEAD
+=======
+          "name": "ONZAGA",
+>>>>>>> main
           "label": "Onzaga",
           "n_especies": 603,
           "n_registros": 4936,
@@ -42509,6 +42737,10 @@
         },
         {
           "id": "68522",
+<<<<<<< HEAD
+=======
+          "name": "PALMAR",
+>>>>>>> main
           "label": "Palmar",
           "n_especies": 2,
           "n_registros": 2,
@@ -42534,6 +42766,10 @@
         },
         {
           "id": "68524",
+<<<<<<< HEAD
+=======
+          "name": "PALMAS DEL SOCORRO",
+>>>>>>> main
           "label": "Palmas del Socorro",
           "n_especies": 103,
           "n_registros": 637,
@@ -42565,6 +42801,10 @@
         },
         {
           "id": "68533",
+<<<<<<< HEAD
+=======
+          "name": "PÁRAMO",
+>>>>>>> main
           "label": "Páramo",
           "n_especies": 286,
           "n_registros": 3439,
@@ -42604,6 +42844,10 @@
         },
         {
           "id": "68547",
+<<<<<<< HEAD
+=======
+          "name": "PIEDECUESTA",
+>>>>>>> main
           "label": "Piedecuesta",
           "n_especies": 2126,
           "n_registros": 33990,
@@ -42671,6 +42915,10 @@
         },
         {
           "id": "68549",
+<<<<<<< HEAD
+=======
+          "name": "PINCHOTE",
+>>>>>>> main
           "label": "Pinchote",
           "n_especies": 258,
           "n_registros": 2453,
@@ -42701,6 +42949,10 @@
         },
         {
           "id": "68572",
+<<<<<<< HEAD
+=======
+          "name": "PUENTE NACIONAL",
+>>>>>>> main
           "label": "Puente Nacional",
           "n_especies": 293,
           "n_registros": 1236,
@@ -42750,6 +43002,10 @@
         },
         {
           "id": "68573",
+<<<<<<< HEAD
+=======
+          "name": "PUERTO PARRA",
+>>>>>>> main
           "label": "Puerto Parra",
           "n_especies": 881,
           "n_registros": 14784,
@@ -42832,6 +43088,10 @@
         },
         {
           "id": "68575",
+<<<<<<< HEAD
+=======
+          "name": "PUERTO WILCHES",
+>>>>>>> main
           "label": "Puerto Wilches",
           "n_especies": 3592,
           "n_registros": 416180,
@@ -42976,6 +43236,10 @@
         },
         {
           "id": "68615",
+<<<<<<< HEAD
+=======
+          "name": "RIONEGRO",
+>>>>>>> main
           "label": "Rionegro",
           "n_especies": 1141,
           "n_registros": 9776,
@@ -43113,6 +43377,10 @@
         },
         {
           "id": "68655",
+<<<<<<< HEAD
+=======
+          "name": "SABANA DE TORRES",
+>>>>>>> main
           "label": "Sabana de Torres",
           "n_especies": 715,
           "n_registros": 12355,
@@ -43205,6 +43473,10 @@
         },
         {
           "id": "68669",
+<<<<<<< HEAD
+=======
+          "name": "SAN ANDRÉS",
+>>>>>>> main
           "label": "San Andrés",
           "n_especies": 212,
           "n_registros": 915,
@@ -43252,6 +43524,10 @@
         },
         {
           "id": "68673",
+<<<<<<< HEAD
+=======
+          "name": "SAN BENITO",
+>>>>>>> main
           "label": "San Benito",
           "n_especies": 32,
           "n_registros": 34,
@@ -43287,6 +43563,10 @@
         },
         {
           "id": "68679",
+<<<<<<< HEAD
+=======
+          "name": "SAN GIL",
+>>>>>>> main
           "label": "San Gil",
           "n_especies": 635,
           "n_registros": 11697,
@@ -43335,6 +43615,10 @@
         },
         {
           "id": "68682",
+<<<<<<< HEAD
+=======
+          "name": "SAN JOAQUÍN",
+>>>>>>> main
           "label": "San Joaquín",
           "n_especies": 104,
           "n_registros": 241,
@@ -43378,6 +43662,10 @@
         },
         {
           "id": "68684",
+<<<<<<< HEAD
+=======
+          "name": "SAN JOSÉ DE MIRANDA",
+>>>>>>> main
           "label": "San José de Miranda",
           "n_especies": 130,
           "n_registros": 214,
@@ -43409,6 +43697,10 @@
         },
         {
           "id": "68686",
+<<<<<<< HEAD
+=======
+          "name": "SAN MIGUEL",
+>>>>>>> main
           "label": "San Miguel",
           "n_especies": 15,
           "n_registros": 17,
@@ -43441,6 +43733,10 @@
         },
         {
           "id": "68689",
+<<<<<<< HEAD
+=======
+          "name": "SAN VICENTE DE CHUCURÍ",
+>>>>>>> main
           "label": "San Vicente de Chucurí",
           "n_especies": 2082,
           "n_registros": 195620,
@@ -43528,6 +43824,10 @@
         },
         {
           "id": "68705",
+<<<<<<< HEAD
+=======
+          "name": "SANTA BÁRBARA",
+>>>>>>> main
           "label": "Santa Bárbara",
           "n_especies": 826,
           "n_registros": 10534,
@@ -43586,6 +43886,10 @@
         },
         {
           "id": "68720",
+<<<<<<< HEAD
+=======
+          "name": "SANTA HELENA DEL OPÓN",
+>>>>>>> main
           "label": "Santa Helena del Opón",
           "n_especies": 34,
           "n_registros": 53,
@@ -43644,6 +43948,10 @@
         },
         {
           "id": "68745",
+<<<<<<< HEAD
+=======
+          "name": "SIMACOTA",
+>>>>>>> main
           "label": "Simacota",
           "n_especies": 729,
           "n_registros": 5814,
@@ -43779,6 +44087,10 @@
         },
         {
           "id": "68755",
+<<<<<<< HEAD
+=======
+          "name": "SOCORRO",
+>>>>>>> main
           "label": "Socorro",
           "n_especies": 468,
           "n_registros": 36230,
@@ -43816,6 +44128,10 @@
         },
         {
           "id": "68770",
+<<<<<<< HEAD
+=======
+          "name": "SUAITA",
+>>>>>>> main
           "label": "Suaita",
           "n_especies": 935,
           "n_registros": 8928,
@@ -43873,6 +44189,10 @@
         },
         {
           "id": "68773",
+<<<<<<< HEAD
+=======
+          "name": "SUCRE",
+>>>>>>> main
           "label": "Sucre",
           "n_especies": 176,
           "n_registros": 449,
@@ -43953,6 +44273,10 @@
         },
         {
           "id": "68780",
+<<<<<<< HEAD
+=======
+          "name": "SURATÁ",
+>>>>>>> main
           "label": "Suratá",
           "n_especies": 603,
           "n_registros": 5969,
@@ -44025,6 +44349,10 @@
         },
         {
           "id": "68820",
+<<<<<<< HEAD
+=======
+          "name": "TONA",
+>>>>>>> main
           "label": "Tona",
           "n_especies": 1454,
           "n_registros": 9659,
@@ -44078,6 +44406,10 @@
         },
         {
           "id": "68855",
+<<<<<<< HEAD
+=======
+          "name": "VALLE DE SAN JOSÉ",
+>>>>>>> main
           "label": "Valle de San José",
           "n_especies": 106,
           "n_registros": 301,
@@ -44110,6 +44442,10 @@
         },
         {
           "id": "68861",
+<<<<<<< HEAD
+=======
+          "name": "VÉLEZ",
+>>>>>>> main
           "label": "Vélez",
           "n_especies": 263,
           "n_registros": 594,
@@ -44212,6 +44548,10 @@
         },
         {
           "id": "68867",
+<<<<<<< HEAD
+=======
+          "name": "VETAS",
+>>>>>>> main
           "label": "Vetas",
           "n_especies": 572,
           "n_registros": 2530,
@@ -44248,6 +44588,10 @@
         },
         {
           "id": "68872",
+<<<<<<< HEAD
+=======
+          "name": "VILLANUEVA",
+>>>>>>> main
           "label": "Villanueva",
           "n_especies": 105,
           "n_registros": 280,
@@ -44293,6 +44637,10 @@
         },
         {
           "id": "68895",
+<<<<<<< HEAD
+=======
+          "name": "ZAPATOCA",
+>>>>>>> main
           "label": "Zapatoca",
           "n_especies": 932,
           "n_registros": 12507,

@@ -1082,7 +1082,15 @@
       "parent_en": [],
       "parent_vu": [],
       "parent_especies_total": [],
+<<<<<<< HEAD
       "list_especies_amenazadas_nacional": [
+=======
+      "list_especies_amenazadas_nacional": {},
+      "list_especies_amenazadas_nacional_vu": {},
+      "list_especies_amenazadas_nacional_en": {},
+      "list_especies_amenazadas_nacional_cr": {},
+      "species_list": [
+>>>>>>> main
         {
           "label": "Otoba lehmannii",
           "slug_especie": "otoba-lehmannii",
@@ -1151,6 +1159,7 @@
           "label": "Creurgops verticalis",
           "slug_especie": "creurgops-verticalis",
           "registros": 67,
+<<<<<<< HEAD
           "url_gbif": "https://www.gbif.org/species/2488782",
           "slug_tematica": "amenazadas-nacional-vu"
         }
@@ -1305,6 +1314,10 @@
           "registros": 2,
           "url_gbif": "https://www.gbif.org/species/3034994",
           "slug_tematica": "amenazadas-nacional-cr"
+=======
+          "url_gbif": "https://www.gbif.org/species/2488782",
+          "slug_tematica": "amenazadas-nacional-vu"
+>>>>>>> main
         }
       ]
     },
@@ -1328,7 +1341,15 @@
       "parent_en": [],
       "parent_vu": [],
       "parent_especies_total": [],
+<<<<<<< HEAD
       "list_especies_amenazadas_global": [
+=======
+      "list_especies_amenazadas_global": {},
+      "list_especies_amenazadas_global_vu": {},
+      "list_especies_amenazadas_global_en": {},
+      "list_especies_amenazadas_global_cr": {},
+      "species_list": [
+>>>>>>> main
         {
           "label": "Miconia bella",
           "slug_especie": "miconia-bella",
@@ -1398,6 +1419,7 @@
           "registros": 9,
           "url_gbif": "https://www.gbif.org/species/8041345",
           "slug_tematica": "amenazadas-global-vu"
+<<<<<<< HEAD
         }
       ],
       "list_especies_amenazadas_global_vu": [
@@ -1511,6 +1533,8 @@
           "registros": 2,
           "url_gbif": "https://www.gbif.org/species/3034994",
           "slug_tematica": "amenazadas-global-cr"
+=======
+>>>>>>> main
         }
       ]
     },
@@ -1993,6 +2017,7 @@
       "parent_registros_exoticas_riesgo_invasion": [],
       "list_especies_exoticas_total": [
         {
+<<<<<<< HEAD
           "label": "Cyathea planadae",
           "slug_especie": "cyathea-planadae",
           "registros": 17209,
@@ -2043,6 +2068,8 @@
           "slug_tematica": "exotica-riesgo-invasion"
         },
         {
+=======
+>>>>>>> main
           "label": "Mikania micrantha",
           "slug_especie": "mikania-micrantha",
           "registros": 8,
@@ -2050,6 +2077,7 @@
           "slug_tematica": "exoticas"
         },
         {
+<<<<<<< HEAD
           "label": "Pteris livida",
           "slug_especie": "pteris-livida",
           "registros": 7,
@@ -2062,6 +2090,73 @@
           "registros": 6,
           "url_gbif": "https://www.gbif.org/species/2650675",
           "slug_tematica": "exotica-riesgo-invasion"
+=======
+          "label": "Erechtites valerianifolius",
+          "slug_especie": "erechtites-valerianifolius",
+          "registros": 5,
+          "url_gbif": "https://www.gbif.org/species/8199967",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Syzygium jambos",
+          "slug_especie": "syzygium-jambos",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/3183534",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5949473e2f4fd7bc7f39766e/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Anthurium bogotense",
+          "slug_especie": "anthurium-bogotense",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2872779",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Bidens pilosa",
+          "slug_especie": "bidens-pilosa",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/5391845",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/593b6a272f4fd7bc7f387b6a/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Ceiba speciosa",
+          "slug_especie": "ceiba-speciosa",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/8688929",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7330483c45700544e3f3f/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Erigeron bonariensis",
+          "slug_especie": "erigeron-bonariensis",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/3146717",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Impatiens walleriana",
+          "slug_especie": "impatiens-walleriana",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2891772",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Monstera deliciosa",
+          "slug_especie": "monstera-deliciosa",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2868241",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7924c83c45700544e417e/summary",
+          "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Pityrogramma ebenea",
+          "slug_especie": "pityrogramma-ebenea",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2651796",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         }
       ],
       "list_especies_exoticas": [
@@ -20891,7 +20986,11 @@
     {
       "slug": "municipios",
       "label": "Municipios",
+<<<<<<< HEAD
       "map_data": {},
+=======
+      "map_data": [],
+>>>>>>> main
       "charts": []
     },
     {

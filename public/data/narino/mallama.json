@@ -1677,11 +1677,19 @@
           "slug_tematica": "exotica-riesgo-invasion"
         },
         {
+<<<<<<< HEAD
           "label": "Cyathea planadae",
           "slug_especie": "cyathea-planadae",
           "registros": 3,
           "url_gbif": "https://www.gbif.org/species/3598208",
           "slug_tematica": "exotica-riesgo-invasion"
+=======
+          "label": "Pityrogramma ebenea",
+          "slug_especie": "pityrogramma-ebenea",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2651796",
+          "slug_tematica": "exoticas"
+>>>>>>> main
         },
         {
           "label": "Hymenophyllum sieberi",

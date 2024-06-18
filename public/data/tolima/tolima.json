@@ -36301,6 +36301,10 @@
       "map_data": [
         {
           "id": "73001",
+<<<<<<< HEAD
+=======
+          "name": "IBAGUÉ",
+>>>>>>> main
           "label": "Ibagué",
           "n_especies": 2887,
           "n_registros": 337506,
@@ -36427,6 +36431,10 @@
         },
         {
           "id": "73024",
+<<<<<<< HEAD
+=======
+          "name": "ALPUJARRA",
+>>>>>>> main
           "label": "Alpujarra",
           "n_especies": 165,
           "n_registros": 1544,
@@ -36493,6 +36501,10 @@
         },
         {
           "id": "73026",
+<<<<<<< HEAD
+=======
+          "name": "ALVARADO",
+>>>>>>> main
           "label": "Alvarado",
           "n_especies": 492,
           "n_registros": 5450,
@@ -36545,6 +36557,10 @@
         },
         {
           "id": "73030",
+<<<<<<< HEAD
+=======
+          "name": "AMBALEMA",
+>>>>>>> main
           "label": "Ambalema",
           "n_especies": 570,
           "n_registros": 15113,
@@ -36604,6 +36620,10 @@
         },
         {
           "id": "73043",
+<<<<<<< HEAD
+=======
+          "name": "ANZOÁTEGUI",
+>>>>>>> main
           "label": "Anzoátegui",
           "n_especies": 571,
           "n_registros": 3583,
@@ -36668,6 +36688,10 @@
         },
         {
           "id": "73055",
+<<<<<<< HEAD
+=======
+          "name": "ARMERO",
+>>>>>>> main
           "label": "Armero",
           "n_especies": 1178,
           "n_registros": 42509,
@@ -36741,6 +36765,10 @@
         },
         {
           "id": "73067",
+<<<<<<< HEAD
+=======
+          "name": "ATACO",
+>>>>>>> main
           "label": "Ataco",
           "n_especies": 256,
           "n_registros": 742,
@@ -36855,6 +36883,10 @@
         },
         {
           "id": "73124",
+<<<<<<< HEAD
+=======
+          "name": "CAJAMARCA",
+>>>>>>> main
           "label": "Cajamarca",
           "n_especies": 1626,
           "n_registros": 150560,
@@ -36921,6 +36953,10 @@
         },
         {
           "id": "73148",
+<<<<<<< HEAD
+=======
+          "name": "CARMEN DE APICALÁ",
+>>>>>>> main
           "label": "Carmen de Apicalá",
           "n_especies": 355,
           "n_registros": 2332,
@@ -36965,6 +37001,10 @@
         },
         {
           "id": "73152",
+<<<<<<< HEAD
+=======
+          "name": "CASABIANCA",
+>>>>>>> main
           "label": "Casabianca",
           "n_especies": 491,
           "n_registros": 4783,
@@ -37026,6 +37066,10 @@
         },
         {
           "id": "73168",
+<<<<<<< HEAD
+=======
+          "name": "CHAPARRAL",
+>>>>>>> main
           "label": "Chaparral",
           "n_especies": 903,
           "n_registros": 8907,
@@ -37147,6 +37191,10 @@
         },
         {
           "id": "73200",
+<<<<<<< HEAD
+=======
+          "name": "COELLO",
+>>>>>>> main
           "label": "Coello",
           "n_especies": 613,
           "n_registros": 20939,
@@ -37213,6 +37261,10 @@
         },
         {
           "id": "73217",
+<<<<<<< HEAD
+=======
+          "name": "COYAIMA",
+>>>>>>> main
           "label": "Coyaima",
           "n_especies": 484,
           "n_registros": 1076,
@@ -37285,6 +37337,10 @@
         },
         {
           "id": "73226",
+<<<<<<< HEAD
+=======
+          "name": "CUNDAY",
+>>>>>>> main
           "label": "Cunday",
           "n_especies": 497,
           "n_registros": 3222,
@@ -37357,6 +37413,10 @@
         },
         {
           "id": "73236",
+<<<<<<< HEAD
+=======
+          "name": "DOLORES",
+>>>>>>> main
           "label": "Dolores",
           "n_especies": 163,
           "n_registros": 639,
@@ -37449,6 +37509,10 @@
         },
         {
           "id": "73268",
+<<<<<<< HEAD
+=======
+          "name": "ESPINAL",
+>>>>>>> main
           "label": "Espinal",
           "n_especies": 684,
           "n_registros": 3289,
@@ -37499,6 +37563,10 @@
         },
         {
           "id": "73270",
+<<<<<<< HEAD
+=======
+          "name": "FALAN",
+>>>>>>> main
           "label": "Falan",
           "n_especies": 707,
           "n_registros": 18590,
@@ -37548,6 +37616,10 @@
         },
         {
           "id": "73275",
+<<<<<<< HEAD
+=======
+          "name": "FLANDES",
+>>>>>>> main
           "label": "Flandes",
           "n_especies": 229,
           "n_registros": 1297,
@@ -37587,6 +37659,10 @@
         },
         {
           "id": "73283",
+<<<<<<< HEAD
+=======
+          "name": "FRESNO",
+>>>>>>> main
           "label": "Fresno",
           "n_especies": 576,
           "n_registros": 17864,
@@ -37636,6 +37712,10 @@
         },
         {
           "id": "73319",
+<<<<<<< HEAD
+=======
+          "name": "GUAMO",
+>>>>>>> main
           "label": "Guamo",
           "n_especies": 487,
           "n_registros": 3981,
@@ -37702,6 +37782,10 @@
         },
         {
           "id": "73347",
+<<<<<<< HEAD
+=======
+          "name": "HERVEO",
+>>>>>>> main
           "label": "Herveo",
           "n_especies": 616,
           "n_registros": 44565,
@@ -37761,6 +37845,10 @@
         },
         {
           "id": "73349",
+<<<<<<< HEAD
+=======
+          "name": "HONDA",
+>>>>>>> main
           "label": "Honda",
           "n_especies": 1059,
           "n_registros": 35710,
@@ -37822,6 +37910,10 @@
         },
         {
           "id": "73352",
+<<<<<<< HEAD
+=======
+          "name": "ICONONZO",
+>>>>>>> main
           "label": "Icononzo",
           "n_especies": 412,
           "n_registros": 4047,
@@ -37875,6 +37967,10 @@
         },
         {
           "id": "73408",
+<<<<<<< HEAD
+=======
+          "name": "LÉRIDA",
+>>>>>>> main
           "label": "Lérida",
           "n_especies": 425,
           "n_registros": 5618,
@@ -37930,6 +38026,10 @@
         },
         {
           "id": "73411",
+<<<<<<< HEAD
+=======
+          "name": "LÍBANO",
+>>>>>>> main
           "label": "Líbano",
           "n_especies": 884,
           "n_registros": 37503,
@@ -37985,6 +38085,10 @@
         },
         {
           "id": "73443",
+<<<<<<< HEAD
+=======
+          "name": "SAN SEBASTIÁN DE MARIQUITA",
+>>>>>>> main
           "label": "San Sebastián de Mariquita",
           "n_especies": 1291,
           "n_registros": 15457,
@@ -38034,6 +38138,10 @@
         },
         {
           "id": "73449",
+<<<<<<< HEAD
+=======
+          "name": "MELGAR",
+>>>>>>> main
           "label": "Melgar",
           "n_especies": 858,
           "n_registros": 9555,
@@ -38085,6 +38193,10 @@
         },
         {
           "id": "73461",
+<<<<<<< HEAD
+=======
+          "name": "MURILLO",
+>>>>>>> main
           "label": "Murillo",
           "n_especies": 1179,
           "n_registros": 33925,
@@ -38142,6 +38254,10 @@
         },
         {
           "id": "73483",
+<<<<<<< HEAD
+=======
+          "name": "NATAGAIMA",
+>>>>>>> main
           "label": "Natagaima",
           "n_especies": 531,
           "n_registros": 4302,
@@ -38223,6 +38339,10 @@
         },
         {
           "id": "73504",
+<<<<<<< HEAD
+=======
+          "name": "ORTEGA",
+>>>>>>> main
           "label": "Ortega",
           "n_especies": 195,
           "n_registros": 401,
@@ -38305,6 +38425,10 @@
         },
         {
           "id": "73520",
+<<<<<<< HEAD
+=======
+          "name": "PALOCABILDO",
+>>>>>>> main
           "label": "Palocabildo",
           "n_especies": 132,
           "n_registros": 910,
@@ -38336,6 +38460,10 @@
         },
         {
           "id": "73547",
+<<<<<<< HEAD
+=======
+          "name": "PIEDRAS",
+>>>>>>> main
           "label": "Piedras",
           "n_especies": 594,
           "n_registros": 12835,
@@ -38400,6 +38528,10 @@
         },
         {
           "id": "73555",
+<<<<<<< HEAD
+=======
+          "name": "PLANADAS",
+>>>>>>> main
           "label": "Planadas",
           "n_especies": 655,
           "n_registros": 13546,
@@ -38510,6 +38642,10 @@
         },
         {
           "id": "73563",
+<<<<<<< HEAD
+=======
+          "name": "PRADO",
+>>>>>>> main
           "label": "Prado",
           "n_especies": 504,
           "n_registros": 6601,
@@ -38576,6 +38712,10 @@
         },
         {
           "id": "73585",
+<<<<<<< HEAD
+=======
+          "name": "PURIFICACIÓN",
+>>>>>>> main
           "label": "Purificación",
           "n_especies": 397,
           "n_registros": 5895,
@@ -38659,6 +38799,10 @@
         },
         {
           "id": "73616",
+<<<<<<< HEAD
+=======
+          "name": "RIOBLANCO",
+>>>>>>> main
           "label": "Rioblanco",
           "n_especies": 548,
           "n_registros": 5259,
@@ -38780,6 +38924,10 @@
         },
         {
           "id": "73622",
+<<<<<<< HEAD
+=======
+          "name": "RONCESVALLES",
+>>>>>>> main
           "label": "Roncesvalles",
           "n_especies": 944,
           "n_registros": 16260,
@@ -38858,6 +39006,10 @@
         },
         {
           "id": "73624",
+<<<<<<< HEAD
+=======
+          "name": "ROVIRA",
+>>>>>>> main
           "label": "Rovira",
           "n_especies": 308,
           "n_registros": 1355,
@@ -38939,6 +39091,10 @@
         },
         {
           "id": "73671",
+<<<<<<< HEAD
+=======
+          "name": "SALDAÑA",
+>>>>>>> main
           "label": "Saldaña",
           "n_especies": 311,
           "n_registros": 1331,
@@ -38993,6 +39149,10 @@
         },
         {
           "id": "73675",
+<<<<<<< HEAD
+=======
+          "name": "SAN ANTONIO",
+>>>>>>> main
           "label": "San Antonio",
           "n_especies": 586,
           "n_registros": 14634,
@@ -39055,6 +39215,10 @@
         },
         {
           "id": "73678",
+<<<<<<< HEAD
+=======
+          "name": "SAN LUIS",
+>>>>>>> main
           "label": "San Luis",
           "n_especies": 410,
           "n_registros": 12136,
@@ -39135,6 +39299,10 @@
         },
         {
           "id": "73686",
+<<<<<<< HEAD
+=======
+          "name": "SANTA ISABEL",
+>>>>>>> main
           "label": "Santa Isabel",
           "n_especies": 861,
           "n_registros": 5165,
@@ -39199,6 +39367,10 @@
         },
         {
           "id": "73770",
+<<<<<<< HEAD
+=======
+          "name": "SUÁREZ",
+>>>>>>> main
           "label": "Suárez",
           "n_especies": 224,
           "n_registros": 818,
@@ -39258,6 +39430,10 @@
         },
         {
           "id": "73854",
+<<<<<<< HEAD
+=======
+          "name": "VALLE DE SAN JUAN",
+>>>>>>> main
           "label": "Valle de San Juan",
           "n_especies": 180,
           "n_registros": 1154,
@@ -39300,6 +39476,10 @@
         },
         {
           "id": "73861",
+<<<<<<< HEAD
+=======
+          "name": "VENADILLO",
+>>>>>>> main
           "label": "Venadillo",
           "n_especies": 742,
           "n_registros": 5307,
@@ -39364,6 +39544,10 @@
         },
         {
           "id": "73870",
+<<<<<<< HEAD
+=======
+          "name": "VILLAHERMOSA",
+>>>>>>> main
           "label": "Villahermosa",
           "n_especies": 573,
           "n_registros": 8565,
@@ -39419,6 +39603,10 @@
         },
         {
           "id": "73873",
+<<<<<<< HEAD
+=======
+          "name": "VILLARRICA",
+>>>>>>> main
           "label": "Villarrica",
           "n_especies": 520,
           "n_registros": 5244,
