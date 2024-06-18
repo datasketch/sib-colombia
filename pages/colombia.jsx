@@ -43,7 +43,6 @@ export default function colombia () {
         photoLabel={generalInfo.credito_foto}
       />
       <PageComponent data={col} slug='colombia' deparment map={DataMapColombia}/>
-      {/* Faltan datos como especies y registros en Bogotá */}
     </div>
   )
 }

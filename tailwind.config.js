@@ -101,8 +101,13 @@ module.exports = {
         'cornflower-blue': '#6699FF',
         'navajo-white': '#FFDFAB',
         'majorelle-blue': '#5151F2',
+<<<<<<< HEAD
+        'giants-orange': '#F26330',
+        platinum: '#D9D9D9'
+=======
         'giants-orange': '#F26330'
 
+>>>>>>> main
       },
 
       boxShadow: {

@@ -1275,11 +1275,7 @@
       "parent_en": 684,
       "parent_vu": 736,
       "parent_especies_total": 79831,
-      "list_especies_amenazadas_nacional": {},
-      "list_especies_amenazadas_nacional_vu": {},
-      "list_especies_amenazadas_nacional_en": {},
-      "list_especies_amenazadas_nacional_cr": {},
-      "species_list": [
+      "list_especies_amenazadas_nacional": [
         {
           "label": "Cebus versicolor",
           "slug_especie": "cebus-versicolor",
@@ -1357,6 +1353,246 @@
           "url_gbif": "https://www.gbif.org/species/5789077",
           "slug_tematica": "amenazadas-nacional-vu"
         }
+      ],
+      "list_especies_amenazadas_nacional_vu": [
+        {
+          "label": "Setophaga cerulea",
+          "slug_especie": "setophaga-cerulea",
+          "registros": 1113,
+          "url_gbif": "https://www.gbif.org/species/6093350",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cf0ecd3c16479905cba7c0/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Chauna chavaria",
+          "slug_especie": "chauna-chavaria",
+          "registros": 949,
+          "url_gbif": "https://www.gbif.org/species/5959223",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Hydrochoerus isthmius",
+          "slug_especie": "hydrochoerus-isthmius",
+          "registros": 937,
+          "url_gbif": "https://www.gbif.org/species/5786667",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Dacnis hartlaubi",
+          "slug_especie": "dacnis-hartlaubi",
+          "registros": 720,
+          "url_gbif": "https://www.gbif.org/species/2488350",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e783ad83c45700544e408d/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Scytalopus rodriguezi",
+          "slug_especie": "scytalopus-rodriguezi",
+          "registros": 563,
+          "url_gbif": "https://www.gbif.org/species/5789077",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Pristimantis merostictus",
+          "slug_especie": "pristimantis-merostictus",
+          "registros": 543,
+          "url_gbif": "https://www.gbif.org/species/2425714",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5f8a0be04568a5b84027c36c/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Prochilodus magdalenae",
+          "slug_especie": "prochilodus-magdalenae",
+          "registros": 428,
+          "url_gbif": "https://www.gbif.org/species/2352186",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5928bfb8f827bf0c0cedd91b/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Quercus humboldtii",
+          "slug_especie": "quercus-humboldtii",
+          "registros": 406,
+          "url_gbif": "https://www.gbif.org/species/2880642",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/6078868dfa9e7d0d2908c2f6/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Andinobates virolinensis",
+          "slug_especie": "andinobates-virolinensis",
+          "registros": 348,
+          "url_gbif": "https://www.gbif.org/species/7725061",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56ca75c5f0106c67230e745d/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        },
+        {
+          "label": "Pristimantis anolirex",
+          "slug_especie": "pristimantis-anolirex",
+          "registros": 348,
+          "url_gbif": "https://www.gbif.org/species/2425628",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5de02cd8e63369444886add2/summary",
+          "slug_tematica": "amenazadas-nacional-vu"
+        }
+      ],
+      "list_especies_amenazadas_nacional_en": [
+        {
+          "label": "Cebus versicolor",
+          "slug_especie": "cebus-versicolor",
+          "registros": 2165,
+          "url_gbif": "https://www.gbif.org/species/7832196",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5e3b3b0d7312d26d51df580e/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Cedrela odorata",
+          "slug_especie": "cedrela-odorata",
+          "registros": 1908,
+          "url_gbif": "https://www.gbif.org/species/3190511",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5fd91f79783b5b717668554e/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Elaeis oleifera",
+          "slug_especie": "elaeis-oleifera",
+          "registros": 807,
+          "url_gbif": "https://www.gbif.org/species/8791596",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56709135f289f5a40c0cd2f8/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Saucerottia castaneiventris",
+          "slug_especie": "saucerottia-castaneiventris",
+          "registros": 595,
+          "url_gbif": "https://www.gbif.org/species/11077667",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e773be83c45700544e4008/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Odontophorus strophium",
+          "slug_especie": "odontophorus-strophium",
+          "registros": 547,
+          "url_gbif": "https://www.gbif.org/species/5228041",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Macroagelaius subalaris",
+          "slug_especie": "macroagelaius-subalaris",
+          "registros": 542,
+          "url_gbif": "https://www.gbif.org/species/2484179",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Capito hypoleucus",
+          "slug_especie": "capito-hypoleucus",
+          "registros": 344,
+          "url_gbif": "https://www.gbif.org/species/2479046",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56df626083c45700544e3c6c/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Clathrotropis brunnea",
+          "slug_especie": "clathrotropis-brunnea",
+          "registros": 318,
+          "url_gbif": "https://www.gbif.org/species/2939634",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/567c0493f289f5a40c0cd33a/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Zamia encephalartoides",
+          "slug_especie": "zamia-encephalartoides",
+          "registros": 301,
+          "url_gbif": "https://www.gbif.org/species/5284080",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56702c9bf289f5a40c0cd2b3/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        },
+        {
+          "label": "Juglans neotropica",
+          "slug_especie": "juglans-neotropica",
+          "registros": 282,
+          "url_gbif": "https://www.gbif.org/species/3054364",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/607b665e34f800ab540d88ea/summary",
+          "slug_tematica": "amenazadas-nacional-en"
+        }
+      ],
+      "list_especies_amenazadas_nacional_cr": [
+        {
+          "label": "Thryophilus nicefori",
+          "slug_especie": "thryophilus-nicefori",
+          "registros": 1351,
+          "url_gbif": "https://www.gbif.org/species/6089798",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7b07283c45700544e42f9/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Aniba perutilis",
+          "slug_especie": "aniba-perutilis",
+          "registros": 376,
+          "url_gbif": "https://www.gbif.org/species/4180651",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/567b6e04f289f5a40c0cd32d/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Pseudoplatystoma magdaleniatum",
+          "slug_especie": "pseudoplatystoma-magdaleniatum",
+          "registros": 375,
+          "url_gbif": "https://www.gbif.org/species/2338659",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/59debb3c5f36934344301b8e/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Crax alberti",
+          "slug_especie": "crax-alberti",
+          "registros": 132,
+          "url_gbif": "https://www.gbif.org/species/2482178",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5e3c6ea87312d26d51df5db9/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Redingeria glyphica",
+          "slug_especie": "redingeria-glyphica",
+          "registros": 97,
+          "url_gbif": "https://www.gbif.org/species/2602604",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Cariniana pyriformis",
+          "slug_especie": "cariniana-pyriformis",
+          "registros": 81,
+          "url_gbif": "https://www.gbif.org/species/3083028",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/567c0779f289f5a40c0cd33f/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Podocnemis lewyana",
+          "slug_especie": "podocnemis-lewyana",
+          "registros": 79,
+          "url_gbif": "https://www.gbif.org/species/2442789",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5670695cf289f5a40c0cd2d6/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Vultur gryphus",
+          "slug_especie": "vultur-gryphus",
+          "registros": 71,
+          "url_gbif": "https://www.gbif.org/species/2481907",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d0552d3c16479905cba819/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Atelopus monohernandezii",
+          "slug_especie": "atelopus-monohernandezii",
+          "registros": 51,
+          "url_gbif": "https://www.gbif.org/species/5216654",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5f7f30cc4568a5b840278563/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        },
+        {
+          "label": "Pristimantis spilogaster",
+          "slug_especie": "pristimantis-spilogaster",
+          "registros": 37,
+          "url_gbif": "https://www.gbif.org/species/2425637",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5f8db5ae4568a5b84027c8db/summary",
+          "slug_tematica": "amenazadas-nacional-cr"
+        }
       ]
     },
     {
@@ -1379,11 +1615,7 @@
       "parent_en": 588,
       "parent_vu": 611,
       "parent_especies_total": 79831,
-      "list_especies_amenazadas_global": {},
-      "list_especies_amenazadas_global_vu": {},
-      "list_especies_amenazadas_global_en": {},
-      "list_especies_amenazadas_global_cr": {},
-      "species_list": [
+      "list_especies_amenazadas_global": [
         {
           "label": "Cebus versicolor",
           "slug_especie": "cebus-versicolor",
@@ -1460,6 +1692,247 @@
           "url_gbif": "https://www.gbif.org/species/4180651",
           "url_cbc": "https://catalogo.biodiversidad.co/file/567b6e04f289f5a40c0cd32d/summary",
           "slug_tematica": "amenazadas-global-vu"
+        }
+      ],
+      "list_especies_amenazadas_global_vu": [
+        {
+          "label": "Cedrela odorata",
+          "slug_especie": "cedrela-odorata",
+          "registros": 1908,
+          "url_gbif": "https://www.gbif.org/species/3190511",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5fd91f79783b5b717668554e/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Coeligena prunellei",
+          "slug_especie": "coeligena-prunellei",
+          "registros": 1626,
+          "url_gbif": "https://www.gbif.org/species/2477039",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5c6b2ae2d76e3b71032c8c0e/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Dacnis hartlaubi",
+          "slug_especie": "dacnis-hartlaubi",
+          "registros": 720,
+          "url_gbif": "https://www.gbif.org/species/2488350",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e783ad83c45700544e408d/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Odontophorus strophium",
+          "slug_especie": "odontophorus-strophium",
+          "registros": 547,
+          "url_gbif": "https://www.gbif.org/species/5228041",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Pristimantis merostictus",
+          "slug_especie": "pristimantis-merostictus",
+          "registros": 543,
+          "url_gbif": "https://www.gbif.org/species/2425714",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5f8a0be04568a5b84027c36c/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Aniba perutilis",
+          "slug_especie": "aniba-perutilis",
+          "registros": 376,
+          "url_gbif": "https://www.gbif.org/species/4180651",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/567b6e04f289f5a40c0cd32d/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Andinobates virolinensis",
+          "slug_especie": "andinobates-virolinensis",
+          "registros": 348,
+          "url_gbif": "https://www.gbif.org/species/7725061",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56ca75c5f0106c67230e745d/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Pristimantis anolirex",
+          "slug_especie": "pristimantis-anolirex",
+          "registros": 348,
+          "url_gbif": "https://www.gbif.org/species/2425628",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5de02cd8e63369444886add2/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Capito hypoleucus",
+          "slug_especie": "capito-hypoleucus",
+          "registros": 344,
+          "url_gbif": "https://www.gbif.org/species/2479046",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56df626083c45700544e3c6c/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        },
+        {
+          "label": "Tachiramantis douglasi",
+          "slug_especie": "tachiramantis-douglasi",
+          "registros": 291,
+          "url_gbif": "https://www.gbif.org/species/10795634",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5f8df2564568a5b84027d1c1/summary",
+          "slug_tematica": "amenazadas-global-vu"
+        }
+      ],
+      "list_especies_amenazadas_global_en": [
+        {
+          "label": "Cebus versicolor",
+          "slug_especie": "cebus-versicolor",
+          "registros": 2165,
+          "url_gbif": "https://www.gbif.org/species/7832196",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5e3b3b0d7312d26d51df580e/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Scytalopus rodriguezi",
+          "slug_especie": "scytalopus-rodriguezi",
+          "registros": 563,
+          "url_gbif": "https://www.gbif.org/species/5789077",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Macroagelaius subalaris",
+          "slug_especie": "macroagelaius-subalaris",
+          "registros": 542,
+          "url_gbif": "https://www.gbif.org/species/2484179",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Pseudoplatystoma magdaleniatum",
+          "slug_especie": "pseudoplatystoma-magdaleniatum",
+          "registros": 375,
+          "url_gbif": "https://www.gbif.org/species/2338659",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/59debb3c5f36934344301b8e/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Zamia encephalartoides",
+          "slug_especie": "zamia-encephalartoides",
+          "registros": 301,
+          "url_gbif": "https://www.gbif.org/species/5284080",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56702c9bf289f5a40c0cd2b3/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Juglans neotropica",
+          "slug_especie": "juglans-neotropica",
+          "registros": 282,
+          "url_gbif": "https://www.gbif.org/species/3054364",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/607b665e34f800ab540d88ea/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Pristimantis carlossanchezi",
+          "slug_especie": "pristimantis-carlossanchezi",
+          "registros": 212,
+          "url_gbif": "https://www.gbif.org/species/2425544",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5f89d29d4568a5b84027bcc9/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Pristimantis bacchus",
+          "slug_especie": "pristimantis-bacchus",
+          "registros": 162,
+          "url_gbif": "https://www.gbif.org/species/2425311",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5f89be1d4568a5b84027b9fb/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Pristimantis lutitus",
+          "slug_especie": "pristimantis-lutitus",
+          "registros": 122,
+          "url_gbif": "https://www.gbif.org/species/2425217",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5f8a09b44568a5b84027c2d9/summary",
+          "slug_tematica": "amenazadas-global-en"
+        },
+        {
+          "label": "Clytoctantes alixii",
+          "slug_especie": "clytoctantes-alixii",
+          "registros": 118,
+          "url_gbif": "https://www.gbif.org/species/2490227",
+          "slug_tematica": "amenazadas-global-en"
+        }
+      ],
+      "list_especies_amenazadas_global_cr": [
+        {
+          "label": "Thryophilus nicefori",
+          "slug_especie": "thryophilus-nicefori",
+          "registros": 1351,
+          "url_gbif": "https://www.gbif.org/species/6089798",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7b07283c45700544e42f9/summary",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Crax alberti",
+          "slug_especie": "crax-alberti",
+          "registros": 132,
+          "url_gbif": "https://www.gbif.org/species/2482178",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5e3c6ea87312d26d51df5db9/summary",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Podocnemis lewyana",
+          "slug_especie": "podocnemis-lewyana",
+          "registros": 79,
+          "url_gbif": "https://www.gbif.org/species/2442789",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5670695cf289f5a40c0cd2d6/summary",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Pimelodus grosskopfii",
+          "slug_especie": "pimelodus-grosskopfii",
+          "registros": 65,
+          "url_gbif": "https://www.gbif.org/species/2338918",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/596f48c82f4fd7bc7f3a5417/summary",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Atelopus monohernandezii",
+          "slug_especie": "atelopus-monohernandezii",
+          "registros": 51,
+          "url_gbif": "https://www.gbif.org/species/5216654",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5f7f30cc4568a5b840278563/summary",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Pristimantis spilogaster",
+          "slug_especie": "pristimantis-spilogaster",
+          "registros": 37,
+          "url_gbif": "https://www.gbif.org/species/2425637",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5f8db5ae4568a5b84027c8db/summary",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Espeletia dugandii",
+          "slug_especie": "espeletia-dugandii",
+          "registros": 35,
+          "url_gbif": "https://www.gbif.org/species/3105115",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Ateles hybridus",
+          "slug_especie": "ateles-hybridus",
+          "registros": 33,
+          "url_gbif": "https://www.gbif.org/species/4267251",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c15c46f0106c67230e7314/summary",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Magnolia virolinensis",
+          "slug_especie": "magnolia-virolinensis",
+          "registros": 31,
+          "url_gbif": "https://www.gbif.org/species/3153158",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56702b06f289f5a40c0cd2a3/summary",
+          "slug_tematica": "amenazadas-global-cr"
+        },
+        {
+          "label": "Hyloscirtus lynchi",
+          "slug_especie": "hyloscirtus-lynchi",
+          "registros": 23,
+          "url_gbif": "https://www.gbif.org/species/2428303",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5f8775a04568a5b84027a6fe/summary",
+          "slug_tematica": "amenazadas-global-cr"
         }
       ]
     },
@@ -2100,6 +2573,30 @@
       "parent_registros_exoticas_riesgo_invasion": 452154,
       "list_especies_exoticas_total": [
         {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 3133,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion"
+        },
+        {
+          "label": "Eleutherodactylus johnstonei",
+          "slug_especie": "eleutherodactylus-johnstonei",
+          "registros": 982,
+          "url_gbif": "https://www.gbif.org/species/2424120",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d04c173c16479905cba817/summary",
+          "slug_tematica": "exotica-riesgo-invasion"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 752,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion"
+        },
+        {
           "label": "Caiman crocodilus",
           "slug_especie": "caiman-crocodilus",
           "registros": 610,
@@ -2116,12 +2613,28 @@
           "slug_tematica": "exoticas"
         },
         {
+          "label": "Caquetaia kraussii",
+          "slug_especie": "caquetaia-kraussii",
+          "registros": 258,
+          "url_gbif": "https://www.gbif.org/species/2371467",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/596ed6d92f4fd7bc7f3a5020/summary",
+          "slug_tematica": "exotica-riesgo-invasion"
+        },
+        {
           "label": "Apis mellifera",
           "slug_especie": "apis-mellifera",
           "registros": 240,
           "url_gbif": "https://www.gbif.org/species/1341976",
           "url_cbc": "https://catalogo.biodiversidad.co/file/58b995177bd3becd0fc7395e/summary",
           "slug_tematica": "exoticas"
+        },
+        {
+          "label": "Elaeis guineensis",
+          "slug_especie": "elaeis-guineensis",
+          "registros": 231,
+          "url_gbif": "https://www.gbif.org/species/2731882",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e33ced83c45700544e3dbc/summary",
+          "slug_tematica": "exotica-riesgo-invasion"
         },
         {
           "label": "Anthurium oxybelium",
@@ -2136,44 +2649,6 @@
           "slug_especie": "tapinoma-melanocephalum",
           "registros": 129,
           "url_gbif": "https://www.gbif.org/species/1316805",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Chrysophyllum cainito",
-          "slug_especie": "chrysophyllum-cainito",
-          "registros": 121,
-          "url_gbif": "https://www.gbif.org/species/2885828",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Grevillea robusta",
-          "slug_especie": "grevillea-robusta",
-          "registros": 114,
-          "url_gbif": "https://www.gbif.org/species/2891791",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Gliricidia sepium",
-          "slug_especie": "gliricidia-sepium",
-          "registros": 107,
-          "url_gbif": "https://www.gbif.org/species/2953986",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/5943f8162f4fd7bc7f39582f/summary",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Hemidactylus frenatus",
-          "slug_especie": "hemidactylus-frenatus",
-          "registros": 101,
-          "url_gbif": "https://www.gbif.org/species/5959976",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/56d20fcd3c16479905cba85d/summary",
-          "slug_tematica": "exoticas"
-        },
-        {
-          "label": "Mangifera indica",
-          "slug_especie": "mangifera-indica",
-          "registros": 100,
-          "url_gbif": "https://www.gbif.org/species/3190638",
-          "url_cbc": "https://catalogo.biodiversidad.co/file/56e78b3b83c45700544e4113/summary",
           "slug_tematica": "exoticas"
         }
       ],
@@ -38890,7 +39365,10 @@
       "map_data": [
         {
           "id": "68001",
+<<<<<<< HEAD
+=======
           "name": "BUCARAMANGA",
+>>>>>>> main
           "label": "Bucaramanga",
           "n_especies": 2174,
           "n_registros": 51149,
@@ -38935,7 +39413,10 @@
         },
         {
           "id": "68013",
+<<<<<<< HEAD
+=======
           "name": "AGUADA",
+>>>>>>> main
           "label": "Aguada",
           "n_especies": 46,
           "n_registros": 135,
@@ -38975,7 +39456,10 @@
         },
         {
           "id": "68020",
+<<<<<<< HEAD
+=======
           "name": "ALBANIA",
+>>>>>>> main
           "label": "Albania",
           "n_especies": 81,
           "n_registros": 157,
@@ -39028,7 +39512,10 @@
         },
         {
           "id": "68051",
+<<<<<<< HEAD
+=======
           "name": "ARATOCA",
+>>>>>>> main
           "label": "Aratoca",
           "n_especies": 355,
           "n_registros": 2749,
@@ -39073,7 +39560,10 @@
         },
         {
           "id": "68077",
+<<<<<<< HEAD
+=======
           "name": "BARBOSA",
+>>>>>>> main
           "label": "Barbosa",
           "n_especies": 178,
           "n_registros": 495,
@@ -39099,7 +39589,10 @@
         },
         {
           "id": "68079",
+<<<<<<< HEAD
+=======
           "name": "BARICHARA",
+>>>>>>> main
           "label": "Barichara",
           "n_especies": 578,
           "n_registros": 8255,
@@ -39142,7 +39635,10 @@
         },
         {
           "id": "68081",
+<<<<<<< HEAD
+=======
           "name": "BARRANCABERMEJA",
+>>>>>>> main
           "label": "Barrancabermeja",
           "n_especies": 2122,
           "n_registros": 107027,
@@ -39240,7 +39736,10 @@
         },
         {
           "id": "68092",
+<<<<<<< HEAD
+=======
           "name": "BETULIA",
+>>>>>>> main
           "label": "Betulia",
           "n_especies": 1171,
           "n_registros": 66533,
@@ -39315,7 +39814,10 @@
         },
         {
           "id": "68101",
+<<<<<<< HEAD
+=======
           "name": "BOLÍVAR",
+>>>>>>> main
           "label": "Bolívar",
           "n_especies": 730,
           "n_registros": 21502,
@@ -39507,7 +40009,10 @@
         },
         {
           "id": "68121",
+<<<<<<< HEAD
+=======
           "name": "CABRERA",
+>>>>>>> main
           "label": "Cabrera",
           "n_especies": 56,
           "n_registros": 97,
@@ -39540,7 +40045,10 @@
         },
         {
           "id": "68132",
+<<<<<<< HEAD
+=======
           "name": "CALIFORNIA",
+>>>>>>> main
           "label": "California",
           "n_especies": 711,
           "n_registros": 2933,
@@ -39575,7 +40083,10 @@
         },
         {
           "id": "68147",
+<<<<<<< HEAD
+=======
           "name": "CAPITANEJO",
+>>>>>>> main
           "label": "Capitanejo",
           "n_especies": 118,
           "n_registros": 250,
@@ -39616,7 +40127,10 @@
         },
         {
           "id": "68152",
+<<<<<<< HEAD
+=======
           "name": "CARCASÍ",
+>>>>>>> main
           "label": "Carcasí",
           "n_especies": 151,
           "n_registros": 1889,
@@ -39668,7 +40182,10 @@
         },
         {
           "id": "68160",
+<<<<<<< HEAD
+=======
           "name": "CEPITÁ",
+>>>>>>> main
           "label": "Cepitá",
           "n_especies": 148,
           "n_registros": 466,
@@ -39709,7 +40226,10 @@
         },
         {
           "id": "68162",
+<<<<<<< HEAD
+=======
           "name": "CERRITO",
+>>>>>>> main
           "label": "Cerrito",
           "n_especies": 350,
           "n_registros": 1790,
@@ -39763,7 +40283,10 @@
         },
         {
           "id": "68167",
+<<<<<<< HEAD
+=======
           "name": "CHARALÁ",
+>>>>>>> main
           "label": "Charalá",
           "n_especies": 1915,
           "n_registros": 22509,
@@ -39857,7 +40380,10 @@
         },
         {
           "id": "68169",
+<<<<<<< HEAD
+=======
           "name": "CHARTA",
+>>>>>>> main
           "label": "Charta",
           "n_especies": 323,
           "n_registros": 973,
@@ -39906,7 +40432,10 @@
         },
         {
           "id": "68176",
+<<<<<<< HEAD
+=======
           "name": "CHIMA",
+>>>>>>> main
           "label": "Chima",
           "n_especies": 171,
           "n_registros": 594,
@@ -39952,7 +40481,10 @@
         },
         {
           "id": "68179",
+<<<<<<< HEAD
+=======
           "name": "CHIPATÁ",
+>>>>>>> main
           "label": "Chipatá",
           "n_especies": 97,
           "n_registros": 179,
@@ -39990,7 +40522,10 @@
         },
         {
           "id": "68190",
+<<<<<<< HEAD
+=======
           "name": "CIMITARRA",
+>>>>>>> main
           "label": "Cimitarra",
           "n_especies": 1880,
           "n_registros": 31324,
@@ -40108,7 +40643,10 @@
         },
         {
           "id": "68207",
+<<<<<<< HEAD
+=======
           "name": "CONCEPCIÓN",
+>>>>>>> main
           "label": "Concepción",
           "n_especies": 254,
           "n_registros": 2653,
@@ -40171,7 +40709,10 @@
         },
         {
           "id": "68209",
+<<<<<<< HEAD
+=======
           "name": "CONFINES",
+>>>>>>> main
           "label": "Confines",
           "n_especies": 103,
           "n_registros": 421,
@@ -40207,7 +40748,10 @@
         },
         {
           "id": "68211",
+<<<<<<< HEAD
+=======
           "name": "CONTRATACIÓN",
+>>>>>>> main
           "label": "Contratación",
           "n_especies": 157,
           "n_registros": 1163,
@@ -40256,7 +40800,10 @@
         },
         {
           "id": "68217",
+<<<<<<< HEAD
+=======
           "name": "COROMORO",
+>>>>>>> main
           "label": "Coromoro",
           "n_especies": 248,
           "n_registros": 1016,
@@ -40329,7 +40876,10 @@
         },
         {
           "id": "68229",
+<<<<<<< HEAD
+=======
           "name": "CURITÍ",
+>>>>>>> main
           "label": "Curití",
           "n_especies": 257,
           "n_registros": 4042,
@@ -40385,7 +40935,10 @@
         },
         {
           "id": "68235",
+<<<<<<< HEAD
+=======
           "name": "EL CARMEN DE CHUCURÍ",
+>>>>>>> main
           "label": "El Carmen de Chucurí",
           "n_especies": 1880,
           "n_registros": 41287,
@@ -40462,7 +41015,10 @@
         },
         {
           "id": "68245",
+<<<<<<< HEAD
+=======
           "name": "EL GUACAMAYO",
+>>>>>>> main
           "label": "El Guacamayo",
           "n_especies": 30,
           "n_registros": 48,
@@ -40503,7 +41059,10 @@
         },
         {
           "id": "68250",
+<<<<<<< HEAD
+=======
           "name": "EL PEÑÓN",
+>>>>>>> main
           "label": "El Peñón",
           "n_especies": 440,
           "n_registros": 8724,
@@ -40564,7 +41123,10 @@
         },
         {
           "id": "68255",
+<<<<<<< HEAD
+=======
           "name": "EL PLAYÓN",
+>>>>>>> main
           "label": "El Playón",
           "n_especies": 433,
           "n_registros": 1491,
@@ -40631,7 +41193,10 @@
         },
         {
           "id": "68264",
+<<<<<<< HEAD
+=======
           "name": "ENCINO",
+>>>>>>> main
           "label": "Encino",
           "n_especies": 1076,
           "n_registros": 15658,
@@ -40701,7 +41266,10 @@
         },
         {
           "id": "68266",
+<<<<<<< HEAD
+=======
           "name": "ENCISO",
+>>>>>>> main
           "label": "Enciso",
           "n_especies": 176,
           "n_registros": 1461,
@@ -40734,7 +41302,10 @@
         },
         {
           "id": "68271",
+<<<<<<< HEAD
+=======
           "name": "FLORIÁN",
+>>>>>>> main
           "label": "Florián",
           "n_especies": 257,
           "n_registros": 1370,
@@ -40783,7 +41354,10 @@
         },
         {
           "id": "68276",
+<<<<<<< HEAD
+=======
           "name": "FLORIDABLANCA",
+>>>>>>> main
           "label": "Floridablanca",
           "n_especies": 2015,
           "n_registros": 33123,
@@ -40826,7 +41400,10 @@
         },
         {
           "id": "68296",
+<<<<<<< HEAD
+=======
           "name": "GALÁN",
+>>>>>>> main
           "label": "Galán",
           "n_especies": 290,
           "n_registros": 1106,
@@ -40873,7 +41450,10 @@
         },
         {
           "id": "68298",
+<<<<<<< HEAD
+=======
           "name": "GÁMBITA",
+>>>>>>> main
           "label": "Gámbita",
           "n_especies": 967,
           "n_registros": 10849,
@@ -40955,7 +41535,10 @@
         },
         {
           "id": "68307",
+<<<<<<< HEAD
+=======
           "name": "GIRÓN",
+>>>>>>> main
           "label": "Girón",
           "n_especies": 1699,
           "n_registros": 23271,
@@ -41054,7 +41637,10 @@
         },
         {
           "id": "68318",
+<<<<<<< HEAD
+=======
           "name": "GUACA",
+>>>>>>> main
           "label": "Guaca",
           "n_especies": 297,
           "n_registros": 2893,
@@ -41111,7 +41697,10 @@
         },
         {
           "id": "68320",
+<<<<<<< HEAD
+=======
           "name": "GUADALUPE",
+>>>>>>> main
           "label": "Guadalupe",
           "n_especies": 223,
           "n_registros": 1390,
@@ -41154,7 +41743,10 @@
         },
         {
           "id": "68322",
+<<<<<<< HEAD
+=======
           "name": "GUAPOTÁ",
+>>>>>>> main
           "label": "Guapotá",
           "n_especies": 137,
           "n_registros": 972,
@@ -41189,7 +41781,10 @@
         },
         {
           "id": "68324",
+<<<<<<< HEAD
+=======
           "name": "GUAVATÁ",
+>>>>>>> main
           "label": "Guavatá",
           "n_especies": 24,
           "n_registros": 33,
@@ -41225,7 +41820,10 @@
         },
         {
           "id": "68327",
+<<<<<<< HEAD
+=======
           "name": "GÜEPSA",
+>>>>>>> main
           "label": "Güepsa",
           "n_especies": 42,
           "n_registros": 100,
@@ -41255,7 +41853,10 @@
         },
         {
           "id": "68344",
+<<<<<<< HEAD
+=======
           "name": "HATO",
+>>>>>>> main
           "label": "Hato",
           "n_especies": 543,
           "n_registros": 4170,
@@ -41293,7 +41894,10 @@
         },
         {
           "id": "68368",
+<<<<<<< HEAD
+=======
           "name": "JESÚS MARÍA",
+>>>>>>> main
           "label": "Jesús María",
           "n_especies": 90,
           "n_registros": 189,
@@ -41339,7 +41943,10 @@
         },
         {
           "id": "68370",
+<<<<<<< HEAD
+=======
           "name": "JORDÁN",
+>>>>>>> main
           "label": "Jordán",
           "n_especies": 96,
           "n_registros": 341,
@@ -41372,7 +41979,10 @@
         },
         {
           "id": "68377",
+<<<<<<< HEAD
+=======
           "name": "LA BELLEZA",
+>>>>>>> main
           "label": "La Belleza",
           "n_especies": 310,
           "n_registros": 744,
@@ -41435,7 +42045,10 @@
         },
         {
           "id": "68385",
+<<<<<<< HEAD
+=======
           "name": "LANDÁZURI",
+>>>>>>> main
           "label": "Landázuri",
           "n_especies": 319,
           "n_registros": 1398,
@@ -41513,7 +42126,10 @@
         },
         {
           "id": "68397",
+<<<<<<< HEAD
+=======
           "name": "LA PAZ",
+>>>>>>> main
           "label": "La Paz",
           "n_especies": 70,
           "n_registros": 171,
@@ -41569,7 +42185,10 @@
         },
         {
           "id": "68406",
+<<<<<<< HEAD
+=======
           "name": "LEBRIJA",
+>>>>>>> main
           "label": "Lebrija",
           "n_especies": 1137,
           "n_registros": 33100,
@@ -41649,7 +42268,10 @@
         },
         {
           "id": "68418",
+<<<<<<< HEAD
+=======
           "name": "LOS SANTOS",
+>>>>>>> main
           "label": "Los Santos",
           "n_especies": 1003,
           "n_registros": 11449,
@@ -41692,7 +42314,10 @@
         },
         {
           "id": "68425",
+<<<<<<< HEAD
+=======
           "name": "MACARAVITA",
+>>>>>>> main
           "label": "Macaravita",
           "n_especies": 22,
           "n_registros": 30,
@@ -41734,7 +42359,10 @@
         },
         {
           "id": "68432",
+<<<<<<< HEAD
+=======
           "name": "MÁLAGA",
+>>>>>>> main
           "label": "Málaga",
           "n_especies": 295,
           "n_registros": 2690,
@@ -41765,7 +42393,10 @@
         },
         {
           "id": "68444",
+<<<<<<< HEAD
+=======
           "name": "MATANZA",
+>>>>>>> main
           "label": "Matanza",
           "n_especies": 336,
           "n_registros": 1077,
@@ -41820,7 +42451,10 @@
         },
         {
           "id": "68464",
+<<<<<<< HEAD
+=======
           "name": "MOGOTES",
+>>>>>>> main
           "label": "Mogotes",
           "n_especies": 189,
           "n_registros": 541,
@@ -41887,7 +42521,10 @@
         },
         {
           "id": "68468",
+<<<<<<< HEAD
+=======
           "name": "MOLAGAVITA",
+>>>>>>> main
           "label": "Molagavita",
           "n_especies": 80,
           "n_registros": 449,
@@ -41929,7 +42566,10 @@
         },
         {
           "id": "68498",
+<<<<<<< HEAD
+=======
           "name": "OCAMONTE",
+>>>>>>> main
           "label": "Ocamonte",
           "n_especies": 91,
           "n_registros": 418,
@@ -41965,7 +42605,10 @@
         },
         {
           "id": "68500",
+<<<<<<< HEAD
+=======
           "name": "OIBA",
+>>>>>>> main
           "label": "Oiba",
           "n_especies": 214,
           "n_registros": 1040,
@@ -42017,7 +42660,10 @@
         },
         {
           "id": "68502",
+<<<<<<< HEAD
+=======
           "name": "ONZAGA",
+>>>>>>> main
           "label": "Onzaga",
           "n_especies": 603,
           "n_registros": 4936,
@@ -42091,7 +42737,10 @@
         },
         {
           "id": "68522",
+<<<<<<< HEAD
+=======
           "name": "PALMAR",
+>>>>>>> main
           "label": "Palmar",
           "n_especies": 2,
           "n_registros": 2,
@@ -42117,7 +42766,10 @@
         },
         {
           "id": "68524",
+<<<<<<< HEAD
+=======
           "name": "PALMAS DEL SOCORRO",
+>>>>>>> main
           "label": "Palmas del Socorro",
           "n_especies": 103,
           "n_registros": 637,
@@ -42149,7 +42801,10 @@
         },
         {
           "id": "68533",
+<<<<<<< HEAD
+=======
           "name": "PÁRAMO",
+>>>>>>> main
           "label": "Páramo",
           "n_especies": 286,
           "n_registros": 3439,
@@ -42189,7 +42844,10 @@
         },
         {
           "id": "68547",
+<<<<<<< HEAD
+=======
           "name": "PIEDECUESTA",
+>>>>>>> main
           "label": "Piedecuesta",
           "n_especies": 2126,
           "n_registros": 33990,
@@ -42257,7 +42915,10 @@
         },
         {
           "id": "68549",
+<<<<<<< HEAD
+=======
           "name": "PINCHOTE",
+>>>>>>> main
           "label": "Pinchote",
           "n_especies": 258,
           "n_registros": 2453,
@@ -42288,7 +42949,10 @@
         },
         {
           "id": "68572",
+<<<<<<< HEAD
+=======
           "name": "PUENTE NACIONAL",
+>>>>>>> main
           "label": "Puente Nacional",
           "n_especies": 293,
           "n_registros": 1236,
@@ -42338,7 +43002,10 @@
         },
         {
           "id": "68573",
+<<<<<<< HEAD
+=======
           "name": "PUERTO PARRA",
+>>>>>>> main
           "label": "Puerto Parra",
           "n_especies": 881,
           "n_registros": 14784,
@@ -42421,7 +43088,10 @@
         },
         {
           "id": "68575",
+<<<<<<< HEAD
+=======
           "name": "PUERTO WILCHES",
+>>>>>>> main
           "label": "Puerto Wilches",
           "n_especies": 3592,
           "n_registros": 416180,
@@ -42566,7 +43236,10 @@
         },
         {
           "id": "68615",
+<<<<<<< HEAD
+=======
           "name": "RIONEGRO",
+>>>>>>> main
           "label": "Rionegro",
           "n_especies": 1141,
           "n_registros": 9776,
@@ -42704,7 +43377,10 @@
         },
         {
           "id": "68655",
+<<<<<<< HEAD
+=======
           "name": "SABANA DE TORRES",
+>>>>>>> main
           "label": "Sabana de Torres",
           "n_especies": 715,
           "n_registros": 12355,
@@ -42797,7 +43473,10 @@
         },
         {
           "id": "68669",
+<<<<<<< HEAD
+=======
           "name": "SAN ANDRÉS",
+>>>>>>> main
           "label": "San Andrés",
           "n_especies": 212,
           "n_registros": 915,
@@ -42845,7 +43524,10 @@
         },
         {
           "id": "68673",
+<<<<<<< HEAD
+=======
           "name": "SAN BENITO",
+>>>>>>> main
           "label": "San Benito",
           "n_especies": 32,
           "n_registros": 34,
@@ -42881,7 +43563,10 @@
         },
         {
           "id": "68679",
+<<<<<<< HEAD
+=======
           "name": "SAN GIL",
+>>>>>>> main
           "label": "San Gil",
           "n_especies": 635,
           "n_registros": 11697,
@@ -42930,7 +43615,10 @@
         },
         {
           "id": "68682",
+<<<<<<< HEAD
+=======
           "name": "SAN JOAQUÍN",
+>>>>>>> main
           "label": "San Joaquín",
           "n_especies": 104,
           "n_registros": 241,
@@ -42974,7 +43662,10 @@
         },
         {
           "id": "68684",
+<<<<<<< HEAD
+=======
           "name": "SAN JOSÉ DE MIRANDA",
+>>>>>>> main
           "label": "San José de Miranda",
           "n_especies": 130,
           "n_registros": 214,
@@ -43006,7 +43697,10 @@
         },
         {
           "id": "68686",
+<<<<<<< HEAD
+=======
           "name": "SAN MIGUEL",
+>>>>>>> main
           "label": "San Miguel",
           "n_especies": 15,
           "n_registros": 17,
@@ -43039,7 +43733,10 @@
         },
         {
           "id": "68689",
+<<<<<<< HEAD
+=======
           "name": "SAN VICENTE DE CHUCURÍ",
+>>>>>>> main
           "label": "San Vicente de Chucurí",
           "n_especies": 2082,
           "n_registros": 195620,
@@ -43127,7 +43824,10 @@
         },
         {
           "id": "68705",
+<<<<<<< HEAD
+=======
           "name": "SANTA BÁRBARA",
+>>>>>>> main
           "label": "Santa Bárbara",
           "n_especies": 826,
           "n_registros": 10534,
@@ -43186,7 +43886,10 @@
         },
         {
           "id": "68720",
+<<<<<<< HEAD
+=======
           "name": "SANTA HELENA DEL OPÓN",
+>>>>>>> main
           "label": "Santa Helena del Opón",
           "n_especies": 34,
           "n_registros": 53,
@@ -43245,7 +43948,10 @@
         },
         {
           "id": "68745",
+<<<<<<< HEAD
+=======
           "name": "SIMACOTA",
+>>>>>>> main
           "label": "Simacota",
           "n_especies": 729,
           "n_registros": 5814,
@@ -43381,7 +44087,10 @@
         },
         {
           "id": "68755",
+<<<<<<< HEAD
+=======
           "name": "SOCORRO",
+>>>>>>> main
           "label": "Socorro",
           "n_especies": 468,
           "n_registros": 36230,
@@ -43419,7 +44128,10 @@
         },
         {
           "id": "68770",
+<<<<<<< HEAD
+=======
           "name": "SUAITA",
+>>>>>>> main
           "label": "Suaita",
           "n_especies": 935,
           "n_registros": 8928,
@@ -43477,7 +44189,10 @@
         },
         {
           "id": "68773",
+<<<<<<< HEAD
+=======
           "name": "SUCRE",
+>>>>>>> main
           "label": "Sucre",
           "n_especies": 176,
           "n_registros": 449,
@@ -43558,7 +44273,10 @@
         },
         {
           "id": "68780",
+<<<<<<< HEAD
+=======
           "name": "SURATÁ",
+>>>>>>> main
           "label": "Suratá",
           "n_especies": 603,
           "n_registros": 5969,
@@ -43631,7 +44349,10 @@
         },
         {
           "id": "68820",
+<<<<<<< HEAD
+=======
           "name": "TONA",
+>>>>>>> main
           "label": "Tona",
           "n_especies": 1454,
           "n_registros": 9659,
@@ -43685,7 +44406,10 @@
         },
         {
           "id": "68855",
+<<<<<<< HEAD
+=======
           "name": "VALLE DE SAN JOSÉ",
+>>>>>>> main
           "label": "Valle de San José",
           "n_especies": 106,
           "n_registros": 301,
@@ -43718,7 +44442,10 @@
         },
         {
           "id": "68861",
+<<<<<<< HEAD
+=======
           "name": "VÉLEZ",
+>>>>>>> main
           "label": "Vélez",
           "n_especies": 263,
           "n_registros": 594,
@@ -43821,7 +44548,10 @@
         },
         {
           "id": "68867",
+<<<<<<< HEAD
+=======
           "name": "VETAS",
+>>>>>>> main
           "label": "Vetas",
           "n_especies": 572,
           "n_registros": 2530,
@@ -43858,7 +44588,10 @@
         },
         {
           "id": "68872",
+<<<<<<< HEAD
+=======
           "name": "VILLANUEVA",
+>>>>>>> main
           "label": "Villanueva",
           "n_especies": 105,
           "n_registros": 280,
@@ -43904,7 +44637,10 @@
         },
         {
           "id": "68895",
+<<<<<<< HEAD
+=======
           "name": "ZAPATOCA",
+>>>>>>> main
           "label": "Zapatoca",
           "n_especies": 932,
           "n_registros": 12507,

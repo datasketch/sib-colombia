@@ -5,8 +5,12 @@ import Concentric from '../Concentric'
 import classNames from 'classnames'
 import InfoTooltip from '../InfoTooltip'
 import { useEffect, useState } from 'react'
+/* import SmallMap from '../SmallMap' */
+/* import dynamic from 'next/dynamic'
 
-function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel }) {
+const SmallMap = dynamic(() => import('../SmallMap.jsx'), { ssr: false }) */
+
+function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel, isScale = false, map, imageSmallDpto }) {
   const [windowWidth, setWindowWidth] = useState(1000)
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -23,17 +27,33 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
     <>
       <div className={classNames('bg-cover bg-center pt-8 lg:pt-14 pb-3.5 h-[550px] ')} style={{ backgroundImage: 'url("/images/banner-principales/santander.jpg")' }}>
         <div className="w-full max-w-screen-2xl mx-auto">
-          <div className="min-h-[210px] mt-4 lg:mt-0 flex md:justify-between items-center w-10/12 mx-auto">
+          <div className="min-h-[210px] mt-4 lg:mt-5 flex md:justify-between items-center w-10/12 mx-auto">
             <div className={classNames('font-black lg:w-2/3 font-inter text-white text-6xl', title?.length >= 17 ? 'lg:text-[66px]' : 'lg:text-7xl')}>{title}</div>
-            {imageMap && <div className="hidden md:flex justify-end ">
-              <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageMap} />
-            </div>}
+
+            {['colombia', 'boyaca', 'narino', 'santander', 'tolima'].includes(slug)
+              ? (imageMap &&
+                <div className="hidden md:flex justify-end ">
+                  <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageMap} />
+                </div>
+                )
+              : <div className='relative'>
+                <div className='flex flex-row mt-10 px-7'>
+                  <div>
+                    <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageSmallDpto} />
+                  </div>
+                  <div className='w-14 h-[123px]'>
+                    <img src='/images/mapa-co.svg' alt='mapa-co' />
+                  </div>
+                </div>
+                {/* <SmallMap data={map} isScale={isScale} slug={slug} /> */}
+              </div>
+            }
+
           </div>
           <div className="flex flex-col md:flex-row max-h-48 justify-between gap-y-4 w-10/12 mx-auto -mt-9 md:-mt-0">
-            {!municipality
+            {!municipality && slug !== 'bogota-dc' && slug !== 'san-andres-y-providencia'
               ? (<div className="w-1/2 relative flex items-center">
                 <Concentric inner={especiesObservadas} outer={especiesEstimadas} movil={windowWidth < 450} />
-
                 <div className={classNames(windowWidth < 450 ? 'left-[11.5rem]' : 'left-[15rem]', 'absolute w-full md:w-1/3 lg:w-full  text-white flex -space-y-1 flex-col -top-[9%]  lg:-top-[8%] left-[15rem] md:left-60')}>
                   <span className="font-inter font-black lg:text-xl">{formatNumbers(especiesEstimadas)}</span>
                   <p className="font-lato text-sm lg:text-base">Especies estimadas

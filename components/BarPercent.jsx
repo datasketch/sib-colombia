@@ -3,15 +3,15 @@ import { calculateWidth, formatNumbers, capitalize } from '../lib/functions'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 
-const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = [], especies, registros, parentEspecies, bgColor, textColor, link, municipalityflag, colObservadas }) => {
+const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = [], especies, registros, parentEspecies, speciesEstimadasCol, bgColor, textColor, link, municipalityflag, colObservadas, especiesObservadas }) => {
   const parenLabel = region !== 'Colombia' ? regionparent || 'Colombia' : ''
   const text = label ? `observadas ${label} (${title})` : `${title} observadas`
   const widthBarGeneral = +parentEspecies - +colObservadas
   const widthBarSpecies = calculateWidth(+especies, municipalityflag ? +registros : +parentEspecies)
   const widthBarParent = calculateWidth(municipalityflag ? +registros : +parentEspecies - +especies, municipalityflag ? +registros : +parentEspecies)
-  const widthRegEspecies = calculateWidth(+especies, +colObservadas)
-  const widthColObservadas = calculateWidth(+colObservadas, +parentEspecies)
-  const widthColEstimadas = calculateWidth(widthBarGeneral, +parentEspecies)
+  const widthRegEspecies = calculateWidth(+especies, +parentEspecies)
+  const widthColObservadas = calculateWidth(+parentEspecies, +parentEspecies)
+  const widthColEstimadas = calculateWidth(widthBarGeneral, +speciesEstimadasCol)
 
   const capitalizeRegion = capitalize(regionparent)
 
@@ -46,43 +46,50 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
               <p className='font-bold text-sm'>
                 <span>Especies observadas {region} |</span>{' '}
                 {
-                  municipalityflag
+                  municipalityflag && ['La Planada', 'Pialapí Pueblo-Viejo'].includes(region)
                     ? (
-                      <span className="text-black-3">Especies observadas {capitalizeRegion} ({parentEspecies})</span>
+                      <span className="text-black-3">Especies totales observadas {capitalizeRegion} ({especiesObservadas})</span>
                       )
                     : (
-                      <span className='text-black-3'>Especies observadas Colombia ({parentEspecies}) {cat === '' ? '' : '| Especies estimadas Colombia'}</span>
+                      <span className='text-black-3'>Especies observadas Colombia({parentEspecies}) | Especies estimadas Colombia ({speciesEstimadasCol}) </span>
                       )
                 }
               </p>
               )
         }
-        {(region !== 'Colombia' && !municipalityflag && cat === 'amenazadas')
+        {(region !== 'Colombia' && !municipalityflag)
           ? (<div className='flex'>
             <div
               className={classNames(bgColor, textColor, 'text-xs pl-px h-4 min-w-[3.5%]')}
               style={{ width: widthRegEspecies }}>{especies}</div>
             {<div
               className={classNames(bgColor, 'bg-opacity-30 text-end pr-1 text-xs  h-4')}
-              style={{ width: widthColObservadas }}>{colObservadas}</div>}
+              style={{ width: widthColObservadas }}>{parentEspecies}</div>}
             <div
               className={classNames('bg-white-smoke text-end', 'text-xs pl-px h-4')}
-              style={{ width: widthColEstimadas }}>{parentEspecies}</div>
+              style={{ width: widthColEstimadas }}>{speciesEstimadasCol}</div>
           </div>)
           : (<div className='flex'>
             <div
               className={classNames(bgColor, textColor, widthBarSpecies === undefined ? '' : 'px-1 min-w-[3.5%]', 'text-xs h-4')} style={{ width: widthBarSpecies || '0%' }}>{especies}</div>
-            <div
-              className={classNames('bg-white-smoke', 'text-xs pr-1 h-4 text-end')} style={{ width: widthBarParent || '100%' }}>
-              {/* {
+            {
+              ['La Planada', 'Pialapí Pueblo-Viejo'].includes(region)
+                ? <div
+                  className={classNames('bg-white-smoke', 'text-xs pr-1 h-4 text-end')} style={{ width: widthBarParent || '100%' }}>
+                  {especiesObservadas}
+                </div>
+                : <div
+                  className={classNames('bg-white-smoke', 'text-xs pr-1 h-4 text-end')} style={{ width: widthBarParent || '100%' }}>
+                  {/* {
                 municipalityflag
                   ? (
                       registros === 'NA' ? '' : registros
                     )
                   : (parentEspecies === 'NA' ? '' : parentEspecies)
               } */}
-              {parentEspecies === 'NA' ? '' : parentEspecies}
-            </div>
+                  {parentEspecies === 'NA' ? '' : parentEspecies}
+                </div>
+            }
           </div>)
         }
       </div>
