@@ -1565,8 +1565,8 @@
           "slug_tematica": "exotica-riesgo-invasion"
         },
         {
-          "label": "Asplenium rutaceum",
-          "slug_especie": "asplenium-rutaceum",
+          "label": "Brugmansia arborea",
+          "slug_especie": "brugmansia-arborea",
           "registros": 1,
           "url_gbif": "https://www.gbif.org/species/2650675",
           "slug_tematica": "exotica-riesgo-invasion"
@@ -1580,8 +1580,8 @@
           "slug_tematica": "exoticas"
         },
         {
-          "label": "Campyloneurum sphenodes",
-          "slug_especie": "campyloneurum-sphenodes",
+          "label": "Cucurbita maxima",
+          "slug_especie": "cucurbita-maxima",
           "registros": 1,
           "url_gbif": "https://www.gbif.org/species/4023978",
           "slug_tematica": "exotica-riesgo-invasion"
@@ -1594,8 +1594,8 @@
           "slug_tematica": "exoticas"
         },
         {
-          "label": "Cyathea delgadii",
-          "slug_especie": "cyathea-delgadii",
+          "label": "Cymbopogon citratus",
+          "slug_especie": "cymbopogon-citratus",
           "registros": 1,
           "url_gbif": "https://www.gbif.org/species/3598563",
           "slug_tematica": "exotica-riesgo-invasion"
