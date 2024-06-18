@@ -4,31 +4,34 @@ import ReactMarkdown from 'react-markdown'
 import WaffleChart from './WaffleChart'
 import GraphsTopMun from './GraphsTopMun'
 
+const ListRender = ({ texts }) => {
+  const text = texts.split(': ')[0]
+  const joinText = text + ':'
+  const listItimes = texts.split(': ')[1].split(', ')
+  return (
+    <>
+      <ReactMarkdown className='3xl:text-lg'>
+        {joinText}
+      </ReactMarkdown>
+      <ul className='pl-8'>
+        {listItimes.map((element, i) => {
+          const lastItem = i === listItimes.length - 1
+          const elementText = lastItem ? element.replace(/\.$/, '') : element
+          return (
+            <li key={i} className='list-disc' >
+              <ReactMarkdown className='3xl:text-lg'>
+                {elementText}
+              </ReactMarkdown>
+            </li>
+          )
+        })}
+      </ul>
+    </>
+  )
+}
+
 const Slides = ({ data, region, municipalityflag, parentlabel }) => {
   const { layout, title, description, texts, path } = data
-
-  const ListRender = ({ texts }) => {
-    const text = texts.split(': ')[0]
-    const joinText = text + ':'
-    return (
-      <>
-        <ReactMarkdown className='3xl:text-lg'>
-          {joinText}
-        </ReactMarkdown>
-        <ul className='pl-8'>
-          {texts.split(': ')[1].split(', ').map((element, i) => {
-            return (
-              <li key={i} className='list-disc' >
-                <ReactMarkdown className='3xl:text-lg'>
-                  {element}
-                </ReactMarkdown>
-              </li>
-            )
-          })}
-        </ul>
-      </>
-    )
-  }
 
   if (layout === 'title/chart') {
     return (
@@ -174,7 +177,7 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
           <h2 className='text-black-2 font-black text-center text-2xl 3xl:text-4xl'>
             {title}
           </h2>
-          <div className='lg:py-2.5'>
+          <div className='lg:py-14'>
             <div className=''>
               <GraphsTopMun data={data} region={region} />
               {/* <iframe type="html" className="h-[410px] w-full" src={'/' + chart1_url} ></iframe>

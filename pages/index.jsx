@@ -35,6 +35,24 @@ const ENUM_DESTACADAS = [
     slug: 'boyaca',
     link: '/boyaca'
   },
+  /* {
+    type: 'Departamento',
+    label: 'Amazonas',
+    slug: 'amazonas',
+    link: '/amazonas'
+  },
+  {
+    type: 'Departamento',
+    label: 'Antioquia',
+    slug: 'antioquia',
+    link: '/antioquia'
+  },
+  {
+    type: 'Departamento',
+    label: 'Bolívar',
+    slug: 'bolivar',
+    link: '/bolivar'
+  }, */
   {
     type: 'Departamento',
     label: 'Amazonas',
