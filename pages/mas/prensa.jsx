@@ -43,10 +43,10 @@ function prensa () {
             <div className='mt-4 mx-auto text-center md:text-left lg:space-y-6 lg:pl-9 md:border-l-2 md:pl-10 border-pastel-periwinkle border-dotted w-10/12 lg:w-5/12'>
               <span className='font-inter font-black text-xl md:text-2xl lg:text-4xl'>Contacto</span>
               <div className='flex flex-col w-2/3 mx-auto md:w-full'>
-                <b className='font-lato pb-2'>Andrés Duarte</b>
-                <span className='font-lato '>Productos y Servicios</span>
+                {/* <b className='font-lato pb-2'>Andrés Duarte</b>
+                <span className='font-lato '>Productos y Servicios</span> */}
                 <span className='font-lato '>Sistema de Información sobre Biodiversidad de Colombia</span>
-                <span className='font-lato '>aduarte@humboldt.org.co</span>
+                <span className='font-lato '>sib@humboldt.org.co</span>
                 <span className='font-lato '>PBX: (+57) (601) 320 2767</span>
                 <span className='font-lato '>Colombia</span>
               </div>
