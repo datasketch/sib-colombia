@@ -326,7 +326,7 @@ const CardTematicasCol = props => {
             <BarPercent
               bgColor={'bg-orange-en'}
               region={region}
-              title={'Exóticas con potencial de invasion'}
+              title={'Exóticas con potencial de invasión'}
               datatable={info?.list_especies_exoticas_riesgo_invasion}
               especies={info?.especies_exoticas_riesgo_invasion}
               parentEspecies={info?.exoticas_riesgo_invasion_estimadas}
