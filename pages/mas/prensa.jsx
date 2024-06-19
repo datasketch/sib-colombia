@@ -34,7 +34,7 @@ function prensa () {
           <div className='flex flex-col gap-x-10 mx-auto justify-center items-center md:flex-row md:w-4/5  lg:w-full'>
             <div className='flex flex-col items-center pt-3.5 md:pt-0 text-center gap-y-3 lg:justify-evenly mx-auto w-10/12 lg:w-5/12'>
               <h2 className='text-4xl lg:text-6xl text-science-blue font-inter font-black'>Kit de prensa</h2>
-              <span>Descarga las cifras destacadas sobre la biodiversidad de Colombia para el 2021.</span>
+              <span>Descarga las cifras destacadas sobre la biodiversidad de Colombia para el 2023.</span>
               <a className='flex bg-white-2 justify-center items-center gap-2 py-1.5 w-5/6 px-2  border border-black rounded-full' href='/files/Kit_prensa-Cifras_Sobre_Biodiversidad_de_Colombia.pdf' download>
                 <span className='text-base font-lato'>Descargar kit de prensa</span>
                 <img className='w-3 h-4' src='/images/icon-download.svg' />
