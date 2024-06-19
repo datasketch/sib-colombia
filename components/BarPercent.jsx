@@ -51,7 +51,7 @@ const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = 
                       <span className="text-black-3">Especies totales observadas {capitalizeRegion} ({especiesObservadas})</span>
                       )
                     : (
-                      <span className='text-black-3'>Especies observadas Colombia({parentEspecies}) | Especies estimadas Colombia ({speciesEstimadasCol}) </span>
+                      <span className='text-black-3'>Especies observadas Colombia({parentEspecies}) | Especies estimadas Colombia({speciesEstimadasCol}) </span>
                       )
                 }
               </p>

@@ -322,7 +322,7 @@ const CardTematicas = props => {
             <BarPercent
               bgColor={'bg-sandstorm'}
               region={region}
-              title={'Exóticas con potencial de invasion'}
+              title={'Exóticas con potencial de invasión'}
               datatable={info?.list_especies_exoticas_riesgo_invasion}
               especies={info?.especies_exoticas_riesgo_invasion}
               parentEspecies={info?.parent_especies_exoticas_riesgo_invasion}
@@ -430,7 +430,8 @@ const CardTematicas = props => {
               datatable={info?.slug === 'amenazadas-global' ? info?.list_especies_amenazadas_global_cr : info?.list_especies_amenazadas_nacional_cr}
               especies={info?.cr}
               parentEspecies={info?.estimadas_cr || info?.parent_cr}
-              speciesEstimadasCol={info?.parent_cr_estimadas}
+              speciesEstimadasCol={info?.slug === 'amenazadas-global' ? info?.cr_estimadas : info?.parent_cr_estimadas}
+              /* speciesEstimadasCol={info?.parent_cr_estimadas} */
               registros={info?.cr_registros || info?.parent_cr}
               colObservadas={info?.parent_cr}
               especiesObservadas={especiesObservadas}
@@ -447,7 +448,8 @@ const CardTematicas = props => {
               datatable={info?.slug === 'amenazadas-global' ? info?.list_especies_amenazadas_global_en : info?.list_especies_amenazadas_nacional_en}
               especies={info?.en}
               parentEspecies={info?.estimadas_en || info?.parent_en}
-              speciesEstimadasCol={info?.parent_en_estimadas}
+              speciesEstimadasCol={info?.slug === 'amenazadas-global' ? info?.en_estimadas : info?.parent_en_estimadas}
+              /* speciesEstimadasCol={info?.parent_en_estimadas} */
               registros={info?.en_registros || info?.parent_en}
               colObservadas={info?.parent_en}
               especiesObservadas={especiesObservadas}
@@ -463,7 +465,8 @@ const CardTematicas = props => {
               datatable={info?.slug === 'amenazadas-global' ? info?.list_especies_amenazadas_global_vu : info?.list_especies_amenazadas_nacional_vu}
               especies={info?.vu}
               parentEspecies={info?.estimadas_vu || info?.parent_vu}
-              speciesEstimadasCol={info?.parent_vu_estimadas}
+              speciesEstimadasCol={info?.slug === 'amenazadas-global' ? info?.vu_estimadas : info?.parent_vu_estimadas}
+              /* speciesEstimadasCol={info?.parent_vu_estimadas} */
               registros={info?.vu_registros || info?.parent_vu}
               colObservadas={info?.parent_vu}
               especiesObservadas={especiesObservadas}
