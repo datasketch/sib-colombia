@@ -176,13 +176,12 @@ export default function publicadores () {
 
   const handleCountryChange = ({ target }) => {
     const { value } = target
-    setSelectedCountry(value)
-    /* if (value === 'CO') {
-      setIsOrgDisabled(false)
+
+    if (value !== 'CO') {
+      setSelectedOrganizacion('Internacional')
     } else {
-      setIsOrgDisabled(true)
       setSelectedOrganizacion('')
-    } */
+    } setSelectedCountry(value)
     setDisplay(false)
   }
 
