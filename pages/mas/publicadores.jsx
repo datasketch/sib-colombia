@@ -14,7 +14,7 @@ import { regionsDropdown } from '../../lib/util'
 import { clearText } from '../../lib/functions'
 import SelectableV2 from '../../components/SelectableV2'
 
-export default function publicadores () {
+export default function publicadores() {
   const textDescription = 'Personas, organizaciones, iniciativas o redes de nivel local, nacional, regional o global que establecen mecanismos de cooperación con el SiB Colombia con el propósito de publicar datos e información. Gracias a los datos aportados por estas organizaciones es posible construir las cifras sobre biodiversidad que encuentras en Biodiversidad en cifras.'
   const PageSize = 15
 
@@ -38,6 +38,8 @@ export default function publicadores () {
   const [areaDropdowm, setAreaDropdown] = useState([])
   const [isOrgDisabled] = useState(false)
 
+  /* console.log(selectedRegion, 'selectedRegion') */
+
   const [render, setRender] = useState(false)
   const citys = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.pais_publicacion], []))]
   const [tempCities, setTempCities] = useState(citys)
@@ -46,6 +48,24 @@ export default function publicadores () {
     'reserva-forestal-la-planada',
     'resguardo-indigena-pialapi-pueblo-viejo'
   ]
+
+  /* const formatRegionValue = (region) => {
+    return region
+      .toLowerCase()
+      .replace(/[\s,]/g, '-')
+      .replace(/[áéíóúñ]/g, match => {
+        switch (match) {
+          case 'á': return 'a'
+          case 'é': return 'e'
+          case 'í': return 'i'
+          case 'ó': return 'o'
+          case 'ú': return 'u'
+          case 'ñ': return 'n'
+          default: return match
+        }
+      })
+  } */
+
   /* const typeOrganization = [...new Set(
     publishers.reduce((acc, curr) => {
       const type = curr.tipo_organizacion !== undefined ? curr.tipo_organizacion : "Internacional"
@@ -92,6 +112,7 @@ export default function publicadores () {
 
   const handleRegionChange = ({ target }) => {
     const { value } = target
+    /* console.log(value, 'value') */
     setSelectedRegion(regionsDropdown.find(e => e.value === value).label)
     setDisplay(true)
     if (value !== 'colombia') {
@@ -203,9 +224,13 @@ export default function publicadores () {
     setDisplay(false)
   }
 
+  /* const formattedRegion = formatRegionValue(selectedRegion)
+  console.log(formattedRegion, 'formattedRegion') */
+
   const resetOrg = () => {
     setSelectedOrganizacion('')
     setTempCities(citys)
+    /* handleRegionChange(formattedRegion) */
   }
 
   const filteredPublishers = publicadors
