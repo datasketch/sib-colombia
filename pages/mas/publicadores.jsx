@@ -37,9 +37,6 @@ export default function publicadores() {
   const [selectedOrganizacion, setSelectedOrganizacion] = useState('')
   const [areaDropdowm, setAreaDropdown] = useState([])
   const [isOrgDisabled] = useState(false)
-
-  /* console.log(selectedRegion, 'selectedRegion') */
-
   const [render, setRender] = useState(false)
   const citys = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.pais_publicacion], []))]
   const [tempCities, setTempCities] = useState(citys)
@@ -48,43 +45,6 @@ export default function publicadores() {
     'reserva-forestal-la-planada',
     'resguardo-indigena-pialapi-pueblo-viejo'
   ]
-
-  /* const formatRegionValue = (region) => {
-    return region
-      .toLowerCase()
-      .replace(/[\s,]/g, '-')
-      .replace(/[áéíóúñ]/g, match => {
-        switch (match) {
-          case 'á': return 'a'
-          case 'é': return 'e'
-          case 'í': return 'i'
-          case 'ó': return 'o'
-          case 'ú': return 'u'
-          case 'ñ': return 'n'
-          default: return match
-        }
-      })
-  } */
-
-  /* const typeOrganization = [...new Set(
-    publishers.reduce((acc, curr) => {
-      const type = curr.tipo_organizacion !== undefined ? curr.tipo_organizacion : "Internacional"
-      return [...acc, type]
-    }, [])
-  )] */
-
-  /* console.log(typeOrganization, 'typeOrganization') */
-
-  /* function filterBySearch (publisher) {
-    if (!query) return true
-
-    const { label, pais_publicacion: paisPublicacion } = publisher
-
-    const region = publisher.region ? normalize(publisher.region) : publisher.region
-    const normalizedQuery = normalize(query)
-
-    return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase()) || region?.includes(normalizedQuery)
-  } */
 
   function filterBySearch (publisher) {
     const { label } = publisher
@@ -112,7 +72,6 @@ export default function publicadores() {
 
   const handleRegionChange = ({ target }) => {
     const { value } = target
-    /* console.log(value, 'value') */
     setSelectedRegion(regionsDropdown.find(e => e.value === value).label)
     setDisplay(true)
     if (value !== 'colombia') {
@@ -208,6 +167,9 @@ export default function publicadores() {
 
   const resetCountry = () => {
     setSelectedCountry('')
+    if (selectedOrganizacion === '') {
+      setDisplay(true)
+    }
   }
 
   const handleOrganizacionChange = ({ target }) => {
@@ -224,13 +186,10 @@ export default function publicadores() {
     setDisplay(false)
   }
 
-  /* const formattedRegion = formatRegionValue(selectedRegion)
-  console.log(formattedRegion, 'formattedRegion') */
-
   const resetOrg = () => {
     setSelectedOrganizacion('')
     setTempCities(citys)
-    /* handleRegionChange(formattedRegion) */
+    setDisplay(true)
   }
 
   const filteredPublishers = publicadors
