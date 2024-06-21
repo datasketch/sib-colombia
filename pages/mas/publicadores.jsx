@@ -187,6 +187,9 @@ export default function publicadores () {
 
   const resetCountry = () => {
     setSelectedCountry('')
+    if (selectedOrganizacion === '') {
+      setDisplay(true)
+    }
   }
 
   const handleOrganizacionChange = ({ target }) => {
@@ -206,6 +209,7 @@ export default function publicadores () {
   const resetOrg = () => {
     setSelectedOrganizacion('')
     setTempCities(citys)
+    setDisplay(true)
   }
 
   const filteredPublishers = publicadors
