@@ -108,8 +108,10 @@ El código fuente de la página web se encuentra en un repositorio privado perte
 
 ### Para tener en cuenta
 
-Cada vez que se actualicen los datos de cada perfil Departamental y/o de los Municipios, es importante correr este comando:
-
+Cada vez que se actualicen los datos de cada perfil Departamental y/o de los Municipios, es importante hacer lo siguiente:
+1. Reemplazar los archivos json de cada region, para los casos de nariño que tiene  la reserva y reguardo estos JSON deben estar en la carpeta data/nariño/, ademas el archivo colombia_map.json o el json que contenga el mapa de colombia debe estar en la carpeta static/data-maps.
+2. Los archivos de publicadores  entre otros van en static/data.
+3. Correr el comando:
 ```bash
   npm run preprocess
 ```
