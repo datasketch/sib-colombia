@@ -245,8 +245,8 @@ export default function Navbar () {
                     </DropDown.Button>
                     <DropDown.Items className='absolute top-[132%] bg-white w-40 flex flex-col gap-y-0.5 py-1.5 px-2.5'>
                       {item.childs?.map((el, key) =>
-                        <>
-                          <div key={el.label}>
+                        <div key={`${el.label}-${key}`}>
+                          <div>
                             <DropDown.Item className='text-black  py-1.5 hover:font-bold font-lato opacity-80 text-sm w-full flex justify-between' onClick={() => handleRegionsSelected(el.children)} color={item.color} href={el.href}>
                               {el.label}
                               {el.children && <img src={item.icon} alt='icon arrow' />}
@@ -270,7 +270,7 @@ export default function Navbar () {
                             )}
                           </div>
                           } */}
-                        </>
+                        </div>
                       )
                       }
                     </DropDown.Items>

@@ -1,5 +1,8 @@
 import ReactMarkdown from 'react-markdown'
-import Tooltip from 'react-tooltip'
+import dynamic from 'next/dynamic'
+
+// Dynamically import Tooltip with ssr: false to prevent hydration errors
+const Tooltip = dynamic(() => import('react-tooltip'), { ssr: false })
 
 const MapParagraph = ({ descripcion, refs, index }) => {
   const components = {

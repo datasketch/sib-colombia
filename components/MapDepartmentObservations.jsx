@@ -1,9 +1,12 @@
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import * as d3Geo from 'd3-geo'
 import { useState } from 'react'
-import Tooltip from 'react-tooltip'
+import dynamic from 'next/dynamic'
 import * as d3Scale from 'd3-scale'
 import { useLegend } from '../hooks/useLegend'
+
+// Dynamically import Tooltip with ssr: false to prevent hydration errors
+const Tooltip = dynamic(() => import('react-tooltip'), { ssr: false })
 
 const MapDepartmentObservations = ({ data, isScale = false }) => {
   const territorio = data

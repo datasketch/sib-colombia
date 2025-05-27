@@ -1,6 +1,9 @@
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
+import dynamic from 'next/dynamic'
 import mapJson from '../static/data/maps.json'
-import Tooltip from 'react-tooltip'
+
+// Dynamically import Tooltip with ssr: false to prevent hydration errors
+const Tooltip = dynamic(() => import('react-tooltip'), { ssr: false })
 
 const Map = ({ mouseEnterHandler, setHoveredCountry, hoveredCountry, colorSelector, details, categories }) => {
   return (

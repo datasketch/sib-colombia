@@ -56,9 +56,9 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
                 <Concentric inner={especiesObservadas} outer={especiesEstimadas} movil={windowWidth < 450} />
                 <div className={classNames(windowWidth < 450 ? 'left-[11.5rem]' : 'left-[15rem]', 'absolute w-full md:w-1/3 lg:w-full  text-white flex -space-y-1 flex-col -top-[9%]  lg:-top-[8%] left-[15rem] md:left-60')}>
                   <span className="font-inter font-black lg:text-xl">{formatNumbers(especiesEstimadas)}</span>
-                  <p className="font-lato text-sm lg:text-base">Especies estimadas
+                  <div className="font-lato text-sm lg:text-base">Especies estimadas
                     {referencia && <InfoTooltip classname={'inline-flex ml-0.5'} place='right' label={referencia} src={'/images/icons/icon-information.svg'} id={'ref'} />}
-                  </p>
+                  </div>
                 </div>
 
                 <div className={classNames(windowWidth < 450 ? 'left-[11.5rem]' : 'left-[15rem]', 'absolute text-yellow-green flex flex-col -space-y-1 w-full md:w-1/3 lg:w-full top-[38%] md:top-[40%] lg:top-[35%]  md:left-60')}>
