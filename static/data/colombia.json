@@ -116394,20 +116394,136 @@
   "municipios_lista": [],
   "departamentos_lista": [
     {
+      "slug": "antioquia",
+      "label": "Antioquia"
+    },
+    {
+      "slug": "atlantico",
+      "label": "Atlántico"
+    },
+    {
+      "slug": "bogota-dc",
+      "label": "Bogotá, D. C."
+    },
+    {
+      "slug": "bolivar",
+      "label": "Bolívar"
+    },
+    {
       "slug": "boyaca",
       "label": "Boyacá"
+    },
+    {
+      "slug": "caldas",
+      "label": "Caldas"
+    },
+    {
+      "slug": "caqueta",
+      "label": "Caquetá"
+    },
+    {
+      "slug": "cauca",
+      "label": "Cauca"
+    },
+    {
+      "slug": "cesar",
+      "label": "Cesar"
+    },
+    {
+      "slug": "cordoba",
+      "label": "Córdoba"
+    },
+    {
+      "slug": "cundinamarca",
+      "label": "Cundinamarca"
+    },
+    {
+      "slug": "choco",
+      "label": "Chocó"
+    },
+    {
+      "slug": "huila",
+      "label": "Huila"
+    },
+    {
+      "slug": "la-guajira",
+      "label": "La Guajira"
+    },
+    {
+      "slug": "magdalena",
+      "label": "Magdalena"
+    },
+    {
+      "slug": "meta",
+      "label": "Meta"
     },
     {
       "slug": "narino",
       "label": "Nariño"
     },
     {
+      "slug": "norte-santander",
+      "label": "Norte de Santander"
+    },
+    {
+      "slug": "quindio",
+      "label": "Quindío"
+    },
+    {
+      "slug": "risaralda",
+      "label": "Risaralda"
+    },
+    {
       "slug": "santander",
       "label": "Santander"
     },
     {
+      "slug": "sucre",
+      "label": "Sucre"
+    },
+    {
       "slug": "tolima",
       "label": "Tolima"
+    },
+    {
+      "slug": "valle-del-cauca",
+      "label": "Valle del Cauca"
+    },
+    {
+      "slug": "arauca",
+      "label": "Arauca"
+    },
+    {
+      "slug": "casanare",
+      "label": "Casanare"
+    },
+    {
+      "slug": "putumayo",
+      "label": "Putumayo"
+    },
+    {
+      "slug": "san-andres-providencia",
+      "label": "Archipiélago de San Andrés, Providencia y Santa Catalina"
+    },
+    {
+      "slug": "amazonas",
+      "label": "Amazonas"
+    },
+    {
+      "slug": "guainia",
+      "label": "Guainía"
+    },
+    {
+      "slug": "guaviare",
+      "label": "Guaviare"
+    },
+    {
+      "slug": "vaupes",
+      "label": "Vaupés"
+    },
+    {
+      "slug": "vichada",
+      "label": "Vichada"
     }
   ]
 }
