@@ -41,8 +41,9 @@ module.exports = {
         inter: ['inter', 'sans-serif']
       },
       backgroundImage: {
-        'banner-home': "url('/images/headers/banner-home-2.png')",
+        'banner-home': "url('/images/headers/banner-home-3.jpg')",
         'banner-home-2': "url('/images/home-banner-2.png')",
+        'banner-home-3': "url('/images/home-banner-3.jpg')",
         'banner-footer': "url('/images/footer-banner.svg')",
         'footer-2022': "url('/images/footer-2022.svg')",
         'banner-mas': "url('/images/headers/banner-mas.png')",

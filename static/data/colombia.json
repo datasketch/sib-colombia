@@ -10,12 +10,12 @@
     "subtipo": "país",
     "label": "Colombia",
     "marino": true,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": 86,
     "marino_text": "; de las cuales 76.194 habitan al interior del\ncontinente y 7.812 en el mar.",
     "especies_region_total_str": "80.346",
     "registros_region_total_str": "33.185.913",
-    "main_text": "A 20088, se han publicado 33.185.913 observaciones a través\ndel SiB Colombia. Estos datos respaldan la existencia de 80.346 especies\nen el territorio nacional; de las cuales 76.194 habitan al interior del\ncontinente y 7.812 en el mar.",
+    "main_text": "A diciembre 31 de 2024, se han publicado 33.185.913 observaciones a través\ndel SiB Colombia. Estos datos respaldan la existencia de 80.346 especies\nen el territorio nacional; de las cuales 76.194 habitan al interior del\ncontinente y 7.812 en el mar.",
     "referencia": "Arbeláez-Cortés, E. (2013). Knowledge of Colombian biodiversity: published and indexed. Biodiversity and Conservation, 22(12), 2875–2906. https://doi.org/10.1007/s10531-013-0560-y",
     "credito_foto": "Paisaje de Montaña"
   },
@@ -585,7 +585,7 @@
   "gallery": [
     {
       "id": "1",
-      "text": "12 de las 32 especies de Zamias observadas, se encuentran amenazadas según la categoría nacional."
+      "text": "11 de las 34 especies de Zamias observadas, se encuentran amenazadas según la categoría nacional."
     },
     {
       "id": "2",
@@ -593,7 +593,7 @@
     },
     {
       "id": "3",
-      "text": "100 de las 196 especies de corales observados, hacen parte del apéndice II de CITES por ser especies con objeto de comercio."
+      "text": "100 de las 197 especies de corales observados, hacen parte del apéndice II de CITES por ser especies con objeto de comercio."
     },
     {
       "id": "4",
@@ -601,7 +601,7 @@
     },
     {
       "id": "5",
-      "text": "30% de las especies de anfibios observadas se encuentran dentro de alguna de las categorías de la Lista Roja de la IUCN."
+      "text": "31 % de las especies de anfibios observadas se encuentran dentro de alguna de las categorías de la Lista Roja de la IUCN."
     },
     {
       "id": "6",
@@ -609,7 +609,7 @@
     },
     {
       "id": "7",
-      "text": "4'479.235 registros y 21.689 especies observadas provienen del departamento de Antioquia."
+      "text": "5'071.821 registros y 21.895 especies observadas provienen del departamento de Antioquia."
     },
     {
       "id": "8",
@@ -617,7 +617,7 @@
     },
     {
       "id": "9",
-      "text": "2.2% del total de las especies observadas se encuentran amenazadas y el 3.50% está en alguno de los apéndices CITES."
+      "text": "2,3 % del total de las especies observadas se encuentran amenazadas y el 3,6 % está en alguno de los apéndices CITES."
     },
     {
       "id": "10",

@@ -32,7 +32,7 @@ const HeadHome = ({ title, image, number }) => {
       </div>
       <div className='relative max-w-screen-xl w-9/12 mx-auto flex justify-end'>
         <div className='absolute -top-12'>
-          <InfoTooltip src={'/images/camera-icon.svg'} label={'Sebastián Seck, Parque Nacional Natural Tayrona, Magdalena'} id='tt-home'/>
+          <InfoTooltip src={'/images/camera-icon.svg'} label={'Curculionido'} id='tt-home'/>
         </div>
       </div>
     </>

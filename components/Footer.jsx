@@ -36,18 +36,18 @@ export default function Footer () {
             <div className="text-center lg:text-left flex flex-col gap-y-2.5 text-sm font-lato">
               <b>Contacto</b>
               <a target='_blank' href='mailto:sib@humboldt.org.co' rel="noreferrer">sib@humboldt.org.co</a>
-              <span>PBX:(+601) 3202767</span>
-              <span>Calle 28A # 15-09</span>
+              <span>Calle 72 # 12 - 65 Piso 7</span>
+              <span>Teléfonos de contacto: + 57 310 215 8291 +57 310 215 8287</span>
               <span>Bogotá D.C., Colombia</span>
-              <div className="flex gap-x-4 justify-center  lg:justify-start items-center">
+              <div className="flex gap-x-4 justify-center lg:justify-start items-center">
                 <a target='_blank' href='https://twitter.com/sibcolombia' rel="noreferrer">
-                  <img src='/images/icons/icon-tw.svg' className='h-5 w-5'/>
+                  <img src='/images/icons/icon-x.svg' className='h-5 w-5' alt="X (formerly Twitter)"/>
                 </a>
                 <a target='_blank' href='https://www.facebook.com/SibColombia' rel="noreferrer">
-                  <img src='/images/icons/icon-fb.svg' className='h-5 w-6'/>
+                  <img src='/images/icons/icon-fb.svg' className='h-5 w-6' alt="Facebook"/>
                 </a>
                 <a target='_blank' href='https://www.youtube.com/user/sibcolombia' rel="noreferrer">
-                  <img src='/images/icons/icon-yt.svg' className='h-5 w-5'/>
+                  <img src='/images/icons/icon-yt.svg' className='h-5 w-5' alt="YouTube"/>
                 </a>
               </div>
             </div>
