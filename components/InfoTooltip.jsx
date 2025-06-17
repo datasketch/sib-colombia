@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import dynamic from 'next/dynamic'
 import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 
 // Dynamically import Tooltip with ssr: false to prevent hydration errors
 const Tooltip = dynamic(() => import('react-tooltip'), { ssr: false })
@@ -16,8 +17,9 @@ const InfoTooltip = ({ label, src, id, classname, place = 'left' }) => {
       </a>
       <Tooltip id={id} eventOff='mouseleave' arrowColor="transparent" arrowSize={0} backgroundColor='#fff' textColor='#000' className='tooltip' clickable>
         <ReactMarkdown
+          rehypePlugins={[rehypeRaw]}
           linkTarget={'_blank'}
-          className='rc-markdown'
+          className='rc-markdown whitespace-pre-line'
           components={{
             p: ({ children }) => <span>{children}</span>
           }}
@@ -26,7 +28,6 @@ const InfoTooltip = ({ label, src, id, classname, place = 'left' }) => {
         </ReactMarkdown>
       </Tooltip>
     </div>
-
   )
 }
 

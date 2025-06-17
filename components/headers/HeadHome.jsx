@@ -32,7 +32,11 @@ const HeadHome = ({ title, image, number }) => {
       </div>
       <div className='relative max-w-screen-xl w-9/12 mx-auto flex justify-end'>
         <div className='absolute -top-12'>
-          <InfoTooltip src={'/images/camera-icon.svg'} label={'Curculionido'} id='tt-home'/>
+          <InfoTooltip
+            src={'/images/camera-icon.svg'}
+            label={'Autor: Felipe Villegas-Vélez<br>Publicada el Miércoles 6 Noviembre 2024<br>Archivo AM-LET-0-140722-00850.jpg<br>Álbumes REGIONES / AMAZÓNICA / Amazonas ESPECIES / INSECTOS'}
+            id='tt-home'
+          />
         </div>
       </div>
     </>

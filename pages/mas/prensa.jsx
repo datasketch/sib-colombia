@@ -6,6 +6,30 @@ import { AppContext } from '../_app'
 function prensa () {
   const prensa = [
     {
+      date: '2024',
+      title: 'Lista de especies amenazadas de Colombia',
+      description: 'Actualización de la lista de especies amenazadas de Colombia, un insumo fundamental para la conservación.',
+      link: 'https://biodiversidad.co/post/2024/lista-especies-amenazadas-colombia/'
+    },
+    {
+      date: '2024',
+      title: 'CESP National Portals',
+      description: 'Colombia participa en el proyecto CESP National Portals para fortalecer los portales nacionales de biodiversidad.',
+      link: 'https://biodiversidad.co/post/2024/cesp-national-portals/'
+    },
+    {
+      date: '2024',
+      title: 'COP16: SiB Colombia, datos vivos para la biodiversidad',
+      description: 'El Sistema de Información sobre Biodiversidad de Colombia presente en la COP16 con datos vivos para la conservación.',
+      link: 'https://biodiversidad.co/post/2024/cop16-sib-datos-vivos/'
+    },
+    {
+      date: '2024',
+      title: 'Actualización de Biodiversidad en Cifras',
+      description: 'Nueva versión de Biodiversidad en Cifras con datos actualizados sobre la biodiversidad de Colombia.',
+      link: 'https://biodiversidad.co/post/2024/actualizacion-biodiversidad-en-cifras/'
+    },
+    {
       date: '23 de mayo de 2022',
       title: 'Cómo cuidar la biodiversidad de Colombia',
       description: 'La diversidad biológica es de gran importancia para las generaciones presentes y futuras, desde el SiB Colombia queremos compartir algunas acciones para cuidarla.',
@@ -34,7 +58,7 @@ function prensa () {
           <div className='flex flex-col gap-x-10 mx-auto justify-center items-center md:flex-row md:w-4/5  lg:w-full'>
             <div className='flex flex-col items-center pt-3.5 md:pt-0 text-center gap-y-3 lg:justify-evenly mx-auto w-10/12 lg:w-5/12'>
               <h2 className='text-4xl lg:text-6xl text-science-blue font-inter font-black'>Kit de prensa</h2>
-              <span>Descarga las cifras destacadas sobre la biodiversidad de Colombia para el 2023.</span>
+              <span>Descarga las cifras destacadas sobre la biodiversidad de Colombia para el 2024.</span>
               <a className='flex bg-white-2 justify-center items-center gap-2 py-1.5 w-5/6 px-2  border border-black rounded-full' href='/files/Kit_prensa-Cifras_Sobre_Biodiversidad_de_Colombia.pdf'
                 rel="noopener noreferrer"
                 target="_blank"
@@ -60,10 +84,9 @@ function prensa () {
       </div>
       <div className='max-w-screen-2xl mx-auto w-11/12 lg:w-9/12 pb-12'>
         <span className='text-flame font-black font-inter text-xl md:text-2xl'>Contenidos relevantes</span>
-        <div className='py-6 flex flex-col md:flex-row gap-6 justify-between'>
+        <div className='py-6 grid grid-cols-1 md:grid-cols-2 gap-6'>
           {prensa.map((el, key) =>
             <div className='mx-auto lg:mx-0' key={key}>
-
               <CardContenido
                 date={el.date}
                 title={el.title}
@@ -72,9 +95,7 @@ function prensa () {
               />
             </div>
           )}
-
         </div>
-
       </div>
     </>
   )
