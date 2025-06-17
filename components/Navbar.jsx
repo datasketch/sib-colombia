@@ -9,6 +9,26 @@ export default function Navbar () {
   const [childrenRegions, setChildrenRegions] = useState([])
   const [menuIsActive, setMenuIsActive] = useState(false)
 
+  // Array of departments with more information
+  const highlightedDepartments = [
+    'boyaca',
+    'narino',
+    'tolima',
+    'santander',
+    'amazonas',
+    'caqueta',
+    'guainia',
+    'guaviare',
+    'putumayo',
+    'vaupes'
+  ]
+
+  // Helper to split array into N columns (top-to-bottom)
+  function splitIntoColumns (arr, columns) {
+    const perCol = Math.ceil(arr.length / columns)
+    return Array.from({ length: columns }, (_, i) => arr.slice(i * perCol, (i + 1) * perCol))
+  }
+
   const nav = [
     {
       label: 'Colombia',
@@ -25,7 +45,8 @@ export default function Navbar () {
           children: [
             {
               label: 'Amazonas',
-              href: '/amazonas'
+              href: '/amazonas',
+              isHighlighted: true
             },
             {
               label: 'Antioquia',
@@ -49,7 +70,8 @@ export default function Navbar () {
             },
             {
               label: 'Boyacá',
-              href: '/boyaca'
+              href: '/boyaca',
+              isHighlighted: true
             },
             {
               label: 'Caldas',
@@ -57,7 +79,8 @@ export default function Navbar () {
             },
             {
               label: 'Caquetá',
-              href: '/caqueta'
+              href: '/caqueta',
+              isHighlighted: true
             },
             {
               label: 'Casanare',
@@ -85,11 +108,13 @@ export default function Navbar () {
             },
             {
               label: 'Guainía',
-              href: '/guainia'
+              href: '/guainia',
+              isHighlighted: true
             },
             {
               label: 'Guaviare',
-              href: '/guaviare'
+              href: '/guaviare',
+              isHighlighted: true
             },
             {
               label: 'Huila',
@@ -109,7 +134,8 @@ export default function Navbar () {
             },
             {
               label: 'Nariño',
-              href: '/narino'
+              href: '/narino',
+              isHighlighted: true
             },
             {
               label: 'Norte de Santander',
@@ -117,7 +143,8 @@ export default function Navbar () {
             },
             {
               label: 'Putumayo',
-              href: '/putumayo'
+              href: '/putumayo',
+              isHighlighted: true
             },
             {
               label: 'Quindío',
@@ -133,7 +160,8 @@ export default function Navbar () {
             },
             {
               label: 'Santander',
-              href: '/santander'
+              href: '/santander',
+              isHighlighted: true
             },
             {
               label: 'Sucre',
@@ -141,7 +169,8 @@ export default function Navbar () {
             },
             {
               label: 'Tolima',
-              href: '/tolima'
+              href: '/tolima',
+              isHighlighted: true
             },
             {
               label: 'Valle del Cauca',
@@ -149,7 +178,8 @@ export default function Navbar () {
             },
             {
               label: 'Vaupés',
-              href: '/vaupes'
+              href: '/vaupes',
+              isHighlighted: true
             },
             {
               label: 'Vichada',
@@ -222,6 +252,10 @@ export default function Navbar () {
     setChildrenRegions(children)
   }
 
+  // Find departamentos array in nav
+  const departamentos = nav[1].childs[0].children.slice().sort((a, b) => a.label.localeCompare(b.label))
+  const columns = splitIntoColumns(departamentos, 4)
+
   return (
     <header className="absolute top-0 left-0 w-full z-40 py-2">
       <div className='mx-auto w-10/12 max-w-[1300px] '>
@@ -252,11 +286,30 @@ export default function Navbar () {
                               {el.children && <img src={item.icon} alt='icon arrow' />}
                             </DropDown.Item>
                           </div>
-                          {childrenRegions.length !== 0 && childrenRegions.length !== 1 && <div className={classNames('bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-400 ease-in -right-2/3')}>
-                            {childrenRegions?.map(({ label, href }, index) =>
-                              <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
-                            )}
-                          </div>}
+                          {childrenRegions.length !== 0 && childrenRegions.length !== 1 && (
+                            <div className={classNames('bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-400 ease-in -right-2/3')}>
+                              {columns.map((col, colIdx) => (
+                                <div key={colIdx} className="flex flex-col gap-2">
+                                  {col.map(({ label, href }, idx) => {
+                                    const isHighlighted = highlightedDepartments.includes(href.replace('/', ''))
+                                    return (
+                                      <a
+                                        href={href}
+                                        key={href}
+                                        className={
+                                          isHighlighted
+                                            ? 'text-dartmouth-green font-bold underline hover:text-dartmouth-green'
+                                            : 'text-black hover:font-bold'
+                                        }
+                                      >
+                                        {label}
+                                      </a>
+                                    )
+                                  })}
+                                </div>
+                              ))}
+                            </div>
+                          )}
 
                           {childrenRegions.length === 1 && <div className={classNames('bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato')}>
                             {childrenRegions?.map(({ label, href }, index) =>

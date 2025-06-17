@@ -309,7 +309,7 @@ const CardTematicas = props => {
               bgColor={'bg-sandstorm'}
               region={region}
               title={'Exóticas'}
-              datatable={info?.list_especies_exoticas}
+              datatable={info?.list_especies_exoticas_total}
               especies={info?.especies_exoticas}
               parentEspecies={info?.parent_especies_exoticas}
               registros={info?.registros_exoticas}
@@ -323,10 +323,10 @@ const CardTematicas = props => {
               bgColor={'bg-sandstorm'}
               region={region}
               title={'Exóticas con potencial de invasión'}
-              datatable={info?.list_especies_exoticas_riesgo_invasion}
-              especies={info?.especies_exoticas_riesgo_invasion}
-              parentEspecies={info?.parent_especies_exoticas_riesgo_invasion}
-              registros={info?.registros_exoticas_riesgo_invasion}
+              datatable={info?.list_especies_exoticas_riesgo_invasion_total}
+              especies={info?.especies_exoticas_riesgo_invasion_total}
+              parentEspecies={info?.parent_especies_exoticas_riesgo_invasion_total}
+              registros={info?.registros_exoticas_riesgo_invasion_total}
               speciesEstimadasCol={info?.exoticas_riesgo_invasion_estimadas}
               link={`region=${slugregion}&tematica=exoticas-riesgo-invasion`}
               municipalityflag={municipalityflag}
