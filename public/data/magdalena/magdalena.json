@@ -10,7 +10,7 @@
     "subtipo": "departamento",
     "label": "Magdalena",
     "marino": true,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": 87,
     "marino_text": "; de las cuales 12.208 habitan al interior del\ncontinente y 1.989 en el mar.",
     "especies_region_total_str": "13.602",
@@ -2666,7 +2666,86 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Trichopodus pectoralis",
+          "slug_especie": "trichopodus-pectoralis",
+          "registros": 3807,
+          "url_gbif": "https://www.gbif.org/species/5211177",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 2787,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 2001,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Elaeis guineensis",
+          "slug_especie": "elaeis-guineensis",
+          "registros": 106,
+          "url_gbif": "https://www.gbif.org/species/2731882",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e33ced83c45700544e3dbc/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Calotropis procera",
+          "slug_especie": "calotropis-procera",
+          "registros": 100,
+          "url_gbif": "https://www.gbif.org/species/5414566",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7778383c45700544e401a/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Hemidactylus frenatus",
+          "slug_especie": "hemidactylus-frenatus",
+          "registros": 71,
+          "url_gbif": "https://www.gbif.org/species/5959976",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d20fcd3c16479905cba85d/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Momordica charantia",
+          "slug_especie": "momordica-charantia",
+          "registros": 59,
+          "url_gbif": "https://www.gbif.org/species/2874581",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Leucaena leucocephala",
+          "slug_especie": "leucaena-leucocephala",
+          "registros": 43,
+          "url_gbif": "https://www.gbif.org/species/2970418",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e789da83c45700544e40fa/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Mus musculus",
+          "slug_especie": "mus-musculus",
+          "registros": 26,
+          "url_gbif": "https://www.gbif.org/species/7429082",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c8a2bdf0106c67230e7434/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Cynodon dactylon",
+          "slug_especie": "cynodon-dactylon",
+          "registros": 20,
+          "url_gbif": "https://www.gbif.org/species/6109637",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e33bdc83c45700544e3db9/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

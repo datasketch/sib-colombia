@@ -10,7 +10,7 @@
     "subtipo": "departamento",
     "label": "Casanare",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": 87,
     "marino_text": ".",
     "especies_region_total_str": "6.798",
@@ -2629,7 +2629,85 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 8692,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Sus scrofa",
+          "slug_especie": "sus-scrofa",
+          "registros": 2555,
+          "url_gbif": "https://www.gbif.org/species/7705930",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cc7b75207ecea54a561e30/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Gallus gallus",
+          "slug_especie": "gallus-gallus",
+          "registros": 1101,
+          "url_gbif": "https://www.gbif.org/species/9326020",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Felis catus",
+          "slug_especie": "felis-catus",
+          "registros": 675,
+          "url_gbif": "https://www.gbif.org/species/2435035",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c5e3a7f0106c67230e73ad/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 513,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Urochloa eminii",
+          "slug_especie": "urochloa-eminii",
+          "registros": 232,
+          "url_gbif": "https://www.gbif.org/species/4150772",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Urochloa brizantha",
+          "slug_especie": "urochloa-brizantha",
+          "registros": 157,
+          "url_gbif": "https://www.gbif.org/species/2705862",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Hemidactylus frenatus",
+          "slug_especie": "hemidactylus-frenatus",
+          "registros": 78,
+          "url_gbif": "https://www.gbif.org/species/5959976",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d20fcd3c16479905cba85d/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Cynodon dactylon",
+          "slug_especie": "cynodon-dactylon",
+          "registros": 57,
+          "url_gbif": "https://www.gbif.org/species/6109637",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e33bdc83c45700544e3db9/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Ovis aries",
+          "slug_especie": "ovis-aries",
+          "registros": 38,
+          "url_gbif": "https://www.gbif.org/species/2441110",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c6bff0f0106c67230e73e4/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

@@ -562,7 +562,7 @@
     "subtipo": "municipio",
     "label": "Turmequé",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": "NA",
     "marino_text": ".",
     "especies_region_total_str": "170",
@@ -1286,7 +1286,47 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Digitalis purpurea",
+          "slug_especie": "digitalis-purpurea",
+          "registros": 7,
+          "url_gbif": "https://www.gbif.org/species/5414995",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cfcb063c16479905cba804/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Acacia melanoxylon",
+          "slug_especie": "acacia-melanoxylon",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2979000",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/595e5f352f4fd7bc7f3a210a/summary",
+          "slug_tematica": "exotica-riesgo-invasion-bajo"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Thunbergia alata",
+          "slug_especie": "thunbergia-alata",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/5415463",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7aaf583c45700544e42c6/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Senecio vulgaris",
+          "slug_especie": "senecio-vulgaris",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/3108983",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

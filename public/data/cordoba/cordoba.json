@@ -10,7 +10,7 @@
     "subtipo": "departamento",
     "label": "Córdoba",
     "marino": true,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": 87,
     "marino_text": "; de las cuales 4.508 habitan al interior del\ncontinente y 237 en el mar.",
     "especies_region_total_str": "4.689",
@@ -2685,7 +2685,86 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 2901,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 344,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Tectona grandis",
+          "slug_especie": "tectona-grandis",
+          "registros": 57,
+          "url_gbif": "https://www.gbif.org/species/2925649",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Corbicula fluminea",
+          "slug_especie": "corbicula-fluminea",
+          "registros": 42,
+          "url_gbif": "https://www.gbif.org/species/5189033",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/597235c82f4fd7bc7f3a7b76/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Hemidactylus frenatus",
+          "slug_especie": "hemidactylus-frenatus",
+          "registros": 41,
+          "url_gbif": "https://www.gbif.org/species/5959976",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d20fcd3c16479905cba85d/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Gynerium sagittatum",
+          "slug_especie": "gynerium-sagittatum",
+          "registros": 27,
+          "url_gbif": "https://www.gbif.org/species/5289743",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e34d1c83c45700544e3dc8/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Momordica charantia",
+          "slug_especie": "momordica-charantia",
+          "registros": 19,
+          "url_gbif": "https://www.gbif.org/species/2874581",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Lonchura malacca",
+          "slug_especie": "lonchura-malacca",
+          "registros": 15,
+          "url_gbif": "https://www.gbif.org/species/2493626",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e639db83c45700544e3ea1/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Pistia stratiotes",
+          "slug_especie": "pistia-stratiotes",
+          "registros": 15,
+          "url_gbif": "https://www.gbif.org/species/2870583",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7980683c45700544e41db/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Acacia mangium",
+          "slug_especie": "acacia-mangium",
+          "registros": 14,
+          "url_gbif": "https://www.gbif.org/species/2979091",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/595d2d742f4fd7bc7f3a1722/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

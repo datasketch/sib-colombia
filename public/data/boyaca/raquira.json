@@ -562,7 +562,7 @@
     "subtipo": "municipio",
     "label": "Ráquira",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": "NA",
     "marino_text": ".",
     "especies_region_total_str": "713",
@@ -1894,7 +1894,87 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 37,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 11,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Ricinus communis",
+          "slug_especie": "ricinus-communis",
+          "registros": 9,
+          "url_gbif": "https://www.gbif.org/species/5380041",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e79c7b83c45700544e4231/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Dysphania ambrosioides",
+          "slug_especie": "dysphania-ambrosioides",
+          "registros": 5,
+          "url_gbif": "https://www.gbif.org/species/5568446",
+          "slug_tematica": "exotica-riesgo-invasion-bajo"
+        },
+        {
+          "label": "Kalanchoe pinnata",
+          "slug_especie": "kalanchoe-pinnata",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/2985930",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/59152fa2f827bf0c0ced3b50/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Digitalis purpurea",
+          "slug_especie": "digitalis-purpurea",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/5414995",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cfcb063c16479905cba804/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Anthoxanthum odoratum",
+          "slug_especie": "anthoxanthum-odoratum",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2705975",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5e39baf97312d26d51df3f86/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Cenchrus purpureus",
+          "slug_especie": "cenchrus-purpureus",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/5828220",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7788183c45700544e4021/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Thunbergia alata",
+          "slug_especie": "thunbergia-alata",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/5415463",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7aaf583c45700544e42c6/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Anser anser",
+          "slug_especie": "anser-anser",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2498036",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c666e0f0106c67230e73c0/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

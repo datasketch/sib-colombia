@@ -562,7 +562,7 @@
     "subtipo": "municipio",
     "label": "Chivatá",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": "NA",
     "marino_text": ".",
     "especies_region_total_str": "20",
@@ -870,7 +870,7 @@
         }
       ],
       "list_especies_invasoras": [],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": []
     }
   ],
   "grupos_biologicos": [

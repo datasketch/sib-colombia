@@ -10,7 +10,7 @@
     "subtipo": "departamento",
     "label": "Vichada",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": 87,
     "marino_text": ".",
     "especies_region_total_str": "4.908",
@@ -2534,7 +2534,86 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 366,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Digitonthophagus gazella",
+          "slug_especie": "digitonthophagus-gazella",
+          "registros": 132,
+          "url_gbif": "https://www.gbif.org/species/1092466",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 44,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Sus scrofa",
+          "slug_especie": "sus-scrofa",
+          "registros": 5,
+          "url_gbif": "https://www.gbif.org/species/7705930",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cc7b75207ecea54a561e30/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Urochloa brizantha",
+          "slug_especie": "urochloa-brizantha",
+          "registros": 5,
+          "url_gbif": "https://www.gbif.org/species/2705862",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Rattus rattus",
+          "slug_especie": "rattus-rattus",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/2439270",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cbb061207ecea54a561dfc/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Hemidactylus mabouia",
+          "slug_especie": "hemidactylus-mabouia",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/5959942",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d43dec3c16479905cba879/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Hyparrhenia rufa",
+          "slug_especie": "hyparrhenia-rufa",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2703246",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e3514883c45700544e3dcd/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Neustanthus phaseoloides",
+          "slug_especie": "neustanthus-phaseoloides",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2977687",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5915ef88f827bf0c0ced42a6/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Azolla filiculoides",
+          "slug_especie": "azolla-filiculoides",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2650107",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d04c673c16479905cba818/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

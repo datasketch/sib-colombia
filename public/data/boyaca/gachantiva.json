@@ -562,7 +562,7 @@
     "subtipo": "municipio",
     "label": "Gachantivá",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": "NA",
     "marino_text": ".",
     "especies_region_total_str": "747",
@@ -1862,7 +1862,87 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 15,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Ricinus communis",
+          "slug_especie": "ricinus-communis",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/5380041",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e79c7b83c45700544e4231/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Poecilia reticulata",
+          "slug_especie": "poecilia-reticulata",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2350050",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/596f438d2f4fd7bc7f3a527b/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Holcus lanatus",
+          "slug_especie": "holcus-lanatus",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2706164",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d9b36e3c16479905cba9b5/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Acacia melanoxylon",
+          "slug_especie": "acacia-melanoxylon",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2979000",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/595e5f352f4fd7bc7f3a210a/summary",
+          "slug_tematica": "exotica-riesgo-invasion-bajo"
+        },
+        {
+          "label": "Mus musculus",
+          "slug_especie": "mus-musculus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/7429082",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c8a2bdf0106c67230e7434/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Pavo cristatus",
+          "slug_especie": "pavo-cristatus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/9451184",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Pistia stratiotes",
+          "slug_especie": "pistia-stratiotes",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2870583",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7980683c45700544e41db/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Rattus rattus",
+          "slug_especie": "rattus-rattus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2439270",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cbb061207ecea54a561dfc/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Tithonia diversifolia",
+          "slug_especie": "tithonia-diversifolia",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5396557",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/593b777a2f4fd7bc7f387e0f/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

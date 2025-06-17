@@ -562,7 +562,7 @@
     "subtipo": "municipio",
     "label": "Monguí",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": "NA",
     "marino_text": ".",
     "especies_region_total_str": "504",
@@ -1810,7 +1810,47 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Senecio madagascariensis",
+          "slug_especie": "senecio-madagascariensis",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/3107722",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Digitalis purpurea",
+          "slug_especie": "digitalis-purpurea",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/5414995",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cfcb063c16479905cba804/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Anthoxanthum odoratum",
+          "slug_especie": "anthoxanthum-odoratum",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2705975",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5e39baf97312d26d51df3f86/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Cenchrus clandestinus",
+          "slug_especie": "cenchrus-clandestinus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5828201",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7782683c45700544e401e/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

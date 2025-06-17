@@ -562,7 +562,7 @@
     "subtipo": "municipio",
     "label": "Tuta",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": "NA",
     "marino_text": ".",
     "especies_region_total_str": "211",
@@ -1672,7 +1672,87 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 16,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Anser anser",
+          "slug_especie": "anser-anser",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2498036",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c666e0f0106c67230e73c0/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Taraxacum officinale",
+          "slug_especie": "taraxacum-officinale",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/5394163",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7aa0883c45700544e42c0/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Acacia melanoxylon",
+          "slug_especie": "acacia-melanoxylon",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2979000",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/595e5f352f4fd7bc7f3a210a/summary",
+          "slug_tematica": "exotica-riesgo-invasion-bajo"
+        },
+        {
+          "label": "Anas platyrhynchos",
+          "slug_especie": "anas-platyrhynchos",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/9761484",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c02fc4f0106c67230e72f8/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Azolla filiculoides",
+          "slug_especie": "azolla-filiculoides",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2650107",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d04c673c16479905cba818/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Cyperus papyrus",
+          "slug_especie": "cyperus-papyrus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2716311",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56de221683c45700544e3c03/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Holcus lanatus",
+          "slug_especie": "holcus-lanatus",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2706164",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d9b36e3c16479905cba9b5/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Senecio madagascariensis",
+          "slug_especie": "senecio-madagascariensis",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/3107722",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

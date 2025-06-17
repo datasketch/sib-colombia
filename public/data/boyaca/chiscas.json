@@ -562,7 +562,7 @@
     "subtipo": "municipio",
     "label": "Chiscas",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": "NA",
     "marino_text": ".",
     "especies_region_total_str": "304",
@@ -1579,7 +1579,16 @@
         }
       ],
       "list_especies_invasoras": [],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Anthoxanthum odoratum",
+          "slug_especie": "anthoxanthum-odoratum",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2705975",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5e39baf97312d26d51df3f86/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

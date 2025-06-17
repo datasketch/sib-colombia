@@ -10,7 +10,7 @@
     "subtipo": "departamento",
     "label": "Risaralda",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": 87,
     "marino_text": ".",
     "especies_region_total_str": "8.109",
@@ -2643,7 +2643,88 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 7127,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 1381,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Lonchura malacca",
+          "slug_especie": "lonchura-malacca",
+          "registros": 303,
+          "url_gbif": "https://www.gbif.org/species/2493626",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e639db83c45700544e3ea1/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Anas platyrhynchos",
+          "slug_especie": "anas-platyrhynchos",
+          "registros": 38,
+          "url_gbif": "https://www.gbif.org/species/9761484",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c02fc4f0106c67230e72f8/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Thunbergia alata",
+          "slug_especie": "thunbergia-alata",
+          "registros": 35,
+          "url_gbif": "https://www.gbif.org/species/5415463",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7aaf583c45700544e42c6/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Hedychium coronarium",
+          "slug_especie": "hedychium-coronarium",
+          "registros": 29,
+          "url_gbif": "https://www.gbif.org/species/7883492",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7860c83c45700544e40b9/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Taraxacum officinale",
+          "slug_especie": "taraxacum-officinale",
+          "registros": 24,
+          "url_gbif": "https://www.gbif.org/species/5394163",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7aa0883c45700544e42c0/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Spathodea campanulata",
+          "slug_especie": "spathodea-campanulata",
+          "registros": 21,
+          "url_gbif": "https://www.gbif.org/species/3172574",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7a75583c45700544e42ab/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado/ Alto"
+        },
+        {
+          "label": "Hemidactylus frenatus",
+          "slug_especie": "hemidactylus-frenatus",
+          "registros": 17,
+          "url_gbif": "https://www.gbif.org/species/5959976",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d20fcd3c16479905cba85d/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Ricinus communis",
+          "slug_especie": "ricinus-communis",
+          "registros": 13,
+          "url_gbif": "https://www.gbif.org/species/5380041",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e79c7b83c45700544e4231/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

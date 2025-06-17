@@ -10,7 +10,7 @@
     "subtipo": "departamento",
     "label": "Tolima",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": 87,
     "marino_text": ".",
     "especies_region_total_str": "8.803",
@@ -617,7 +617,7 @@
     },
     {
       "id": "9",
-      "text": "En Tolima, 10 % de las aves observadas son migratorias."
+      "text": "En Tolima, 10,5 % de las aves observadas son migratorias."
     },
     {
       "id": "10",
@@ -633,7 +633,7 @@
     },
     {
       "id": "13",
-      "text": "La Universidad Nacional de Colombia, ha compartido datos para 35 % de las especies presentes en Tolima."
+      "text": "La Universidad Nacional de Colombia, ha compartido datos para 34 % de las especies presentes en Tolima."
     },
     {
       "id": "14",
@@ -2779,7 +2779,86 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 9766,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 2822,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Lonchura malacca",
+          "slug_especie": "lonchura-malacca",
+          "registros": 1295,
+          "url_gbif": "https://www.gbif.org/species/2493626",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e639db83c45700544e3ea1/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Poecilia reticulata",
+          "slug_especie": "poecilia-reticulata",
+          "registros": 610,
+          "url_gbif": "https://www.gbif.org/species/2350050",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/596f438d2f4fd7bc7f3a527b/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Holcus lanatus",
+          "slug_especie": "holcus-lanatus",
+          "registros": 35,
+          "url_gbif": "https://www.gbif.org/species/2706164",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d9b36e3c16479905cba9b5/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Digitonthophagus gazella",
+          "slug_especie": "digitonthophagus-gazella",
+          "registros": 30,
+          "url_gbif": "https://www.gbif.org/species/1092466",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Gallus gallus",
+          "slug_especie": "gallus-gallus",
+          "registros": 27,
+          "url_gbif": "https://www.gbif.org/species/9326020",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Mus musculus",
+          "slug_especie": "mus-musculus",
+          "registros": 24,
+          "url_gbif": "https://www.gbif.org/species/7429082",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c8a2bdf0106c67230e7434/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Cenchrus clandestinus",
+          "slug_especie": "cenchrus-clandestinus",
+          "registros": 22,
+          "url_gbif": "https://www.gbif.org/species/5828201",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7782683c45700544e401e/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Gynerium sagittatum",
+          "slug_especie": "gynerium-sagittatum",
+          "registros": 22,
+          "url_gbif": "https://www.gbif.org/species/5289743",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e34d1c83c45700544e3dc8/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

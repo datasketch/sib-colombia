@@ -562,7 +562,7 @@
     "subtipo": "municipio",
     "label": "Chita",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": "NA",
     "marino_text": ".",
     "especies_region_total_str": "288",
@@ -1615,7 +1615,23 @@
         }
       ],
       "list_especies_invasoras": [],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Acacia melanoxylon",
+          "slug_especie": "acacia-melanoxylon",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/2979000",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/595e5f352f4fd7bc7f3a210a/summary",
+          "slug_tematica": "exotica-riesgo-invasion-bajo"
+        },
+        {
+          "label": "Dysphania ambrosioides",
+          "slug_especie": "dysphania-ambrosioides",
+          "registros": 1,
+          "url_gbif": "https://www.gbif.org/species/5568446",
+          "slug_tematica": "exotica-riesgo-invasion-bajo"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

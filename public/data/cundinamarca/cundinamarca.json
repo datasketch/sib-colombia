@@ -10,7 +10,7 @@
     "subtipo": "departamento",
     "label": "Cundinamarca",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": 87,
     "marino_text": ".",
     "especies_region_total_str": "16.066",
@@ -2725,7 +2725,88 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 24003,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Acacia decurrens",
+          "slug_especie": "acacia-decurrens",
+          "registros": 12571,
+          "url_gbif": "https://www.gbif.org/species/2979778",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c3d1e2f0106c67230e7360/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 6990,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Acacia melanoxylon",
+          "slug_especie": "acacia-melanoxylon",
+          "registros": 2841,
+          "url_gbif": "https://www.gbif.org/species/2979000",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/595e5f352f4fd7bc7f3a210a/summary",
+          "slug_tematica": "exotica-riesgo-invasion-bajo"
+        },
+        {
+          "label": "Thunbergia alata",
+          "slug_especie": "thunbergia-alata",
+          "registros": 743,
+          "url_gbif": "https://www.gbif.org/species/5415463",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7aaf583c45700544e42c6/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Digitalis purpurea",
+          "slug_especie": "digitalis-purpurea",
+          "registros": 725,
+          "url_gbif": "https://www.gbif.org/species/5414995",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56cfcb063c16479905cba804/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Pteridium aquilinum",
+          "slug_especie": "pteridium-aquilinum",
+          "registros": 523,
+          "url_gbif": "https://www.gbif.org/species/5275012",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e79bb383c45700544e422b/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Eucalyptus camaldulensis",
+          "slug_especie": "eucalyptus-camaldulensis",
+          "registros": 520,
+          "url_gbif": "https://www.gbif.org/species/3176197",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e783d783c45700544e4092/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Anas platyrhynchos",
+          "slug_especie": "anas-platyrhynchos",
+          "registros": 430,
+          "url_gbif": "https://www.gbif.org/species/9761484",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c02fc4f0106c67230e72f8/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Taraxacum officinale",
+          "slug_especie": "taraxacum-officinale",
+          "registros": 256,
+          "url_gbif": "https://www.gbif.org/species/5394163",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7aa0883c45700544e42c0/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

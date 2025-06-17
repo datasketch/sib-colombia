@@ -10,7 +10,7 @@
     "subtipo": "departamento",
     "label": "Guainía",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": 87,
     "marino_text": ".",
     "especies_region_total_str": "4.343",
@@ -2464,7 +2464,87 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 429,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 330,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Salvinia auriculata",
+          "slug_especie": "salvinia-auriculata",
+          "registros": 7,
+          "url_gbif": "https://www.gbif.org/species/5274861",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5e59ae4b49ec9418588eb9c8/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Momordica charantia",
+          "slug_especie": "momordica-charantia",
+          "registros": 6,
+          "url_gbif": "https://www.gbif.org/species/2874581",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Pistia stratiotes",
+          "slug_especie": "pistia-stratiotes",
+          "registros": 6,
+          "url_gbif": "https://www.gbif.org/species/2870583",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7980683c45700544e41db/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Lagenaria siceraria",
+          "slug_especie": "lagenaria-siceraria",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/2874672",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/5915d752f827bf0c0ced40bd/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Azolla filiculoides",
+          "slug_especie": "azolla-filiculoides",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2650107",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d04c673c16479905cba818/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Coix lacryma-jobi",
+          "slug_especie": "coix-lacryma-jobi",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2706301",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d9e4683c16479905cba9c5/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Hemidactylus frenatus",
+          "slug_especie": "hemidactylus-frenatus",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/5959976",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d20fcd3c16479905cba85d/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Lemna aequinoctialis",
+          "slug_especie": "lemna-aequinoctialis",
+          "registros": 2,
+          "url_gbif": "https://www.gbif.org/species/2867616",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7895783c45700544e40f1/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

@@ -562,7 +562,7 @@
     "subtipo": "municipio",
     "label": "Úmbita",
     "marino": false,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": "NA",
     "marino_text": ".",
     "especies_region_total_str": "196",
@@ -1445,7 +1445,24 @@
         }
       ],
       "list_especies_invasoras": [],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 4,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Thunbergia alata",
+          "slug_especie": "thunbergia-alata",
+          "registros": 3,
+          "url_gbif": "https://www.gbif.org/species/5415463",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7aaf583c45700544e42c6/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [

@@ -10,7 +10,7 @@
     "subtipo": "departamento",
     "label": "Antioquia",
     "marino": true,
-    "fecha_corte": "20088",
+    "fecha_corte": "diciembre 31 de 2024",
     "estimada_region_ref_id": 87,
     "marino_text": "; de las cuales 21.662 habitan al interior del\ncontinente y 297 en el mar.",
     "especies_region_total_str": "21.895",
@@ -2735,7 +2735,85 @@
           "slug_tematica": "invasoras"
         }
       ],
-      "list_especies_exoticas_riesgo_invasion": []
+      "list_especies_exoticas_riesgo_invasion_total": [
+        {
+          "label": "Bubulcus ibis",
+          "slug_especie": "bubulcus-ibis",
+          "registros": 23340,
+          "url_gbif": "https://www.gbif.org/species/2480830",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c20d14f0106c67230e7320/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Columba livia",
+          "slug_especie": "columba-livia",
+          "registros": 5897,
+          "url_gbif": "https://www.gbif.org/species/2495414",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c4b5f1f0106c67230e7387/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Leucaena leucocephala",
+          "slug_especie": "leucaena-leucocephala",
+          "registros": 5147,
+          "url_gbif": "https://www.gbif.org/species/2970418",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e789da83c45700544e40fa/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Hemidactylus frenatus",
+          "slug_especie": "hemidactylus-frenatus",
+          "registros": 964,
+          "url_gbif": "https://www.gbif.org/species/5959976",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56d20fcd3c16479905cba85d/summary",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Felis catus",
+          "slug_especie": "felis-catus",
+          "registros": 885,
+          "url_gbif": "https://www.gbif.org/species/2435035",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56c5e3a7f0106c67230e73ad/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Trichopodus pectoralis",
+          "slug_especie": "trichopodus-pectoralis",
+          "registros": 706,
+          "url_gbif": "https://www.gbif.org/species/5211177",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Lepidodactylus lugubris",
+          "slug_especie": "lepidodactylus-lugubris",
+          "registros": 548,
+          "url_gbif": "https://www.gbif.org/species/9164170",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        },
+        {
+          "label": "Thunbergia alata",
+          "slug_especie": "thunbergia-alata",
+          "registros": 484,
+          "url_gbif": "https://www.gbif.org/species/5415463",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e7aaf583c45700544e42c6/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Lonchura malacca",
+          "slug_especie": "lonchura-malacca",
+          "registros": 360,
+          "url_gbif": "https://www.gbif.org/species/2493626",
+          "url_cbc": "https://catalogo.biodiversidad.co/file/56e639db83c45700544e3ea1/summary",
+          "slug_tematica": "exotica-riesgo-invasion-alto"
+        },
+        {
+          "label": "Artocarpus altilis",
+          "slug_especie": "artocarpus-altilis",
+          "registros": 354,
+          "url_gbif": "https://www.gbif.org/species/2984573",
+          "slug_tematica": "exotica-riesgo-invasion-moderado"
+        }
+      ]
     }
   ],
   "grupos_biologicos": [
