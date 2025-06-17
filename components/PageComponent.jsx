@@ -225,12 +225,16 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                               onChange={handleChangeDepartamento}
                             >
                               {
-                                departamentos?.map((item, key) =>
-                                  <MenuItem key={key} onClick={() => handleMenuItemClick(item.slug)}>
-                                    {item.label}
-                                    {/* <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a> */}
-                                  </MenuItem>
-                                )}
+                                departamentos
+                                  ?.slice()
+                                  .sort((a, b) => a.label.localeCompare(b.label))
+                                  .map((item, key) =>
+                                    <MenuItem key={key} onClick={() => handleMenuItemClick(item.slug)}>
+                                      {item.label}
+                                      {/* <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a> */}
+                                    </MenuItem>
+                                  )
+                              }
 
                             </Select>
                           </FormControl>
@@ -244,12 +248,17 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
                               onChange={handleChangeMunicipio}
                             >
                               {
-                                municipios?.map((item, key) =>
-                                  <MenuItem key={key} onClick={() => handleMenuItemClick(item.slug)}>
-                                    {item.label}
-                                    {/* <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a> */}
-                                  </MenuItem>
-                                )}
+                                municipios
+                                  ?.slice()
+                                  .sort((a, b) => a.label.localeCompare(b.label))
+                                  .map((item, key) =>
+                                    <MenuItem key={key} onClick={() => handleMenuItemClick(item.slug)}>
+                                      {item.label}
+                                      {/* <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a> */}
+                                    </MenuItem>
+                                  )
+                              }
+
                             </Select>
                           </FormControl>
                       }

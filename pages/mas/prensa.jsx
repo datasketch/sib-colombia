@@ -75,7 +75,6 @@ function prensa () {
                 <span className='font-lato '>Productos y Servicios</span> */}
                 <span className='font-lato '>Sistema de Información sobre Biodiversidad de Colombia</span>
                 <span className='font-lato '>sib@humboldt.org.co</span>
-                <span className='font-lato '>PBX: (+57) (601) 320 2767</span>
                 <span className='font-lato '>Colombia</span>
               </div>
             </div>
@@ -84,9 +83,9 @@ function prensa () {
       </div>
       <div className='max-w-screen-2xl mx-auto w-11/12 lg:w-9/12 pb-12'>
         <span className='text-flame font-black font-inter text-xl md:text-2xl'>Contenidos relevantes</span>
-        <div className='py-6 grid grid-cols-1 md:grid-cols-2 gap-6'>
+        <div className='py-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch'>
           {prensa.map((el, key) =>
-            <div className='mx-auto lg:mx-0' key={key}>
+            <div className='mx-auto lg:mx-0 h-full' key={key}>
               <CardContenido
                 date={el.date}
                 title={el.title}
