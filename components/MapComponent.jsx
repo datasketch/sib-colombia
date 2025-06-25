@@ -7,12 +7,12 @@ const MapComponent = ({ data }) => {
   const [hoveredCountry, setHoveredCountry] = useState({ name: '', position: '' })
 
   const colorSelector = (name, filter) => {
-    const contain = filter?.find(c => c['..gd_name'] === name)
+    const contain = filter?.find(c => c['..gt_name'] === name)
     return selectColorRanking(contain?.puesto)
   }
 
   const mouseEnterHandler = (name) => {
-    const selectedCountry = data.country_ranking.find(c => c['..gd_name'] === name)
+    const selectedCountry = data.country_ranking.find(c => c['..gt_name'] === name)
     if (selectedCountry === undefined) return setHoveredCountry({ pais: '', position: '', categorie: '' })
     setHoveredCountry({ pais: selectedCountry?.pais, position: selectedCountry?.puesto })
   }
