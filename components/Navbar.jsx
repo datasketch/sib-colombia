@@ -204,6 +204,35 @@ export default function Navbar () {
               href: '/narino/resguardo-indigena-pialapi-pueblo-viejo'
             }
           ]
+        },
+        {
+          label: 'Regiones Naturales',
+          children: [
+            {
+              label: 'Amazonía',
+              href: '/region-amazonia'
+            },
+            {
+              label: 'Andina',
+              href: '#'
+            },
+            {
+              label: 'Caribe',
+              href: '#'
+            },
+            {
+              label: 'Insular',
+              href: '#'
+            },
+            {
+              label: 'Orinoquía',
+              href: '#'
+            },
+            {
+              label: 'Pacífico',
+              href: '#'
+            }
+          ]
         }
       ]
     },
@@ -252,9 +281,8 @@ export default function Navbar () {
     setChildrenRegions(children)
   }
 
-  // Find departamentos array in nav
-  const departamentos = nav[1].childs[0].children.slice().sort((a, b) => a.label.localeCompare(b.label))
-  const columns = splitIntoColumns(departamentos, 4)
+  // Create columns for the currently selected children
+  const selectedColumns = splitIntoColumns(childrenRegions, 4)
 
   return (
     <header className="absolute top-0 left-0 w-full z-40 py-2">
@@ -286,9 +314,9 @@ export default function Navbar () {
                               {el.children && <img src={item.icon} alt='icon arrow' />}
                             </DropDown.Item>
                           </div>
-                          {childrenRegions.length !== 0 && childrenRegions.length !== 1 && (
+                          {childrenRegions.length !== 0 && childrenRegions.length > 6 && (
                             <div className={classNames('bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-400 ease-in -right-2/3')}>
-                              {columns.map((col, colIdx) => (
+                              {selectedColumns.map((col, colIdx) => (
                                 <div key={colIdx} className="flex flex-col gap-2">
                                   {col.map(({ label, href }, idx) => {
                                     const isHighlighted = highlightedDepartments.includes(href.replace('/', ''))
@@ -311,18 +339,33 @@ export default function Navbar () {
                             </div>
                           )}
 
-                          {childrenRegions.length === 1 && <div className={classNames('bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato')}>
-                            {childrenRegions?.map(({ label, href }, index) =>
-                              <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
-                            )}
+                          {childrenRegions.length !== 0 && childrenRegions.length <= 6 && <div className={classNames('bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato')}>
+                            {childrenRegions?.map(({ label, href }, index) => {
+                              // Only apply graying out logic for Regiones Naturales
+                              const isRegionesNaturales = childrenRegions.length === 6 && childrenRegions.some(item => item.href === '/region-amazonia')
+                              const isAmazonia = href === '/region-amazonia'
+
+                              if (isRegionesNaturales) {
+                                return (
+                                  <a
+                                    href={isAmazonia ? href : '#'}
+                                    key={index}
+                                    className={`${isAmazonia ? `text-black hover:font-bold hover:text-${item.color}` : 'text-gray-400 cursor-not-allowed'}`}
+                                    onClick={isAmazonia ? undefined : (e) => e.preventDefault()}
+                                  >
+                                    {label}
+                                  </a>
+                                )
+                              } else {
+                                // Normal behavior for other sections
+                                return (
+                                  <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>
+                                    {label}
+                                  </a>
+                                )
+                              }
+                            })}
                           </div>}
-                          {/* {
-                            childrenRegions.length !== 1 && <div className='bg-white w-[741px] absolute top-0 px-7 py-5 grid grid-cols-4 gap-4 text-sm font-lato duration-500 ease-in -right-2/3'>
-                            {childrenRegions?.map(({ label, href }, index) =>
-                              <a href={href} key={index} className={`text-black hover:font-bold hover:text-${item.color}`}>{label}</a>
-                            )}
-                          </div>
-                          } */}
                         </div>
                       )
                       }
