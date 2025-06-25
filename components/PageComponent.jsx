@@ -394,17 +394,23 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         </div>
       </div>
       <div>
-        {slug === 'region-amazonia' ? (
-          <div className='flex justify-center items-center py-10'>
-            <img
-              src="/images/mapas-svg-dep/region-amazonia.svg"
-              alt="Mapa de la región Amazonía"
-              className='max-w-full h-[50vh]'
-            />
-          </div>
-        ) : (
-          <iframe src={appURL} className='h-screen w-full'></iframe>
-        )}
+        {(() => {
+          if (slug === 'region-amazonia') {
+            return (
+              <div className='flex justify-center items-center py-10'>
+                <img
+                  src="/images/mapas-svg-dep/region-amazonia.svg"
+                  alt="Mapa de la región Amazonía"
+                  className='max-w-full h-[50vh]'
+                />
+              </div>
+            )
+          } else {
+            return (
+              <iframe src={appURL} className='h-screen w-full'></iframe>
+            )
+          }
+        })()}
       </div>
       {/* explorador */}
 
