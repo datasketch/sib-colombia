@@ -14,13 +14,7 @@ export default function Navbar () {
     'boyaca',
     'narino',
     'tolima',
-    'santander',
-    'amazonas',
-    'caqueta',
-    'guainia',
-    'guaviare',
-    'putumayo',
-    'vaupes'
+    'santander'
   ]
 
   // Helper to split array into N columns (top-to-bottom)
@@ -45,8 +39,7 @@ export default function Navbar () {
           children: [
             {
               label: 'Amazonas',
-              href: '/amazonas',
-              isHighlighted: true
+              href: '/amazonas'
             },
             {
               label: 'Antioquia',
@@ -79,8 +72,7 @@ export default function Navbar () {
             },
             {
               label: 'Caquetá',
-              href: '/caqueta',
-              isHighlighted: true
+              href: '/caqueta'
             },
             {
               label: 'Casanare',
@@ -108,13 +100,11 @@ export default function Navbar () {
             },
             {
               label: 'Guainía',
-              href: '/guainia',
-              isHighlighted: true
+              href: '/guainia'
             },
             {
               label: 'Guaviare',
-              href: '/guaviare',
-              isHighlighted: true
+              href: '/guaviare'
             },
             {
               label: 'Huila',
@@ -143,8 +133,7 @@ export default function Navbar () {
             },
             {
               label: 'Putumayo',
-              href: '/putumayo',
-              isHighlighted: true
+              href: '/putumayo'
             },
             {
               label: 'Quindío',
@@ -178,8 +167,7 @@ export default function Navbar () {
             },
             {
               label: 'Vaupés',
-              href: '/vaupes',
-              isHighlighted: true
+              href: '/vaupes'
             },
             {
               label: 'Vichada',
