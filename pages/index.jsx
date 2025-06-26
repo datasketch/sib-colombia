@@ -93,13 +93,19 @@ const ENUM_DESTACADAS = [
     type: 'Reserva forestal',
     slug: 'reserva-forestal-la-planada',
     label: 'La Planada',
-    link: '/narino/reserva-forestal-la-planada'
+    link: '/especial/reserva-forestal-la-planada'
   },
   {
     type: 'Resguardo indígena',
     slug: 'resguardo-indigena-pialapi-pueblo-viejo',
     label: 'Pialapí Pueblo Viejo',
-    link: '/narino/resguardo-indigena-pialapi-pueblo-viejo'
+    link: '/especial/resguardo-indigena-pialapi-pueblo-viejo'
+  },
+  {
+    type: 'Región natural',
+    slug: 'region-amazonia',
+    label: 'Amazonía',
+    link: '/especial/region-amazonia'
   }
 ]
 

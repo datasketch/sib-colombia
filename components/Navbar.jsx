@@ -192,7 +192,7 @@ export default function Navbar () {
           children: [
             {
               label: 'La Planada',
-              href: '/narino/reserva-forestal-la-planada'
+              href: '/especial/reserva-forestal-la-planada'
             }
           ]
         },
@@ -210,7 +210,7 @@ export default function Navbar () {
           children: [
             {
               label: 'Amazonía',
-              href: '/region-amazonia'
+              href: '/especial/region-amazonia'
             },
             {
               label: 'Andina',
@@ -342,8 +342,8 @@ export default function Navbar () {
                           {childrenRegions.length !== 0 && childrenRegions.length <= 6 && <div className={classNames('bg-white w-full h-full absolute top-0 left-full py-1.5 px-2 grid grid-cols-1 text-sm font-lato')}>
                             {childrenRegions?.map(({ label, href }, index) => {
                               // Only apply graying out logic for Regiones Naturales
-                              const isRegionesNaturales = childrenRegions.length === 6 && childrenRegions.some(item => item.href === '/region-amazonia')
-                              const isAmazonia = href === '/region-amazonia'
+                              const isRegionesNaturales = childrenRegions.length === 6 && childrenRegions.some(item => item.href === '/especial/region-amazonia')
+                              const isAmazonia = href === '/especial/region-amazonia'
 
                               if (isRegionesNaturales) {
                                 return (
