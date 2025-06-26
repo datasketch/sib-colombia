@@ -180,7 +180,7 @@ export default function Navbar () {
           children: [
             {
               label: 'La Planada',
-              href: '/narino/reserva-forestal-la-planada'
+              href: '/especial/reserva-forestal-la-planada'
             }
           ]
         },
@@ -189,36 +189,7 @@ export default function Navbar () {
           children: [
             {
               label: 'Pialapí Pueblo Viejo',
-              href: '/narino/resguardo-indigena-pialapi-pueblo-viejo'
-            }
-          ]
-        },
-        {
-          label: 'Regiones Naturales',
-          children: [
-            {
-              label: 'Amazonía',
-              href: '/region-amazonia'
-            },
-            {
-              label: 'Andina',
-              href: '#'
-            },
-            {
-              label: 'Caribe',
-              href: '#'
-            },
-            {
-              label: 'Insular',
-              href: '#'
-            },
-            {
-              label: 'Orinoquía',
-              href: '#'
-            },
-            {
-              label: 'Pacífico',
-              href: '#'
+              href: '/especial/resguardo-indigena-pialapi-pueblo-viejo'
             }
           ]
         }
