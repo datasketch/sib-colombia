@@ -54,7 +54,12 @@
     opacity: 0.25 !important;
   }
   .slick-dots {
-    bottom: -35px !important;
+    bottom: 10px !important;
+  }
+  
+  /* Fix for white strip between slider and next section */
+  .slick-slider {
+    margin-bottom: 10px !important;
   }
   .slick-dots li {
     margin: 0 10px !important;

@@ -5,9 +5,11 @@ import HeadRegion from '../../components/headers/HeadRegion'
 import { AppContext } from '../_app'
 import { getStandaloneRegionData, getMunicipalityData } from '../../lib/regions'
 import PageComponent from '../../components/PageComponent'
+import SliderBanner from '../../components/SliderBanner'
+import Gallery from '../../components/Gallery'
 
 function EspecialRegion ({ data, slug, sponsors }) {
-  const { general_info: generalInfo } = data
+  const { general_info: generalInfo, slides, gallery } = data
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
 
   useEffect(() => {
@@ -17,6 +19,11 @@ function EspecialRegion ({ data, slug, sponsors }) {
 
     }
   }, [data])
+
+  // Create a custom data object for region-amazonia without slides to avoid duplicate sliders
+  const customData = slug === 'region-amazonia'
+    ? { ...data, slides: [], gallery: [] } // Remove slides and gallery from PageComponent for region-amazonia
+    : data
 
   return (
     <>
@@ -34,33 +41,34 @@ function EspecialRegion ({ data, slug, sponsors }) {
         marine={generalInfo.marino}
         municipality
       />
-      <PageComponent data={{ ...data, patrocinador: sponsors }} slug={slug} municipality={slug} municipalityflag />
+
+      {/* Gallery Component for region-amazonia */}
+      {slug === 'region-amazonia' && gallery && gallery.length > 0 && <Gallery gallery={gallery} />}
+
+      {/* SliderBanner Component for region-amazonia */}
+      {slug === 'region-amazonia' && slides && (
+        <SliderBanner
+          slides={slides}
+          region={generalInfo.label}
+          municipalityflag={true}
+          parentlabel="Colombia"
+        />
+      )}
+
+      {/* PageComponent for all regions */}
+      <PageComponent data={{ ...customData, patrocinador: sponsors }} slug={slug} municipality={slug} municipalityflag />
     </>
   )
 }
 
-export async function getStaticPaths () {
-  // Define the special regions (excluding region-amazonia which has its own static file)
-  const specialRegions = ['reserva-forestal-la-planada', 'resguardo-indigena-pialapi-pueblo-viejo']
-
-  const paths = specialRegions.map(region => ({
-    params: { region }
-  }))
-
-  return {
-    fallback: false,
-    paths
-  }
-}
-
-export async function getStaticProps (context) {
-  const { region } = context.params
+export async function getServerSideProps () {
+  const region = 'region-amazonia'
 
   // Load data from the standalone folder
   const content = await getStandaloneRegionData(region)
 
-  // For sponsors, use Nariño for these regions
-  const parentRegion = 'narino'
+  // For sponsors, use Colombia for region-amazonia
+  const parentRegion = 'colombia'
   const regionData = await getMunicipalityData(parentRegion, parentRegion)
 
   return {

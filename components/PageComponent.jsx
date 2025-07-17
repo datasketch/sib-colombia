@@ -39,7 +39,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
-  const appURL = `https://services.datasketch.co/org_sibhumboldt_sibdata_app/?region=${slug}`
+  const appURL = `https://services.datasketch.co/org_sibhumboldt_sibdata_app2/?region=${slug}`
   /* `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}` */
   const [municipio, setMunicipio] = useState('')
   const [departamento, setDepartamento] = useState('')
@@ -101,15 +101,17 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   return (
     <>
       {gallery.length !== 0 && <Gallery gallery={gallery} />}
-      <div className='bg-white-3 pt-3 my-3'>
-        <div className='mx-auto w-10/12 max-w-screen-2xl'>
-          <SimpleSlider dots infinite slidestoshow={1} responsiveSlidesToShow={1}>
-            {slides.map((element, key) =>
-              <Slides key={key} data={element} region={generalInfo.label} municipalityflag={municipalityflag} parentlabel={generalInfo.parent_label} />
-            )}
-          </SimpleSlider>
+      {slides && slides.length > 0 && (
+        <div className='bg-white-3 pt-3 mt-3 mb-0'>
+          <div className='mx-auto w-10/12 max-w-screen-2xl'>
+            <SimpleSlider dots infinite slidestoshow={1} responsiveSlidesToShow={1}>
+              {slides.map((element, key) =>
+                <Slides key={key} data={element} region={generalInfo.label} municipalityflag={municipalityflag} parentlabel={generalInfo.parent_label} />
+              )}
+            </SimpleSlider>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Grupos Tematicas */}
       {navTematica.length !== 0 && tematica.length !== 0 && <div className='py-10 bg-white-2'>
