@@ -79,14 +79,17 @@ const MapRegionAmazonia = ({ mapType = 'municipios', dataType = 'species' }) => 
     const currentValue = dataType === 'species' ? especies : registros
     const department = departments.find(d => d.id === properties.id)
 
+    let departmentLink = ''
+    if (department) {
+      departmentLink = `<div class='text-xs text-blue-600'><a href="${department.link}" target="_blank">Ver más detalles →</a></div>`
+    }
+
     const content = `
       <div class='popup bg-white p-3 rounded-lg shadow-lg'>
         <div class='font-bold text-lg mb-2'>${name}</div>
         <div class='text-sm mb-1'><strong>Especies:</strong> ${especies.toLocaleString()}</div>
         <div class='text-sm mb-2'><strong>Registros:</strong> ${registros.toLocaleString()}</div>
-        ${department
-          ? `<div class='text-xs text-blue-600'><a href="${department.link}" target="_blank">Ver más detalles →</a></div>`
-          : ''}
+        ${departmentLink}
       </div>
     `
 
@@ -162,8 +165,9 @@ const MapRegionAmazonia = ({ mapType = 'municipios', dataType = 'species' }) => 
         <div className="space-y-2">
           {departments.map((dept) => {
             const deptData = mapData[dept.id]
-            const value = deptData ?
-              (dataType === 'species' ? deptData.species_count : deptData.observations_count) : 0
+            const value = deptData
+              ? (dataType === 'species' ? deptData.species_count : deptData.observations_count)
+              : 0
 
             return (
               <div key={dept.id} className="flex justify-between items-center text-sm">
