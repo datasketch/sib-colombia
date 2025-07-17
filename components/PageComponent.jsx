@@ -19,6 +19,7 @@ import dynamic from 'next/dynamic'
 
 const DemoMapSpecies = dynamic(() => import('./DemoMapSpecies.jsx'), { ssr: false })
 const DemoMapObservations = dynamic(() => import('./DemoMapObservations.jsx'), { ssr: false })
+const MapRegionAmazonia = dynamic(() => import('./MapRegionAmazonia'), { ssr: false })
 
 export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false, map }) {
   const {
@@ -399,12 +400,23 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         {(() => {
           if (slug === 'region-amazonia') {
             return (
-              <div className='flex justify-center items-center py-10'>
-                <img
-                  src="/images/mapas-svg-dep/region-amazonia.svg"
-                  alt="Mapa de la región Amazonía"
-                  className='max-w-full h-[50vh]'
-                />
+              <div className='py-10 bg-white-3'>
+                <div className='mx-auto w-10/12 max-w-screen-2xl'>
+                  <div className='flex flex-row justify-center items-center gap-3 mb-6'>
+                    <button className={`rounded-md py-2 px-4 ${activeButton === 'species' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowSpecies}>Especies por municipio</button>
+                    <button className={`rounded-md py-2 px-4 ${activeButton === 'remarks' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowRemarks}>Observaciones por municipio</button>
+                  </div>
+                  {showSpecies && (
+                    <div className='h-[600px]'>
+                      <MapRegionAmazonia mapType="municipios" dataType="species" />
+                    </div>
+                  )}
+                  {showRemarks && (
+                    <div className='h-[600px]'>
+                      <MapRegionAmazonia mapType="municipios" dataType="observations" />
+                    </div>
+                  )}
+                </div>
               </div>
             )
           } else {
