@@ -39,7 +39,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
-  const appURL = `https://services.datasketch.co/org_sibhumboldt_sibdata_app/?region=${slug}`
+  const appURL = `https://services.datasketch.co/org_sibhumboldt_sibdata_app2?published=true&region=${slug}`
   /* `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}` */
   const [municipio, setMunicipio] = useState('')
   const [departamento, setDepartamento] = useState('')
