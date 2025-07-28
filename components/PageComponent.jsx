@@ -367,56 +367,40 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         </div>
       </div>
       {/* explorador */}
-      <div className='py-10 mx-auto w-10/12 max-w-screen-xl'>
-        <div className='mx-auto max-w-md text-center'>
-          <div className='space-y-6'>
-            <h2 className='font-black font-lato text-3xl 3xl:text-4xl'>
-              Explora {generalInfo.label}
-            </h2>
-            {slug !== 'region-amazonia' && (
-              <>
-                <p className='3xl:text-lg'>
-                  Utiliza nuestro explorador para visualizar las tablas completas de información y explorar con múltiples cruces y gráficos la información disponible para esta región.
-                </p>
-                <details>
-                  <summary className='mx-auto md:w-4/6 flex justify-center items-center gap-x-2 border border-black rounded-full py-2  cursor-pointer'>
-                    <p>
-                      Cómo funciona esta herramienta
-                    </p>
-                    <img className='rotate-90' src="/images/arrow-black.svg" alt="arrow app" />
-                  </summary>
-                  <div className='mt-4'>
-                    <p className='text-left'>
-                      En la barra de la izquierda puedes seleccionar diferentes valores para los datos, si los quieres ver por registros o especies o filtrarlos para cada una de las temáticas de especies amenazadas, objeto de comercio, etc. En el panel de la derecha puedes ver los resultados como tablas o gráficos dependiendo de las opciones que selecciones.
-                    </p>
-                  </div>
-                </details>
-              </>
-            )}
+      {slug !== 'region-amazonia' && (
+        <div className='py-10 mx-auto w-10/12 max-w-screen-xl'>
+          <div className='mx-auto max-w-md text-center'>
+            <div className='space-y-6'>
+              <h2 className='font-black font-lato text-3xl 3xl:text-4xl'>
+                Explora {generalInfo.label}
+              </h2>
+              <p className='3xl:text-lg'>
+                Utiliza nuestro explorador para visualizar las tablas completas de información y explorar con múltiples cruces y gráficos la información disponible para esta región.
+              </p>
+              <details>
+                <summary className='mx-auto md:w-4/6 flex justify-center items-center gap-x-2 border border-black rounded-full py-2  cursor-pointer'>
+                  <p>
+                    Cómo funciona esta herramienta
+                  </p>
+                  <img className='rotate-90' src="/images/arrow-black.svg" alt="arrow app" />
+                </summary>
+                <div className='mt-4'>
+                  <p className='text-left'>
+                    En la barra de la izquierda puedes seleccionar diferentes valores para los datos, si los quieres ver por registros o especies o filtrarlos para cada una de las temáticas de especies amenazadas, objeto de comercio, etc. En el panel de la derecha puedes ver los resultados como tablas o gráficos dependiendo de las opciones que selecciones.
+                  </p>
+                </div>
+              </details>
+            </div>
           </div>
         </div>
-      </div>
+      )}
+
       <div>
         {(() => {
           if (slug === 'region-amazonia') {
             return (
-              <div className='py-10 bg-white-3'>
-                <div className='mx-auto w-10/12 max-w-screen-2xl'>
-                  <div className='flex flex-row justify-center items-center gap-3 mb-6'>
-                    <button className={`rounded-md py-2 px-4 ${activeButton === 'species' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowSpecies}>Especies por municipio</button>
-                    <button className={`rounded-md py-2 px-4 ${activeButton === 'remarks' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowRemarks}>Observaciones por municipio</button>
-                  </div>
-                  {showSpecies && (
-                    <div className='h-[600px]'>
-                      <MapRegionAmazonia mapType="municipios" dataType="species" />
-                    </div>
-                  )}
-                  {showRemarks && (
-                    <div className='h-[600px]'>
-                      <MapRegionAmazonia mapType="municipios" dataType="observations" />
-                    </div>
-                  )}
-                </div>
+              <div className='py-10 bg-white'>
+                <MapRegionAmazonia />
               </div>
             )
           } else {
