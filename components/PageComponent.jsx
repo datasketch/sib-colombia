@@ -20,6 +20,7 @@ import dynamic from 'next/dynamic'
 const DemoMapSpecies = dynamic(() => import('./DemoMapSpecies.jsx'), { ssr: false })
 const DemoMapObservations = dynamic(() => import('./DemoMapObservations.jsx'), { ssr: false })
 const MapRegionAmazonia = dynamic(() => import('./MapRegionAmazonia'), { ssr: false })
+const StickyNavbar = dynamic(() => import('./StickyNavbar'), { ssr: false })
 
 export default function PageComponent ({ data, slug, municipality, municipalityflag = false, isScale = false, map }) {
   const {
@@ -114,10 +115,13 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         </div>
       )}
 
+      {/* Sticky Navbar Navigation */}
+      <StickyNavbar generalInfo={generalInfo} slug={slug} municipalityflag={municipalityflag} />
+
       {/* Grupos Tematicas */}
-      {navTematica.length !== 0 && tematica.length !== 0 && <div className='py-10 bg-white-2'>
+      {navTematica.length !== 0 && tematica.length !== 0 && <div id="tematicas" className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
-          <MenuExplorer tree={navTematica} search={tematica}>
+          <MenuExplorer tree={navTematica} search={tematica} initialSelected='Amenazadas' initialSelectedValue='amenazadas'>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras de {generalInfo.label} por
@@ -141,9 +145,9 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>}
 
       {/* Grupos Biologicos  */}
-      <div className='py-10 bg-white-2'>
+      <div id="grupos-biologicos" className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
-          <MenuExplorer tree={navGruposBiologicos} search={gruposBiologicos}>
+          <MenuExplorer tree={navGruposBiologicos} search={gruposBiologicos} initialSelected='Animales' initialSelectedValue='animales'>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras de {generalInfo.label} por
@@ -164,9 +168,9 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>
 
       {/* Grupos Interes */}
-      {navGruposInteres.length !== 0 && gruposInteres && gruposInteres.length !== 0 && <div className='py-10 bg-white-2'>
+      {navGruposInteres.length !== 0 && gruposInteres && gruposInteres.length !== 0 && <div id="grupos-interes" className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
-          <MenuExplorer tree={navGruposInteres} search={gruposInteres}>
+          <MenuExplorer tree={navGruposInteres} search={gruposInteres} initialSelected='Epífitas' initialSelectedValue='epifitas'>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras de {generalInfo.label} por
@@ -187,7 +191,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>}
 
       {/* Conoce las cifras por regiones */}
-      {territorio.length !== 0 && navTerritorio.length !== 0 && <div className='py-10 bg-white-2'>
+      {territorio.length !== 0 && navTerritorio.length !== 0 && <div id="territorio" className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={navTerritorio} search={territorio} initialSelected='Municipios' initialSelectedValue='municipios'>
             <MenuExplorer.Title>
@@ -331,7 +335,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>
       }
       {/* Publicadores */}
-      <div className='py-10 bg-white-smoke'>
+      <div id="publicadores" className='py-10 bg-white-smoke'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <div className='space-y-2.5'>
             <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
@@ -368,7 +372,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>
       {/* explorador */}
       {slug !== 'region-amazonia' && (
-        <div className='py-10 mx-auto w-10/12 max-w-screen-xl'>
+        <div id="explorador" className='py-10 mx-auto w-10/12 max-w-screen-xl'>
           <div className='mx-auto max-w-md text-center'>
             <div className='space-y-6'>
               <h2 className='font-black font-lato text-3xl 3xl:text-4xl'>
@@ -399,13 +403,15 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         {(() => {
           if (slug === 'region-amazonia') {
             return (
-              <div className='py-10 bg-white'>
+              <div id="mapa" className='py-10 bg-white'>
                 <MapRegionAmazonia />
               </div>
             )
           } else {
             return (
-              <iframe src={appURL} className='h-screen w-full'></iframe>
+              <div id="mapa" className='py-10 bg-white'>
+                <iframe src={appURL} className='h-screen w-full'></iframe>
+              </div>
             )
           }
         })()}
