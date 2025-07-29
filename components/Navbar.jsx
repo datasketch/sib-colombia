@@ -379,6 +379,7 @@ export default function Navbar () {
             <img src='/images/icons/Icon feather-menu.svg' alt='hamburguer icon' />
           </button>
         </div>
+        <div className='border-b border-white pb-2'></div>
       </div>
     </header>
   )
