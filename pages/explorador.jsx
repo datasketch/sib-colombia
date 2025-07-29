@@ -9,7 +9,8 @@ function explorador () {
   const [query, setQuery] = useState('')
   const [isOpen, setIsOpen] = useState(true)
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
-  const appURL = query ? `https://services.datasketch.co/org_sibhumboldt_sibdata_app2/?${query}` : 'https://services.datasketch.co/org_sibhumboldt_sibdata_app2/'
+  // const appURL = query ? `https://services.datasketch.co/org_sibhumboldt_sibdata_app2/?${query}` : 'https://services.datasketch.co/org_sibhumboldt_sibdata_app2/'
+  const appURL = query ? 'http://127.0.0.1:3534/' : 'http://127.0.0.1:3534/'
 
   const toggleVisibility = () => {
     setIsOpen(!isOpen)
@@ -31,7 +32,7 @@ function explorador () {
   return (
     <>
       <HeadMore title={'Explorador'} content description={textDescription} />
-      <div className='max-w-screen-2xl mx-auto px-6'>
+      <div className='px-6'>
         <div className='pt-8'>
           <p className='flex items-center justify-end space-x-4 text-sm'>
             <span className='bg-blueberry text-white px-3 py-2 rounded-full text-xs font-bold tracking-wider uppercase'>Versión 1.0</span>
@@ -56,8 +57,10 @@ function explorador () {
           }
         </div>
       </div>
-      <div className='py-12'>
-        <iframe className='h-screen w-full' src={appURL}></iframe>
+      <div className='py-12 overflow-x-auto'>
+        <div className='min-w-[1200px]'>
+          <iframe className='h-screen w-full' src={appURL}></iframe>
+        </div>
       </div>
     </>
   )

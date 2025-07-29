@@ -285,7 +285,7 @@ export default function Navbar () {
   const selectedColumns = splitIntoColumns(childrenRegions, 4)
 
   return (
-    <header className="absolute top-0 left-0 w-full z-40 py-2">
+    <header className="absolute top-0 left-0 w-full z-50 py-2 bg-dartmouth-green">
       <div className='mx-auto w-10/12 max-w-[1300px] '>
         <div className=' border-b border-white pb-2'>
           <div className='flex justify-between'>
