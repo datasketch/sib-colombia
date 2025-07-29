@@ -3,9 +3,11 @@ import { MapContainer, GeoJSON } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import * as d3Scale from 'd3-scale'
 import { useLegend } from '../hooks/useLegend'
+import { useEffect, useRef } from 'react'
 
 const DemoMapSpecies = ({ data, isScale = false }) => {
   const local = data.name.normalize('NFD').toLowerCase().replace(/[\u0300-\u036f]/g, '')
+  const mapRef = useRef()
 
   const mapSpecies = data.features.map((d) => d.properties.n_especies)
   const maximum = Math.max(...mapSpecies)
@@ -23,6 +25,14 @@ const DemoMapSpecies = ({ data, isScale = false }) => {
     return coord * -1
   }).reverse()
 
+  useEffect(() => {
+    if (mapRef.current) {
+      const map = mapRef.current
+      const bounds = d3Geo.geoBounds(data)
+      map.fitBounds(bounds, { padding: [20, 20] })
+    }
+  }, [data])
+
   const handleEachFeature = (feature, layer) => {
     // feature.properties.n_especies / n_registros / label || name
     const content = `<div class='popup'><div><strong>${feature.properties.n_especies} especies</strong></div><div>${feature.properties.label}</div><a href=${local === 'colombia' ? `/${feature.properties.label.normalize('NFD').toLowerCase().replace(/[\u0300-\u036f]/g, '').replace(/,/g, '').split(' ').join('-')}` : `/${local}/${feature.properties.label.normalize('NFD').toLowerCase().replace(/[\u0300-\u036f]/g, '').split(' ').join('-')}`} target="_blank">Ver más</a></div>`
@@ -39,15 +49,15 @@ const DemoMapSpecies = ({ data, isScale = false }) => {
   }
 
   return (
-    <>
-      <MapContainer center={center} zoom={!isScale ? 5 : 8} scrollWheelZoom={false} style={{ height: 600, background: 'transparent', position: 'sticky' }} attributionControl={false}>
+    <div className="relative">
+      <MapContainer ref={mapRef} center={center} zoom={!isScale ? 5 : 7} scrollWheelZoom={false} style={{ height: 500, width: '100%', background: 'transparent' }} attributionControl={false}>
         <GeoJSON data={data} onEachFeature={handleEachFeature} eventHandlers={{
           mouseover: (event) => {
             event.layer.openPopup()
           }
         }} />
       </MapContainer>
-      <div className="p-4 shadow-lg w-[140px] rounded-md bottom-52 left-[68rem] block relative bg-white">
+      <div className="absolute top-4 right-4 p-4 shadow-lg w-[140px] rounded-md bg-white z-10">
         <span className='font-bold text-sm'>Especies</span>
         <div className="mt-4">
           <ul>
@@ -66,7 +76,7 @@ const DemoMapSpecies = ({ data, isScale = false }) => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -303,7 +303,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
 
                       {showSpecies && territorio &&
                         <>
-                          <div className='mt-3 h-[600px]'>
+                          <div className='mt-3' style={{ height: 500 }}>
                             {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2> */}
                             {/* <MapDepartmentSpecies data={territorio} isScale={isScale} slug={slug} /> */}
                             <DemoMapSpecies data={map} isScale={isScale} />
@@ -313,7 +313,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
 
                       {showRemarks && territorio &&
                         <>
-                          <div className='mt-3 h-[600px]'>
+                          <div className='mt-3' style={{ height: 500 }}>
                             {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2> */}
                             {/* <MapDepartmentObservations data={territorio} isScale={isScale} /> */}
                             <DemoMapObservations data={map} isScale={isScale} />

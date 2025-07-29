@@ -61,7 +61,7 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
           </div>
         )}
       </Tooltip>
-      <div data-tip="" style={{ height: 600 }}>
+      <div data-tip="" style={{ height: '100%' }} className="relative h-full">
         <ComposableMap
           style={{ width: '100%', height: '100%' }}
           projection="geoMercator"
@@ -85,13 +85,13 @@ const MapDepartmentObservations = ({ data, isScale = false }) => {
                       n_registros: ''
                     })
                   }}
-                  fill={geo.properties.n_registros ? colorScale(geo.properties.n_registros) : '#F5F4F6'}
+                  fill={geo.properties.n_registros ? colorScale(geo.properties.n_registros) : '#F5F4F4'}
                 />
               ))
             }
           </Geographies>
         </ComposableMap>
-        <div className="p-4 shadow-lg w-[140px] rounded-md bottom-52 left-[68rem] block relative">
+        <div className="absolute top-4 right-4 p-4 shadow-lg w-[140px] rounded-md bg-white z-10">
           <span className='font-bold text-sm'>Observaciones</span>
           <div className="mt-4">
             <ul>
