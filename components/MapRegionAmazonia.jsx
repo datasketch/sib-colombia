@@ -231,25 +231,25 @@ const MapRegionAmazonia = () => {
 
         {/* Right Panel - Map */}
         <div className="w-2/3 relative bg-white">
-          <MapContainer
-            center={center}
-            zoom={6}
+        <MapContainer
+          center={center}
+          zoom={6}
             scrollWheelZoom={false}
             style={{ height: '100%', width: '100%', zIndex: 1 }}
             zoomControl={false}
-            attributionControl={false}
-          >
+          attributionControl={false}
+        >
             <TileLayer
               url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
               subdomains="abcd"
               maxZoom={20}
             />
-            <GeoJSON
-              data={geoJsonData}
-              onEachFeature={handleEachFeature}
-            />
-          </MapContainer>
+          <GeoJSON
+            data={geoJsonData}
+            onEachFeature={handleEachFeature}
+          />
+        </MapContainer>
 
           {/* Data Card Overlay */}
           {selectedDepartment && (
@@ -265,26 +265,26 @@ const MapRegionAmazonia = () => {
                     <span className="text-sm font-semibold text-gray-800">
                       {selectedDepartment.properties.especies_region_total?.toLocaleString() || 0}
                     </span>
-                  </div>
+      </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div
+              <div
                       className="bg-green-500 h-2 rounded-full"
-                      style={{
+                style={{
                         width: `${((selectedDepartment.properties.especies_region_total || 0) / maximum) * 100}%`
-                      }}
+                }}
                     ></div>
-                  </div>
+            </div>
                   <div className="text-xs text-gray-500 mt-1">
                     {(((selectedDepartment.properties.especies_region_total || 0) / totalSpecies) * 100).toFixed(1)}% del total
-                  </div>
-                </div>
+        </div>
+      </div>
 
                 <div>
                   <div className="flex justify-between items-center mb-1">
                     <span className="text-sm text-gray-600">Registros</span>
                     <span className="text-sm font-semibold text-gray-800">
                       {selectedDepartment.properties.registros_region_total?.toLocaleString() || 0}
-                    </span>
+                </span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
