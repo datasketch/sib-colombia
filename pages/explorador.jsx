@@ -9,8 +9,8 @@ function explorador () {
   const [query, setQuery] = useState('')
   const [isOpen, setIsOpen] = useState(true)
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
-  // const appURL = query ? `https://services.datasketch.co/org_sibhumboldt_sibdata_app2/?${query}` : 'https://services.datasketch.co/org_sibhumboldt_sibdata_app2/'
-  const appURL = query ? 'http://127.0.0.1:3534/' : 'http://127.0.0.1:3534/'
+  const appURL = query ? `https://services.datasketch.co/org_sibhumboldt_sibdata_app2/?${query}` : 'https://services.datasketch.co/org_sibhumboldt_sibdata_app2/'
+  // const appURL = query ? 'http://127.0.0.1:3534/' : 'http://127.0.0.1:3534/'
 
   const toggleVisibility = () => {
     setIsOpen(!isOpen)
