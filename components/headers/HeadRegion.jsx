@@ -11,7 +11,10 @@ import { useEffect, useState } from 'react'
 const SmallMap = dynamic(() => import('../SmallMap.jsx'), { ssr: false }) */
 
 function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, especiesObservadas, marine = false, municipality = false, referencia, photoLabel, isScale = false, map, imageSmallDpto }) {
+  const [smallImageLoaded, setSmallImageLoaded] = useState(false)
+  const [smallImageError, setSmallImageError] = useState(false)
   const [windowWidth, setWindowWidth] = useState(1000)
+
   useEffect(() => {
     window.addEventListener('resize', () => {
       setWindowWidth(window.innerWidth)
@@ -23,6 +26,15 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
     }
   }, [])
 
+  useEffect(() => {
+    if (imageSmallDpto) {
+      const img = new Image()
+      img.onload = () => setSmallImageLoaded(true)
+      img.onerror = () => setSmallImageError(true)
+      img.src = '/' + imageSmallDpto
+    }
+  }, [imageSmallDpto])
+
   return (
     <>
       <div className={classNames('bg-cover bg-center pt-8 lg:pt-14 pb-3.5 h-[550px] ')} style={{ backgroundImage: 'url("/images/banner-principales/santander.jpg")' }}>
@@ -30,24 +42,24 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
           <div className="min-h-[210px] mt-4 lg:mt-5 flex md:justify-between items-center w-10/12 mx-auto">
             <div className={classNames('font-black lg:w-2/3 font-inter text-white text-6xl', title?.length >= 17 ? 'lg:text-[66px]' : 'lg:text-7xl')}>{title}</div>
 
-            {['colombia', 'boyaca', 'narino', 'santander', 'tolima'].includes(slug)
-              ? (imageMap &&
-                <div className="hidden md:flex justify-end ">
-                  <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageMap} />
-                </div>
-                )
-              : <div className='relative'>
-                <div className='flex flex-row mt-10 px-7'>
-                  <div>
+            {imageSmallDpto && smallImageLoaded && !smallImageError
+              ? (
+                  <div className="hidden md:flex justify-end ">
                     <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageSmallDpto} />
                   </div>
-                  <div className='w-14 h-[123px]'>
-                    <img src='/images/mapa-co.svg' alt='mapa-co' />
+                )
+              : (
+                  <div className='relative'>
+                    <div className='flex flex-row mt-10 px-7'>
+                      <div>
+                        <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageMap} />
+                      </div>
+                      <div className='w-14 h-[123px]'>
+                        <img src='/images/mapa-co.svg' alt='mapa-co' />
+                      </div>
+                    </div>
                   </div>
-                </div>
-                {/* <SmallMap data={map} isScale={isScale} slug={slug} /> */}
-              </div>
-            }
+                )}
 
           </div>
           <div className="flex flex-col md:flex-row max-h-48 justify-between gap-y-4 w-10/12 mx-auto -mt-9 md:-mt-0">

@@ -24,11 +24,10 @@ function EspecialRegion ({ data, slug, sponsors }) {
         <title>SiB Colombia | Biodiversidad en cifras</title>
       </Head>
       <HeadRegion
-        slug={slug === 'region-amazonia' ? 'region-amazonia' : 'narino'}
+        slug={slug}
         title={generalInfo.label}
         description={generalInfo.main_text}
-        imageMap={slug === 'region-amazonia' ? 'images/mapas-svg-dep/region-amazonia.svg' : 'images/mapas-svg-dep/mapa-narino.svg'}
-        imageSmallDpto={slug === 'region-amazonia' ? 'images/mapas-svg-dep/region-amazonia.svg' : 'images/mapas-svg-dep/mapa-narino.svg'}
+        imageMap={`data/${slug}/${slug}.svg`}
         especiesEstimadas={generalInfo.especies_region_estimadas}
         especiesObservadas={generalInfo.especies_region_total}
         marine={generalInfo.marino}

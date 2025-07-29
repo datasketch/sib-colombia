@@ -27,7 +27,8 @@ function municipio ({ data, slug, municipality, sponsors }) {
         slug={slug}
         title={generalInfo.label}
         description={generalInfo.main_text}
-        imageMap={`images/mapas-svg-dep/mapa-${slug}.svg`}
+        imageMap={`data/${slug}/${slug}.svg`}
+        imageSmallDpto={`images/mapas-svg-dep/mapa-${slug}.svg`}
         especiesEstimadas={generalInfo.especies_region_estimadas}
         especiesObservadas={generalInfo.especies_region_total}
         marine={generalInfo.marino}
