@@ -61,7 +61,7 @@ function EspecialRegion ({ data, slug, sponsors }) {
   )
 }
 
-export async function getServerSideProps () {
+export async function getStaticProps () {
   const region = 'region-amazonia'
 
   // Load data from the standalone folder
