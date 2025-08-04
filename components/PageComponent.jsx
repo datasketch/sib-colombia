@@ -1,7 +1,3 @@
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
-
-import { useState } from 'react'
-
 import CardTematicas from '../components/CardTematicas'
 import Gallery from '../components/Gallery'
 import ContentElement from '../components/ContentElement'
@@ -17,8 +13,9 @@ import { useRouter } from 'next/router'
 
 import dynamic from 'next/dynamic'
 
-const DemoMapSpecies = dynamic(() => import('./DemoMapSpecies.jsx'), { ssr: false })
-const DemoMapObservations = dynamic(() => import('./DemoMapObservations.jsx'), { ssr: false })
+// Dynamic imports for map components to prevent SSR issues
+const MapMunicipios = dynamic(() => import('./MapMunicipios'), { ssr: false })
+const MapDepartamentos = dynamic(() => import('./MapDepartamentos'), { ssr: false })
 const MapRegionAmazonia = dynamic(() => import('./MapRegionAmazonia'), { ssr: false })
 const StickyNavbar = dynamic(() => import('./StickyNavbar'), { ssr: false })
 
@@ -36,18 +33,11 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     publicadores,
     slides,
     territorio,
-    municipios_lista: municipios,
-    departamentos_lista: departamentos,
     gallery
   } = data
 
   const appURL = `https://services.datasketch.co/org_sibhumboldt_sibdata_app2/?region=${slug}`
   /* `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}` */
-  const [municipio, setMunicipio] = useState('')
-  const [departamento, setDepartamento] = useState('')
-  const [showSpecies, setShowSpecies] = useState(true)
-  const [showRemarks, setShowRemarks] = useState(false)
-  const [activeButton, setActiveButton] = useState('species')
   const router = useRouter()
   /* const [publishers, savePublishers] = useLocalStorage('publishers', []) */
 
@@ -73,31 +63,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     } else {
       router.push(`/mas/publicadores?region=${slug}`)
     }
-  }
-
-  const handleChangeMunicipio = (event) => {
-    setMunicipio(event.target.value)
-  }
-
-  const handleChangeDepartamento = (event) => {
-    setDepartamento(event.target.value)
-  }
-
-  const handleShowSpecies = () => {
-    setShowSpecies(true)
-    setShowRemarks(false)
-    setActiveButton('species')
-  }
-
-  const handleShowRemarks = () => {
-    setShowSpecies(false)
-    setShowRemarks(true)
-    setActiveButton('remarks')
-  }
-
-  const handleMenuItemClick = (itemSlug) => {
-    const url = slug === 'colombia' ? `/${itemSlug}` : `/${slug}/${itemSlug}`
-    window.open(url, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -191,132 +156,38 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>}
 
       {/* Conoce las cifras por regiones */}
-      {territorio.length !== 0 && navTerritorio.length !== 0 && <div id="territorio" className='py-10 bg-white-2'>
+      {territorio.length !== 0 && navTerritorio.length !== 0 && slug !== 'region-amazonia' && <div id="territorio" className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <MenuExplorer tree={navTerritorio} search={territorio} initialSelected='Municipios' initialSelectedValue='municipios'>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
                 Conoce las cifras de {generalInfo.label} por
               </p>
-              {
-                generalInfo.label === 'Colombia'
-                  ? <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
-                    Departamentos
-                  </h2>
-                  : <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
-                    Municipios
-                  </h2>
-              }
+              <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
+                {generalInfo.label === 'Colombia' ? 'Departamentos' : 'Municipios'}
+              </h2>
             </MenuExplorer.Title>
             {/* <MenuExplorer.Tree className='relative mt-12' /> */}
-            <MenuExplorer.Breadcrumb className="bg-white w-full flex items-center gap-x-2 mt-5 pl-5" />
             <MenuExplorer.Body>
               {(selected, info) => (
-                <div className='bg-white pt-5'>
+                <div className='bg-white'>
                   {/* {info?.charts.length === 0
                     ? (<div className='text-center text-3xl py-20 w-4/5 mx-auto'>
                       Conoce más en {' '}
                       <a href={info?.link} className='underline text-azure'>{info?.label}</a>
                     </div>) */}
-                  <>
-                    <div className='py-3 w-2/5 mx-auto'>
-                      {
-                        generalInfo.label === 'Colombia'
-                          ? <FormControl fullWidth>
-                            <InputLabel id="select-departamentos">Departamentos</InputLabel>
-                            <Select
-                              labelId="select-departamentos"
-                              id="demo-select-departamentos"
-                              label={info?.label}
-                              value={departamento}
-                              onChange={handleChangeDepartamento}
-                            >
-                              {
-                                departamentos
-                                  ?.slice()
-                                  .sort((a, b) => a.label.localeCompare(b.label))
-                                  .map((item, key) =>
-                                    <MenuItem key={key} onClick={() => handleMenuItemClick(item.slug)}>
-                                      {item.label}
-                                      {/* <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a> */}
-                                    </MenuItem>
-                                  )
-                              }
-
-                            </Select>
-                          </FormControl>
-                          : <FormControl fullWidth>
-                            <InputLabel id="select-municipios">Municipios</InputLabel>
-                            <Select
-                              labelId="select-municipios"
-                              id="demo-select-municipios"
-                              label={info?.label}
-                              value={municipio}
-                              onChange={handleChangeMunicipio}
-                            >
-                              {
-                                municipios
-                                  ?.slice()
-                                  .sort((a, b) => a.label.localeCompare(b.label))
-                                  .map((item, key) =>
-                                    <MenuItem key={key} onClick={() => handleMenuItemClick(item.slug)}>
-                                      {item.label}
-                                      {/* <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a> */}
-                                    </MenuItem>
-                                  )
-                              }
-
-                            </Select>
-                          </FormControl>
-                      }
-                      {/* <FormControl fullWidth>
-                          <InputLabel id="select-municipios">{info?.label}</InputLabel>
-                          <Select
-                            labelId="select-municipios"
-                            id="demo-select-municipios"
-                            label={info?.label}
-                            value={municipio}
-                            onChange={handleChange}
-                          >
-                            {
-                              municipios?.map((item, key) =>
-                                <MenuItem key={key}>
-                                  <a href={slug === 'colombia' ? `/${item.slug}` : `/${slug}/${item.slug}`} target='_blank' rel="noreferrer">{item.label}</a>
-                                </MenuItem>
-                              )}
-
-                          </Select>
-                        </FormControl> */}
-                    </div>
+                                    <>
                     <div>
-                      {
-                        generalInfo.label === 'Colombia'
-                          ? <div className='flex flex-row justify-center items-center gap-3'>
-                            <button className={`rounded-md py-2 px-4 ${activeButton === 'species' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowSpecies}>Especies por departamento</button>
-                            <button className={`rounded-md py-2 px-4 ${activeButton === 'remarks' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowRemarks}>Observaciones por departamento</button>
-                          </div>
-                          : <div className='flex flex-row justify-center items-center gap-3'>
-                            <button className={`rounded-md py-2 px-4 ${activeButton === 'species' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowSpecies}>Especies por municipio</button>
-                            <button className={`rounded-md py-2 px-4 ${activeButton === 'remarks' ? 'bg-dartmouth-green text-white' : 'text-black border border-black'}`} onClick={handleShowRemarks}>Observaciones por municipio</button>
-                          </div>
-                      }
-
-                      {showSpecies && territorio &&
+                      {territorio && slug !== 'region-amazonia' &&
                         <>
-                          <div className='mt-3' style={{ height: 500 }}>
-                            {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Especies por municipio</h2> */}
-                            {/* <MapDepartmentSpecies data={territorio} isScale={isScale} slug={slug} /> */}
-                            <DemoMapSpecies data={map} isScale={isScale} />
-                          </div>
-                        </>
-                      }
-
-                      {showRemarks && territorio &&
-                        <>
-                          <div className='mt-3' style={{ height: 500 }}>
-                            {/* <h2 className='text-black-2 font-black text-center text-3xl 3xl:text-4xl'>Observaciones por municipio</h2> */}
-                            {/* <MapDepartmentObservations data={territorio} isScale={isScale} /> */}
-                            <DemoMapObservations data={map} isScale={isScale} />
+                          <div className='mt-3' style={{ height: generalInfo.label === 'Colombia' ? 700 : 600 }}>
+                            {generalInfo.label === 'Colombia'
+                              ? (
+                                  <MapDepartamentos data={map} isScale={isScale} departamentos={data.departamentos_lista} />
+                                )
+                              : (
+                                  <MapMunicipios data={map} isScale={isScale} slug={slug} municipios={data.municipios_lista} />
+                                )}
                           </div>
                         </>
                       }
