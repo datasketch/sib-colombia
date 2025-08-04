@@ -79,13 +79,8 @@ const StickyNavbar = ({ generalInfo, slug, municipalityflag }) => {
       condition: true // Always show
     },
     {
-      id: 'mapa',
-      label: 'Mapa',
-      condition: true // Show for all pages that have maps
-    },
-    {
       id: 'explorador',
-      label: 'Explora la región',
+      label: 'Explora',
       condition: slug !== 'region-amazonia' // Don't show for region-amazonia
     }
   ]
