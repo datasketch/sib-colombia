@@ -9,7 +9,7 @@ import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
 import InfoPublishers from '../../components/InfoPublishers'
-import { getRegionsForDropdown, getRegionsForGroupedDropdown } from '../../lib/navigation'
+import { getRegionsForDropdown } from '../../lib/navigation'
 import { clearText } from '../../lib/functions'
 import SelectableV2 from '../../components/SelectableV2'
 
@@ -25,7 +25,6 @@ export default function publicadores () {
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
   const [search, setSearch] = useState('')
-    const [query, setQuery] = useState('colombia')
   const [display, setDisplay] = useState(true)
 
   // Get all publishers for Colombia (default view)
@@ -65,8 +64,6 @@ export default function publicadores () {
 
   const allPublishers = getAllPublishers()
 
-
-
   const [publicadors, setPublicadors] = useState(allPublishers)
 
   const [selectedRegion, setSelectedRegion] = useState('Colombia')
@@ -93,7 +90,7 @@ export default function publicadores () {
     }
   }
 
-          // Generate region dropdown using the new filters structure
+  // Generate region dropdown using the new filters structure
   const getRegionsForDropdownFromFilters = () => {
     if (publicadorData.filters?.region) {
       const flatRegions = []
@@ -137,25 +134,6 @@ export default function publicadores () {
   const { countries: citys, orgTypes: typeOrganization } = getFilterOptions()
   const [tempCities, setTempCities] = useState(citys)
   const [tempTypeOrganization, setTempTypeOrganization] = useState(typeOrganization)
-  /* const typeOrganization = [...new Set(
-    publishers.reduce((acc, curr) => {
-      const type = curr.tipo_organizacion !== undefined ? curr.tipo_organizacion : "Internacional"
-      return [...acc, type]
-    }, [])
-  )] */
-
-  /* console.log(typeOrganization, 'typeOrganization') */
-
-  /* function filterBySearch (publisher) {
-    if (!query) return true
-
-    const { label, pais_publicacion: paisPublicacion } = publisher
-
-    const region = publisher.region ? normalize(publisher.region) : publisher.region
-    const normalizedQuery = normalize(query)
-
-    return label?.toLowerCase().includes(query.toLowerCase()) || paisPublicacion?.toLowerCase().includes(query.toLowerCase()) || region?.includes(normalizedQuery)
-  } */
 
   function filterBySearch (publisher) {
     const { label } = publisher
@@ -188,7 +166,6 @@ export default function publicadores () {
     setSelectedRegion(regionData ? regionData.label : '')
     setDisplay(true)
     if (value !== 'colombia') {
-      setQuery(value)
       router.push(`/mas/publicadores?region=${value}`)
 
       // Check if region exists in the new data structure
@@ -208,15 +185,14 @@ export default function publicadores () {
       }
     } else {
       // Colombia selected - show all publishers
-      setQuery('colombia')
       setPublicadors(allPublishers)
       setDepartmentData(publicadorData.region_publicador?.colombia?.stats || publicadorData.colombia?.stats || null)
       setSelectedArea('')
       setAreaDropdown([])
-              // Update dropdown options for Colombia view
-        const { countries, orgTypes } = getFilterOptions()
-        setTempCities(countries)
-        setTempTypeOrganization(orgTypes)
+      // Update dropdown options for Colombia view
+      const { countries, orgTypes } = getFilterOptions()
+      setTempCities(countries)
+      setTempTypeOrganization(orgTypes)
       router.push('/mas/publicadores?region=colombia')
     }
   }
@@ -276,10 +252,7 @@ export default function publicadores () {
     .filter(filterByCountry)
     .filter(filterByOrgType)
 
-
-
   const clearFilters = () => {
-    setQuery('')
     setSelectedCountry('')
     setSelectedOrganizacion('')
     setDepartmentData(null)
@@ -307,7 +280,7 @@ export default function publicadores () {
     const { query: { region } } = router
     const selectedRegion = region || 'colombia'
 
-    setQuery(selectedRegion)
+    setPublicadors(allPublishers) // Reset publishers to all for new region
 
     if (selectedRegion === 'colombia') {
       setSelectedRegion('Colombia')
@@ -316,10 +289,10 @@ export default function publicadores () {
       setPublicadors(allPublishersForColombia)
       setDepartmentData(publicadorData.region_publicador?.colombia?.stats || publicadorData.colombia?.stats || null)
       setDisplay(true)
-              // Set dropdown options for Colombia view
-        const { countries, orgTypes } = getFilterOptions()
-        setTempCities(countries)
-        setTempTypeOrganization(orgTypes)
+      // Set dropdown options for Colombia view
+      const { countries, orgTypes } = getFilterOptions()
+      setTempCities(countries)
+      setTempTypeOrganization(orgTypes)
     } else {
       // Check if region exists in the new data structure
       const regionData = publicadorData.region_publicador?.[selectedRegion] || publicadorData[selectedRegion]
@@ -455,21 +428,3 @@ export default function publicadores () {
     </>
   )
 }
-
-/* export async function getServerSideProps (context) {
-  const { query } = context
-  if (query.region) {
-    const departmentData = JSON.parse(await getDepartmentData(query.region))
-    return {
-      props: {
-        departmentData
-      }
-    }
-  }
-
-  return {
-    props: {
-      departmentData: null
-    }
-  }
-} */

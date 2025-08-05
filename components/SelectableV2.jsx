@@ -37,110 +37,112 @@ const SelectableV2 = ({ data, optionSelected, placeHolder, titles, disabled = fa
       </div>
       <form onChange={handleOptionChange} className={classNames('flex flex-col max-h-48 w-full overflow-y-scroll top-full py-2 px-2 bg-white-smoke', open ? 'absolute z-10' : 'hidden')} >
         {/* Check if data is grouped structure */}
-        {data && data.length > 0 && data[0].category && data[0].regions ? (
-          // Render grouped data
-          data.map((group, groupIndex) => {
-            if (group.label && group.value) {
-              // This is Colombia (single item)
-              return (
-                <div key={group.value}>
-                  <div className='flex justify-between'>
-                    <label className='cursor-pointer font-bold'>{group.label}</label>
-                    <input
-                      type="radio"
-                      name="area"
-                      className="accent-flame cursor-pointer"
-                      id={group.value}
-                      value={group.value} />
-                  </div>
-                  {groupIndex === 0 && <p className='font-bold'>Departamentos</p>}
-                </div>
-              )
-            } else if (group.category && group.regions) {
-              // This is a category group
-              return (
-                <div key={group.category}>
-                  <p className='font-bold'>{group.category}</p>
-                  {group.regions.map((region) => (
-                    <div key={region.value} className='flex justify-between ml-2'>
-                      <label className='cursor-pointer' title={region.label} htmlFor={region.value}>
-                        {region.label}
-                      </label>
-                      <input
-                        type="radio"
-                        name="area"
-                        className="accent-flame cursor-pointer"
-                        id={region.value}
-                        value={region.value} />
-                    </div>
-                  ))}
-                </div>
-              )
-            }
-            return null
-          })
-        ) : (
-          <>
-            {/* Original flat data structure */}
-            {data?.sort().map((el, index) => {
-              if (el === undefined) { return null }
-              if (index === 0 && el.value === 'colombia') {
-                return (
-                  <div key={el.value}>
-                    <div className='flex justify-between'>
-                      <label className='cursor-pointer font-bold'>{el.label}</label>
-                      <input
-                        type="radio"
-                        name="area"
-                        className="accent-flame cursor-pointer"
-                        id={el.value}
-                        value={el.value} />
-                    </div>
-                    <p className='font-bold'>Departamentos</p>
-                  </div>)
-              } else if (index >= 1 && index <= 33) {
-                return (
-                  <>
-                    <div key={el.value} className='flex justify-between ml-2'>
-                      <label className='cursor-pointer' title={el.label} key={el.value} htmlFor={el.value}>
-                        {el.label}
-                      </label>
-                      <input
-                        type="radio"
-                        name="area"
-                        className="accent-flame cursor-pointer"
-                        id={el.value}
-                        value={el.value} />
-                    </div>
-                  </>
-                )
-              }
-              return null
-            })}
-            {data && data.slice(34).some(el => el.value === 'reserva-forestal-la-planada' || el.value === 'resguardo-indigena-pialapi-pueblo-viejo') && (
-              <p className='font-bold'>Territorios</p>
-            )}
-            <div>
-              {
-                data?.slice(34).map((el, index) => {
+        {data && data.length > 0 && data[0].category && data[0].regions
+          ? (
+            // Render grouped data
+              data.map((group, groupIndex) => {
+                if (group.label && group.value) {
+                // This is Colombia (single item)
                   return (
-                    <div key={el.value} className='flex justify-between ml-2'>
-                      <label className='cursor-pointer' title={el.label} key={el.value} htmlFor={el.value}>
-                        {el.label}
-                      </label>
+                  <div key={group.value}>
+                    <div className='flex justify-between'>
+                      <label className='cursor-pointer font-bold'>{group.label}</label>
                       <input
                         type="radio"
                         name="area"
                         className="accent-flame cursor-pointer"
-                        id={el.value}
-                        value={el.value} />
+                        id={group.value}
+                        value={group.value} />
                     </div>
+                    {groupIndex === 0 && <p className='font-bold'>Departamentos</p>}
+                  </div>
                   )
-                })
-              }
-            </div>
-          </>
-        )}
+                } else if (group.category && group.regions) {
+                // This is a category group
+                  return (
+                  <div key={group.category}>
+                    <p className='font-bold'>{group.category}</p>
+                    {group.regions.map((region) => (
+                      <div key={region.value} className='flex justify-between ml-2'>
+                        <label className='cursor-pointer' title={region.label} htmlFor={region.value}>
+                          {region.label}
+                        </label>
+                        <input
+                          type="radio"
+                          name="area"
+                          className="accent-flame cursor-pointer"
+                          id={region.value}
+                          value={region.value} />
+                      </div>
+                    ))}
+                  </div>
+                  )
+                }
+                return null
+              })
+            )
+          : (
+            <>
+              {/* Original flat data structure */}
+              {data?.sort().map((el, index) => {
+                if (el === undefined) { return null }
+                if (index === 0 && el.value === 'colombia') {
+                  return (
+                    <div key={el.value}>
+                      <div className='flex justify-between'>
+                        <label className='cursor-pointer font-bold'>{el.label}</label>
+                        <input
+                          type="radio"
+                          name="area"
+                          className="accent-flame cursor-pointer"
+                          id={el.value}
+                          value={el.value} />
+                      </div>
+                      <p className='font-bold'>Departamentos</p>
+                    </div>)
+                } else if (index >= 1 && index <= 33) {
+                  return (
+                    <>
+                      <div key={el.value} className='flex justify-between ml-2'>
+                        <label className='cursor-pointer' title={el.label} key={el.value} htmlFor={el.value}>
+                          {el.label}
+                        </label>
+                        <input
+                          type="radio"
+                          name="area"
+                          className="accent-flame cursor-pointer"
+                          id={el.value}
+                          value={el.value} />
+                      </div>
+                    </>
+                  )
+                }
+                return null
+              })}
+              {data && data.slice(34).some(el => el.value === 'reserva-forestal-la-planada' || el.value === 'resguardo-indigena-pialapi-pueblo-viejo') && (
+                <p className='font-bold'>Territorios</p>
+              )}
+              <div>
+                {
+                  data?.slice(34).map((el, index) => {
+                    return (
+                      <div key={el.value} className='flex justify-between ml-2'>
+                        <label className='cursor-pointer' title={el.label} key={el.value} htmlFor={el.value}>
+                          {el.label}
+                        </label>
+                        <input
+                          type="radio"
+                          name="area"
+                          className="accent-flame cursor-pointer"
+                          id={el.value}
+                          value={el.value} />
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            </>
+            )}
       </form>
     </div>
   )
