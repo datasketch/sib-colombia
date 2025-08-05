@@ -131,14 +131,6 @@ const MapRegionAmazonia = () => {
 
   return (
     <div className="w-full bg-white rounded-lg shadow-lg overflow-hidden">
-      {/* Header */}
-      <div className="p-6 border-b border-gray-200">
-        <div className="text-center">
-          <p className="text-sm text-gray-600 mb-1">Explora registros y especies de los</p>
-          <h1 className="text-3xl font-bold text-gray-800">Departamentos de la Amazonía</h1>
-        </div>
-      </div>
-
       {/* Main Content */}
       <div className="flex h-[600px]">
         {/* Left Panel - Region Information */}

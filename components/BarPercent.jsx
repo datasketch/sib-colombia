@@ -6,12 +6,11 @@ import Table from './Table'
 const BarPercent = ({ cat = '', label, region, regionparent, title, datatable = [], especies, registros, parentEspecies, speciesEstimadasCol, bgColor, textColor, link, municipalityflag, colObservadas, especiesObservadas }) => {
   const parenLabel = region !== 'Colombia' ? regionparent || 'Colombia' : ''
   const text = label ? `observadas ${label} (${title})` : `${title} observadas`
-  const widthBarGeneral = +parentEspecies - +colObservadas
   const widthBarSpecies = calculateWidth(+especies, municipalityflag ? +registros : +parentEspecies)
   const widthBarParent = calculateWidth(municipalityflag ? +registros : +parentEspecies - +especies, municipalityflag ? +registros : +parentEspecies)
-  const widthRegEspecies = calculateWidth(+especies, +parentEspecies)
-  const widthColObservadas = calculateWidth(+parentEspecies, +parentEspecies)
-  const widthColEstimadas = calculateWidth(widthBarGeneral, +speciesEstimadasCol)
+  const widthRegEspecies = calculateWidth(+especies, +speciesEstimadasCol)
+  const widthColObservadas = calculateWidth(+parentEspecies, +speciesEstimadasCol)
+  const widthColEstimadas = calculateWidth(+speciesEstimadasCol - +parentEspecies, +speciesEstimadasCol)
 
   const capitalizeRegion = capitalize(regionparent)
 

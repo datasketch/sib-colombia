@@ -70,7 +70,7 @@ const StickyNavbar = ({ generalInfo, slug, municipalityflag }) => {
     },
     {
       id: 'territorio',
-      label: generalInfo?.label === 'Colombia' ? 'Departamentos' : 'Municipios',
+      label: generalInfo?.label === 'Colombia' ? 'Departamentos' : (slug === 'region-amazonia' ? 'Región' : 'Municipios'),
       condition: true // Will be conditionally rendered in PageComponent
     },
     {

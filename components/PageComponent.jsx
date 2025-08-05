@@ -36,8 +36,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
     gallery
   } = data
 
-  const appURL = `https://services.datasketch.co/org_sibhumboldt_sibdata_app2/?region=${slug}`
-  /* `https://shiny.datasketch.co/app_direct_i/sib/_/?region=${slug}` */
   const router = useRouter()
   /* const [publishers, savePublishers] = useLocalStorage('publishers', []) */
 
@@ -205,6 +203,24 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         </div>
       </div>
       }
+
+      {/* Conoce las cifras por departamentos - Región Amazonía */}
+      {slug === 'region-amazonia' && <div id="territorio" className='py-10 bg-white-2'>
+        <div className='mx-auto w-10/12 max-w-screen-2xl'>
+          <div className='space-y-2.5'>
+            <p className='3xl:text-lg'>
+              Explora el aporte departamental de
+            </p>
+            <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
+              Especies y registros en la Región Amazonía
+            </h2>
+          </div>
+          <div className='mt-3' style={{ height: 600 }}>
+            <MapRegionAmazonia />
+          </div>
+        </div>
+      </div>
+      }
       {/* Publicadores */}
       <div id="publicadores" className='py-10 bg-white-smoke'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
@@ -269,25 +285,6 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
           </div>
         </div>
       )}
-
-      <div>
-        {(() => {
-          if (slug === 'region-amazonia') {
-            return (
-              <div id="mapa" className='py-10 bg-white'>
-                <MapRegionAmazonia />
-              </div>
-            )
-          } else {
-            return (
-              <div id="mapa" className='py-10 bg-white'>
-              <iframe src={appURL} className='h-screen w-full'></iframe>
-              </div>
-            )
-          }
-        })()}
-      </div>
-      {/* explorador */}
 
       {patrocinador.length !== 0 && <div className='py-10 bg-white'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-xl'>

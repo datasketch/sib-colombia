@@ -55,7 +55,7 @@ function EspecialRegion ({ data, slug, sponsors }) {
       )}
 
       {/* PageComponent for all regions */}
-      <PageComponent data={{ ...customData, patrocinador: sponsors }} slug={slug} municipality={slug} municipalityflag />
+      <PageComponent data={{ ...customData, patrocinador: sponsors }} slug={slug} municipality={slug} municipalityflag={false} />
     </>
   )
 }
