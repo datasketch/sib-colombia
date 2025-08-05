@@ -4,13 +4,12 @@ import { useContext, useEffect, useMemo, useState } from 'react'
 import HeadMore from '../../components/headers/HeadMore'
 import Pagination from '../../components/Pagination'
 import PublishersCard from '../../components/PublishersCard'
-import publishers from '../../static/data/publicador.json'
-import publishersExtend from '../../static/data/publicadorExtend.json'
+import publicadorData from '../../static/data/publicador.json'
 import countrysCode from '../../static/data/countrysCode.json'
 import { AppContext } from '../_app'
 import Selectable from '../../components/Selectable'
 import InfoPublishers from '../../components/InfoPublishers'
-import { regionsDropdown } from '../../lib/util'
+import { getRegionsForDropdown, getRegionsForGroupedDropdown } from '../../lib/navigation'
 import { clearText } from '../../lib/functions'
 import SelectableV2 from '../../components/SelectableV2'
 
@@ -26,10 +25,49 @@ export default function publicadores () {
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
   const [currentPage, setCurrentPage] = useState(1)
   const [search, setSearch] = useState('')
-  const [query, setQuery] = useState('colombia')
+    const [query, setQuery] = useState('colombia')
   const [display, setDisplay] = useState(true)
 
-  const [publicadors, setPublicadors] = useState(publishers)
+  // Get all publishers for Colombia (default view)
+  // For Colombia, we need to aggregate publishers from all regions
+  const getAllPublishers = () => {
+    const allPublishers = []
+    const seenSlugs = new Set()
+
+    // Check if the new structure exists
+    if (publicadorData.region_publicador) {
+      Object.values(publicadorData.region_publicador).forEach(regionData => {
+        if (regionData.publicadores) {
+          regionData.publicadores.forEach(publisher => {
+            if (!seenSlugs.has(publisher.slug_publicador)) {
+              seenSlugs.add(publisher.slug_publicador)
+              allPublishers.push(publisher)
+            }
+          })
+        }
+      })
+    } else {
+      // Fallback to old structure
+      Object.values(publicadorData).forEach(regionData => {
+        if (regionData.publicadores) {
+          regionData.publicadores.forEach(publisher => {
+            if (!seenSlugs.has(publisher.slug_publicador)) {
+              seenSlugs.add(publisher.slug_publicador)
+              allPublishers.push(publisher)
+            }
+          })
+        }
+      })
+    }
+
+    return allPublishers
+  }
+
+  const allPublishers = getAllPublishers()
+
+
+
+  const [publicadors, setPublicadors] = useState(allPublishers)
 
   const [selectedRegion, setSelectedRegion] = useState('Colombia')
   const [selectedArea, setSelectedArea] = useState('')
@@ -39,13 +77,66 @@ export default function publicadores () {
   const [isOrgDisabled] = useState(false)
 
   const [render, setRender] = useState(false)
-  const citys = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.pais_publicacion], []))]
+  // Use the filters from the data structure instead of generating from publishers
+  const getFilterOptions = () => {
+    // Use the filters section from the data if available, otherwise fallback to generating from publishers
+    if (publicadorData.filters) {
+      return {
+        countries: publicadorData.filters.pais_publicacion || [],
+        orgTypes: publicadorData.filters.tipo_organizacion || []
+      }
+    } else {
+      // Fallback to generating from publishers data
+      const countries = [...new Set(allPublishers.map(p => p.pais_publicacion).filter(Boolean))]
+      const orgTypes = [...new Set(allPublishers.map(p => p.tipo_organizacion).filter(Boolean))]
+      return { countries, orgTypes }
+    }
+  }
+
+          // Generate region dropdown using the new filters structure
+  const getRegionsForDropdownFromFilters = () => {
+    if (publicadorData.filters?.region) {
+      const flatRegions = []
+
+      // Add Colombia first
+      flatRegions.push({
+        label: 'Colombia',
+        value: 'colombia'
+      })
+
+      // Add each category from the filters
+      Object.entries(publicadorData.filters.region).forEach(([category, regions]) => {
+        if (category === 'nacional') return // Skip nacional as it's already added as Colombia
+
+        if (Array.isArray(regions)) {
+          // Handle array of regions (like Departamentos)
+          regions.forEach(region => {
+            flatRegions.push({
+              label: region.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()), // Convert slug to readable name
+              value: region
+            })
+          })
+        } else if (typeof regions === 'string') {
+          // Handle single region (like Áreas protegidas, Territorios indígenas, etc.)
+          const regionName = regions.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+          flatRegions.push({
+            label: regionName,
+            value: regions
+          })
+        }
+      })
+
+      console.log('Generated flat regions:', flatRegions)
+      return flatRegions
+    } else {
+      // Fallback to old navigation data
+      return getRegionsForDropdown()
+    }
+  }
+
+  const { countries: citys, orgTypes: typeOrganization } = getFilterOptions()
   const [tempCities, setTempCities] = useState(citys)
-  const typeOrganization = [...new Set(publishers.reduce((acc, curr) => [...acc, curr.tipo_organizacion], []))]
-  const territories = [
-    'reserva-forestal-la-planada',
-    'resguardo-indigena-pialapi-pueblo-viejo'
-  ]
+  const [tempTypeOrganization, setTempTypeOrganization] = useState(typeOrganization)
   /* const typeOrganization = [...new Set(
     publishers.reduce((acc, curr) => {
       const type = curr.tipo_organizacion !== undefined ? curr.tipo_organizacion : "Internacional"
@@ -72,13 +163,14 @@ export default function publicadores () {
   }
 
   function filterByCountry (publisher) {
-    const { pais_publicacion: paisPublicacion } = publisher
-    return paisPublicacion?.includes(selectedCountry)
+    // Use pais_publicacion field for country filter (CO, US, etc.)
+    const paisPublicacion = publisher.pais_publicacion
+    return !selectedCountry || paisPublicacion === selectedCountry
   }
 
   function filterByOrgType (publisher) {
-    const { tipo_organizacion: organizacion = '' } = publisher
-    return organizacion?.includes(selectedOrganizacion)
+    const tipoOrganizacion = publisher.tipo_organizacion
+    return !selectedOrganizacion || tipoOrganizacion === selectedOrganizacion
   }
 
   const handleChange = ({ target }) => {
@@ -92,86 +184,61 @@ export default function publicadores () {
 
   const handleRegionChange = ({ target }) => {
     const { value } = target
-    setSelectedRegion(regionsDropdown.find(e => e.value === value).label)
+    const regionData = getRegionsForDropdown().find(e => e.value === value)
+    setSelectedRegion(regionData ? regionData.label : '')
     setDisplay(true)
     if (value !== 'colombia') {
       setQuery(value)
       router.push(`/mas/publicadores?region=${value}`)
 
-      if (territories.includes(value)) {
-        const found = publishersExtend.find(e => e.name === 'narino')
-        const foundGraph = publishersExtend.find(e => e.name === value)
-        setSelectedArea(value)
-        setPublicadors(found.extra.find(f => f.name === value).list)
-        setDepartmentData(foundGraph.graph)
+      // Check if region exists in the new data structure
+      const regionData = publicadorData.region_publicador?.[value] || publicadorData[value]
+      if (regionData) {
+        setPublicadors(regionData.publicadores)
+        setDepartmentData(regionData.stats)
         setDisplay(true)
+        setAreaDropdown([])
+        setSelectedArea('')
       } else {
-        const found = publishersExtend.find(e => e.name === value)
-        if (found && found.extra) {
-          setAreaDropdown(found.extra.map(f => {
-            return {
-              label: clearText(f.name),
-              value: f.name
-            }
-          }))
-          setPublicadors(found.list)
-          setDepartmentData(found.graph)
-        } else {
-          setAreaDropdown([])
-          setPublicadors([])
-          setDepartmentData(null)
-          setSelectedArea('')
-        }
+        // Region not found
+        setPublicadors([])
+        setDepartmentData(null)
+        setAreaDropdown([])
+        setSelectedArea('')
       }
     } else {
-      const found = publishersExtend.find(e => e.name === 'colombia')
+      // Colombia selected - show all publishers
       setQuery('colombia')
-      setPublicadors(publishers)
-      setDepartmentData(found.graph)
+      setPublicadors(allPublishers)
+      setDepartmentData(publicadorData.region_publicador?.colombia?.stats || publicadorData.colombia?.stats || null)
       setSelectedArea('')
       setAreaDropdown([])
+              // Update dropdown options for Colombia view
+        const { countries, orgTypes } = getFilterOptions()
+        setTempCities(countries)
+        setTempTypeOrganization(orgTypes)
       router.push('/mas/publicadores?region=colombia')
     }
   }
 
   const resetRegion = () => {
     setSelectedRegion('')
-    setPublicadors(publishers)
+    setPublicadors(allPublishers)
     setAreaDropdown([])
     setDisplay(false)
     router.push('/mas/publicadores')
   }
 
+  // Note: Area functionality removed since new structure doesn't support sub-areas
+  // If needed, this can be reimplemented based on the new data structure
   const handleAreaChange = ({ target }) => {
-    const { value } = target
-    setDisplay(false)
-    setSelectedArea(value)
-
-    router.push(`/mas/publicadores?region=${query}&area=${value}`)
-
-    setPublicadors(publishersExtend.find(e => e.name === query).extra.find(f => f.name === value).list)
-    setDepartmentData(null)
+    // This function is kept for compatibility but area functionality is not supported in new structure
+    console.log('Area change not supported in new data structure')
   }
 
   const resetArea = () => {
-    setSelectedArea('')
-    setAreaDropdown([])
-    setPublicadors([])
-    setDepartmentData(null)
-    setDisplay(true)
-    router.push(`/mas/publicadores?region=${query}`)
-
-    const found = publishersExtend.find(e => e.name === query)
-    if (found && found.extra) {
-      setAreaDropdown(found.extra.map(f => {
-        return {
-          label: clearText(f.name),
-          value: f.name
-        }
-      }))
-      setPublicadors(found.list)
-      setDepartmentData(found.graph)
-    }
+    // This function is kept for compatibility but area functionality is not supported in new structure
+    console.log('Area reset not supported in new data structure')
   }
 
   const handleCountryChange = ({ target }) => {
@@ -182,7 +249,7 @@ export default function publicadores () {
     } else {
       setSelectedOrganizacion('')
     } setSelectedCountry(value)
-    setDisplay(false)
+    setDisplay(true) // Keep pie charts visible when filtering
   }
 
   const resetCountry = () => {
@@ -194,16 +261,8 @@ export default function publicadores () {
 
   const handleOrganizacionChange = ({ target }) => {
     const { value } = target
-
-    if (value !== 'Internacional') {
-      setTempCities(citys.filter(e => e === 'CO'))
-      setSelectedCountry('CO')
-    } else {
-      setTempCities(citys.filter(e => e !== 'CO'))
-      setSelectedCountry('')
-    }
     setSelectedOrganizacion(value || '')
-    setDisplay(false)
+    setDisplay(true) // Keep pie charts visible when filtering
   }
 
   const resetOrg = () => {
@@ -217,6 +276,8 @@ export default function publicadores () {
     .filter(filterByCountry)
     .filter(filterByOrgType)
 
+
+
   const clearFilters = () => {
     setQuery('')
     setSelectedCountry('')
@@ -224,9 +285,13 @@ export default function publicadores () {
     setDepartmentData(null)
     setSelectedRegion('')
     setSelectedArea('')
-    setPublicadors(publishers)
+    setPublicadors(allPublishers)
     setSearch('')
     setAreaDropdown([])
+    // Reset dropdown options to Colombia view
+    const { countries, orgTypes } = getFilterOptions()
+    setTempCities(countries)
+    setTempTypeOrganization(orgTypes)
     router.push('/mas/publicadores')
     setRender(prevState => !prevState)
   }
@@ -239,43 +304,45 @@ export default function publicadores () {
 
   useEffect(() => {
     if (!router.isReady) return
-    const { query: { region, area } } = router
+    const { query: { region } } = router
     const selectedRegion = region || 'colombia'
 
     setQuery(selectedRegion)
 
     if (selectedRegion === 'colombia') {
-      const found = publishersExtend.find(e => e.name === 'colombia')
       setSelectedRegion('Colombia')
-      setPublicadors(publishers)
-      setDepartmentData(found.graph)
+      // Get all publishers for Colombia view
+      const allPublishersForColombia = getAllPublishers()
+      setPublicadors(allPublishersForColombia)
+      setDepartmentData(publicadorData.region_publicador?.colombia?.stats || publicadorData.colombia?.stats || null)
       setDisplay(true)
-    }
+              // Set dropdown options for Colombia view
+        const { countries, orgTypes } = getFilterOptions()
+        setTempCities(countries)
+        setTempTypeOrganization(orgTypes)
+    } else {
+      // Check if region exists in the new data structure
+      const regionData = publicadorData.region_publicador?.[selectedRegion] || publicadorData[selectedRegion]
+      const regionInfo = getRegionsForDropdown().find(e => e.value === selectedRegion)
 
-    if (territories.includes(region)) {
-      const found = publishersExtend.find(e => e.name === 'narino')
-      const foundGraph = publishersExtend.find(e => e.name === region)
-      setSelectedRegion(regionsDropdown.find(e => e.value === region).label)
-      setPublicadors(found.extra.find(f => f.name === region).list)
-      setDepartmentData(foundGraph.graph)
-      setDisplay(true)
-    }
-
-    if (region && !territories.includes(region)) {
-      const found = publishersExtend.find(e => e.name === region)
-      setSelectedRegion(regionsDropdown.find(e => e.value === region).label || '')
-      setPublicadors(found.list)
-      setDepartmentData(found.graph)
-      if (area) {
-        setPublicadors(found.extra.find(f => f.name === area).list)
-        setSelectedArea(found.extra.find(f => f.name === area).name)
-        setDisplay(false)
-        setAreaDropdown(found.extra.map(f => {
-          return {
-            label: clearText(f.name),
-            value: f.name
-          }
-        }))
+      if (regionData) {
+        setSelectedRegion(regionInfo ? regionInfo.label : selectedRegion)
+        setPublicadors(regionData.publicadores)
+        setDepartmentData(regionData.stats)
+        setDisplay(true)
+        setAreaDropdown([])
+        setSelectedArea('')
+        // Update dropdown options for specific region
+        const { countries, orgTypes } = getFilterOptions()
+        setTempCities(countries)
+        setTempTypeOrganization(orgTypes)
+      } else {
+        // Region not found
+        setSelectedRegion(regionInfo ? regionInfo.label : selectedRegion)
+        setPublicadors([])
+        setDepartmentData(null)
+        setAreaDropdown([])
+        setSelectedArea('')
       }
     }
   }, [router.isReady, router.query])
@@ -311,7 +378,7 @@ export default function publicadores () {
 
             <h3 className='font-bold'>Región</h3>
             {<div className='flex flex-row gap-2'>
-              <SelectableV2 reset={resetRegion} key={render} placeHolder={selectedRegion || 'Selecciona una opción'} data={regionsDropdown} optionSelected={handleRegionChange} />
+              <SelectableV2 reset={resetRegion} key={render} placeHolder={selectedRegion || 'Selecciona una opción'} data={getRegionsForDropdownFromFilters()} optionSelected={handleRegionChange} />
               {/* <button type='button' onClick={resetRegion} value={'reset'}>
                 <img src='/images/icon-reset-black.svg' />
               </button> */}
@@ -335,7 +402,7 @@ export default function publicadores () {
           <div className='flex flex-col gap-2'>
             <h3 className='font-bold'>Tipo de Organización</h3>
             <div className='flex flex-row gap-2'>
-              <Selectable reset={resetOrg} key={render} placeHolder={selectedOrganizacion || 'Selecciona una opción'} optionSelected={handleOrganizacionChange} data={typeOrganization} disabled={isOrgDisabled} />
+              <Selectable reset={resetOrg} key={render} placeHolder={selectedOrganizacion || 'Selecciona una opción'} optionSelected={handleOrganizacionChange} data={tempTypeOrganization} disabled={isOrgDisabled} />
               {/* <button type='button' onClick={resetOrg} className='flex gap-x-2 items-center font-lato font-bold' value={'reset'}>
                 <img src='/images/icon-reset-black.svg' />
               </button> */}

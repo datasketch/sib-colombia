@@ -5,29 +5,69 @@ import { formatNumbers } from '../lib/functions'
 export default function InfoPublishers ({ total, data, region, router }) {
   const totalPublishers = total.length
 
-  const internationalPublisher = data.find(item => item.tipo_organizacion === 'Internacional')
+  // Handle new data structure
+  let nTypeInternational = 0
+  let totalPublishersNational = 0
+  let infoRegion = []
+  let infoRemark = []
 
-  const nTypeInternational = internationalPublisher ? internationalPublisher.n_tipo : 0
+  if (data && data.tipo_organizacion) {
+    // New structure: data.stats.tipo_organizacion array
+    const tipoOrganizacionData = data.tipo_organizacion || []
+    const registrosData = data.registros_tipo_organizacion || []
 
-  const totalPublishersNational = data.reduce((total, obj) => {
-    if (obj.tipo_organizacion !== 'Internacional') {
-      return total + obj.n_tipo
-    } else {
-      return total
-    }
-  }, 0)
+    const internationalPublisher = tipoOrganizacionData.find(item => item.tipo_organizacion === 'Internacional')
+    nTypeInternational = internationalPublisher ? internationalPublisher.n : 0
 
-  const infoRegion = data.map(item => ({
-    name: item.tipo_organizacion,
-    value: item.pct_tipo * 100,
-    label: item.n_tipo
-  }))
+    totalPublishersNational = tipoOrganizacionData.reduce((total, obj) => {
+      if (obj.tipo_organizacion !== 'Internacional') {
+        return total + obj.n
+      } else {
+        return total
+      }
+    }, 0)
 
-  const infoRemark = data.map(item => ({
-    name: item.tipo_organizacion,
-    value: item.pct_tipo_obs * 100,
-    label: item.n_tipo_obs
-  }))
+    // Calculate percentages for pie charts
+    const totalPublishersForPct = tipoOrganizacionData.reduce((sum, item) => sum + item.n, 0)
+
+    infoRegion = tipoOrganizacionData.map(item => ({
+      name: item.tipo_organizacion,
+      value: totalPublishersForPct > 0 ? (item.n / totalPublishersForPct) * 100 : 0,
+      label: item.n
+    }))
+
+    const totalRegistros = registrosData.reduce((sum, item) => sum + item.registros, 0)
+
+    infoRemark = registrosData.map(item => ({
+      name: item.tipo_organizacion,
+      value: totalRegistros > 0 ? (item.registros / totalRegistros) * 100 : 0,
+      label: item.registros
+    }))
+  } else {
+    // Fallback for old structure or no data
+    const internationalPublisher = data?.find?.(item => item.tipo_organizacion === 'Internacional')
+    nTypeInternational = internationalPublisher ? internationalPublisher.n_tipo : 0
+
+    totalPublishersNational = data?.reduce?.((total, obj) => {
+      if (obj.tipo_organizacion !== 'Internacional') {
+        return total + obj.n_tipo
+      } else {
+        return total
+      }
+    }, 0) || 0
+
+    infoRegion = data?.map?.(item => ({
+      name: item.tipo_organizacion,
+      value: item.pct_tipo * 100,
+      label: item.n_tipo
+    })) || []
+
+    infoRemark = data?.map?.(item => ({
+      name: item.tipo_organizacion,
+      value: item.pct_tipo_obs * 100,
+      label: item.n_tipo_obs
+    })) || []
+  }
 
   const COLORS = ['#5151F2', '#00AFFF', '#4AD3AC', '#F26330', '#FFD150', '#FFE0BB', '#163875', '#161B33']
 
