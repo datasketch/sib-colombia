@@ -54,9 +54,11 @@ function HeadRegion ({ slug, title, description, imageMap, especiesEstimadas, es
                       <div>
                         <img className="h-40 min-w-[240px] md:w-4/5" src={'/' + imageMap} />
                       </div>
-                      <div className='w-14 h-[123px]'>
-                        <img src='/images/mapa-co.svg' alt='mapa-co' />
-                      </div>
+                      {slug !== 'colombia' && (
+                        <div className='w-14 h-[123px]'>
+                          <img src='/images/mapa-co.svg' alt='mapa-co' />
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
