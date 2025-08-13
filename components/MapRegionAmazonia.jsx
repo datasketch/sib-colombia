@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import * as d3Geo from 'd3-geo'
 import { MapContainer, GeoJSON, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -6,27 +6,52 @@ import * as d3Scale from 'd3-scale'
 
 const MapRegionAmazonia = () => {
   const [geoJsonData, setGeoJsonData] = useState(null)
+  const [departamentosData, setDepartamentosData] = useState(null)
+  const [municipiosData, setMunicipiosData] = useState(null)
   const [selectedDepartment, setSelectedDepartment] = useState(null)
+  const [hoveredDepartment, setHoveredDepartment] = useState(null)
+  const mapLayers = useRef(new Map())
 
-  // Department data with external links
+  // Department data with external links (sorted alphabetically)
   const departments = [
-    { id: '18', name: 'Caquetá', slug: 'caqueta' },
-    { id: '86', name: 'Putumayo', slug: 'putumayo' },
     { id: '91', name: 'Amazonas', slug: 'amazonas' },
+    { id: '18', name: 'Caquetá', slug: 'caqueta' },
+    { id: '19', name: 'Cauca', slug: 'cauca' },
+    { id: '94', name: 'Guainía', slug: 'guainia' },
+    { id: '95', name: 'Guaviare', slug: 'guaviare' },
     { id: '50', name: 'Meta', slug: 'meta' },
-    { id: '97', name: 'Vaupés', slug: 'vaupes' },
-    { id: '94', name: 'Guainía', slug: 'guainia' }
+    { id: '86', name: 'Putumayo', slug: 'putumayo' },
+    { id: '97', name: 'Vaupés', slug: 'vaupes' }
   ]
 
   useEffect(() => {
     const loadGeoJsonData = async () => {
       try {
+        // Load main region data
         const response = await fetch('/data/region-amazonia/region-amazonia.geojson')
         if (!response.ok) {
           throw new Error('Failed to load GeoJSON data')
         }
         const data = await response.json()
         setGeoJsonData(data)
+
+        // Load departamentos background data
+        const departamentosResponse = await fetch('/data/region-amazonia/region-amazonia-departamentos.geojson')
+        if (departamentosResponse.ok) {
+          const departamentosData = await departamentosResponse.json()
+          setDepartamentosData(departamentosData)
+        } else {
+          console.warn('Failed to load departamentos GeoJSON data', departamentosResponse.status)
+        }
+
+        // Load municipios data
+        const municipiosResponse = await fetch('/data/region-amazonia/region-amazonia-municipios.json')
+        if (municipiosResponse.ok) {
+          const municipiosData = await municipiosResponse.json()
+          setMunicipiosData(municipiosData)
+        } else {
+          console.warn('Failed to load municipios data', municipiosResponse.status)
+        }
 
         // Set Amazonas as default selected department
         const amazonas = data.features.find(f => f.properties.cod_dane === '91')
@@ -62,8 +87,29 @@ const MapRegionAmazonia = () => {
     .domain([minimum, maximum])
     .range(['#B6ECBF', '#29567D'])
 
+  // Handle departamentos background layer styling
+  const handleDepartamentosFeature = (feature, layer) => {
+    layer.setStyle({
+      fillColor: '#F5F4F6',
+      fillOpacity: 0.5,
+      color: '#9CA3AF', // gray-400
+      weight: 2,
+      opacity: 0.8
+    })
+
+    // Disable interactions for background layer and set lower z-index
+    layer.off()
+    layer.setStyle({ ...layer.options, interactive: false })
+    if (layer._path) {
+      layer._path.style.pointerEvents = 'none'
+    }
+  }
+
   // Handle feature interactions
   const handleEachFeature = (feature, layer) => {
+    // Store layer reference for programmatic access (use useRef to avoid state updates during render)
+    mapLayers.current.set(feature.properties.cod_dane, layer)
+
     const properties = feature.properties
     const currentValue = properties?.especies_region_total || 0
 
@@ -72,8 +118,15 @@ const MapRegionAmazonia = () => {
       fillOpacity: 0.6,
       color: '#333',
       weight: 1,
-      opacity: 0.8
+      opacity: 0.8,
+      interactive: true
     })
+
+    // Ensure this layer is interactive and on top
+    if (layer._path) {
+      layer._path.style.pointerEvents = 'auto'
+      layer._path.style.zIndex = '1000'
+    }
 
     // Event handlers
     layer.on({
@@ -103,12 +156,14 @@ const MapRegionAmazonia = () => {
         }).openPopup()
       },
       mouseover: (e) => {
+        setHoveredDepartment(feature)
         layer.setStyle({
           fillOpacity: 0.8,
           weight: 2
         })
       },
       mouseout: (e) => {
+        setHoveredDepartment(null)
         layer.setStyle({
           fillColor: currentValue > 0 ? colorScale(currentValue) : '#F5F4F6',
           fillOpacity: 0.6,
@@ -173,7 +228,7 @@ const MapRegionAmazonia = () => {
 
                 <div className="space-y-4">
                   <div>
-                    <h5 className="font-semibold text-gray-800 mb-2 text-sm">Aporte de registros</h5>
+                    <h5 className="font-semibold text-gray-800 mb-2 text-sm">Aporte de observaciones</h5>
                     <div className="space-y-1">
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">• Total:</span>
@@ -221,8 +276,8 @@ const MapRegionAmazonia = () => {
           </div>
         </div>
 
-        {/* Right Panel - Map */}
-        <div className="w-2/3 relative bg-white">
+                {/* Center Panel - Map */}
+        <div className="w-1/2 relative bg-white">
           <MapContainer
             center={center}
             zoom={6}
@@ -237,9 +292,21 @@ const MapRegionAmazonia = () => {
               subdomains="abcd"
               maxZoom={20}
             />
+            {/* Background departamentos layer */}
+            {departamentosData && (
+              <GeoJSON
+                key="departamentos-layer"
+                data={departamentosData}
+                onEachFeature={handleDepartamentosFeature}
+                style={{ zIndex: 1 }}
+              />
+            )}
+            {/* Main region data layer */}
             <GeoJSON
+              key="main-region-layer"
               data={geoJsonData}
               onEachFeature={handleEachFeature}
+              style={{ zIndex: 1000 }}
             />
           </MapContainer>
 
@@ -293,6 +360,153 @@ const MapRegionAmazonia = () => {
               </div>
             </div>
           )}
+
+                                        {/* Source Attribution */}
+          <div className="absolute bottom-2 left-2 right-2 text-xs z-10">
+            <div className="text-gray-400 text-center">
+              <div className="leading-tight">
+                <span className="font-medium">Mapa región amazonía colombiana. Fuente:</span> <a
+                  href="https://www.dnp.gov.co/plan-nacional-desarrollo/pnd-2022-2026"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-gray-700 underline inline-flex items-center gap-1"
+                >
+                  Departamento Nacional de Planeación
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                    <path d="M5 5a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2v-2a1 1 0 10-2 0v2H5V7h2a1 1 0 000-2H5z"></path>
+                  </svg>
+                </a><br/>
+                Plan Nacional de Desarrollo 2022–2026: Colombia, Potencia Mundial de la Vida.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Navigation Panel - Departments and Municipalities */}
+        <div className="w-1/6 p-3 bg-gray-50 border-l border-gray-200">
+          <div className="h-full overflow-y-auto">
+            <h3 className="text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
+              Navega en la biodiversidad
+            </h3>
+
+            {/* Departments List */}
+            <div className="space-y-1 mb-4">
+              {departments.map((dept) => {
+                const isHovered = hoveredDepartment?.properties.cod_dane === dept.id
+                const isSelected = selectedDepartment?.properties.cod_dane === dept.id
+                const regionFeature = geoJsonData?.features.find(f => f.properties.cod_dane === dept.id)
+
+                return (
+                  <div
+                    key={dept.id}
+                    className={`flex items-center gap-2 p-1.5 rounded transition-colors ${
+                      isHovered
+                        ? 'bg-blue-50 border-l-2 border-blue-400'
+                        : isSelected
+                          ? 'bg-green-50 border-l-2 border-green-400'
+                          : 'hover:bg-gray-100'
+                    }`}
+                    onMouseEnter={() => {
+                      if (regionFeature) {
+                        setHoveredDepartment(regionFeature)
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      setHoveredDepartment(null)
+                    }}
+                  >
+                    <div className={`w-2 h-2 rounded-full ${
+                      isSelected ? 'bg-green-400' : 'bg-gray-400'
+                    }`}></div>
+                    <span
+                      className={`text-xs flex-1 cursor-pointer hover:underline ${
+                        isHovered
+                          ? 'font-medium text-blue-700'
+                          : isSelected
+                            ? 'font-medium text-green-700'
+                            : 'text-gray-600'
+                      }`}
+                      onClick={() => {
+                        if (regionFeature) {
+                          setSelectedDepartment(regionFeature)
+
+                          // Trigger popup using stored layer reference
+                          const layer = mapLayers.current.get(dept.id)
+                          if (layer && typeof layer.fire === 'function') {
+                            // Simply fire the click event on the layer
+                            layer.fire('click')
+                          }
+                        }
+                      }}
+                    >
+                      {dept.name}
+                    </span>
+                    <a
+                      href={`/${dept.slug}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-gray-600"
+                    >
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                        <path d="M5 5a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2v-2a1 1 0 10-2 0v2H5V7h2a1 1 0 000-2H5z"></path>
+                      </svg>
+                    </a>
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* Municipalities List */}
+            {(hoveredDepartment || selectedDepartment) && municipiosData && (
+              <div>
+                <h4 className="text-xs font-semibold text-gray-500 mb-2 flex items-center gap-1">
+                  <svg className="w-2 h-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {(hoveredDepartment || selectedDepartment)?.properties.label}
+                </h4>
+                <div className="space-y-1 max-h-48 overflow-y-auto">
+                  {municipiosData[(hoveredDepartment || selectedDepartment)?.properties.cod_dane]
+                    ?.sort((a, b) => a.label.localeCompare(b.label))
+                    ?.map((municipio) => {
+                      const deptSlug = departments.find(d => d.id === (hoveredDepartment || selectedDepartment)?.properties.cod_dane)?.slug
+                      return (
+                        <div
+                          key={municipio.slug}
+                          className="flex items-center gap-1 p-1 pl-4 rounded hover:bg-gray-100"
+                        >
+                          <svg className="w-1.5 h-1.5 fill-current text-gray-400" viewBox="0 0 8 8">
+                            <circle cx="4" cy="4" r="2" />
+                          </svg>
+                          <span
+                            className="text-xs text-gray-600 hover:text-gray-800 hover:underline flex-1 cursor-pointer"
+                            onClick={() => {
+                              // For now, just log - municipalities don't have map polygons to show popups
+                              console.log('Municipality clicked:', municipio.label)
+                            }}
+                          >
+                            {municipio.label}
+                          </span>
+                          <a
+                            href={`/${deptSlug}/${municipio.slug}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-300 hover:text-gray-500"
+                          >
+                            <svg className="w-2 h-2" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                              <path d="M5 5a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2v-2a1 1 0 10-2 0v2H5V7h2a1 1 0 000-2H5z"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      )
+                    })}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
