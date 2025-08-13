@@ -31,7 +31,7 @@ const Table = ({ tabledata, general = false, link, overflow = false }) => {
             </tbody>
           </table>
         </div>
-        {link && <a target='_blank' href={'/explorador?' + link} className='font-bold flex justify-center' rel="noreferrer">Explora lista completa </a>}
+        {link && <a target='_blank' href={'/explorador?' + link + '&lista_especies=true'} className='font-bold flex justify-center' rel="noreferrer">Explora lista completa </a>}
       </div>
     )
   }
