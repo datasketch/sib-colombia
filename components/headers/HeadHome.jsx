@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
-import col from '../../static/data/colombia.json'
+import col from '../../public/data/colombia/colombia.json'
 import InfoTooltip from '../InfoTooltip'
 
 // import InfoTooltip from '../InfoTooltip'
