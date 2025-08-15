@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import * as d3Geo from 'd3-geo'
 import { MapContainer, GeoJSON } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -6,8 +6,76 @@ import * as d3Scale from 'd3-scale'
 
 const MapDepartamentos = ({ data, isScale = false, departamentos = [] }) => {
   const [selectedDepartment, setSelectedDepartment] = useState(null)
+  const [hoveredDepartment, setHoveredDepartment] = useState(null)
   const [mapType, setMapType] = useState('species') // 'species' or 'observations'
   const [searchTerm, setSearchTerm] = useState('')
+  const mapRef = useRef()
+  const mapLayers = useRef(new Map())
+  const departmentListRef = useRef()
+  const departmentRefs = useRef(new Map())
+
+  // Helper function to create popup content
+  const createPopupContent = (feature) => {
+    const value = mapType === 'species' ? (feature.properties.n_especies || 0) : (feature.properties.n_registros || 0)
+    const label = mapType === 'species' ? 'especies' : 'observaciones'
+    const dept = departamentos.find(d => d.label === feature.properties.label)
+    const linkHtml = dept ? `<div class="mt-2"><a href="/${dept.slug}" target="_blank" class="text-green-600 hover:text-green-800 text-sm font-medium">Ver más →</a></div>` : ''
+
+    return `
+      <div class="p-3">
+        <h3 class="font-bold text-lg mb-2">${feature.properties.label}</h3>
+        <div class="space-y-2">
+          <div>
+            <span class="text-sm text-gray-600">${label}:</span>
+            <span class="font-semibold ml-1">${value.toLocaleString()}</span>
+          </div>
+          ${linkHtml}
+        </div>
+      </div>
+    `
+  }
+
+  // Helper function to scroll to department in left panel
+  const scrollToDepartment = (feature) => {
+    const featureId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+    const departmentElement = departmentRefs.current.get(featureId)
+
+    if (departmentElement && departmentListRef.current) {
+      departmentElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      })
+    }
+  }
+
+  // Helper function to show popup for a feature
+  const showPopupForFeature = (feature) => {
+    const layerId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+    const layer = mapLayers.current.get(layerId)
+    if (layer && mapRef.current) {
+      // Close any existing popups
+      mapRef.current.closePopup()
+
+      // Create and show popup
+      const popupContent = createPopupContent(feature)
+      layer.bindPopup(popupContent, {
+        closeButton: false,
+        className: 'custom-popup'
+      }).openPopup()
+
+      // Center map on the feature
+      if (feature.geometry && feature.geometry.coordinates) {
+        const centroid = d3Geo.geoCentroid(feature)
+        const lat = centroid[1]
+        const lng = centroid[0]
+
+        // Colombia bounds check
+        if (lat >= -10 && lat <= 15 && lng >= -90 && lng <= -60) {
+          mapRef.current.setView([lat, lng], mapRef.current.getZoom())
+        }
+      }
+    }
+  }
 
   useEffect(() => {
     if (data && data.features && data.features.length > 0) {
@@ -15,6 +83,51 @@ const MapDepartamentos = ({ data, isScale = false, departamentos = [] }) => {
       setSelectedDepartment(data.features[0])
     }
   }, [data])
+
+  // Add CSS to prevent focus outlines and style tooltips
+  useEffect(() => {
+    const style = document.createElement('style')
+    style.textContent = `
+      .leaflet-interactive:focus {
+        outline: none !important;
+      }
+      .leaflet-interactive:focus-visible {
+        outline: none !important;
+      }
+      .leaflet-interactive {
+        outline: none !important;
+      }
+      .department-tooltip {
+        background: white !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 4px !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+        color: #374151 !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        padding: 4px 8px !important;
+      }
+      .department-tooltip:before {
+        border-top-color: white !important;
+      }
+    `
+    document.head.appendChild(style)
+
+    return () => {
+      document.head.removeChild(style)
+    }
+  }, [])
+
+  // Additional effect to handle map size invalidation on mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (mapRef.current) {
+        mapRef.current.invalidateSize()
+      }
+    }, 300)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   if (!data || !data.features) {
     return <div className="flex justify-center items-center h-96">Cargando mapa...</div>
@@ -39,6 +152,10 @@ const MapDepartamentos = ({ data, isScale = false, departamentos = [] }) => {
 
   // Handle feature interactions
   const handleEachFeature = (feature, layer) => {
+    // Store layer reference for programmatic access
+    const layerId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+    mapLayers.current.set(layerId, layer)
+
     const properties = feature.properties
     const currentValue = mapType === 'species' ? (properties?.n_especies || 0) : (properties?.n_registros || 0)
 
@@ -47,50 +164,61 @@ const MapDepartamentos = ({ data, isScale = false, departamentos = [] }) => {
       fillOpacity: 0.6,
       color: '#333',
       weight: 1,
-      opacity: 0.8
+      opacity: 0.8,
+      interactive: true,
+      bubblingMouseEvents: false
     })
 
     // Event handlers
     layer.on({
-      click: () => {
+      click: (e) => {
         setSelectedDepartment(feature)
 
-        // Create popup content
-        const value = mapType === 'species' ? (feature.properties.n_especies || 0) : (feature.properties.n_registros || 0)
-        const label = mapType === 'species' ? 'especies' : 'observaciones'
-        const dept = departamentos.find(d => d.label === feature.properties.label)
-        const linkHtml = dept ? `<div class="mt-2"><a href="/${dept.slug}" target="_blank" class="text-green-600 hover:text-green-800 text-sm font-medium">Ver más →</a></div>` : ''
+        // Prevent default behavior and stop propagation
+        e.originalEvent.preventDefault()
+        e.originalEvent.stopPropagation()
 
-        const popupContent = `
-          <div class="p-3">
-            <h3 class="font-bold text-lg mb-2">${feature.properties.label}</h3>
-            <div class="space-y-2">
-              <div>
-                <span class="text-sm text-gray-600">${label}:</span>
-                <span class="font-semibold ml-1">${value.toLocaleString()}</span>
-              </div>
-              ${linkHtml}
-            </div>
-          </div>
-        `
+        // Scroll to department in left panel
+        scrollToDepartment(feature)
 
+        // Create and show popup
+        const popupContent = createPopupContent(feature)
         layer.bindPopup(popupContent, {
           closeButton: false,
           className: 'custom-popup'
         }).openPopup()
+
+        // Remove any focus/selection effects
+        if (layer._path) {
+          layer._path.style.outline = 'none'
+          layer._path.blur()
+        }
       },
       mouseover: (e) => {
+        setHoveredDepartment(feature)
         layer.setStyle({
           fillOpacity: 0.8,
           weight: 2
         })
+
+        // Create and show tooltip
+        layer.bindTooltip(feature.properties.label, {
+          permanent: false,
+          direction: 'top',
+          className: 'department-tooltip',
+          opacity: 0.9
+        }).openTooltip()
       },
       mouseout: (e) => {
+        setHoveredDepartment(null)
         layer.setStyle({
           fillColor: currentValue > 0 ? colorScale(currentValue) : '#F5F4F6',
           fillOpacity: 0.6,
           weight: 1
         })
+
+        // Close tooltip
+        layer.closeTooltip()
       }
     })
   }
@@ -128,7 +256,7 @@ const MapDepartamentos = ({ data, isScale = false, departamentos = [] }) => {
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
-                <div className="space-y-2 overflow-y-auto max-h-96">
+                <div ref={departmentListRef} className="space-y-2 overflow-y-auto max-h-96">
                   {data.features
                     .slice()
                     .sort((a, b) => a.properties.label.localeCompare(b.properties.label))
@@ -137,17 +265,61 @@ const MapDepartamentos = ({ data, isScale = false, departamentos = [] }) => {
                       feature.properties.label.toLowerCase().includes(searchTerm.toLowerCase())
                     )
                     .map((feature) => {
-                      const isSelected = selectedDepartment && selectedDepartment.properties.cod_dane === feature.properties.cod_dane
+                      const featureId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+                      const selectedId = selectedDepartment?.properties?.cod_dane || selectedDepartment?.properties?.id || selectedDepartment?.properties?.label
+                      const hoveredId = hoveredDepartment?.properties?.cod_dane || hoveredDepartment?.properties?.id || hoveredDepartment?.properties?.label
+
+                      const isSelected = selectedDepartment && selectedId === featureId
+                      const isHovered = hoveredDepartment && hoveredId === featureId
 
                       return (
                       <div
-                        key={feature.properties.cod_dane}
+                        key={feature.properties.cod_dane || feature.properties.id || feature.properties.label}
+                        ref={(el) => {
+                          if (el) {
+                            departmentRefs.current.set(featureId, el)
+                          }
+                        }}
                         className={`p-3 rounded-lg cursor-pointer transition-colors ${
-                          isSelected
+                          isHovered
+                            ? 'bg-blue-100 border border-blue-300'
+                            : isSelected
                             ? 'bg-green-100 border border-green-300'
                             : 'bg-gray-50 hover:bg-gray-100 border border-transparent'
                         }`}
-                        onClick={() => setSelectedDepartment(feature)}
+                        onClick={() => {
+                          setSelectedDepartment(feature)
+                          // Show popup on the map
+                          setTimeout(() => {
+                            showPopupForFeature(feature)
+                          }, 100)
+                        }}
+                        onMouseEnter={() => {
+                          setHoveredDepartment(feature)
+                          // Trigger map layer hover effect
+                          const layerId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+                          const layer = mapLayers.current.get(layerId)
+                          if (layer) {
+                            layer.setStyle({
+                              fillOpacity: 0.8,
+                              weight: 2
+                            })
+                          }
+                        }}
+                        onMouseLeave={() => {
+                          setHoveredDepartment(null)
+                          // Reset map layer style
+                          const layerId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+                          const layer = mapLayers.current.get(layerId)
+                          if (layer) {
+                            const currentValue = mapType === 'species' ? (feature.properties?.n_especies || 0) : (feature.properties?.n_registros || 0)
+                            layer.setStyle({
+                              fillColor: currentValue > 0 ? colorScale(currentValue) : '#F5F4F6',
+                              fillOpacity: 0.6,
+                              weight: 1
+                            })
+                          }
+                        }}
                       >
                         <div className="flex items-center justify-between">
                           <div>
@@ -224,11 +396,14 @@ const MapDepartamentos = ({ data, isScale = false, departamentos = [] }) => {
           </div>
 
           <MapContainer
+            ref={mapRef}
             center={center}
-            zoom={5}
-            scrollWheelZoom={false}
+            zoom={7}
+            minZoom={6}
+            maxZoom={12}
+            scrollWheelZoom={true}
             style={{ height: '100%', width: '100%', zIndex: 1, backgroundColor: 'white' }}
-            zoomControl={false}
+            zoomControl={true}
             attributionControl={false}
           >
             <GeoJSON
@@ -288,6 +463,31 @@ const MapDepartamentos = ({ data, isScale = false, departamentos = [] }) => {
               </div>
             </div>
           )}
+
+          {/* Legend */}
+          <div className="absolute bottom-4 right-4 z-30 bg-white p-4 rounded-lg shadow-lg border border-gray-200">
+            <h4 className="text-sm font-semibold text-gray-800 mb-2">
+              {mapType === 'species' ? 'Especies' : 'Observaciones'}
+            </h4>
+            <div className="space-y-2">
+              {/* Color gradient bar */}
+              <div className="flex items-center space-x-2">
+                <span className="text-xs text-gray-600 min-w-[30px]">{minimum.toLocaleString()}</span>
+                <div
+                  className="h-4 w-24 rounded"
+                  style={{
+                    background: 'linear-gradient(to right, #B6ECBF, #29567D)'
+                  }}
+                ></div>
+                <span className="text-xs text-gray-600 min-w-[30px]">{maximum.toLocaleString()}</span>
+              </div>
+              {/* No data indicator */}
+              <div className="flex items-center space-x-2">
+                <div className="w-4 h-4 rounded" style={{ backgroundColor: '#F5F4F6' }}></div>
+                <span className="text-xs text-gray-600">Sin datos</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

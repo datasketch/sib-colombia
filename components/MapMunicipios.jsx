@@ -513,6 +513,31 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
               </div>
             </div>
           )}
+
+          {/* Legend */}
+          <div className="absolute bottom-4 right-4 z-30 bg-white p-4 rounded-lg shadow-lg border border-gray-200">
+            <h4 className="text-sm font-semibold text-gray-800 mb-2">
+              {mapType === 'species' ? 'Especies' : 'Observaciones'}
+            </h4>
+            <div className="space-y-2">
+              {/* Color gradient bar */}
+              <div className="flex items-center space-x-2">
+                <span className="text-xs text-gray-600 min-w-[30px]">{minimum.toLocaleString()}</span>
+                                <div
+                  className="h-4 w-24 rounded"
+                  style={{
+                    background: 'linear-gradient(to right, #B6ECBF, #29567D)'
+                  }}
+                ></div>
+                <span className="text-xs text-gray-600 min-w-[30px]">{maximum.toLocaleString()}</span>
+              </div>
+              {/* No data indicator */}
+              <div className="flex items-center space-x-2">
+                <div className="w-4 h-4 rounded" style={{ backgroundColor: '#F5F4F6' }}></div>
+                <span className="text-xs text-gray-600">Sin datos</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

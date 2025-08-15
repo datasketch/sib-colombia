@@ -66,7 +66,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
   return (
     <>
       {gallery.length !== 0 && <Gallery gallery={gallery} />}
-                  {slides && slides.length > 0 && (
+      {slides && slides.length > 0 && (
         <div className='bg-white-3 pt-3 mt-3 mb-0'>
           <div className='mx-auto w-10/12 max-w-screen-2xl'>
             <SimpleSlider dots infinite slidestoshow={1} responsiveSlidesToShow={1}>

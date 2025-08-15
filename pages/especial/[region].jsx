@@ -35,8 +35,6 @@ function EspecialRegion ({ data, slug, sponsors }) {
     }).slice(0, 2) // Limit to maximum 2 slides for especial pages
     : []
 
-
-
   // Create filtered data object for especial pages
   const filteredData = { ...data, slides: filteredSlides }
 
