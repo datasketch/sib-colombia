@@ -90,7 +90,7 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
   let context
   try {
     context = useContext(MenuExplorerContext)
-    console.log('Context retrieved:', context)
+    // console.log('Context retrieved:', context)
   } catch (error) {
     console.error('Error accessing MenuExplorerContext:', error)
     return <div>Error loading menu</div>

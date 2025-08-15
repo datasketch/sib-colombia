@@ -123,7 +123,7 @@ export default function publicadores () {
         }
       })
 
-      console.log('Generated flat regions:', flatRegions)
+      // console.log('Generated flat regions:', flatRegions)
       return flatRegions
     } else {
       // Fallback to old navigation data

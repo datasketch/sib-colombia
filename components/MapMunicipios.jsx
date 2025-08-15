@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import * as d3Geo from 'd3-geo'
-import { MapContainer, GeoJSON } from 'react-leaflet'
+import { MapContainer, GeoJSON, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import * as d3Scale from 'd3-scale'
 
@@ -11,6 +11,74 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const mapRef = useRef()
   const mapLayers = useRef(new Map())
+  const municipalityListRef = useRef()
+  const municipalityRefs = useRef(new Map())
+
+  // Helper function to create popup content
+  const createPopupContent = (feature) => {
+    const value = mapType === 'species' ? (feature.properties.n_especies || 0) : (feature.properties.n_registros || 0)
+    const label = mapType === 'species' ? 'especies' : 'observaciones'
+    const mun = municipios.find(m => m.label === feature.properties.label)
+    const linkHtml = mun ? `<div class="mt-2"><a href="/${slug}/${mun.slug}" target="_blank" class="text-green-600 hover:text-green-800 text-sm font-medium">Ver más →</a></div>` : ''
+
+    return `
+      <div class="p-3">
+        <h3 class="font-bold text-lg mb-2">${feature.properties.label}</h3>
+        <div class="space-y-2">
+          <div>
+            <span class="text-sm text-gray-600">${label}:</span>
+            <span class="font-semibold ml-1">${value.toLocaleString()}</span>
+          </div>
+          ${linkHtml}
+        </div>
+      </div>
+    `
+  }
+
+  // Helper function to scroll to municipality in left panel
+  const scrollToMunicipality = (feature) => {
+    const featureId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+    const municipalityElement = municipalityRefs.current.get(featureId)
+
+    if (municipalityElement && municipalityListRef.current) {
+      municipalityElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      })
+    }
+  }
+
+  // Helper function to show popup for a feature
+  const showPopupForFeature = (feature) => {
+    const layerId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+    const layer = mapLayers.current.get(layerId)
+    if (layer && mapRef.current) {
+      // Close any existing popups
+      mapRef.current.closePopup()
+
+      // Create and show popup
+      const popupContent = createPopupContent(feature)
+      layer.bindPopup(popupContent, {
+        closeButton: false,
+        className: 'custom-popup'
+      }).openPopup()
+
+      // Center map on the feature
+      if (feature.geometry && feature.geometry.coordinates) {
+        const centroid = d3Geo.geoCentroid(feature)
+        // d3Geo.geoCentroid returns [longitude, latitude], Leaflet expects [latitude, longitude]
+        // Also handle potential coordinate system issues
+        const lat = centroid[1]
+        const lng = centroid[0]
+
+        // If coordinates seem to be in wrong hemisphere, don't transform
+        // Colombia is roughly between 12°N to -4°S latitude and -66°W to -84°W longitude
+        if (lat >= -10 && lat <= 15 && lng >= -90 && lng <= -60) {
+          mapRef.current.setView([lat, lng], mapRef.current.getZoom())
+        }
+      }
+    }
+  }
 
   useEffect(() => {
     if (data && data.features && data.features.length > 0) {
@@ -19,67 +87,41 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
     }
   }, [data])
 
+  // Add CSS to prevent focus outlines and style tooltips
   useEffect(() => {
-    if (mapRef.current && data && data.features && data.features.length > 0) {
-      const map = mapRef.current
-      // Multiple attempts with different delays
-      const delays = [100, 300, 500]
+    const style = document.createElement('style')
+    style.textContent = `
+      .leaflet-interactive:focus {
+        outline: none !important;
+      }
+      .leaflet-interactive:focus-visible {
+        outline: none !important;
+      }
+      .leaflet-interactive {
+        outline: none !important;
+      }
+      .municipality-tooltip {
+        background: white !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 4px !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+        color: #374151 !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        padding: 4px 8px !important;
+      }
+      .municipality-tooltip:before {
+        border-top-color: white !important;
+      }
+    `
+    document.head.appendChild(style)
 
-      delays.forEach(delay => {
-        setTimeout(() => {
-          try {
-            // Invalidate map size
-            map.invalidateSize()
-
-            // Calculate bounds manually from all coordinates
-            let minLat = Infinity
-            let maxLat = -Infinity
-            let minLng = Infinity
-            let maxLng = -Infinity
-
-            data.features.forEach(feature => {
-              if (feature.geometry && feature.geometry.coordinates) {
-                const coords = feature.geometry.coordinates
-
-                const processCoords = (coordArray) => {
-                  if (typeof coordArray[0] === 'number') {
-                    // This is a coordinate pair [lng, lat]
-                    const [lng, lat] = coordArray
-                    if (lat < minLat) minLat = lat
-                    if (lat > maxLat) maxLat = lat
-                    if (lng < minLng) minLng = lng
-                    if (lng > maxLng) maxLng = lng
-                  } else {
-                    // This is an array of coordinates
-                    coordArray.forEach(processCoords)
-                  }
-                }
-
-                processCoords(coords)
-              }
-            })
-
-            // Only fit bounds if we have valid coordinates
-            if (minLat !== Infinity && maxLat !== -Infinity && minLng !== Infinity && maxLng !== -Infinity) {
-              const leafletBounds = [
-                [minLat, minLng], // Southwest
-                [maxLat, maxLng] // Northeast
-              ]
-
-              map.fitBounds(leafletBounds, {
-                padding: [30, 30],
-                maxZoom: 8
-              })
-            }
-          } catch (error) {
-            console.error('Error fitting bounds:', error)
-          }
-        }, delay)
-      })
+    return () => {
+      document.head.removeChild(style)
     }
-  }, [data])
+  }, [])
 
-  // Additional effect to handle map size invalidation on mount
+  // Additional effect to handle map size invalidation on mount (simplified)
   useEffect(() => {
     const timer = setTimeout(() => {
       if (mapRef.current) {
@@ -94,9 +136,54 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
     return <div className="flex justify-center items-center h-96">Cargando mapa...</div>
   }
 
-  // Calculate centroid for map center
+  // Calculate centroid for map center (same approach as MapRegionAmazonia)
   const centroid = d3Geo.geoCentroid(data)
-  const center = [centroid[1], centroid[0]] // [lat, lng] for Leaflet
+  const center = centroid.map((coord, index) => {
+    if (index === 0) return coord - 180
+    return coord * -1
+  }).reverse()
+
+  // Calculate dynamic zoom based on geographic extent
+  const calculateZoom = () => {
+    let minLat = Infinity
+    let maxLat = -Infinity
+    let minLng = Infinity
+    let maxLng = -Infinity
+
+    data.features.forEach(feature => {
+      if (feature.geometry && feature.geometry.coordinates) {
+        const coords = feature.geometry.coordinates
+
+        const processCoords = (coordArray) => {
+          if (typeof coordArray[0] === 'number') {
+            const [lng, lat] = coordArray
+            if (lat < minLat) minLat = lat
+            if (lat > maxLat) maxLat = lat
+            if (lng < minLng) minLng = lng
+            if (lng > maxLng) maxLng = lng
+          } else {
+            coordArray.forEach(processCoords)
+          }
+        }
+
+        processCoords(coords)
+      }
+    })
+
+    // Calculate the span of the data
+    const latSpan = maxLat - minLat
+    const lngSpan = maxLng - minLng
+    const maxSpan = Math.max(latSpan, lngSpan)
+
+    // Dynamic zoom based on geographic extent
+    if (maxSpan > 4) return 7 // Very large departments
+    if (maxSpan > 2) return 8 // Large departments
+    if (maxSpan > 1) return 9 // Medium departments
+    if (maxSpan > 0.5) return 10 // Small departments
+    return 11 // Very small departments
+  }
+
+  const dynamicZoom = calculateZoom()
 
   // Color scale for data visualization
   const features = data.features
@@ -111,7 +198,8 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
   // Handle feature interactions
   const handleEachFeature = (feature, layer) => {
     // Store layer reference for programmatic access
-    mapLayers.current.set(feature.properties.cod_dane || feature.properties.label, layer)
+    const layerId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+    mapLayers.current.set(layerId, layer)
 
     const properties = feature.properties
     const currentValue = mapType === 'species' ? (properties?.n_especies || 0) : (properties?.n_registros || 0)
@@ -121,37 +209,35 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
       fillOpacity: 0.6,
       color: '#333',
       weight: 1,
-      opacity: 0.8
+      opacity: 0.8,
+      interactive: true,
+      bubblingMouseEvents: false
     })
 
     // Event handlers
     layer.on({
-      click: () => {
+      click: (e) => {
         setSelectedMunicipality(feature)
 
-        // Create popup content
-        const value = mapType === 'species' ? (feature.properties.n_especies || 0) : (feature.properties.n_registros || 0)
-        const label = mapType === 'species' ? 'especies' : 'observaciones'
-        const mun = municipios.find(m => m.label === feature.properties.label)
-        const linkHtml = mun ? `<div class="mt-2"><a href="/${slug}/${mun.slug}" target="_blank" class="text-green-600 hover:text-green-800 text-sm font-medium">Ver más →</a></div>` : ''
+        // Prevent default behavior and stop propagation
+        e.originalEvent.preventDefault()
+        e.originalEvent.stopPropagation()
 
-        const popupContent = `
-          <div class="p-3">
-            <h3 class="font-bold text-lg mb-2">${feature.properties.label}</h3>
-            <div class="space-y-2">
-              <div>
-                <span class="text-sm text-gray-600">${label}:</span>
-                <span class="font-semibold ml-1">${value.toLocaleString()}</span>
-              </div>
-              ${linkHtml}
-            </div>
-          </div>
-        `
+        // Scroll to municipality in left panel
+        scrollToMunicipality(feature)
 
+        // Create and show popup
+        const popupContent = createPopupContent(feature)
         layer.bindPopup(popupContent, {
           closeButton: false,
           className: 'custom-popup'
         }).openPopup()
+
+        // Remove any focus/selection effects
+        if (layer._path) {
+          layer._path.style.outline = 'none'
+          layer._path.blur()
+        }
       },
       mouseover: (e) => {
         setHoveredMunicipality(feature)
@@ -159,6 +245,14 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
           fillOpacity: 0.8,
           weight: 2
         })
+
+        // Create and show tooltip
+        layer.bindTooltip(feature.properties.label, {
+          permanent: false,
+          direction: 'top',
+          className: 'municipality-tooltip',
+          opacity: 0.9
+        }).openTooltip()
       },
       mouseout: (e) => {
         setHoveredMunicipality(null)
@@ -167,6 +261,9 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
           fillOpacity: 0.6,
           weight: 1
         })
+
+        // Close tooltip
+        layer.closeTooltip()
       }
     })
   }
@@ -203,7 +300,7 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
-                <div className="space-y-2 overflow-y-auto max-h-96">
+                <div ref={municipalityListRef} className="space-y-2 overflow-y-auto max-h-96">
                   {data.features
                     .slice()
                     .sort((a, b) => a.properties.label.localeCompare(b.properties.label))
@@ -212,12 +309,21 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
                       feature.properties.label.toLowerCase().includes(searchTerm.toLowerCase())
                     )
                     .map((feature) => {
-                      const isSelected = selectedMunicipality && selectedMunicipality.properties.cod_dane === feature.properties.cod_dane
-                      const isHovered = hoveredMunicipality && hoveredMunicipality.properties.cod_dane === feature.properties.cod_dane
+                      const featureId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+                      const selectedId = selectedMunicipality?.properties?.cod_dane || selectedMunicipality?.properties?.id || selectedMunicipality?.properties?.label
+                      const hoveredId = hoveredMunicipality?.properties?.cod_dane || hoveredMunicipality?.properties?.id || hoveredMunicipality?.properties?.label
+
+                      const isSelected = selectedMunicipality && selectedId === featureId
+                      const isHovered = hoveredMunicipality && hoveredId === featureId
 
                       return (
                       <div
-                        key={feature.properties.cod_dane}
+                        key={feature.properties.cod_dane || feature.properties.id || feature.properties.label}
+                        ref={(el) => {
+                          if (el) {
+                            municipalityRefs.current.set(featureId, el)
+                          }
+                        }}
                         className={`p-3 rounded-lg cursor-pointer transition-colors ${
                           isHovered
                             ? 'bg-blue-100 border border-blue-300'
@@ -227,19 +333,16 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
                         }`}
                         onClick={() => {
                           setSelectedMunicipality(feature)
-                          // Trigger popup on the map
+                          // Show popup on the map
                           setTimeout(() => {
-                            const layer = mapLayers.current.get(feature.properties.cod_dane || feature.properties.label)
-                            if (layer && mapRef.current) {
-                              // Simple click simulation on the layer
-                              layer.fire('click')
-                            }
+                            showPopupForFeature(feature)
                           }, 100)
                         }}
                         onMouseEnter={() => {
                           setHoveredMunicipality(feature)
                           // Trigger map layer hover effect
-                          const layer = mapLayers.current.get(feature.properties.cod_dane || feature.properties.label)
+                          const layerId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+                          const layer = mapLayers.current.get(layerId)
                           if (layer) {
                             layer.setStyle({
                               fillOpacity: 0.8,
@@ -250,7 +353,8 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
                         onMouseLeave={() => {
                           setHoveredMunicipality(null)
                           // Reset map layer style
-                          const layer = mapLayers.current.get(feature.properties.cod_dane || feature.properties.label)
+                          const layerId = feature.properties.cod_dane || feature.properties.id || feature.properties.label
+                          const layer = mapLayers.current.get(layerId)
                           if (layer) {
                             const currentValue = mapType === 'species' ? (feature.properties?.n_especies || 0) : (feature.properties?.n_registros || 0)
                             layer.setStyle({
@@ -338,14 +442,20 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
           <MapContainer
             ref={mapRef}
             center={center}
-            zoom={7}
+            zoom={dynamicZoom}
             minZoom={6}
-            maxZoom={12}
+            maxZoom={14}
             scrollWheelZoom={true}
             style={{ height: '100%', width: '100%', zIndex: 1, backgroundColor: 'white' }}
             zoomControl={true}
             attributionControl={false}
           >
+            <TileLayer
+              url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+              subdomains="abcd"
+              maxZoom={20}
+            />
             <GeoJSON
               key={`${mapType}-${JSON.stringify(data)}`}
               data={data}

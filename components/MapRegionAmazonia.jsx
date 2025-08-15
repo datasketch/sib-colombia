@@ -484,7 +484,7 @@ const MapRegionAmazonia = () => {
                             className="text-xs text-gray-600 hover:text-gray-800 hover:underline flex-1 cursor-pointer"
                             onClick={() => {
                               // For now, just log - municipalities don't have map polygons to show popups
-                              console.log('Municipality clicked:', municipio.label)
+                              // console.log('Municipality clicked:', municipio.label)
                             }}
                           >
                             {municipio.label}
