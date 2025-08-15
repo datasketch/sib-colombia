@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import HeadRegion from '../components/headers/HeadRegion'
 import { AppContext } from './_app'
-import col from '../static/data/colombia.json'
+import col from '../public/data/colombia/colombia.json'
 import DataMapColombia from '../static/data-maps/colombia.json'
 import PageComponent from '../components/PageComponent'
 

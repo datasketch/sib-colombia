@@ -26,7 +26,7 @@ const CardTematicasCol = props => {
             const title = capitalize(slug.replace('amenazadas-', ''))
             return <div key={key} className='shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
               <div className='flex flex-col items-start justify-start'>
-                <span>Categoría UICN {title}</span>
+                <span>Categoría {title === 'Global' ? 'UICN Global' : 'Nacional'}</span>
                 <span className='text-6xl font-black font-inter'>
                   {formatNumbers(especies)}
                   <div className='border-t border-t-dartmouth-green' />
@@ -357,7 +357,7 @@ const CardTematicasCol = props => {
       <div className='w-10/12 mx-auto flex justify-between'>
         <div className='max-w-[45%] w-full shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
           <div className='flex flex-col items-start justify-start'>
-            <span>Categoría UICN {capitalize(info?.slug.replace('amenazadas-', ''))}</span>
+            <span>Categoría {capitalize(info?.slug.replace('amenazadas-', '')) === 'Global' ? 'UICN Global' : 'Nacional'}</span>
             <span className='text-6xl font-black font-inter'>
               {formatNumbers(info?.especies)}
               <div className='border-t border-t-dartmouth-green' />
@@ -463,7 +463,7 @@ const CardTematicasCol = props => {
       <div className='w-10/12 mx-auto flex justify-between'>
         <div className='max-w-[45%] w-full shadow-md flex flex-col justify-center gap-6 py-12 px-8'>
           <div className='flex flex-col items-start justify-start'>
-            <span>Categoría UICN {capitalize(info?.slug.replace('amenazadas-', ''))}</span>
+            <span>Categoría {capitalize(info?.slug.replace('amenazadas-', '')) === 'Global' ? 'UICN Global' : 'Nacional'}</span>
             <span className='text-6xl font-black font-inter'>
               {formatNumbers(info?.especies)}
               <div className='border-t border-t-dartmouth-green' />
