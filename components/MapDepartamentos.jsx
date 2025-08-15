@@ -140,6 +140,47 @@ const MapDepartamentos = ({ data, isScale = false, departamentos = [] }) => {
     return coord * -1
   }).reverse()
 
+  // Calculate dynamic zoom based on geographic extent
+  const calculateZoom = () => {
+    let minLat = Infinity
+    let maxLat = -Infinity
+    let minLng = Infinity
+    let maxLng = -Infinity
+
+    data.features.forEach(feature => {
+      if (feature.geometry && feature.geometry.coordinates) {
+        const coords = feature.geometry.coordinates
+
+        const processCoords = (coordArray) => {
+          if (typeof coordArray[0] === 'number') {
+            const [lng, lat] = coordArray
+            if (lat < minLat) minLat = lat
+            if (lat > maxLat) maxLat = lat
+            if (lng < minLng) minLng = lng
+            if (lng > maxLng) maxLng = lng
+          } else {
+            coordArray.forEach(processCoords)
+          }
+        }
+
+        processCoords(coords)
+      }
+    })
+
+    // Calculate the span of the data
+    const latSpan = maxLat - minLat
+    const lngSpan = maxLng - minLng
+    const maxSpan = Math.max(latSpan, lngSpan)
+
+    // Dynamic zoom based on geographic extent for country-level view
+    if (maxSpan > 15) return 5 // Very large country view
+    if (maxSpan > 10) return 6 // Large country view
+    if (maxSpan > 8) return 7 // Medium country view
+    return 8 // Smaller country view
+  }
+
+  const dynamicZoom = calculateZoom()
+
   // Color scale for data visualization
   const features = data.features
   const dataValues = features.map(f => mapType === 'species' ? (f.properties?.n_especies || 0) : (f.properties?.n_registros || 0))
@@ -398,8 +439,8 @@ const MapDepartamentos = ({ data, isScale = false, departamentos = [] }) => {
           <MapContainer
             ref={mapRef}
             center={center}
-            zoom={7}
-            minZoom={6}
+            zoom={dynamicZoom}
+            minZoom={5}
             maxZoom={12}
             scrollWheelZoom={true}
             style={{ height: '100%', width: '100%', zIndex: 1, backgroundColor: 'white' }}
