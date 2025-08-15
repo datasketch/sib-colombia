@@ -1,4 +1,4 @@
-/* import publishers from '../static/data/publicador.json' */
+/* import publishers from '../public/data/publicador.json' */
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as TooltipPieChart, Legend } from 'recharts'
 import { formatNumbers } from '../lib/functions'
 

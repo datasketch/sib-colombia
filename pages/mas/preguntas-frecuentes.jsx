@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react'
 import CardPregunta from '../../components/CardPregunta'
 import HeadMore from '../../components/headers/HeadMore'
 import { AppContext } from '../_app'
-import questions from '../../static/data/preg_frecuentes.json'
+import questions from '../../public/data/preg_frecuentes.json'
 export default function preguntasFrecuentes () {
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
 

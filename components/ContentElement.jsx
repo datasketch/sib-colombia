@@ -5,7 +5,7 @@ import { Treemap, ResponsiveContainer, Tooltip as TooltipTreemap } from 'rechart
 
 import { Tooltip } from '@mui/material'
 import { calculateWidth, formatNumbers } from '../lib/functions'
-import tooltips from '../static/data/tooltips.json'
+import tooltips from '../public/data/tooltips.json'
 import CardSimple from './CardSimple'
 import { CardHead } from './CardGraph/CardHead'
 import ConcentricCard from './ConcentricCard'

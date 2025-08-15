@@ -3,7 +3,7 @@
 import { Tooltip } from '@mui/material'
 import PropTypes from 'prop-types'
 import { calculateWidth, capitalize, formatNumbers, validateDifNa } from '../lib/functions'
-import tooltips from '../static/data/tooltips.json'
+import tooltips from '../public/data/tooltips.json'
 import CustomTooltip from './CustomTooltip'
 import Table from './Table'
 import ReactMarkdown from 'react-markdown'

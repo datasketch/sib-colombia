@@ -11,7 +11,7 @@ async function getDepartmentsPath () {
 async function main () {
   const data = await getDepartmentsPath()
 
-  const publishersFile = await fs.readFile(path.resolve(path.join(process.cwd(), 'static', 'data'), 'publicador.json'), 'utf8')
+  const publishersFile = await fs.readFile(path.resolve(path.join(process.cwd(), 'public', 'data'), 'publicador.json'), 'utf8')
 
   const publishers = JSON.parse(publishersFile)
 

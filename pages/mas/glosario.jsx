@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Fuse from 'fuse.js'
 import CardGlosario from '../../components/CardGlosario'
 import HeadMore from '../../components/headers/HeadMore'
-import glosaryData from '../../static/data/glosario.json'
+import glosaryData from '../../public/data/glosario.json'
 import { AppContext } from '../_app'
 
 export default function glosario () {
