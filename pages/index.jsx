@@ -165,7 +165,7 @@ export default function Home () {
                   type={item.type}
                   link={item.link}
                   especies={item.especies_total}
-                  especies_estimadas={item.especies_estimadas}
+                  especiesEstimadas={item.especies_estimadas}
                   observadas={item.observadas}
                 />
               )}
@@ -179,7 +179,7 @@ export default function Home () {
                   type={item.type}
                   link={item.link}
                   especies={item.especies_total}
-                  especies_estimadas={item.especies_estimadas}
+                  especiesEstimadas={item.especies_estimadas}
                   observadas={item.observadas}
                 />
               )}
