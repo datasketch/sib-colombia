@@ -2,7 +2,7 @@ import { formatNumbers } from '../lib/functions'
 
 const CardDestacada = ({ type, label, especies, observadas, especies_estimadas, link }) => {
   return (
-    <div className='bg-destacada h-80 w-auto max-w-[208px] py-3 px-2.5 flex flex-col justify-between'>
+    <div className='bg-destacada h-80 w-full max-w-[208px] py-3 px-2.5 flex flex-col justify-between'>
       <div className="text-white flex flex-col gap-y-0.5">
         <span className="font-inter font-normal text-sm">{type}</span>
         <span className="font-black font-inter text-3xl">{label}</span>

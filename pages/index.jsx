@@ -115,7 +115,7 @@ export default function Home () {
   const regionesDestacadas = destacadas.map((el) => {
     const des = ENUM_DESTACADAS.find(d => d.slug === el.slug_region)
     return { ...des, ...el }
-  })
+  }).sort((a, b) => a.label.localeCompare(b.label))
 
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
 
@@ -155,10 +155,12 @@ export default function Home () {
             <h2 className='font-black text-2xl'>Destacados</h2>
             <span className='px-4'>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
           </div>
-          <div className='py-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-screen-2xl mx-auto w-10/12'>
-            {regionesDestacadas.map((item, key) =>
-              <div key={key} className='flex justify-center'>
+          <div className='py-8 max-w-screen-xl mx-auto w-10/12'>
+            {/* First row - 4 cards */}
+            <div className='grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center mb-6'>
+              {regionesDestacadas.slice(0, 4).map((item, key) =>
                 <CardDestacada
+                  key={key}
                   label={item.label}
                   type={item.type}
                   link={item.link}
@@ -166,8 +168,22 @@ export default function Home () {
                   especies_estimadas={item.especies_estimadas}
                   observadas={item.observadas}
                 />
-              </div>
-            )}
+              )}
+            </div>
+            {/* Second row - 3 cards centered */}
+            <div className='grid grid-cols-2 md:grid-cols-3 gap-6 justify-items-center max-w-2xl mx-auto'>
+              {regionesDestacadas.slice(4, 7).map((item, key) =>
+                <CardDestacada
+                  key={key + 4}
+                  label={item.label}
+                  type={item.type}
+                  link={item.link}
+                  especies={item.especies_total}
+                  especies_estimadas={item.especies_estimadas}
+                  observadas={item.observadas}
+                />
+              )}
+            </div>
           </div>
         </div>
       </section>
