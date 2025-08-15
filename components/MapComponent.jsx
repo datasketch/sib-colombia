@@ -26,7 +26,7 @@ const MapComponent = ({ data }) => {
           )}
 
         </div>
-        <div className='w-full lg:w-2/3'>
+        <div className='w-full lg:w-2/3 mt-10 lg:mt-16'>
           <Map {...{ colorSelector, mouseEnterHandler, hoveredCountry, setHoveredCountry, details: data.country_ranking/*,  categories: details?.title */ }} />
         </div>
       </section>

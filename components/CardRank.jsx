@@ -5,17 +5,16 @@ import TooltipText from './TooltipText'
 const CardRank = ({ info, refs }) => {
   return (<>
     <div className='flex items-center'>
-      <div className='text-6xl font-bold'>
+      <div className='text-4xl lg:text-5xl font-bold'>
         {info.position}
       </div>
       <div>
-        <div>{ordinalSuffixOf(info.position)}</div>
-        <p className='capitalize text-2xl'>país</p>
+        <div className='text-sm lg:text-base'>{ordinalSuffixOf(info.position)}</div>
+        <p className='capitalize text-lg lg:text-xl'>país</p>
       </div>
     </div>
-    <div>
-
-      <div className='inline-block gap-x-0.5 max-w-xs'>
+    <div className='mt-0 pt-0'>
+      <div className='inline-block gap-x-0.5 max-w-xs text-sm lg:text-base'>
         {(() => {
           const parts = []
           let lastIndex = 0

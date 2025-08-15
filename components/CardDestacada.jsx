@@ -1,6 +1,6 @@
 import { formatNumbers } from '../lib/functions'
 
-const CardDestacada = ({ type, label, especies, observadas, link }) => {
+const CardDestacada = ({ type, label, especies, observadas, especies_estimadas, link }) => {
   return (
     <div className='bg-destacada h-80 w-auto max-w-[208px] py-3 px-2.5 flex flex-col justify-between'>
       <div className="text-white flex flex-col gap-y-0.5">
@@ -9,14 +9,19 @@ const CardDestacada = ({ type, label, especies, observadas, link }) => {
       </div>
       <div>
         <div className='w-1/3 border-t-2 border-dotted border-t-light-peagreen pb-1.5' />
-        <div className="flex flex-col gap-y-5">
+        <div className="flex flex-col gap-y-3">
           <div className="space-y-0.5">
             <div className="flex gap-x-1 font-black text-light-peagreen">
               <span className="font-inter">{formatNumbers(especies)}</span>
               <span className="font-lato">Especies </span>
             </div>
+            {especies_estimadas && (
+              <div className="flex gap-x-1 text-light-peagreen text-xs flex-wrap">
+                <span className="font-inter">{formatNumbers(especies_estimadas)}</span>
+                <span className="font-lato">Estimadas</span>
+              </div>
+            )}
             <div className="flex gap-x-1 text-white text-xs flex-wrap">
-              {/* <img src='/images/arrow-white-right.svg' /> */}
               <span className="font-inter">{formatNumbers(observadas)}</span>
               <span className="font-lato">Observaciones</span>
             </div>

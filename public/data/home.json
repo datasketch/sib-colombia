@@ -1,0 +1,241 @@
+{
+  "lista_mapa": {
+    "country_ranking": [
+      {
+        "puesto": 1,
+        "pais": "Brasil",
+        "..gt_id": "BRA",
+        "..gt_name": "Brazil",
+        "..gt_map_name": "world_countries",
+        "lat": -10.6379,
+        "lon": -53.2167
+      },
+      {
+        "puesto": 2,
+        "pais": "Indonesia",
+        "..gt_id": "IDN",
+        "..gt_name": "Indonesia",
+        "..gt_map_name": "world_countries",
+        "lat": -2.2597,
+        "lon": 117.1665
+      },
+      {
+        "puesto": 3,
+        "pais": "China",
+        "..gt_id": "CHN",
+        "..gt_name": "China",
+        "..gt_map_name": "world_countries",
+        "lat": 36.6913,
+        "lon": 103.3773
+      },
+      {
+        "puesto": 4,
+        "pais": "Colombia",
+        "..gt_id": "COL",
+        "..gt_name": "Colombia",
+        "..gt_map_name": "world_countries",
+        "lat": 3.903,
+        "lon": -73.0757
+      },
+      {
+        "puesto": 5,
+        "pais": "Perú",
+        "..gt_id": "PER",
+        "..gt_name": "Peru",
+        "..gt_map_name": "world_countries",
+        "lat": -9.1077,
+        "lon": -74.4202
+      },
+      {
+        "puesto": 6,
+        "pais": "México",
+        "..gt_id": "MEX",
+        "..gt_name": "Mexico",
+        "..gt_map_name": "world_countries",
+        "lat": 23.9267,
+        "lon": -102.1717
+      },
+      {
+        "puesto": 7,
+        "pais": "Australia",
+        "..gt_id": "AUS",
+        "..gt_name": "Australia",
+        "..gt_map_name": "world_countries",
+        "lat": -25.7654,
+        "lon": 134.301
+      },
+      {
+        "puesto": 7,
+        "pais": "Australia",
+        "..gt_id": "AUS",
+        "..gt_name": "Australia",
+        "..gt_map_name": "world_countries",
+        "lat": -10.5017,
+        "lon": 105.6702
+      },
+      {
+        "puesto": 7,
+        "pais": "Australia",
+        "..gt_id": "AUS",
+        "..gt_name": "Indian Ocean Ter.",
+        "..gt_map_name": "world_countries",
+        "lat": -25.7654,
+        "lon": 134.301
+      },
+      {
+        "puesto": 7,
+        "pais": "Australia",
+        "..gt_id": "AUS",
+        "..gt_name": "Indian Ocean Ter.",
+        "..gt_map_name": "world_countries",
+        "lat": -10.5017,
+        "lon": 105.6702
+      },
+      {
+        "puesto": 8,
+        "pais": "India",
+        "..gt_id": "IND",
+        "..gt_name": "India",
+        "..gt_map_name": "world_countries",
+        "lat": 22.781,
+        "lon": 79.5576
+      },
+      {
+        "puesto": 9,
+        "pais": "Ecuador",
+        "..gt_id": "ECU",
+        "..gt_name": "Ecuador",
+        "..gt_map_name": "world_countries",
+        "lat": -1.423,
+        "lon": -78.7328
+      },
+      {
+        "puesto": 10,
+        "pais": "Estados Unidos",
+        "..gt_id": "USA",
+        "..gt_name": "United States",
+        "..gt_map_name": "world_countries",
+        "lat": 44.733,
+        "lon": -103.5989
+      }
+    ],
+    "ref_principal": "Nash, M. H. (2022, julio 28). The 200 Most (& Least) Biodiverse Countries (2022). The Swiftest. https://theswiftest.com/biodiversity-index/ Butler, R. A. (2023). Countries with the highest biodiversity. World Rainforests. https://worldrainforests.com/03highest_biodiversity.htm Worldostats, Butler, R. A. (2025). Biodiversity Rank by Country (updated List 2025). https://worldostats.com/biodiversity-rank-by-country-updated-list-2025/?form=MG0AV3&form=MG0AV3",
+    "positions": [
+      {
+        "position": 1,
+        "position_text": "Primer lugar en diversidad de aves (42), orquídeas (41) y mariposas (13)"
+      },
+      {
+        "position": 2,
+        "position_text": "Segundo en variedad de anfibios(52), peces dulceacuícolas(10), palmas(54) y murciélagos (53)"
+      },
+      {
+        "position": 3,
+        "position_text": "Tercero en diversidad de plantas"
+      },
+      {
+        "position": 6,
+        "position_text": "Sexto en mamíferos (55)"
+      },
+      {
+        "position": 7,
+        "position_text": "Séptimo en reptiles"
+      }
+    ],
+    "position_refs": [
+      {
+        "ref_id": 10,
+        "label": "DoNascimiento, C., Herrera-Collazos, E. E., Herrera-R., G. A., Ortega-Lara, A., Villa-Navarro, F. A., Usma Oviedo, J. S., & Maldonado-Ocampo, J. A. (2017). Checklist of the freshwater fishes of Colombia: A Darwin Core alternative to the updating problem. ZooKeys, 708, 25-138. https://doi.org/10.3897/zookeys.708.13897",
+        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/IX85I8LR/collection"
+      },
+      {
+        "ref_id": 13,
+        "label": "Garwood K., Huertas B., Ríos-Málaver I.C., Jaramillo J.G. (2022). Mariposas de Colombia Lista de chequeo/ Butterflies of Colombia Checklist (Lepidoptera: Papilionoidea). BioButterfly Database. 2da Edición. 304 pp. Disponible en / Available at http://www.butterflycatalogs.com",
+        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/T7Q6BKX8/collection"
+      },
+      {
+        "ref_id": 41,
+        "label": "Hassler, Michael (1994 - 2023): World Orchids. Synonymic Checklist and Distribution of the Orchids of the World. Version 18.3; last update Dec. 11th, 2023. - www.worldplants.de/orchids/. Last accessed 21/12/2023.",
+        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/3W72P33X/collection"
+      },
+      {
+        "ref_id": 42,
+        "label": "South American Classification Committee (SACC). (2025). Species lists of birds for South American countries and territories. Checklist of South American Birds. https://www.museum.lsu.edu/~Remsen/SACCCountryLists.htm",
+        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/ITGZ9FAD/collection"
+      },
+      {
+        "ref_id": 51,
+        "label": "Naciones Unidas, Ecoespaña, & Instituto de Recursos Mundiales (WRI)en colaboración con el Programa de las Naciones Unidas para el Desarrollo, el Programa de las Naciones Unidaspara el Medio Ambiente y el Banco Mundial. (2007). Recursos mundiales: La riqueza del pobre-Gestionar los ecosistemas para combatir la pobreza. Instituto de Recursos Mundiales ; Ecoespaña. https://files.wri.org/d8/s3fs-public/pdf/recursos_mundiales_la_riqueza_del_pobre.pdf",
+        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/KE92L6G3/collection"
+      },
+      {
+        "ref_id": 52,
+        "label": "Butler, R. A. (2019). Total number of amphibian species, by country. Mongabay. https://rainforests.mongabay.com/03amphibian.htm",
+        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/M88T892Q/collection"
+      },
+      {
+        "ref_id": 53,
+        "label": "Martínez-Medina, Daniela, Acevedo-Charry, Orlando, Medellín-Becerra, Sofía, Rodríguez-Fuentes, Juliana, López-Casas, Silvia, Muñoz-Duque, Sebastián, Rivera-Correa, Mauricio, López-Aguirre, Yelenny, Vargas-Salinas, Fernando, Laverde-R., Oscar, & Rodríguez-Posada, Miguel E. (2021). Estado, desarrollo y tendencias de los estudios en acústica de la fauna en Colombia. Biota colombiana, 22(1), 7-25. https://doi.org/10.21068/c2021.v22n01a01",
+        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/KHVZDIRJ/collection"
+      },
+      {
+        "ref_id": 54,
+        "label": "Ministerio de Ambiente y Desarrollo Sostenible. (2015). Plan de conservación, manejo y uso sostenible de las palmas deColombia. Textos: Galeano G., R. Bernal, Y. Figueroa Cardozo. Ministerio de Ambiente y Desarrollo Sostenible - Universidad Nacional deColombia, Bogotá. 134 pp",
+        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/PV6RI4N3/collection"
+      },
+      {
+        "ref_id": 55,
+        "label": "Pacheco Torres, V. R., Diaz, S., Graham Angeles, L. A., Flores-Quispe, M., Calizaya-Mamani, G. ., Ruelas, D., & Sánchez-Vendizú, P. (2021). Lista actualizada de la diversidad de los mamíferos del Perú y una propuesta para su actualización. Revista Peruana De Biología, 28(4), e21019. https://doi.org/10.15381/rpb.v28i4.21019",
+        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/XQAIUCSR/collection"
+      }
+    ]
+  },
+  "destacados_regiones": [
+    {
+      "slug_region": "narino",
+      "label_region": "Nariño",
+      "observadas": 959184,
+      "especies_estimadas": 51947,
+      "especies_total": 11413
+    },
+    {
+      "slug_region": "santander",
+      "label_region": "Santander",
+      "observadas": 1607394,
+      "especies_estimadas": 38198,
+      "especies_total": 14825
+    },
+    {
+      "slug_region": "tolima",
+      "label_region": "Tolima",
+      "observadas": 1180210,
+      "especies_estimadas": 46508,
+      "especies_total": 8803
+    },
+    {
+      "slug_region": "reserva-forestal-la-planada",
+      "label_region": "Reserva Forestal Protectora La Planada",
+      "observadas": 395334,
+      "especies_total": 2020
+    },
+    {
+      "slug_region": "resguardo-indigena-pialapi-pueblo-viejo",
+      "label_region": "Resguardo Indígena Pialapí Pueblo Viejo",
+      "observadas": 1729,
+      "especies_total": 412
+    },
+    {
+      "slug_region": "boyaca",
+      "label_region": "Boyacá",
+      "observadas": 775624,
+      "especies_estimadas": 41344,
+      "especies_total": 11871
+    },
+    {
+      "slug_region": "region-amazonia",
+      "label_region": "Región Amazonía",
+      "observadas": 1720528,
+      "especies_total": 16991
+    }
+  ]
+}
