@@ -6,9 +6,11 @@ import * as d3Scale from 'd3-scale'
 
 const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
   const [selectedMunicipality, setSelectedMunicipality] = useState(null)
+  const [hoveredMunicipality, setHoveredMunicipality] = useState(null)
   const [mapType, setMapType] = useState('species') // 'species' or 'observations'
   const [searchTerm, setSearchTerm] = useState('')
   const mapRef = useRef()
+  const mapLayers = useRef(new Map())
 
   useEffect(() => {
     if (data && data.features && data.features.length > 0) {
@@ -18,12 +20,75 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
   }, [data])
 
   useEffect(() => {
-    if (mapRef.current) {
+    if (mapRef.current && data && data.features && data.features.length > 0) {
       const map = mapRef.current
-      const bounds = d3Geo.geoBounds(data)
-      map.fitBounds(bounds, { padding: [20, 20] })
+      // Multiple attempts with different delays
+      const delays = [100, 300, 500]
+
+      delays.forEach(delay => {
+        setTimeout(() => {
+          try {
+            // Invalidate map size
+            map.invalidateSize()
+
+            // Calculate bounds manually from all coordinates
+            let minLat = Infinity
+            let maxLat = -Infinity
+            let minLng = Infinity
+            let maxLng = -Infinity
+
+            data.features.forEach(feature => {
+              if (feature.geometry && feature.geometry.coordinates) {
+                const coords = feature.geometry.coordinates
+
+                const processCoords = (coordArray) => {
+                  if (typeof coordArray[0] === 'number') {
+                    // This is a coordinate pair [lng, lat]
+                    const [lng, lat] = coordArray
+                    if (lat < minLat) minLat = lat
+                    if (lat > maxLat) maxLat = lat
+                    if (lng < minLng) minLng = lng
+                    if (lng > maxLng) maxLng = lng
+                  } else {
+                    // This is an array of coordinates
+                    coordArray.forEach(processCoords)
+                  }
+                }
+
+                processCoords(coords)
+              }
+            })
+
+            // Only fit bounds if we have valid coordinates
+            if (minLat !== Infinity && maxLat !== -Infinity && minLng !== Infinity && maxLng !== -Infinity) {
+              const leafletBounds = [
+                [minLat, minLng], // Southwest
+                [maxLat, maxLng] // Northeast
+              ]
+
+              map.fitBounds(leafletBounds, {
+                padding: [30, 30],
+                maxZoom: 8
+              })
+            }
+          } catch (error) {
+            console.error('Error fitting bounds:', error)
+          }
+        }, delay)
+      })
     }
   }, [data])
+
+  // Additional effect to handle map size invalidation on mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (mapRef.current) {
+        mapRef.current.invalidateSize()
+      }
+    }, 300)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   if (!data || !data.features) {
     return <div className="flex justify-center items-center h-96">Cargando mapa...</div>
@@ -31,10 +96,7 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
 
   // Calculate centroid for map center
   const centroid = d3Geo.geoCentroid(data)
-  const center = centroid.map((coord, index) => {
-    if (index === 0) return coord - 180
-    return coord * -1
-  }).reverse()
+  const center = [centroid[1], centroid[0]] // [lat, lng] for Leaflet
 
   // Color scale for data visualization
   const features = data.features
@@ -48,6 +110,9 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
 
   // Handle feature interactions
   const handleEachFeature = (feature, layer) => {
+    // Store layer reference for programmatic access
+    mapLayers.current.set(feature.properties.cod_dane || feature.properties.label, layer)
+
     const properties = feature.properties
     const currentValue = mapType === 'species' ? (properties?.n_especies || 0) : (properties?.n_registros || 0)
 
@@ -89,12 +154,14 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
         }).openPopup()
       },
       mouseover: (e) => {
+        setHoveredMunicipality(feature)
         layer.setStyle({
           fillOpacity: 0.8,
           weight: 2
         })
       },
       mouseout: (e) => {
+        setHoveredMunicipality(null)
         layer.setStyle({
           fillColor: currentValue > 0 ? colorScale(currentValue) : '#F5F4F6',
           fillOpacity: 0.6,
@@ -146,16 +213,53 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
                     )
                     .map((feature) => {
                       const isSelected = selectedMunicipality && selectedMunicipality.properties.cod_dane === feature.properties.cod_dane
+                      const isHovered = hoveredMunicipality && hoveredMunicipality.properties.cod_dane === feature.properties.cod_dane
 
                       return (
                       <div
                         key={feature.properties.cod_dane}
                         className={`p-3 rounded-lg cursor-pointer transition-colors ${
-                          isSelected
+                          isHovered
+                            ? 'bg-blue-100 border border-blue-300'
+                            : isSelected
                             ? 'bg-green-100 border border-green-300'
                             : 'bg-gray-50 hover:bg-gray-100 border border-transparent'
                         }`}
-                        onClick={() => setSelectedMunicipality(feature)}
+                        onClick={() => {
+                          setSelectedMunicipality(feature)
+                          // Trigger popup on the map
+                          setTimeout(() => {
+                            const layer = mapLayers.current.get(feature.properties.cod_dane || feature.properties.label)
+                            if (layer && mapRef.current) {
+                              // Simple click simulation on the layer
+                              layer.fire('click')
+                            }
+                          }, 100)
+                        }}
+                        onMouseEnter={() => {
+                          setHoveredMunicipality(feature)
+                          // Trigger map layer hover effect
+                          const layer = mapLayers.current.get(feature.properties.cod_dane || feature.properties.label)
+                          if (layer) {
+                            layer.setStyle({
+                              fillOpacity: 0.8,
+                              weight: 2
+                            })
+                          }
+                        }}
+                        onMouseLeave={() => {
+                          setHoveredMunicipality(null)
+                          // Reset map layer style
+                          const layer = mapLayers.current.get(feature.properties.cod_dane || feature.properties.label)
+                          if (layer) {
+                            const currentValue = mapType === 'species' ? (feature.properties?.n_especies || 0) : (feature.properties?.n_registros || 0)
+                            layer.setStyle({
+                              fillColor: currentValue > 0 ? colorScale(currentValue) : '#F5F4F6',
+                              fillOpacity: 0.6,
+                              weight: 1
+                            })
+                          }
+                        }}
                       >
                         <div className="flex items-center justify-between">
                           <div>
@@ -234,10 +338,12 @@ const MapMunicipios = ({ data, isScale = false, slug, municipios = [] }) => {
           <MapContainer
             ref={mapRef}
             center={center}
-            zoom={!isScale ? 5 : 7}
-            scrollWheelZoom={false}
+            zoom={7}
+            minZoom={6}
+            maxZoom={12}
+            scrollWheelZoom={true}
             style={{ height: '100%', width: '100%', zIndex: 1, backgroundColor: 'white' }}
-            zoomControl={false}
+            zoomControl={true}
             attributionControl={false}
           >
             <GeoJSON

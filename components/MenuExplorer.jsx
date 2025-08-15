@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useRef } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import { Menu, MenuButton } from '@szhsin/react-menu'
 import MenuBoxItem from './MenuBoxItem'
 import '@szhsin/react-menu/dist/index.css'
@@ -6,7 +6,7 @@ import SimpleSlider from './Slider'
 import { clearText } from '../lib/functions'
 import classNames from 'classnames'
 
-const MenuExplorerContext = createContext(null)
+const MenuExplorerContext = React.createContext({})
 
 export default function MenuExplorer ({ children, tree, search, initialSelected = '', initialSelectedValue = '', ...restProps }) {
   const [breadcrumb, setBreadcrumb] = useState(initialSelected ? [initialSelected] : [])
@@ -34,7 +34,7 @@ export default function MenuExplorer ({ children, tree, search, initialSelected 
       return acc
     }, []))
     setSelected(textContent)
-    setSelectedValue(slug || value || textContent.normalize('NFC').toLowerCase().replace(/[\u0300-\u036f]/g, ''))
+    setSelectedValue(slug || value || textContent.normalize('NFC').toLowerCase().replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '_'))
   }
 
   const resetBreadcrumb = ({ open }) => {
@@ -48,7 +48,7 @@ export default function MenuExplorer ({ children, tree, search, initialSelected 
     const slug = e.target.getAttribute('aria-label')
     setBreadcrumb([textContent])
     setSelected(textContent)
-    setSelectedValue(slug || value || textContent.normalize('NFC').toLowerCase().replace(/[\u0300-\u036f]/g, ''))
+    setSelectedValue(slug || value || textContent.normalize('NFC').toLowerCase().replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '_'))
   }
   return (
     <MenuExplorerContext.Provider
@@ -76,7 +76,37 @@ MenuExplorer.Title = function MenuExplorerTitle ({ children }) {
 }
 
 MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
-  const { tree, updateBreadcrumb, resetBreadcrumb, firstPositionBC, breadcrumb } = useContext(MenuExplorerContext)
+  // Early return for debugging
+  if (typeof useContext !== 'function') {
+    console.error('useContext is not available')
+    return <div>React hook error</div>
+  }
+
+  if (!MenuExplorerContext) {
+    console.error('MenuExplorerContext is not defined')
+    return <div>Context error</div>
+  }
+
+  let context
+  try {
+    context = useContext(MenuExplorerContext)
+    console.log('Context retrieved:', context)
+  } catch (error) {
+    console.error('Error accessing MenuExplorerContext:', error)
+    return <div>Error loading menu</div>
+  }
+
+  if (!context || typeof context !== 'object') {
+    console.error('Invalid context object:', context)
+    return <div>Invalid context</div>
+  }
+
+  if (!context.tree) {
+    console.error('MenuExplorer.Tree must be used within a MenuExplorer component. Context:', context)
+    return <div>Loading tree...</div>
+  }
+
+  const { tree, updateBreadcrumb, resetBreadcrumb, firstPositionBC, breadcrumb } = context
   const container = useRef(null)
 
   return (
@@ -122,7 +152,12 @@ MenuExplorer.Tree = function MenuExplorerTree ({ className, ...restProps }) {
 }
 
 MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restProps }) {
-  const { breadcrumb, updateBreadcrumb, resetBreadcrumb, parent } = useContext(MenuExplorerContext)
+  const context = useContext(MenuExplorerContext)
+  if (!context || !context.breadcrumb) {
+    console.error('MenuExplorer.Breadcrumb must be used within a MenuExplorer component')
+    return null
+  }
+  const { breadcrumb, updateBreadcrumb, resetBreadcrumb, parent } = context
 
   useEffect(() => {
   }, [breadcrumb])
@@ -155,8 +190,14 @@ MenuExplorer.Breadcrumb = function MenuExplorerBreadcrumb ({ className, ...restP
 }
 
 MenuExplorer.Body = function MenuExplorerBody ({ children, className, ...restProps }) {
-  const { selected, selectedValue, search, updateBreadcrumb } = useContext(MenuExplorerContext)
-  const info = search?.find((item) => item.slug === selectedValue.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+  const context = useContext(MenuExplorerContext)
+  if (!context || !context.search) {
+    console.error('MenuExplorer.Body must be used within a MenuExplorer component')
+    return null
+  }
+  const { selected, selectedValue, search, updateBreadcrumb } = context
+  const normalizedSelectedValue = selectedValue?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '_')
+  const info = search?.find((item) => item.slug === normalizedSelectedValue)
 
   return (
     <div className={`${className} ${selected ? 'block' : 'hidden'}`} {...restProps}>

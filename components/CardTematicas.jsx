@@ -284,7 +284,9 @@ const CardTematicas = props => {
       </div>
     )
   }
-  if (selected.toLowerCase() === 'exóticas') {
+  if (selected.toLowerCase() === 'exóticas' || selected.toLowerCase() === 'exóticas total' ||
+      selected.toLowerCase() === 'exóticas con riesgo de invasión' ||
+      selected.toLowerCase() === 'invasoras') {
     return (
       <div className='bg-white py-10'>
         <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
@@ -292,11 +294,36 @@ const CardTematicas = props => {
             <CardContentTem
               selected={selected}
               region={region}
-              especies={info?.especies_exoticas_total}
-              parentEspecies={info?.parent_especies_exoticas_total}
-              registros={info?.registros_exoticas_total}
-              datatable={info?.list_especies_exoticas_total}
-              link={`region=${slugregion}&tematica=list_especies_exoticas_total`}
+              especies={
+                selected.toLowerCase() === 'exóticas' ? info?.especies_exoticas :
+                selected.toLowerCase() === 'exóticas con riesgo de invasión' ? info?.especies_exoticas_riesgo_invasion_total :
+                selected.toLowerCase() === 'invasoras' ? info?.especies_invasoras :
+                info?.especies_exoticas_total
+              }
+              parentEspecies={
+                selected.toLowerCase() === 'exóticas' ? info?.parent_especies_exoticas :
+                selected.toLowerCase() === 'exóticas con riesgo de invasión' ? info?.parent_especies_exoticas_riesgo_invasion_total :
+                selected.toLowerCase() === 'invasoras' ? info?.parent_especies_invasoras :
+                info?.parent_especies_exoticas_total
+              }
+              registros={
+                selected.toLowerCase() === 'exóticas' ? info?.registros_exoticas :
+                selected.toLowerCase() === 'exóticas con riesgo de invasión' ? info?.registros_exoticas_riesgo_invasion_total :
+                selected.toLowerCase() === 'invasoras' ? info?.registros_invasoras :
+                info?.registros_exoticas_total
+              }
+              datatable={
+                selected.toLowerCase() === 'exóticas' ? info?.list_especies_exoticas :
+                selected.toLowerCase() === 'exóticas con riesgo de invasión' ? info?.list_especies_exoticas_riesgo_invasion_total :
+                selected.toLowerCase() === 'invasoras' ? info?.list_especies_invasoras :
+                info?.list_especies_exoticas_total
+              }
+              link={`region=${slugregion}&tematica=${
+                selected.toLowerCase() === 'exóticas' ? 'list_especies_exoticas' :
+                selected.toLowerCase() === 'exóticas con riesgo de invasión' ? 'list_especies_exoticas_riesgo_invasion_total' :
+                selected.toLowerCase() === 'invasoras' ? 'list_especies_invasoras' :
+                'list_especies_exoticas_total'
+              }`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
               especiesObservadas={especiesObservadas}

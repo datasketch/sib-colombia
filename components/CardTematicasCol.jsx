@@ -295,7 +295,9 @@ const CardTematicasCol = props => {
       </div>
     )
   }
-  if (selected.toLowerCase() === 'exóticas') {
+  if (selected.toLowerCase() === 'exóticas' || selected.toLowerCase() === 'exóticas total' ||
+      selected.toLowerCase() === 'exóticas con riesgo de invasión' ||
+      selected.toLowerCase() === 'invasoras') {
     return (
       <div className='bg-white py-10'>
         <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
