@@ -258,7 +258,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         </div>
       </div>
       {/* explorador */}
-      {slug !== 'region-amazonia' && (
+      {/* {slug !== 'region-amazonia' && (
         <div id="explorador" className='py-10 mx-auto w-10/12 max-w-screen-xl'>
         <div className='mx-auto max-w-md text-center'>
           <div className='space-y-6'>
@@ -284,7 +284,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       {patrocinador.length !== 0 && <div className='py-10 bg-white'>
         <div className='mx-auto w-10/12 lg:w-9/12 max-w-screen-xl'>
