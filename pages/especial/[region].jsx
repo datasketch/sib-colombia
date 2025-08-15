@@ -18,6 +18,28 @@ function EspecialRegion ({ data, slug, sponsors }) {
     }
   }, [data])
 
+  // For especial pages, ensure we only have the slides that actually exist
+  // and limit to maximum 2 slides to prevent empty third slide
+  const filteredSlides = data.slides
+    ? data.slides.filter(slide => {
+      // Keep slides that have valid layout and essential content
+      if (!slide || !slide.layout) return false
+
+      // For text-blocks layout, ensure we have texts
+      if (slide.layout === 'text-blocks' && (!slide.texts || slide.texts.length === 0)) return false
+
+      // For chart layouts, ensure we have title
+      if ((slide.layout === 'title/chart' || slide.layout === 'title/(text|chart)' || slide.layout === 'title/(chart|chart)') && !slide.title) return false
+
+      return true
+    }).slice(0, 2) // Limit to maximum 2 slides for especial pages
+    : []
+
+
+
+  // Create filtered data object for especial pages
+  const filteredData = { ...data, slides: filteredSlides }
+
   return (
     <>
       <Head>
@@ -33,7 +55,7 @@ function EspecialRegion ({ data, slug, sponsors }) {
         marine={generalInfo.marino}
         municipality
       />
-      <PageComponent data={{ ...data, patrocinador: sponsors }} slug={slug} municipality={slug} municipalityflag />
+      <PageComponent data={{ ...filteredData, patrocinador: sponsors }} slug={slug} municipality={slug} municipalityflag />
     </>
   )
 }
