@@ -1,5 +1,3 @@
-import { DIC_REF, ordinalSuffixOf } from '../lib/functions'
-
 import TooltipText from './TooltipText'
 
 const CardRank = ({ info, refs }) => {
@@ -9,7 +7,7 @@ const CardRank = ({ info, refs }) => {
         {info.position}
       </div>
       <div>
-        <div className='text-sm lg:text-base'>{ordinalSuffixOf(info.position)}</div>
+        <div className='text-sm lg:text-base'>{info.suffix}</div>
         <p className='capitalize text-lg lg:text-xl'>país</p>
       </div>
     </div>
@@ -29,13 +27,13 @@ const CardRank = ({ info, refs }) => {
               parts.push(beforeMatch)
             }
 
-            const tooltip = DIC_REF.find(({ ref_id: refId }) => refId === number)
+            // Find the reference data directly from the refs prop
             const md = refs.find(({ ref_id: refId }) => +refId === +number)
 
-            if (tooltip && md) {
+            if (md) {
               const reactMD = `${md.label} \n\n ${md.zotero}`
               parts.push(
-                <TooltipText key={tooltip.ref_id} label={word} md={reactMD} id={tooltip.ref_id} />
+                <TooltipText key={number} label={word} md={reactMD} id={number} />
               )
             } else {
               parts.push(fullMatch)
