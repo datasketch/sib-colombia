@@ -28,18 +28,18 @@ const CardContentTem = ({ selected, region, datatable, especies, parentEspecies,
           ? <>
             <span className='font-bold text-sm'>Especies observadas CO | Especies estimadas CO</span>
             <div className='flex'>
-              <div className='bg-orange-en  h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+especies, +especies + +parentEspecies) }}>{especies}</div>
-              <div className='bg-white-smoke h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+parentEspecies, +especies + +parentEspecies) }}>{parentEspecies}</div>
+              <div className='bg-orange-en  h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+especies, +parentEspecies) }}>{especies}</div>
+              <div className='bg-white-smoke h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+parentEspecies - +especies, +parentEspecies) }}>{parentEspecies}</div>
             </div>
           </>
           : <>
             <span className='font-bold text-sm'>Especies {region} | {municipalityflag ? `Especies ${capitalizeRegion}` : 'Especies Colombia'}</span>
             <div className='flex'>
-              <div className='bg-sandstorm  h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+especies, +especies + +parentEspecies) }}>{especies}</div>
+              <div className='bg-sandstorm  h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+especies, +parentEspecies) }}>{especies}</div>
               {
                 ['La Planada', 'Pialapí Pueblo-Viejo'].includes(region)
-                  ? <div className='bg-white-smoke h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+especiesObservadas, +especies + +especiesObservadas) }}>{especiesObservadas}</div>
-                  : <div className='bg-white-smoke h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+parentEspecies, +especies + +parentEspecies) }}>{parentEspecies}</div>
+                  ? <div className='bg-white-smoke h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+especiesObservadas - +especies, +especiesObservadas) }}>{especiesObservadas}</div>
+                  : <div className='bg-white-smoke h-4 flex justify-end items-center  text-sm' style={{ width: calculateWidth(+parentEspecies - +especies, +parentEspecies) }}>{parentEspecies}</div>
               }
             </div>
           </>

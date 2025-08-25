@@ -305,11 +305,61 @@ const CardTematicasCol = props => {
             <CardContentTem
               selected={selected}
               region={region}
-              especies={info?.especies_exoticas_total}
-              parentEspecies={info?.exoticas_total_estimadas}
-              registros={info?.registros_exoticas_total}
-              datatable={info?.list_especies_exoticas_total}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              especies={
+                selected.toLowerCase() === 'exóticas'
+                  ? info?.especies_exoticas
+                  : selected.toLowerCase() === 'exóticas con riesgo de invasión'
+                    ? info?.especies_exoticas_riesgo_invasion_total
+                    : selected.toLowerCase() === 'invasoras'
+                      ? info?.especies_invasoras
+                      : selected.toLowerCase() === 'trasplantadas'
+                        ? info?.especies_trasplantadas
+                        : info?.especies_exoticas_total
+              }
+              parentEspecies={
+                selected.toLowerCase() === 'exóticas'
+                  ? info?.exoticas_estimadas
+                  : selected.toLowerCase() === 'exóticas con riesgo de invasión'
+                    ? info?.exoticas_riesgo_invasion_estimadas
+                    : selected.toLowerCase() === 'invasoras'
+                      ? info?.exoticas_invasoras_estimadas
+                      : selected.toLowerCase() === 'trasplantadas'
+                        ? info?.exoticas_trasplantadas_estimadas
+                        : info?.exoticas_total_estimadas
+              }
+              registros={
+                selected.toLowerCase() === 'exóticas'
+                  ? info?.registros_exoticas
+                  : selected.toLowerCase() === 'exóticas con riesgo de invasión'
+                    ? info?.registros_exoticas_riesgo_invasion_total
+                    : selected.toLowerCase() === 'invasoras'
+                      ? info?.registros_invasoras
+                      : selected.toLowerCase() === 'trasplantadas'
+                        ? info?.registros_trasplantadas
+                        : info?.registros_exoticas_total
+              }
+              datatable={
+                selected.toLowerCase() === 'exóticas'
+                  ? info?.list_especies_exoticas
+                  : selected.toLowerCase() === 'exóticas con riesgo de invasión'
+                    ? info?.list_especies_exoticas_riesgo_invasion_total
+                    : selected.toLowerCase() === 'invasoras'
+                      ? info?.list_especies_invasoras
+                      : selected.toLowerCase() === 'trasplantadas'
+                        ? info?.list_especies_trasplantadas
+                        : info?.list_especies_exoticas_total
+              }
+              link={`region=${slugregion}&tematica=${
+                selected.toLowerCase() === 'exóticas'
+                  ? 'exoticas'
+                  : selected.toLowerCase() === 'exóticas con riesgo de invasión'
+                    ? 'exoticas-riesgo-invasion'
+                    : selected.toLowerCase() === 'invasoras'
+                      ? 'invasoras'
+                      : selected.toLowerCase() === 'trasplantadas'
+                        ? 'trasplantadas'
+                        : info?.slug
+              }`}
             />
 
           </div>
@@ -323,7 +373,7 @@ const CardTematicasCol = props => {
               especies={info?.especies_exoticas}
               parentEspecies={info?.exoticas_estimadas}
               registros={info?.registros_exoticas}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=exoticas`}
             />
             <BarPercent
               bgColor={'bg-orange-en'}
@@ -333,7 +383,7 @@ const CardTematicasCol = props => {
               especies={info?.especies_exoticas_riesgo_invasion_total}
               parentEspecies={info?.exoticas_riesgo_invasion_estimadas}
               registros={info?.registros_exoticas_riesgo_invasion_total}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=exoticas-riesgo-invasion`}
             />
             <BarPercent
               bgColor={'bg-orange-en'}
@@ -343,17 +393,17 @@ const CardTematicasCol = props => {
               especies={info?.especies_invasoras}
               parentEspecies={info?.exoticas_invasoras_estimadas}
               registros={info?.registros_invasoras}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=invasoras`}
             />
             <BarPercent
               bgColor={'bg-orange-en'}
               region={region}
               title={'Trasplantadas'}
-              datatable={info?.list_expecies_trasplantadas}
+              datatable={info?.list_especies_trasplantadas}
               especies={info?.especies_trasplantadas}
               parentEspecies={info?.exoticas_trasplantadas_estimadas}
               registros={info?.registros_trasplantadas}
-              link={`region=${slugregion}&tematica=${info?.slug}`}
+              link={`region=${slugregion}&tematica=trasplantadas`}
             />
 
           </div>

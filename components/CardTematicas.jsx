@@ -335,19 +335,19 @@ const CardTematicas = props => {
                     : selected.toLowerCase() === 'invasoras'
                       ? info?.list_especies_invasoras
                       : selected.toLowerCase() === 'trasplantadas'
-                        ? info?.list_expecies_trasplantadas
+                        ? info?.list_especies_trasplantadas
                         : info?.list_especies_exoticas_total
               }
               link={`region=${slugregion}&tematica=${
                 selected.toLowerCase() === 'exóticas'
-                  ? 'list_especies_exoticas'
+                  ? 'exoticas'
                   : selected.toLowerCase() === 'exóticas con riesgo de invasión'
-                    ? 'list_especies_exoticas_riesgo_invasion_total'
+                    ? 'exoticas-riesgo-invasion'
                     : selected.toLowerCase() === 'invasoras'
-                      ? 'list_especies_invasoras'
+                      ? 'invasoras'
                       : selected.toLowerCase() === 'trasplantadas'
-                        ? 'list_expecies_trasplantadas'
-                        : 'list_especies_exoticas_total'
+                        ? 'trasplantadas'
+                        : 'exoticas-total'
               }`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
@@ -403,7 +403,7 @@ const CardTematicas = props => {
               bgColor={'bg-sandstorm'}
               region={region}
               title={'Trasplantadas'}
-              datatable={info?.list_expecies_trasplantadas}
+              datatable={info?.list_especies_trasplantadas}
               especies={info?.especies_trasplantadas}
               parentEspecies={info?.parent_especies_trasplantadas}
               registros={info?.registros_trasplantadas}
