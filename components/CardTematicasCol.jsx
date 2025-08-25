@@ -297,7 +297,7 @@ const CardTematicasCol = props => {
   }
   if (selected.toLowerCase() === 'exóticas' || selected.toLowerCase() === 'exóticas total' ||
       selected.toLowerCase() === 'exóticas con riesgo de invasión' ||
-      selected.toLowerCase() === 'invasoras') {
+      selected.toLowerCase() === 'invasoras' || selected.toLowerCase() === 'trasplantadas') {
     return (
       <div className='bg-white py-10'>
         <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
@@ -343,6 +343,16 @@ const CardTematicasCol = props => {
               especies={info?.especies_invasoras}
               parentEspecies={info?.exoticas_invasoras_estimadas}
               registros={info?.registros_invasoras}
+              link={`region=${slugregion}&tematica=${info?.slug}`}
+            />
+            <BarPercent
+              bgColor={'bg-orange-en'}
+              region={region}
+              title={'Trasplantadas'}
+              datatable={info?.list_expecies_trasplantadas}
+              especies={info?.especies_trasplantadas}
+              parentEspecies={info?.exoticas_trasplantadas_estimadas}
+              registros={info?.registros_trasplantadas}
               link={`region=${slugregion}&tematica=${info?.slug}`}
             />
 

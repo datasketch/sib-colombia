@@ -286,7 +286,7 @@ const CardTematicas = props => {
   }
   if (selected.toLowerCase() === 'exóticas' || selected.toLowerCase() === 'exóticas total' ||
       selected.toLowerCase() === 'exóticas con riesgo de invasión' ||
-      selected.toLowerCase() === 'invasoras') {
+      selected.toLowerCase() === 'invasoras' || selected.toLowerCase() === 'trasplantadas') {
     return (
       <div className='bg-white py-10'>
         <div className='w-10/12 mx-auto flex flex-col lg:flex-row gap-y-6 justify-between'>
@@ -301,7 +301,9 @@ const CardTematicas = props => {
                     ? info?.especies_exoticas_riesgo_invasion_total
                     : selected.toLowerCase() === 'invasoras'
                       ? info?.especies_invasoras
-                      : info?.especies_exoticas_total
+                      : selected.toLowerCase() === 'trasplantadas'
+                        ? info?.especies_trasplantadas
+                        : info?.especies_exoticas_total
               }
               parentEspecies={
                 selected.toLowerCase() === 'exóticas'
@@ -310,7 +312,9 @@ const CardTematicas = props => {
                     ? info?.parent_especies_exoticas_riesgo_invasion_total
                     : selected.toLowerCase() === 'invasoras'
                       ? info?.parent_especies_invasoras
-                      : info?.parent_especies_exoticas_total
+                      : selected.toLowerCase() === 'trasplantadas'
+                        ? info?.parent_especies_trasplantadas
+                        : info?.parent_especies_exoticas_total
               }
               registros={
                 selected.toLowerCase() === 'exóticas'
@@ -319,7 +323,9 @@ const CardTematicas = props => {
                     ? info?.registros_exoticas_riesgo_invasion_total
                     : selected.toLowerCase() === 'invasoras'
                       ? info?.registros_invasoras
-                      : info?.registros_exoticas_total
+                      : selected.toLowerCase() === 'trasplantadas'
+                        ? info?.registros_trasplantadas
+                        : info?.registros_exoticas_total
               }
               datatable={
                 selected.toLowerCase() === 'exóticas'
@@ -328,7 +334,9 @@ const CardTematicas = props => {
                     ? info?.list_especies_exoticas_riesgo_invasion_total
                     : selected.toLowerCase() === 'invasoras'
                       ? info?.list_especies_invasoras
-                      : info?.list_especies_exoticas_total
+                      : selected.toLowerCase() === 'trasplantadas'
+                        ? info?.list_expecies_trasplantadas
+                        : info?.list_especies_exoticas_total
               }
               link={`region=${slugregion}&tematica=${
                 selected.toLowerCase() === 'exóticas'
@@ -337,7 +345,9 @@ const CardTematicas = props => {
                     ? 'list_especies_exoticas_riesgo_invasion_total'
                     : selected.toLowerCase() === 'invasoras'
                       ? 'list_especies_invasoras'
-                      : 'list_especies_exoticas_total'
+                      : selected.toLowerCase() === 'trasplantadas'
+                        ? 'list_expecies_trasplantadas'
+                        : 'list_especies_exoticas_total'
               }`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
@@ -385,6 +395,20 @@ const CardTematicas = props => {
               registros={info?.registros_invasoras}
               speciesEstimadasCol={info?.exoticas_invasoras_estimadas}
               link={`region=${slugregion}&tematica=invasoras`}
+              municipalityflag={municipalityflag}
+              regionparent={parentlabel}
+              especiesObservadas={especiesObservadas}
+            />
+            <BarPercent
+              bgColor={'bg-sandstorm'}
+              region={region}
+              title={'Trasplantadas'}
+              datatable={info?.list_expecies_trasplantadas}
+              especies={info?.especies_trasplantadas}
+              parentEspecies={info?.parent_especies_trasplantadas}
+              registros={info?.registros_trasplantadas}
+              speciesEstimadasCol={info?.exoticas_trasplantadas_estimadas}
+              link={`region=${slugregion}&tematica=trasplantadas`}
               municipalityflag={municipalityflag}
               regionparent={parentlabel}
               especiesObservadas={especiesObservadas}
