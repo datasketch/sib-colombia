@@ -124,79 +124,93 @@
       {
         "position": 1,
         "suffix": "er",
-        "position_text": "Primer lugar en diversidad de aves (111), orquídeas (41) y mariposas (13)"
+        "position_text": "Primer lugar en diversidad de aves (111 | 112), orquídeas (41) y mariposas (13)"
       },
       {
         "position": 2,
         "suffix": "do",
-        "position_text": "Segundo en variedad de anfibios(52), peces dulceacuícolas(10), palmas(54) y murciélagos (53)"
+        "position_text": "Segundo en variedad de anfibios (113 | 97), peces dulceacuícolas (114), palmas (54 | 96) y murciélagos (53 | 103)"
       },
       {
         "position": 3,
         "suffix": "er",
-        "position_text": "Tercero en diversidad de plantas(115)"
+        "position_text": "Tercero en diversidad de plantas (115 | 96)"
       },
       {
         "position": 6,
         "suffix": "to",
-        "position_text": "Sexto en mamíferos (55)"
+        "position_text": "Sexto en mamíferos (116 | 99)"
       },
       {
         "position": 7,
         "suffix": "mo",
-        "position_text": "Séptimo en reptiles(6)"
+        "position_text": "Séptimo en reptiles (6 | 98)"
       }
     ],
     "position_refs": [
       {
         "ref_id": 6,
-        "label": "Uetz, P., Freed, P., Aguilar, R., Reyes, F., Kudera, J., & Hošek, J. (Eds.). (2025). The Reptile Database. Recuperado de http://www.reptile-database.org, accessed 2025-08-19",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/VIRRYC3F/items/JHZV2IFQ/collection"
-      },
-      {
-        "ref_id": 10,
-        "label": "DoNascimiento, C., Herrera-Collazos, E. E., Herrera-R., G. A., Ortega-Lara, A., Villa-Navarro, F. A., Usma Oviedo, J. S., & Maldonado-Ocampo, J. A. (2017). Checklist of the freshwater fishes of Colombia: A Darwin Core alternative to the updating problem. ZooKeys, 708, 25-138. https://doi.org/10.3897/zookeys.708.13897",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/IX85I8LR/collection"
+        "label": "Uetz, P., Freed, P., Aguilar, R., Reyes, F., Kudera, J., & Hošek, J. (Eds.). (2025). The Reptile Database. Recuperado de http://www.reptile-database.org, accessed 2025-08-19"
       },
       {
         "ref_id": 13,
-        "label": "Garwood K., Huertas B., Ríos-Málaver I.C., Jaramillo J.G. (2022). Mariposas de Colombia Lista de chequeo/ Butterflies of Colombia Checklist (Lepidoptera: Papilionoidea). BioButterfly Database. 2da Edición. 304 pp. Disponible en / Available at http://www.butterflycatalogs.com",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/T7Q6BKX8/collection"
+        "label": "Garwood K., Huertas B., Ríos-Málaver I.C., Jaramillo J.G. (2022). Mariposas de Colombia Lista de chequeo/ Butterflies of Colombia Checklist (Lepidoptera: Papilionoidea). BioButterfly Database. 2da Edición. 304 pp. Disponible en / Available at http://www.butterflycatalogs.com"
       },
       {
         "ref_id": 41,
-        "label": "Hassler, Michael (1994 - 2025): World Orchids. Synonymic Checklist and Distribution of the Orchids of the World. Version 25.08, last update August 18th, 2025. - (www.worldplants.de/orchids/)",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/3W72P33X/collection"
-      },
-      {
-        "ref_id": 52,
-        "label": "Butler, R. A. (2019). Total number of amphibian species, by country. Mongabay. https://rainforests.mongabay.com/03amphibian.htm",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/M88T892Q/collection"
+        "label": "Hassler, Michael (1994 - 2025): World Orchids. Synonymic Checklist and Distribution of the Orchids of the World. Version 25.08, last update August 18th, 2025. - (www.worldplants.de/orchids/)"
       },
       {
         "ref_id": 53,
-        "label": "Martínez-Medina, Daniela, Acevedo-Charry, Orlando, Medellín-Becerra, Sofía, Rodríguez-Fuentes, Juliana, López-Casas, Silvia, Muñoz-Duque, Sebastián, Rivera-Correa, Mauricio, López-Aguirre, Yelenny, Vargas-Salinas, Fernando, Laverde-R., Oscar, & Rodríguez-Posada, Miguel E. (2021). Estado, desarrollo y tendencias de los estudios en acústica de la fauna en Colombia. Biota colombiana, 22(1), 7-25. https://doi.org/10.21068/c2021.v22n01a01",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/KHVZDIRJ/collection"
+        "label": "Martínez-Medina, Daniela, Acevedo-Charry, Orlando, Medellín-Becerra, Sofía, Rodríguez-Fuentes, Juliana, López-Casas, Silvia, Muñoz-Duque, Sebastián, Rivera-Correa, Mauricio, López-Aguirre, Yelenny, Vargas-Salinas, Fernando, Laverde-R., Oscar, & Rodríguez-Posada, Miguel E. (2021). Estado, desarrollo y tendencias de los estudios en acústica de la fauna en Colombia. Biota colombiana, 22(1), 7-25. https://doi.org/10.21068/c2021.v22n01a01"
       },
       {
         "ref_id": 54,
-        "label": "Ministerio de Ambiente y Desarrollo Sostenible. (2015). Plan de conservación, manejo y uso sostenible de las palmas deColombia. Textos: Galeano G., R. Bernal, Y. Figueroa Cardozo. Ministerio de Ambiente y Desarrollo Sostenible - Universidad Nacional deColombia, Bogotá. 134 pp. Recuperado de https://www.minambiente.gov.co/documento-entidad/plan-de-conservacion-manejo-y-uso-sostenible-de-las-palmas-de-colombia-2015",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/PV6RI4N3/collection"
+        "label": "Ministerio de Ambiente y Desarrollo Sostenible. (2015). Plan de conservación, manejo y uso sostenible de las palmas deColombia. Textos: Galeano G., R. Bernal, Y. Figueroa Cardozo. Ministerio de Ambiente y Desarrollo Sostenible - Universidad Nacional deColombia, Bogotá. 134 pp. Recuperado de https://www.minambiente.gov.co/documento-entidad/plan-de-conservacion-manejo-y-uso-sostenible-de-las-palmas-de-colombia-2015"
       },
       {
-        "ref_id": 55,
-        "label": "Pacheco Torres, V. R., Diaz, S., Graham Angeles, L. A., Flores-Quispe, M., Calizaya-Mamani, G. ., Ruelas, D., & Sánchez-Vendizú, P. (2021). Lista actualizada de la diversidad de los mamíferos del Perú y una propuesta para su actualización. Revista Peruana De Biología, 28(4), e21019. https://doi.org/10.15381/rpb.v28i4.21019",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/XQAIUCSR/collection"
+        "ref_id": 96,
+        "label": "Butler, R. A. (2023). Total number of plant species by country. World Rainforests, Mongabay. Recuperado de https://worldrainforests.com/03plants.htm"
+      },
+      {
+        "ref_id": 97,
+        "label": "Butler, R. A. (2023). Total number of amphibian species, by country. World Rainforests, Mongabay. Recuperado de https://rainforests.mongabay.com/03amphibian.htm"
+      },
+      {
+        "ref_id": 98,
+        "label": "Butler, R. A. (2023). Total number of reptile species by country. World Rainforests, Mongabay. Recuperado de https://worldrainforests.com/03reptiles.htm"
+      },
+      {
+        "ref_id": 99,
+        "label": "Butler, R. A. (2023). Total number of mammal species by country. World Rainforests, Mongabay. Recuperado de https://worldrainforests.com/03mammals.htm"
+      },
+      {
+        "ref_id": 103,
+        "label": "Bat Population by Country 2024. (n.d.). Retrieved January 23, 2024, from https://worldpopulationreview.com/country-rankings/bat-population-by-country"
       },
       {
         "ref_id": 111,
-        "label": "BirdLife International. (2025). BirdLife DataZone – Búsqueda de especies y perfiles por país. Recuperado de https://datazone.birdlife.org/search",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/BCFNPTHS/collection"
+        "label": "BirdLife International. (2025). BirdLife DataZone – Búsqueda de especies y perfiles por país. Recuperado de https://datazone.birdlife.org/search"
+      },
+      {
+        "ref_id": 112,
+        "label": "Butler, R. A. (2023). Total number of bird species, by country. World Rainforests, Mongabay. Recuperado de https://worldrainforests.com/03birds.htm"
+      },
+      {
+        "ref_id": 113,
+        "label": "AmphibiaWeb. (2025). Species by Country. University of California, Berkeley. Recuperado de https://amphibiaweb.org"
+      },
+      {
+        "ref_id": 114,
+        "label": "DoNascimiento, C., Agudelo-Zamora, H. D., Bogotá-Gregory, J. D., Méndez-López, A., Ortega-Lara, A., Lasso, C. A., Cortés-Hernández, M., Albornoz-Garzón, J. G., Villa-Navarro, F. A., Netto-Ferreira, A. L., Lima, F. C. T., Thomaz, A., Arce-Hernández, M. (2023): Lista de especies de peces de agua dulce de Colombia / Checklist of the freshwater fishes of Colombia. v2.16. Asociación Colombiana de Ictiólogos. Dataset/Checklist. https://doi.org/10.15472/numrso"
       },
       {
         "ref_id": 115,
-        "label": "UNEP (2022). The Species+ Website. Nairobi, Kenya. Compiled by UNEP-WCMC, Cambridge, UK. Available at: www.speciesplus.net. DOI: https://doi.org/10.34892/7n0w-4g32",
-        "zotero": "https://www.zotero.org/groups/4455905/biodiversidadencifras/collections/ABT974SN/items/K9J6XXSV/collection"
+        "label": "UNEP (2022). The Species+ Website. Nairobi, Kenya. Compiled by UNEP-WCMC, Cambridge, UK. Available at: www.speciesplus.net. DOI: https://doi.org/10.34892/7n0w-4g32"
+      },
+      {
+        "ref_id": 116,
+        "label": "Mammal Diversity Database. (2025). Country Mammal Diversity. American Society of Mammalogists. Recuperado de https://www.mammaldiversity.org/country/"
       }
     ]
   },

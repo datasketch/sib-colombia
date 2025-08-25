@@ -16,24 +16,33 @@ const CardRank = ({ info, refs }) => {
         {(() => {
           const parts = []
           let lastIndex = 0
-          const regexWithWord = /([a-zA-ZáéíóúÁÉÍÓÚñÑ]+)\s*\((\d+)\)/g
+          const regexWithWord = /([a-zA-ZáéíóúÁÉÍÓÚñÑ]+)\s*\(([^)]+)\)/g
           let match
 
           while ((match = regexWithWord.exec(info.position_text)) !== null) {
-            const [fullMatch, word, number] = match
+            const [fullMatch, word, numbersString] = match
             const beforeMatch = info.position_text.slice(lastIndex, match.index)
 
             if (beforeMatch) {
               parts.push(beforeMatch)
             }
 
-            // Find the reference data directly from the refs prop
-            const md = refs.find(({ ref_id: refId }) => +refId === +number)
+            // Split multiple references by pipe and clean them
+            const numbers = numbersString.split('|').map(n => n.trim())
 
-            if (md) {
-              const reactMD = `${md.label} \n\n ${md.zotero}`
+            // Find all reference data for the numbers
+            const matchingRefs = numbers
+              .map(number => refs.find(({ ref_id: refId }) => +refId === +number))
+              .filter(Boolean) // Remove any undefined refs
+
+            if (matchingRefs.length > 0) {
+              // Combine all reference labels and content
+              const combinedLabel = matchingRefs.map(ref => ref.label).join(' \n\n ')
+              const combinedZotero = matchingRefs.map(ref => ref.zotero || '').filter(Boolean).join(' \n\n ')
+              const reactMD = `${combinedLabel} \n\n ${combinedZotero}`
+
               parts.push(
-                <TooltipText key={number} label={word} md={reactMD} id={number} />
+                <TooltipText key={numbersString} label={word} md={reactMD} id={numbersString} />
               )
             } else {
               parts.push(fullMatch)
