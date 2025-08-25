@@ -4,118 +4,76 @@ import { useContext, useEffect } from 'react'
 import CardDestacada from '../components/CardDestacada'
 import HeadHome from '../components/headers/HeadHome'
 import MapComponent from '../components/MapComponent'
+import SimpleSlider from '../components/Slider'
 
 import { AppContext } from './_app'
 // eslint-disable-next-line import/no-absolute-path
 import home from '/public/data/home.json'
 import InfoTooltip from '../components/InfoTooltip'
 
-const ENUM_DESTACADAS = [
+const ENUM_DESTACADOS = [
   {
     type: 'Departamento',
-    slug: 'tolima',
-    label: 'Tolima',
-    link: '/tolima'
-  },
-  {
-    type: 'Departamento',
-    slug: 'narino',
-    label: 'Nariño',
-    link: '/narino'
-  },
-  {
-    type: 'Departamento',
-    slug: 'santander',
-    label: 'Santander',
-    link: '/santander'
-  },
-  {
-    type: 'Departamento',
-    label: 'Boyacá',
-    slug: 'boyaca',
-    link: '/boyaca'
-  },
-  /* {
-    type: 'Departamento',
-    label: 'Amazonas',
     slug: 'amazonas',
+    label: 'Amazonas',
     link: '/amazonas'
   },
   {
     type: 'Departamento',
-    label: 'Antioquia',
-    slug: 'antioquia',
-    link: '/antioquia'
+    slug: 'caqueta',
+    label: 'Caquetá',
+    link: '/caqueta'
   },
   {
     type: 'Departamento',
-    label: 'Bolívar',
-    slug: 'bolivar',
-    link: '/bolivar'
-  }, */
-  {
-    type: 'Departamento',
-    label: 'Amazonas',
-    slug: 'amazonas',
-    link: '/amazonas'
+    slug: 'cauca',
+    label: 'Cauca',
+    link: '/cauca'
   },
   {
     type: 'Departamento',
-    label: 'Antioquia',
-    slug: 'antioquia',
-    link: '/antioquia'
+    slug: 'guainia',
+    label: 'Guainía',
+    link: '/guainia'
   },
   {
     type: 'Departamento',
-    label: 'Bolívar',
-    slug: 'bolivar',
-    link: '/bolivar'
+    slug: 'guaviare',
+    label: 'Guaviare',
+    link: '/guaviare'
   },
   {
     type: 'Departamento',
-    label: 'Amazonas',
-    slug: 'amazonas',
-    link: '/amazonas'
+    slug: 'meta',
+    label: 'Meta',
+    link: '/meta'
   },
   {
     type: 'Departamento',
-    label: 'Antioquia',
-    slug: 'antioquia',
-    link: '/antioquia'
+    slug: 'putumayo',
+    label: 'Putumayo',
+    link: '/putumayo'
   },
   {
     type: 'Departamento',
-    label: 'Bolívar',
-    slug: 'bolivar',
-    link: '/bolivar'
-  },
-  {
-    type: 'Reserva forestal',
-    slug: 'reserva-forestal-la-planada',
-    label: 'La Planada',
-    link: '/especial/reserva-forestal-la-planada'
-  },
-  {
-    type: 'Resguardo indígena',
-    slug: 'resguardo-indigena-pialapi-pueblo-viejo',
-    label: 'Pialapí Pueblo Viejo',
-    link: '/especial/resguardo-indigena-pialapi-pueblo-viejo'
-  },
-  {
-    type: 'Región natural',
-    slug: 'region-amazonia',
-    label: 'Amazonía',
-    link: '/especial/region-amazonia'
+    slug: 'vaupes',
+    label: 'Vaupés',
+    link: '/vaupes'
   }
 ]
 
 export default function Home () {
   const { lista_mapa: listDataMap, destacados_regiones: destacadas } = home
 
-  const regionesDestacadas = destacadas.map((el) => {
-    const des = ENUM_DESTACADAS.find(d => d.slug === el.slug_region)
-    return { ...des, ...el }
-  }).sort((a, b) => a.label.localeCompare(b.label))
+    const regionesDestacadas = ENUM_DESTACADOS.map((dept) => {
+    const regionData = destacadas.find(d => d.slug_region === dept.slug)
+    return {
+      ...dept,
+      especies_total: regionData?.especies_total || 0,
+      especies_estimadas: regionData?.especies_estimadas || 0,
+      observadas: regionData?.observadas || 0
+    }
+  })
 
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
 
@@ -153,37 +111,23 @@ export default function Home () {
         <div className='mx-auto max-w-screen-2xl'>
           <div className='text-center font-inter space-y-2'>
             <h2 className='font-black text-2xl'>Destacados</h2>
-            <span className='px-4'>Ver la síntesis de cifras por territorios destacados o grupos biológicos de interés.</span>
+            <span className='px-4'>Explora la biodiversidad de los departamentos que conforman la región Amazonía.</span>
           </div>
           <div className='py-8 max-w-screen-xl mx-auto w-10/12'>
-            {/* First row - 4 cards */}
-            <div className='grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center mb-6'>
-              {regionesDestacadas.slice(0, 4).map((item, key) =>
-                <CardDestacada
-                  key={key}
-                  label={item.label}
-                  type={item.type}
-                  link={item.link}
-                  especies={item.especies_total}
-                  especiesEstimadas={item.especies_estimadas}
-                  observadas={item.observadas}
-                />
+            <SimpleSlider dots={true} infinite={true} slidestoshow={4} responsiveSlidesToShow={2}>
+              {regionesDestacadas.map((item, key) =>
+                <div key={key} className='px-3'>
+                  <CardDestacada
+                    label={item.label}
+                    type={item.type}
+                    link={item.link}
+                    especies={item.especies_total}
+                    especiesEstimadas={item.especies_estimadas}
+                    observadas={item.observadas}
+                  />
+                </div>
               )}
-            </div>
-            {/* Second row - 3 cards centered */}
-            <div className='grid grid-cols-2 md:grid-cols-3 gap-6 justify-items-center max-w-2xl mx-auto'>
-              {regionesDestacadas.slice(4, 7).map((item, key) =>
-                <CardDestacada
-                  key={key + 4}
-                  label={item.label}
-                  type={item.type}
-                  link={item.link}
-                  especies={item.especies_total}
-                  especiesEstimadas={item.especies_estimadas}
-                  observadas={item.observadas}
-                />
-              )}
-            </div>
+            </SimpleSlider>
           </div>
         </div>
       </section>
