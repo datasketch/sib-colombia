@@ -65,7 +65,7 @@ const ENUM_DESTACADOS = [
 export default function Home () {
   const { lista_mapa: listDataMap, destacados_regiones: destacadas } = home
 
-    const regionesDestacadas = ENUM_DESTACADOS.map((dept) => {
+  const regionesDestacadas = ENUM_DESTACADOS.map((dept) => {
     const regionData = destacadas.find(d => d.slug_region === dept.slug)
     return {
       ...dept,
