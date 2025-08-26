@@ -12,11 +12,11 @@
         "tooltip": "Temática definida según criterios establecidos por la Lista Roja de la Unión Internacional para la Conservación de la Naturaleza (UICN) a nivel global, y la Resolución vigente del Ministerio de Ambiente y Desarrollo Sostenible en el contexto nacional. Clasificadas en tres categorías de amenaza: Vulnerable (VU), En Peligro (EN) y En Peligro Crítico (CR).",
         "children": [
           {
-            "slug": "amenazadas_global",
+            "slug": "amenazadas-global",
             "activa": 1,
             "icon": 0,
-            "icon_black": "static/icons/amenazadas_global-black.svg",
-            "icon_white": "static/icons/amenazadas_global-white.svg",
+            "icon_black": "static/icons/amenazadas-global-black.svg",
+            "icon_white": "static/icons/amenazadas-global-white.svg",
             "label": "Categoría UICN global",
             "tooltip": "La Lista Roja de la Unión Internacional para la Conservación de la Naturaleza (UICN) es un indicador crítico de la salud de la biodiversidad del mundo que permite agilizar acciones que fomente la conservación de la biodiversidad.",
             "children": [
@@ -155,11 +155,11 @@
             ]
           },
           {
-            "slug": "amenazadas_nacional",
+            "slug": "amenazadas-nacional",
             "activa": 1,
             "icon": 0,
-            "icon_black": "static/icons/amenazadas_nacional-black.svg",
-            "icon_white": "static/icons/amenazadas_nacional-white.svg",
+            "icon_black": "static/icons/amenazadas-nacional-black.svg",
+            "icon_white": "static/icons/amenazadas-nacional-white.svg",
             "label": "Categoría nacional (Res.0126/2024)",
             "tooltip": "Listado de especies silvestres continentales y marino costeras que se encuentran amenazadas para Colombia de acuerdo a la Resolución 0126 de 2024 de Minambiente.",
             "children": [
@@ -219,11 +219,11 @@
         "tooltip": "Especies cuya distribución natural está restringida exclusivamente al territorio colombiano, es decir, no se encuentran en estado silvestre en ninguna otra parte del mundo. La cifra contempla los grupos de aves, peces dulceacuícolas y marinos, plantas, líquenes, mamíferos, coleópteros, anfibios y mariposas."
       },
       {
-        "slug": "exoticas_total",
+        "slug": "exoticas-total",
         "activa": 1,
         "icon": 0,
-        "icon_black": "static/icons/exoticas_total-black.svg",
-        "icon_white": "static/icons/exoticas_total-white.svg",
+        "icon_black": "static/icons/exoticas-total-black.svg",
+        "icon_white": "static/icons/exoticas-total-white.svg",
         "label": "Exóticas total",
         "tooltip": "Se consideran las especies clasificadas como exóticas, exóticas con riesgo de invasión, invasoras y trasplantadas."
       },
@@ -1166,31 +1166,37 @@
       "species_list": []
     },
     {
-      "slug": "exoticas_total",
+      "slug": "exoticas-total",
       "exoticas_total_estimadas": 1507,
       "exoticas_estimadas": 1327,
       "exoticas_riesgo_invasion_estimadas": 136,
       "exoticas_invasoras_estimadas": 26,
+      "exoticas_trasplantadas_estimadas": 18,
       "especies_exoticas_total": "NA",
       "especies_exoticas": "NA",
       "especies_invasoras": "NA",
       "especies_exoticas_riesgo_invasion_total": "NA",
+      "especies_trasplantadas": "NA",
       "registros_exoticas_total": "NA",
       "registros_exoticas": 0,
       "registros_invasoras": 0,
       "registros_exoticas_riesgo_invasion_total": 0,
+      "registros_trasplantadas": 0,
       "parent_especies_exoticas_total": 66,
       "parent_especies_exoticas": 38,
       "parent_especies_invasoras": 3,
       "parent_especies_exoticas_riesgo_invasion_total": 19,
+      "parent_especies_trasplantadas": 6,
       "parent_registros_exoticas_total": 2939,
       "parent_registros_exoticas": 1765,
       "parent_registros_invasoras": 11,
       "parent_registros_exoticas_riesgo_invasion_total": 799,
+      "parent_registros_trasplantadas": 364,
       "list_especies_exoticas_total": [],
       "list_especies_exoticas": [],
       "list_especies_invasoras": [],
-      "list_especies_exoticas_riesgo_invasion_total": []
+      "list_especies_exoticas_riesgo_invasion_total": [],
+      "list_especies_trasplantadas": []
     }
   ],
   "grupos_biologicos": [
