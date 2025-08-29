@@ -139,12 +139,14 @@ const MapRegionAmazonia = () => {
             <h3 class="font-bold text-lg mb-2">${feature.properties.label}</h3>
             <div class="space-y-2">
               <div>
-                <span class="text-sm text-gray-600">Especies:</span>
-                <span class="font-semibold ml-1">${(feature.properties.especies_region_total || 0).toLocaleString()}</span>
+                <span class="text-sm text-gray-600">Especies aportadas:</span>
+                <span class="font-semibold ml-1">${(feature.properties.aporte_especies_region || 0).toLocaleString()}</span>
+                <div class="text-xs text-gray-500">${feature.properties.pct_aporte_especies_region ? (feature.properties.pct_aporte_especies_region * 100).toFixed(0) + '%' : '0%'} del total</div>
               </div>
               <div>
-                <span class="text-sm text-gray-600">Observaciones:</span>
-                <span class="font-semibold ml-1">${(feature.properties.registros_region_total || 0).toLocaleString()}</span>
+                <span class="text-sm text-gray-600">Observaciones aportadas:</span>
+                <span class="font-semibold ml-1">${(feature.properties.aporte_registros_region || 0).toLocaleString()}</span>
+                <div class="text-xs text-gray-500">${feature.properties.pct_aporte_registros_region ? (feature.properties.pct_aporte_registros_region * 100).toFixed(0) + '%' : '0%'} del total</div>
               </div>
             </div>
           </div>
@@ -197,14 +199,17 @@ const MapRegionAmazonia = () => {
               </p>
             </div>
 
+            <div className="mb-4">
+              <p className="text-gray-800 text-sm font-medium">
+                Conoce el aporte al conocimiento de la biodiversidad que hace cada departamento en la Amazonía
+              </p>
+            </div>
+
             {/* Department Information */}
             {selectedDepartment && (
               <div className="flex-1 bg-white p-4 rounded-lg shadow-sm border border-gray-200 overflow-y-auto">
                 <div className="mb-4">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                    Conoce las cifras de los departamentos y municipios que conforman la región.
-                  </h3>
-                  <h4 className="text-md font-medium text-green-700 mb-3">Información general</h4>
+                  <h4 className="text-md font-medium text-gray-700 mb-3">Información general</h4>
 
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-sm text-gray-600">Departamento:</span>
@@ -228,36 +233,36 @@ const MapRegionAmazonia = () => {
 
                 <div className="space-y-4">
                   <div>
-                    <h5 className="font-semibold text-gray-800 mb-2 text-sm">Aporte de observaciones</h5>
+                    <h5 className="font-semibold text-gray-800 mb-2 text-sm">Aporte de Especies</h5>
                     <div className="space-y-1">
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">• Total:</span>
+                        <span className="text-gray-600">Aporte de especies:</span>
                         <span className="font-medium text-gray-800">
-                          {selectedDepartment.properties.registros_region_total?.toLocaleString() || 0}
+                          {selectedDepartment.properties.aporte_especies_region?.toLocaleString() || 0}
                         </span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">• % de registros:</span>
+                        <span className="text-gray-600">% de especies aportadas:</span>
                         <span className="font-medium text-gray-800">
-                          {(((selectedDepartment.properties.registros_region_total || 0) / totalRecords) * 100).toFixed(2)}
+                          {selectedDepartment.properties.pct_aporte_especies_region ? `${(selectedDepartment.properties.pct_aporte_especies_region * 100).toFixed(0)}%` : '0%'}
                         </span>
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h5 className="font-semibold text-gray-800 mb-2 text-sm">Aporte de especies</h5>
+                    <h5 className="font-semibold text-gray-800 mb-2 text-sm">Aporte de observaciones</h5>
                     <div className="space-y-1">
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">• Total:</span>
+                        <span className="text-gray-600">Aporte de observaciones:</span>
                         <span className="font-medium text-gray-800">
-                          {selectedDepartment.properties.especies_region_total?.toLocaleString() || 0}
+                          {selectedDepartment.properties.aporte_registros_region?.toLocaleString() || 0}
                         </span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">• % de especies:</span>
+                        <span className="text-gray-600">% de observaciones aportadas:</span>
                         <span className="font-medium text-gray-800">
-                          {(((selectedDepartment.properties.especies_region_total || 0) / totalSpecies) * 100).toFixed(2)}
+                          {selectedDepartment.properties.pct_aporte_registros_region ? `${(selectedDepartment.properties.pct_aporte_registros_region * 100).toFixed(0)}%` : '0%'}
                         </span>
                       </div>
                     </div>
