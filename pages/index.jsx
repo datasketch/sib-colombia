@@ -11,68 +11,40 @@ import { AppContext } from './_app'
 import home from '/public/data/home.json'
 import InfoTooltip from '../components/InfoTooltip'
 
-const ENUM_DESTACADOS = [
-  {
-    type: 'Departamento',
-    slug: 'amazonas',
-    label: 'Amazonas',
-    link: '/amazonas'
-  },
-  {
-    type: 'Departamento',
-    slug: 'caqueta',
-    label: 'Caquetá',
-    link: '/caqueta'
-  },
-  {
-    type: 'Departamento',
-    slug: 'cauca',
-    label: 'Cauca',
-    link: '/cauca'
-  },
-  {
-    type: 'Departamento',
-    slug: 'guainia',
-    label: 'Guainía',
-    link: '/guainia'
-  },
-  {
-    type: 'Departamento',
-    slug: 'guaviare',
-    label: 'Guaviare',
-    link: '/guaviare'
-  },
-  {
-    type: 'Departamento',
-    slug: 'meta',
-    label: 'Meta',
-    link: '/meta'
-  },
-  {
-    type: 'Departamento',
-    slug: 'putumayo',
-    label: 'Putumayo',
-    link: '/putumayo'
-  },
-  {
-    type: 'Departamento',
-    slug: 'vaupes',
-    label: 'Vaupés',
-    link: '/vaupes'
-  }
-]
-
 export default function Home () {
   const { lista_mapa: listDataMap, destacados_regiones: destacadas } = home
 
-  const regionesDestacadas = ENUM_DESTACADOS.map((dept) => {
-    const regionData = destacadas.find(d => d.slug_region === dept.slug)
-    return {
-      ...dept,
-      especies_total: regionData?.especies_total || 0,
-      especies_estimadas: regionData?.especies_estimadas || 0,
-      observadas: regionData?.observadas || 0
+  // Create regionesDestacadas directly from JSON data
+  const regionesDestacadas = destacadas.map((region) => {
+    // Determine type and link based on slug
+    let type = 'Departamento'
+    let link = `/${region.slug_region}`
+
+    if (region.slug_region === 'reserva-forestal-la-planada') {
+      type = 'Reserva forestal'
+      link = '/especial/reserva-forestal-la-planada'
+    } else if (region.slug_region === 'resguardo-indigena-pialapi-pueblo-viejo') {
+      type = 'Resguardo indígena'
+      link = '/especial/resguardo-indigena-pialapi-pueblo-viejo'
+    } else if (region.slug_region === 'region-amazonia') {
+      type = 'Región natural'
+      link = '/especial/region-amazonia'
     }
+
+    return {
+      type,
+      slug: region.slug_region,
+      label: region.label_region,
+      link,
+      especies_total: region.especies_total || 0,
+      especies_estimadas: region.especies_estimadas || 0,
+      observadas: region.observadas || 0
+    }
+  }).sort((a, b) => {
+    // Put region-amazonia first, then alphabetical order
+    if (a.slug === 'region-amazonia') return -1
+    if (b.slug === 'region-amazonia') return 1
+    return a.label.localeCompare(b.label)
   })
 
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)

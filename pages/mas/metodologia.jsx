@@ -5,7 +5,6 @@ import { AppContext } from '../_app'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import metodology from '../../static/data/metodologia.json'
-import { tablaAnexos } from '../../lib/functions'
 
 export default function metodologia () {
   const content = [
@@ -350,7 +349,7 @@ export default function metodologia () {
               <b className='font-inter text-xl'>Fuentes de cifras estimadas</b>
               {metodology.anexos.map((el, i) => {
                 return <ReactMarkdown key={'anexos-' + i} remarkPlugins={[remarkGfm]} linkTarget='_blank' className='rc-markdown font-lato space-y-2rc'>
-                  {typeof el === 'number' ? tablaAnexos : el }
+                  {el}
                 </ReactMarkdown>
               }
               )
@@ -362,7 +361,7 @@ export default function metodologia () {
             <div className='w-1/3 border-t-2 border-t-flame border-dotted' />
             <h2 id='descarga-bibliografia' className='text-flame font-inter text-2xl font-black pt-4'></h2>
             <div className='flex flex-col md:flex-row gap-5'>
-              <a className='flex justify-center items-center gap-2 py-1 lg:w-4/12 px-2  border border-black rounded-full' href='/files/Biodiversidad_En_Cifras_Ficha_metodológica_V2.1_(2021).pdf' download>
+              <a className='flex justify-center items-center gap-2 py-1 lg:w-4/12 px-2  border border-black rounded-full' href='https://drive.google.com/file/d/1-Xz1SKS2otHTL8hxxo9zVTEbyqWTW5p5/view?usp=drive_link' target='_blank' rel='noopener noreferrer'>
                 <span className='text-base font-lato'>Descargar la metodología </span>
                 <img className='w-3 h-4' src='/images/icon-download.svg' />
               </a>

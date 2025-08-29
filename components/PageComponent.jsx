@@ -212,7 +212,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
               Explora el aporte departamental de
             </p>
             <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
-              Especies y registros en la Región Amazonía
+              Especies y observaciones en la Región Amazonía
             </h2>
           </div>
           <div className='mt-3' style={{ height: 600 }}>

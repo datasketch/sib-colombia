@@ -143,7 +143,7 @@ const MapRegionAmazonia = () => {
                 <span class="font-semibold ml-1">${(feature.properties.especies_region_total || 0).toLocaleString()}</span>
               </div>
               <div>
-                <span class="text-sm text-gray-600">Registros:</span>
+                <span class="text-sm text-gray-600">Observaciones:</span>
                 <span class="font-semibold ml-1">${(feature.properties.registros_region_total || 0).toLocaleString()}</span>
               </div>
             </div>
@@ -340,7 +340,7 @@ const MapRegionAmazonia = () => {
 
                 <div>
                   <div className="flex justify-between items-center mb-1">
-                    <span className="text-sm text-gray-600">Registros</span>
+                    <span className="text-sm text-gray-600">Observaciones</span>
                     <span className="text-sm font-semibold text-gray-800">
                       {selectedDepartment.properties.registros_region_total?.toLocaleString() || 0}
                 </span>
