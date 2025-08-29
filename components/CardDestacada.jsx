@@ -15,12 +15,10 @@ const CardDestacada = ({ type, label, especies, observadas, especiesEstimadas, l
               <span className="font-inter">{formatNumbers(especies)}</span>
               <span className="font-lato">Especies </span>
             </div>
-            {especiesEstimadas && (
-              <div className="flex gap-x-1 text-light-peagreen text-xs flex-wrap">
-                <span className="font-inter">{formatNumbers(especiesEstimadas)}</span>
-                <span className="font-lato">Estimadas</span>
-              </div>
-            )}
+            <div className="flex gap-x-1 text-light-peagreen text-xs flex-wrap" style={{ minHeight: '1rem' }}>
+              <span className="font-inter">{especiesEstimadas > 0 ? formatNumbers(especiesEstimadas) : '\u00A0'}</span>
+              <span className="font-lato">{especiesEstimadas > 0 ? 'Estimadas' : '\u00A0'}</span>
+            </div>
             <div className="flex gap-x-1 text-white text-xs flex-wrap">
               <span className="font-inter">{formatNumbers(observadas)}</span>
               <span className="font-lato">Observaciones</span>
