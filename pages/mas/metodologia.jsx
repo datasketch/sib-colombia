@@ -1,365 +1,169 @@
-import { useContext, useEffect } from 'react'
-import Scrollspy from 'react-scrollspy'
+import { useContext, useEffect, useState } from 'react'
 import HeadMore from '../../components/headers/HeadMore'
 import { AppContext } from '../_app'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import metodology from '../../static/data/metodologia.json'
+import fs from 'fs'
+import path from 'path'
 
-export default function metodologia () {
-  const content = [
-    'biodiversidad',
-    'consulta-datos',
-    'registros-biologicos',
-    'listas-referencia',
-    'listas-externas',
-    'fuentes-auxiliares',
-    'validacion-limpieza',
-    'elementos-priorizados',
-    'estructuracion',
-    'validacion-limpieza-datos',
-    'bases-datos',
-    'sintesis-cifras',
-    'cifras-gruposbiologicos',
-    'cifras-geograficas',
-    'cifras-tematicas',
-    'cifras-estimadas',
-    'recomendaciones',
-    'anexos',
-    'descarga-bibliografia'
-  ]
+// Helper function to extract text from React children
+function getTextFromChildren (children) {
+  if (!children) return ''
+  if (typeof children === 'string') return children
+  if (typeof children === 'number') return children.toString()
+  if (Array.isArray(children)) {
+    return children.map(getTextFromChildren).join('')
+  }
+  if (children.props && children.props.children) {
+    return getTextFromChildren(children.props.children)
+  }
+  return ''
+}
 
-  const scrollspyContent = [
-    {
-      href: '#biodiversidad',
-      label: 'Biodiversidad en Cifras',
-      parent: true
-    },
-    {
-      href: '#consulta-datos',
-      label: 'l. Consulta de datos',
-      parent: true
-    },
-    {
-      href: '#registros-biologicos',
-      label: 'A. Registros biológicos de Colombia'
-    },
-    {
-      href: '#listas-referencia',
-      label: 'B. Listas de referencia'
-    },
-    {
-      href: '#listas-externas',
-      label: 'C. Listas externas'
-    },
-    {
-      href: '#fuentes-auxiliares',
-      label: 'D. Fuentes auxiliares'
-    },
-    {
-      href: '#validacion-limpieza',
-      label: 'Il. Validación y limpieza',
-      parent: true
-    },
-    {
-      href: '#elementos-priorizados',
-      label: 'A. Elementos priorizados'
-    },
-    {
-      href: '#estructuracion',
-      label: 'B. Estructuración'
-    },
-    {
-      href: '#validacion-limpieza-datos',
-      label: 'C. Validación y limpieza'
-    },
-    {
-      href: '#bases-datos',
-      label: 'D. Base de datos para la síntesis de cifras'
-    },
-    {
-      href: '#sintesis-cifras',
-      label: 'lll. Síntesis de cifras',
-      parent: true
-    },
-    {
-      href: '#cifras-gruposbiologicos',
-      label: 'A. Cifras por grupos biológicos'
-    },
-    {
-      href: '#cifras-geograficas',
-      label: 'B. Cifras geográficas'
-    },
-    {
-      href: '#cifras-tematicas',
-      label: 'C. Cifras temáticas de conservación, uso y manejo'
-    },
-    {
-      href: '#cifras-estimadas',
-      label: 'D. Cifras estimadas'
-    },
-    {
-      href: '#recomendaciones',
-      label: 'Recomendaciones para la interpretación de las cifras',
-      parent: true
-    },
-    {
-      href: '#anexos',
-      label: 'Anexos',
-      parent: true
-    },
-    {
-      href: '#descarga-bibliografia',
-      label: 'Descarga y bibliografía',
-      parent: true
-    }
-  ]
+// Helper function to generate slug from heading text
+function generateSlug (text) {
+  return text.toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '')
+    .replace(/--+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '')
+}
 
+export default function metodologia ({ markdownContent, headings }) {
   const { setFooterBgColor, setBreadCrumb } = useContext(AppContext)
+  const [activeId, setActiveId] = useState('')
+
   useEffect(() => {
     setFooterBgColor('bg-footer-orange')
     setBreadCrumb([{ label: 'Más' }, { label: 'Metodología' }])
-    return () => {
 
+    // Manual scrollspy implementation as fallback
+    const handleScroll = () => {
+      const validIDs = headings.filter(h => h.text.trim() && h.id.trim()).map(h => h.id)
+
+      for (const id of validIDs) {
+        const element = document.getElementById(id)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            setActiveId(id)
+            break
+          }
+        }
+      }
     }
-  }, [])
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Check initial position
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [headings])
+
+  // Custom renderer to add IDs to headings
+  const components = {
+    h1: ({ children, ...props }) => {
+      const text = getTextFromChildren(children)
+      // Remove any anchor link syntax like {#anchor-id}
+      const cleanText = text.replace(/\s*\{#[^}]*\}\s*$/, '')
+
+      // Find the matching heading from our parsed headings to ensure consistent ID
+      const matchingHeading = headings.find(h => h.text === cleanText && h.level === 1)
+      const id = matchingHeading ? matchingHeading.id : generateSlug(cleanText)
+      return (
+        <div className='space-y-2 lg:space-y-4'>
+          <div className='w-1/3 border-t-2 border-t-flame border-dotted' />
+          <h1 id={id} className='text-flame font-inter text-2xl font-black' {...props}>
+            {cleanText}
+          </h1>
+        </div>
+      )
+    },
+    h2: ({ children, ...props }) => {
+      const text = getTextFromChildren(children)
+      // Remove any anchor link syntax like {#anchor-id}
+      const cleanText = text.replace(/\s*\{#[^}]*\}\s*$/, '')
+
+      // Find the matching heading from our parsed headings to ensure consistent ID
+      const matchingHeading = headings.find(h => h.text === cleanText && h.level === 2)
+      const id = matchingHeading ? matchingHeading.id : generateSlug(cleanText)
+      return (
+        <h2 id={id} className='font-bold text-xl font-inter' {...props}>
+          {cleanText}
+        </h2>
+      )
+    },
+    img: ({ src, alt, ...props }) => {
+      // Handle the diagram image - use high resolution version
+      if (src && (src.includes('diagrama-metodologia') || src.includes('data:image/png'))) {
+        return <img className='mx-auto' src='/images/metodologia.png' alt={alt || 'Metodología diagram'} {...props} />
+      }
+      // Handle the table image
+      if (src && src.includes('tabla-metodologia')) {
+        return <img className=' mx-auto' src='/images/tabla-metodologia.svg' alt={alt} {...props} />
+      }
+      return <img src={src} alt={alt} {...props} />
+    },
+    table: ({ children, ...props }) => (
+      <div className="overflow-x-auto">
+        <table className="min-w-full border-collapse border border-gray-300" {...props}>
+          {children}
+        </table>
+      </div>
+    ),
+    th: ({ children, ...props }) => (
+      <th className="border border-gray-300 px-4 py-2 bg-gray-100 font-bold text-left" {...props}>
+        {children}
+      </th>
+    ),
+    td: ({ children, ...props }) => (
+      <td className="border border-gray-300 px-4 py-2" {...props}>
+        {children}
+      </td>
+    ),
+    ul: ({ children, ...props }) => (
+      <ul className='px-6 space-y-6 py-3' {...props}>
+        {children}
+      </ul>
+    ),
+    li: ({ children, ...props }) => (
+      <li className='flex font-lato' {...props}>
+        <img className='pr-3 self-start pt-2' src='/images/arrow-black.svg' alt="bullet" />
+        <div className='rc-markdown font-lato'>
+          {children}
+        </div>
+      </li>
+    ),
+    p: ({ children, ...props }) => (
+      <p className='font-lato' {...props}>
+        {children}
+      </p>
+    ),
+    strong: ({ children, ...props }) => (
+      <b className='font-inter' {...props}>
+        {children}
+      </b>
+    )
+  }
+
   return (
     <>
       <HeadMore title='Metodología' slug='metodologia' />
       <div className='max-w-screen-2xl w-10/12 mx-auto flex'>
         <div className='space-y-4 lg:space-y-12 mx-auto md:w-8/12 py-10'>
-          <div className='space-y-2 lg:space-y-4'>
-            <h2 id='biodiversidad' className='text-flame font-inter text-2xl font-black'>Biodiversidad en Cifras</h2>
-            <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-              {metodology.biodiversidad}
-            </ReactMarkdown>
-          </div>
-
-          <div className='space-y-2 lg:space-y-4'>
-            <div className='w-1/3 border-t-2 border-t-flame border-dotted' />
-            <h2 id='consulta-datos' className='text-flame font-inter text-2xl font-black'>I. Consulta de los datos</h2>
-            <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-              {metodology['consulta-datos']}
-            </ReactMarkdown>
-            <img className='' src='/images/diagrama-metodologia.png' />
-
-            <div className='space-y-2 '>
-              <h2 id='registros-biologicos' className='font-bold text-xl font-inter'>A. Registros biológicos de Colombia</h2>
-
-              <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                {metodology['registros-biologicos']}
-              </ReactMarkdown>
-
-            </div>
-            <div className='space-y-2 '>
-              <h2 id='listas-referencia' className='font-bold text-xl font-inter'>B. Listas de referencia</h2>
-              <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                {metodology['listas-referencia'].p1}
-              </ReactMarkdown>
-
-              <ul className='px-6 space-y-6 py-3'>
-                {metodology['listas-referencia'].li.map((el, key) =>
-                  <li key={key} className='flex font-lato'><img className='pr-3 self-start pt-2' src='/images/arrow-black.svg' />
-                    <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                      {el}
-                    </ReactMarkdown>
-                  </li>
-                )}
-
-              </ul>
-            </div>
-
-            <div className='space-y-2'>
-              <h2 id='listas-externas' className='font-bold text-xl font-inter'>C. Listas externas</h2>
-              <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                {metodology['listas-externas'].p1}
-              </ReactMarkdown>
-
-              <ul className='px-6 space-y-6 py-3'>
-                {metodology['listas-externas'].li.map(({ head, desc }, key) =>
-                  <li key={key} className='space-y-2'>
-                    <div className='flex font-lato'><img className='pr-3' src='/images/arrow-black.svg' />
-                      <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                        {head}
-                      </ReactMarkdown>
-                    </div>
-                    <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                      {desc}
-                    </ReactMarkdown>
-                  </li>
-                )}
-
-              </ul>
-            </div>
-            <div className='space-y-2'>
-              <h2 id='fuentes-auxiliares' className='font-bold text-xl font-inter'>D. Fuentes auxiliares</h2>
-              <ReactMarkdown className='rc-markdown font-lato'>
-                {metodology['fuentes-auxiliares']}
-              </ReactMarkdown>
-            </div>
-          </div>
-
-          <div className='space-y-2 lg:space-y-4'>
-            <div className='w-1/3 border-t-2 border-t-flame border-dotted' />
-
-            <h2 id='validacion-limpieza' className='text-flame font-inter text-2xl font-black'>Il. Validación y limpieza</h2>
-            <ReactMarkdown className='rc-markdown font-lato'>
-              {metodology['validacion-limpieza']}
-            </ReactMarkdown>
-
-            <div className='space-y-2'>
-
-              <h2 id='elementos-priorizados' className='font-bold text-xl font-inter'>A. Elementos priorizados</h2>
-              <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                {metodology['elementos-priorizados']}
-              </ReactMarkdown>
-
-              <div className=''>
-                <span className='text-center font-lato flex justify-center py-1'><b>Tabla 1.</b>Elementos priorizados para la síntesis de cifras.</span>
-                <img className=' mx-auto' src='/images/tabla-metodologia.svg' />
-              </div>
-
-              <p className='font-lato'>*Aunque las extensiones se organizan utilizando el estándar DwC, para facilitar la consolidación de la información y evitar ambigüedades entre diferentes listas temáticas, se le asignan nombres explícitos a cada una de las columnas.</p>
-            </div>
-            <div className='space-y-2'>
-              <h2 id='estructuracion' className='font-bold text-xl font-inter'>B. Estructuración</h2>
-              <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                {metodology.estructuracion}
-              </ReactMarkdown>
-            </div>
-            <div className='space-y-2'>
-              <h2 id='validacion-limpieza-datos' className='font-bold text-xl font-inter'>C. Validación y limpieza</h2>
-              <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                {metodology['validacion-limpieza-datos'].p1}
-              </ReactMarkdown>
-              {metodology['validacion-limpieza-datos'].li.map(({ head, li }, key) =>
-                <div key={key} className='space-y-3'>
-                  <b className='font-inter'>{head}</b>
-                  <ul className='px-2 md:px-6 space-y-3 '>
-                    {li.map((el, key) =>
-                      <li key={key} className='flex font-lato'> <img className='pr-3 self-start pt-2' src='/images/arrow-black.svg' />
-                        <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                          {el}
-                        </ReactMarkdown>
-                      </li>
-                    )}
-
-                  </ul>
-                </div>
-              )}
-
-              <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                {metodology['validacion-limpieza-datos'].p2}
-              </ReactMarkdown>
-            </div>
-
-            <div className='space-y-2'>
-              <h2 id='bases-datos' className='font-bold text-xl font-inter'>D. Base de datos para la síntesis de cifras</h2>
-              <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato space-y-2'>
-                {metodology['bases-datos']}
-              </ReactMarkdown>
-            </div>
-          </div>
-          <div className='space-y-2 lg:space-y-4'>
-            <div className='pt-1.5 w-1/2 border-t-2 border-t-flame border-dotted' />
-            <h2 id='sintesis-cifras' className='text-flame font-inter text-2xl font-black'>lll. Síntesis de cifras</h2>
-            <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato space-y-2'>
-              {metodology['sintesis-cifras']}
-            </ReactMarkdown>
-
-            <ol className='space-y-4'>
-              <li className='space-y-3'>
-                <h2 id='cifras-gruposbiologicos' className='font-bold text-xl font-inter'>A. Cifras por grupos biológicos</h2>
-                <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato space-y-2'>
-                  {metodology['cifras-gruposbiologicos']}
-                </ReactMarkdown>
-              </li>
-              <li className='space-y-3'>
-                <h2 id='cifras-geograficas' className='font-bold text-xl font-inter'>B. Cifras geográficas</h2>
-                <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato space-y-2'>
-                  {metodology['cifras-gruposbiologicos']}
-                </ReactMarkdown>
-              </li>
-              <li className='space-y-3'>
-                <h2 id='cifras-tematicas' className='font-bold text-xl font-inter'>C. Cifras temáticas de conservación, uso y manejo</h2>
-                <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                  {metodology['cifras-tematicas'].p1}
-                </ReactMarkdown>
-
-                <ul className='space-y-4'>
-                  {metodology['cifras-tematicas'].li.map(({ head, desc, list }, key) =>
-                    <li key={key} className='space-y-2'>
-                      <b>{head}</b>
-                      <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                        {desc}
-                      </ReactMarkdown>
-
-                      <ul className='px-2 lg:px-4 space-y-2'>
-                        {list.map((el, key) =>
-                          <li key={key} className='flex font-lato'><img className='pr-3 self-start pt-2' src='/images/arrow-black.svg' />
-                            <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato'>
-                              {el}
-                            </ReactMarkdown>
-                          </li>
-                        )}
-
-                      </ul>
-                    </li>
-
-                  )}
-
-                </ul>
-              </li>
-              <li className='space-y-3'>
-                <h2 id='cifras-estimadas' className='font-bold text-xl font-inter'>D. Cifras estimadas</h2>
-                <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato space-y-2'>
-                  {metodology['cifras-estimadas']}
-                </ReactMarkdown>
-              </li>
-            </ol>
-          </div>
-
-          <div className='space-y-2 lg:space-y-4'>
-            <div className='pt-1.5 w-1/2 border-t-2 border-t-flame border-dotted' />
-            <h2 id='recomendaciones' className='text-flame font-inter text-2xl font-black'>Recomendaciones para la interpretación de las cifras</h2>
-            <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato space-y-2'>
-              {metodology.recomendaciones.p1}
-            </ReactMarkdown>
-            <ul className='space-y-4'>
-              {metodology.recomendaciones.list.map(({ head, desc }, key) =>
-                <li key={key} className='space-y-2'>
-                  {/* <h3 className='font-inter ' id=''></h3> */}
-                  <ReactMarkdown linkTarget='_blank' className='rc-markdown font-inter'>
-
-                    {head}
-                  </ReactMarkdown>
-                  <ReactMarkdown linkTarget='_blank' className='rc-markdown font-lato '>
-                    {desc}
-                  </ReactMarkdown>
-                </li>
-              )}
-
-            </ul>
-          </div>
-
-          <div className='space-y-2 lg:space-y-4'>
-            <div className='w-1/3 border-t-2 border-t-flame border-dotted' />
-            <h2 id='anexos' className='text-flame font-inter text-2xl font-black'>Anexos</h2>
-            <div className='space-y-3'>
-              <b className='font-inter text-xl'>Fuentes de cifras estimadas</b>
-              {metodology.anexos.map((el, i) => {
-                return <ReactMarkdown key={'anexos-' + i} remarkPlugins={[remarkGfm]} linkTarget='_blank' className='rc-markdown font-lato space-y-2rc'>
-                  {el}
-                </ReactMarkdown>
-              }
-              )
-              }
-            </div>
-          </div>
+          <ReactMarkdown
+            linkTarget='_blank'
+            className='rc-markdown font-lato space-y-4'
+            remarkPlugins={[remarkGfm]}
+            components={components}
+          >
+            {markdownContent}
+          </ReactMarkdown>
 
           <div className='space-y-2 lg:space-y-4 pt-8'>
             <div className='w-1/3 border-t-2 border-t-flame border-dotted' />
-            <h2 id='descarga-bibliografia' className='text-flame font-inter text-2xl font-black pt-4'></h2>
+            <h2 className='text-flame font-inter text-2xl font-black pt-4'>Descarga y bibliografía</h2>
             <div className='flex flex-col md:flex-row gap-5'>
               <a className='flex justify-center items-center gap-2 py-1 lg:w-4/12 px-2  border border-black rounded-full' href='/files/Biodiversidad En Cifras_ Ficha metodológica (2025).pdf' target='_blank' rel='noopener noreferrer'>
                 <span className='text-base font-lato'>Descargar la metodología </span>
@@ -374,18 +178,81 @@ export default function metodologia () {
 
         <div className='py-10 w-3/12 mx-auto hidden md:block'>
           <span className='font-black font-inter py-2'>Contenidos</span>
-          <Scrollspy items={content} className='space-y-1.5 sticky top-[5%] font-lato '
-            currentClassName='border-l-2 border-flame' offset={100}>
-            {scrollspyContent.map(({ href, label, parent }, key) =>
-              <li key={key} className={`hover:bg-[#8080801A] hover:border-l-2 hover:border-l-[#707070] ${parent ? 'pl-2' : 'pl-4'}`}>
-                <a className='p-1.5 ' href={href}>
-                  {label}
-                </a>
-              </li>
-            )}
-          </Scrollspy>
+          {headings.length > 0 && (
+            <ul className='space-y-1.5 sticky top-[5%] font-lato'>
+              {headings.filter(h => h.text.trim() && h.id.trim()).map((heading, key) =>
+                <li key={key} className={`hover:bg-[#8080801A] hover:border-l-2 hover:border-l-[#707070] ${heading.level === 1 ? 'pl-2' : 'pl-4'} ${activeId === heading.id ? 'border-l-2 border-flame' : ''}`}>
+                  <a className='p-1.5 ' href={`#${heading.id}`}>
+                    {heading.text}
+                  </a>
+                </li>
+              )}
+            </ul>
+          )}
         </div>
       </div>
     </>
   )
+}
+
+export async function getStaticProps () {
+  const filePath = path.join(process.cwd(), 'static', 'data', 'metodologia-Biodiversidad En Cifras_ Ficha metodológica (2025).md')
+  const markdownContent = fs.readFileSync(filePath, 'utf8')
+
+  // Parse headings from markdown
+  const lines = markdownContent.split('\n')
+  const headings = []
+
+  lines.forEach((line) => {
+    if (line.startsWith('# ')) {
+      const text = line.replace('# ', '').trim()
+      // Remove any anchor link syntax like {#anchor-id}
+      const cleanText = text.replace(/\s*\{#[^}]*\}\s*$/, '')
+
+      if (cleanText.trim() && cleanText.length > 0) {
+        const id = cleanText.toLowerCase()
+          .replace(/\s+/g, '-')
+          .replace(/[^\w-]+/g, '')
+          .replace(/--+/g, '-')
+          .replace(/^-+/, '')
+          .replace(/-+$/, '')
+
+        if (id && id.length > 0) {
+          headings.push({
+            level: 1,
+            text: cleanText,
+            id
+          })
+        }
+      }
+    } else if (line.startsWith('## ')) {
+      const text = line.replace('## ', '').trim()
+      // Remove any anchor link syntax like {#anchor-id}
+      const cleanText = text.replace(/\s*\{#[^}]*\}\s*$/, '')
+
+      if (cleanText.trim() && cleanText.length > 0) {
+        const id = cleanText.toLowerCase()
+          .replace(/\s+/g, '-')
+          .replace(/[^\w-]+/g, '')
+          .replace(/--+/g, '-')
+          .replace(/^-+/, '')
+          .replace(/-+$/, '')
+
+        if (id && id.length > 0) {
+          headings.push({
+            level: 2,
+            text: cleanText,
+            id
+          })
+        }
+      }
+    }
+  })
+
+  return {
+    props: {
+      markdownContent,
+      headings
+    }
+  }
 }
