@@ -3,7 +3,7 @@ import { useContext, useEffect } from 'react'
 
 import HeadRegion from '../../components/headers/HeadRegion'
 import { AppContext } from '../_app'
-import { getStandaloneRegionData, getMunicipalityData } from '../../lib/regions'
+import { getStandaloneRegionData } from '../../lib/regions'
 import PageComponent from '../../components/PageComponent'
 import SliderBanner from '../../components/SliderBanner'
 import Gallery from '../../components/Gallery'
@@ -65,16 +65,13 @@ export async function getStaticProps () {
 
   // Load data from the standalone folder
   const content = await getStandaloneRegionData(region)
-
-  // For sponsors, use Colombia for region-amazonia
-  const parentRegion = 'colombia'
-  const regionData = await getMunicipalityData(parentRegion, parentRegion)
+  const regionData = JSON.parse(content)
 
   return {
     props: {
-      data: JSON.parse(content),
+      data: regionData,
       slug: region,
-      sponsors: JSON.parse(regionData).patrocinador
+      sponsors: regionData.patrocinador // Use sponsors from region-amazonia.json itself
     }
   }
 }
