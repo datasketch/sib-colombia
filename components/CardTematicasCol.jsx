@@ -32,7 +32,7 @@ const CardTematicasCol = props => {
                   <div className='border-t border-t-dartmouth-green' />
                 </span>
                 <div className='font-black font-inter text-lg'>Especies amenazadas
-                  {speciesList?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={speciesList} link={`region=${slugregion}&tematica=${slug.replace('-', '_')}`} />}>
+                  {speciesList?.length !== 0 && <CustomTooltip placement='left' title={<Table tabledata={speciesList} link={`region=${slugregion}&tematica=${slug}`} />}>
                     <img className='inline-block pl-2' src='/images/icons/icon-table.svg' />
                   </CustomTooltip>}
                 </div>
@@ -170,7 +170,7 @@ const CardTematicasCol = props => {
               especies={info?.especies_cites_i}
               parentEspecies={info?.cites_i_estimadas}
               registros={info?.registros_cites_i}
-              link={`region=${slugregion}&tematica=${info?.slug}_i`}
+              link={`region=${slugregion}&tematica=cites-i`}
 
             />
             <BarPercent
@@ -182,7 +182,7 @@ const CardTematicasCol = props => {
               especies={info?.especies_cites_i_ii}
               parentEspecies={info?.cites_i_ii_estimadas}
               registros={info?.registros_cites_i_ii}
-              link={`region=${slugregion}&tematica=${info?.slug}_i_ii`}
+              link={`region=${slugregion}&tematica=cites-i-ii`}
 
             />
 
@@ -195,7 +195,7 @@ const CardTematicasCol = props => {
               especies={info?.especies_cites_ii}
               parentEspecies={info?.cites_ii_estimadas}
               registros={info?.registros_cites_ii}
-              link={`region=${slugregion}&tematica=${info?.slug}_ii`}
+              link={`region=${slugregion}&tematica=cites-ii`}
             />
             <BarPercent
               bgColor={'bg-greenish-cyan'}
@@ -206,7 +206,7 @@ const CardTematicasCol = props => {
               especies={info?.especies_cites_iii}
               parentEspecies={info?.cites_iii_estimadas}
               registros={info?.registros_cites_iii}
-              link={`region=${slugregion}&tematica=${info?.slug}_iii`}
+              link={`region=${slugregion}&tematica=cites-iii`}
             />
 
           </div>
@@ -353,7 +353,7 @@ const CardTematicasCol = props => {
                 selected.toLowerCase() === 'exóticas'
                   ? 'exoticas'
                   : selected.toLowerCase() === 'exóticas con riesgo de invasión'
-                    ? 'exoticas-riesgo-invasion'
+                    ? 'exoticas-riesgo-invasion-total'
                     : selected.toLowerCase() === 'invasoras'
                       ? 'invasoras'
                       : selected.toLowerCase() === 'trasplantadas'
@@ -383,7 +383,7 @@ const CardTematicasCol = props => {
               especies={info?.especies_exoticas_riesgo_invasion_total}
               parentEspecies={info?.exoticas_riesgo_invasion_estimadas}
               registros={info?.registros_exoticas_riesgo_invasion_total}
-              link={`region=${slugregion}&tematica=exoticas-riesgo-invasion`}
+              link={`region=${slugregion}&tematica=exoticas-riesgo-invasion-total`}
             />
             <BarPercent
               bgColor={'bg-orange-en'}
@@ -481,7 +481,7 @@ const CardTematicasCol = props => {
             especies={info?.cr}
             parentEspecies={info?.cr_estimadas}
             registros={info?.cr_registros}
-            link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
+            link={`region=${slugregion}&tematica=${info?.slug}-cr`}
           />
 
           <BarPercent
@@ -494,7 +494,7 @@ const CardTematicasCol = props => {
             especies={info?.en}
             parentEspecies={info?.en_estimadas}
             registros={info?.en_registros}
-            link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
+            link={`region=${slugregion}&tematica=${info?.slug}-en`}
           />
           <BarPercent
             cat='amenazadas'
@@ -506,7 +506,7 @@ const CardTematicasCol = props => {
             especies={info?.vu}
             parentEspecies={info?.vu_estimadas}
             registros={info?.vu_registros}
-            link={`region=${slugregion}&tematica=${info?.slug}&grupo=tematica`}
+            link={`region=${slugregion}&tematica=${info?.slug}-vu`}
           />
 
         </div>
