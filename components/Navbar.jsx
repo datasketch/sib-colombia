@@ -20,7 +20,8 @@ export default function Navbar () {
     'guainia',
     'guaviare',
     'putumayo',
-    'vaupes'
+    'vaupes',
+    'meta'
   ]
 
   // Helper to split array into N columns (top-to-bottom)
