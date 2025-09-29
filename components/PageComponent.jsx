@@ -87,7 +87,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
           <MenuExplorer tree={navTematica} search={tematica} initialSelected='Amenazadas' initialSelectedValue='amenazadas'>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
-                Conoce las cifras de {generalInfo.label} por
+                Conoce las cifras de {generalInfo.label === 'Región Amazonía' ? 'la región Amazonía' : generalInfo.label} por
               </p>
               <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
                 Temáticas
@@ -113,7 +113,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
           <MenuExplorer tree={navGruposBiologicos} search={gruposBiologicos} initialSelected='Animales' initialSelectedValue='animales'>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
-                Conoce las cifras de {generalInfo.label} por
+                Conoce las cifras de {generalInfo.label === 'Región Amazonía' ? 'la región Amazonía' : generalInfo.label} por
               </p>
               <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
                 Grupos Biológicos
@@ -136,7 +136,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
           <MenuExplorer tree={navGruposInteres} search={gruposInteres} initialSelected='Epífitas' initialSelectedValue='epifitas'>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
-                Conoce las cifras de {generalInfo.label} por
+                Conoce las cifras de {generalInfo.label === 'Región Amazonía' ? 'la región Amazonía' : generalInfo.label} por
               </p>
               <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
                 Grupos de interés
@@ -159,7 +159,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
           <MenuExplorer tree={navTerritorio} search={territorio} initialSelected='Municipios' initialSelectedValue='municipios'>
             <MenuExplorer.Title>
               <p className='3xl:text-lg'>
-                Conoce las cifras de {generalInfo.label} por
+                Conoce las cifras de {generalInfo.label === 'Región Amazonía' ? 'la región Amazonía' : generalInfo.label} por
               </p>
               <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
                 {generalInfo.label === 'Colombia' ? 'Departamentos' : 'Municipios'}
@@ -204,7 +204,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
       </div>
       }
 
-      {/* Conoce las cifras por departamentos - Región Amazonía */}
+      {/* Conoce las cifras por departamentos - la región Amazonía */}
       {slug === 'region-amazonia' && <div id="territorio" className='py-10 bg-white-2'>
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <div className='space-y-2.5'>
@@ -212,7 +212,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
               Explora el aporte departamental de
             </p>
             <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
-              Especies y observaciones en la Región Amazonía
+              Especies y observaciones en la región Amazonía
             </h2>
           </div>
           <div className='mt-3' style={{ height: 600 }}>
@@ -226,7 +226,7 @@ export default function PageComponent ({ data, slug, municipality, municipalityf
         <div className='mx-auto w-10/12 max-w-screen-2xl'>
           <div className='space-y-2.5'>
             <h2 className='font-black font-inter text-3xl 3xl:text-4xl'>
-              Publicadores de {generalInfo.label}
+              Publicadores de {generalInfo.label === 'Región Amazonía' ? 'la región Amazonía' : generalInfo.label}
             </h2>
             <div className='h-0.5 bg-gradient-to-r from-dartmouth-green to-yellow-green' />
           </div>

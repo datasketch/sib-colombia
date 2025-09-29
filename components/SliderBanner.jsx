@@ -91,7 +91,7 @@ const SliderBanner = ({ slides, region, municipalityflag, parentlabel }) => {
                 <div className='text-center font-bold flex flex-col items-center mb-4'>
                   <div className='inline-flex gap-x-1.5 items-center'>
                     <div className='w-3 h-3 rounded-full bg-giants-orange' />
-                    Especies observadas en {region}
+                    Especies observadas en {region === 'Región Amazonía' ? 'la región Amazonía' : region}
                   </div>
                   <div className='inline-flex gap-x-1.5 items-center'>
                     <div className='w-3 h-3 rounded-full bg-majorelle-blue' />

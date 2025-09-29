@@ -68,7 +68,7 @@ const Slides = ({ data, region, municipalityflag, parentlabel }) => {
                   <div className='text-center font-bold  flex flex-col items-center'>
                     <div className='inline-flex gap-x-1.5 items-center'>
                       <div className='w-4 h-4 rounded-full bg-giants-orange' />
-                      Especies observadas en {region}
+                      Especies observadas en {region === 'Región Amazonía' ? 'la región Amazonía' : region}
                     </div>
                     <div className='inline-flex gap-x-1.5 items-center'>
                       <div className='w-4 h-4 rounded-full bg-majorelle-blue' />

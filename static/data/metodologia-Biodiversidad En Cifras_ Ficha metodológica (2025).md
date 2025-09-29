@@ -2,6 +2,7 @@
 
 Para la consolidación de las cifras disponibles a través de [*Biodiversidad en Cifras*](https://cifras.biodiversidad.co/), se construyó la presente ficha metodológica donde se detallan los procesos de: I. Consulta de datos a través del SiB Colombia, II. Validación y limpieza de datos, y III. Síntesis de cifras a partir de datos validados y cifras estimadas (Figura 1). A través de esta metodología se procesan los datos disponibles a través del SiB Colombia para obtener cifras que permitan realizar una adecuada gestión del conocimiento sobre la biodiversidad.
 
+
 # I. CONSULTA DE LOS DATOS 
 
 Los datos abiertos sobre biodiversidad, disponibles a través del SiB Colombia: registros biológicos (Evidencia de la presencia de una especie o taxón en un lugar y tiempo específico) y las listas de referencia nacionales, son la materia prima para la síntesis de cifras. Estos datos son complementados con listas de referencia externas, de interés para la conservación y uso sostenible de la biodiversidad; así como con fuentes auxiliares que proveen cifras estimadas sobre la biodiversidad del país (Figura 1).
