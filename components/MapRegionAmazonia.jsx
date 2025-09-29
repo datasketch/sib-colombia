@@ -195,13 +195,13 @@ const MapRegionAmazonia = () => {
           <div className="h-full flex flex-col">
             <div className="mb-6">
               <p className="text-gray-700 text-sm leading-relaxed">
-                El polígono que delimita la región Amazonia incluye únicamente una fracción del territorio de ciertos departamentos, sin abarcar su extensión total. Por ello, el aporte de datos que cada departamento realiza a la región Amazonia corresponde exclusivamente a la porción de su territorio contenida dentro de dicho polígono, lo cual puede diferir de su contribución total a las cifras nacionales de Colombia.
+                El polígono que delimita la Amazonía cubre solo una parte de algunos departamentos, por lo que su aporte de datos a la región corresponde únicamente a esa fracción y puede diferir de su contribución total a nivel nacional.
               </p>
             </div>
 
             <div className="mb-4">
               <p className="text-gray-800 text-sm font-medium">
-                Conoce el aporte al conocimiento de la biodiversidad que hace cada departamento en la Amazonía
+                Conoce el aporte de cada departamento al conocimiento de la biodiversidad en la Amazonía.
               </p>
             </div>
 
