@@ -61,7 +61,9 @@ export default function Footer () {
         </div> */}
         <div className="border-b border-b-white pb-2 " />
         <div className='py-2'>
-          <img className='lg:h-4 mx-auto' src='/images/powered-by.svg' alt='icon powered by datasketch' />
+          <a href='https://datasketch.co' target='_blank' rel="noreferrer">
+            <img className='lg:h-6 mx-auto' src='/images/powered-by.svg' alt='icon powered by datasketch' />
+          </a>
         </div>
       </div>
     </footer >
